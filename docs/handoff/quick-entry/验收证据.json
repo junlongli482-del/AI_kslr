@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-15",
+  "real_sample": {
+    "source_pages": 9,
+    "papers": 2,
+    "questions": 46,
+    "initial_answer_matches": 18,
+    "final_answer_matches": 46,
+    "unused_answer_entries": 16,
+    "source_incomplete_answers": 6,
+    "region_count": 68,
+    "response_proposals": 16,
+    "recognition_accuracy": "not independently measured; human review pending"
+  },
+  "real_task_llm": {
+    "calls": 8,
+    "total_tokens": 201883,
+    "cumulative_seconds": 1074.81,
+    "currency_cost": null
+  },
+  "python_tests": 16,
+  "java_transaction_tests": 5,
+  "visual_detector_findings": 0,
+  "browser-workflow": {
+    "checks": [
+      "MathLive visual edit persists LaTeX",
+      "LaTeX source edit persists",
+      "Rich edit autosaves and survives reload",
+      "Source region drag persists and refreshes crop",
+      "Confirm advances and saves review state",
+      "Validation dialog opens"
+    ],
+    "errors": [],
+    "restored": true
+  },
+  "browser-structure": {
+    "checks": [
+      "Answer unlink/relink keeps one-to-one metadata and content",
+      "Split preserves separate region and resets inherited answer match",
+      "Merge keeps content and multiple regions",
+      "Add and delete question persists",
+      "Reordering persists"
+    ],
+    "errors": [],
+    "restored": true
+  },
+  "commit-smoke": {
+    "questions": 46,
+    "papers": 2,
+    "templates": 2,
+    "review_status": "pending",
+    "scan_capability": "not_integrated",
+    "idempotent": true,
+    "errors": []
+  },
+  "format-smoke": [
+    {
+      "filename": "inline-answers.docx",
+      "mode": "questions",
+      "id": "b3d4520f-ca11-487a-8bd9-6954e0e3a5fc",
+      "status": "ready",
+      "questions": 2,
+      "answers": 2
+    },
+    {
+      "filename": "inline-answers.png",
+      "mode": "paper",
+      "id": "0ddf09ca-817b-440e-b982-a3a89a1a0cff",
+      "status": "ready",
+      "questions": 2,
+      "answers": 2
+    }
+  ],
+  "generate-smoke": {
+    "id": "28b79fdb-e388-4373-9d70-9224ef60f86a",
+    "status": "ready",
+    "questions": [
+      {
+        "number": "1",
+        "answer": "2",
+        "analysis": "1加1等于2，即 $1+1=2$。",
+        "answer_source": "original",
+        "analysis_source": "ai_generated"
+      },
+      {
+        "number": "2",
+        "answer": "$x=2$",
+        "analysis": "方程两边同时减去3，得 $x=5-3=2$。",
+        "answer_source": "ai_generated",
+        "analysis_source": "ai_generated"
+      }
+    ]
+  }
+}

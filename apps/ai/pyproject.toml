@@ -1,0 +1,12 @@
+[project]
+name = "quick-entry-ai"
+version = "0.1.0"
+requires-python = ">=3.12,<3.14"
+dependencies = ["fastapi==0.115.12", "uvicorn==0.34.2", "httpx==0.28.1", "pydantic==2.12.5", "python-multipart==0.0.32", "python-dotenv==1.2.4", "pypdf==6.20.1", "pypdfium2==5.14.0", "Pillow==12.3.0", "jsonschema==4.26.0"]
+
+[dependency-groups]
+dev = ["pytest==9.1.1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

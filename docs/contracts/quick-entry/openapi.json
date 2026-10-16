@@ -1,0 +1,675 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "快速录入本地工作台API",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8090"
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "服务状态",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        }
+      }
+    },
+    "/api/quick-entry/tasks": {
+      "get": {
+        "summary": "查询任务",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        }
+      },
+      "post": {
+        "summary": "新建任务",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "mode"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "textbook",
+                      "paper",
+                      "questions"
+                    ]
+                  },
+                  "generate_answers": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "channel_policy": {
+                    "type": "string",
+                    "enum": [
+                      "low_first",
+                      "stable_first"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/quick-entry/tasks/{id}": {
+      "get": {
+        "summary": "任务阶段、文件与事件",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/quick-entry/tasks/{id}/files": {
+      "post": {
+        "summary": "上传题目或答案文件",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "files"
+                ],
+                "properties": {
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "question",
+                      "answer",
+                      "mixed"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/quick-entry/tasks/{id}/images": {
+      "post": {
+        "summary": "粘贴或上传审核补充图片",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "file"
+                ],
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/quick-entry/settings/concurrency": {
+      "get": {
+        "summary": "读取实际并发设置与任务数量",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        }
+      },
+      "put": {
+        "summary": "调整并发，0表示无本地上限",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "max_concurrency"
+                ],
+                "properties": {
+                  "max_concurrency": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "0为无本地上限，正整数为同时处理的任务数"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/quick-entry/tasks/{id}/start": {
+      "post": {
+        "summary": "启动处理",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/quick-entry/tasks/{id}/retry": {
+      "post": {
+        "summary": "恢复处理",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/quick-entry/tasks/{id}/review": {
+      "get": {
+        "summary": "读取审核稿",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "summary": "乐观锁保存审核稿",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "expected_revision",
+                  "result"
+                ],
+                "properties": {
+                  "expected_revision": {
+                    "type": "integer"
+                  },
+                  "result": {
+                    "$ref": "./result-v1.schema.json"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/quick-entry/tasks/{id}/validate": {
+      "post": {
+        "summary": "校验结构与裁图",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "./result-v1.schema.json"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/quick-entry/tasks/{id}/commit": {
+      "post": {
+        "summary": "幂等事务入库",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "revision"
+                ],
+                "properties": {
+                  "revision": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/assets": {
+      "get": {
+        "summary": "读取原始PDF或图片资产",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "data目录内的相对资产键，禁止目录穿越"
+          }
+        ]
+      }
+    },
+    "/api/catalogs": {
+      "get": {
+        "summary": "目录配置状态",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        }
+      }
+    },
+    "/api/questionbank/questions": {
+      "get": {
+        "summary": "查询题库",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/questionbank/questions/{id}": {
+      "get": {
+        "summary": "题目版本详情",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/api/paperbank/papers": {
+      "get": {
+        "summary": "查询试卷库",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        }
+      }
+    },
+    "/api/paperbank/papers/{id}": {
+      "get": {
+        "summary": "试卷、题目版本与原卷模板",
+        "responses": {
+          "200": {
+            "description": "成功"
+          },
+          "400": {
+            "description": "输入错误"
+          },
+          "409": {
+            "description": "版本冲突或阶段不可执行"
+          },
+          "500": {
+            "description": "服务错误"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
