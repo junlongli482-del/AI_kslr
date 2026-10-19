@@ -400,6 +400,16 @@ def validate(task_id: str, payload: dict):
         texts=[q.get('answer'),q.get('analysis')]+[str((s.get('answer') or {}).get(k) or '') for s in q.get('subquestions',[]) for k in ('value','analysis')]
         if any(t and '$' not in t and re.search(r'\\[A-Za-z]+|[_^]\{',t) for t in texts):
             issue('公式未用 $...$ 包裹，请核对','warning')
+        method=(q.get('scoring') or {}).get('method') or q.get('grading_method')
+        if method=='manual':
+            targets=[q] if not q.get('subquestions') else q['subquestions']
+            for target in targets:
+                scoring=target.get('scoring') or {}
+                points=scoring.get('points') or []
+                if not points:
+                    issue('缺少分步评分标准，请重新生成或人工补写','warning')
+                elif abs(sum(float(point.get('pct') or 0) for point in points)-100)>.5:
+                    issue('评分标准得分点合计不是100%，请核对','warning')
         if not q['answer'] and not q.get('subquestions'):
             issues.append({'question_id': q['id'], 'severity': 'warning', 'message': '缺少答案，可作为待完善资源保存'})
     if not result['questions']:

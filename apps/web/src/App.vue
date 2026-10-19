@@ -283,7 +283,9 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <div class="field-heading"><label>解析</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-analysis'" v-model="sub.answer.analysis" v-model:document="selected.editor_documents[`sub-${index}-analysis`]" label="小问解析"/>
                   <div class="field-heading"><label>评分标准</label><span>主观题可填，未提供留空</span></div>
-                  <el-input v-model="sub.answer.scoring_criteria" type="textarea" :rows="2" placeholder="未提供可留空，不自动编造步骤分"/>
+                  <div v-if="sub.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in sub.scoring.points" :key="pi" class="rubric-item"><strong>{{point.pct}}%</strong><span>{{point.criterion}}</span></div><p v-if="sub.scoring.notes" class="muted">{{sub.scoring.notes}}</p></div>
+                  <p v-else-if="sub.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
+                  <el-input v-else v-model="sub.answer.scoring_criteria" type="textarea" :rows="2" placeholder="未提供可留空，不自动编造步骤分"/>
                 </div>
                 <template v-if="!selected.subquestions.length">
                   <div class="field-heading"><label>答案</label><span>与题干连续展示，可直接编辑</span></div>
@@ -291,7 +293,9 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <div class="field-heading"><label>解析</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-single-analysis'" v-model="selected.analysis" v-model:document="selected.editor_documents.analysis" label="解析编辑器"/>
                   <div class="field-heading"><label>评分标准</label><span>主观题可填，未提供留空</span></div>
-                  <el-input v-model="selected.attributes.scoring_criteria" type="textarea" :rows="2" placeholder="未提供可留空，不自动编造步骤分"/>
+                  <div v-if="selected.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in selected.scoring.points" :key="pi" class="rubric-item"><strong>{{point.pct}}%</strong><span>{{point.criterion}}</span></div><p v-if="selected.scoring.notes" class="muted">{{selected.scoring.notes}}</p></div>
+                  <p v-else-if="selected.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
+                  <el-input v-else v-model="selected.attributes.scoring_criteria" type="textarea" :rows="2" placeholder="未提供可留空，不自动编造步骤分"/>
                 </template>
                 <div class="field-heading"><label>原卷区域</label><button class="text-button" @click="rebuildRegions">重建本题题框与作答区</button><span>{{selected.regions.length}} 个区域，可在左侧拖动调整</span></div>
                 <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="insertRegionImage(r.crop_url)"><Plus :size="13"/>插入题干</button><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="content">题目内容</option><option value="both">内容与作答</option><option value="recovered_visual">原卷补图</option></select></div></div></div>
@@ -311,4 +315,10 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
     <el-dialog v-model="detailDialog" :title="detail?.title||('题目 '+(detail?.number||''))" width="min(900px, 94vw)"><template v-if="detail"><div v-if="detail.questions" class="paper-detail-list"><div class="template-notice" v-if="detail.templates?.length"><ScanLine :size="17"/>原卷区域模板已保存 · 实际扫描配准尚未接入</div><article v-for="row in detail.questions"><h3>第 {{row.content.number}} 题</h3><QuestionPreview :question="row.content"/></article></div><article v-else><QuestionPreview :question="detail.content"/><div class="region-preview-list"><img v-for="r in detail.content.regions" :src="r.crop_url" alt="来源区域"/></div></article></template><template #footer><el-button @click="detailDialog=false">关闭</el-button><el-button type="primary" @click="detailDialog=false;openTask(tasks.find(t=>t.id===detail.task_id)||{id:detail.task_id,status:'committed'} as Task)">返回来源审核</el-button></template></el-dialog>
   </div>
 </template>
+
+<style>
+.rubric-list{display:flex;flex-direction:column;gap:4px;margin:4px 0 10px}
+.rubric-item{display:flex;gap:8px;align-items:flex-start;background:#f7faf5;border:1px solid #e3ebdd;border-radius:6px;padding:6px 8px;font-size:12px;line-height:1.5}
+.rubric-item strong{color:#2d6a45;min-width:40px}
+</style>
 

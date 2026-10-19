@@ -153,6 +153,32 @@ def test_question_span_splits_across_pages():
     assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.492)]
 
 
+def test_allocate_sub_scores_keeps_integer_total():
+    subs=[{'weight_pct':33.3},{'weight_pct':33.3},{'weight_pct':33.4}]
+    core.allocate_sub_scores(10,subs)
+    assert [s['score'] for s in subs]==[3,3,4]
+    assert sum(s['score'] for s in subs)==10
+
+
+def test_scoring_points_are_normalized_to_100():
+    scoring=core.normalize_scoring({'points':[{'pct':20,'criterion':'公式正确'},{'pct':30,'criterion':'结果正确'}]})
+    assert round(sum(point['pct'] for point in scoring['points']))==100
+
+
+def test_apply_rubrics_merges_points_and_allocates_integer_scores():
+    class Fake:
+        def json(self,*args):return {'items':[{'question_id':'q1','grading_method':'manual','subquestions':[
+            {'subquestion_id':'s1','weight_pct':40,'scoring':{'type':'step','points':[{'pct':100,'criterion':'正确'}]}},
+            {'subquestion_id':'s2','weight_pct':60,'scoring':{'type':'step','points':[{'pct':100,'criterion':'正确'}]}}]}]}
+    q={'id':'q1','paper_id':'p1','number':'15','stem':'','options':[],'answer':'','analysis':'','attributes':{'score':10},
+       'subquestions':[{'subquestion_id':'s1','number':'(1)','stem':'','options':[],'answer':{'value':'','analysis':''}},
+                       {'subquestion_id':'s2','number':'(2)','stem':'','options':[],'answer':{'value':'','analysis':''}}],
+       'grading_method':None,'issues':[]}
+    core.apply_rubrics([q],[{'id':'p1','title':'t'}],Fake())
+    assert [sub['score'] for sub in q['subquestions']]==[4,6]
+    assert q['subquestions'][0]['scoring']['points'][0]['pct']==100
+
+
 def _deepseek_env(monkeypatch):
     monkeypatch.setenv('LLM_DEEPSEEK_API_KEY','sk-test')
     monkeypatch.setenv('LLM_DEEPSEEK_BASE_URL','https://example.test')

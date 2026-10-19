@@ -89,6 +89,8 @@ class Question(BaseModel):
     block_ids: list[str] = Field(default_factory=list)
     regions: list[Region] = Field(default_factory=list)
     attributes: dict = Field(default_factory=dict)
+    scoring: dict = Field(default_factory=dict)
+    grading_method: str = ''
     answer: str = ''
     analysis: str = ''
     answer_source: str = 'missing'
@@ -683,6 +685,136 @@ def expand_answer_ranges(entries: list[dict], llm: LLM):
     return [child for entry in entries for child in replacements.get(entry['id'], [entry])]
 
 
+RUBRIC_PROMPT = r'''你是高考阅卷评分细则编写专家。输入是一份卷的题目、选项、答案、解析、总分和小问分。
+为每道题判断 grading_method：
+- 选择题、判断题、只需填最终答案的客观题：auto，不写评分标准。
+- 解答、计算、证明、综合、材料分析、论述、作图等需要看过程的题：manual，写分步得分点。
+manual 规则：
+1. 每个小问（没有小问则是整题）给 3–5 个得分点；每个 pct 是整数，points 的 pct 合计必须为 100。
+2. 得分点必须是可判定的动作或结果，例如“正确设出 b_n=a_n/n”“正确变形得到 b_{n+1}-b_n=1”；禁止写“过程完整”“思路清晰”这类空泛评价。
+3. 常见错误用 deductions 单列，pct 为负数；没有就空数组。
+4. notes 只写一句“其他等价解法参照给分”或必要的单位/取等说明，不写长文。
+5. 作文、论述、开放性试题用 type=band：按内容/表达/结构等维度，每个维度 pct 合计 100，bands 给四档描述；其他题用 type=step。
+6. 如果只有整题总分、没有小问分数，为每个小问给 weight_pct，合计 100；已有小问分数时也给出与之一致的 weight_pct。
+7. 文字精炼，每点不超过 30 字；不重复题干和答案，不编造。
+返回 {"items":[{"question_id":"...","grading_method":"auto|manual","subquestions":[{"subquestion_id":"...","weight_pct":40,"scoring":{"type":"step","points":[{"pct":40,"criterion":"..."}],"deductions":[],"notes":""}}],"scoring":{"type":"step","points":[...],"deductions":[],"notes":""}}]}
+没有小问的题用 scoring；有小问的题只用 subquestions。'''
+
+
+def normalize_scoring(scoring: dict) -> dict:
+    if not isinstance(scoring, dict):
+        scoring = {}
+    scoring.setdefault('type', 'step')
+    points = []
+    for item in scoring.get('points') or []:
+        try:
+            pct = float(item.get('pct'))
+        except (TypeError, ValueError):
+            continue
+        criterion = str(item.get('criterion') or '').strip()
+        if not criterion:
+            continue
+        points.append({'pct': round(pct, 3), 'criterion': criterion[:120]})
+    total = sum(p['pct'] for p in points)
+    if points and abs(total - 100) > .01:
+        for point in points:
+            point['pct'] = round(point['pct'] * 100 / total, 3)
+    deductions = []
+    for item in scoring.get('deductions') or []:
+        try:
+            pct = float(item.get('pct'))
+        except (TypeError, ValueError):
+            continue
+        criterion = str(item.get('criterion') or '').strip()
+        if criterion and pct:
+            deductions.append({'pct': round(-abs(pct), 3), 'criterion': criterion[:120]})
+    scoring['points'] = points
+    scoring['deductions'] = deductions
+    scoring['notes'] = str(scoring.get('notes') or '')[:160]
+    return scoring
+
+
+def allocate_sub_scores(total, subs: list[dict]):
+    if not total:
+        return
+    try:
+        total = float(total)
+    except (TypeError, ValueError):
+        return
+    weights = []
+    for sub in subs:
+        try:
+            weight = float(sub.get('weight_pct') or 0)
+        except (TypeError, ValueError):
+            weight = 0
+        if weight <= 0:
+            try:
+                weight = float(sub.get('score') or 0)
+            except (TypeError, ValueError):
+                weight = 0
+        weights.append(max(0, weight))
+    if not any(weights):
+        return
+    raw = [total * weight / sum(weights) for weight in weights]
+    scores = [int(value) for value in raw]
+    remainder = int(round(total)) - sum(scores)
+    order = sorted(range(len(raw)), key=lambda i: raw[i] - scores[i], reverse=True)
+    for index in order[:max(0, remainder)]:
+        scores[index] += 1
+    for sub, score in zip(subs, scores):
+        sub['score'] = score
+        sub['weight_pct'] = round(100 * score / total, 3)
+
+
+def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=None):
+    manual = [q for q in questions if q.get('grading_method') != 'auto']
+    if not manual:
+        return
+    payload = []
+    for q in manual:
+        paper = next((p for p in papers if p['id'] == q['paper_id']), {})
+        payload.append({'question_id': q['id'], 'paper': paper.get('title', ''), 'number': q['number'],
+                        'stem': q['stem'], 'options': q.get('options') or [],
+                        'answer': q.get('answer') or '', 'analysis': q.get('analysis') or '',
+                        'score': q.get('attributes', {}).get('score'),
+                        'subquestions': [{'subquestion_id': sub.get('subquestion_id'), 'number': sub['number'],
+                                          'stem': sub['stem'], 'options': sub.get('options') or [],
+                                          'answer': (sub.get('answer') or {}).get('value') or '',
+                                          'analysis': (sub.get('answer') or {}).get('analysis') or '',
+                                          'score': sub.get('score')}
+                                         for sub in q.get('subquestions') or []]})
+    if progress:
+        progress('评分标准', f'正在为 {len(payload)} 道题生成分步评分标准')
+    for offset in range(0, len(payload), 40):
+        response = llm.json(f'rubrics-{offset}', RUBRIC_PROMPT, {'questions': payload[offset:offset + 40]})
+        by_id = {q['id']: q for q in questions}
+        for item in response.get('items') or []:
+            q = by_id.get(item.get('question_id'))
+            if not q:
+                continue
+            q['grading_method'] = 'auto' if item.get('grading_method') == 'auto' else 'manual'
+            if q['grading_method'] == 'auto':
+                q['scoring'] = {'method': 'auto'}
+                for sub in q.get('subquestions') or []:
+                    sub['scoring'] = {'method': 'auto'}
+                continue
+            if q.get('subquestions'):
+                by_sub = {sub.get('subquestion_id'): sub for sub in q['subquestions']}
+                for sub_item in item.get('subquestions') or []:
+                    sub = by_sub.get(sub_item.get('subquestion_id'))
+                    if sub:
+                        sub['weight_pct'] = sub_item.get('weight_pct') or sub.get('weight_pct')
+                        sub['scoring'] = normalize_scoring(sub_item.get('scoring') or {})
+                        sub['scoring']['method'] = 'manual'
+                allocate_sub_scores(q.get('attributes', {}).get('score'), q['subquestions'])
+            else:
+                q['scoring'] = normalize_scoring(item.get('scoring') or {})
+                q['scoring']['method'] = 'manual'
+    for q in manual:
+        if q.get('grading_method') is None:
+            q['grading_method'] = 'manual'
+
+
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
     llm = LLM(folder, policy)
     papers, questions = [], []
@@ -784,6 +916,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
                         q['analysis'] = item.get('analysis', '')
                         q['analysis_source'] = 'ai_generated'
                     q['issues'].append('含AI生成内容，待人工审核')
+    apply_rubrics(questions, papers, llm, progress)
     for q in questions:
         restore_source_images(q, documents)
         normalize_question_content(q, documents)
