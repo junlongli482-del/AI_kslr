@@ -271,7 +271,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                 <div class="field-heading"><label>小问</label><button class="text-button" @click="addSubquestion"><Plus :size="13"/>新增小问</button><span>{{selected.subquestions.length}} 个小问，可手动补录漏识别内容</span></div>
                 <div v-for="(sub,index) in selected.subquestions" :key="sub.subquestion_id||index" class="subquestion">
                   <div class="subquestion-heading"><label>小问</label><el-input v-model="sub.number" class="subquestion-number"/><button class="icon-button" aria-label="删除小问" title="删除小问" @click="removeSubquestion(index)"><Trash2 :size="14"/></button></div>
-                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="sub.stem" v-model:document="selected.editor_documents['sub-'+index]" label="小问题干"/>
+                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index" v-model="sub.stem" v-model:document="selected.editor_documents['sub-'+index]" label="小问题干"/>
                   <div class="subquestion-options" v-if="sub.options.length">
                     <div v-for="(option,oi) in sub.options" :key="oi" class="subquestion-option"><span>{{option.label}}</span><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="option.content" v-model:document="selected.editor_documents[`sub-${index}-option-${oi}`]" :label="'小问选项'+option.label"/><button class="icon-button" aria-label="删除小问选项" @click="sub.options.splice(oi,1)"><X :size="13"/></button></div>
                   </div>
@@ -279,17 +279,17 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <div class="field-heading"><label>答案来源</label></div>
                   <el-select :model-value="sub.answer_entry_id||''" clearable filterable placeholder="选择小问答案" @change="(value:string)=>value&&matchSubAnswer(value,index)"><el-option v-for="entry in result.answer_entries" :key="entry.id" :value="entry.id" :label="entry.group+' · 第'+entry.number+'题'"/></el-select>
                   <div class="field-heading"><label>答案</label></div>
-                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="sub.answer.value" v-model:document="selected.editor_documents[`sub-${index}-answer`]" label="小问答案"/>
+                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-answer'" v-model="sub.answer.value" v-model:document="selected.editor_documents[`sub-${index}-answer`]" label="小问答案"/>
                   <div class="field-heading"><label>解析</label></div>
-                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="sub.answer.analysis" v-model:document="selected.editor_documents[`sub-${index}-analysis`]" label="小问解析"/>
+                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-analysis'" v-model="sub.answer.analysis" v-model:document="selected.editor_documents[`sub-${index}-analysis`]" label="小问解析"/>
                   <div class="field-heading"><label>评分标准</label><span>主观题可填，未提供留空</span></div>
                   <el-input v-model="sub.answer.scoring_criteria" type="textarea" :rows="2" placeholder="未提供可留空，不自动编造步骤分"/>
                 </div>
                 <template v-if="!selected.subquestions.length">
                   <div class="field-heading"><label>答案</label><span>与题干连续展示，可直接编辑</span></div>
-                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="selected.answer" v-model:document="selected.editor_documents.answer" label="答案编辑器"/>
+                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-single-answer'" v-model="selected.answer" v-model:document="selected.editor_documents.answer" label="答案编辑器"/>
                   <div class="field-heading"><label>解析</label></div>
-                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="selected.analysis" v-model:document="selected.editor_documents.analysis" label="解析编辑器"/>
+                  <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-single-analysis'" v-model="selected.analysis" v-model:document="selected.editor_documents.analysis" label="解析编辑器"/>
                   <div class="field-heading"><label>评分标准</label><span>主观题可填，未提供留空</span></div>
                   <el-input v-model="selected.attributes.scoring_criteria" type="textarea" :rows="2" placeholder="未提供可留空，不自动编造步骤分"/>
                 </template>

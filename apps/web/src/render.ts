@@ -73,6 +73,10 @@ export function markdownToEditable(source:string, imageLayout:Record<string,any>
 
 export function prepareEditorDocument(document:any,source:string,imageLayout:Record<string,any>={}) {
   if(!document)return markdownToEditable(source,imageLayout)
+  // A saved document without math nodes must not hide LaTeX that is present in
+  // the current markdown (older fields were plain textareas).
+  if(/\$[^$\n]+\$|\\\(|\\\[/.test(source||'')&&!JSON.stringify(document).includes('mathInline'))
+    return markdownToEditable(source,imageLayout)
   const clone=JSON.parse(JSON.stringify(document))
   const paragraphText=(node:any):string|null=>node.type==='paragraph'&&(node.content||[]).every((child:any)=>
     (child.type==='text'&&!child.marks?.length)||child.type==='hardBreak')

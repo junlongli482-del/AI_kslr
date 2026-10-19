@@ -397,6 +397,9 @@ def validate(task_id: str, payload: dict):
                 issues.append({'question_id':q['id'],'severity':'warning','message':f'小问{sub.get("number", index+1)}缺少答案，可作为待完善资源保存'})
         if q.get('subquestions') and str(q.get('answer') or '').strip():
             issue('答案必须挂到小问；有子问题的父题 answer 必须为空')
+        texts=[q.get('answer'),q.get('analysis')]+[str((s.get('answer') or {}).get(k) or '') for s in q.get('subquestions',[]) for k in ('value','analysis')]
+        if any(t and '$' not in t and re.search(r'\\[A-Za-z]+|[_^]\{',t) for t in texts):
+            issue('公式未用 $...$ 包裹，请核对','warning')
         if not q['answer'] and not q.get('subquestions'):
             issues.append({'question_id': q['id'], 'severity': 'warning', 'message': '缺少答案，可作为待完善资源保存'})
     if not result['questions']:
