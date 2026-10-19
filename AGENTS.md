@@ -21,3 +21,4 @@ Keep the user-selected full development mode: complete the authorized task and a
 - Check ownership and in-progress jobs before stopping a listener; do not kill unrelated node/java/python processes.
 - Ports are fixed; occupied ports must fail clearly rather than silently start a second app on another port.
 - Never expose `.env` credentials in logs, docs, commits, or tool output.
+- Test data: after a major P1 update, clear P1 test data before verification. Scope is `jinban` P1 tables plus this project's `data/`; never touch `p2_bank`/`p3_grading` or other projects' schemas. No historical-data compatibility work is required.
