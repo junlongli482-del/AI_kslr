@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T11:04:16+08:00",
+  "title": "Design System: 智慧教学平台 · 快速录入",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "校样绿" },
+      "primary-soft": { "role": "primary", "displayName": "浅校样绿" },
+      "background": { "role": "neutral", "displayName": "日间桌面" },
+      "surface": { "role": "neutral", "displayName": "纸白" },
+      "sidebar": { "role": "neutral", "displayName": "鼠尾草导航面" },
+      "source-ground": { "role": "neutral", "displayName": "原卷灰绿画布" },
+      "body-text": { "role": "neutral", "displayName": "深绿正文墨色" },
+      "muted": { "role": "neutral", "displayName": "次级墨色" }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "页面标题", "purpose": "常规主标题，800px 及以下为 24px。" },
+      "body": { "displayName": "界面正文", "purpose": "普通中文段落。" },
+      "question": { "displayName": "题目正文", "purpose": "题干、公式和图文，1700px 及以上为 15px。" },
+      "metadata": { "displayName": "辅助信息", "purpose": "状态、文件副说明、保存状态、区域说明和原卷提示。" }
+    },
+    "shadows": [
+      { "name": "source-paper", "value": "0 2px 10px #344b2920", "purpose": "原卷纸面。" },
+      { "name": "navigator-selected", "value": "0 1px 3px #354c2720", "purpose": "题目导航分段控件活动项。" },
+      { "name": "segmented-selected", "value": "0 1px 3px #34551c18", "purpose": "其他分段控件活动项。" },
+      { "name": "editor-focus", "value": "0 0 0 2px #e7f1de", "purpose": "富文本焦点外环。" }
+    ],
+    "motion": [
+      { "name": "loading-spin", "value": "spin 1.7s linear infinite", "purpose": "处理中图标。" },
+      { "name": "button-press", "value": "translateY(1px)", "purpose": "非禁用按钮按下反馈。" },
+      { "name": "source-focus-scroll", "value": "smooth", "purpose": "定位题目首个区域后滚动。" },
+      { "name": "reduced-css-motion", "value": "animation-duration: .01ms; transition: none; scroll-behavior: auto", "purpose": "减少动态偏好下的 CSS 覆盖；不保证覆盖显式程序 smooth 滚动。" }
+    ],
+    "breakpoints": [
+      { "name": "mobile-max", "value": "800px" },
+      { "name": "compact-desktop-max", "value": "1100px" },
+      { "name": "wide-desktop-min", "value": "1700px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "文本操作",
+      "kind": "button",
+      "refersTo": "text-button",
+      "description": "工作面中的轻量操作，hover 加深并加下划线。",
+      "html": "<button class=\"ds-text-button\">添加选项</button>",
+      "css": ".ds-text-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:4px 0;border:0;background:transparent;color:#386845;font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;font-size:12px;cursor:pointer}.ds-text-button:hover{color:#1d3d25;text-decoration:underline;text-underline-offset:4px}.ds-text-button:focus-visible{outline:2px solid #3f826a;outline-offset:4px}.ds-text-button:active:not(:disabled){transform:translateY(1px)}.ds-text-button:disabled{cursor:not-allowed;opacity:.45}"
+    },
+    {
+      "name": "待审核状态",
+      "kind": "chip",
+      "refersTo": "status-pending",
+      "description": "非交互状态标签，以颜色配合状态文字。",
+      "html": "<span class=\"ds-status-pending\">待审核</span>",
+      "css": ".ds-status-pending{display:inline-flex;gap:6px;align-items:center;border-radius:4px;padding:4px 8px;background:#faf2df;color:#98752c;font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;font-size:11px;white-space:nowrap}"
+    },
+    {
+      "name": "主导航",
+      "kind": "nav",
+      "refersTo": "navigation-active",
+      "description": "鼠尾草色活动导航；审核时侧栏压缩为图标栏。",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-item ds-nav-active\" aria-current=\"page\">快速录入</button><button class=\"ds-nav-item\">题库</button></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;gap:7px;background:#f0f2ed;padding:18px}.ds-nav-item{display:flex;align-items:center;gap:13px;border:0;background:none;padding:13px 15px;text-align:left;border-radius:7px;color:#5e7066;font-family:'Noto Sans SC','Microsoft YaHei',sans-serif;font-size:14px;font-weight:500;cursor:pointer}.ds-nav-item:hover{background:#e5eae1}.ds-nav-item.ds-nav-active{background:#dce8da;color:#214d39}.ds-nav-item:focus-visible{outline:2px solid #3f826a;outline-offset:4px}.ds-nav-item:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "富文本编辑面",
+      "kind": "input",
+      "refersTo": "rich-editor",
+      "description": "可编辑预览展示实际边界与焦点样式；正式编辑器由 Vue 组件提供。",
+      "html": "<div class=\"ds-editor\"><div class=\"ds-editor-toolbar\">题干</div><div class=\"ds-editor-body\" contenteditable=\"true\" role=\"textbox\" aria-label=\"题干编辑器预览\">对照原卷，核对题干内容。</div></div>",
+      "css": ".ds-editor{border:1px solid #e0e6d9;border-radius:5px;background:#fff;overflow:hidden;font-family:'Noto Sans SC','Microsoft YaHei',sans-serif}.ds-editor:focus-within{border-color:#85a671;box-shadow:0 0 0 2px #e7f1de}.ds-editor-toolbar{border-bottom:1px solid #ecf0e6;background:#fafbf8;padding:4px 7px;color:#758569;font-size:10px}.ds-editor-body{padding:15px 16px;outline:0;min-height:110px;font-size:14px;line-height:1.9;color:#263d33;overflow-wrap:anywhere}"
+    }
+  ],
+  "narrative": {
+    "northStar": "编辑校样台",
+    "overview": "绿色与鼠尾草色的 Operate 工作台，以原卷、题目导航与可视化编辑器支持核对。桌面为三栏，800px 及以下默认显示题号导航与编辑器，由对照原卷按钮展开上方原卷。定位按选中题目的首个区域切换文档和物理页，再缩放并滚动至题框。",
+    "keyCharacteristics": ["绿色行动色、鼠尾草背景、白色编辑面", "原卷与可编辑内容持续对照", "细边框与色差优先，阴影局部使用", "待审核、处理中、失败与已入库明确区分"],
+    "rules": [{ "name": "状态证据规则", "body": "状态词、图标与颜色共同传达结果；规则检查通过不等于识别内容准确。", "section": "colors" }],
+    "dos": ["Do 保留绿色／鼠尾草编辑校样台身份。", "Do 保留来源、状态文字与人工审核边界。", "Do 按实际断点处理三栏与移动原卷显隐。", "Do 以源码为准同步 tokens 和 sidecar。"],
+    "donts": ["Don't 用装饰渐变或大面积悬浮卡片替代连续工作面。", "Don't 把待审核或未配置内容显示为已验证事实。", "Don't 用 JSON 输入替代可视化编辑。", "Don't 将行为描述变成未实现功能承诺。"]
+  }
+}

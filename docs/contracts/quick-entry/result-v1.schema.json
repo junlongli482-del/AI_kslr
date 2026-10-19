@@ -1,0 +1,255 @@
+{
+  "$defs": {
+    "Question": {
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9_-]{1,100}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "paper_id": {
+          "title": "Paper Id",
+          "type": "string"
+        },
+        "number": {
+          "title": "Number",
+          "type": "string"
+        },
+        "stem": {
+          "title": "Stem",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Options",
+          "type": "array"
+        },
+        "subquestions": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Subquestions",
+          "type": "array"
+        },
+        "block_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Block Ids",
+          "type": "array"
+        },
+        "regions": {
+          "items": {
+            "$ref": "#/$defs/Region"
+          },
+          "title": "Regions",
+          "type": "array"
+        },
+        "attributes": {
+          "additionalProperties": true,
+          "title": "Attributes",
+          "type": "object"
+        },
+        "answer": {
+          "default": "",
+          "title": "Answer",
+          "type": "string"
+        },
+        "analysis": {
+          "default": "",
+          "title": "Analysis",
+          "type": "string"
+        },
+        "answer_source": {
+          "default": "missing",
+          "title": "Answer Source",
+          "type": "string"
+        },
+        "analysis_source": {
+          "default": "missing",
+          "title": "Analysis Source",
+          "type": "string"
+        },
+        "answer_entry_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Answer Entry Id"
+        },
+        "review_status": {
+          "default": "pending",
+          "title": "Review Status",
+          "type": "string"
+        },
+        "issues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Issues",
+          "type": "array"
+        },
+        "editor_documents": {
+          "additionalProperties": true,
+          "title": "Editor Documents",
+          "type": "object"
+        },
+        "image_layout": {
+          "additionalProperties": true,
+          "title": "Image Layout",
+          "type": "object"
+        },
+        "options_layout": {
+          "additionalProperties": true,
+          "title": "Options Layout",
+          "type": "object"
+        },
+        "excluded_image_urls": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Excluded Image Urls",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "paper_id",
+        "number",
+        "stem"
+      ],
+      "title": "Question",
+      "type": "object"
+    },
+    "Region": {
+      "properties": {
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_index": {
+          "minimum": 0,
+          "title": "Page Index",
+          "type": "integer"
+        },
+        "bbox": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "purpose": {
+          "default": "content",
+          "title": "Purpose",
+          "type": "string"
+        },
+        "order": {
+          "default": 0,
+          "title": "Order",
+          "type": "integer"
+        },
+        "crop_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Crop Url"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_index",
+        "bbox"
+      ],
+      "title": "Region",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "default": "quick-entry-v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "task_id": {
+      "title": "Task Id",
+      "type": "string"
+    },
+    "papers": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Papers",
+      "type": "array"
+    },
+    "questions": {
+      "items": {
+        "$ref": "#/$defs/Question"
+      },
+      "title": "Questions",
+      "type": "array"
+    },
+    "documents": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Documents",
+      "type": "array"
+    },
+    "answer_entries": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Answer Entries",
+      "type": "array"
+    },
+    "unmatched_answer_entry_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Unmatched Answer Entry Ids",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "processing_metadata": {
+      "additionalProperties": true,
+      "title": "Processing Metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "task_id",
+    "papers",
+    "questions",
+    "documents"
+  ],
+  "title": "Result",
+  "type": "object"
+}

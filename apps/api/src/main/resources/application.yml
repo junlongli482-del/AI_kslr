@@ -1,0 +1,24 @@
+server:
+  address: 127.0.0.1
+  port: 8090
+spring:
+  application:
+    name: quick-entry-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:55436/quickentry}
+    username: ${DB_USER:quickentry}
+    password: ${DB_PASSWORD:local-development-only}
+  flyway:
+    schemas: jinban
+    default-schema: jinban
+    create-schemas: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 600MB
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+quick-entry:
+  data-dir: ${QUICK_ENTRY_DATA_DIR:../../data}
+  ai-url: ${AI_SERVICE_URL:http://127.0.0.1:8091}
