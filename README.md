@@ -2,6 +2,16 @@
 
 本地单操作员MVP。识别真实资料，AI生成结构化题目，原卷对照审核、公式可视化编辑、区域切割并保存至题库和试卷库。
 
+## 本机恢复状态（2026-10-19）
+
+- 独立源码目录：`C:\Workspace\projects\deepseekharness\快速录入和智能批阅工作区\P1-v1-交接-03343c3\AI_kslr-v1`，来自提交 `03343c3`。
+- 端口：Vue **1001**、Java **1002**、Python **1003**；数据库使用共享 `dev-env` 的 PostgreSQL **55436**，schema `jinban`。
+- 端口写在根目录 `.env` 的 `WEB_PORT` / `API_PORT` / `AI_PORT`，`scripts\dev.cmd` 会读取；前端代理随 `API_PORT` 变化。
+- 只配置 DeepSeek 一个真实模型渠道；LOW/STABLE 等其他付费渠道密钥未写入本目录 `.env`，新建任务默认 `deepseek`，不使用 `compare`。
+- 不要执行本 README 下方 `deploy/compose.yaml` 的独立数据库启动：共享 `jinban-dev-postgres` 已占用 55436。`scripts/start.ps1` 是旧的 jar 启动路径，日常请用 `scripts\dev.cmd`。
+- 恢复检查、数据库校验、测试通过与未通过项见 `docs/handoff/quick-entry/第一版恢复检查-20261019.md`。
+
+
 ## 启动
 
 开发环境：Java 21、Node.js 22、pnpm 11.25、Python 3.12、Docker。已有配置和构建时：
@@ -10,7 +20,7 @@
 powershell -ExecutionPolicy Bypass -File scripts/start.ps1
 ```
 
-打开 http://127.0.0.1:5173 。Java API为8090，内部AI服务为8091，PostgreSQL为55436。所有应用仅绑定本机。
+打开 http://127.0.0.1:1001 。Java API为1002，内部AI服务为1003，PostgreSQL为55436。端口由 `.env` 的 `WEB_PORT`/`API_PORT`/`AI_PORT` 决定；所有应用仅绑定本机。
 
 首次安装：
 
@@ -31,13 +41,13 @@ powershell -ExecutionPolicy Bypass -File scripts/start.ps1 -Build
 停止同端口的旧服务、确认 Docker 数据库已运行后，在 CMD 中执行：
 
 ```cmd
-cd /d "C:\Users\LJL\Documents\ChatGPT\只会教学平台开发"
+cd /d "C:\Workspace\projects\deepseekharness\快速录入和智能批阅工作区\P1-v1-交接-03343c3\AI_kslr-v1"
 scripts\dev.cmd
 ```
 
 它打开三个有日志的 CMD 窗口：Vue 使用 Vite HMR，Python 使用 Uvicorn reload，Java 使用 `spring-boot:run` 从源码编译并运行，**不打包 jar、不跑完整测试**。
 
-- 改 Vue / CSS：通常自动更新，无需重启前端。前端固定5173，端口占用时明确报错，不静默切换到另一个端口。
+- 改 Vue / CSS：通常自动更新，无需重启前端。前端固定 `WEB_PORT`（当前1001），端口占用时明确报错，不静默切换到另一个端口。
 - 改 Python：自动重载。**不要在实际识别任务执行中重载处理服务**；线程任务会被中断，完成的缓存保留，可在页面恢复任务。
 - 改 Java：当前没有 DevTools 和持续编译器，需要在 Java 窗口 Ctrl+C 后执行 `scripts\dev.cmd api`。无需 package，但 Java 源码仍需编译。
 - 改 `.env`：重启读取该配置的 Python / Java 服务；不是文件修改后所有进程都立即生效。

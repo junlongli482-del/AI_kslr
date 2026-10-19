@@ -35,6 +35,7 @@ public class TaskService {
     }
     String encode(Object o){try{return json.writeValueAsString(o);}catch(Exception e){throw new IllegalArgumentException("数据无法编码");}}
     public Path dataRoot(){return data;}
+    RestClient aiClient(){return ai;}
     public Map<String,Object> require(String id){var t=store.task(id);if(t==null)throw new ResponseStatusException(NOT_FOUND,"任务不存在");return t;}
     Map<String,Object> cost(String id){
         var out=new HashMap<String,Object>(); out.put("currency","CNY"); out.put("mineru_amount",0.0); out.put("mineru_status","free_service");

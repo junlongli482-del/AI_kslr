@@ -36,13 +36,13 @@ public class QuickEntryController {
         if(!Files.isRegularFile(p))throw new ResponseStatusException(CONFLICT,"该模型尚未完成");return service.parse(Files.readString(p));
     }
     @GetMapping("/quick-entry/settings/concurrency") public Object concurrency(){
-        return service.ai.get().uri("/settings/concurrency").retrieve().body(JsonNode.class);
+        return service.aiClient().get().uri("/settings/concurrency").retrieve().body(JsonNode.class);
     }
     @PutMapping("/quick-entry/settings/concurrency") public Object concurrency(@RequestBody JsonNode body){
         var count=body.get("max_concurrency");
         if(count==null||!count.isIntegralNumber()||!count.canConvertToInt()||count.asInt()<0)
             throw new ResponseStatusException(BAD_REQUEST,"并发数必须是非负整数，0 表示无本地上限");
-        return service.ai.put().uri("/settings/concurrency").body(body).retrieve().body(JsonNode.class);
+        return service.aiClient().put().uri("/settings/concurrency").body(body).retrieve().body(JsonNode.class);
     }
     @PostMapping("/quick-entry/tasks/{id}/images") public Object image(@PathVariable String id,@RequestParam("file")MultipartFile file)throws Exception{
         service.require(id);
