@@ -80,7 +80,7 @@ def repair_assets(question, documents, data, task_id):
             if key in seen:return ''
             seen.add(key);return m[0]
         return IMAGE.sub(picture,s)
-    for field in ['stem','answer','analysis']:question[field]=text(question.get(field,''))
+    for field in ['stem','answer','analysis']:question[field]=text(question.get(field) or '')
     for item in question.get('options',[]):item['content']=text(item.get('content',''))
     for item in question.get('subquestions',[]):
         item['stem']=text(item.get('stem',''))
@@ -161,11 +161,11 @@ def apply_layout(question, documents):
         s=question.get(field,'')
         def caption(m):
             meta=layout.get(m[2],{});c=meta.get('caption',[])
-            c=' '.join(c) if isinstance(c,list) else str(c or '')
+            c=' '.join(str(x) for x in c if x) if isinstance(c,list) else str(c or '')
             return f'![{c}]({m[2]})' if c and not m[1] else m[0]
         s=IMAGE.sub(caption,s)
         for u,m in layout.items():
-            c=m.get('caption',[]);c=' '.join(c) if isinstance(c,list) else str(c or '')
+            c=m.get('caption',[]);c=' '.join(str(x) for x in c if x) if isinstance(c,list) else str(c or '')
             if c and u in s:s=re.sub(r'(?m)^\s*'+re.escape(c)+r'\s*$', '',s)
         # Adjacent figure groups retain row order. Text in between remains untouched.
         matches=list(IMAGE.finditer(s))
@@ -191,7 +191,8 @@ def apply_layout(question, documents):
     for o in question.get('options',[]):
         for _,u in IMAGE.findall(o.get('content','')):
             if u in layout and u not in converted:
-                layout[u]['render_width_pct']=min(100,layout[u]['render_width_pct']*cols);converted.add(u)
+                if layout[u].get('render_width_pct') is not None:layout[u]['render_width_pct']=min(100,layout[u]['render_width_pct']*cols)
+                converted.add(u)
     def editor(node):
         if not isinstance(node,dict):return
         if node.get('type')=='image':
@@ -201,7 +202,7 @@ def apply_layout(question, documents):
             if not attrs.get('manualSize') and m.get('render_width_pct'):
                 attrs['widthPct']=m['render_width_pct'];attrs['layoutVersion']=VERSION
             c=m.get('caption',[])
-            if c:attrs['caption']=' '.join(c) if isinstance(c,list) else c
+            if c:attrs['caption']=' '.join(str(x) for x in c if x) if isinstance(c,list) else c
         for child in node.get('content',[]):editor(child)
     for doc in question.get('editor_documents',{}).values():editor(doc)
 

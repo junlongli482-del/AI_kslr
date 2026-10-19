@@ -183,3 +183,15 @@ def test_flat_subanswer_is_upgraded_and_parent_answer_is_rejected():
     q['answer']='A'
     with pytest.raises(ValueError,match='答案必须挂到小问'):
         core.normalize_model_question(q)
+
+
+def test_null_answer_fields_do_not_crash_source_image_scan():
+    q={'stem':'s','answer':None,'analysis':None,'options':[],'subquestions':[{'stem':'x','answer':None}]}
+    assert core.restore_source_images(q,[]) is None
+
+
+def test_option_image_without_source_metadata_does_not_crash_layout():
+    q={'stem':'','answer':'','analysis':'','options':[{'label':'A','content':'![](/api/assets?key=k.png)'}],
+       'image_layout':{'/api/assets?key=k.png':{}},'subquestions':[],'regions':[],'editor_documents':{}}
+    core.apply_layout(q,[{'id':'d','asset_metadata':{},'pages':[],'blocks':[]}])
+    assert q['image_layout']['/api/assets?key=k.png']=={}

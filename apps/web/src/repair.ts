@@ -13,7 +13,8 @@ export function repairQuestionDraft(q:Question, documents:Document[]) {
   q.editor_documents??={}
   const fields:[string,string][]=[['stem',q.stem],['answer',q.answer],['analysis',q.analysis],
     ...q.options.map((o,i)=>[`option-${i}`,o.content] as [string,string]),
-    ...q.subquestions.map((s,i)=>[`sub-${i}`,s.stem] as [string,string])]
+    ...q.subquestions.map((s,i)=>[`sub-${i}`,s.stem] as [string,string]),
+    ...q.subquestions.flatMap((s,i)=>[[`sub-${i}-answer`,s.answer?.value||''],[`sub-${i}-analysis`,s.answer?.analysis||'']] as [string,string][])]
   for(const [field,source] of fields){
     if(q.editor_documents[field])q.editor_documents[field]=prepareEditorDocument(q.editor_documents[field],source,q.image_layout)
   }

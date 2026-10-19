@@ -32,9 +32,22 @@ def requested_output_limit():
 
 def save(path: Path, data: Any):
     path.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(data, ensure_ascii=False, indent=2)
     temp = path.with_suffix(path.suffix + '.tmp')
-    temp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
-    temp.replace(path)
+    temp.write_text(text, encoding='utf-8')
+    # Java polls state.json while Python replaces it; Windows can reject the
+    # atomic replace for a few milliseconds. Retry instead of failing the task.
+    for attempt in range(8):
+        try:
+            temp.replace(path)
+            return
+        except PermissionError:
+            time.sleep(0.04 * (attempt + 1))
+    path.write_text(text, encoding='utf-8')
+    try:
+        temp.unlink()
+    except OSError:
+        pass
 
 
 def read(path: Path):
@@ -142,7 +155,7 @@ def _span_text(node):
         return ''
     if 'content' in node and isinstance(node['content'], str):
         return node['content']
-    return ''.join(_span_text(x) for x in node.get('spans', node.get('lines', node.get('blocks', []))))
+    return ''.join(str(_span_text(x) or '') for x in node.get('spans', node.get('lines', node.get('blocks', []))))
 
 
 def normalize(source: Path, folder: Path, document_id: str, role: str, name: str):
@@ -209,7 +222,7 @@ def normalize(source: Path, folder: Path, document_id: str, role: str, name: str
                 text += f'\n![]({assets.get(Path(b["img_path"]).name, "")})'
             captions = b.get('image_caption', []) + b.get('table_caption', [])
             if captions:
-                text += '\n' + '\n'.join(captions)
+                text += '\n' + '\n'.join(str(c) for c in captions if c)
             blocks.append({'id': f'{document_id}-b{len(blocks)}', 'page_index': pi,
                            'bbox': [float(x) / 1000 for x in bbox], 'kind': b.get('type', 'text'),
                            'text': text, 'order': len(blocks)})
@@ -244,9 +257,10 @@ def enrich_asset_metadata(doc: dict):
 
 def restore_source_images(question: dict, documents: list[dict]):
     """Restore pictures from owned OCR blocks when the model omitted their references."""
-    content = '\n'.join([question.get(k, '') for k in ('stem', 'answer', 'analysis')]
-                        + [o.get('content', '') for o in question.get('options', [])]
-                        + [s.get('stem', '') for s in question.get('subquestions', [])])
+    content = '\n'.join([str(question.get(k) or '') for k in ('stem', 'answer', 'analysis')]
+                        + [str(o.get('content') or '') for o in question.get('options', [])]
+                        + [str(s.get('stem') or '') for s in question.get('subquestions', [])]
+                        + [str((s.get('answer') or {}).get(k) or '') for s in question.get('subquestions', []) for k in ('value', 'analysis')])
     excluded = set(question.get('excluded_image_urls', []))
     for doc in documents:
         enrich_asset_metadata(doc)
@@ -557,13 +571,13 @@ attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5或nu
 ANSWER_PROMPT = r'''你是试卷答案整理专家。输入为完整资料（可能含多张试卷、无关章节答案、集中答案或随题答案）。
 提取所有答案条目，依据标题、阅读顺序及上下文区分分组。不要把不同试卷相同题号混在一起。
 返回 {"entries":[{"id":"a1","group":"所属试卷/章节标题","number":"题号","answer":"Markdown答案","analysis":"Markdown解析，没有则空","block_ids":[],"incomplete":false}]}。
-每个顶层题号必须单独一条！即使同一行写1.D 2.A 3.B，也必须输出三条，禁止number为1-3或把多道题合成一条。每题的小问可以合在同一条目中。保持数学LaTeX、图片和表格，图片引用用原有完整URL。
+每个顶层题号必须单独一条！即使同一行写1.D 2.A 3.B，也必须输出三条，禁止number为1-3或把多道题合成一条。有小问的题必须按小问拆成独立条目：源资料写“17.(1)…(2)…”时输出两条，number分别为“17(1)”“17(2)”，subquestion_number分别为“(1)”“(2)”；禁止把多个小问合并成一条，禁止把整段答案只塞给第一个小问。确实拆不开时整段保留一条并设incomplete=true。保持数学LaTeX、图片和表格，图片引用用原有完整URL。
 略、图略、理由略必须保留并设incomplete=true，不补编。没有答案的题干不是答案条目。'''
 
 MATCH_PROMPT = r'''将答案条目匹配到题目。输入包括多张试卷及全部候选答案（可能含不相关资料）。
 结合卷标题、题号、小问、题意、答案类型判断，同号不代表同题。无法确定就不匹配。
 返回 {"matches":[{"question_id":"...","subquestion_id":"...或null","answer_entry_id":"...","reason":"..."}],"unmatched_entry_ids":[]}。
-有小问的题组/大题必须优先按小问编号匹配到独立答案；没有小问目标时才匹配父题。不要生成答案，不修改原资料。每个题目或小问最多采用一个完整条目，条目不跨不同题目重复采用。'''
+有小问的题组/大题必须优先按小问编号匹配到独立答案；没有小问目标时才匹配父题。答案条目带subquestion_number时按它匹配；条目内容明显含多个小问（如(1)(2)）却只有一个subquestion_number或没有，不得强行塞给某一小问，放入unmatched。不要生成答案，不修改原资料。每个题目或小问最多采用一个完整条目，条目不跨不同题目重复采用。'''
 
 
 def compact_document(doc: dict):
@@ -705,6 +719,8 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             source='answer_file' if next(d for d in documents if d['id'] == e['document_id'])['role'] == 'answer' else 'original'
             sub_id=m.get('subquestion_id')
             sub=next((s for s in q.get('subquestions', []) if s.get('subquestion_id')==sub_id or (not s.get('subquestion_id') and s.get('number')==sub_id)),None) if sub_id else None
+            if sub is None and q.get('subquestions'):
+                continue
             target=sub if sub is not None else q
             if target.get('answer_entry_id'):
                 continue
