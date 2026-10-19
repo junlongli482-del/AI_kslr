@@ -31,7 +31,7 @@ public class QuickEntryController {
         return Files.isRegularFile(p)?service.parse(Files.readString(p)):Map.of("candidates",List.of());
     }
     @GetMapping("/quick-entry/tasks/{id}/candidates/{channel}") public Object candidate(@PathVariable String id,@PathVariable String channel)throws Exception{
-        service.require(id);if(!Set.of("low","stable","deepseek").contains(channel))throw new ResponseStatusException(BAD_REQUEST,"未知候选渠道");
+        service.require(id);if(!Set.of("low","stable","deepseek","claude","gemini","minimax","glm").contains(channel))throw new ResponseStatusException(BAD_REQUEST,"未知候选渠道");
         Path p=service.dataRoot().resolve("tasks").resolve(id).resolve("candidates").resolve(channel).resolve("result.json");
         if(!Files.isRegularFile(p))throw new ResponseStatusException(CONFLICT,"该模型尚未完成");return service.parse(Files.readString(p));
     }
@@ -87,6 +87,12 @@ public class QuickEntryController {
     @GetMapping("/quick-entry/tasks/{id}/review") public Object review(@PathVariable String id){return Map.of("result",service.review(id),"revision",service.require(id).get("revision"));}
     @PutMapping("/quick-entry/tasks/{id}/review") public Object save(@PathVariable String id,@RequestBody JsonNode body){return service.saveReview(id,body.path("expected_revision").asInt(-1),body.path("result"));}
     @PostMapping("/quick-entry/tasks/{id}/validate") public Object validate(@PathVariable String id,@RequestBody(required=false)JsonNode body){return service.validate(id,body==null?service.review(id):body);}
+    @PostMapping("/quick-entry/tasks/{id}/region-recognize") public Object regionRecognize(@PathVariable String id,@RequestBody JsonNode body){
+        var request=body.deepCopy();
+        if(!request.isObject())throw new ResponseStatusException(BAD_REQUEST,"区域识别请求必须是JSON对象");
+        ((com.fasterxml.jackson.databind.node.ObjectNode)request).put("task_id",id);
+        return service.regionRecognize(id,request);
+    }
     @PostMapping("/quick-entry/tasks/{id}/commit") public Object commit(@PathVariable String id,@RequestBody JsonNode body){return service.commit(id,body.path("revision").asInt(-1));}
     @GetMapping("/assets") public ResponseEntity<Resource> asset(@RequestParam String key)throws Exception{
         Path path=service.dataRoot().resolve(key).normalize();

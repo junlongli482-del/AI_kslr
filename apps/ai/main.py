@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import base64
+import io
 import json
 import os
 import re
@@ -13,6 +15,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse, unquote
 
 import httpx
+from PIL import Image
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
@@ -21,6 +24,7 @@ from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, re
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
+from channels import channels as configured_channels, timeout as model_timeout
 
 load_dotenv(ROOT / '.env')
 
@@ -37,6 +41,15 @@ settings_path = DATA / 'settings' / 'processing.json'
 initial_limit = (read(settings_path).get('max_concurrency', 0) if settings_path.exists()
                  else int(os.getenv('QUICK_ENTRY_MAX_CONCURRENCY', '0')))
 scheduler = TaskScheduler(max(0, initial_limit))
+
+
+class RegionRecognizeRequest(BaseModel):
+    task_id: str
+    question_id: str
+    region_index: int = Field(ge=0)
+    channel: str = 'deepseek'
+    target: str = 'subquestion'
+    subquestion_index: int | None = Field(default=None, ge=0)
 
 
 class ProcessRequest(BaseModel):
@@ -161,6 +174,66 @@ def recognize(source, archive, folder, name, progress):
     raise TimeoutError('MinerU尚未完成，可重试恢复查询')
 
 
+@app.post('/region-recognize')
+def region_recognize(request: RegionRecognizeRequest):
+    folder = task_folder(request.task_id)
+    result_path = folder / 'result.json'
+    if not result_path.exists():
+        raise HTTPException(404, '任务结果不存在')
+    result = read(result_path)
+    question = next((q for q in result.get('questions', []) if q.get('id') == request.question_id), None)
+    if not question:
+        raise HTTPException(404, '题目不存在')
+    regions = question.get('regions', [])
+    if request.region_index >= len(regions):
+        raise HTTPException(400, '区域索引无效')
+    region = regions[request.region_index]
+    doc = next((d for d in result.get('documents', []) if d.get('id') == region.get('document_id')), None)
+    if not doc:
+        raise HTTPException(400, '区域文档不存在')
+    page = doc.get('pages', [])[region.get('page_index', -1)]
+    source = (DATA / page['image_key']).resolve()
+    if not source.is_file():
+        raise HTTPException(404, '原卷页面不存在')
+    with Image.open(source) as image:
+        w, h = image.size
+        box = (int(region['bbox'][0] * w), int(region['bbox'][1] * h), int(region['bbox'][2] * w), int(region['bbox'][3] * h))
+        crop = image.crop(box).convert('RGB')
+        stream = io.BytesIO()
+        crop.save(stream, format='PNG')
+        encoded = base64.b64encode(stream.getvalue()).decode()
+    providers = {p['id'].lower(): p for p in configured_channels()}
+    provider = providers.get(request.channel.lower())
+    if not provider:
+        raise HTTPException(400, '未配置该模型渠道')
+    prompt = '识别这块试卷区域，返回一个JSON对象：{"stem":"","options":[{"label":"A","content":""}],"subquestions":[],"answer":"","analysis":""}。保留原文、公式用LaTeX、表格用Markdown；不要猜测看不清的内容。'
+    system = prompt + ' 只输出有效JSON，不要代码围栏。'
+    protocol = provider.get('protocol', 'chat')
+    if protocol != 'chat':
+        raise HTTPException(400, '区域视觉识别当前优先支持 chat 视觉渠道')
+    endpoint = provider['base'] + '/chat/completions'
+    body = {'model': provider['model'], 'messages': [
+        {'role': 'system', 'content': system},
+        {'role': 'user', 'content': [
+            {'type': 'text', 'text': '请识别这张试卷区域。'},
+            {'type': 'image_url', 'image_url': {'url': 'data:image/png;base64,' + encoded}},
+        ]},
+    ]}
+    with httpx.Client(timeout=model_timeout()) as client:
+        response = client.post(endpoint, headers={'Authorization': 'Bearer ' + provider['key'], 'Content-Type': 'application/json'}, json=body)
+        response.raise_for_status()
+        payload = response.json()
+    content = payload.get('choices', [{}])[0].get('message', {}).get('content', '')
+    content = re.sub(r'^```(?:json)?\s*|\s*```$', '', content.strip())
+    try:
+        parsed = json.loads(content)
+    except json.JSONDecodeError as exc:
+        raise HTTPException(502, '模型返回不是有效JSON') from exc
+    return {'question_id': request.question_id, 'region_index': request.region_index,
+            'target': request.target, 'subquestion_index': request.subquestion_index,
+            'channel': request.channel, 'result': parsed}
+
+
 @app.get('/health')
 def health():
     return {'status': 'ok', 'mineru_configured': bool(os.getenv('MINERU_API_KEY')),
@@ -265,6 +338,7 @@ def validate(task_id: str, payload: dict):
     blocks = {b['id'] for d in result['documents'] for b in d.get('blocks',[])}
     entries = {e['id'] for e in result['answer_entries']}
     answer_uses = set()
+    seen_subquestion_ids = set()
     seen_numbers = set()
     for q in result['questions']:
         def issue(message,severity='error'):
@@ -309,7 +383,19 @@ def validate(task_id: str, payload: dict):
             crop_regions(q, result['documents'], task_folder(task_id))
         except (ValueError,KeyError,IndexError,OSError) as exc:
             issue('题框或页面资产无效，请修正坐标和页面引用')
-        if not q['answer']:
+        for index, sub in enumerate(q.get('subquestions') or []):
+            sub_id=sub.get('subquestion_id') or f"{q['id']}-sub-{index+1}"
+            sub['subquestion_id']=sub_id
+            if sub_id in seen_subquestion_ids: issue('小问ID重复')
+            seen_subquestion_ids.add(sub_id)
+            if sub.get('answer_entry_id'):
+                if sub['answer_entry_id'] not in entries: issue(f'小问{sub.get("number", index+1)}关联答案条目不存在')
+                if sub['answer_entry_id'] in answer_uses: issue('同一答案被重复关联至多个题目或小问')
+                answer_uses.add(sub['answer_entry_id'])
+            if not sub.get('stem','').strip(): issue(f'小问{sub.get("number", index+1)}题干为空','warning')
+            if not sub.get('answer'):
+                issues.append({'question_id':q['id'],'severity':'warning','message':f'小问{sub.get("number", index+1)}缺少答案，可作为待完善资源保存'})
+        if not q['answer'] and not q.get('subquestions'):
             issues.append({'question_id': q['id'], 'severity': 'warning', 'message': '缺少答案，可作为待完善资源保存'})
     if not result['questions']:
         issues.append({'severity': 'error', 'message': '没有可入库题目'})

@@ -109,6 +109,10 @@ public class TaskService {
         require(id);
         return ai.post().uri("/tasks/{id}/validate",id).body(draft).retrieve().body(JsonNode.class);
     }
+    public JsonNode regionRecognize(String id,JsonNode request){
+        require(id);
+        return ai.post().uri("/region-recognize").body(request).retrieve().body(JsonNode.class);
+    }
     public Map<String,Object> saveReview(String id,int revision,JsonNode draft){
         var previous=require(id);
         try{if(previous.get("review")!=null){Path history=data.resolve("tasks").resolve(id).resolve("review-history");Files.createDirectories(history);Path snapshot=history.resolve("revision-"+revision+".json");if(!Files.exists(snapshot))Files.writeString(snapshot,previous.get("review").toString());}}catch(Exception e){throw new ResponseStatusException(INTERNAL_SERVER_ERROR,"旧审核稿备份失败，未覆盖，请重试");}

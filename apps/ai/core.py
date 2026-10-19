@@ -85,6 +85,7 @@ class Question(BaseModel):
     issues: list[str] = Field(default_factory=list)
     editor_documents: dict = Field(default_factory=dict)
     image_layout: dict = Field(default_factory=dict)
+    tables: list[dict] = Field(default_factory=list)
     options_layout: dict = Field(default_factory=dict)
     excluded_image_urls: list[str] = Field(default_factory=list)
     asset_repairs: list[dict] = Field(default_factory=list)
@@ -537,10 +538,12 @@ class LLM:
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
 输出 {"papers":[{"id":"p1","title":"...","metadata":{}}],"questions":[...]}
-questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{number,stem}]，block_ids，attributes，image_layout。
+questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer,analysis,answer_source,analysis_source,answer_entry_id,score,block_ids}]，block_ids，attributes，image_layout，tables。
+题组规则（尤其适用于地理材料选择题）：一则材料、图表或区域背景后连续出现多个编号小题时，必须输出为一个顶层复合题，不得把材料和每个选择小题拆成多个顶层question。父题的stem保留完整材料和图表，subquestions逐项保留每个小题的题干、选项、答案、解析和分值；attributes.question_type使用“题组”或“复合题”。父题block_ids必须覆盖材料、图表和全部小题；跨栏跨页时保留所有块及顺序。
+题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时放到父题级并标记 issues=["subquestion_unmatched"]，禁止猜分配。
 image_layout按输入完整图片URL索引，每项包含caption（图下注文本）、group_id（同排图片组）、row、column；尺寸和bbox引用输入来源，不得编造。甲乙丙/图1图2属于图注，绑定对应图片，不散落成独立正文。保留输入原有行列和小间距；物理坐标由系统校验换算，题框不是显示尺寸容器。
 attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5或null),ability_dimensions[],response_form[],score(数值或null),year,region,source_type,background；无依据为null。
-原图引用必须使用资料里给出的完整 /api/assets?key=... URL，不得猜图片名。保留同行多图：同行用同一行的Markdown图片，图形选项正确关联A/B/C/D。表格使用Markdown或安全HTML表格。
+原图引用必须使用资料里给出的完整 /api/assets?key=... URL，不得猜图片名。所有图片必须以标准Markdown图片输出，禁止把图片URL作为普通文本输出。保留同行多图：同行用同一行的Markdown图片，图形选项正确关联A/B/C/D。表格使用Markdown或安全HTML表格，并输出tables结构（每项含structure_status=structured|partial|image_only、asset_key或来源图片URL）。同一表格若structure_status=structured，题干/选项中不要重复引用对应原始表格图片；partial可同时保留，image_only必须保留原图。
 题干和选项不要重复，小问保留原编号与层级。题库内容不包括页眉页脚密封线。block_ids必须来自输入，同一道题的跨页和跨栏内容全选；跨题共享块允许引用并在issues说明。
 忽略答案区中的内容作为题目，答案后续单独匹配。仅返回JSON，所有字符串正确转义LaTeX反斜线。'''
 
@@ -552,8 +555,8 @@ ANSWER_PROMPT = r'''你是试卷答案整理专家。输入为完整资料（可
 
 MATCH_PROMPT = r'''将答案条目匹配到题目。输入包括多张试卷及全部候选答案（可能含不相关资料）。
 结合卷标题、题号、小问、题意、答案类型判断，同号不代表同题。无法确定就不匹配。
-返回 {"matches":[{"question_id":"...","answer_entry_id":"...","reason":"..."}],"unmatched_entry_ids":[]}。
-不要生成答案，不修改原资料。每个题目最多采用一个完整条目，条目不跨不同题目重复采用。'''
+返回 {"matches":[{"question_id":"...","subquestion_id":"...或null","answer_entry_id":"...","reason":"..."}],"unmatched_entry_ids":[]}。
+有小问的题组/大题必须优先按小问编号匹配到独立答案；没有小问目标时才匹配父题。不要生成答案，不修改原资料。每个题目或小问最多采用一个完整条目，条目不跨不同题目重复采用。'''
 
 
 def compact_document(doc: dict):
@@ -583,6 +586,21 @@ def normalize_model_question(question: dict):
         question['image_layout'] = converted
     elif not isinstance(layout, dict):
         question['image_layout'] = {}
+    attributes = question.setdefault('attributes', {})
+    qtype = str(attributes.get('question_type') or '')
+    if qtype in ('题组', '复合题', '材料题', '材料分析题') or question.get('subquestions'):
+        attributes.setdefault('group_type', 'material_question_group')
+        for sub in question.get('subquestions') or []:
+            sub.setdefault('subquestion_id', f"{question.get('id', 'q')}-{sub.get('number', 'sub')}")
+            sub.setdefault('options', [])
+            sub.setdefault('answer', '')
+            sub.setdefault('analysis', '')
+            sub.setdefault('answer_source', 'missing')
+            sub.setdefault('analysis_source', 'missing')
+            sub.setdefault('answer_entry_id', None)
+            sub.setdefault('score', None)
+            sub.setdefault('requires_manual_drawing_review', False)
+            sub.setdefault('block_ids', [])
     return question
 
 
@@ -627,6 +645,12 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             q['id'] = f'{doc["id"]}-q{qi + 1}'
             q['paper_id'] = paper_map[q['paper_id']]
             q['number'] = str(q['number'])
+            for si, sub in enumerate(q.get('subquestions', [])):
+                sub['subquestion_id'] = f"{q['id']}-sub-{si + 1}"
+            # Composite/material questions use one parent region; include child
+            # block references so the parent frame covers the whole group.
+            child_blocks = [block for sub in q.get('subquestions', []) for block in sub.get('block_ids', [])]
+            q['block_ids'] = list(dict.fromkeys([*q.get('block_ids', []), *child_blocks]))
             q['regions'] = regions_from_blocks(q.get('block_ids', []), documents)
             q['attributes']['knowledge_status'] = 'unconfigured'
             q['attributes']['knowledge_points'] = []
@@ -661,13 +685,18 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         used, matched = set(), set()
         for m in match.get('matches', []):
             q, e = byq.get(m.get('question_id')), bye.get(m.get('answer_entry_id'))
-            if not q or not e or q['id'] in matched or e['id'] in used:
+            if not q or not e or e['id'] in used:
                 continue
-            q.update(answer=e.get('answer', ''), analysis=e.get('analysis', ''),
-                     answer_source='answer_file' if next(d for d in documents if d['id'] == e['document_id'])['role'] == 'answer' else 'original',
-                     answer_entry_id=e['id'])
-            q['analysis_source'] = q['answer_source'] if e.get('analysis') else 'missing'
+            source='answer_file' if next(d for d in documents if d['id'] == e['document_id'])['role'] == 'answer' else 'original'
+            sub_id=m.get('subquestion_id')
+            sub=next((s for s in q.get('subquestions', []) if s.get('subquestion_id')==sub_id or (not s.get('subquestion_id') and s.get('number')==sub_id)),None) if sub_id else None
+            target=sub if sub is not None else q
+            if target.get('answer_entry_id'):
+                continue
+            target.update(answer=e.get('answer', ''), analysis=e.get('analysis', ''), answer_source=source, answer_entry_id=e['id'])
+            target['analysis_source'] = source if e.get('analysis') else 'missing'
             e['matched_question_id'] = q['id']
+            e['matched_subquestion_id'] = sub.get('subquestion_id') if sub is not None else None
             e['match_reason'] = m.get('reason', '')
             if e.get('incomplete'):
                 q['issues'].append('原答案含略／图略，详细内容待完善')

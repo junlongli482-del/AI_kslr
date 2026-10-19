@@ -111,6 +111,29 @@ def repair_assets(question, documents, data, task_id):
 
 
 def apply_layout(question, documents):
+    # Structured tables are authoritative; remove only explicitly linked source
+    # table images, while preserving partial and image_only evidence.
+    structured_sources=set()
+    for table in question.get('tables',[]) or []:
+        if table.get('structure_status') == 'structured':
+            for key in ('url','image_url','asset_url'):
+                if table.get(key): structured_sources.add(table[key])
+            if table.get('asset_key'): structured_sources.add(canonical(table['asset_key']))
+    if structured_sources:
+        for field in ('stem','answer','analysis'):
+            text=question.get(field,'')
+            for url in structured_sources:
+                text=re.sub(r'!\[[^\]]*\]\('+re.escape(url)+r'\)', '', text)
+            question[field]=text
+        for item in question.get('options',[]):
+            for url in structured_sources:
+                item['content']=re.sub(r'!\[[^\]]*\]\('+re.escape(url)+r'\)', '', item.get('content',''))
+        for sub in question.get('subquestions',[]):
+            for field in ('stem','answer','analysis'):
+                text=sub.get(field,'')
+                for url in structured_sources:
+                    text=re.sub(r'!\[[^\]]*\]\('+re.escape(url)+r'\)', '', text)
+                sub[field]=text
     metadata={u:{**m,'document_id':d['id']} for d in documents for u,m in d.get('asset_metadata',{}).items()}
     docs={d['id']:d for d in documents}
     layout=question.setdefault('image_layout',{})
