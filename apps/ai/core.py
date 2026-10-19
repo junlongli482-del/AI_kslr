@@ -89,7 +89,6 @@ class Question(BaseModel):
     block_ids: list[str] = Field(default_factory=list)
     regions: list[Region] = Field(default_factory=list)
     attributes: dict = Field(default_factory=dict)
-    response: dict = Field(default_factory=dict)
     answer: str = ''
     analysis: str = ''
     answer_source: str = 'missing'
@@ -103,7 +102,6 @@ class Question(BaseModel):
     options_layout: dict = Field(default_factory=dict)
     excluded_image_urls: list[str] = Field(default_factory=list)
     asset_repairs: list[dict] = Field(default_factory=list)
-    response_regions_version: str | None = None
 
 
 class Result(BaseModel):
@@ -363,54 +361,55 @@ def normalize_question_content(question: dict, documents: list[dict]):
             question['stem'] = re.sub(pattern, r'\1 \2', question['stem'])
 
 
-def suggest_response_regions(questions: list[dict], documents: list[dict]):
-    """Create response boxes from the AI's semantic flag plus a deterministic anchor gap."""
+def question_span_regions(questions: list[dict], documents: list[dict], question_ids=None):
+    """Frame each question from its first block to the next question in each page/column."""
+    selected = set(question_ids) if question_ids is not None else None
     lookup = {b['id']: (d, b) for d in documents for b in d.get('blocks', [])}
-    for q in questions:
-        response = q.get('response') or {}
-        if not response.get('required') or q.get('response_regions_version') == 'response-v1':
-            continue
-        q['response_regions_version'] = 'response-v1'
-        anchor = lookup.get(response.get('anchor_block_id'))
-        if not anchor:
-            q.setdefault('issues', []).append('AI判定需作答，但锚点块无效，请人工补框')
-            continue
-        doc, block = anchor
-        if doc.get('role') == 'answer':
-            continue
-        page_index = block['page_index']
-        bbox = block['bbox']
-        column = int((bbox[0] + bbox[2]) / 2 > .5)
-        bounds = column_bounds(doc, page_index, bbox)
-        x0 = max(.02, bounds[0])
-        x1 = min(.98, bounds[1])
-        ends = [bbox[3]]
-        for sub in q.get('subquestions') or []:
-            for block_id in sub.get('block_ids') or []:
-                known = lookup.get(block_id)
-                if known and known[0].get('id') == doc['id'] and known[1].get('page_index') == page_index:
-                    ends.append(known[1]['bbox'][3])
-        end = max(ends)
-        following = [b['bbox'][1] for b in doc.get('blocks', [])
-                     if b['page_index'] == page_index and b['bbox'][1] >= end - .002
-                     and int((b['bbox'][0] + b['bbox'][2]) / 2 > .5) == column]
-        for other in questions:
-            if other is q:
+    by_question = {}
+    starts = {}
+    for qi, q in enumerate(questions):
+        ids = list(dict.fromkeys([*(q.get('block_ids') or []),
+                                  *(bid for sub in q.get('subquestions') or [] for bid in (sub.get('block_ids') or []))]))
+        groups = {}
+        for block_id in ids:
+            pair = lookup.get(block_id)
+            if not pair:
                 continue
-            for r in other.get('regions', []):
-                if (r.get('document_id') == doc['id'] and r.get('page_index') == page_index
-                        and r.get('purpose') != 'response' and r['bbox'][1] >= end - .002
-                        and int((r['bbox'][0] + r['bbox'][2]) / 2 > .5) == column):
-                    following.append(r['bbox'][1])
-        bottom = min(following) - .008 if following else .94
-        if bottom - end < .04:
-            q.setdefault('issues', []).append('AI判定需作答，但本题下方空间不足，请人工补框')
+            doc, block = pair
+            if doc.get('role') == 'answer':
+                continue
+            page_index = block['page_index']
+            if page_index >= len(doc.get('pages', [])):
+                continue
+            page = doc['pages'][page_index]
+            spread = page.get('width_px', 1) > page.get('height_px', 1) * 1.15
+            column = int((block['bbox'][0] + block['bbox'][2]) / 2 > .5) if spread else 0
+            key = (doc['id'], page_index, column)
+            groups.setdefault(key, []).append(block['bbox'])
+        by_question[qi] = groups
+        for key, boxes in groups.items():
+            starts.setdefault(key, []).append((qi, min(box[1] for box in boxes)))
+    for qi, q in enumerate(questions):
+        if selected is not None and q.get('id') not in selected:
             continue
-        q['regions'].append({'document_id': doc['id'], 'page_index': page_index,
-                             'bbox': [x0, end, x1, bottom], 'purpose': 'response',
-                             'order': len(q['regions'])})
-        note = response.get('note')
-        q.setdefault('issues', []).append('AI判定需作答，已按锚点生成作答区，请核对' + (f'（{note}）' if note else ''))
+        regions = []
+        for key, boxes in by_question.get(qi, {}).items():
+            doc_id, page_index, column = key
+            doc = next(d for d in documents if d['id'] == doc_id)
+            top = min(box[1] for box in boxes)
+            content_bottom = max(box[3] for box in boxes)
+            following = [y for other, y in starts[key] if other != qi and y > top + .002]
+            boundary = min(following) - .008 if following else .96
+            if content_bottom > boundary + .001:
+                q.setdefault('issues', []).append('题目内容越过下一题起点，整题框已截到下一题前，请核对')
+            bottom = max(top + .004, min(boundary, .98))
+            aggregate = [min(box[0] for box in boxes), top, max(box[2] for box in boxes), content_bottom]
+            x0, x1 = column_bounds(doc, page_index, aggregate)
+            regions.append({'document_id': doc_id, 'page_index': page_index,
+                            'bbox': [max(.02, x0), max(.02, top - .004), min(.98, x1), bottom],
+                            'purpose': 'content', 'order': len(regions)})
+        if regions:
+            q['regions'] = regions
 
 
 def recover_visual_gaps(question: dict, documents: list[dict], folder: Path):
@@ -575,8 +574,8 @@ class LLM:
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
 输出 {"papers":[{"id":"p1","title":"...","metadata":{}}],"questions":[...]}
-questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer:{value,analysis,scoring_criteria,source},score,block_ids}]，block_ids，attributes，image_layout，tables，response。
-response每项：{required:布尔,kind:"blank|lines|table|none",anchor_block_id:"本题最后一个内容块的ID",note:"判断依据或不确定说明"}。required表示学生是否需要在该题下书写/作图；选择题、仅需口头判断的题填false；不确定也填false并在note说明。判断参考：综合题、材料分析题、解答题、计算题、证明题、作图题通常required=true；纯选择题false；填空题仅在需要写过程或长答案时为true。anchor_block_id必须来自输入，程序据此在原卷上计算作答区，AI不要输出坐标。
+questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer:{value,analysis,scoring_criteria,source},score,block_ids}]，block_ids，attributes，image_layout，tables。
+
 题组规则（尤其适用于地理材料选择题）：一则材料、图表或区域背景后连续出现多个编号小题时，必须输出为一个顶层复合题，不得把材料和每个选择小题拆成多个顶层question。父题的stem保留完整材料和图表，subquestions逐项保留每个小题的题干、选项、答案、解析和分值；attributes.question_type使用“题组”或“复合题”。父题block_ids必须覆盖材料、图表和全部小题；跨栏跨页时保留所有块及顺序。
 题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时，该小问answer为null并在issues标记subquestion_unmatched，整段无法拆分时保留原文到父题issues，禁止猜分配。有多个小问时父题answer必须为null；答案挂到最末级小问，一个小问的answer只能是该小问自己的内容，禁止合并或按题号推测分配。
 输出示例：{"papers":[{"id":"p1","title":"示例卷","metadata":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
@@ -619,14 +618,7 @@ def normalize_model_question(question: dict):
     """Accept common model variants while keeping the internal layout contract a mapping."""
     question.setdefault('corrections', [])
     question.setdefault('issues', [])
-    response = question.get('response')
-    if not isinstance(response, dict):
-        response = {}
-    response.setdefault('required', False)
-    response.setdefault('kind', 'none')
-    response.setdefault('anchor_block_id', None)
-    response.setdefault('note', '')
-    question['response'] = response
+    question.pop('response', None)
     layout = question.get('image_layout')
     if layout is None:
         question['image_layout'] = {}
@@ -803,10 +795,9 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         repair_assets(q, documents, DATA, task_id)
         apply_layout(q, documents)
         recover_visual_gaps(q, documents, folder)
-        crop_regions(q, documents, folder)
         if not q.get('answer') and not any(str((s.get('answer') or {}).get('value') or '').strip() for s in q.get('subquestions',[])):
             q['issues'].append('缺少答案')
-    suggest_response_regions(questions, documents)
+    question_span_regions(questions, documents)
     for q in questions: crop_regions(q, documents, folder)
     result = Result.model_validate({'task_id': task_id, 'papers': papers, 'questions': questions, 'documents': documents,
                                     'answer_entries': entries,

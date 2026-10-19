@@ -346,6 +346,8 @@ recover_visual_gaps 是原页墨迹检测，不调用视觉模型：
 
 ### 7.5 主观题作答空白区
 
+**2026-10-19 变更**：已取消 `purpose=response` 的单独作答区。题框改为按页/栏从本题第一个内容块框到下一题起点（末题到栏底），整题框自然包含材料、小问和作答留白；跨页拆成多段。以下为历史实现说明。
+
 印刷题目框通常不含学生作答空白，因此 suggest_response_regions 另存 purpose=response，明确提示由版面推定。
 
 规则：
@@ -697,7 +699,7 @@ LLM摘要为 SHA256(instruction＋json.dumps(payload,ensure_ascii=False)) 前16�
 | 原包解析和压缩 | apps/ai/core.py：normalize、compact_document |
 | 题目编排 / 答案 / 匹配提示词 | core.py：STRUCTURE_PROMPT、ANSWER_PROMPT、MATCH_PROMPT |
 | 拆范围与生成提示词 | core.py：expand_answer_ranges、compile_result |
-| 几何归并、裁图、漏图、作答区 | core.py：regions_from_blocks、crop_regions、recover_visual_gaps、suggest_response_regions |
+| 几何归并、整题框、裁图、漏图 | core.py：regions_from_blocks、question_span_regions、crop_regions、recover_visual_gaps |
 | 渠道、缓存、字符与token预算 | core.py：LLM.json |
 | 入库前检查 | main.py：validate |
 | Java任务、保存与事务 | TaskService.java |

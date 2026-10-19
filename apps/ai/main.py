@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, suggest_response_regions, regions_from_blocks
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -322,11 +322,8 @@ def validate(task_id: str, payload: dict):
     if result['task_id'] == task_id:
         repair_result(result, DATA, task_id)
         rebuild=payload.get('rebuild_region_question_ids',[])
-        for q in result['questions']:
-            if q['id'] in rebuild and q['block_ids']:
-                q['regions']=regions_from_blocks(q['block_ids'],result['documents'])
-                q['response_regions_version']=None
-        suggest_response_regions(result['questions'],result['documents'])
+        if rebuild:
+            question_span_regions(result['questions'],result['documents'],question_ids=rebuild)
     issues = []
     if result['task_id'] != task_id:
         issues.append({'severity':'error','message':'结果不属于当前任务'})
@@ -400,12 +397,6 @@ def validate(task_id: str, payload: dict):
                 issues.append({'question_id':q['id'],'severity':'warning','message':f'小问{sub.get("number", index+1)}缺少答案，可作为待完善资源保存'})
         if q.get('subquestions') and str(q.get('answer') or '').strip():
             issue('答案必须挂到小问；有子问题的父题 answer 必须为空')
-        response=q.get('response') or {}
-        if response.get('required'):
-            if response.get('anchor_block_id') not in {b['id'] for d in result['documents'] for b in d.get('blocks',[])}:
-                issue('AI判定需作答，但锚点块不存在，请人工补框','warning')
-            elif not any(r.get('purpose')=='response' for r in q.get('regions',[])):
-                issue('AI判定需作答，但未生成作答区域，请人工补框','warning')
         if not q['answer'] and not q.get('subquestions'):
             issues.append({'question_id': q['id'], 'severity': 'warning', 'message': '缺少答案，可作为待完善资源保存'})
     if not result['questions']:

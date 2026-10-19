@@ -131,18 +131,26 @@ def test_expanded_answers_must_cover_every_original_number():
         core.expand_answer_ranges([{'id':'a','number':'1–3'}],Fake())
 
 
-def test_ai_response_flag_uses_anchor_gap_and_skips_false():
+def test_question_span_uses_next_start_and_column_width():
     docs=[{'id':'d','role':'question','pages':[{'width_px':1200,'height_px':800}],
            'blocks':[{'id':'a','page_index':0,'bbox':[.06,.2,.45,.3]},
                      {'id':'b','page_index':0,'bbox':[.06,.6,.45,.7]}]}]
-    questions=[{'id':'q1','response':{'required':True,'anchor_block_id':'a'},'issues':[],
-                'regions':[{'document_id':'d','page_index':0,'bbox':[.06,.2,.45,.3],'purpose':'content'}]},
-               {'id':'q2','response':{'required':False},'issues':[],
-                'regions':[{'document_id':'d','page_index':0,'bbox':[.06,.6,.45,.7],'purpose':'content'}]}]
-    core.suggest_response_regions(questions,docs)
-    assert [r['purpose'] for r in questions[0]['regions']]==['content','response']
-    assert questions[0]['regions'][1]['bbox']==[.06,.3,.45,.592]
-    assert all(r['purpose']!='response' for r in questions[1]['regions'])
+    questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
+               {'id':'q2','block_ids':['b'],'regions':[],'issues':[]}]
+    core.question_span_regions(questions,docs)
+    assert questions[0]['regions'][0]['bbox']==[.06,.196,.45,.592]
+    assert questions[1]['regions'][0]['bbox'][1]==.596
+
+
+def test_question_span_splits_across_pages():
+    docs=[{'id':'d','role':'question','pages':[{'width_px':800,'height_px':1200},{'width_px':800,'height_px':1200}],
+           'blocks':[{'id':'a','page_index':0,'bbox':[.1,.7,.9,.8]},
+                     {'id':'b','page_index':1,'bbox':[.1,.05,.9,.2]},
+                     {'id':'c','page_index':1,'bbox':[.1,.5,.9,.6]}]}]
+    questions=[{'id':'q1','block_ids':['a','b'],'regions':[],'issues':[]},
+               {'id':'q2','block_ids':['c'],'regions':[],'issues':[]}]
+    core.question_span_regions(questions,docs)
+    assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.492)]
 
 
 def _deepseek_env(monkeypatch):

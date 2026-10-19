@@ -96,18 +96,16 @@ def test_same_column_side_graphic_merges_but_spread_does_not():
     assert len(boxes)==2 and boxes[0]['bbox']==[.52,.59,.938,.75]
 
 
-def test_civics_subquestion_gaps_have_separate_answer_regions(tmp_path,monkeypatch):
+def test_question_span_covers_blank_until_next_question(tmp_path,monkeypatch):
     docs,q,url,_=source(tmp_path,monkeypatch)
-    docs[0]['blocks'].append({'id':'b2','kind':'text','text':'','page_index':0,'bbox':[.53,.28,.93,.30]})
-    q['response']={'required':True,'anchor_block_id':'b2'}
-    q['regions']=[{'document_id':'d','page_index':0,'bbox':[.53,.07,.93,.09],'purpose':'content'},
-                  {'document_id':'d','page_index':0,'bbox':[.53,.28,.93,.30],'purpose':'content'}]
-    nextq=copy.deepcopy(q);nextq['id']='q2';nextq['response']={'required':False};nextq['regions']=[{'document_id':'d','page_index':0,'bbox':[.53,.49,.93,.8],'purpose':'content'}]
-    core.suggest_response_regions([q,nextq],docs)
-    answers=[r for r in q['regions'] if r['purpose']=='response']
-    assert len(answers)==1
-    assert answers[0]['bbox']==pytest.approx([.53,.30,.93,.482])
-    before=copy.deepcopy(q);core.suggest_response_regions([q,nextq],docs);assert q==before
+    docs[0]['blocks']=[{'id':'a','page_index':0,'bbox':[.53,.07,.93,.09]},
+                       {'id':'b2','page_index':0,'bbox':[.53,.28,.93,.30]},
+                       {'id':'c','page_index':0,'bbox':[.53,.49,.93,.8]}]
+    q['block_ids']=['a','b2'];q['regions']=[]
+    nextq=copy.deepcopy(q);nextq['id']='q2';nextq['block_ids']=['c'];nextq['regions']=[]
+    core.question_span_regions([q,nextq],docs)
+    assert q['regions'][0]['bbox']==pytest.approx([.53,.066,.93,.482])
+    assert nextq['regions'][0]['bbox'][3]==.96
 
 
 def test_long_model_wait_and_price_unknown_are_not_zero(monkeypatch):
