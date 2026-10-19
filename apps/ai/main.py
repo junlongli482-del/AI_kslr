@@ -43,7 +43,7 @@ class ProcessRequest(BaseModel):
     task_id: str = Field(pattern=r'^[a-zA-Z0-9-]+$')
     files: list[dict]
     generate: bool = False
-    channel_policy: str = 'low_first'
+    channel_policy: str = 'deepseek'
 
 
 def task_folder(task_id):

@@ -22,7 +22,7 @@ public class QuickEntryController {
         String mode=body.getOrDefault("mode","textbook").toString();
         if(!Set.of("textbook","questions","paper").contains(mode))throw new ResponseStatusException(BAD_REQUEST,"未知录入模式");
         String id=UUID.randomUUID().toString();
-        store.createTask(id,body.getOrDefault("title","新录入任务").toString(),mode,Boolean.TRUE.equals(body.get("generate_answers")),body.getOrDefault("channel_policy","compare").toString());
+        store.createTask(id,body.getOrDefault("title","新录入任务").toString(),mode,Boolean.TRUE.equals(body.get("generate_answers")),body.getOrDefault("channel_policy","deepseek").toString());
         return service.task(id);
     }
     @GetMapping("/quick-entry/tasks/{id}") public Object task(@PathVariable String id){return service.task(id);}
