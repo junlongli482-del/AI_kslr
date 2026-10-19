@@ -116,29 +116,61 @@ def repair_assets(question, documents, data, task_id):
 
 
 def apply_layout(question, documents):
-    # Structured tables are authoritative; remove only explicitly linked source
-    # table images, while preserving partial and image_only evidence.
-    structured_sources=set()
-    for table in question.get('tables',[]) or []:
-        if table.get('structure_status') == 'structured':
-            for key in ('url','image_url','asset_url'):
-                if table.get(key): structured_sources.add(table[key])
-            if table.get('asset_key'): structured_sources.add(canonical(table['asset_key']))
-    if structured_sources:
-        for field in ('stem','answer','analysis'):
-            text=question.get(field,'')
-            for url in structured_sources:
-                text=re.sub(r'!\[[^\]]*\]\('+re.escape(url)+r'\)', '', text)
-            question[field]=text
-        for item in question.get('options',[]):
-            for url in structured_sources:
-                item['content']=re.sub(r'!\[[^\]]*\]\('+re.escape(url)+r'\)', '', item.get('content',''))
-        for sub in question.get('subquestions',[]):
-            for field in ('stem','answer','analysis'):
-                text=sub.get(field,'')
-                for url in structured_sources:
-                    text=re.sub(r'!\[[^\]]*\]\('+re.escape(url)+r'\)', '', text)
-                sub[field]=text
+    # Structured tables are authoritative; remove their original table images,
+    # including when the model omitted asset_key and only left a block_id.
+    sources = set()
+    docs = {d['id']: d for d in documents}
+    for table in question.get('tables', []) or []:
+        if table.get('structure_status') != 'structured':
+            continue
+        for key in ('url', 'image_url', 'asset_url', 'source_image_url'):
+            if table.get(key):
+                sources.add(table[key])
+        if table.get('asset_key'):
+            sources.add(canonical(table['asset_key']))
+        if table.get('block_id'):
+            for doc in documents:
+                block = next((b for b in doc.get('blocks', []) if b.get('id') == table['block_id']), None)
+                if not block:
+                    continue
+                for url, meta in doc.get('asset_metadata', {}).items():
+                    bbox, mbox = block.get('bbox'), meta.get('bbox')
+                    if (meta.get('page_index') == block.get('page_index') and bbox and mbox and len(bbox) == 4 == len(mbox)
+                            and all(abs(a - b) < .012 for a, b in zip(bbox, mbox))):
+                        sources.add(url)
+    source_keys = {canonical(key_of(url)) for url in sources if key_of(url)}
+
+    def clean(text):
+        text = str(text or '')
+        for url in sources:
+            text = re.sub(r'!\[[^\]]*\]\(' + re.escape(url) + r'\)', '', text)
+        return text
+
+    if sources:
+        for field in ('stem', 'answer', 'analysis'):
+            question[field] = clean(question.get(field))
+        for item in question.get('options', []):
+            item['content'] = clean(item.get('content'))
+        for sub in question.get('subquestions', []):
+            sub['stem'] = clean(sub.get('stem'))
+            answer = sub.get('answer')
+            if isinstance(answer, dict):
+                for field in ('value', 'analysis', 'scoring_criteria'):
+                    if answer.get(field):
+                        answer[field] = clean(answer[field])
+        def strip_images(node):
+            if not isinstance(node, dict):
+                return node
+            if node.get('type') == 'image':
+                src = str((node.get('attrs') or {}).get('src') or '')
+                if src in sources or (key_of(src) and canonical(key_of(src)) in source_keys):
+                    return None
+            if isinstance(node.get('content'), list):
+                node['content'] = [child for child in (strip_images(child) for child in node['content']) if child is not None]
+            return node
+        for document in question.get('editor_documents', {}).values():
+            strip_images(document)
+
     metadata={u:{**m,'document_id':d['id']} for d in documents for u,m in d.get('asset_metadata',{}).items()}
     docs={d['id']:d for d in documents}
     layout=question.setdefault('image_layout',{})
