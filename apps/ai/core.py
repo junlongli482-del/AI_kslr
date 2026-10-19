@@ -566,13 +566,19 @@ image_layout按输入完整图片URL索引，每项包含caption（图下注文�
 attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5或null),ability_dimensions[],response_form[],score(数值或null),year,region,source_type,background；无依据为null。
 原图引用必须使用资料里给出的完整 /api/assets?key=... URL，不得猜图片名。所有图片必须以标准Markdown图片输出，禁止把图片URL作为普通文本输出。保留同行多图：同行用同一行的Markdown图片，图形选项正确关联A/B/C/D。表格使用Markdown或安全HTML表格，并输出tables结构（每项含structure_status=structured|partial|image_only、asset_key或来源图片URL）。同一表格若structure_status=structured，题干/选项中不要重复引用对应原始表格图片；partial可同时保留，image_only必须保留原图。
 题干和选项不要重复，小问保留原编号与层级。题库内容不包括页眉页脚密封线。block_ids必须来自输入，同一道题的跨页和跨栏内容全选；跨题共享块允许引用并在issues说明。
+内容修正规则（只修明显错误，不重写）：
+允许直接修正：LaTeX语法与转义错误（cases/matrix/aligned的行分隔必须是双反斜杠、花括号配对、上下标、分式根式）、明显OCR错字（如“己知”→“已知”、常见形近字）、漏一两个字导致句子不通且原意唯一时可补齐、公式中丢失的换行或对齐符。
+禁止：改题意、改数字、改单位、改选项、改答案结论、润色语句、增删学科内容、把两种读法都通的猜测写成正文。看不清、原卷本身可能如此、或需要外部知识才能判断时，保持原文并在issues写“需人工核对：…”。
+每处修正必须记录到 corrections:[{"field":"stem","before":"原文","after":"修正后","reason":"修正依据"}]；未记录的改动视为违规。修正只还原原卷真实内容，不追求“更正确”或“更通顺”。
+JSON转义要求：LaTeX反斜杠在JSON字符串中要写两次；cases/matrix/aligned的行分隔在LaTeX里是两个反斜杠，因此JSON源文本里必须写四个反斜杠。正确示例（JSON源）："stem":"$a_{n+1}=\\begin{cases}\\frac{1}{3}a_n+n,&n\\text{为奇数}\\\\a_n-3n,&n\\text{为偶数}\\end{cases}$"。输出前逐条检查数学公式的JSON转义。
 忽略答案区中的内容作为题目，答案后续单独匹配。仅返回JSON，所有字符串正确转义LaTeX反斜线。'''
 
 ANSWER_PROMPT = r'''你是试卷答案整理专家。输入为完整资料（可能含多张试卷、无关章节答案、集中答案或随题答案）。
 提取所有答案条目，依据标题、阅读顺序及上下文区分分组。不要把不同试卷相同题号混在一起。
 返回 {"entries":[{"id":"a1","group":"所属试卷/章节标题","number":"题号","answer":"Markdown答案","analysis":"Markdown解析，没有则空","block_ids":[],"incomplete":false}]}。
 每个顶层题号必须单独一条！即使同一行写1.D 2.A 3.B，也必须输出三条，禁止number为1-3或把多道题合成一条。有小问的题必须按小问拆成独立条目：源资料写“17.(1)…(2)…”时输出两条，number分别为“17(1)”“17(2)”，subquestion_number分别为“(1)”“(2)”；禁止把多个小问合并成一条，禁止把整段答案只塞给第一个小问。确实拆不开时整段保留一条并设incomplete=true。保持数学LaTeX、图片和表格，图片引用用原有完整URL。
-略、图略、理由略必须保留并设incomplete=true，不补编。没有答案的题干不是答案条目。'''
+略、图略、理由略必须保留并设incomplete=true，不补编。没有答案的题干不是答案条目。
+答案中的明显LaTeX转义错误（如cases/matrix行分隔、双重转义）可直接修正；不得改动答案内容、数字、选项和结论。'''
 
 MATCH_PROMPT = r'''将答案条目匹配到题目。输入包括多张试卷及全部候选答案（可能含不相关资料）。
 结合卷标题、题号、小问、题意、答案类型判断，同号不代表同题。无法确定就不匹配。
@@ -593,6 +599,8 @@ def compact_document(doc: dict):
 
 def normalize_model_question(question: dict):
     """Accept common model variants while keeping the internal layout contract a mapping."""
+    question.setdefault('corrections', [])
+    question.setdefault('issues', [])
     layout = question.get('image_layout')
     if layout is None:
         question['image_layout'] = {}
@@ -628,6 +636,7 @@ def normalize_model_question(question: dict):
             sub.setdefault('score', None)
             sub.setdefault('requires_manual_drawing_review', False)
             sub.setdefault('block_ids', [])
+            sub.setdefault('corrections', [])
         if question.get('answer'):
             raise ValueError('答案必须挂到小问：有子问题的父题 answer 必须为 null')
     return question
@@ -688,6 +697,8 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             q['attributes']['extension_attributes'] = []
             q['review_status'] = 'pending'
             q['issues'] = q.get('issues', [])
+            correction_count=len(q.get('corrections') or [])+sum(len(s.get('corrections') or []) for s in q.get('subquestions',[]))
+            if correction_count:q['issues'].append(f'AI修正{correction_count}处内容，请核对')
             if not q['regions']:
                 q['issues'].append('缺少题目区域，需人工补框')
             questions.append(q)
@@ -767,7 +778,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         apply_layout(q, documents)
         recover_visual_gaps(q, documents, folder)
         crop_regions(q, documents, folder)
-        if not q.get('answer'):
+        if not q.get('answer') and not any(str((s.get('answer') or {}).get('value') or '').strip() for s in q.get('subquestions',[])):
             q['issues'].append('缺少答案')
     suggest_response_regions(questions, documents)
     for q in questions: crop_regions(q, documents, folder)
