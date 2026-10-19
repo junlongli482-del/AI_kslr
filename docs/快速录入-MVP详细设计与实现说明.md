@@ -660,7 +660,7 @@ LLM摘要为 SHA256(instruction＋json.dumps(payload,ensure_ascii=False)) 前16�
 
 ### 14.4 上下文、预算与日志
 
-单阶段payload JSON字符串超过650000字符直接停止；这不是token精确统计，也不是已实现的自动分批。默认任务token预算250000，按calls.json中接口返回total_tokens累加，在新请求前检查；一次请求仍可能超预算。失败请求可能没有usage，不能当实际账单上限。
+**2026-10-19 变更**：本机 v1 分支已移除 P1 侧主动限制——不再检查 650000 字符输入、不再累计 250000 token 预算，也不在各阶段发送 `max_tokens` / `max_output_tokens`（由供应商决定上限）。仅 Anthropic 协议因接口强制要求保留该字段；可用 `LLM_MAX_OUTPUT_TOKENS` 做供应商特殊覆盖。下列历史描述保留作对照。
 
 调用记录保留阶段、渠道、模型、耗时、usage和成功 / 失败。错误只保留类型及HTTP状态，不记录Authorization、完整响应体或签名URL。Python处理错误再替换已知密钥值。原包与教辅内容仍在本地data，当前没有生产保留期限、清理与用户级访问控制。
 

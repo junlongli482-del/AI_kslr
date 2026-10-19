@@ -140,3 +140,37 @@ def test_response_proposal_stops_before_next_question_without_crossing_columns()
     assert response['purpose']=='response'
     assert response['bbox']==[.06,.3,.45,.592]
     assert len(questions[1]['regions'])==1
+
+
+def _deepseek_env(monkeypatch):
+    monkeypatch.setenv('LLM_DEEPSEEK_API_KEY','sk-test')
+    monkeypatch.setenv('LLM_DEEPSEEK_BASE_URL','https://example.test')
+    monkeypatch.setenv('LLM_DEEPSEEK_MODEL','test-model')
+
+
+def test_no_input_or_output_token_cap_is_sent(tmp_path,monkeypatch):
+    _deepseek_env(monkeypatch)
+    captured={}
+    def handle(req):
+        captured.update(json.loads(req.content))
+        return httpx.Response(200,json={'choices':[{'message':{'content':'{"ok":true}'},'finish_reason':'stop'}],'usage':{'total_tokens':3}})
+    original=httpx.Client
+    with patch('core.httpx.Client',side_effect=lambda **kw:original(transport=httpx.MockTransport(handle),**kw)):
+        result=LLM(tmp_path,'deepseek').json('phase','Return JSON',{'text':'x'*700000})
+    assert result=={'ok':True}
+    assert 'max_tokens' not in captured
+    assert 'max_output_tokens' not in captured
+
+
+def test_empty_answer_reports_finish_reason_and_usage(tmp_path,monkeypatch):
+    _deepseek_env(monkeypatch)
+    def handle(req):
+        return httpx.Response(200,json={'choices':[{'message':{'content':''},'finish_reason':'length'}],
+                                        'usage':{'prompt_tokens':100,'completion_tokens':16000,'total_tokens':16100}})
+    original=httpx.Client
+    with patch('core.httpx.Client',side_effect=lambda **kw:original(transport=httpx.MockTransport(handle),**kw)):
+        llm=LLM(tmp_path,'deepseek')
+        with pytest.raises(core.PipelineError,match='finish_reason=length'):
+            llm.json('answers-doc','Return JSON',{'source':'same'})
+    assert llm.calls[-1]['finish_reason']=='length'
+    assert llm.calls[-1]['usage']['completion_tokens']==16000
