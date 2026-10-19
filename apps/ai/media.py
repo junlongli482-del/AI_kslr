@@ -117,7 +117,7 @@ def repair_assets(question, documents, data, task_id):
 
 def apply_layout(question, documents):
     # Structured tables are authoritative; remove their original table images,
-    # including when the model omitted asset_key and only left a block_id.
+    # including when the model omitted asset_key and only left a block reference.
     sources = set()
     docs = {d['id']: d for d in documents}
     for table in question.get('tables', []) or []:
@@ -128,9 +128,10 @@ def apply_layout(question, documents):
                 sources.add(table[key])
         if table.get('asset_key'):
             sources.add(canonical(table['asset_key']))
-        if table.get('block_id'):
+        block_id = table.get('block_id') or table.get('source_block_id')
+        if block_id:
             for doc in documents:
-                block = next((b for b in doc.get('blocks', []) if b.get('id') == table['block_id']), None)
+                block = next((b for b in doc.get('blocks', []) if b.get('id') == block_id), None)
                 if not block:
                     continue
                 for url, meta in doc.get('asset_metadata', {}).items():

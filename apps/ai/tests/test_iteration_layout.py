@@ -111,7 +111,7 @@ def test_question_span_covers_blank_until_next_question(tmp_path,monkeypatch):
 def test_structured_table_removes_source_image_even_without_asset_key(tmp_path,monkeypatch):
     docs,q,url,_=source(tmp_path,monkeypatch)
     docs[0]['blocks'].append({'id':'tbl','kind':'table','text':'','page_index':0,'bbox':[.39,.2,.47,.3]})
-    q['tables']=[{'structure_status':'structured','block_id':'tbl','markdown':'|a|b|'}]
+    q['tables']=[{'structure_status':'structured','source_block_id':'tbl','markdown':'|a|b|'}]
     q['stem']=f'![]({url})\n|a|b|'
     media.apply_layout(q,docs)
     assert '![' not in q['stem'] and '|a|b|' in q['stem']
