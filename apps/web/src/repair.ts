@@ -7,7 +7,7 @@ export function repairQuestionDraft(q:Question, documents:Document[]) {
   q.image_layout??={}
   for(const key of ['stem','answer','analysis'] as const)q[key]=normalizeMathSource(q[key])
   q.options.forEach(o=>o.content=normalizeMathSource(o.content))
-  q.subquestions.forEach(s=>s.stem=normalizeMathSource(s.stem))
+  q.subquestions.forEach(s=>{s.stem=normalizeMathSource(s.stem);if(s.answer){s.answer.value=normalizeMathSource(s.answer.value);s.answer.analysis=normalizeMathSource(s.answer.analysis);if(s.answer.scoring_criteria)s.answer.scoring_criteria=normalizeMathSource(s.answer.scoring_criteria)}})
   // Geometry and asset correction are centralized in the processing service.
   // Never derive display size from editable grading regions here.
   q.editor_documents??={}

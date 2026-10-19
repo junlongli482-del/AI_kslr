@@ -174,3 +174,12 @@ def test_empty_answer_reports_finish_reason_and_usage(tmp_path,monkeypatch):
             llm.json('answers-doc','Return JSON',{'source':'same'})
     assert llm.calls[-1]['finish_reason']=='length'
     assert llm.calls[-1]['usage']['completion_tokens']==16000
+
+
+def test_flat_subanswer_is_upgraded_and_parent_answer_is_rejected():
+    q={'id':'q','stem':'s','answer':None,'image_layout':{},'subquestions':[{'number':'(1)','stem':'x','answer':'A','analysis':'为什么'}]}
+    core.normalize_model_question(q)
+    assert q['subquestions'][0]['answer']=={'value':'A','analysis':'为什么','scoring_criteria':None,'source':''}
+    q['answer']='A'
+    with pytest.raises(ValueError,match='答案必须挂到小问'):
+        core.normalize_model_question(q)

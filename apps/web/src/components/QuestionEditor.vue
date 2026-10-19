@@ -14,7 +14,7 @@ import { prepareEditorDocument } from '../render'
 
 const props=defineProps<{modelValue:string;document?:any;label?:string;taskId?:string;imageLayout?:Record<string,any>}>()
 const emit=defineEmits(['update:modelValue','update:document','image-references','image-layout-change'])
-const mathDialog=ref(false), formula=ref(''), mode=ref<'visual'|'template'|'source'>('visual'), mathfield=ref<HTMLElement|null>(null)
+const mathDialog=ref(false), formula=ref(''), mathfield=ref<HTMLElement|null>(null), keyboardHost=ref<HTMLElement|null>(null)
 let selectedPosition:number|null=null, updating=false
 MathfieldElement.fontsDirectory='/mathlive-fonts'
 const MathNode=Node.create({
@@ -126,7 +126,24 @@ const editor=useEditor({extensions:[StarterKit,LayoutImage.configure({inline:tru
 })
 watch(()=>[props.modelValue,props.document],()=>{if(!updating&&editor.value&&!editor.value.isFocused)editor.value.commands.setContent(prepareEditorDocument(props.document,props.modelValue,props.imageLayout),{emitUpdate:false})})
 watch(mathDialog,async value=>{if(value){setTimeout(()=>{if(mathfield.value)(mathfield.value as MathfieldElement).value=formula.value},60)}})
-watch(mode,()=>setTimeout(()=>{if(mathfield.value)(mathfield.value as MathfieldElement).value=formula.value},30))
+watch(formula,value=>{const field=mathfield.value as MathfieldElement|null;if(field&&field.value!==value)field.value=value})
+function formulaOpened(){
+  const field=mathfield.value as MathfieldElement|null, keyboard=(window as any).mathVirtualKeyboard
+  if(!field||!keyboardHost.value||!keyboard)return
+  field.value=formula.value
+  field.mathVirtualKeyboardPolicy='manual'
+  keyboard.container=keyboardHost.value
+  field.focus()
+  keyboard.show({animate:false})
+}
+function closeKeyboard(){
+  const keyboard=(window as any).mathVirtualKeyboard
+  if(keyboard&&keyboardHost.value?.contains(document.querySelector('.ML__keyboard'))){
+    keyboard.hide({animate:false})
+    keyboard.container=null
+  }
+}
+function onFormulaInput(event:Event){formula.value=(event.target as MathfieldElement).value}
 function openFormula(){selectedPosition=null;formula.value='';mathDialog.value=true}
 function applyFormula(){
   if(!editor.value)return
@@ -136,7 +153,6 @@ function applyFormula(){
 }
 function useTemplate(value:string){
   formula.value=value
-  mode.value='visual'
   setTimeout(()=>{if(mathfield.value)(mathfield.value as MathfieldElement).value=formula.value},30)
 }
 const imageDialog=ref(false)
@@ -184,20 +200,21 @@ onBeforeUnmount(()=>editor.value?.destroy())
     <EditorContent :editor="editor" />
     <p v-if="uploading" class="editor-upload-status" role="status">正在上传 {{uploading}} 组图片，请稍候…</p>
     <p v-if="uploadError" class="editor-upload-error" role="alert">{{uploadError}}</p>
-    <el-dialog v-model="mathDialog" title="编辑公式" width="min(640px, 94vw)" append-to-body>
-      <div class="segmented"><button :class="{active:mode==='visual'}" @click="mode='visual'">MathLive</button><button :class="{active:mode==='template'}" @click="mode='template'">模板</button><button :class="{active:mode==='source'}" @click="mode='source'">LaTeX 源码</button></div>
-      <div v-if="mode==='template'" class="formula-templates" aria-label="公式结构模板">
+    <el-dialog v-model="mathDialog" title="编辑公式" width="min(760px, 96vw)" top="3vh" class="formula-dialog" append-to-body :close-on-click-modal="false" @opened="formulaOpened" @close="closeKeyboard" @close-auto-focus="closeKeyboard">
+      <div class="formula-toolbar" aria-label="公式结构模板">
+        <span>结构模板</span>
         <button title="分数" @click="useTemplate('\\frac{□}{□}')"><Divide :size="16"/><span>分数</span></button>
         <button title="上下标" @click="useTemplate('x^{□}_{□}')"><Superscript :size="16"/><span>上下标</span></button>
         <button title="根式" @click="useTemplate('\\sqrt{□}')"><Square :size="16"/><span>根式</span></button>
         <button title="括号" @click="useTemplate('\\left(□\\right)')"><Brackets :size="16"/><span>括号</span></button>
         <button title="矩阵" @click="useTemplate('\\begin{matrix}□&□\\\\□&□\\end{matrix}')"><Grid2X2 :size="16"/><span>矩阵</span></button>
       </div>
-      <math-field v-if="mode==='visual'||mode==='template'" ref="mathfield" class="formula-input" @input="formula=($event.target as MathfieldElement).value" math-virtual-keyboard-policy="manual"/>
-      <el-input v-else v-model="formula" type="textarea" :rows="4" placeholder="例如：\frac{-b\pm\sqrt{b^2-4ac}}{2a}"/>
+      <math-field ref="mathfield" class="formula-input" @input="onFormulaInput" math-virtual-keyboard-policy="manual"/>
+      <label class="formula-label">LaTeX 源码</label>
+      <el-input v-model="formula" type="textarea" :rows="2" placeholder="例如：\frac{-b\pm\sqrt{b^2-4ac}}{2a}"/>
       <div class="formula-preview" v-html="katex.renderToString(formula,{throwOnError:false,displayMode:true,trust:false})"/>
-      <p class="muted">点击公式可再次编辑。保存时保留 LaTeX；不支持的语法可使用源码修改。</p>
-      <template #footer><el-button @click="mathDialog=false">取消</el-button><el-button type="primary" @click="applyFormula">保存公式</el-button></template>
+      <div ref="keyboardHost" class="formula-keyboard-host"/>
+      <template #footer><el-button @click="mathDialog=false">取消</el-button><el-button type="primary" @click="applyFormula">插入公式</el-button></template>
     </el-dialog>
     <el-dialog v-model="imageDialog" title="插入图片" width="min(480px, 94vw)" append-to-body>
       <p>截图后关闭此窗口，在编辑器中按 Ctrl+V 即可插入。也可以选择或拖入图片。</p>
@@ -207,3 +224,14 @@ onBeforeUnmount(()=>editor.value?.destroy())
     </el-dialog>
   </div>
 </template>
+
+<style>
+.formula-toolbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.formula-toolbar>span{font-size:11px;color:#7b896f;margin-right:4px}
+.formula-toolbar button{display:flex;align-items:center;gap:4px;border:1px solid #d8e2cf;background:#f7faf3;color:#4c6b3f;border-radius:4px;padding:5px 8px;font-size:11px}
+.formula-label{display:block;font-size:11px;color:#6f7f63;margin:14px 0 6px}
+.formula-keyboard-host{position:relative;height:310px;isolation:isolate;--keyboard-zindex:100;--keycap-height:42px;--keycap-font-size:20px}
+.formula-keyboard-host .ML__keyboard{position:relative!important;inset:auto!important;width:100%!important;pointer-events:auto}
+.formula-dialog{max-height:94vh;overflow:auto}
+.formula-dialog .el-dialog__body{max-height:calc(94vh - 120px);overflow:auto}
+</style>

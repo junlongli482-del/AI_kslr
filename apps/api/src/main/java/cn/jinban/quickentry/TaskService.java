@@ -134,7 +134,9 @@ public class TaskService {
         for(JsonNode q:draft.path("questions")){
             String source=q.path("id").asText(),qid=prefix+source;
             String answer=q.path("answer").asText();
-            store.question(qid,id+"-"+source,id,revision,source,q.path("number").asText(),q.path("stem").asText(),encode(q),digest(q.path("stem").asText().replaceAll("\\s+","")),answer.isBlank()?"incomplete":q.path("review_status").asText("pending"));
+            boolean answered=!answer.isBlank();
+            for(JsonNode sub:q.path("subquestions"))if(!sub.path("answer").path("value").asText("").isBlank())answered=true;
+            store.question(qid,id+"-"+source,id,revision,source,q.path("number").asText(),q.path("stem").asText(),encode(q),digest(q.path("stem").asText().replaceAll("\\s+","")),answered?q.path("review_status").asText("pending"):"incomplete");
             questionIds.put(source,qid);
         }
         int papers=0;

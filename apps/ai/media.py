@@ -82,7 +82,12 @@ def repair_assets(question, documents, data, task_id):
         return IMAGE.sub(picture,s)
     for field in ['stem','answer','analysis']:question[field]=text(question.get(field,''))
     for item in question.get('options',[]):item['content']=text(item.get('content',''))
-    for item in question.get('subquestions',[]):item['stem']=text(item.get('stem',''))
+    for item in question.get('subquestions',[]):
+        item['stem']=text(item.get('stem',''))
+        answer=item.get('answer')
+        if isinstance(answer,dict):
+            for key in ('value','analysis','scoring_criteria'):
+                if answer.get(key):answer[key]=text(answer.get(key))
     editor_seen=set()
     targets=set(replacements.values())
     def visit(node):

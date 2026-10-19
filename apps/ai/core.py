@@ -332,7 +332,13 @@ def normalize_question_content(question: dict, documents: list[dict]):
     for key in ('stem', 'answer', 'analysis'):
         question[key] = clean(question.get(key))
     for option in question.get('options', []): option['content'] = clean(option.get('content'))
-    for sub in question.get('subquestions', []): sub['stem'] = clean(sub.get('stem'))
+    for sub in question.get('subquestions', []):
+        sub['stem'] = clean(sub.get('stem'))
+        answer = sub.get('answer')
+        if isinstance(answer, dict):
+            answer['value'] = clean(answer.get('value'))
+            answer['analysis'] = clean(answer.get('analysis'))
+            answer['scoring_criteria'] = clean(answer.get('scoring_criteria')) or None
     metadata = {url: m for d in documents for url, m in d.get('asset_metadata', {}).items()}
     urls = re.findall(r'!\[[^\]]*\]\((/api/assets\?key=[^)]+)\)', question['stem'])
     for first, second in zip(urls, urls[1:]):
@@ -538,9 +544,10 @@ class LLM:
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
 输出 {"papers":[{"id":"p1","title":"...","metadata":{}}],"questions":[...]}
-questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer,analysis,answer_source,analysis_source,answer_entry_id,score,block_ids}]，block_ids，attributes，image_layout，tables。
+questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer:{value,analysis,scoring_criteria,source},score,block_ids}]，block_ids，attributes，image_layout，tables。
 题组规则（尤其适用于地理材料选择题）：一则材料、图表或区域背景后连续出现多个编号小题时，必须输出为一个顶层复合题，不得把材料和每个选择小题拆成多个顶层question。父题的stem保留完整材料和图表，subquestions逐项保留每个小题的题干、选项、答案、解析和分值；attributes.question_type使用“题组”或“复合题”。父题block_ids必须覆盖材料、图表和全部小题；跨栏跨页时保留所有块及顺序。
-题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时放到父题级并标记 issues=["subquestion_unmatched"]，禁止猜分配。
+题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时，该小问answer为null并在issues标记subquestion_unmatched，整段无法拆分时保留原文到父题issues，禁止猜分配。有多个小问时父题answer必须为null；答案挂到最末级小问，一个小问的answer只能是该小问自己的内容，禁止合并或按题号推测分配。
+输出示例：{"papers":[{"id":"p1","title":"示例卷","metadata":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
 image_layout按输入完整图片URL索引，每项包含caption（图下注文本）、group_id（同排图片组）、row、column；尺寸和bbox引用输入来源，不得编造。甲乙丙/图1图2属于图注，绑定对应图片，不散落成独立正文。保留输入原有行列和小间距；物理坐标由系统校验换算，题框不是显示尺寸容器。
 attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5或null),ability_dimensions[],response_form[],score(数值或null),year,region,source_type,background；无依据为null。
 原图引用必须使用资料里给出的完整 /api/assets?key=... URL，不得猜图片名。所有图片必须以标准Markdown图片输出，禁止把图片URL作为普通文本输出。保留同行多图：同行用同一行的Markdown图片，图形选项正确关联A/B/C/D。表格使用Markdown或安全HTML表格，并输出tables结构（每项含structure_status=structured|partial|image_only、asset_key或来源图片URL）。同一表格若structure_status=structured，题干/选项中不要重复引用对应原始表格图片；partial可同时保留，image_only必须保留原图。
@@ -593,14 +600,22 @@ def normalize_model_question(question: dict):
         for sub in question.get('subquestions') or []:
             sub.setdefault('subquestion_id', f"{question.get('id', 'q')}-{sub.get('number', 'sub')}")
             sub.setdefault('options', [])
-            sub.setdefault('answer', '')
-            sub.setdefault('analysis', '')
-            sub.setdefault('answer_source', 'missing')
-            sub.setdefault('analysis_source', 'missing')
+            raw = sub.get('answer')
+            if not isinstance(raw, dict):
+                raw = {'value': raw or '', 'analysis': sub.pop('analysis', '') or '',
+                       'scoring_criteria': sub.pop('scoring_criteria', None),
+                       'source': sub.pop('answer_source', '') or ''}
+            raw.setdefault('analysis', '')
+            raw.setdefault('scoring_criteria', None)
+            raw.setdefault('source', '')
+            sub['answer'] = raw
+            sub.pop('analysis_source', None)
             sub.setdefault('answer_entry_id', None)
             sub.setdefault('score', None)
             sub.setdefault('requires_manual_drawing_review', False)
             sub.setdefault('block_ids', [])
+        if question.get('answer'):
+            raise ValueError('答案必须挂到小问：有子问题的父题 answer 必须为 null')
     return question
 
 
@@ -693,8 +708,13 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             target=sub if sub is not None else q
             if target.get('answer_entry_id'):
                 continue
-            target.update(answer=e.get('answer', ''), analysis=e.get('analysis', ''), answer_source=source, answer_entry_id=e['id'])
-            target['analysis_source'] = source if e.get('analysis') else 'missing'
+            if sub is not None:
+                target['answer']={'value':e.get('answer',''),'analysis':e.get('analysis',''),
+                                  'scoring_criteria':e.get('scoring_criteria'),'source':source}
+                target['answer_entry_id']=e['id']
+            else:
+                target.update(answer=e.get('answer',''), analysis=e.get('analysis',''), answer_source=source, answer_entry_id=e['id'])
+                target['analysis_source']=source if e.get('analysis') else 'missing'
             e['matched_question_id'] = q['id']
             e['matched_subquestion_id'] = sub.get('subquestion_id') if sub is not None else None
             e['match_reason'] = m.get('reason', '')

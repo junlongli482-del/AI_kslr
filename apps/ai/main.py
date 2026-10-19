@@ -386,6 +386,9 @@ def validate(task_id: str, payload: dict):
         for index, sub in enumerate(q.get('subquestions') or []):
             sub_id=sub.get('subquestion_id') or f"{q['id']}-sub-{index+1}"
             sub['subquestion_id']=sub_id
+            raw_answer=sub.get('answer')
+            if not isinstance(raw_answer,dict):
+                sub['answer']={'value':raw_answer or '','analysis':sub.pop('analysis','') or '','scoring_criteria':sub.pop('scoring_criteria',None),'source':sub.pop('answer_source','') or ''}
             if sub_id in seen_subquestion_ids: issue('小问ID重复')
             seen_subquestion_ids.add(sub_id)
             if sub.get('answer_entry_id'):
@@ -393,8 +396,10 @@ def validate(task_id: str, payload: dict):
                 if sub['answer_entry_id'] in answer_uses: issue('同一答案被重复关联至多个题目或小问')
                 answer_uses.add(sub['answer_entry_id'])
             if not sub.get('stem','').strip(): issue(f'小问{sub.get("number", index+1)}题干为空','warning')
-            if not sub.get('answer'):
+            if not str((sub.get('answer') or {}).get('value','')).strip():
                 issues.append({'question_id':q['id'],'severity':'warning','message':f'小问{sub.get("number", index+1)}缺少答案，可作为待完善资源保存'})
+        if q.get('subquestions') and str(q.get('answer') or '').strip():
+            issue('答案必须挂到小问；有子问题的父题 answer 必须为空')
         if not q['answer'] and not q.get('subquestions'):
             issues.append({'question_id': q['id'], 'severity': 'warning', 'message': '缺少答案，可作为待完善资源保存'})
     if not result['questions']:
