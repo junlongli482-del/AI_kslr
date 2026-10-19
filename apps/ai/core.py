@@ -381,17 +381,16 @@ def suggest_response_regions(questions: list[dict], documents: list[dict]):
         page_index = block['page_index']
         bbox = block['bbox']
         column = int((bbox[0] + bbox[2]) / 2 > .5)
-        own = [r['bbox'] for r in q.get('regions', [])
-               if r.get('document_id') == doc['id'] and r.get('page_index') == page_index
-               and r.get('purpose') != 'response'
-               and int((r['bbox'][0] + r['bbox'][2]) / 2 > .5) == column]
-        if own:
-            x0 = max(.02, min(b[0] for b in own))
-            x1 = min(.98, max(b[2] for b in own))
-        else:
-            x0 = max(.02, bbox[0] - .02)
-            x1 = min(.98, bbox[2] + .02)
-        end = bbox[3]
+        bounds = column_bounds(doc, page_index, bbox)
+        x0 = max(.02, bounds[0])
+        x1 = min(.98, bounds[1])
+        ends = [bbox[3]]
+        for sub in q.get('subquestions') or []:
+            for block_id in sub.get('block_ids') or []:
+                known = lookup.get(block_id)
+                if known and known[0].get('id') == doc['id'] and known[1].get('page_index') == page_index:
+                    ends.append(known[1]['bbox'][3])
+        end = max(ends)
         following = [b['bbox'][1] for b in doc.get('blocks', [])
                      if b['page_index'] == page_index and b['bbox'][1] >= end - .002
                      and int((b['bbox'][0] + b['bbox'][2]) / 2 > .5) == column]
