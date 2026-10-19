@@ -6,5 +6,11 @@ const api = process.env.API_TARGET || `http://127.0.0.1:${process.env.API_PORT |
 
 export default defineConfig({
   plugins: [vue({ template: { compilerOptions: { isCustomElement: tag => tag === 'math-field' } } })],
-  server: { port, strictPort: true, proxy: { '/api': api } }
+  server: {
+    port,
+    strictPort: true,
+    // Editors that save atomically create short-lived tmpdirs; watching them can crash Vite with EBUSY.
+    watch: { ignored: ['**/*.tmpdir/**', '**/*.tmp'] },
+    proxy: { '/api': api }
+  }
 })
