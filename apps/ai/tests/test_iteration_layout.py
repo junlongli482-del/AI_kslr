@@ -98,14 +98,15 @@ def test_same_column_side_graphic_merges_but_spread_does_not():
 
 def test_civics_subquestion_gaps_have_separate_answer_regions(tmp_path,monkeypatch):
     docs,q,url,_=source(tmp_path,monkeypatch)
-    q['attributes']={'question_type':'材料分析题','response_form':['简答题']}
+    docs[0]['blocks'].append({'id':'b2','kind':'text','text':'','page_index':0,'bbox':[.53,.28,.93,.30]})
+    q['response']={'required':True,'anchor_block_id':'b2'}
     q['regions']=[{'document_id':'d','page_index':0,'bbox':[.53,.07,.93,.09],'purpose':'content'},
                   {'document_id':'d','page_index':0,'bbox':[.53,.28,.93,.30],'purpose':'content'}]
-    nextq=copy.deepcopy(q);nextq['id']='q2';nextq['regions']=[{'document_id':'d','page_index':0,'bbox':[.53,.49,.93,.8],'purpose':'content'}];nextq['attributes']={}
+    nextq=copy.deepcopy(q);nextq['id']='q2';nextq['response']={'required':False};nextq['regions']=[{'document_id':'d','page_index':0,'bbox':[.53,.49,.93,.8],'purpose':'content'}]
     core.suggest_response_regions([q,nextq],docs)
     answers=[r for r in q['regions'] if r['purpose']=='response']
-    assert len(answers)==2
-    assert answers[0]['bbox'][1:4:2]==pytest.approx([.09,.272])
+    assert len(answers)==1
+    assert answers[0]['bbox']==pytest.approx([.53,.30,.93,.482])
     before=copy.deepcopy(q);core.suggest_response_regions([q,nextq],docs);assert q==before
 
 

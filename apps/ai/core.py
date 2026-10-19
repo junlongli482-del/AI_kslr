@@ -89,6 +89,7 @@ class Question(BaseModel):
     block_ids: list[str] = Field(default_factory=list)
     regions: list[Region] = Field(default_factory=list)
     attributes: dict = Field(default_factory=dict)
+    response: dict = Field(default_factory=dict)
     answer: str = ''
     analysis: str = ''
     answer_source: str = 'missing'
@@ -363,37 +364,54 @@ def normalize_question_content(question: dict, documents: list[dict]):
 
 
 def suggest_response_regions(questions: list[dict], documents: list[dict]):
-    """Conservative blank response proposals, separate from OCR-grounded content."""
-    for doc in documents:
-        if doc.get('role') == 'answer': continue
-        content = [(q,r) for q in questions for r in q['regions'] if r['document_id']==doc['id'] and r.get('purpose')!='response']
-        if not content: continue
-        landscape = doc['pages'][0].get('width_px',1) > doc['pages'][0].get('height_px',1) * 1.15
-        # Only split a spread when grounded content actually occupies both halves.
-        split = landscape and any(r['bbox'][2] < .51 for _,r in content) and any(r['bbox'][0] > .49 for _,r in content) and not any(r['bbox'][0]<.4 and r['bbox'][2]>.6 for _,r in content)
-        def column(r): return int((r['bbox'][0]+r['bbox'][2])/2>.5) if split else 0
-        for q in questions:
-            form=' '.join(q.get('attributes',{}).get('response_form') or [])+' '+str(q.get('attributes',{}).get('question_type') or '')
-            if not re.search('主观|解答|证明|计算|作图|简答|材料分析|论述|探究|实践|书面|开放|设计|辨析',form):continue
-            if q.get('response_regions_version')=='subquestion-v2':continue
-            q['response_regions_version']='subquestion-v2'
-            groups={}
-            for owner,r in content:
-                if owner is q:groups.setdefault((r['page_index'],column(r)),[]).append(r)
-            for (pi,ci),own in groups.items():
-                same=[(other,r) for other,r in content if r['page_index']==pi and column(r)==ci]
-                bounds=[r['bbox'] for _,r in content if column(r)==ci]
-                x0=max(.02,min(b[0] for b in bounds));x1=min(.98,max(b[2] for b in bounds))
-                for segment in sorted(own,key=lambda r:r['bbox'][1]):
-                    end=segment['bbox'][3]
-                    following=[r['bbox'][1] for _,r in same if r is not segment and r['bbox'][1]>=end-.002]
-                    bottom=min(following)-.008 if following else .94
-                    if bottom-end<.04:continue
-                    overlaps=any(r['page_index']==pi and r['document_id']==doc['id'] and r.get('purpose')=='response'
-                                 and min(r['bbox'][3],bottom)>max(r['bbox'][1],end) for r in q['regions'])
-                    if not overlaps:q['regions'].append({'document_id':doc['id'],'page_index':pi,'bbox':[x0,end,x1,bottom],'purpose':'response','order':len(q['regions'])})
-                issue='作答空白区由相邻题目和版面边界推定，请核对'
-                if issue not in q['issues']:q['issues'].append(issue)
+    """Create response boxes from the AI's semantic flag plus a deterministic anchor gap."""
+    lookup = {b['id']: (d, b) for d in documents for b in d.get('blocks', [])}
+    for q in questions:
+        response = q.get('response') or {}
+        if not response.get('required') or q.get('response_regions_version') == 'response-v1':
+            continue
+        q['response_regions_version'] = 'response-v1'
+        anchor = lookup.get(response.get('anchor_block_id'))
+        if not anchor:
+            q.setdefault('issues', []).append('AI判定需作答，但锚点块无效，请人工补框')
+            continue
+        doc, block = anchor
+        if doc.get('role') == 'answer':
+            continue
+        page_index = block['page_index']
+        bbox = block['bbox']
+        column = int((bbox[0] + bbox[2]) / 2 > .5)
+        own = [r['bbox'] for r in q.get('regions', [])
+               if r.get('document_id') == doc['id'] and r.get('page_index') == page_index
+               and r.get('purpose') != 'response'
+               and int((r['bbox'][0] + r['bbox'][2]) / 2 > .5) == column]
+        if own:
+            x0 = max(.02, min(b[0] for b in own))
+            x1 = min(.98, max(b[2] for b in own))
+        else:
+            x0 = max(.02, bbox[0] - .02)
+            x1 = min(.98, bbox[2] + .02)
+        end = bbox[3]
+        following = [b['bbox'][1] for b in doc.get('blocks', [])
+                     if b['page_index'] == page_index and b['bbox'][1] >= end - .002
+                     and int((b['bbox'][0] + b['bbox'][2]) / 2 > .5) == column]
+        for other in questions:
+            if other is q:
+                continue
+            for r in other.get('regions', []):
+                if (r.get('document_id') == doc['id'] and r.get('page_index') == page_index
+                        and r.get('purpose') != 'response' and r['bbox'][1] >= end - .002
+                        and int((r['bbox'][0] + r['bbox'][2]) / 2 > .5) == column):
+                    following.append(r['bbox'][1])
+        bottom = min(following) - .008 if following else .94
+        if bottom - end < .04:
+            q.setdefault('issues', []).append('AI判定需作答，但本题下方空间不足，请人工补框')
+            continue
+        q['regions'].append({'document_id': doc['id'], 'page_index': page_index,
+                             'bbox': [x0, end, x1, bottom], 'purpose': 'response',
+                             'order': len(q['regions'])})
+        note = response.get('note')
+        q.setdefault('issues', []).append('AI判定需作答，已按锚点生成作答区，请核对' + (f'（{note}）' if note else ''))
 
 
 def recover_visual_gaps(question: dict, documents: list[dict], folder: Path):
@@ -558,7 +576,8 @@ class LLM:
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
 输出 {"papers":[{"id":"p1","title":"...","metadata":{}}],"questions":[...]}
-questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer:{value,analysis,scoring_criteria,source},score,block_ids}]，block_ids，attributes，image_layout，tables。
+questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer:{value,analysis,scoring_criteria,source},score,block_ids}]，block_ids，attributes，image_layout，tables，response。
+response每项：{required:布尔,kind:"blank|lines|table|none",anchor_block_id:"本题最后一个内容块的ID",note:"判断依据或不确定说明"}。required表示学生是否需要在该题下书写/作图；选择题、仅需口头判断的题填false；不确定也填false并在note说明。判断参考：综合题、材料分析题、解答题、计算题、证明题、作图题通常required=true；纯选择题false；填空题仅在需要写过程或长答案时为true。anchor_block_id必须来自输入，程序据此在原卷上计算作答区，AI不要输出坐标。
 题组规则（尤其适用于地理材料选择题）：一则材料、图表或区域背景后连续出现多个编号小题时，必须输出为一个顶层复合题，不得把材料和每个选择小题拆成多个顶层question。父题的stem保留完整材料和图表，subquestions逐项保留每个小题的题干、选项、答案、解析和分值；attributes.question_type使用“题组”或“复合题”。父题block_ids必须覆盖材料、图表和全部小题；跨栏跨页时保留所有块及顺序。
 题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时，该小问answer为null并在issues标记subquestion_unmatched，整段无法拆分时保留原文到父题issues，禁止猜分配。有多个小问时父题answer必须为null；答案挂到最末级小问，一个小问的answer只能是该小问自己的内容，禁止合并或按题号推测分配。
 输出示例：{"papers":[{"id":"p1","title":"示例卷","metadata":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
@@ -601,6 +620,14 @@ def normalize_model_question(question: dict):
     """Accept common model variants while keeping the internal layout contract a mapping."""
     question.setdefault('corrections', [])
     question.setdefault('issues', [])
+    response = question.get('response')
+    if not isinstance(response, dict):
+        response = {}
+    response.setdefault('required', False)
+    response.setdefault('kind', 'none')
+    response.setdefault('anchor_block_id', None)
+    response.setdefault('note', '')
+    question['response'] = response
     layout = question.get('image_layout')
     if layout is None:
         question['image_layout'] = {}

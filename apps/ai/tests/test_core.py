@@ -131,15 +131,18 @@ def test_expanded_answers_must_cover_every_original_number():
         core.expand_answer_ranges([{'id':'a','number':'1–3'}],Fake())
 
 
-def test_response_proposal_stops_before_next_question_without_crossing_columns():
-    def q(id,box,kind):
-        return {'id':id,'attributes':{'question_type':kind},'issues':[],'regions':[{'document_id':'d','page_index':0,'bbox':box,'purpose':'content'}]}
-    questions=[q('q1',[.06,.2,.45,.3],'解答题'),q('q2',[.06,.6,.45,.7],'选择题'),q('q3',[.54,.1,.94,.2],'选择题')]
-    core.suggest_response_regions(questions,[{'id':'d','role':'question','pages':[{'width_px':1200,'height_px':800}]}])
-    response=questions[0]['regions'][1]
-    assert response['purpose']=='response'
-    assert response['bbox']==[.06,.3,.45,.592]
-    assert len(questions[1]['regions'])==1
+def test_ai_response_flag_uses_anchor_gap_and_skips_false():
+    docs=[{'id':'d','role':'question','pages':[{'width_px':1200,'height_px':800}],
+           'blocks':[{'id':'a','page_index':0,'bbox':[.06,.2,.45,.3]},
+                     {'id':'b','page_index':0,'bbox':[.06,.6,.45,.7]}]}]
+    questions=[{'id':'q1','response':{'required':True,'anchor_block_id':'a'},'issues':[],
+                'regions':[{'document_id':'d','page_index':0,'bbox':[.06,.2,.45,.3],'purpose':'content'}]},
+               {'id':'q2','response':{'required':False},'issues':[],
+                'regions':[{'document_id':'d','page_index':0,'bbox':[.06,.6,.45,.7],'purpose':'content'}]}]
+    core.suggest_response_regions(questions,docs)
+    assert [r['purpose'] for r in questions[0]['regions']]==['content','response']
+    assert questions[0]['regions'][1]['bbox']==[.06,.3,.45,.592]
+    assert all(r['purpose']!='response' for r in questions[1]['regions'])
 
 
 def _deepseek_env(monkeypatch):

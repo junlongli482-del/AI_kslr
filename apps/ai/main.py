@@ -400,6 +400,12 @@ def validate(task_id: str, payload: dict):
                 issues.append({'question_id':q['id'],'severity':'warning','message':f'小问{sub.get("number", index+1)}缺少答案，可作为待完善资源保存'})
         if q.get('subquestions') and str(q.get('answer') or '').strip():
             issue('答案必须挂到小问；有子问题的父题 answer 必须为空')
+        response=q.get('response') or {}
+        if response.get('required'):
+            if response.get('anchor_block_id') not in {b['id'] for d in result['documents'] for b in d.get('blocks',[])}:
+                issue('AI判定需作答，但锚点块不存在，请人工补框','warning')
+            elif not any(r.get('purpose')=='response' for r in q.get('regions',[])):
+                issue('AI判定需作答，但未生成作答区域，请人工补框','warning')
         if not q['answer'] and not q.get('subquestions'):
             issues.append({'question_id': q['id'], 'severity': 'warning', 'message': '缺少答案，可作为待完善资源保存'})
     if not result['questions']:
