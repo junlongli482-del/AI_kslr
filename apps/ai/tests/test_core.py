@@ -167,7 +167,7 @@ def test_scoring_points_are_normalized_to_100():
 
 def test_apply_rubrics_merges_points_and_allocates_integer_scores():
     class Fake:
-        def json(self,*args):return {'items':[{'question_id':'q1','grading_method':'manual','subquestions':[
+        def json(self,*args):return {'items':[{'question_id':'q1','grading_method':'manual','difficulty':4,'difficulty_reason':'多步推理','subquestions':[
             {'subquestion_id':'s1','weight_pct':40,'scoring':{'type':'step','points':[{'pct':100,'criterion':'正确'}]}},
             {'subquestion_id':'s2','weight_pct':60,'scoring':{'type':'step','points':[{'pct':100,'criterion':'正确'}]}}]}]}
     q={'id':'q1','paper_id':'p1','number':'15','stem':'','options':[],'answer':'','analysis':'','attributes':{'score':10},
@@ -176,6 +176,7 @@ def test_apply_rubrics_merges_points_and_allocates_integer_scores():
        'grading_method':None,'issues':[]}
     core.apply_rubrics([q],[{'id':'p1','title':'t'}],Fake())
     assert [sub['score'] for sub in q['subquestions']]==[4,6]
+    assert q['attributes']['difficulty']==4
     assert q['subquestions'][0]['scoring']['points'][0]['pct']==100
 
 

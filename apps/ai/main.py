@@ -400,6 +400,12 @@ def validate(task_id: str, payload: dict):
         texts=[q.get('answer'),q.get('analysis')]+[str((s.get('answer') or {}).get(k) or '') for s in q.get('subquestions',[]) for k in ('value','analysis')]
         if any(t and '$' not in t and re.search(r'\\[A-Za-z]+|[_^]\{',t) for t in texts):
             issue('公式未用 $...$ 包裹，请核对','warning')
+        try:
+            difficulty=int(q.get('attributes',{}).get('difficulty'))
+        except (TypeError,ValueError):
+            difficulty=None
+        if difficulty not in (1,2,3,4,5):
+            issue('难度未标注，请重新生成或人工选择','warning')
         method=(q.get('scoring') or {}).get('method') or q.get('grading_method')
         if method=='manual':
             targets=[q] if not q.get('subquestions') else q['subquestions']

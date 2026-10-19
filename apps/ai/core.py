@@ -582,7 +582,7 @@ questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑
 题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时，该小问answer为null并在issues标记subquestion_unmatched，整段无法拆分时保留原文到父题issues，禁止猜分配。有多个小问时父题answer必须为null；答案挂到最末级小问，一个小问的answer只能是该小问自己的内容，禁止合并或按题号推测分配。
 输出示例：{"papers":[{"id":"p1","title":"示例卷","metadata":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
 image_layout按输入完整图片URL索引，每项包含caption（图下注文本）、group_id（同排图片组）、row、column；尺寸和bbox引用输入来源，不得编造。甲乙丙/图1图2属于图注，绑定对应图片，不散落成独立正文。保留输入原有行列和小间距；物理坐标由系统校验换算，题框不是显示尺寸容器。
-attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5或null),ability_dimensions[],response_form[],score(数值或null),year,region,source_type,background；无依据为null。
+attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5必填：1识记或一步，2单一知识点，3多步常规，4综合易错，5复杂压轴；不得null),ability_dimensions[],response_form[],score(数值或null),year,region,source_type,background；无依据为null。
 原图引用必须使用资料里给出的完整 /api/assets?key=... URL，不得猜图片名。所有图片必须以标准Markdown图片输出，禁止把图片URL作为普通文本输出。保留同行多图：同行用同一行的Markdown图片，图形选项正确关联A/B/C/D。表格使用Markdown或安全HTML表格，并输出tables结构（每项含structure_status=structured|partial|image_only、asset_key或来源图片URL）。同一表格若structure_status=structured，题干/选项中不要重复引用对应原始表格图片；partial可同时保留，image_only必须保留原图。
 题干和选项不要重复，小问保留原编号与层级。题库内容不包括页眉页脚密封线。block_ids必须来自输入，同一道题的跨页和跨栏内容全选；跨题共享块允许引用并在issues说明。
 内容修正规则（只修明显错误，不重写）：
@@ -689,6 +689,11 @@ RUBRIC_PROMPT = r'''你是高考阅卷评分细则编写专家。输入是一份
 为每道题判断 grading_method：
 - 选择题、判断题、只需填最终答案的客观题：auto，不写评分标准。
 - 解答、计算、证明、综合、材料分析、论述、作图等需要看过程的题：manual，写分步得分点。
+难度规则：
+- 每题都必须给 difficulty（整数 1–5），不得为 null 或省略。
+- 1=直接识记或一步计算；2=单一知识点、1–2 步；3=多步常规、2–3 个知识点；4=综合性强、多步推理或易错；5=复杂建模/多知识点/高计算量/压轴。
+- 按题目本身难度判断，不按学生水平；整卷要有区分度，不得全部给 3。
+- difficulty_reason 用一句话说明主要依据，不超过 20 字。
 manual 规则：
 1. 每个小问（没有小问则是整题）的得分点数量按实际评分需要决定，不设固定上下限：通常 3–6 个，步骤少的题可以只有 1–2 个，复杂题可以 7–10 个甚至更多。只按可判定的步骤/结果拆分，不要为凑数硬拆，也不要把多个独立步骤合并成一个无法判定的点；所有 points 的 pct 合计必须为 100。
 2. 得分点必须是可判定的动作或结果，例如“正确设出 b_n=a_n/n”“正确变形得到 b_{n+1}-b_n=1”；禁止写“过程完整”“思路清晰”这类空泛评价。
@@ -697,7 +702,7 @@ manual 规则：
 5. 作文、论述、开放性试题用 type=band：按内容/表达/结构等维度，每个维度 pct 合计 100，bands 给四档描述；其他题用 type=step。
 6. 如果只有整题总分、没有小问分数，为每个小问给 weight_pct，合计 100；已有小问分数时也给出与之一致的 weight_pct。
 7. 文字精炼，每点不超过 30 字；不重复题干和答案，不编造。
-返回 {"items":[{"question_id":"...","grading_method":"auto|manual","subquestions":[{"subquestion_id":"...","weight_pct":40,"scoring":{"type":"step","points":[{"pct":40,"criterion":"..."}],"deductions":[],"notes":""}}],"scoring":{"type":"step","points":[...],"deductions":[],"notes":""}}]}
+返回 {"items":[{"question_id":"...","grading_method":"auto|manual","difficulty":3,"difficulty_reason":"...","subquestions":[{"subquestion_id":"...","weight_pct":40,"scoring":{"type":"step","points":[{"pct":40,"criterion":"..."}],"deductions":[],"notes":""}}],"scoring":{"type":"step","points":[...],"deductions":[],"notes":""}}]}
 没有小问的题用 scoring；有小问的题只用 subquestions。'''
 
 
@@ -767,11 +772,8 @@ def allocate_sub_scores(total, subs: list[dict]):
 
 
 def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=None):
-    manual = [q for q in questions if q.get('grading_method') != 'auto']
-    if not manual:
-        return
     payload = []
-    for q in manual:
+    for q in questions:
         paper = next((p for p in papers if p['id'] == q['paper_id']), {})
         payload.append({'question_id': q['id'], 'paper': paper.get('title', ''), 'number': q['number'],
                         'stem': q['stem'], 'options': q.get('options') or [],
@@ -783,8 +785,10 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
                                           'analysis': (sub.get('answer') or {}).get('analysis') or '',
                                           'score': sub.get('score')}
                                          for sub in q.get('subquestions') or []]})
+    if not payload:
+        return
     if progress:
-        progress('评分标准', f'正在为 {len(payload)} 道题生成分步评分标准')
+        progress('评分标准', f'正在为 {len(payload)} 道题生成评分标准与难度')
     for offset in range(0, len(payload), 40):
         response = llm.json(f'rubrics-{offset}', RUBRIC_PROMPT, {'questions': payload[offset:offset + 40]})
         by_id = {q['id']: q for q in questions}
@@ -792,6 +796,15 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
             q = by_id.get(item.get('question_id'))
             if not q:
                 continue
+            try:
+                difficulty = int(item.get('difficulty'))
+            except (TypeError, ValueError):
+                difficulty = None
+            if difficulty in (1, 2, 3, 4, 5):
+                q.setdefault('attributes', {})['difficulty'] = difficulty
+                reason = str(item.get('difficulty_reason') or '').strip()
+                if reason:
+                    q['attributes']['difficulty_reason'] = reason[:40]
             q['grading_method'] = 'auto' if item.get('grading_method') == 'auto' else 'manual'
             if q['grading_method'] == 'auto':
                 q['scoring'] = {'method': 'auto'}
@@ -810,7 +823,7 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
             else:
                 q['scoring'] = normalize_scoring(item.get('scoring') or {})
                 q['scoring']['method'] = 'manual'
-    for q in manual:
+    for q in questions:
         if q.get('grading_method') is None:
             q['grading_method'] = 'manual'
 
