@@ -104,7 +104,7 @@ def test_question_span_covers_blank_until_next_question(tmp_path,monkeypatch):
     q['block_ids']=['a','b2'];q['regions']=[]
     nextq=copy.deepcopy(q);nextq['id']='q2';nextq['block_ids']=['c'];nextq['regions']=[]
     core.question_span_regions([q,nextq],docs)
-    assert q['regions'][0]['bbox']==pytest.approx([.53,.066,.93,.482])
+    assert q['regions'][0]['bbox']==pytest.approx([.53,.066,.93,.49])
     assert nextq['regions'][0]['bbox'][3]==.96
 
 

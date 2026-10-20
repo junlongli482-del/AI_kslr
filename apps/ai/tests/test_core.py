@@ -138,7 +138,7 @@ def test_question_span_uses_next_start_and_column_width():
     questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['b'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert questions[0]['regions'][0]['bbox']==[.06,.196,.45,.592]
+    assert questions[0]['regions'][0]['bbox']==[.06,.196,.45,.6]
     assert questions[1]['regions'][0]['bbox'][1]==.596
 
 
@@ -150,7 +150,7 @@ def test_question_span_splits_across_pages():
     questions=[{'id':'q1','block_ids':['a','b'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['c'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.492)]
+    assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.5)]
 
 
 def test_allocate_sub_scores_keeps_integer_total():

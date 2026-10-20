@@ -395,6 +395,9 @@ def question_span_regions(questions: list[dict], documents: list[dict], question
     for qi, q in enumerate(questions):
         if selected is not None and q.get('id') not in selected:
             continue
+        q['issues'] = [issue for issue in (q.get('issues') or []) if issue not in (
+            '题目内容越过下一题起点，整题框已截到下一题前，请核对',
+            '题目框与下一题有重叠，请核对')]
         regions = []
         for key, boxes in by_question.get(qi, {}).items():
             doc_id, page_index, column = key
@@ -402,10 +405,16 @@ def question_span_regions(questions: list[dict], documents: list[dict], question
             top = min(box[1] for box in boxes)
             content_bottom = max(box[3] for box in boxes)
             following = [y for other, y in starts[key] if other != qi and y > top + .002]
-            boundary = min(following) - .008 if following else .96
-            if content_bottom > boundary + .001:
-                q.setdefault('issues', []).append('题目内容越过下一题起点，整题框已截到下一题前，请核对')
-            bottom = max(top + .004, min(boundary, .98))
+            if following:
+                next_start = min(following)
+                # Prefer a complete question over a cosmetic gap: touch the next
+                # question start, and overlap only when the content itself does.
+                bottom = max(content_bottom + .002, next_start)
+                if content_bottom > next_start + .02:
+                    q.setdefault('issues', []).append('题目框与下一题有重叠，请核对')
+            else:
+                bottom = min(.995, max(.96, content_bottom + .004))
+            bottom = max(top + .004, bottom)
             aggregate = [min(box[0] for box in boxes), top, max(box[2] for box in boxes), content_bottom]
             x0, x1 = column_bounds(doc, page_index, aggregate)
             regions.append({'document_id': doc_id, 'page_index': page_index,
