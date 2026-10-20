@@ -6,6 +6,7 @@ const props=defineProps<{documents:Document[];questions:Question[];selected:Ques
 const emit=defineEmits(['select','change'])
 const docId=ref(''),pageIndex=ref(0),zoom=ref(1),adding=ref(false),selectedRegion=ref(-1)
 const layer=ref<'frames'|'blocks'|'template'>('frames')
+const frameOnly=ref(false),blockKind=ref('all'),blockMissingOnly=ref(false),templateKind=ref('all'),templateLow=ref(false),templateUnbound=ref(false)
 const layerPages=ref<Record<string,number>>({frames:0,blocks:0,template:0})
 const layerZooms=ref<Record<string,number>>({frames:1,blocks:1,template:1})
 const svg=ref<SVGSVGElement|null>(null)
@@ -14,6 +15,7 @@ const doc=computed(()=>props.documents.find(d=>d.id===docId.value)||props.docume
 const page=computed(()=>doc.value?.pages[pageIndex.value])
 const visible=computed(()=>props.questions.flatMap(q=>q.regions.map((r,i)=>({q,r,i}))).filter(x=>x.r.document_id===doc.value?.id&&x.r.page_index===pageIndex.value))
 const pageBlocks=computed(()=>(doc.value?.blocks||[]).filter(b=>b.page_index===pageIndex.value))
+const displayBlocks=computed(()=>pageBlocks.value.filter(b=>(blockKind.value==='all'||(b.kind||'text')===blockKind.value)&&(!blockMissingOnly.value||!referencedBlocks.value.has(b.id))))
 const referencedBlocks=computed(()=>new Set(props.questions.flatMap(q=>[...(q.block_ids||[]),...(q.subquestions||[]).flatMap(s=>s.block_ids||[])])))
 const pageZones=computed(()=>(props.template?.student_zones||[]).filter((z:any)=>z.document_id===doc.value?.id&&z.page_index===pageIndex.value))
 const pageAnnotations=computed(()=>{
@@ -22,6 +24,9 @@ const pageAnnotations=computed(()=>{
     .filter((item:any)=>item.document_id===doc.value?.id&&item.page_index===pageIndex.value)
     .map((item:any)=>({kind,item})))
 })
+const displayAnnotations=computed(()=>pageAnnotations.value.filter(a=>(templateKind.value==='all'||templateKind.value===a.kind)&&(!templateLow.value||(a.item.score||0)<.6)&&(!templateUnbound.value||a.item.bound===false)))
+const displayZones=computed(()=>pageZones.value.filter(()=>templateKind.value==='all'||templateKind.value==='student'))
+const filteredVisible=computed(()=>frameOnly.value&&props.selected?visible.value.filter(x=>x.q.id===props.selected!.id):visible.value)
 const templateStats=computed(()=>{
   const brackets=(props.template?.annotations?.brackets||[])
   return {total:brackets.length,low:brackets.filter((b:any)=>(b.score||0)<.6).length,unbound:brackets.filter((b:any)=>!b.bound).length}
@@ -72,26 +77,29 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
     <div class="pane-heading"><span>原始资料</span><div class="layer-tabs"><button :class="{active:layer==='frames'}" @click="switchLayer('frames')">题框</button><button :class="{active:layer==='blocks'}" @click="switchLayer('blocks')">MinerU 识别块</button><button :class="{active:layer==='template'}" @click="switchLayer('template')">模板标注</button></div></div>
     <div class="source-tools"><select v-model="docId" aria-label="原卷文件"><option v-for="d in documents" :value="d.id" :key="d.id">{{d.name}}</option></select><button title="缩小" aria-label="缩小" @click="zoom=Math.max(.6,zoom-.2)"><ZoomOut :size="16"/></button><span>{{Math.round(zoom*100)}}%</span><button aria-label="定位本题" title="放大并定位本题" @click="focusQuestion">定位</button><button title="放大" aria-label="放大" @click="zoom=Math.min(3,zoom+.2)"><ZoomIn :size="16"/></button></div>
     <div v-if="layer==='template'" class="template-stats">共 {{templateStats.total}} 个空 · 低置信度 {{templateStats.low}} 个 · 未绑定 {{templateStats.unbound}} 个</div>
+    <div class="layer-filters" v-if="layer==='frames'"><label><input type="checkbox" v-model="frameOnly"/>只看当前题</label></div>
+    <div class="layer-filters" v-else-if="layer==='blocks'"><select v-model="blockKind"><option value="all">全部类型</option><option value="text">文字</option><option value="header">页眉</option><option value="footer">页脚</option><option value="page_number">页码</option><option value="table">表格</option><option value="image">图片</option></select><label><input type="checkbox" v-model="blockMissingOnly"/>只看未引用</label></div>
+    <div class="layer-filters" v-else><select v-model="templateKind"><option value="all">全部标注</option><option value="student">学生信息区</option><option value="brackets">括号</option><option value="question_numbers">题号</option><option value="drop">定位点</option><option value="qr">二维码</option><option value="score_box">得分框</option></select><label><input type="checkbox" v-model="templateLow"/>只看低置信度</label><label><input type="checkbox" v-model="templateUnbound"/>只看未绑定</label></div>
     <div ref="canvas" class="source-canvas"><div class="paper-image" v-if="page" :style="{width:`${zoom*100}%`}"><img :src="page.image_url" alt="原始试卷页面" draggable="false"/>
       <svg v-if="layer==='frames'" ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" @pointerdown="down($event)" @pointermove="move" @pointerup="up" @pointercancel="up" :class="{drawing:adding}">
-        <g v-for="({q,r,i},index) in visible" :key="q.id+'-'+i" :class="{selected:q.id===selected?.id}">
+        <g v-for="({q,r,i},index) in filteredVisible" :key="q.id+'-'+i" :class="{selected:q.id===selected?.id}">
           <rect :x="r.bbox[0]*1000" :y="r.bbox[1]*1000" :width="(r.bbox[2]-r.bbox[0])*1000" :height="(r.bbox[3]-r.bbox[1])*1000" @pointerdown.stop="down($event,r,q,i)"/>
           <text :x="r.bbox[0]*1000+4" :y="r.bbox[1]*1000+15">{{q.number}}</text>
           <rect v-if="q.id===selected?.id" class="resize-handle" :x="r.bbox[2]*1000-5" :y="r.bbox[3]*1000-5" width="10" height="10" @pointerdown.stop="down($event,r,q,i,true)"/>
         </g>
       </svg>
       <svg v-else-if="layer==='blocks'" ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" class="block-layer">
-        <g v-for="block in pageBlocks" :key="block.id" :class="['block-rect',block.kind,{missing:!referencedBlocks.has(block.id)&&!['header','footer','page_number'].includes(block.kind||'text')}]" @click="focusBlock(block.id)">
+        <g v-for="block in displayBlocks" :key="block.id" :class="['block-rect',block.kind,{missing:!referencedBlocks.has(block.id)&&!['header','footer','page_number'].includes(block.kind||'text')}]" @click="focusBlock(block.id)">
           <rect :x="block.bbox[0]*1000" :y="block.bbox[1]*1000" :width="(block.bbox[2]-block.bbox[0])*1000" :height="(block.bbox[3]-block.bbox[1])*1000"><title>{{block.kind}} · {{(block.text||'').slice(0,40)}}</title></rect>
           <text :x="block.bbox[0]*1000+3" :y="block.bbox[1]*1000+12">{{block.kind}}</text>
         </g>
       </svg>
       <svg v-else ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" class="template-layer" @pointermove="zoneMove" @pointerup="zoneUp" @pointercancel="zoneUp">
-        <g v-for="a in pageAnnotations" :key="a.item.id" :class="['annotation',a.kind,{low:(a.item.score||0)<.6,unbound:a.item.bound===false}]">
+        <g v-for="a in displayAnnotations" :key="a.item.id" :class="['annotation',a.kind,{low:(a.item.score||0)<.6,unbound:a.item.bound===false}]">
           <rect :x="a.item.bbox[0]*1000" :y="a.item.bbox[1]*1000" :width="(a.item.bbox[2]-a.item.bbox[0])*1000" :height="(a.item.bbox[3]-a.item.bbox[1])*1000" @pointerdown.stop="zoneDown($event,a.item)"><title>{{annotationLabel(a.kind)}} · 置信度 {{Math.round((a.item.score||0)*100)}}%{{a.item.bound===false?' · 未绑定':''}}</title></rect>
           <text :x="a.item.bbox[0]*1000+2" :y="a.item.bbox[1]*1000+10">{{annotationLabel(a.kind)}}</text>
         </g>
-        <g v-for="zone in pageZones" :key="zone.id">
+        <g v-for="zone in displayZones" :key="zone.id">
           <rect :x="zone.bbox[0]*1000" :y="zone.bbox[1]*1000" :width="(zone.bbox[2]-zone.bbox[0])*1000" :height="(zone.bbox[3]-zone.bbox[1])*1000" @pointerdown.stop="zoneDown($event,zone)"><title>{{zone.role==='backup'?'学生信息区（备用）':'学生信息区'}} · {{zone.source}}</title></rect>
           <text :x="zone.bbox[0]*1000+4" :y="zone.bbox[1]*1000+13">{{zone.role==='backup'?'姓名区·备用':'姓名区'}}</text>
           <rect class="zone-resize" :x="zone.bbox[2]*1000-8" :y="zone.bbox[3]*1000-8" width="10" height="10" @pointerdown.stop="zoneDown($event,zone,true)"/>
