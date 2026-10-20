@@ -190,7 +190,7 @@ function dropImages(event:DragEvent){event.preventDefault();void uploadImages(Ar
 onBeforeUnmount(()=>editor.value?.destroy())
 async function copyAll(){
   if(!editor.value)return
-  const json=editor.value.getJSON(),html=editor.value.getHTML(),text=editor.value.getText({blockSeparator:'\n'})
+  const json=editor.value.getJSON(),html=editor.value.getHTML(),text=serialize(json).trim()
   ;(window as any).__questionEditorClipboard={json,ts:Date.now()}
   try{
     const item:Record<string,Blob>={'text/plain':new Blob([text],{type:'text/plain'}),'text/html':new Blob([html],{type:'text/html'})}
