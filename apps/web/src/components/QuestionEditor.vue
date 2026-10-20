@@ -12,7 +12,7 @@ import { MathfieldElement } from 'mathlive'
 import katex from 'katex'
 import { prepareEditorDocument } from '../render'
 
-const props=defineProps<{modelValue:string;document?:any;label?:string;taskId?:string;imageLayout?:Record<string,any>}>()
+const props=defineProps<{modelValue:string;document?:any;label?:string;taskId?:string;imageLayout?:Record<string,any>;readonly?:boolean}>()
 const emit=defineEmits(['update:modelValue','update:document','image-references','image-layout-change'])
 const mathDialog=ref(false), formula=ref(''), mathfield=ref<HTMLElement|null>(null), keyboardHost=ref<HTMLElement|null>(null)
 let selectedPosition:number|null=null, updating=false
@@ -77,6 +77,7 @@ function resetImage(){if(!editor.value||!selectedImage.value||selectedImagePos==
 
 const uploading=ref(0),uploadError=ref('')
 const editor=useEditor({extensions:[StarterKit,LayoutImage.configure({inline:true,allowBase64:false}),Table.configure({resizable:true}),TableRow,TableHeader,TableCell,MathNode],
+  editable:!props.readonly,
   content:prepareEditorDocument(props.document,props.modelValue,props.imageLayout),
   onCreate:({editor})=>{
     const captionUpdates:{pos:number;caption:string}[]=[]
@@ -100,6 +101,10 @@ const editor=useEditor({extensions:[StarterKit,LayoutImage.configure({inline:tru
       return false
     },
     handlePaste:(_view,event)=>{
+      const custom=event.clipboardData?.getData('application/x-question-editor+json')||(window as any).__questionEditorClipboard?.json
+      if(custom){
+        try{editor.value?.commands.insertContent(JSON.parse(custom));event.preventDefault();return true}catch{}
+      }
       const files=Array.from(event.clipboardData?.files||[]).filter(f=>f.type.startsWith('image/'))
       if(!files.length)return false
       event.preventDefault();void uploadImages(files);return true
@@ -114,6 +119,7 @@ const editor=useEditor({extensions:[StarterKit,LayoutImage.configure({inline:tru
       void uploadImages(files);return true
     }},
   onUpdate:({editor})=>{
+    if(props.readonly)return
     updating=true
     if(editor.isActive('image')){selectedImage.value={...editor.getAttributes('image')};selectedImagePos=editor.state.selection.from}
     const source=serialize(editor.getJSON()).trim()
@@ -182,11 +188,23 @@ async function uploadImages(files:File[]){
 function chooseImages(event:Event){const input=event.target as HTMLInputElement;void uploadImages(Array.from(input.files||[]));input.value=''}
 function dropImages(event:DragEvent){event.preventDefault();void uploadImages(Array.from(event.dataTransfer?.files||[]).filter(f=>f.type.startsWith('image/')))}
 onBeforeUnmount(()=>editor.value?.destroy())
+async function copyAll(){
+  if(!editor.value)return
+  const json=editor.value.getJSON(),html=editor.value.getHTML(),text=editor.value.getText({blockSeparator:'\n'})
+  ;(window as any).__questionEditorClipboard={json,ts:Date.now()}
+  try{
+    const item:Record<string,Blob>={'text/plain':new Blob([text],{type:'text/plain'}),'text/html':new Blob([html],{type:'text/html'})}
+    item['application/x-question-editor+json']=new Blob([JSON.stringify(json)],{type:'application/x-question-editor+json'})
+    await navigator.clipboard.write([new ClipboardItem(item)])
+  }catch{await navigator.clipboard.writeText(text)}
+  ElMessage.success('已复制')
+}
+defineExpose({copyAll,getJSON:()=>editor.value?.getJSON(),getHTML:()=>editor.value?.getHTML()})
 </script>
 
 <template>
-  <div class="rich-editor" v-if="editor">
-    <div class="editor-toolbar">
+  <div class="rich-editor" :class="{readonly:props.readonly}" v-if="editor">
+    <div class="editor-toolbar" v-if="!props.readonly">
       <button title="加粗" aria-label="加粗" @click="editor.chain().focus().toggleBold().run()"><Bold :size="15"/></button>
       <button title="斜体" aria-label="斜体" @click="editor.chain().focus().toggleItalic().run()"><Italic :size="15"/></button>
       <button title="列表" aria-label="列表" @click="editor.chain().focus().toggleBulletList().run()"><List :size="15"/></button>

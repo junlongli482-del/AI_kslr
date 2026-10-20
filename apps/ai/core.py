@@ -117,6 +117,7 @@ class Result(BaseModel):
     unmatched_answer_entry_ids: list[str] = Field(default_factory=list)
     issues: list[dict] = Field(default_factory=list)
     processing_metadata: dict = Field(default_factory=dict)
+    template: dict = Field(default_factory=dict)
 
 
 def render_pages(source: Path, out: Path):
@@ -793,7 +794,7 @@ def allocate_sub_scores(total, subs: list[dict]):
         sub['weight_pct'] = round(100 * score / total, 3)
 
 
-def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=None):
+def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=None, preserve=False):
     payload = []
     for q in questions:
         paper = next((p for p in papers if p['id'] == q['paper_id']), {})
@@ -838,16 +839,32 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
                 for sub_item in item.get('subquestions') or []:
                     sub = by_sub.get(sub_item.get('subquestion_id'))
                     if sub:
+                        if preserve and (sub.get('scoring') or {}).get('points'):
+                            continue
                         sub['weight_pct'] = sub_item.get('weight_pct') or sub.get('weight_pct')
                         sub['scoring'] = normalize_scoring(sub_item.get('scoring') or {})
                         sub['scoring']['method'] = 'manual'
                 allocate_sub_scores(q.get('attributes', {}).get('score'), q['subquestions'])
             else:
-                q['scoring'] = normalize_scoring(item.get('scoring') or {})
-                q['scoring']['method'] = 'manual'
+                if not (preserve and (q.get('scoring') or {}).get('points')):
+                    q['scoring'] = normalize_scoring(item.get('scoring') or {})
+                    q['scoring']['method'] = 'manual'
     for q in questions:
         if q.get('grading_method') is None:
             q['grading_method'] = 'manual'
+
+
+def missing_rubric_targets(question: dict) -> list[dict]:
+    targets = question.get('subquestions') or [question]
+    return [target for target in targets if not (target.get('scoring') or {}).get('points')]
+
+
+def fill_question_rubric(question: dict, llm: LLM) -> int:
+    missing = missing_rubric_targets(question)
+    if not missing:
+        return 0
+    apply_rubrics([question], [{'id': question.get('paper_id', ''), 'title': ''}], llm, preserve=True)
+    return len(missing)
 
 
 PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'textbook_volume', 'textbook_version', 'year', 'semester', 'region')
@@ -983,6 +1000,100 @@ def apply_paper_inheritance(paper: dict, questions: list[dict]):
                 sources['paper_type'] = 'question'
 
 
+def build_template(documents: list[dict]) -> dict:
+    zones = []
+    for doc in documents:
+        if doc.get('role') == 'answer':
+            continue
+        for page_index, page in enumerate(doc.get('pages', [])):
+            spread = page.get('width_px', 1) > page.get('height_px', 1) * 1.15
+            columns = [0, 1] if spread else [0]
+            for column in columns:
+                bbox = ([.02, .01, .49, .11] if column == 0 else [.51, .01, .98, .11]) if spread else [.02, .01, .98, .11]
+                zones.append({'id': f"sz-{doc['id']}-p{page_index}-{column}",
+                              'document_id': doc['id'], 'page_index': page_index,
+                              'column': column, 'bbox': bbox, 'source': 'default_v2',
+                              'role': 'primary' if column == 0 else 'backup',
+                              'fields': {'name': '', 'class': '', 'student_id': ''}})
+    return {'version': 'template-v2', 'student_zones': zones, 'annotations': {}, 'blanks': []}
+
+
+def run_bracket_detection(result: dict, folder: Path, progress=None):
+    if os.getenv('BRACKET_ENABLED', '0') != '1':
+        return
+    import subprocess
+    import sys
+    template = result.setdefault('template', {'version': 'template-v2', 'student_zones': [], 'annotations': {}, 'blanks': []})
+    annotations = template.setdefault('annotations', {})
+    for key in ('brackets', 'question_numbers', 'qr', 'drop', 'score_box'):
+        annotations.setdefault(key, [])
+    template.setdefault('blanks', [])
+    python = os.getenv('BRACKET_PYTHON') or sys.executable
+    script = ROOT / 'apps' / 'bracket' / 'detect.py'
+    for doc in result.get('documents', []):
+        if doc.get('role') == 'answer':
+            continue
+        pdfs = list((folder / doc['id'] / 'raw').glob('*_origin.pdf')) if (folder / doc['id'] / 'raw').exists() else []
+        if not pdfs:
+            continue
+        if progress:
+            progress('括号检测', f'正在检测 {doc.get("name", doc["id"])}')
+        out = folder / 'bracket' / doc['id']
+        env = os.environ.copy()
+        if os.getenv('BRACKET_PYTHONPATH'):
+            env['PYTHONPATH'] = os.getenv('BRACKET_PYTHONPATH', '') + os.pathsep + env.get('PYTHONPATH', '')
+        proc = subprocess.run([python, str(script), '--pdf', str(pdfs[0]), '--out', str(out)],
+                              capture_output=True, text=True, encoding='utf-8', errors='replace',
+                              timeout=int(os.getenv('BRACKET_TIMEOUT', '600')), env=env)
+        if proc.returncode != 0:
+            raise RuntimeError((proc.stderr or proc.stdout or '括号检测失败')[-800:])
+        data = read(out / 'result.json')
+        for page in data.get('pages', []):
+            page_index = int(page.get('page_index', 0))
+            for box in page.get('boxes', []):
+                label = box.get('label')
+                target = {'bracket': 'brackets', 'question_number': 'question_numbers', 'qr': 'qr',
+                          'drop': 'drop', 'score_box': 'score_box'}.get(label)
+                if not target:
+                    continue
+                item = {'id': f"br-{doc['id']}-{page_index}-{len(annotations[target]) + 1}",
+                        'document_id': doc['id'], 'page_index': page_index,
+                        'bbox': box.get('bbox_norm') or [], 'score': box.get('score', 0),
+                        'label': label, 'source': 'model', 'confirmed': False}
+                annotations[target].append(item)
+                if label != 'bracket' or not item['bbox']:
+                    continue
+                cx = (item['bbox'][0] + item['bbox'][2]) / 2
+                cy = (item['bbox'][1] + item['bbox'][3]) / 2
+                best = None
+                for q in result.get('questions', []):
+                    for r in q.get('regions', []):
+                        if r.get('document_id') != doc['id'] or r.get('page_index') != page_index:
+                            continue
+                        x0, y0, x1, y1 = r['bbox']
+                        if x0 <= cx <= x1 and y0 <= cy <= y1:
+                            area = (x1 - x0) * (y1 - y0)
+                            if best is None or area < best[0]:
+                                best = (area, q)
+                q = best[1] if best else None
+                bound = q is not None
+                if bound:
+                    item['question_id'] = q['id']
+                    item['bound'] = True
+                    same = [b for b in annotations['brackets'] if b.get('question_id') == q['id'] and b.get('page_index') == page_index]
+                    same.sort(key=lambda b: (b['bbox'][1], b['bbox'][0]))
+                    item['index_in_question'] = same.index(item) + 1
+                else:
+                    item['bound'] = False
+                    item['index_in_question'] = None
+                template['blanks'].append({'blank_id': item['id'], 'question_id': (q or {}).get('id'),
+                                           'page_index': page_index, 'bbox': item['bbox'],
+                                           'score': item['score'], 'bound': bound,
+                                           'index_in_question': item['index_in_question'],
+                                           'bind_reason': 'question_region_contains' if bound else 'unbound'})
+    template['bracket_status'] = 'done'
+
+
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
     llm = LLM(folder, policy)
     papers, questions = [], []
@@ -1107,6 +1218,12 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
     result = Result.model_validate({'task_id': task_id, 'papers': papers, 'questions': questions, 'documents': documents,
                                     'answer_entries': entries,
                                     'unmatched_answer_entry_ids': [e['id'] for e in entries if not e.get('matched_question_id')],
-                                    'processing_metadata': {'pipeline_version': 'v1', 'calls': llm.calls, 'knowledge_catalog': 'unconfigured'}}).model_dump()
+                                    'processing_metadata': {'pipeline_version': 'v1', 'calls': llm.calls, 'knowledge_catalog': 'unconfigured'},
+                                    'template': build_template(documents)}).model_dump()
+    try:
+        run_bracket_detection(result, folder, progress)
+    except Exception as exc:
+        result.setdefault('template', {})['bracket_error'] = str(exc)[-500:]
+        result.setdefault('issues', []).append({'severity': 'warning', 'message': '括号检测失败，不影响题目录入；可在模板层重试'})
     save(folder / 'result.json', result)
     return result

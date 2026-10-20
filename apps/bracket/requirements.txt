@@ -1,0 +1,6 @@
+paddlepaddle==3.2.2
+paddlex==3.7.2
+pypdfium2>=4.30
+opencv-contrib-python>=4.9
+numpy
+Pillow

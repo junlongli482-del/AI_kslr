@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import axios from 'axios'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { BookOpen, ScanLine, Library, Files, Plus, ArrowUpRight, ArrowLeft, ArrowRight, UploadCloud, FileText, Check, CheckCheck, Search, RefreshCw, Settings2, ChevronRight, CircleAlert, LoaderCircle, Save, Split, Merge, Trash2, PanelLeftClose, ClipboardCheck, X, ExternalLink, Grip } from 'lucide-vue-next'
-import type { Task, Question, Result, Paper } from './types'
+import type { Task, Question, Result, Paper, Region } from './types'
 import { renderMarkdown } from './render'
 import { prepareEditorDocument } from './render'
 import { repairQuestionDraft } from './repair'
@@ -71,6 +71,19 @@ function applyPaperInheritanceLocal(paper:any){
 }
 function markAttributeManual(field:string){if(!selected.value)return;(selected.value.attribute_sources??={})[field]='manual';markDirty()}
 function markScoreManual(){if(!selected.value)return;selected.value.attributes.score_source='manual';markDirty()}
+const rubricBusy=ref(false)
+async function fillRubric(){
+  if(!task.value||!selected.value||rubricBusy.value)return
+  try{
+    await ElMessageBox.confirm('将调用一次 AI，只补全缺失的小问评分标准，已有内容不会被覆盖。继续吗？','补全评分标准',{confirmButtonText:'开始生成',cancelButtonText:'取消'})
+    rubricBusy.value=true
+    const response=await api.post(`/quick-entry/tasks/${task.value.id}/question-rubric`,{task_id:task.value.id,question:selected.value})
+    Object.assign(selected.value,response.data.question)
+    markDirty()
+    ElMessage.success(response.data.filled?`已补全 ${response.data.filled} 个评分标准`:'没有缺失的评分标准')
+  }catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}
+  finally{rubricBusy.value=false}
+}
 function restoreInherited(field:string){
   if(!selected.value||!activePaper.value)return
   const value=field==='paper_type'?activePaper.value.paper_type:activePaper.value.attributes?.[field]
@@ -156,6 +169,7 @@ async function openTask(t:Task){
   let repaired=false
   try{const response=await api.get(`/quick-entry/tasks/${t.id}/review`);result.value=response.data.result;revision.value=response.data.revision;task.value=t;
     const prepared=await api.post(`/quick-entry/tasks/${t.id}/validate`,result.value);if(prepared.data.result){repaired=JSON.stringify(result.value)!==JSON.stringify(prepared.data.result);result.value=prepared.data.result}
+    if(result.value && !result.value.template)result.value.template={version:'template-v2',student_zones:[],annotations:{},blanks:[]}
     normalizeSubAnswers(result.value!)
     comparison.value=(await api.get(`/quick-entry/tasks/${t.id}/comparison`).catch(()=>({data:null}))).data;
     for(const q of result.value!.questions)if(repairQuestionDraft(q,result.value!.documents))repaired=true
@@ -254,22 +268,41 @@ function matchSubAnswer(entryId:string,index:number){
   if(other){ElMessage.warning('此答案已关联其他小问，请先解除原关联');return}
   sub.answer_entry_id=entryId;sub.answer={value:entry.answer||'',analysis:entry.analysis||'',scoring_criteria:entry.scoring_criteria??null,source:'answer_file'};entry.matched_question_id=selected.value.id;entry.matched_subquestion_id=sub.subquestion_id||sub.number;result.value.unmatched_answer_entry_ids=result.value.answer_entries.filter(e=>!e.matched_question_id).map(e=>e.id);selected.value.review_status='pending';markDirty()
 }
-async function recognizeRegion(regionIndex:number, subquestionIndex:number|null=null){
+const regionEditors=ref<Record<string,any>>({})
+function regionKey(questionId:string,index:number){return questionId+'-'+index}
+function setRegionEditor(key:string,editor:any){if(editor)regionEditors.value[key]=editor;else delete regionEditors.value[key]}
+function categoryName(value?:string){return ({content:'题目内容',both:'内容与作答',reference_answer:'参考答案',recovered_visual:'原卷补图',generic:'通用'}[value||'']||'通用')}
+function recognitionTime(value?:string){return value?value.slice(0,16).replace('T',' '):''}
+async function recognizeRegion(region:Region,index:number){
   if(!task.value||!selected.value)return
+  if(region.purpose==='recovered_visual'){
+    region.recognition={category:'recovered_visual',image_only:true,markdown:'',created_at:new Date().toISOString(),model:''}
+    markDirty();ElMessage.success('已保留原卷裁图，不调用模型');return
+  }
   try{
-    await saveDraft();if(dirty)return
-    const response=await api.post(`/quick-entry/tasks/${task.value.id}/region-recognize`,{question_id:selected.value.id,region_index:regionIndex,channel:'deepseek',target:subquestionIndex==null?'stem':'subquestion',subquestion_index:subquestionIndex})
-    const candidate=response.data.result||{}
-    const target=subquestionIndex==null?selected.value:selected.value.subquestions[subquestionIndex]
-    if(!target)return
-    await ElMessageBox.confirm('模型已返回区域识别结果，确认写入当前编辑内容吗？','确认区域识别',{confirmButtonText:'写入',cancelButtonText:'取消'})
-    if(candidate.stem)target.stem=candidate.stem
-    if(candidate.options)target.options=candidate.options
-    if(candidate.answer!==undefined){if(subquestionIndex!=null)(target as any).answer.value=candidate.answer;else (target as any).answer=candidate.answer}
-    if(candidate.analysis!==undefined){if(subquestionIndex!=null)(target as any).answer.analysis=candidate.analysis;else (target as any).analysis=candidate.analysis}
-    if(subquestionIndex!=null)(target as any).answer.source='manual';else{selected.value.answer_source='manual';selected.value.analysis_source='manual'}
-    selected.value.review_status='pending';markDirty();ElMessage.success('区域识别结果已写入，请核对')
-  }catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}
+    await ElMessageBox.confirm('将调用一次 DeepSeek 多模态识别，并产生一次模型费用。继续吗？','区域识别',{confirmButtonText:'开始识别',cancelButtonText:'取消'})
+    const paper=activePaper.value
+    const response=await api.post(`/quick-entry/tasks/${task.value.id}/region-recognize`,{
+      question_id:selected.value.id,document_id:region.document_id,page_index:region.page_index,bbox:region.bbox,
+      category:region.purpose||'',channel:'deepseek',
+      context:{stage:selected.value.attributes.stage||paper?.attributes?.stage||'',subject:selected.value.attributes.subject||paper?.attributes?.subject||'',page:region.page_index+1},
+    })
+    const data=response.data
+    region.recognition={category:data.category,markdown:data.markdown||'',editor_document:null,model:data.model,created_at:data.created_at,seconds:data.seconds,usage:data.usage,cost:data.cost,image_only:!!data.image_only}
+    markDirty();ElMessage.success('识别完成，可复制到题目')
+  }catch(e:any){
+    if(e==='cancel'||e==='close')return
+    const message=e.response?.data?.detail||e.message||'区域识别失败'
+    region.recognition={...(region.recognition||{}),error:message,created_at:new Date().toISOString()}
+    markDirty();ElMessage.error(message)
+  }
+}
+function clearRecognition(region:Region){region.recognition=null;markDirty()}
+async function copyRecognition(region:Region,index:number){
+  if(!selected.value)return
+  const editor=regionEditors.value[regionKey(selected.value.id,index)]
+  if(editor?.copyAll){await editor.copyAll();return}
+  if(region.recognition?.markdown){await navigator.clipboard.writeText(region.recognition.markdown);ElMessage.success('已复制')}
 }
 
 function newQuestion(){if(!result.value)return;const q:Question={id:'manual-'+Date.now(),paper_id:paperFilter.value||result.value.papers[0]?.id||'',number:String(result.value.questions.length+1),stem:'',options:[],subquestions:[],regions:[],attributes:{knowledge_status:'unconfigured',knowledge_points:[],extension_attributes:[]},answer:'',analysis:'',answer_source:'missing',review_status:'pending',issues:[],editor_documents:{},block_ids:[]};result.value.questions.push(q);select(q.id)}
@@ -340,7 +373,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
       <template v-else-if="view==='review'&&result&&task">
         <div class="review-top"><button class="mobile-source-toggle" @click="showMobileSource=!showMobileSource">{{showMobileSource?'收起原卷':'对照原卷'}}</button><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/></button><div class="review-title"><strong>{{task.title}}</strong><span>{{reviewed}} / {{result.questions.length}} 题已核对</span></div><span class="save-status" :class="{'save-error':saveState==='保存失败'}"><Check v-if="saveState==='已保存'" :size="14"/><LoaderCircle v-else-if="saveState==='保存中'" class="spin" :size="14"/>{{saveState}}</span><el-button @click="openPaper"><Files :size="15"/>试卷信息</el-button><el-button @click="saveNow"><Save :size="15"/>保存草稿</el-button><el-button @click="validate" :loading="busy">规则检查</el-button><el-button type="primary" @click="commit" :loading="busy">审核入库<ArrowUpRight :size="15"/></el-button></div>
         <ComparisonPanel :report="comparison" @choose="chooseCandidate"/><div class="review-workbench" :class="{'mobile-source-hidden':!showMobileSource}">
-          <SourceViewer :documents="result.documents" :questions="result.questions" :selected="selected" :answer-document-id="answerDoc" @select="select" @change="refreshRegions"/>
+          <SourceViewer :documents="result.documents" :questions="result.questions" :selected="selected" :answer-document-id="answerDoc" :template="result.template" @select="select" @change="markDirty"/>
           <aside class="question-navigator"><div class="pane-heading"><span>题目</span><button class="icon-button" aria-label="新增漏题" title="新增漏题" @click="newQuestion"><Plus :size="16"/></button></div><div class="navigator-filters"><select v-model="paperFilter" aria-label="试卷筛选"><option value="">全部试卷</option><option v-for="p in result.papers" :value="p.id">{{p.title}}</option></select><div class="navigator-tabs"><button :class="{active:filter==='all'}" @click="filter='all'">全部</button><button :class="{active:filter==='pending'}" @click="filter='pending'">待核对</button></div></div><div class="question-nav-list"><button v-for="q in shownQuestions" :key="q.id" :class="{active:q.id===selectedId,reviewed:q.review_status==='reviewed'}" @click="select(q.id)"><span class="q-number">{{q.number}}</span><span class="q-nav-copy"><strong>{{q.attributes.question_type||'题目'}}</strong><small>{{q.attributes.score!=null?q.attributes.score+' 分':'分值未定'}} <span v-if="q.attributes.score_source" :class="['score-source',q.attributes.score_source]">{{scoreSourceName(q.attributes.score_source)}}</span> · {{q.regions.length}} 区域</small></span><Check v-if="q.review_status==='reviewed'" :size="14"/><span v-else-if="q.issues.length" class="issue-indicator"/></button></div><div class="navigator-bottom"><span class="legend-dot"/>待核对 <Check :size="12"/>已确认</div></aside>
           <section class="question-detail" v-if="selected" :key="selected.id"><div class="pane-heading"><span>第 {{selected.number}} 题 <span class="muted">{{result.papers.find(p=>p.id===selected!.paper_id)?.title}}</span></span><div class="question-actions"><button class="icon-button" title="上移题目" aria-label="上移题目" @click="reorder(-1)"><ArrowLeft class="rotate90" :size="15"/></button><button class="icon-button" title="下移题目" aria-label="下移题目" @click="reorder(1)"><ArrowRight class="rotate90" :size="15"/></button><el-dropdown trigger="click"><button class="icon-button" title="题目操作" aria-label="题目操作"><Settings2 :size="17"/></button><template #dropdown><el-dropdown-menu><el-dropdown-item @click="mergeNext">合并下一题</el-dropdown-item><el-dropdown-item @click="splitQuestion">拆出最后区域</el-dropdown-item><el-dropdown-item @click="removeQuestion" divided>删除误识别题目</el-dropdown-item></el-dropdown-menu></template></el-dropdown></div></div>
             <div class="detail-tabs"><button :class="{active:tab==='content'}" @click="tab='content'">题目内容</button><button :class="{active:tab==='attributes'}" @click="tab='attributes'">属性标签</button></div>
@@ -372,7 +405,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-answer'" v-model="sub.answer.value" v-model:document="selected.editor_documents[`sub-${index}-answer`]" label="小问答案"/>
                   <div class="field-heading"><label>解析</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-analysis'" v-model="sub.answer.analysis" v-model:document="selected.editor_documents[`sub-${index}-analysis`]" label="小问解析"/>
-                  <div class="field-heading"><label>评分标准</label><span v-if="sub.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span></div>
+                  <div class="field-heading"><label>评分标准</label><span v-if="sub.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="sub.scoring?.method!=='auto'" class="text-button" @click="fillRubric" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button></div>
                   <p v-if="sub.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
                   <template v-else>
                     <div v-if="sub.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in sub.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-score-'+pi" v-model="point.criterion" v-model:document="point.editor_document" label="得分点编辑器"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(sub,pi)"><X :size="13"/></button></div></div>
@@ -385,7 +418,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-single-answer'" v-model="selected.answer" v-model:document="selected.editor_documents.answer" label="答案编辑器"/>
                   <div class="field-heading"><label>解析</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-single-analysis'" v-model="selected.analysis" v-model:document="selected.editor_documents.analysis" label="解析编辑器"/>
-                  <div class="field-heading"><label>评分标准</label><span v-if="selected.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span></div>
+                  <div class="field-heading"><label>评分标准</label><span v-if="selected.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="selected.scoring?.method!=='auto'" class="text-button" @click="fillRubric" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button></div>
                   <p v-if="selected.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
                   <template v-else>
                     <div v-if="selected.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in selected.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-score-'+pi" v-model="point.criterion" v-model:document="point.editor_document" label="得分点编辑器"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(selected,pi)"><X :size="13"/></button></div></div>
@@ -394,7 +427,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   </template>
                 </template>
                 <div class="field-heading"><label>原卷区域</label><button class="text-button" @click="rebuildRegions">重建本题题框与作答区</button><span>{{selected.regions.length}} 个区域，可在左侧拖动调整</span></div>
-                <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="insertRegionImage(r.crop_url)"><Plus :size="13"/>插入题干</button><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="content">题目内容</option><option value="both">内容与作答</option><option value="recovered_visual">原卷补图</option></select></div></div></div>
+                <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview" :key="index"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(r,index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="insertRegionImage(r.crop_url)"><Plus :size="13"/>插入题干</button><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="">通用</option><option value="content">题目内容</option><option value="both">内容与作答</option><option value="reference_answer">参考答案</option><option value="recovered_visual">原卷补图</option></select></div><div v-if="r.recognition" class="recognition-panel"><div class="recognition-meta"><span>{{categoryName(r.recognition.category)}}</span><span v-if="r.recognition.created_at">{{recognitionTime(r.recognition.created_at)}}</span><span v-if="r.recognition.model">{{r.recognition.model}}</span></div><p v-if="r.recognition.error" class="recognition-error">{{r.recognition.error}}</p><template v-else-if="r.recognition.image_only"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题原卷补图'"/><p class="muted">原卷补图，不调用模型</p></template><QuestionEditor v-else :ref="el=>setRegionEditor(regionKey(selected?.id||'',index),el)" :readonly="true" :task-id="task.id" :image-layout="selected.image_layout" :model-value="r.recognition.markdown||''" v-model:document="r.recognition.editor_document" label="区域识别结果"/><div class="recognition-actions"><button class="text-button" @click="copyRecognition(r,index)">复制</button><button class="text-button" @click="recognizeRegion(r,index)">重新识别</button><button class="text-button" @click="clearRecognition(r)">清空</button></div></div></div></div>
               </template>
               <template v-else><div class="attribute-grid"><label>题号<el-input v-model="selected.number"/></label><label>分值<el-input-number v-model="selected.attributes.score" :min="0" :max="1000" @change="markScoreManual"/><span v-if="selected.attributes.score_source" class="score-source">{{scoreSourceName(selected.attributes.score_source)}}</span></label><label v-for="[key,label] in [['subject','学科'],['stage','学段'],['grade','年级'],['textbook_version','教材版本'],['question_type','题型'],['paper_type','试卷类型'],['year','年份'],['semester','学期'],['region','地区'],['source_type','来源类型']]" :key="key">{{label}}<span v-if="selected.attribute_sources?.[key]==='paper'" class="inherit-badge">继承</span><el-input v-model="selected.attributes[key]" placeholder="未识别" @change="markAttributeManual(key)"/></label><label>难度<el-select v-model="selected.attributes.difficulty" clearable><el-option v-for="(name,index) in ['简单','较易','中等','较难','困难']" :value="index+1" :label="name"/></el-select><span v-if="selected.attributes.difficulty_reason" class="muted">{{selected.attributes.difficulty_reason}}</span></label><label>审核状态<el-select v-model="selected.review_status"><el-option value="pending" label="待核对"/><el-option value="reviewed" label="已确认"/></el-select></label></div><div class="inherit-actions"><button v-for="[field,label] in paperInheritFields" :key="field" @click="restoreInherited(field)">跟随{{label}}</button></div><div class="field-heading"><label>知识点与教材章节</label><span class="neutral-badge">目录未配置</span></div><div class="catalog-empty">正式目录接入后自动分层匹配，并根据教材映射章节。当前不生成未经绑定的正式知识点。</div><div class="field-heading"><label>能力维度</label></div><el-select v-model="selected.attributes.ability_dimensions" multiple filterable allow-create default-first-option placeholder="输入或选择能力维度"><el-option v-for="label in ['理解','应用','分析','推理','建模','运算']" :value="label" :label="label"/></el-select><div class="field-heading"><label>作答形式</label></div><el-select v-model="selected.attributes.response_form" multiple filterable allow-create><el-option v-for="label in ['客观','主观','作图','填空','计算','证明']" :value="label" :label="label"/></el-select><div class="field-heading"><label>情景与背景</label></div><el-input v-model="selected.attributes.background" type="textarea" :rows="2"/><div class="field-heading"><label>扩展标签</label><button class="text-button" @click="(selected.attributes.extension_attributes ||= []).push({name:'',value:''})"><Plus :size="13"/>新增</button></div><div class="extension-row" v-for="(tag,index) in selected.attributes.extension_attributes"><el-input v-model="tag.name" placeholder="标签名称"/><el-input v-model="tag.value" placeholder="标签值"/><button class="icon-button" aria-label="删除标签" @click="selected.attributes.extension_attributes.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>授权与排序</label></div><p class="muted">授权尚未确认。重要程度算法未启用，不生成无依据的推荐分。</p></template>
             </div>
@@ -484,5 +517,14 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 .score-source{display:inline-block;margin-left:4px;padding:0 4px;border-radius:3px;background:#edf3ed;color:#4f7259;font-size:9px;font-style:normal;vertical-align:1px}
 .score-source.ai_assigned{background:#fdf3e6;color:#9a6428}
 .score-source.manual{background:#e9f0fa;color:#3c628f}
+.recognition-panel{margin:6px 0 12px;border:1px solid #dbe6d9;border-radius:7px;background:#fbfcfa;padding:8px}
+.recognition-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:11px;color:#6b7d6b;margin-bottom:6px}
+.recognition-meta span+span:before{content:'·';margin-right:8px;color:#b6c3b4}
+.recognition-error{color:#a34732;background:#fcf4f0;border:1px solid #efd6cc;border-radius:5px;padding:6px 8px;font-size:12px}
+.recognition-actions{display:flex;gap:10px;align-items:center;margin-top:6px}
+.recognition-actions button{border:0;background:none;color:#3f7258;font-size:12px;padding:2px 0}
+.recognition-panel img{max-width:100%;max-height:260px;display:block;margin:6px 0}
+.rich-editor.readonly .tiptap{background:#fbfcfa}
+.rich-editor.readonly .tiptap:focus{outline:none}
 </style>
 

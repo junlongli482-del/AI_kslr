@@ -93,6 +93,12 @@ public class QuickEntryController {
         ((com.fasterxml.jackson.databind.node.ObjectNode)request).put("task_id",id);
         return service.regionRecognize(id,request);
     }
+    @PostMapping("/quick-entry/tasks/{id}/question-rubric") public Object questionRubric(@PathVariable String id,@RequestBody JsonNode body){
+        var request=body.deepCopy();
+        if(!request.isObject())throw new ResponseStatusException(BAD_REQUEST,"评分标准请求必须是JSON对象");
+        ((com.fasterxml.jackson.databind.node.ObjectNode)request).put("task_id",id);
+        return service.questionRubric(id,request);
+    }
     @PostMapping("/quick-entry/tasks/{id}/commit") public Object commit(@PathVariable String id,@RequestBody JsonNode body){return service.commit(id,body.path("revision").asInt(-1));}
     @GetMapping("/assets") public ResponseEntity<Resource> asset(@RequestParam String key)throws Exception{
         Path path=service.dataRoot().resolve(key).normalize();
