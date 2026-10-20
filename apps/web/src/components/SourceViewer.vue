@@ -56,6 +56,14 @@ function deleteTemplateSelection(){
   else for(const key of Object.keys(props.template.annotations||{}))props.template.annotations[key]=(props.template.annotations[key]||[]).filter((item:any)=>item!==target)
   selectedTemplate.value=null;emit('change')
 }
+function reassignSelected(event:Event){
+  const target=selectedTemplate.value;if(!target||!props.template)return
+  const questionId=(event.target as HTMLSelectElement).value||null
+  target.question_id=questionId;target.bound=!!questionId
+  const blank=(props.template.blanks||[]).find((b:any)=>b.blank_id===target.id)
+  if(blank){blank.question_id=questionId;blank.bound=!!questionId;blank.bind_reason=questionId?'manual':'unbound'}
+  emit('change')
+}
 watch(()=>props.documents,()=>{if(!docId.value&&props.documents.length)docId.value=props.documents[0].id},{immediate:true})
 watch(()=>props.selected?.id,()=>{const r=props.selected?.regions[0];if(r){docId.value=r.document_id;pageIndex.value=r.page_index}selectedRegion.value=-1},{immediate:true})
 watch(()=>props.answerDocumentId,id=>{if(id){docId.value=id;pageIndex.value=0}})
@@ -86,7 +94,7 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
     <div v-if="layer==='template'" class="template-stats">共 {{templateStats.total}} 个空 · 低置信度 {{templateStats.low}} 个 · 未绑定 {{templateStats.unbound}} 个</div>
     <div class="layer-filters" v-if="layer==='frames'"><label><input type="checkbox" v-model="frameOnly"/>只看当前题</label></div>
     <div class="layer-filters" v-else-if="layer==='blocks'"><select v-model="blockKind"><option value="all">全部类型</option><option value="text">文字</option><option value="header">页眉</option><option value="footer">页脚</option><option value="page_number">页码</option><option value="table">表格</option><option value="image">图片</option></select><label><input type="checkbox" v-model="blockMissingOnly"/>只看未引用</label></div>
-    <div class="layer-filters" v-else><select v-model="templateKind"><option value="all">全部标注</option><option value="student">学生信息区</option><option value="brackets">括号</option><option value="question_numbers">题号</option><option value="drop">定位点</option><option value="qr">二维码</option><option value="score_box">得分框</option></select><label><input type="checkbox" v-model="templateLow"/>只看低置信度</label><label><input type="checkbox" v-model="templateUnbound"/>只看未绑定</label></div>
+    <div class="layer-filters" v-else><select v-model="templateKind"><option value="all">全部标注</option><option value="student">学生信息区</option><option value="brackets">括号</option><option value="question_numbers">题号</option><option value="drop">定位点</option><option value="qr">二维码</option><option value="score_box">得分框</option></select><label><input type="checkbox" v-model="templateLow"/>只看低置信度</label><label><input type="checkbox" v-model="templateUnbound"/>只看未绑定</label><select v-if="selectedTemplate?.label" :value="selectedTemplate.question_id||''" @change="reassignSelected" aria-label="修改归属题目"><option value="">未绑定</option><option v-for="q in questions" :key="q.id" :value="q.id">第 {{q.number}} 题</option></select></div>
     <div ref="canvas" class="source-canvas"><div class="paper-image" v-if="page" :style="{width:`${zoom*100}%`}"><img :src="page.image_url" alt="原始试卷页面" draggable="false"/>
       <svg v-if="layer==='frames'" ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" @pointerdown="down($event)" @pointermove="move" @pointerup="up" @pointercancel="up" :class="{drawing:adding}">
         <g v-for="({q,r,i},index) in filteredVisible" :key="q.id+'-'+i" :class="{selected:q.id===selected?.id}">
