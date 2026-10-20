@@ -25,8 +25,8 @@ const pageAnnotations=computed(()=>{
     .filter((item:any)=>item.document_id===doc.value?.id&&item.page_index===pageIndex.value)
     .map((item:any)=>({kind,item})))
 })
-const displayAnnotations=computed(()=>pageAnnotations.value.filter(a=>(templateKind.value==='all'||templateKind.value===a.kind)&&(!templateLow.value||(a.item.score||0)<.6)&&(!templateUnbound.value||a.item.bound===false)))
-const displayZones=computed(()=>pageZones.value.filter(()=>templateKind.value==='all'||templateKind.value==='student'))
+const displayAnnotations=computed(()=>pageAnnotations.value.filter(a=>a.kind==='brackets'&&(!templateLow.value||(a.item.score||0)<.6)&&(!templateUnbound.value||a.item.bound===false)))
+const displayZones=computed(()=>pageZones.value.filter((zone:any)=>zone.role!=='backup'&&(templateKind.value==='all'||templateKind.value==='student')))
 const filteredVisible=computed(()=>frameOnly.value&&props.selected?visible.value.filter(x=>x.q.id===props.selected!.id):visible.value)
 const templateStats=computed(()=>{
   const brackets=(props.template?.annotations?.brackets||[])
@@ -94,7 +94,7 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
     <div v-if="layer==='template'" class="template-stats">共 {{templateStats.total}} 个空 · 低置信度 {{templateStats.low}} 个 · 未绑定 {{templateStats.unbound}} 个</div>
     <div class="layer-filters" v-if="layer==='frames'"><label><input type="checkbox" v-model="frameOnly"/>只看当前题</label></div>
     <div class="layer-filters" v-else-if="layer==='blocks'"><select v-model="blockKind"><option value="all">全部类型</option><option value="text">文字</option><option value="header">页眉</option><option value="footer">页脚</option><option value="page_number">页码</option><option value="table">表格</option><option value="image">图片</option></select><label><input type="checkbox" v-model="blockMissingOnly"/>只看未引用</label></div>
-    <div class="layer-filters" v-else><select v-model="templateKind"><option value="all">全部标注</option><option value="student">学生信息区</option><option value="brackets">括号</option><option value="question_numbers">题号</option><option value="drop">定位点</option><option value="qr">二维码</option><option value="score_box">得分框</option></select><label><input type="checkbox" v-model="templateLow"/>只看低置信度</label><label><input type="checkbox" v-model="templateUnbound"/>只看未绑定</label><select v-if="selectedTemplate?.label" :value="selectedTemplate.question_id||''" @change="reassignSelected" aria-label="修改归属题目"><option value="">未绑定</option><option v-for="q in questions" :key="q.id" :value="q.id">第 {{q.number}} 题</option></select></div>
+    <div class="layer-filters" v-else><select v-model="templateKind"><option value="all">全部标注</option><option value="student">学生信息区</option><option value="brackets">括号</option></select><label><input type="checkbox" v-model="templateLow"/>只看低置信度</label><label><input type="checkbox" v-model="templateUnbound"/>只看未绑定</label><select v-if="selectedTemplate?.label" :value="selectedTemplate.question_id||''" @change="reassignSelected" aria-label="修改归属题目"><option value="">未绑定</option><option v-for="q in questions" :key="q.id" :value="q.id">第 {{q.number}} 题</option></select></div>
     <div ref="canvas" class="source-canvas"><div class="paper-image" v-if="page" :style="{width:`${zoom*100}%`}"><img :src="page.image_url" alt="原始试卷页面" draggable="false"/>
       <svg v-if="layer==='frames'" ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" @pointerdown="down($event)" @pointermove="move" @pointerup="up" @pointercancel="up" :class="{drawing:adding}">
         <g v-for="({q,r,i},index) in filteredVisible" :key="q.id+'-'+i" :class="{selected:q.id===selected?.id}">
@@ -111,8 +111,7 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
       </svg>
       <svg v-else ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" class="template-layer" @pointermove="zoneMove" @pointerup="zoneUp" @pointercancel="zoneUp">
         <g v-for="a in displayAnnotations" :key="a.item.id" :class="['annotation',a.kind,{low:(a.item.score||0)<.6,unbound:a.item.bound===false,selected:selectedTemplate===a.item}]">
-          <rect :x="a.item.bbox[0]*1000" :y="a.item.bbox[1]*1000" :width="(a.item.bbox[2]-a.item.bbox[0])*1000" :height="(a.item.bbox[3]-a.item.bbox[1])*1000" @pointerdown.stop="zoneDown($event,a.item)"><title>{{annotationLabel(a.kind)}} · 置信度 {{Math.round((a.item.score||0)*100)}}%{{a.item.bound===false?' · 未绑定':''}}</title></rect>
-          <text :x="a.item.bbox[0]*1000+2" :y="a.item.bbox[1]*1000+10">{{annotationLabel(a.kind)}}</text>
+          <rect :x="a.item.bbox[0]*1000" :y="a.item.bbox[1]*1000" :width="(a.item.bbox[2]-a.item.bbox[0])*1000" :height="(a.item.bbox[3]-a.item.bbox[1])*1000" @pointerdown.stop="zoneDown($event,a.item)"><title>括号 · 置信度 {{Math.round((a.item.score||0)*100)}}%{{a.item.bound===false?' · 未绑定':''}}</title></rect>
         </g>
         <g v-for="zone in displayZones" :key="zone.id" :class="{selected:selectedTemplate===zone}">
           <rect :x="zone.bbox[0]*1000" :y="zone.bbox[1]*1000" :width="(zone.bbox[2]-zone.bbox[0])*1000" :height="(zone.bbox[3]-zone.bbox[1])*1000" @pointerdown.stop="zoneDown($event,zone)"><title>{{zone.role==='backup'?'学生信息区（备用）':'学生信息区'}} · {{zone.source}}</title></rect>

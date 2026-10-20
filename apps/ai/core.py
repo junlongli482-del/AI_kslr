@@ -1001,21 +1001,32 @@ def apply_paper_inheritance(paper: dict, questions: list[dict]):
                 sources['paper_type'] = 'question'
 
 
+def student_zone_defaults():
+    path = DATA / 'settings' / 'student_zones.json'
+    if path.exists():
+        try:
+            data = json.loads(path.read_text(encoding='utf-8'))
+            if isinstance(data, dict):
+                return data
+        except Exception:
+            pass
+    return {}
+
+
 def build_template(documents: list[dict]) -> dict:
+    defaults = student_zone_defaults()
     zones = []
     for doc in documents:
         if doc.get('role') == 'answer':
             continue
         for page_index, page in enumerate(doc.get('pages', [])):
             spread = page.get('width_px', 1) > page.get('height_px', 1) * 1.15
-            columns = [0, 1] if spread else [0]
-            for column in columns:
-                bbox = ([.02, .01, .49, .11] if column == 0 else [.51, .01, .98, .11]) if spread else [.02, .01, .98, .11]
-                zones.append({'id': f"sz-{doc['id']}-p{page_index}-{column}",
-                              'document_id': doc['id'], 'page_index': page_index,
-                              'column': column, 'bbox': bbox, 'source': 'default_v2',
-                              'role': 'primary' if column == 0 else 'backup',
-                              'fields': {'name': '', 'class': '', 'student_id': ''}})
+            layout = 'A3-2' if spread else 'A4-1'
+            bbox = (defaults.get(layout) or {}).get('bbox') or ([.04, .015, .42, .068] if spread else [.04, .015, .42, .068])
+            zones.append({'id': f"sz-{doc['id']}-p{page_index}", 'document_id': doc['id'],
+                          'page_index': page_index, 'column': 0, 'bbox': bbox,
+                          'source': 'default_v2', 'role': 'primary',
+                          'fields': {'name': '', 'class': '', 'student_id': ''}})
     return {'version': 'template-v2', 'student_zones': zones, 'annotations': {}, 'blanks': []}
 
 

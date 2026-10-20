@@ -82,6 +82,8 @@ public class QuickEntryController {
         }
         return store.files(id);
     }
+    @GetMapping("/quick-entry/settings/student-zones") public Object studentZoneSettings(){return service.studentZoneSettings();}
+    @PutMapping("/quick-entry/settings/student-zones") public Object saveStudentZoneSettings(@RequestBody JsonNode body){return service.saveStudentZoneSettings(body);}
     @PostMapping("/quick-entry/tasks/{id}/start") public Object start(@PathVariable String id){service.start(id);return service.task(id);}
     @PostMapping("/quick-entry/tasks/{id}/retry") public Object retry(@PathVariable String id){service.start(id);return service.task(id);}
     @GetMapping("/quick-entry/tasks/{id}/review") public Object review(@PathVariable String id){return Map.of("result",service.review(id),"revision",service.require(id).get("revision"));}

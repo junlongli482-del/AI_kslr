@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import axios from 'axios'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { BookOpen, ScanLine, Library, Files, Plus, ArrowUpRight, ArrowLeft, ArrowRight, UploadCloud, FileText, Check, CheckCheck, Search, RefreshCw, Settings2, ChevronRight, CircleAlert, LoaderCircle, Save, Split, Merge, Trash2, PanelLeftClose, ClipboardCheck, X, ExternalLink, Grip } from 'lucide-vue-next'
+import { BookOpen, ScanLine, Library, Files, Plus, ArrowUpRight, ArrowLeft, ArrowRight, UploadCloud, FileText, Check, CheckCheck, Search, RefreshCw, Settings2, ChevronRight, CircleAlert, LoaderCircle, Save, Split, Merge, Trash2, PanelLeftClose, ClipboardCheck, X, ExternalLink, Grip, Crop } from 'lucide-vue-next'
 import type { Task, Question, Result, Paper, Region } from './types'
 import { renderMarkdown } from './render'
 import { prepareEditorDocument } from './render'
@@ -17,6 +17,7 @@ const showMobileSource=ref(false)
 const view=ref('tasks'),tasks=ref<Task[]>([]),busy=ref(false),task=ref<Task|null>(null)
 const result=ref<Result|null>(null),revision=ref(0),selectedId=ref(''),tab=ref('content'),filter=ref('all'),paperFilter=ref(''),search=ref(''),saveState=ref('已保存'),answerDoc=ref('')
 const paperOpen=ref(false)
+const zoneLayout=ref<'A3-2'|'A4-1'>('A3-2'),zoneDefaults=ref<Record<string,any>>({}),zonePreviewUrl=ref(''),zonePreviewBase64=ref(''),zoneBbox=ref<number[]>([.04,.015,.42,.068]),zoneSaving=ref(false),zoneDrag=ref<any>(null)
 const createDialog=ref(false),newTitle=ref(''),newMode=ref('textbook'),generate=ref(false),policy=ref('deepseek'),questionFiles=ref<File[]>([]),answerFiles=ref<File[]>([])
 const bank=ref<any[]>([]),bankSearch=ref(''),detail=ref<any|null>(null),detailDialog=ref(false),issuesDialog=ref(false),validationIssues=ref<any[]>([])
 const concurrency=ref<{max_concurrency:number;running:number;queued:number}|null>(null)
@@ -149,7 +150,17 @@ async function saveConcurrency(){
   try{concurrency.value=(await api.put('/quick-entry/settings/concurrency',{max_concurrency:concurrencyUnlimited.value?0:concurrencyLimit.value})).data;concurrencyEdited.value=false;concurrencyError.value='';ElMessage.success('并发设置已生效，等待中的任务会自动按新设置启动')}
   catch(e){error(e)}finally{concurrencyBusy.value=false}
 }
-async function navigate(next:string){if(view.value==='review'){await saveDraft();if(dirty)return}view.value=next;detail.value=null;if(next==='tasks')await loadTasks();else if(next==='questions'||next==='papers')await loadBank()}
+async function navigate(next:string){if(view.value==='review'){await saveDraft();if(dirty)return}view.value=next;detail.value=null;if(next==='tasks')await loadTasks();else if(next==='questions'||next==='papers')await loadBank();else if(next==='student-zones')await loadStudentZoneSettings()}
+const zoneSvg=ref<SVGSVGElement|null>(null)
+function zonePoint(e:PointerEvent){const rect=zoneSvg.value!.getBoundingClientRect();return [Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width)),Math.max(0,Math.min(1,(e.clientY-rect.top)/rect.height))]}
+function zonePointerDown(e:PointerEvent,resize=false){e.preventDefault();zoneSvg.value?.setPointerCapture(e.pointerId);const start=zonePoint(e);zoneDrag.value={mode:resize?'resize':'move',start,bbox:[...zoneBbox.value]}}
+function zonePointerMove(e:PointerEvent){const drag=zoneDrag.value;if(!drag)return;const p=zonePoint(e),dx=p[0]-drag.start[0],dy=p[1]-drag.start[1],b=drag.bbox;if(drag.mode==='move'){const x=Math.max(0,Math.min(1-(b[2]-b[0]),b[0]+dx)),y=Math.max(0,Math.min(1-(b[3]-b[1]),b[1]+dy));zoneBbox.value=[x,y,x+b[2]-b[0],y+b[3]-b[1]]}else zoneBbox.value=[b[0],b[1],Math.max(b[0]+.02,p[0]),Math.max(b[1]+.01,p[1])]}
+function zonePointerUp(){zoneDrag.value=null}
+async function loadStudentZoneSettings(){try{zoneDefaults.value=(await api.get('/quick-entry/settings/student-zones')).data||{};selectZoneLayout(zoneLayout.value)}catch(e){error(e)}}
+function selectZoneLayout(layout:'A3-2'|'A4-1'){zoneLayout.value=layout;const entry=zoneDefaults.value[layout]||{};zoneBbox.value=[...(entry.bbox||[.04,.015,.42,.068])];zonePreviewUrl.value=entry.preview_url||'';zonePreviewBase64.value=''}
+function zonePreviewFile(event:Event){const file=(event.target as HTMLInputElement).files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{zonePreviewUrl.value=String(reader.result);zonePreviewBase64.value=String(reader.result)};reader.readAsDataURL(file)}
+function resetStudentZone(){zoneBbox.value=[.04,.015,.42,.068]}
+async function saveStudentZone(){if(zoneSaving.value)return;try{zoneSaving.value=true;const response=await api.put('/quick-entry/settings/student-zones',{layout:zoneLayout.value,bbox:zoneBbox.value,preview_base64:zonePreviewBase64.value||null});zoneDefaults.value[zoneLayout.value]=response.data.settings;zonePreviewUrl.value=response.data.settings.preview_url||zonePreviewUrl.value;zonePreviewBase64.value='';ElMessage.success('学生信息区默认值已保存，只影响后续新任务')}catch(e){error(e)}finally{zoneSaving.value=false}}
 async function loadBank(){try{bank.value=(await api.get(view.value==='papers'?'/paperbank/papers':'/questionbank/questions',{params:{query:bankSearch.value}})).data}catch(e){error(e)}}
 function normalizeSubAnswers(r:Result){
   for(const q of r.questions){
@@ -337,11 +348,11 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
     <aside class="app-sidebar">
       <a class="brand" href="#" @click.prevent="navigate('tasks')"><span class="brand-mark"><BookOpen :size="23"/></span><span>金版<span class="brand-caption">智慧教学</span></span></a>
       <div class="workspace-label">内容工作空间</div>
-      <nav><button :class="{active:['tasks','review','progress'].includes(view)}" @click="navigate('tasks')"><ScanLine :size="19"/><span>快速录入</span><span class="nav-count" v-if="ready">{{ready}}</span></button><button :class="{active:view==='questions'}" @click="navigate('questions')"><Library :size="19"/><span>题库</span></button><button :class="{active:view==='papers'}" @click="navigate('papers')"><Files :size="19"/><span>试卷库</span></button></nav>
+      <nav><button :class="{active:['tasks','review','progress'].includes(view)}" @click="navigate('tasks')"><ScanLine :size="19"/><span>快速录入</span><span class="nav-count" v-if="ready">{{ready}}</span></button><button :class="{active:view==='questions'}" @click="navigate('questions')"><Library :size="19"/><span>题库</span></button><button :class="{active:view==='papers'}" @click="navigate('papers')"><Files :size="19"/><span>试卷库</span></button><button :class="{active:view==='student-zones'}" @click="navigate('student-zones')"><Crop :size="19"/><span>学生信息区</span></button></nav>
       <div class="sidebar-bottom"><span class="local-dot"/>本地验证工作台<div class="sidebar-footnote">原始资料与处理结果留档</div></div>
     </aside>
     <main class="app-main">
-      <header class="topbar"><div class="breadcrumb">内容管理 <ChevronRight :size="14"/><span>{{view==='questions'?'题库':view==='papers'?'试卷库':view==='review'?'快速录入 / 对照审核':'快速录入'}}</span></div><div class="topbar-right"><span class="workspace-badge">九年级数学 · 验证空间</span><span class="avatar">编</span></div></header>
+      <header class="topbar"><div class="breadcrumb">内容管理 <ChevronRight :size="14"/><span>{{view==='questions'?'题库':view==='papers'?'试卷库':view==='student-zones'?'学生信息区':view==='review'?'快速录入 / 对照审核':'快速录入'}}</span></div><div class="topbar-right"><span class="workspace-badge">九年级数学 · 验证空间</span><span class="avatar">编</span></div></header>
 
       <template v-if="view==='tasks'">
         <div class="page-content">
@@ -436,6 +447,33 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
         </div>
       </template>
 
+      <template v-else-if="view==='student-zones'">
+        <div class="page-content zone-settings-page">
+          <div class="page-title-row"><div><h1>学生信息区</h1><p class="page-description">按版面维护学生姓名/班级/学号区域的默认位置，只影响后续新任务。</p></div></div>
+          <div class="zone-settings-layout">
+            <section class="zone-settings-panel">
+              <div class="field-heading"><label>版面类型</label><span>当前只维护 A3 双栏和 A4 单栏</span></div>
+              <div class="mode-options">
+                <button v-for="item in [{id:'A3-2',title:'A3-2',desc:'A3 两栏'},{id:'A4-1',title:'A4-1',desc:'A4 一栏'}]" :key="item.id" :class="{active:zoneLayout===item.id}" @click="selectZoneLayout(item.id as 'A3-2'|'A4-1')"><strong>{{item.title}}</strong><span>{{item.desc}}</span><Check v-if="zoneLayout===item.id" :size="15"/></button>
+              </div>
+              <div class="field-heading"><label>预览页</label><span>上传该版面的真实页面</span></div>
+              <label class="file-drop zone-upload"><UploadCloud :size="24"/><strong>选择预览图</strong><span>PNG、JPG</span><input type="file" accept="image/png,image/jpeg,image/webp" @change="zonePreviewFile"/></label>
+              <p class="muted">预览图只用于设置，不代表任务原卷。</p>
+              <div class="zone-actions"><button class="text-button" @click="resetStudentZone">恢复默认</button><el-button type="primary" :loading="zoneSaving" @click="saveStudentZone">保存默认</el-button></div>
+            </section>
+            <section class="zone-preview-panel">
+              <div v-if="zonePreviewUrl" class="zone-preview-canvas">
+                <img :src="zonePreviewUrl" alt="学生信息区预览页" draggable="false"/>
+                <svg ref="zoneSvg" viewBox="0 0 1000 1000" preserveAspectRatio="none" @pointermove="zonePointerMove" @pointerup="zonePointerUp" @pointercancel="zonePointerUp">
+                  <g><rect :x="zoneBbox[0]*1000" :y="zoneBbox[1]*1000" :width="(zoneBbox[2]-zoneBbox[0])*1000" :height="(zoneBbox[3]-zoneBbox[1])*1000" @pointerdown.stop="zonePointerDown($event)"/><text :x="zoneBbox[0]*1000+4" :y="zoneBbox[1]*1000+13">姓名区</text><rect class="zone-resize" :x="zoneBbox[2]*1000-8" :y="zoneBbox[3]*1000-8" width="10" height="10" @pointerdown.stop="zonePointerDown($event,true)"/></g>
+                </svg>
+              </div>
+              <div v-else class="empty-state"><Crop :size="34"/><h3>还没有预览页</h3><p>上传一张 A3-2 或 A4-1 的真实页面，然后在图上框出学生信息区。</p></div>
+              <p class="muted">保存的是默认值；任务内仍可在「模板标注」层单独调整，不会反向修改这里的默认值。</p>
+            </section>
+          </div>
+        </div>
+      </template>
       <template v-else-if="view==='questions'||view==='papers'"><div class="page-content"><div class="page-title-row"><div><h1>{{view==='questions'?'题库':'试卷库'}}</h1><p class="page-description">{{view==='questions'?'已保存的题目，连同来源与审核版本一起保留。':'整卷结构、题目引用与原卷模板，统一管理。'}}</p></div><el-button type="primary" @click="createDialog=true"><Plus :size="16"/>录入资料</el-button></div><div class="bank-toolbar"><el-input v-model="bankSearch" placeholder="搜索题目内容" clearable @keyup.enter="loadBank"><template #prefix><Search :size="16"/></template></el-input><el-button @click="loadBank">搜索</el-button><span class="muted">{{bank.length}} 条资源</span></div><div class="bank-list"><button class="bank-item" v-for="item in bank" :key="item.id" @click="openDetail(item)"><template v-if="view==='questions'"><div class="bank-item-meta"><span class="q-number">{{item.number}}</span><span>{{item.content.attributes?.question_type||'题目'}}</span><span class="neutral-badge">{{item.content.attributes?.subject||'未分类'}}</span><span :class="['status-pill',item.status==='incomplete'?'uploaded':'committed']">{{item.status==='incomplete'?'待完善':'已保存'}}</span></div><div class="question-prose bank-question" v-html="renderMarkdown(item.content.stem)"/></template><template v-else><div class="bank-paper-icon"><Files :size="28"/></div><div><h3>{{item.title}}</h3><p>{{modeName(item.mode)}} · {{item.mode==='textbook'?'已保存原卷区域模板':'普通试卷，不启用原卷批阅'}}</p><small>{{formatDate(item.created_at)}}</small></div></template><ChevronRight :size="18" class="bank-chevron"/></button><div class="empty-state" v-if="!bank.length"><Library :size="36"/><h3>这里还没有资源</h3><p>完成审核并入库后，题目或试卷会出现在这里。</p><el-button @click="navigate('tasks')">前往快速录入</el-button></div></div></div></template>
     </main>
 

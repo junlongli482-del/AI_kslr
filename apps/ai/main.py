@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, normalize_paper, allocate_paper_scores, apply_paper_inheritance, LLM, fill_question_rubric, build_template
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, normalize_paper, allocate_paper_scores, apply_paper_inheritance, LLM, fill_question_rubric, build_template, asset_url
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -48,6 +48,12 @@ scheduler = TaskScheduler(max(0, initial_limit))
 class QuestionRubricRequest(BaseModel):
     task_id: str
     question: dict
+
+
+class StudentZoneSettingsRequest(BaseModel):
+    layout: str
+    bbox: list[float] = Field(min_length=4, max_length=4)
+    preview_base64: str | None = None
 
 
 class RegionRecognizeRequest(BaseModel):
@@ -302,6 +308,50 @@ def question_rubric(request: QuestionRubricRequest):
             'remaining': len([target for target in (question.get('subquestions') or [question]) if not (target.get('scoring') or {}).get('points')])}
 
 
+@app.get('/settings/student-zones')
+def get_student_zone_settings():
+    path = DATA / 'settings' / 'student_zones.json'
+    config = read(path) if path.exists() else {}
+    if not isinstance(config, dict):
+        config = {}
+    defaults = {'A3-2': [.04, .015, .42, .068], 'A4-1': [.04, .015, .42, .068]}
+    for layout, bbox in defaults.items():
+        entry = config.setdefault(layout, {})
+        entry.setdefault('bbox', bbox)
+        key = entry.get('preview_key')
+        entry['preview_url'] = asset_url(DATA / key) if key else None
+    return config
+
+
+@app.put('/settings/student-zones')
+def save_student_zone_settings(request: StudentZoneSettingsRequest):
+    if request.layout not in ('A3-2', 'A4-1'):
+        raise HTTPException(400, '未知版面类型')
+    x0, y0, x1, y1 = [max(0.0, min(1.0, float(v))) for v in request.bbox]
+    if x1 <= x0 or y1 <= y0:
+        raise HTTPException(400, '学生区坐标无效')
+    path = DATA / 'settings' / 'student_zones.json'
+    config = read(path) if path.exists() else {}
+    if not isinstance(config, dict):
+        config = {}
+    entry = config.setdefault(request.layout, {})
+    entry['bbox'] = [round(x0, 6), round(y0, 6), round(x1, 6), round(y1, 6)]
+    if request.preview_base64:
+        raw = request.preview_base64.split(',', 1)[-1]
+        try:
+            image_bytes = base64.b64decode(raw)
+            (DATA / 'settings' / 'student-zones').mkdir(parents=True, exist_ok=True)
+            with Image.open(io.BytesIO(image_bytes)) as image:
+                image.convert('RGB').save(DATA / 'settings' / 'student-zones' / f'{request.layout}.png')
+        except Exception as exc:
+            raise HTTPException(400, '预览图无效') from exc
+        entry['preview_key'] = f'settings/student-zones/{request.layout}.png'
+        entry['preview_url'] = asset_url(DATA / entry['preview_key'])
+    path.parent.mkdir(parents=True, exist_ok=True)
+    save(path, config)
+    return {'layout': request.layout, 'settings': entry, 'all': config}
+
+
 @app.get('/health')
 def health():
     return {'status': 'ok', 'mineru_configured': bool(os.getenv('MINERU_API_KEY')),
@@ -391,6 +441,9 @@ def validate(task_id: str, payload: dict):
         repair_result(result, DATA, task_id)
         if not result.get('template'):
             result['template'] = build_template(result['documents'])
+        else:
+            zones = result['template'].get('student_zones') or []
+            result['template']['student_zones'] = [z for z in zones if z.get('role') != 'backup']
         for paper in result['papers']:
             normalize_paper(paper)
             allocate_paper_scores(paper, result['questions'])
