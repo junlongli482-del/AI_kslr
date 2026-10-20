@@ -39,6 +39,12 @@ public interface StoreMapper {
     List<Map<String,Object>> questions(@Param("query")String query);
     @Select("SELECT id,title,mode,content::text,task_id,created_at::text FROM jinban.paper_revision p WHERE review_revision=(SELECT max(v.review_revision) FROM jinban.paper_revision v WHERE v.task_id=p.task_id AND v.content->>'id'=p.content->>'id') ORDER BY created_at DESC LIMIT 200")
     List<Map<String,Object>> papers();
+    @Select("SELECT p.id,p.title,p.mode,p.task_id,p.content::text,p.created_at::text FROM jinban.paper_revision p JOIN jinban.qe_task t ON t.id=p.task_id WHERE t.status='committed' AND p.review_revision=(SELECT max(v.review_revision) FROM jinban.paper_revision v WHERE v.task_id=p.task_id AND v.content->>'id'=p.content->>'id') ORDER BY p.created_at DESC LIMIT 200")
+    List<Map<String,Object>> exportPapers();
+    @Select("SELECT q.id,q.content::text,pq.sort_order,pq.score FROM jinban.paper_question pq JOIN jinban.question_revision q ON q.id=pq.question_id WHERE pq.paper_id=#{id} ORDER BY pq.sort_order")
+    List<Map<String,Object>> exportPaperQuestions(String id);
+    @Select("SELECT q.id,q.content::text,q.task_id,pq.paper_id,pq.sort_order,pq.score FROM jinban.question_revision q JOIN jinban.paper_question pq ON pq.question_id=q.id JOIN jinban.qe_task t ON t.id=q.task_id WHERE q.id=#{id} AND t.status='committed' LIMIT 1")
+    Map<String,Object> exportQuestion(String id);
     @Select("SELECT id,number,stem,status,content::text,task_id FROM jinban.question_revision WHERE id=#{id}")
     Map<String,Object> questionDetail(String id);
     @Select("SELECT id,title,mode,content::text,task_id FROM jinban.paper_revision WHERE id=#{id}")

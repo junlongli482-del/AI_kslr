@@ -2,6 +2,8 @@ package cn.jinban.quickentry;
 
 import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.node.*;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.security.MessageDigest;
 import java.time.Duration;
@@ -34,6 +36,19 @@ public class TaskService {
         try{return json.readTree(s.toString());}catch(Exception e){throw new IllegalStateException("已保存数据无法解析",e);}
     }
     String encode(Object o){try{return json.writeValueAsString(o);}catch(Exception e){throw new IllegalArgumentException("数据无法编码");}}
+    static String assetKey(String url){
+        if(url==null||url.isBlank())return "";
+        int at=url.indexOf("key=");
+        if(at<0)return url;
+        String key=url.substring(at+4);
+        int amp=key.indexOf('&');if(amp>=0)key=key.substring(0,amp);
+        return java.net.URLDecoder.decode(key,StandardCharsets.UTF_8);
+    }
+    static void addAsset(ArrayNode assets,Set<String> seen,String key){
+        if(key==null||key.isBlank()||!seen.add(key))return;
+        var asset=assets.addObject();asset.put("key",key);
+        asset.put("url","/api/assets?key="+URLEncoder.encode(key,StandardCharsets.UTF_8));
+    }
     public Path dataRoot(){return data;}
     RestClient aiClient(){return ai;}
     public Map<String,Object> require(String id){var t=store.task(id);if(t==null)throw new ResponseStatusException(NOT_FOUND,"任务不存在");return t;}
@@ -122,6 +137,91 @@ public class TaskService {
     }
     public JsonNode saveStudentZoneSettings(JsonNode request){
         return ai.put().uri("/settings/student-zones").body(request).retrieve().body(JsonNode.class);
+    }
+    public List<Map<String,Object>> exportPapers(){
+        var out=new ArrayList<Map<String,Object>>();
+        for(var row:store.exportPapers()){
+            JsonNode content=parse(row.get("content"));
+            var item=new LinkedHashMap<String,Object>();
+            item.put("paper_id",row.get("id"));
+            item.put("task_id",row.get("task_id"));
+            item.put("title",row.get("title"));
+            item.put("mode",row.get("mode"));
+            item.put("created_at",row.get("created_at"));
+            item.put("attributes",content.path("attributes"));
+            item.put("paper_type",content.path("paper_type"));
+            item.put("exam",content.path("exam"));
+            item.put("computed_total_score",content.path("computed_total_score"));
+            item.put("declared_total_score",content.path("declared_total_score"));
+            item.put("question_count",store.paperQuestions(String.valueOf(row.get("id"))).size());
+            out.add(item);
+        }
+        return out;
+    }
+    public JsonNode exportPaper(String id){
+        var row=store.paperDetail(id);
+        if(row==null)throw new ResponseStatusException(NOT_FOUND,"试卷不存在");
+        var task=require(String.valueOf(row.get("task_id")));
+        if(!"committed".equals(String.valueOf(task.get("status"))))throw new ResponseStatusException(CONFLICT,"试卷尚未审核入库");
+        JsonNode paper=parse(row.get("content"));
+        var out=json.createObjectNode();
+        out.put("schema_version","p1-export-v1");
+        out.put("exported_at",java.time.Instant.now().toString());
+        out.set("paper",paper);
+        var questions=json.createArrayNode();
+        for(var qrow:store.exportPaperQuestions(id)){
+            var q=json.createObjectNode();
+            q.put("id",String.valueOf(qrow.get("id")));
+            q.put("sort_order",((Number)qrow.getOrDefault("sort_order",0)).intValue());
+            if(qrow.get("score")!=null)q.put("score",((Number)qrow.get("score")).doubleValue());
+            q.set("content",parse(qrow.get("content")));
+            questions.add(q);
+        }
+        out.set("questions",questions);
+        var templates=store.templates(id);
+        if(!templates.isEmpty()){
+            var trow=templates.get(0);
+            var templateContent=parse(trow.get("content"));
+            JsonNode template=templateContent.path("template");
+            if(template.isObject() && template.path("student_zones").isArray()){
+                var zones=(ArrayNode)template.path("student_zones");
+                for(int i=zones.size()-1;i>=0;i--)if("backup".equals(zones.get(i).path("role").asText()))zones.remove(i);
+            }
+            out.set("template",template);
+            out.set("question_regions",templateContent.path("question_regions"));
+            out.set("template_documents",templateContent.path("documents"));
+            out.put("template_review_status",String.valueOf(trow.get("review_status")));
+            out.put("scan_capability",String.valueOf(trow.get("scan_capability")));
+        }else{
+            out.set("template",json.createObjectNode());
+            out.set("question_regions",json.createArrayNode());
+        }
+        var assets=json.createArrayNode();
+        var seen=new LinkedHashSet<String>();
+        for(JsonNode doc:paper.path("documents")){
+            for(JsonNode page:doc.path("pages"))addAsset(assets,seen,page.path("image_key").asText(""));
+            var metadata=doc.path("asset_metadata");
+            var names=metadata.fieldNames();
+            while(names.hasNext())addAsset(assets,seen,assetKey(names.next()));
+        }
+        out.set("assets",assets);
+        out.put("task_id",String.valueOf(row.get("task_id")));
+        out.put("task_status","committed");
+        return out;
+    }
+    public JsonNode exportQuestion(String id){
+        var row=store.exportQuestion(id);
+        if(row==null)throw new ResponseStatusException(NOT_FOUND,"题目不存在或所属任务未入库");
+        var out=json.createObjectNode();
+        out.put("schema_version","p1-export-v1");
+        out.put("exported_at",java.time.Instant.now().toString());
+        out.put("question_id",String.valueOf(row.get("id")));
+        out.put("paper_id",String.valueOf(row.get("paper_id")));
+        out.put("task_id",String.valueOf(row.get("task_id")));
+        out.put("sort_order",((Number)row.getOrDefault("sort_order",0)).intValue());
+        if(row.get("score")!=null)out.put("score",((Number)row.get("score")).doubleValue());
+        out.set("content",parse(row.get("content")));
+        return out;
     }
     public Map<String,Object> saveReview(String id,int revision,JsonNode draft){
         var previous=require(id);
