@@ -201,6 +201,12 @@ def test_paper_inheritance_respects_manual_fields():
     assert qs[0]['attribute_sources']['year']=='paper'
 
 
+def test_paper_source_shapes_are_normalized():
+    paper=core.normalize_paper({'id':'p','source':{'printed_page_numbers':'1、2、3','columns':2}})
+    assert paper['source']['printed_page_numbers']==['1','2','3']
+    assert paper['source']['columns']==[{'page':1,'columns':2}]
+
+
 def _deepseek_env(monkeypatch):
     monkeypatch.setenv('LLM_DEEPSEEK_API_KEY','sk-test')
     monkeypatch.setenv('LLM_DEEPSEEK_BASE_URL','https://example.test')

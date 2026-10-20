@@ -860,8 +860,21 @@ def normalize_paper(paper: dict):
     if not isinstance(source, dict):
         source = {}
     source.setdefault('page_count', None)
-    source.setdefault('printed_page_numbers', [])
-    source.setdefault('columns', [])
+    pages = source.get('printed_page_numbers')
+    if isinstance(pages, str):
+        pages = [part for part in re.split(r'[,，、\s]+', pages) if part]
+    elif not isinstance(pages, list):
+        pages = []
+    source['printed_page_numbers'] = pages
+    columns = source.get('columns')
+    if isinstance(columns, (int, float)):
+        columns = [{'page': 1, 'columns': int(columns)}]
+    elif isinstance(columns, list):
+        columns = [{'page': index + 1, 'columns': int(value)} if isinstance(value, (int, float)) else value
+                   for index, value in enumerate(columns)]
+    else:
+        columns = []
+    source['columns'] = columns
     paper['source'] = source
     manual = paper.get('manual')
     if not isinstance(manual, dict):
