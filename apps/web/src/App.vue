@@ -3,7 +3,7 @@ import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import axios from 'axios'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { BookOpen, ScanLine, Library, Files, Plus, ArrowUpRight, ArrowLeft, ArrowRight, UploadCloud, FileText, Check, CheckCheck, Search, RefreshCw, Settings2, ChevronRight, CircleAlert, LoaderCircle, Save, Split, Merge, Trash2, PanelLeftClose, ClipboardCheck, X, ExternalLink, Grip } from 'lucide-vue-next'
-import type { Task, Question, Result } from './types'
+import type { Task, Question, Result, Paper } from './types'
 import { renderMarkdown } from './render'
 import { prepareEditorDocument } from './render'
 import { repairQuestionDraft } from './repair'
@@ -16,6 +16,7 @@ const api=axios.create({baseURL:'/api',timeout:120000})
 const showMobileSource=ref(false)
 const view=ref('tasks'),tasks=ref<Task[]>([]),busy=ref(false),task=ref<Task|null>(null)
 const result=ref<Result|null>(null),revision=ref(0),selectedId=ref(''),tab=ref('content'),filter=ref('all'),paperFilter=ref(''),search=ref(''),saveState=ref('已保存'),answerDoc=ref('')
+const paperOpen=ref(false)
 const createDialog=ref(false),newTitle=ref(''),newMode=ref('textbook'),generate=ref(false),policy=ref('deepseek'),questionFiles=ref<File[]>([]),answerFiles=ref<File[]>([])
 const bank=ref<any[]>([]),bankSearch=ref(''),detail=ref<any|null>(null),detailDialog=ref(false),issuesDialog=ref(false),validationIssues=ref<any[]>([])
 const concurrency=ref<{max_concurrency:number;running:number;queued:number}|null>(null)
@@ -23,6 +24,8 @@ const concurrencyUnlimited=ref(true),concurrencyLimit=ref(3),concurrencyBusy=ref
 const concurrencyEdited=ref(false)
 const comparison=ref<any>(null),clockNow=ref(Date.now())
 const selected=computed(()=>result.value?.questions.find(q=>q.id===selectedId.value)||null)
+const activePaper=computed(()=>result.value?.papers.find(p=>p.id===paperFilter.value)||result.value?.papers.find(p=>p.id===selected.value?.paper_id)||result.value?.papers[0]||null)
+const paperForm=computed(()=>activePaper.value?ensurePaper(activePaper.value):null)
 const reviewed=computed(()=>result.value?.questions.filter(q=>q.review_status==='reviewed').length||0)
 const shownQuestions=computed(()=>result.value?.questions.filter(q=>(!paperFilter.value||q.paper_id===paperFilter.value)&&(filter.value!=='pending'||q.review_status!=='reviewed')&&(!search.value||q.number.includes(search.value)||q.stem.includes(search.value)))||[])
 const running=computed(()=>tasks.value.filter(t=>t.status==='running').length)
@@ -31,7 +34,86 @@ let timer:ReturnType<typeof setInterval>|undefined,saveTimer:ReturnType<typeof s
 let savePromise:Promise<void>|null=null
 const modeName=(mode:string)=>({textbook:'教辅卷 / 作业',questions:'仅录题目',paper:'普通整卷'}[mode]||mode)
 const statusName=(status:string)=>({running:'处理中',queued:'等待并发名额',pending:'正在准备',ready:'待审核',committed:'已入库',uploaded:'待处理',failed:'处理失败',interrupted:'待恢复'}[status]||status)
+const scoreSourceName=(source:string)=>({paper_declared:'卷面',ai_assigned:'AI分配',manual:'人工'}[source]||'')
 const formatDate=(s:string)=>s?.slice(5,16).replace('T',' ')
+const paperTypes=['同步练','单元测','月考','期中','期末','一模二模','真题','模拟','课时作业','竞赛','其他']
+const paperInheritFields:[string,string][]=[['year','年份'],['semester','学期'],['region','地区'],['paper_type','试卷类型'],['textbook_version','教材版本'],['stage','学段'],['subject','学科'],['grade','年级']]
+function ensurePaper(paper:any){
+  paper.attributes??={};paper.exam??={};paper.source??={};paper.manual??={}
+  paper.attributes.school_publisher??=''
+  paper.paper_type??=''
+  paper.exam.duration_min??=null;paper.exam.declared_total_score??=null;paper.exam.declared_question_count??=null
+  paper.exam.candidate_notes??='';paper.exam.has_elective??=null;paper.exam.has_listening??=null;paper.exam.answers_at_end??=null
+  paper.source.page_count??=null;paper.source.printed_page_numbers??=[];paper.source.columns??=[]
+  paper.manual.quality_level??='';paper.manual.tags??=[]
+  return paper
+}
+function openPaper(){if(activePaper.value){ensurePaper(activePaper.value);paperOpen.value=true}}
+function paperQuestions(paper:any){return result.value?.questions.filter(q=>q.paper_id===paper.id)||[]}
+function paperTotal(paper:any){return paperQuestions(paper).reduce((sum,q)=>sum+Number(q.attributes.score||0),0)}
+function paperDeclared(paper:any){const value=Number(paper.exam?.declared_total_score);return Number.isFinite(value)&&value>0?value:null}
+function paperDiff(paper:any){const declared=paperDeclared(paper);return declared===null?null:paperTotal(paper)-declared}
+function printedPagesText(paper:any){return (paper.source?.printed_page_numbers||[]).join('、')}
+function setPrintedPages(paper:any,value:string){paper.source??={};paper.source.printed_page_numbers=String(value||'').split(/[,，、\s]+/).filter(Boolean);paperChanged()}
+function paperChanged(){if(!activePaper.value)return;applyPaperInheritanceLocal(activePaper.value);markDirty()}
+function applyPaperInheritanceLocal(paper:any){
+  if(!result.value)return
+  ensurePaper(paper)
+  for(const q of paperQuestions(paper)){
+    q.attribute_sources??={}
+    for(const [field] of paperInheritFields){
+      if(q.attribute_sources[field]==='manual')continue
+      const value=field==='paper_type'?paper.paper_type:paper.attributes[field]
+      if(value!==''&&value!=null){q.attributes[field]=value;q.attribute_sources[field]='paper'}
+      else if(q.attribute_sources[field]==='paper')q.attribute_sources[field]='question'
+    }
+  }
+}
+function markAttributeManual(field:string){if(!selected.value)return;(selected.value.attribute_sources??={})[field]='manual';markDirty()}
+function markScoreManual(){if(!selected.value)return;selected.value.attributes.score_source='manual';markDirty()}
+function restoreInherited(field:string){
+  if(!selected.value||!activePaper.value)return
+  const value=field==='paper_type'?activePaper.value.paper_type:activePaper.value.attributes?.[field]
+  selected.value.attributes[field]=value||''
+  ;(selected.value.attribute_sources??={})[field]='paper'
+  markDirty();ElMessage.success('已恢复为跟随试卷')
+}
+function canonicalType(value:string,q?:Question){
+  const text=String(value||'')
+  if(/题组|复合/.test(text)){
+    const subs=q?.subquestions||[]
+    if(subs.some(sub=>(sub.options||[]).length))return'选择题'
+    return'综合题'
+  }
+  if(/多选/.test(text))return'多选题'
+  if(/选择|单选/.test(text))return'单选题'
+  if(/判断/.test(text))return'判断题'
+  if(/填空/.test(text))return'填空题'
+  if(/作文|写作/.test(text))return'作文题'
+  if(/计算/.test(text))return'计算题'
+  if(/证明/.test(text))return'证明题'
+  if(/综合|材料/.test(text))return'综合题'
+  if(/解答/.test(text))return'解答题'
+  return text||'未分类'
+}
+function paperSections(paper:any){
+  const rows:{type:string;items:Question[]}[]=[]
+  for(const q of paperQuestions(paper)){
+    const type=canonicalType(q.attributes.question_type,q)
+    const last=rows[rows.length-1]
+    if(!last||last.type!==type)rows.push({type,items:[q]});else last.items.push(q)
+  }
+  const numerals=['一','二','三','四','五','六','七','八','九','十']
+  return rows.map((row,index)=>{
+    const count=row.items.length,total=row.items.reduce((sum,q)=>sum+Number(q.attributes.score||0),0)
+    const first=String(row.items[0]?.number||'').match(/\d+/)?.[0]||row.items[0]?.number||''
+    const last=String(row.items[row.items.length-1]?.number||'').match(/\d+/)?.[0]||row.items[row.items.length-1]?.number||''
+    const range=count===1?first:`${first}–${last}`
+    const equal=row.items.every(q=>Number(q.attributes.score||0)===Number(row.items[0]?.attributes.score||0))
+    const label=`${numerals[index]||index+1}、${row.type}`
+    return{label,text:`${label}（第${range}题，共${count}题，${total}分${equal&&count>1?`，每题${Number(row.items[0]?.attributes.score||0)}分`:''}）`}
+  })
+}
 function error(e:any){
   const data=e.response?.data
   let issues=data?.issues
@@ -256,10 +338,10 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
       </template>
 
       <template v-else-if="view==='review'&&result&&task">
-        <div class="review-top"><button class="mobile-source-toggle" @click="showMobileSource=!showMobileSource">{{showMobileSource?'收起原卷':'对照原卷'}}</button><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/></button><div class="review-title"><strong>{{task.title}}</strong><span>{{reviewed}} / {{result.questions.length}} 题已核对</span></div><span class="save-status" :class="{'save-error':saveState==='保存失败'}"><Check v-if="saveState==='已保存'" :size="14"/><LoaderCircle v-else-if="saveState==='保存中'" class="spin" :size="14"/>{{saveState}}</span><el-button @click="saveNow"><Save :size="15"/>保存草稿</el-button><el-button @click="validate" :loading="busy">规则检查</el-button><el-button type="primary" @click="commit" :loading="busy">审核入库<ArrowUpRight :size="15"/></el-button></div>
+        <div class="review-top"><button class="mobile-source-toggle" @click="showMobileSource=!showMobileSource">{{showMobileSource?'收起原卷':'对照原卷'}}</button><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/></button><div class="review-title"><strong>{{task.title}}</strong><span>{{reviewed}} / {{result.questions.length}} 题已核对</span></div><span class="save-status" :class="{'save-error':saveState==='保存失败'}"><Check v-if="saveState==='已保存'" :size="14"/><LoaderCircle v-else-if="saveState==='保存中'" class="spin" :size="14"/>{{saveState}}</span><el-button @click="openPaper"><Files :size="15"/>试卷信息</el-button><el-button @click="saveNow"><Save :size="15"/>保存草稿</el-button><el-button @click="validate" :loading="busy">规则检查</el-button><el-button type="primary" @click="commit" :loading="busy">审核入库<ArrowUpRight :size="15"/></el-button></div>
         <ComparisonPanel :report="comparison" @choose="chooseCandidate"/><div class="review-workbench" :class="{'mobile-source-hidden':!showMobileSource}">
           <SourceViewer :documents="result.documents" :questions="result.questions" :selected="selected" :answer-document-id="answerDoc" @select="select" @change="refreshRegions"/>
-          <aside class="question-navigator"><div class="pane-heading"><span>题目</span><button class="icon-button" aria-label="新增漏题" title="新增漏题" @click="newQuestion"><Plus :size="16"/></button></div><div class="navigator-filters"><select v-model="paperFilter" aria-label="试卷筛选"><option value="">全部试卷</option><option v-for="p in result.papers" :value="p.id">{{p.title}}</option></select><div class="navigator-tabs"><button :class="{active:filter==='all'}" @click="filter='all'">全部</button><button :class="{active:filter==='pending'}" @click="filter='pending'">待核对</button></div></div><div class="question-nav-list"><button v-for="q in shownQuestions" :key="q.id" :class="{active:q.id===selectedId,reviewed:q.review_status==='reviewed'}" @click="select(q.id)"><span class="q-number">{{q.number}}</span><span class="q-nav-copy"><strong>{{q.attributes.question_type||'题目'}}</strong><small>{{q.attributes.score!=null?q.attributes.score+' 分':'分值未定'}} · {{q.regions.length}} 区域</small></span><Check v-if="q.review_status==='reviewed'" :size="14"/><span v-else-if="q.issues.length" class="issue-indicator"/></button></div><div class="navigator-bottom"><span class="legend-dot"/>待核对 <Check :size="12"/>已确认</div></aside>
+          <aside class="question-navigator"><div class="pane-heading"><span>题目</span><button class="icon-button" aria-label="新增漏题" title="新增漏题" @click="newQuestion"><Plus :size="16"/></button></div><div class="navigator-filters"><select v-model="paperFilter" aria-label="试卷筛选"><option value="">全部试卷</option><option v-for="p in result.papers" :value="p.id">{{p.title}}</option></select><div class="navigator-tabs"><button :class="{active:filter==='all'}" @click="filter='all'">全部</button><button :class="{active:filter==='pending'}" @click="filter='pending'">待核对</button></div></div><div class="question-nav-list"><button v-for="q in shownQuestions" :key="q.id" :class="{active:q.id===selectedId,reviewed:q.review_status==='reviewed'}" @click="select(q.id)"><span class="q-number">{{q.number}}</span><span class="q-nav-copy"><strong>{{q.attributes.question_type||'题目'}}</strong><small>{{q.attributes.score!=null?q.attributes.score+' 分':'分值未定'}} <span v-if="q.attributes.score_source" :class="['score-source',q.attributes.score_source]">{{scoreSourceName(q.attributes.score_source)}}</span> · {{q.regions.length}} 区域</small></span><Check v-if="q.review_status==='reviewed'" :size="14"/><span v-else-if="q.issues.length" class="issue-indicator"/></button></div><div class="navigator-bottom"><span class="legend-dot"/>待核对 <Check :size="12"/>已确认</div></aside>
           <section class="question-detail" v-if="selected" :key="selected.id"><div class="pane-heading"><span>第 {{selected.number}} 题 <span class="muted">{{result.papers.find(p=>p.id===selected!.paper_id)?.title}}</span></span><div class="question-actions"><button class="icon-button" title="上移题目" aria-label="上移题目" @click="reorder(-1)"><ArrowLeft class="rotate90" :size="15"/></button><button class="icon-button" title="下移题目" aria-label="下移题目" @click="reorder(1)"><ArrowRight class="rotate90" :size="15"/></button><el-dropdown trigger="click"><button class="icon-button" title="题目操作" aria-label="题目操作"><Settings2 :size="17"/></button><template #dropdown><el-dropdown-menu><el-dropdown-item @click="mergeNext">合并下一题</el-dropdown-item><el-dropdown-item @click="splitQuestion">拆出最后区域</el-dropdown-item><el-dropdown-item @click="removeQuestion" divided>删除误识别题目</el-dropdown-item></el-dropdown-menu></template></el-dropdown></div></div>
             <div class="detail-tabs"><button :class="{active:tab==='content'}" @click="tab='content'">题目内容</button><button :class="{active:tab==='attributes'}" @click="tab='attributes'">属性标签</button></div>
             <div class="detail-scroll"><div v-if="selected.issues.length" class="review-notice"><CircleAlert :size="15"/><span>{{selected.issues.join('；')}}</span></div>
@@ -314,7 +396,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                 <div class="field-heading"><label>原卷区域</label><button class="text-button" @click="rebuildRegions">重建本题题框与作答区</button><span>{{selected.regions.length}} 个区域，可在左侧拖动调整</span></div>
                 <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="insertRegionImage(r.crop_url)"><Plus :size="13"/>插入题干</button><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="content">题目内容</option><option value="both">内容与作答</option><option value="recovered_visual">原卷补图</option></select></div></div></div>
               </template>
-              <template v-else><div class="attribute-grid"><label>题号<el-input v-model="selected.number"/></label><label>分值<el-input-number v-model="selected.attributes.score" :min="0" :max="1000"/></label><label v-for="[key,label] in [['subject','学科'],['stage','学段'],['grade','年级'],['textbook','教材版本'],['question_type','题型'],['year','年份'],['region','地区'],['source_type','来源类型']]" :key="key">{{label}}<el-input v-model="selected.attributes[key]" placeholder="未识别"/></label><label>难度<el-select v-model="selected.attributes.difficulty" clearable><el-option v-for="(name,index) in ['简单','较易','中等','较难','困难']" :value="index+1" :label="name"/></el-select><span v-if="selected.attributes.difficulty_reason" class="muted">{{selected.attributes.difficulty_reason}}</span></label><label>审核状态<el-select v-model="selected.review_status"><el-option value="pending" label="待核对"/><el-option value="reviewed" label="已确认"/></el-select></label></div><div class="field-heading"><label>知识点与教材章节</label><span class="neutral-badge">目录未配置</span></div><div class="catalog-empty">正式目录接入后自动分层匹配，并根据教材映射章节。当前不生成未经绑定的正式知识点。</div><div class="field-heading"><label>能力维度</label></div><el-select v-model="selected.attributes.ability_dimensions" multiple filterable allow-create default-first-option placeholder="输入或选择能力维度"><el-option v-for="label in ['理解','应用','分析','推理','建模','运算']" :value="label" :label="label"/></el-select><div class="field-heading"><label>作答形式</label></div><el-select v-model="selected.attributes.response_form" multiple filterable allow-create><el-option v-for="label in ['客观','主观','作图','填空','计算','证明']" :value="label" :label="label"/></el-select><div class="field-heading"><label>情景与背景</label></div><el-input v-model="selected.attributes.background" type="textarea" :rows="2"/><div class="field-heading"><label>扩展标签</label><button class="text-button" @click="(selected.attributes.extension_attributes ||= []).push({name:'',value:''})"><Plus :size="13"/>新增</button></div><div class="extension-row" v-for="(tag,index) in selected.attributes.extension_attributes"><el-input v-model="tag.name" placeholder="标签名称"/><el-input v-model="tag.value" placeholder="标签值"/><button class="icon-button" aria-label="删除标签" @click="selected.attributes.extension_attributes.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>授权与排序</label></div><p class="muted">授权尚未确认。重要程度算法未启用，不生成无依据的推荐分。</p></template>
+              <template v-else><div class="attribute-grid"><label>题号<el-input v-model="selected.number"/></label><label>分值<el-input-number v-model="selected.attributes.score" :min="0" :max="1000" @change="markScoreManual"/><span v-if="selected.attributes.score_source" class="score-source">{{scoreSourceName(selected.attributes.score_source)}}</span></label><label v-for="[key,label] in [['subject','学科'],['stage','学段'],['grade','年级'],['textbook_version','教材版本'],['question_type','题型'],['paper_type','试卷类型'],['year','年份'],['semester','学期'],['region','地区'],['source_type','来源类型']]" :key="key">{{label}}<span v-if="selected.attribute_sources?.[key]==='paper'" class="inherit-badge">继承</span><el-input v-model="selected.attributes[key]" placeholder="未识别" @change="markAttributeManual(key)"/></label><label>难度<el-select v-model="selected.attributes.difficulty" clearable><el-option v-for="(name,index) in ['简单','较易','中等','较难','困难']" :value="index+1" :label="name"/></el-select><span v-if="selected.attributes.difficulty_reason" class="muted">{{selected.attributes.difficulty_reason}}</span></label><label>审核状态<el-select v-model="selected.review_status"><el-option value="pending" label="待核对"/><el-option value="reviewed" label="已确认"/></el-select></label></div><div class="inherit-actions"><button v-for="[field,label] in paperInheritFields" :key="field" @click="restoreInherited(field)">跟随{{label}}</button></div><div class="field-heading"><label>知识点与教材章节</label><span class="neutral-badge">目录未配置</span></div><div class="catalog-empty">正式目录接入后自动分层匹配，并根据教材映射章节。当前不生成未经绑定的正式知识点。</div><div class="field-heading"><label>能力维度</label></div><el-select v-model="selected.attributes.ability_dimensions" multiple filterable allow-create default-first-option placeholder="输入或选择能力维度"><el-option v-for="label in ['理解','应用','分析','推理','建模','运算']" :value="label" :label="label"/></el-select><div class="field-heading"><label>作答形式</label></div><el-select v-model="selected.attributes.response_form" multiple filterable allow-create><el-option v-for="label in ['客观','主观','作图','填空','计算','证明']" :value="label" :label="label"/></el-select><div class="field-heading"><label>情景与背景</label></div><el-input v-model="selected.attributes.background" type="textarea" :rows="2"/><div class="field-heading"><label>扩展标签</label><button class="text-button" @click="(selected.attributes.extension_attributes ||= []).push({name:'',value:''})"><Plus :size="13"/>新增</button></div><div class="extension-row" v-for="(tag,index) in selected.attributes.extension_attributes"><el-input v-model="tag.name" placeholder="标签名称"/><el-input v-model="tag.value" placeholder="标签值"/><button class="icon-button" aria-label="删除标签" @click="selected.attributes.extension_attributes.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>授权与排序</label></div><p class="muted">授权尚未确认。重要程度算法未启用，不生成无依据的推荐分。</p></template>
             </div>
             <div class="detail-footer"><button class="text-button" @click="nextQuestion(-1)"><ArrowLeft :size="15"/>上一题</button><el-button type="primary" @click="confirmQuestion"><Check :size="15"/>确认并继续</el-button><button class="text-button" @click="nextQuestion(1)">下一题<ArrowRight :size="15"/></button></div>
           </section><div v-else class="empty-state"><h3>没有题目</h3><el-button @click="newQuestion">添加漏题</el-button></div>
@@ -326,6 +408,50 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 
     <el-dialog v-model="createDialog" title="新建录入" width="min(760px, 95vw)" :close-on-click-modal="false"><div class="create-form"><label class="form-label">录入方式</label><div class="mode-options"><button v-for="m in [{id:'textbook',title:'教辅卷 / 作业',desc:'题库 + 试卷 + 原卷区域'},{id:'paper',title:'普通整卷',desc:'题库 + 试卷库'},{id:'questions',title:'仅录题目',desc:'只保存到题库'}]" :class="{active:newMode===m.id}" @click="newMode=m.id"><strong>{{m.title}}</strong><span>{{m.desc}}</span><Check v-if="newMode===m.id" :size="15"/></button></div><label class="form-label">任务名称 <span>可选</span></label><el-input v-model="newTitle" placeholder="默认使用首个文件名称"/><label class="form-label">题目文件</label><label class="file-drop" @dragover.prevent @drop="dropFiles"><UploadCloud :size="28"/><strong>点击选择，或拖入文件</strong><span>PDF、JPG、PNG、Word · 支持多个文件</span><input type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" @change="chooseFiles($event,'question')"/></label><div class="selected-files" v-for="(file,index) in questionFiles"><FileText :size="15"/><span>{{file.name}}</span><button class="icon-button" aria-label="移除文件" @click="questionFiles.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>答案与解析文件 <span class="muted">可选，可包含其他试卷答案</span></label></div><label class="file-drop answer-file-drop" @dragover.prevent @drop.stop="dropFiles($event,'answer')"><UploadCloud :size="28"/><strong>点击选择，或拖入答案文件</strong><span>PDF、JPG、PNG、Word · 支持多个文件</span><input type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" @change="chooseFiles($event,'answer')"/></label><div class="selected-files" v-for="(file,index) in answerFiles"><FileText :size="15"/><span>{{file.name}}</span><button class="icon-button" aria-label="移除答案文件" @click="answerFiles.splice(index,1)"><X :size="14"/></button></div><div class="answer-upload-note" v-if="!answerFiles.length">答案已在原卷中？无需重复上传，系统会自动提取匹配。</div><div class="create-options"><el-checkbox v-model="generate">对缺失的答案和解析使用 AI 生成</el-checkbox><el-select v-model="policy" aria-label="模型渠道策略"><el-option value="compare" label="多模型并行对比（各自计费）"/><el-option value="deepseek" label="DeepSeek Flash"/><el-option value="low_first" label="低价优先，稳定渠道备用"/><el-option value="stable_first" label="稳定渠道优先"/></el-select></div><p class="muted">原文件和识别结果保留。生成内容会标记为待审核，缺少知识点目录不影响录入。</p></div><template #footer><el-button @click="createDialog=false">取消</el-button><el-button type="primary" @click="createTask" :loading="busy">开始识别<ArrowRight :size="16"/></el-button></template></el-dialog>
     <el-dialog v-model="issuesDialog" title="规则检查" width="600px"><div class="check-success" v-if="!validationIssues.length"><CheckCheck :size="26"/>未发现结构性问题，请继续核对识别内容。</div><div class="validation-item" v-for="issue in validationIssues"><CircleAlert :size="17"/><div><strong>{{issueLocation(issue)}} · {{issue.severity==='error'?'阻止入库':'可保存提示'}}</strong><p>{{issue.message}}</p><small v-if="issue.fields">位置：{{issue.fields.map(fieldName).join('、')}}</small><p v-if="issue.hint" class="muted">{{issue.hint}}</p></div><button class="text-button" v-if="issue.question_id" @click="select(issue.question_id);issuesDialog=false">定位</button></div><p class="muted">规则检查通过不代表识别内容准确，仍需人工对照审核。</p></el-dialog>
+    <el-drawer v-model="paperOpen" title="试卷信息" size="min(640px,96vw)">
+      <template v-if="paperForm">
+        <div class="paper-summary">
+          <div><span>当前题目合计</span><strong>{{paperTotal(paperForm)}} 分</strong></div>
+          <div><span>卷面声明总分</span><strong>{{paperDeclared(paperForm)??'未声明'}}</strong></div>
+          <div v-if="paperDiff(paperForm)!==null" :class="{warn:paperDiff(paperForm)!==0}"><span>差额</span><strong>{{(paperDiff(paperForm)||0)>0?'+':''}}{{paperDiff(paperForm)}} 分</strong></div>
+        </div>
+        <div class="paper-form">
+          <label class="wide">卷名<el-input v-model="paperForm.title" @change="paperChanged"/></label>
+          <label>学段<el-input v-model="paperForm.attributes.stage" @change="paperChanged"/></label>
+          <label>学科<el-input v-model="paperForm.attributes.subject" @change="paperChanged"/></label>
+          <label>年级<el-input v-model="paperForm.attributes.grade" @change="paperChanged"/></label>
+          <label>教材册次<el-input v-model="paperForm.attributes.textbook_volume" @change="paperChanged"/></label>
+          <label>教材版本<el-input v-model="paperForm.attributes.textbook_version" @change="paperChanged"/></label>
+          <label>年份<el-input v-model="paperForm.attributes.year" @change="paperChanged"/></label>
+          <label>学期<el-input v-model="paperForm.attributes.semester" @change="paperChanged"/></label>
+          <label>地区<el-input v-model="paperForm.attributes.region" @change="paperChanged"/></label>
+          <label>学校/出版社<el-input v-model="paperForm.attributes.school_publisher" @change="paperChanged"/></label>
+          <label>试卷类型<el-select v-model="paperForm.paper_type" clearable @change="paperChanged"><el-option v-for="type in paperTypes" :key="type" :value="type" :label="type"/></el-select></label>
+        </div>
+        <div class="field-heading"><label>卷面规格</label><span>总分只读，由题目分值合计</span></div>
+        <div class="paper-form">
+          <label>考试时长（分钟）<el-input-number v-model="paperForm.exam.duration_min" :min="0" :max="1000" @change="paperChanged"/></label>
+          <label>卷面声明总分<el-input-number v-model="paperForm.exam.declared_total_score" :min="0" :max="1000" @change="paperChanged"/></label>
+          <label>卷面声明题数<el-input-number v-model="paperForm.exam.declared_question_count" :min="0" :max="1000" @change="paperChanged"/></label>
+          <label>是否含选做题<el-select v-model="paperForm.exam.has_elective" clearable @change="paperChanged"><el-option :value="true" label="是"/><el-option :value="false" label="否"/></el-select></label>
+          <label>是否含听力<el-select v-model="paperForm.exam.has_listening" clearable @change="paperChanged"><el-option :value="true" label="是"/><el-option :value="false" label="否"/></el-select></label>
+          <label>答案是否附卷后<el-select v-model="paperForm.exam.answers_at_end" clearable @change="paperChanged"><el-option :value="true" label="是"/><el-option :value="false" label="否"/></el-select></label>
+          <label class="wide">考生须知<el-input v-model="paperForm.exam.candidate_notes" type="textarea" :rows="2" @change="paperChanged"/></label>
+        </div>
+        <div class="field-heading"><label>原卷信息</label><span>页数与栏数由原卷计算，可人工修正</span></div>
+        <div class="paper-form">
+          <label>物理页数<el-input-number v-model="paperForm.source.page_count" :min="0" :max="1000" @change="paperChanged"/></label>
+          <label>印刷页码<el-input :model-value="printedPagesText(paperForm)" placeholder="如 1、2、3" @update:model-value="setPrintedPages(paperForm,$event)"/></label>
+        </div>
+        <div class="field-heading"><label>人工维护</label></div>
+        <div class="paper-form">
+          <label>质量等级<el-input v-model="paperForm.manual.quality_level" @change="paperChanged"/></label>
+          <label class="wide">自定义标签<el-select v-model="paperForm.manual.tags" multiple filterable allow-create default-first-option placeholder="输入或选择标签" @change="paperChanged"/></label>
+        </div>
+        <div class="field-heading"><label>系统分节预览</label><span>按题型和题号生成，不写回原卷</span></div>
+        <div class="section-preview"><div v-for="row in paperSections(paperForm)" :key="row.label">{{row.text}}</div><p v-if="!paperSections(paperForm).length" class="muted">还没有题目</p></div>
+      </template>
+    </el-drawer>
     <el-dialog v-model="detailDialog" :title="detail?.title||('题目 '+(detail?.number||''))" width="min(900px, 94vw)"><template v-if="detail"><div v-if="detail.questions" class="paper-detail-list"><div class="template-notice" v-if="detail.templates?.length"><ScanLine :size="17"/>原卷区域模板已保存 · 实际扫描配准尚未接入</div><article v-for="row in detail.questions"><h3>第 {{row.content.number}} 题</h3><QuestionPreview :question="row.content"/></article></div><article v-else><QuestionPreview :question="detail.content"/><div class="region-preview-list"><img v-for="r in detail.content.regions" :src="r.crop_url" alt="来源区域"/></div></article></template><template #footer><el-button @click="detailDialog=false">关闭</el-button><el-button type="primary" @click="detailDialog=false;openTask(tasks.find(t=>t.id===detail.task_id)||{id:detail.task_id,status:'committed'} as Task)">返回来源审核</el-button></template></el-dialog>
   </div>
 </template>
@@ -343,5 +469,20 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 .rubric-actions{display:flex;align-items:center;gap:12px;margin:6px 0 8px;font-size:12px}
 .rubric-total-bad{color:#c45656;font-weight:600}
 .rubric-notes{margin-top:6px}
+.paper-summary{display:flex;flex-wrap:wrap;gap:10px;padding:12px;border:1px solid #e3ebdd;border-radius:8px;background:#f7faf5;margin-bottom:14px}
+.paper-summary>div{display:flex;flex-direction:column;gap:2px;min-width:120px}
+.paper-summary span{font-size:11px;color:#7b8a7b}
+.paper-summary strong{font-size:15px;color:#2d6a45}
+.paper-summary .warn strong{color:#b26a2e}
+.paper-form{display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin-bottom:14px}
+.paper-form label{display:flex;flex-direction:column;gap:4px;font-size:11px;color:#687363}
+.paper-form .wide{grid-column:1/-1}
+.section-preview{display:flex;flex-direction:column;gap:5px;padding:10px 12px;border:1px solid #e3ebdd;border-radius:7px;background:#fbfcfa;font-size:12px;color:#40584b;margin-bottom:12px}
+.inherit-badge{display:inline-block;margin-left:5px;padding:0 4px;border-radius:3px;background:#e8f1e6;color:#4f7259;font-size:10px;font-weight:400}
+.inherit-actions{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.inherit-actions button{border:1px solid #dbe6d9;background:#f8fbf6;border-radius:4px;padding:3px 6px;font-size:11px;color:#526b5f}
+.score-source{display:inline-block;margin-left:4px;padding:0 4px;border-radius:3px;background:#edf3ed;color:#4f7259;font-size:9px;font-style:normal;vertical-align:1px}
+.score-source.ai_assigned{background:#fdf3e6;color:#9a6428}
+.score-source.manual{background:#e9f0fa;color:#3c628f}
 </style>
 

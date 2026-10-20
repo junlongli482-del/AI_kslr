@@ -182,6 +182,25 @@ def test_apply_rubrics_merges_points_and_allocates_integer_scores():
     assert q['subquestions'][0]['scoring']['points'][0]['pct']==100
 
 
+def test_allocate_paper_scores_fills_only_missing_to_declared_total():
+    paper=core.normalize_paper({'id':'p','declared_total_score':100})
+    paper['exam']['declared_total_score']=100
+    qs=[{'id':'1','paper_id':'p','attributes':{'score':60}},{'id':'2','paper_id':'p','attributes':{}},{'id':'3','paper_id':'p','attributes':{}}]
+    core.allocate_paper_scores(paper,qs)
+    assert [q['attributes']['score'] for q in qs]==[60,20,20]
+    assert paper['computed_total_score']==100
+    assert qs[1]['attributes']['score_source']=='ai_assigned'
+
+
+def test_paper_inheritance_respects_manual_fields():
+    paper=core.normalize_paper({'id':'p','attributes':{'subject':'地理','year':'2025'}})
+    qs=[{'id':'1','paper_id':'p','attributes':{'subject':'数学','year':'2024'},'attribute_sources':{'subject':'manual'}}]
+    core.apply_paper_inheritance(paper,qs)
+    assert qs[0]['attributes']['subject']=='数学'
+    assert qs[0]['attributes']['year']=='2025'
+    assert qs[0]['attribute_sources']['year']=='paper'
+
+
 def _deepseek_env(monkeypatch):
     monkeypatch.setenv('LLM_DEEPSEEK_API_KEY','sk-test')
     monkeypatch.setenv('LLM_DEEPSEEK_BASE_URL','https://example.test')

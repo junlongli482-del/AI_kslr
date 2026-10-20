@@ -20,7 +20,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, normalize_paper, allocate_paper_scores, apply_paper_inheritance
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -321,6 +321,10 @@ def validate(task_id: str, payload: dict):
         return {'issues':[{'severity':'error','message':'题目结构不符合协议，请检查必填内容与字段类型'}],'valid':False,'result':payload}
     if result['task_id'] == task_id:
         repair_result(result, DATA, task_id)
+        for paper in result['papers']:
+            normalize_paper(paper)
+            allocate_paper_scores(paper, result['questions'])
+            apply_paper_inheritance(paper, result['questions'])
         rebuild=payload.get('rebuild_region_question_ids',[])
         if rebuild:
             question_span_regions(result['questions'],result['documents'],question_ids=rebuild)
@@ -420,6 +424,22 @@ def validate(task_id: str, payload: dict):
             issues.append({'question_id': q['id'], 'severity': 'warning', 'message': '缺少答案，可作为待完善资源保存'})
     if not result['questions']:
         issues.append({'severity': 'error', 'message': '没有可入库题目'})
+    for paper in result['papers']:
+        qs=[q for q in result['questions'] if q.get('paper_id')==paper['id']]
+        declared=paper.get('declared_total_score')
+        computed=sum(float(q.get('attributes',{}).get('score') or 0) for q in qs)
+        if declared not in (None,''):
+            if abs(computed-float(declared))>.001:
+                issues.append({'paper_id':paper['id'],'severity':'warning','message':f"卷面总分 {declared}，当前题目合计 {computed:g}，差 {computed-float(declared):+g}"})
+        elif abs(computed-100)>.001:
+            issues.append({'paper_id':paper['id'],'severity':'warning','message':f"卷面未声明总分，按100分制分配，当前合计 {computed:g}，差 {computed-100:+g}"})
+        declared_count=(paper.get('exam') or {}).get('declared_question_count')
+        try:
+            declared_count=int(declared_count)
+        except (TypeError,ValueError):
+            declared_count=None
+        if declared_count is not None and declared_count!=len(qs):
+            issues.append({'paper_id':paper['id'],'severity':'warning','message':f"卷面题数 {declared_count}，实际 {len(qs)} 题，差 {len(qs)-declared_count:+d}"})
     return {'issues': issues, 'valid': not any(x['severity'] == 'error' for x in issues), 'result': result}
 
 

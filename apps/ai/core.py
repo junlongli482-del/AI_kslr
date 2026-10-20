@@ -89,6 +89,7 @@ class Question(BaseModel):
     block_ids: list[str] = Field(default_factory=list)
     regions: list[Region] = Field(default_factory=list)
     attributes: dict = Field(default_factory=dict)
+    attribute_sources: dict = Field(default_factory=dict)
     scoring: dict = Field(default_factory=dict)
     grading_method: str = ''
     answer: str = ''
@@ -575,14 +576,17 @@ class LLM:
 
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
-输出 {"papers":[{"id":"p1","title":"...","metadata":{}}],"questions":[...]}
+输出 {"papers":[{"id":"p1","title":"...","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"questions":[...]}
+试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher；paper_type为同步练/单元测/月考/期中/期末/一模二模/真题/模拟/课时作业/竞赛/其他；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
+取值顺序：卷头文字 → 卷名/文件名 → 内容判断。卷面没印年份/year就是空。没有任何字段必填。
 questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer:{value,analysis,scoring_criteria,source},score,block_ids}]，block_ids，attributes，image_layout，tables。
+分值：卷面印了分就填attributes.score并给score_source="paper_declared"；卷面没有分值就score=null并给attributes.score_weight（正数，按题型、题量、小问数判断），不要猜具体分值，程序会按卷面总分或100归一化。
 
 题组规则（尤其适用于地理材料选择题）：一则材料、图表或区域背景后连续出现多个编号小题时，必须输出为一个顶层复合题，不得把材料和每个选择小题拆成多个顶层question。父题的stem保留完整材料和图表，subquestions逐项保留每个小题的题干、选项、答案、解析和分值；attributes.question_type使用“题组”或“复合题”。父题block_ids必须覆盖材料、图表和全部小题；跨栏跨页时保留所有块及顺序。
 题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时，该小问answer为null并在issues标记subquestion_unmatched，整段无法拆分时保留原文到父题issues，禁止猜分配。有多个小问时父题answer必须为null；答案挂到最末级小问，一个小问的answer只能是该小问自己的内容，禁止合并或按题号推测分配。
-输出示例：{"papers":[{"id":"p1","title":"示例卷","metadata":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
+输出示例：{"papers":[{"id":"p1","title":"示例卷","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
 image_layout按输入完整图片URL索引，每项包含caption（图下注文本）、group_id（同排图片组）、row、column；尺寸和bbox引用输入来源，不得编造。甲乙丙/图1图2属于图注，绑定对应图片，不散落成独立正文。保留输入原有行列和小间距；物理坐标由系统校验换算，题框不是显示尺寸容器。
-attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5必填：1识记或一步，2单一知识点，3多步常规，4综合易错，5复杂压轴；不得null),ability_dimensions[],response_form[],score(数值或null),year,region,source_type,background；无依据为null。
+attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5必填：1识记或一步，2单一知识点，3多步常规，4综合易错，5复杂压轴；不得null),ability_dimensions[],response_form[],score(数值或null),score_source(paper_declared|ai_assigned|null),score_weight(正数或null),year,region,source_type,background；无依据为null。
 原图引用必须使用资料里给出的完整 /api/assets?key=... URL，不得猜图片名。所有图片必须以标准Markdown图片输出，禁止把图片URL作为普通文本输出。保留同行多图：同行用同一行的Markdown图片，图形选项正确关联A/B/C/D。表格使用Markdown或安全HTML表格，并输出tables结构（每项含structure_status=structured|partial|image_only、asset_key或来源图片URL）。同一表格若structure_status=structured，题干/选项中不要重复引用对应原始表格图片；partial可同时保留，image_only必须保留原图。
 题干和选项不要重复，小问保留原编号与层级。题库内容不包括页眉页脚密封线。block_ids必须来自输入，同一道题的跨页和跨栏内容全选；跨题共享块允许引用并在issues说明。
 内容修正规则（只修明显错误，不重写）：
@@ -831,6 +835,126 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
             q['grading_method'] = 'manual'
 
 
+PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'textbook_volume', 'textbook_version', 'year', 'semester', 'region')
+
+
+def normalize_paper(paper: dict):
+    attrs = paper.get('attributes')
+    if not isinstance(attrs, dict):
+        attrs = {}
+    for key in (*PAPER_ATTRIBUTES, 'school_publisher'):
+        attrs.setdefault(key, '')
+    paper['attributes'] = attrs
+    paper.setdefault('paper_type', '')
+    exam = paper.get('exam')
+    if not isinstance(exam, dict):
+        exam = {}
+    for key in ('duration_min', 'declared_total_score', 'declared_question_count'):
+        exam.setdefault(key, None)
+    for key in ('candidate_notes',):
+        exam.setdefault(key, '')
+    for key in ('has_elective', 'has_listening', 'answers_at_end'):
+        exam.setdefault(key, None)
+    paper['exam'] = exam
+    source = paper.get('source')
+    if not isinstance(source, dict):
+        source = {}
+    source.setdefault('page_count', None)
+    source.setdefault('printed_page_numbers', [])
+    source.setdefault('columns', [])
+    paper['source'] = source
+    manual = paper.get('manual')
+    if not isinstance(manual, dict):
+        manual = {}
+    manual.setdefault('quality_level', '')
+    manual.setdefault('tags', [])
+    paper['manual'] = manual
+    paper.setdefault('issues', [])
+    paper['declared_total_score'] = exam.get('declared_total_score') or paper.get('declared_total_score')
+    exam['declared_total_score'] = paper['declared_total_score']
+    return paper
+
+
+def _number(value):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def distribute_total(total: int, weights: list[float]) -> list[int]:
+    if not weights:
+        return []
+    total = int(round(total))
+    raw = [total * max(0, weight) / sum(weights) for weight in weights]
+    scores = [int(value) for value in raw]
+    remainder = total - sum(scores)
+    order = sorted(range(len(raw)), key=lambda i: raw[i] - scores[i], reverse=True)
+    for index in order[:max(0, remainder)]:
+        scores[index] += 1
+    return scores
+
+
+def allocate_paper_scores(paper: dict, questions: list[dict]):
+    qs = [q for q in questions if q.get('paper_id') == paper['id']]
+    declared = _number(paper.get('declared_total_score'))
+    target = int(round(declared)) if declared and declared > 0 else 100
+    have, missing = [], []
+    total = 0
+    for q in qs:
+        attrs = q.setdefault('attributes', {})
+        score = _number(attrs.get('score'))
+        if score is not None and score >= 0:
+            attrs['score'] = score
+            attrs.setdefault('score_source', 'paper_declared')
+            total += score
+            have.append(q)
+        else:
+            attrs['score'] = None
+            attrs.setdefault('score_source', 'ai_assigned')
+            missing.append(q)
+    if missing and total < target:
+        remaining = target - total
+        weights = []
+        for q in missing:
+            weight = _number(q.get('attributes', {}).get('score_weight')) or _number(q.get('score_weight')) or 1
+            weights.append(abs(weight))
+        for q, score in zip(missing, distribute_total(remaining, weights)):
+            q['attributes']['score'] = score
+            q['attributes']['score_source'] = 'ai_assigned'
+    elif missing:
+        for q in missing:
+            q.setdefault('issues', []).append('缺少分值，已有题目合计已达到目标，需人工补分')
+        paper['issues'].append('已有题目分值合计已达到或超过目标，缺分题未自动分配')
+    computed = sum(_number(q.get('attributes', {}).get('score')) or 0 for q in qs)
+    paper['computed_total_score'] = computed
+    if declared and declared > 0 and computed != declared:
+        paper['score_difference'] = computed - int(round(declared))
+
+
+def apply_paper_inheritance(paper: dict, questions: list[dict]):
+    attrs = paper.get('attributes') or {}
+    qs = [q for q in questions if q.get('paper_id') == paper['id']]
+    for q in qs:
+        qattrs = q.setdefault('attributes', {})
+        sources = q.setdefault('attribute_sources', {})
+        for field in PAPER_ATTRIBUTES:
+            if sources.get(field) == 'manual':
+                continue
+            value = attrs.get(field)
+            if value not in (None, '', []):
+                qattrs[field] = value
+                sources[field] = 'paper'
+            elif sources.get(field) == 'paper':
+                sources[field] = 'question'
+        if sources.get('paper_type') != 'manual':
+            if paper.get('paper_type'):
+                qattrs['paper_type'] = paper['paper_type']
+                sources['paper_type'] = 'paper'
+            elif sources.get('paper_type') == 'paper':
+                sources['paper_type'] = 'question'
+
+
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
     llm = LLM(folder, policy)
     papers, questions = [], []
@@ -868,6 +992,10 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             if not q['regions']:
                 q['issues'].append('缺少题目区域，需人工补框')
             questions.append(q)
+    for paper in papers:
+        normalize_paper(paper)
+        allocate_paper_scores(paper, questions)
+        apply_paper_inheritance(paper, questions)
     entries = []
     if progress:
         progress('答案匹配', '正在提取和区分答案所属试卷')
