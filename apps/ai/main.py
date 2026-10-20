@@ -7,6 +7,7 @@ import os
 import re
 import shutil
 import subprocess
+import tempfile
 import threading
 import time
 import uuid
@@ -341,10 +342,24 @@ def save_student_zone_settings(request: StudentZoneSettingsRequest):
         try:
             image_bytes = base64.b64decode(raw)
             (DATA / 'settings' / 'student-zones').mkdir(parents=True, exist_ok=True)
-            with Image.open(io.BytesIO(image_bytes)) as image:
-                image.convert('RGB').save(DATA / 'settings' / 'student-zones' / f'{request.layout}.png')
+            target = DATA / 'settings' / 'student-zones' / f'{request.layout}.png'
+            if image_bytes.startswith(b'%PDF'):
+                with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as temp:
+                    temp.write(image_bytes)
+                    temp_path = Path(temp.name)
+                try:
+                    pdf = pdfium.PdfDocument(str(temp_path))
+                    bitmap = pdf[0].render(scale=300 / 72)
+                    bitmap.to_pil().convert('RGB').save(target)
+                    bitmap.close()
+                    pdf.close()
+                finally:
+                    temp_path.unlink(missing_ok=True)
+            else:
+                with Image.open(io.BytesIO(image_bytes)) as image:
+                    image.convert('RGB').save(target)
         except Exception as exc:
-            raise HTTPException(400, '预览图无效') from exc
+            raise HTTPException(400, '预览文件无效') from exc
         entry['preview_key'] = f'settings/student-zones/{request.layout}.png'
         entry['preview_url'] = asset_url(DATA / entry['preview_key'])
     path.parent.mkdir(parents=True, exist_ok=True)

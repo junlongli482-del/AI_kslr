@@ -17,7 +17,7 @@ const showMobileSource=ref(false)
 const view=ref('tasks'),tasks=ref<Task[]>([]),busy=ref(false),task=ref<Task|null>(null)
 const result=ref<Result|null>(null),revision=ref(0),selectedId=ref(''),tab=ref('content'),filter=ref('all'),paperFilter=ref(''),search=ref(''),saveState=ref('已保存'),answerDoc=ref('')
 const paperOpen=ref(false)
-const zoneLayout=ref<'A3-2'|'A4-1'>('A3-2'),zoneDefaults=ref<Record<string,any>>({}),zonePreviewUrl=ref(''),zonePreviewBase64=ref(''),zoneBbox=ref<number[]>([.04,.015,.42,.068]),zoneSaving=ref(false),zoneDrag=ref<any>(null)
+const zoneLayout=ref<'A3-2'|'A4-1'>('A3-2'),zoneDefaults=ref<Record<string,any>>({}),zonePreviewUrl=ref(''),zonePreviewBase64=ref(''),zonePreviewPdf=ref(false),zonePreviewName=ref(''),zoneBbox=ref<number[]>([.04,.015,.42,.068]),zoneSaving=ref(false),zoneDrag=ref<any>(null)
 const createDialog=ref(false),newTitle=ref(''),newMode=ref('textbook'),generate=ref(false),policy=ref('deepseek'),questionFiles=ref<File[]>([]),answerFiles=ref<File[]>([])
 const bank=ref<any[]>([]),bankSearch=ref(''),detail=ref<any|null>(null),detailDialog=ref(false),issuesDialog=ref(false),validationIssues=ref<any[]>([])
 const concurrency=ref<{max_concurrency:number;running:number;queued:number}|null>(null)
@@ -157,10 +157,10 @@ function zonePointerDown(e:PointerEvent,resize=false){e.preventDefault();zoneSvg
 function zonePointerMove(e:PointerEvent){const drag=zoneDrag.value;if(!drag)return;const p=zonePoint(e),dx=p[0]-drag.start[0],dy=p[1]-drag.start[1],b=drag.bbox;if(drag.mode==='move'){const x=Math.max(0,Math.min(1-(b[2]-b[0]),b[0]+dx)),y=Math.max(0,Math.min(1-(b[3]-b[1]),b[1]+dy));zoneBbox.value=[x,y,x+b[2]-b[0],y+b[3]-b[1]]}else zoneBbox.value=[b[0],b[1],Math.max(b[0]+.02,p[0]),Math.max(b[1]+.01,p[1])]}
 function zonePointerUp(){zoneDrag.value=null}
 async function loadStudentZoneSettings(){try{zoneDefaults.value=(await api.get('/quick-entry/settings/student-zones')).data||{};selectZoneLayout(zoneLayout.value)}catch(e){error(e)}}
-function selectZoneLayout(layout:'A3-2'|'A4-1'){zoneLayout.value=layout;const entry=zoneDefaults.value[layout]||{};zoneBbox.value=[...(entry.bbox||[.04,.015,.42,.068])];zonePreviewUrl.value=entry.preview_url||'';zonePreviewBase64.value=''}
-function zonePreviewFile(event:Event){const file=(event.target as HTMLInputElement).files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{zonePreviewUrl.value=String(reader.result);zonePreviewBase64.value=String(reader.result)};reader.readAsDataURL(file)}
+function selectZoneLayout(layout:'A3-2'|'A4-1'){zoneLayout.value=layout;const entry=zoneDefaults.value[layout]||{};zoneBbox.value=[...(entry.bbox||[.04,.015,.42,.068])];zonePreviewUrl.value=entry.preview_url||'';zonePreviewBase64.value='';zonePreviewPdf.value=false;zonePreviewName.value=''}
+function zonePreviewFile(event:Event){const file=(event.target as HTMLInputElement).files?.[0];if(!file)return;zonePreviewName.value=file.name;zonePreviewPdf.value=/\.pdf$/i.test(file.name)||file.type==='application/pdf';const reader=new FileReader();reader.onload=()=>{zonePreviewBase64.value=String(reader.result);zonePreviewUrl.value=zonePreviewPdf.value?'':String(reader.result)};reader.readAsDataURL(file)}
 function resetStudentZone(){zoneBbox.value=[.04,.015,.42,.068]}
-async function saveStudentZone(){if(zoneSaving.value)return;try{zoneSaving.value=true;const response=await api.put('/quick-entry/settings/student-zones',{layout:zoneLayout.value,bbox:zoneBbox.value,preview_base64:zonePreviewBase64.value||null});zoneDefaults.value[zoneLayout.value]=response.data.settings;zonePreviewUrl.value=response.data.settings.preview_url||zonePreviewUrl.value;zonePreviewBase64.value='';ElMessage.success('学生信息区默认值已保存，只影响后续新任务')}catch(e){error(e)}finally{zoneSaving.value=false}}
+async function saveStudentZone(){if(zoneSaving.value)return;try{zoneSaving.value=true;const response=await api.put('/quick-entry/settings/student-zones',{layout:zoneLayout.value,bbox:zoneBbox.value,preview_base64:zonePreviewBase64.value||null});zoneDefaults.value[zoneLayout.value]=response.data.settings;zonePreviewUrl.value=response.data.settings.preview_url||zonePreviewUrl.value;zonePreviewBase64.value='';zonePreviewPdf.value=false;ElMessage.success('学生信息区默认值已保存，只影响后续新任务')}catch(e){error(e)}finally{zoneSaving.value=false}}
 async function loadBank(){try{bank.value=(await api.get(view.value==='papers'?'/paperbank/papers':'/questionbank/questions',{params:{query:bankSearch.value}})).data}catch(e){error(e)}}
 function normalizeSubAnswers(r:Result){
   for(const q of r.questions){
@@ -457,7 +457,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                 <button v-for="item in [{id:'A3-2',title:'A3-2',desc:'A3 两栏'},{id:'A4-1',title:'A4-1',desc:'A4 一栏'}]" :key="item.id" :class="{active:zoneLayout===item.id}" @click="selectZoneLayout(item.id as 'A3-2'|'A4-1')"><strong>{{item.title}}</strong><span>{{item.desc}}</span><Check v-if="zoneLayout===item.id" :size="15"/></button>
               </div>
               <div class="field-heading"><label>预览页</label><span>上传该版面的真实页面</span></div>
-              <label class="file-drop zone-upload"><UploadCloud :size="24"/><strong>选择预览图</strong><span>PNG、JPG</span><input type="file" accept="image/png,image/jpeg,image/webp" @change="zonePreviewFile"/></label>
+              <label class="file-drop zone-upload"><UploadCloud :size="24"/><strong>选择预览文件</strong><span>PDF、PNG、JPG · PDF 取第一页</span><input type="file" accept=".pdf,application/pdf,image/png,image/jpeg,image/webp" @change="zonePreviewFile"/></label>
               <p class="muted">预览图只用于设置，不代表任务原卷。</p>
               <div class="zone-actions"><button class="text-button" @click="resetStudentZone">恢复默认</button><el-button type="primary" :loading="zoneSaving" @click="saveStudentZone">保存默认</el-button></div>
             </section>
@@ -468,6 +468,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <g><rect :x="zoneBbox[0]*1000" :y="zoneBbox[1]*1000" :width="(zoneBbox[2]-zoneBbox[0])*1000" :height="(zoneBbox[3]-zoneBbox[1])*1000" @pointerdown.stop="zonePointerDown($event)"/><text :x="zoneBbox[0]*1000+4" :y="zoneBbox[1]*1000+13">姓名区</text><rect class="zone-resize" :x="zoneBbox[2]*1000-8" :y="zoneBbox[3]*1000-8" width="10" height="10" @pointerdown.stop="zonePointerDown($event,true)"/></g>
                 </svg>
               </div>
+              <div v-else-if="zonePreviewPdf" class="empty-state"><Crop :size="34"/><h3>PDF 已选择</h3><p>{{zonePreviewName}} · 点击「保存默认」后按第一页 300dpi 生成预览。</p></div>
               <div v-else class="empty-state"><Crop :size="34"/><h3>还没有预览页</h3><p>上传一张 A3-2 或 A4-1 的真实页面，然后在图上框出学生信息区。</p></div>
               <p class="muted">保存的是默认值；任务内仍可在「模板标注」层单独调整，不会反向修改这里的默认值。</p>
             </section>
