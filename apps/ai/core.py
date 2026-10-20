@@ -128,14 +128,20 @@ def render_pages(source: Path, out: Path):
             page = pdf[i]
             w, h = page.get_size()
             target = out / f'page-{i}.png'
-            if not target.exists():
-                bitmap = page.render(scale=1.7)
+            expected = (max(1, round(w * 300 / 72)), max(1, round(h * 300 / 72)))
+            stale = True
+            if target.exists():
+                with Image.open(target) as current:
+                    stale = current.width < expected[0] * .95 or current.height < expected[1] * .95
+            if stale:
+                bitmap = page.render(scale=300 / 72)
                 bitmap.to_pil().save(target)
                 bitmap.close()
             with Image.open(target) as img:
                 px = list(img.size)
+            url = asset_url(target) + (f'&v={int(target.stat().st_mtime)}' if stale else '')
             pages.append({'page_index': i, 'width_pt': w, 'height_pt': h,
-                          'width_px': px[0], 'height_px': px[1], 'image_url': asset_url(target), 'image_key': target.relative_to(DATA).as_posix()})
+                          'width_px': px[0], 'height_px': px[1], 'image_url': url, 'image_key': target.relative_to(DATA).as_posix()})
             page.close()
         pdf.close()
     else:
@@ -299,7 +305,7 @@ def crop_regions(question: dict, documents: list[dict], folder: Path):
             raise ValueError('页面图片路径越界')
         with Image.open(image_path) as img:
             w, h = img.size
-            digest = hashlib.sha256(json.dumps(r['bbox']).encode()).hexdigest()[:10]
+            digest = hashlib.sha256(json.dumps([r['bbox'], page.get('width_px'), page.get('height_px')]).encode()).hexdigest()[:10]
             target = folder / 'crops' / f'{question["id"]}-{i}-{digest}.png'
             target.parent.mkdir(parents=True, exist_ok=True)
             if not target.exists():
