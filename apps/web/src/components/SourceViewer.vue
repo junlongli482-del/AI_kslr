@@ -7,6 +7,7 @@ const emit=defineEmits(['select','change'])
 const docId=ref(''),pageIndex=ref(0),zoom=ref(1),adding=ref(false),selectedRegion=ref(-1)
 const layer=ref<'frames'|'blocks'|'template'>('frames')
 const frameOnly=ref(false),blockKind=ref('all'),blockMissingOnly=ref(false),templateKind=ref('all'),templateLow=ref(false),templateUnbound=ref(false)
+const selectedTemplate=ref<any>(null)
 const layerPages=ref<Record<string,number>>({frames:0,blocks:0,template:0})
 const layerZooms=ref<Record<string,number>>({frames:1,blocks:1,template:1})
 const svg=ref<SVGSVGElement|null>(null)
@@ -44,11 +45,17 @@ function blockQuestion(blockId:string){return props.questions.find(q=>[...(q.blo
 function focusBlock(blockId:string){const q=blockQuestion(blockId);if(q){emit('select',q.id);layer.value='frames';pageIndex.value=q.regions[0]?.page_index??pageIndex.value}}
 let zoneDrag:{zone:any;mode:string;start:number[];bbox:number[]}|null=null
 function zonePoint(e:PointerEvent){const rect=svg.value!.getBoundingClientRect();return [Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width)),Math.max(0,Math.min(1,(e.clientY-rect.top)/rect.height))]}
-function zoneDown(e:PointerEvent,zone:any,resize=false){e.preventDefault();e.stopPropagation();svg.value?.setPointerCapture(e.pointerId);const start=zonePoint(e);zoneDrag={zone,mode:resize?'resize':'move',start,bbox:[...zone.bbox]};zone.source='manual'}
+function zoneDown(e:PointerEvent,zone:any,resize=false){e.preventDefault();e.stopPropagation();selectedTemplate.value=zone;svg.value?.setPointerCapture(e.pointerId);const start=zonePoint(e);zoneDrag={zone,mode:resize?'resize':'move',start,bbox:[...zone.bbox]};zone.source='manual'}
 function zoneMove(e:PointerEvent){if(!zoneDrag)return;const p=zonePoint(e),dx=p[0]-zoneDrag.start[0],dy=p[1]-zoneDrag.start[1],b=zoneDrag.bbox;if(zoneDrag.mode==='move'){const x=Math.max(0,Math.min(1-(b[2]-b[0]),b[0]+dx)),y=Math.max(0,Math.min(1-(b[3]-b[1]),b[1]+dy));zoneDrag.zone.bbox=[x,y,x+b[2]-b[0],y+b[3]-b[1]]}else zoneDrag.zone.bbox=[b[0],b[1],Math.max(b[0]+.02,p[0]),Math.max(b[1]+.01,p[1])]}
 function zoneUp(){if(zoneDrag){emit('change');zoneDrag=null}}
 function addZone(){if(!props.template)return;props.template.student_zones=props.template.student_zones||[];props.template.student_zones.push({id:'sz-manual-'+Date.now(),document_id:doc.value!.id,page_index:pageIndex.value,column:0,bbox:[.02,.01,.98,.11],source:'manual',role:'primary',fields:{name:'',class:'',student_id:''}});emit('change')}
 function removeZone(zone:any){if(!props.template?.student_zones)return;props.template.student_zones=props.template.student_zones.filter((item:any)=>item!==zone);emit('change')}
+function deleteTemplateSelection(){
+  const target=selectedTemplate.value;if(!target||!props.template)return
+  if((props.template.student_zones||[]).includes(target))props.template.student_zones=props.template.student_zones.filter((z:any)=>z!==target)
+  else for(const key of Object.keys(props.template.annotations||{}))props.template.annotations[key]=(props.template.annotations[key]||[]).filter((item:any)=>item!==target)
+  selectedTemplate.value=null;emit('change')
+}
 watch(()=>props.documents,()=>{if(!docId.value&&props.documents.length)docId.value=props.documents[0].id},{immediate:true})
 watch(()=>props.selected?.id,()=>{const r=props.selected?.regions[0];if(r){docId.value=r.document_id;pageIndex.value=r.page_index}selectedRegion.value=-1},{immediate:true})
 watch(()=>props.answerDocumentId,id=>{if(id){docId.value=id;pageIndex.value=0}})
@@ -95,18 +102,18 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
         </g>
       </svg>
       <svg v-else ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" class="template-layer" @pointermove="zoneMove" @pointerup="zoneUp" @pointercancel="zoneUp">
-        <g v-for="a in displayAnnotations" :key="a.item.id" :class="['annotation',a.kind,{low:(a.item.score||0)<.6,unbound:a.item.bound===false}]">
+        <g v-for="a in displayAnnotations" :key="a.item.id" :class="['annotation',a.kind,{low:(a.item.score||0)<.6,unbound:a.item.bound===false,selected:selectedTemplate===a.item}]">
           <rect :x="a.item.bbox[0]*1000" :y="a.item.bbox[1]*1000" :width="(a.item.bbox[2]-a.item.bbox[0])*1000" :height="(a.item.bbox[3]-a.item.bbox[1])*1000" @pointerdown.stop="zoneDown($event,a.item)"><title>{{annotationLabel(a.kind)}} · 置信度 {{Math.round((a.item.score||0)*100)}}%{{a.item.bound===false?' · 未绑定':''}}</title></rect>
           <text :x="a.item.bbox[0]*1000+2" :y="a.item.bbox[1]*1000+10">{{annotationLabel(a.kind)}}</text>
         </g>
-        <g v-for="zone in displayZones" :key="zone.id">
+        <g v-for="zone in displayZones" :key="zone.id" :class="{selected:selectedTemplate===zone}">
           <rect :x="zone.bbox[0]*1000" :y="zone.bbox[1]*1000" :width="(zone.bbox[2]-zone.bbox[0])*1000" :height="(zone.bbox[3]-zone.bbox[1])*1000" @pointerdown.stop="zoneDown($event,zone)"><title>{{zone.role==='backup'?'学生信息区（备用）':'学生信息区'}} · {{zone.source}}</title></rect>
           <text :x="zone.bbox[0]*1000+4" :y="zone.bbox[1]*1000+13">{{zone.role==='backup'?'姓名区·备用':'姓名区'}}</text>
           <rect class="zone-resize" :x="zone.bbox[2]*1000-8" :y="zone.bbox[3]*1000-8" width="10" height="10" @pointerdown.stop="zoneDown($event,zone,true)"/>
         </g>
       </svg>
     </div><div v-else class="empty-inline">暂无原卷页面</div></div>
-    <div class="source-footer"><div class="region-tools" v-if="layer==='frames'"><button :class="{active:adding}" @click="adding=!adding" title="拖动新增题框"><Plus :size="15"/>补框</button><button @click="remove" :disabled="selectedRegion<0"><Trash2 :size="15"/>删框</button></div><div class="region-tools" v-else-if="layer==='template'"><button @click="addZone"><Plus :size="15"/>学生信息区</button><span class="muted">拖动移动，右下角缩放</span></div><div class="region-tools" v-else><span class="muted">识别块只读，点击定位引用题目</span></div><div class="page-controls"><button aria-label="上一页" :disabled="pageIndex===0" @click="pageIndex--"><ChevronLeft :size="16"/></button><span>{{pageIndex+1}} / {{doc?.pages.length||0}} 页</span><button aria-label="下一页" :disabled="pageIndex+1>=(doc?.pages.length||0)" @click="pageIndex++"><ChevronRight :size="16"/></button></div></div>
+    <div class="source-footer"><div class="region-tools" v-if="layer==='frames'"><button :class="{active:adding}" @click="adding=!adding" title="拖动新增题框"><Plus :size="15"/>补框</button><button @click="remove" :disabled="selectedRegion<0"><Trash2 :size="15"/>删框</button></div><div class="region-tools" v-else-if="layer==='template'"><button @click="addZone"><Plus :size="15"/>学生信息区</button><button @click="deleteTemplateSelection" :disabled="!selectedTemplate"><Trash2 :size="15"/>删除选中</button><span class="muted">拖动移动，右下角缩放</span></div><div class="region-tools" v-else><span class="muted">识别块只读，点击定位引用题目</span></div><div class="page-controls"><button aria-label="上一页" :disabled="pageIndex===0" @click="pageIndex--"><ChevronLeft :size="16"/></button><span>{{pageIndex+1}} / {{doc?.pages.length||0}} 页</span><button aria-label="下一页" :disabled="pageIndex+1>=(doc?.pages.length||0)" @click="pageIndex++"><ChevronRight :size="16"/></button></div></div>
     <p class="source-hint">{{layer==='frames'?'框选按 PDF 物理页定位；跨栏、跨页题可保留多个区域。':layer==='blocks'?'MinerU 段落块只读；未引用块高亮，点击定位题目。':'学生信息区按页保存，人工调整后不会被默认值覆盖。'}}</p>
   </section>
 </template>
