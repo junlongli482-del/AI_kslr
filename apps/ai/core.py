@@ -8,6 +8,7 @@ import os
 import re
 import time
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -1156,6 +1157,13 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         normalize_paper(paper)
         allocate_paper_scores(paper, questions)
         apply_paper_inheritance(paper, questions)
+    template_data = build_template(documents)
+    bracket_pool = None
+    bracket_future = None
+    if os.getenv('BRACKET_ENABLED', '0') == '1':
+        bracket_pool = ThreadPoolExecutor(max_workers=1)
+        bracket_result = {'documents': documents, 'questions': questions, 'template': template_data}
+        bracket_future = bracket_pool.submit(run_bracket_detection, bracket_result, folder, None)
     entries = []
     if progress:
         progress('答案匹配', '正在提取和区分答案所属试卷')
@@ -1236,15 +1244,18 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             q['issues'].append('缺少答案')
     question_span_regions(questions, documents)
     for q in questions: crop_regions(q, documents, folder)
+    if bracket_future is not None:
+        try:
+            bracket_future.result()
+        except Exception as exc:
+            template_data['bracket_error'] = str(exc)[-500:]
+            template_data['bracket_status'] = 'failed'
+        if bracket_pool is not None:
+            bracket_pool.shutdown(wait=False)
     result = Result.model_validate({'task_id': task_id, 'papers': papers, 'questions': questions, 'documents': documents,
                                     'answer_entries': entries,
                                     'unmatched_answer_entry_ids': [e['id'] for e in entries if not e.get('matched_question_id')],
                                     'processing_metadata': {'pipeline_version': 'v1', 'calls': llm.calls, 'knowledge_catalog': 'unconfigured'},
-                                    'template': build_template(documents)}).model_dump()
-    try:
-        run_bracket_detection(result, folder, progress)
-    except Exception as exc:
-        result.setdefault('template', {})['bracket_error'] = str(exc)[-500:]
-        result.setdefault('issues', []).append({'severity': 'warning', 'message': '括号检测失败，不影响题目录入；可在模板层重试'})
+                                    'template': template_data}).model_dump()
     save(folder / 'result.json', result)
     return result
