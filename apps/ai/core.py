@@ -1033,6 +1033,7 @@ def run_bracket_detection(result: dict, folder: Path, progress=None):
     for doc in result.get('documents', []):
         if doc.get('role') == 'answer':
             continue
+        block_lookup = {b['id']: b for b in doc.get('blocks', [])}
         pdfs = list((folder / doc['id'] / 'raw').glob('*_origin.pdf')) if (folder / doc['id'] / 'raw').exists() else []
         if not pdfs:
             continue
@@ -1076,20 +1077,40 @@ def run_bracket_detection(result: dict, folder: Path, progress=None):
                             if best is None or area < best[0]:
                                 best = (area, q)
                 q = best[1] if best else None
+                sub_node = None
+                if q:
+                    for sub in q.get('subquestions') or []:
+                        boxes = [block_lookup[bid]['bbox'] for bid in (sub.get('block_ids') or [])
+                                 if bid in block_lookup and block_lookup[bid].get('page_index') == page_index]
+                        if not boxes:
+                            continue
+                        sx0, sy0 = min(b[0] for b in boxes), min(b[1] for b in boxes)
+                        sx1, sy1 = max(b[2] for b in boxes), max(b[3] for b in boxes)
+                        if sx0 <= cx <= sx1 and sy0 <= cy <= sy1:
+                            sub_node = sub
+                            break
                 bound = q is not None
                 if bound:
                     item['question_id'] = q['id']
+                    item['sub_node_id'] = (sub_node or {}).get('subquestion_id')
                     item['bound'] = True
                     same = [b for b in annotations['brackets'] if b.get('question_id') == q['id'] and b.get('page_index') == page_index]
                     same.sort(key=lambda b: (b['bbox'][1], b['bbox'][0]))
                     item['index_in_question'] = same.index(item) + 1
+                    if sub_node:
+                        same_sub = [b for b in same if b.get('sub_node_id') == sub_node.get('subquestion_id')]
+                        item['index_in_node'] = same_sub.index(item) + 1
+                    else:
+                        item['index_in_node'] = None
                 else:
                     item['bound'] = False
                     item['index_in_question'] = None
+                    item['index_in_node'] = None
                 template['blanks'].append({'blank_id': item['id'], 'question_id': (q or {}).get('id'),
-                                           'page_index': page_index, 'bbox': item['bbox'],
-                                           'score': item['score'], 'bound': bound,
+                                           'sub_node_id': item.get('sub_node_id'), 'page_index': page_index,
+                                           'bbox': item['bbox'], 'score': item['score'], 'bound': bound,
                                            'index_in_question': item['index_in_question'],
+                                           'index_in_node': item.get('index_in_node'),
                                            'bind_reason': 'question_region_contains' if bound else 'unbound'})
     template['bracket_status'] = 'done'
 
