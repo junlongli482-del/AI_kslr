@@ -719,7 +719,10 @@ def normalize_scoring(scoring: dict) -> dict:
         criterion = str(item.get('criterion') or '').strip()
         if not criterion:
             continue
-        points.append({'pct': round(pct, 3), 'criterion': criterion[:120]})
+        point = {'pct': round(pct, 3), 'criterion': criterion[:600]}
+        if isinstance(item.get('editor_document'), dict):
+            point['editor_document'] = item['editor_document']
+        points.append(point)
     total = sum(p['pct'] for p in points)
     if points and abs(total - 100) > .01:
         for point in points:

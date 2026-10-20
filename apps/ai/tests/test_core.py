@@ -161,8 +161,10 @@ def test_allocate_sub_scores_keeps_integer_total():
 
 
 def test_scoring_points_are_normalized_to_100():
-    scoring=core.normalize_scoring({'points':[{'pct':20,'criterion':'公式正确'},{'pct':30,'criterion':'结果正确'}]})
+    doc={'type':'doc','content':[]}
+    scoring=core.normalize_scoring({'points':[{'pct':20,'criterion':'公式正确','editor_document':doc},{'pct':30,'criterion':'结果正确'}]})
     assert round(sum(point['pct'] for point in scoring['points']))==100
+    assert scoring['points'][0]['editor_document']==doc
 
 
 def test_apply_rubrics_merges_points_and_allocates_integer_scores():

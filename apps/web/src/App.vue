@@ -293,7 +293,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <div class="field-heading"><label>评分标准</label><span v-if="sub.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span></div>
                   <p v-if="sub.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
                   <template v-else>
-                    <div v-if="sub.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in sub.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><el-input v-model="point.criterion" placeholder="可判定的得分动作/结果"/><div v-if="point.criterion.includes('$')" class="rubric-preview" v-html="renderMarkdown(point.criterion)"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(sub,pi)"><X :size="13"/></button></div></div>
+                    <div v-if="sub.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in sub.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-score-'+pi" v-model="point.criterion" v-model:document="point.editor_document" label="得分点编辑器"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(sub,pi)"><X :size="13"/></button></div></div>
                     <div class="rubric-actions"><button class="text-button" @click="addScoringPoint(sub)"><Plus :size="13"/>添加得分点</button><span :class="{'rubric-total-bad':scoringTotal(sub)!==100}">合计 {{scoringTotal(sub)}}%</span></div>
                     <el-input v-if="sub.scoring?.points?.length" v-model="sub.scoring.notes" placeholder="补充说明，例如其他等价解法参照给分" class="rubric-notes"/>
                   </template>
@@ -306,7 +306,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <div class="field-heading"><label>评分标准</label><span v-if="selected.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span></div>
                   <p v-if="selected.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
                   <template v-else>
-                    <div v-if="selected.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in selected.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><el-input v-model="point.criterion" placeholder="可判定的得分动作/结果"/><div v-if="point.criterion.includes('$')" class="rubric-preview" v-html="renderMarkdown(point.criterion)"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(selected,pi)"><X :size="13"/></button></div></div>
+                    <div v-if="selected.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in selected.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-score-'+pi" v-model="point.criterion" v-model:document="point.editor_document" label="得分点编辑器"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(selected,pi)"><X :size="13"/></button></div></div>
                     <div class="rubric-actions"><button class="text-button" @click="addScoringPoint(selected)"><Plus :size="13"/>添加得分点</button><span :class="{'rubric-total-bad':scoringTotal(selected)!==100}">合计 {{scoringTotal(selected)}}%</span></div>
                     <el-input v-if="selected.scoring?.points?.length" v-model="selected.scoring.notes" placeholder="补充说明，例如其他等价解法参照给分" class="rubric-notes"/>
                   </template>
@@ -337,9 +337,9 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 .rubric-item .el-input-number{width:96px;flex:none}
 .rubric-item .el-input{flex:1}
 .rubric-criterion{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
-.rubric-criterion .el-input{width:100%}
-.rubric-preview{font-size:12px;color:#526b5f;padding:0 2px;overflow-wrap:anywhere}
-.rubric-preview .katex{font-size:1em}
+.rubric-criterion .rich-editor{width:100%;min-width:0}
+.rubric-item .tiptap{min-height:40px;padding:8px 12px}
+.rubric-item .question-prose{min-height:24px}
 .rubric-actions{display:flex;align-items:center;gap:12px;margin:6px 0 8px;font-size:12px}
 .rubric-total-bad{color:#c45656;font-weight:600}
 .rubric-notes{margin-top:6px}
