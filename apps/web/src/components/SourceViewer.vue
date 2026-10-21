@@ -3,7 +3,7 @@ import { computed, ref, watch, nextTick } from 'vue'
 import { ZoomIn, ZoomOut, ChevronLeft, ChevronRight, Plus, MousePointer2, Trash2 } from 'lucide-vue-next'
 import type { Document, Question, Region } from '../types'
 const props=defineProps<{documents:Document[];questions:Question[];selected:Question|null;answerDocumentId?:string;template?:any}>()
-const emit=defineEmits(['select','change'])
+const emit=defineEmits(['select','change','template-change'])
 const docId=ref(''),pageIndex=ref(0),zoom=ref(1),adding=ref(false),selectedRegion=ref(-1)
 const layer=ref<'frames'|'blocks'|'template'>('frames')
 const frameOnly=ref(false),blockKind=ref('all'),blockMissingOnly=ref(false),templateKind=ref('all'),templateLow=ref(false),templateUnbound=ref(false)
@@ -47,14 +47,14 @@ let zoneDrag:{zone:any;mode:string;start:number[];bbox:number[]}|null=null
 function zonePoint(e:PointerEvent){const rect=svg.value!.getBoundingClientRect();return [Math.max(0,Math.min(1,(e.clientX-rect.left)/rect.width)),Math.max(0,Math.min(1,(e.clientY-rect.top)/rect.height))]}
 function zoneDown(e:PointerEvent,zone:any,resize=false){e.preventDefault();e.stopPropagation();selectedTemplate.value=zone;svg.value?.setPointerCapture(e.pointerId);const start=zonePoint(e);zoneDrag={zone,mode:resize?'resize':'move',start,bbox:[...zone.bbox]};zone.source='manual'}
 function zoneMove(e:PointerEvent){if(!zoneDrag)return;const p=zonePoint(e),dx=p[0]-zoneDrag.start[0],dy=p[1]-zoneDrag.start[1],b=zoneDrag.bbox;if(zoneDrag.mode==='move'){const x=Math.max(0,Math.min(1-(b[2]-b[0]),b[0]+dx)),y=Math.max(0,Math.min(1-(b[3]-b[1]),b[1]+dy));zoneDrag.zone.bbox=[x,y,x+b[2]-b[0],y+b[3]-b[1]]}else zoneDrag.zone.bbox=[b[0],b[1],Math.max(b[0]+.02,p[0]),Math.max(b[1]+.01,p[1])]}
-function zoneUp(){if(zoneDrag){emit('change');zoneDrag=null}}
-function addZone(){if(!props.template)return;props.template.student_zones=props.template.student_zones||[];const zone={id:'sz-manual-'+Date.now(),document_id:doc.value!.id,page_index:pageIndex.value,column:0,bbox:[.02,.01,.98,.11],source:'manual',role:'primary',fields:{name:'',class:'',student_id:''}};props.template.student_zones.push(zone);selectedTemplate.value=zone;emit('change')}
-function removeZone(zone:any){if(!props.template?.student_zones)return;props.template.student_zones=props.template.student_zones.filter((item:any)=>item!==zone);emit('change')}
+function zoneUp(){if(zoneDrag){emit('template-change');zoneDrag=null}}
+function addZone(){if(!props.template)return;props.template.student_zones=props.template.student_zones||[];const zone={id:'sz-manual-'+Date.now(),document_id:doc.value!.id,page_index:pageIndex.value,column:0,bbox:[.02,.01,.98,.11],source:'manual',role:'primary',fields:{name:'',class:'',student_id:''}};props.template.student_zones.push(zone);selectedTemplate.value=zone;emit('template-change')}
+function removeZone(zone:any){if(!props.template?.student_zones)return;props.template.student_zones=props.template.student_zones.filter((item:any)=>item!==zone);emit('template-change')}
 function deleteTemplateSelection(){
   const target=selectedTemplate.value;if(!target||!props.template)return
   if((props.template.student_zones||[]).includes(target))props.template.student_zones=props.template.student_zones.filter((z:any)=>z!==target)
   else for(const key of Object.keys(props.template.annotations||{}))props.template.annotations[key]=(props.template.annotations[key]||[]).filter((item:any)=>item!==target)
-  selectedTemplate.value=null;emit('change')
+  selectedTemplate.value=null;emit('template-change')
 }
 function reassignSelected(event:Event){
   const target=selectedTemplate.value;if(!target||!props.template)return
@@ -62,7 +62,7 @@ function reassignSelected(event:Event){
   target.question_id=questionId;target.bound=!!questionId
   const blank=(props.template.blanks||[]).find((b:any)=>b.blank_id===target.id)
   if(blank){blank.question_id=questionId;blank.bound=!!questionId;blank.bind_reason=questionId?'manual':'unbound'}
-  emit('change')
+  emit('template-change')
 }
 watch(()=>props.documents,()=>{if(!docId.value&&props.documents.length)docId.value=props.documents[0].id},{immediate:true})
 watch(()=>props.selected?.id,()=>{const r=props.selected?.regions[0];if(r){docId.value=r.document_id;pageIndex.value=r.page_index}selectedRegion.value=-1},{immediate:true})
