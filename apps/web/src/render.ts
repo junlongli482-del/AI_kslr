@@ -139,8 +139,12 @@ export function prepareEditorDocument(document:any,source:string,imageLayout:Rec
           if(hasImage&&hasOther){
             const groups:any[][]=[]
             let current:any[]=[],currentImage:boolean|null=null
+            const blank=(part:any)=>part?.type==='text'&&!String(part.text||'').trim()&&!part.marks?.length
             for(const part of child.content){
               const image=part?.type==='image'
+              if(current.length&&currentImage===true&&blank(part)){
+                current.push(part);continue
+              }
               if(current.length&&currentImage!==image){groups.push(current);current=[]}
               current.push(part);currentImage=image
             }
