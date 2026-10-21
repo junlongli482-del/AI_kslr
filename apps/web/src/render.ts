@@ -48,8 +48,35 @@ function renderWithMath(source:string, editable:boolean) {
   return html
 }
 
-function applyImageLayout(html:string, imageLayout:Record<string,any>) {
-  return html.replace(/<img src="([^"]+)"([^>]*)>/g,(_all,src,attrs)=>{
+function isolateImages(source:string){
+  const imagePattern=/!\[[^\]]*\]\([^)]+\)/g
+  return source.split('\n').map(line=>{
+    if(!imagePattern.test(line))return line
+    imagePattern.lastIndex=0
+    const images=[...line.matchAll(imagePattern)]
+    if(!images.length)return line
+    let output='',cursor=0,pending=''
+    const flush=()=>{if(pending){output+=pending;pending=''}}
+    for(const match of images){
+      const before=line.slice(cursor,match.index!)
+      if(before.trim()){
+        flush()
+        output+=before.trimEnd()+'\n\n'
+      }else if(pending&&before.length){pending+=' '}
+      pending+=match[0]
+      cursor=match.index!+match[0].length
+    }
+    const after=line.slice(cursor)
+    if(after.trim()){
+      if(pending){output+=pending+'\n\n';pending=''}
+      output+=after.trimStart()
+    }else flush()
+    if(pending)output+=pending
+    return output.trim()
+  }).join('\n')
+}
+
+function applyImageLayout(html:string, imageLayout:Record<string,any>) {  return html.replace(/<img src="([^"]+)"([^>]*)>/g,(_all,src,attrs)=>{
     const meta=imageLayout[src.replaceAll('&amp;','&')]
     const raw=Number(meta?.manual_width_pct??meta?.render_width_pct??meta?.width_pct)
     const width=Number.isFinite(raw)&&raw>0?Math.min(100,raw):60
@@ -60,13 +87,13 @@ function applyImageLayout(html:string, imageLayout:Record<string,any>) {
 }
 
 export function renderMarkdown(source:string, imageLayout:Record<string,any>={}) {
-  return DOMPurify.sanitize(applyImageLayout(renderWithMath(source,false),imageLayout),{
+  return DOMPurify.sanitize(applyImageLayout(renderWithMath(isolateImages(source),false),imageLayout),{
     ADD_TAGS:['annotation','semantics'],ADD_ATTR:['encoding','xmlns','data-width-pct','data-caption','data-type']
   })
 }
 
 export function markdownToEditable(source:string, imageLayout:Record<string,any>={}) {
-  return DOMPurify.sanitize(applyImageLayout(renderWithMath(source,true),imageLayout),{
+  return DOMPurify.sanitize(applyImageLayout(renderWithMath(isolateImages(source),true),imageLayout),{
     ADD_ATTR:['data-type','data-latex','data-display','data-width-pct','data-caption','data-type']
   })
 }
@@ -102,6 +129,31 @@ export function prepareEditorDocument(document:any,source:string,imageLayout:Rec
     }
     clone.content=blocks
   }
+  function splitImages(node:any){
+    if(!node||typeof node!=='object')return
+    if(Array.isArray(node.content)){
+      node.content=node.content.flatMap((child:any)=>{
+        if(child?.type==='paragraph'&&Array.isArray(child.content)){
+          const hasImage=child.content.some((part:any)=>part?.type==='image')
+          const hasOther=child.content.some((part:any)=>part?.type!=='image')
+          if(hasImage&&hasOther){
+            const groups:any[][]=[]
+            let current:any[]=[],currentImage:boolean|null=null
+            for(const part of child.content){
+              const image=part?.type==='image'
+              if(current.length&&currentImage!==image){groups.push(current);current=[]}
+              current.push(part);currentImage=image
+            }
+            if(current.length)groups.push(current)
+            return groups.map(group=>({...child,content:group}))
+          }
+        }
+        splitImages(child)
+        return [child]
+      })
+    }
+  }
+  splitImages(clone)
   function visit(node:any):any[] {
     const text=paragraphText(node)
     if(text!==null&&text&&node.content?.length>1&&mathParts(normalizeMathSource(text)).some(part=>part.latex!==undefined)){
