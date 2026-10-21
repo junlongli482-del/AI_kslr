@@ -194,7 +194,6 @@ async function copyAll(){
   ;(window as any).__questionEditorClipboard={json,ts:Date.now()}
   try{
     const item:Record<string,Blob>={'text/plain':new Blob([text],{type:'text/plain'}),'text/html':new Blob([html],{type:'text/html'})}
-    item['application/x-question-editor+json']=new Blob([JSON.stringify(json)],{type:'application/x-question-editor+json'})
     await navigator.clipboard.write([new ClipboardItem(item)])
   }catch{await navigator.clipboard.writeText(text)}
   ElMessage.success('已复制')

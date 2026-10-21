@@ -49,6 +49,7 @@ scheduler = TaskScheduler(max(0, initial_limit))
 class QuestionRubricRequest(BaseModel):
     task_id: str
     question: dict
+    subquestion_id: str | None = None
 
 
 class StudentZoneSettingsRequest(BaseModel):
@@ -301,12 +302,16 @@ def question_rubric(request: QuestionRubricRequest):
         raise HTTPException(404, '任务不存在')
     question = request.question
     try:
-        filled = fill_question_rubric(question, LLM(folder, 'deepseek'))
+        filled = fill_question_rubric(question, LLM(folder, 'deepseek'), request.subquestion_id)
     except Exception as exc:
         diagnostic = describe_error(exc, service='DeepSeek', operation='补全评分标准')
         raise HTTPException(502, diagnostic.get('detail') or '评分标准生成失败') from exc
-    return {'question': question, 'filled': filled,
-            'remaining': len([target for target in (question.get('subquestions') or [question]) if not (target.get('scoring') or {}).get('points')])}
+    target = next((sub for sub in (question.get('subquestions') or []) if sub.get('subquestion_id') == request.subquestion_id), None) if request.subquestion_id else question
+    return {'question': question, 'subquestion_id': request.subquestion_id,
+            'scoring': (target or {}).get('scoring'),
+            'filled': filled,
+            'remaining': len([item for item in (question.get('subquestions') or [question])
+                              if (item.get('scoring') or {}).get('method') != 'auto' and not (item.get('scoring') or {}).get('points')])}
 
 
 @app.get('/settings/student-zones')

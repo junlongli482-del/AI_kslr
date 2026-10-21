@@ -78,6 +78,7 @@ class Region(BaseModel):
     purpose: str = 'content'
     order: int = 0
     crop_url: str | None = None
+    recognition: dict | None = None
 
 
 class Question(BaseModel):
@@ -855,17 +856,64 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
             q['grading_method'] = 'manual'
 
 
-def missing_rubric_targets(question: dict) -> list[dict]:
-    targets = question.get('subquestions') or [question]
-    return [target for target in targets if not (target.get('scoring') or {}).get('points')]
+def missing_rubric_targets(question: dict, subquestion_id: str | None = None) -> list[dict]:
+    if subquestion_id:
+        sub = next((item for item in question.get('subquestions') or [] if item.get('subquestion_id') == subquestion_id), None)
+        if sub and (sub.get('scoring') or {}).get('method') != 'auto' and not (sub.get('scoring') or {}).get('points'):
+            return [sub]
+        return []
+    if question.get('subquestions'):
+        return []
+    if (question.get('scoring') or {}).get('method') == 'auto' or (question.get('scoring') or {}).get('points'):
+        return []
+    return [question]
 
 
-def fill_question_rubric(question: dict, llm: LLM) -> int:
-    missing = missing_rubric_targets(question)
+def fill_question_rubric(question: dict, llm: LLM, subquestion_id: str | None = None) -> int:
+    """Fill exactly one requested blank. Never regenerate sibling subquestions."""
+    missing = missing_rubric_targets(question, subquestion_id)
     if not missing:
         return 0
-    apply_rubrics([question], [{'id': question.get('paper_id', ''), 'title': ''}], llm, preserve=True)
-    return len(missing)
+    target = missing[0]
+    is_sub = bool(subquestion_id)
+    sub_payload = []
+    if is_sub:
+        sub_payload = [{'subquestion_id': target.get('subquestion_id'), 'number': target.get('number'),
+                        'stem': target.get('stem') or '', 'options': target.get('options') or [],
+                        'answer': (target.get('answer') or {}).get('value') or '',
+                        'analysis': (target.get('answer') or {}).get('analysis') or '',
+                        'score': target.get('score')}]
+    payload = {'question_id': question.get('id'), 'paper': '', 'number': question.get('number'),
+               'stem': question.get('stem') or '', 'options': question.get('options') or [],
+               # Do not leak sibling answers/analysis into a single-subquestion request.
+               'answer': (question.get('answer') or '') if not is_sub else '',
+               'analysis': (question.get('analysis') or '') if not is_sub else '',
+               'score': question.get('attributes', {}).get('score'),
+               'subquestions': sub_payload}
+    response = llm.json(f'rubric-single-{question.get("id")}-{subquestion_id or "question"}', RUBRIC_PROMPT, {'questions': [payload]})
+    item = next((entry for entry in response.get('items') or [] if entry.get('question_id') == question.get('id')), None)
+    if item is None:
+        item = (response.get('items') or [None])[0]
+    if not item or item.get('grading_method') == 'auto':
+        return 0
+    if is_sub:
+        sub_item = next((entry for entry in item.get('subquestions') or [] if entry.get('subquestion_id') == subquestion_id), None)
+        if not sub_item:
+            return 0
+        scoring = normalize_scoring(sub_item.get('scoring') or {})
+        scoring['method'] = 'manual'
+        if not scoring.get('points'):
+            return 0
+        target['scoring'] = scoring
+        target['weight_pct'] = sub_item.get('weight_pct') or target.get('weight_pct')
+        return 1
+    scoring = normalize_scoring(item.get('scoring') or {})
+    scoring['method'] = 'manual'
+    if not scoring.get('points'):
+        return 0
+    question['scoring'] = scoring
+    question['grading_method'] = 'manual'
+    return 1
 
 
 PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'textbook_volume', 'textbook_version', 'year', 'semester', 'region')

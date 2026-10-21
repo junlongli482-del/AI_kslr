@@ -73,15 +73,19 @@ function applyPaperInheritanceLocal(paper:any){
 function markAttributeManual(field:string){if(!selected.value)return;(selected.value.attribute_sources??={})[field]='manual';markDirty()}
 function markScoreManual(){if(!selected.value)return;selected.value.attributes.score_source='manual';markDirty()}
 const rubricBusy=ref(false)
-async function fillRubric(){
+async function fillRubric(target?:any){
   if(!task.value||!selected.value||rubricBusy.value)return
+  const subquestionId=target?.subquestion_id||null
   try{
-    await ElMessageBox.confirm('将调用一次 AI，只补全缺失的小问评分标准，已有内容不会被覆盖。继续吗？','补全评分标准',{confirmButtonText:'开始生成',cancelButtonText:'取消'})
+    await ElMessageBox.confirm(subquestionId?'只调用一次 AI，补全当前小问的评分标准；不会生成或覆盖其他小问。':'只调用一次 AI，补全整题的评分标准；已有内容不会被覆盖。','补全评分标准',{confirmButtonText:'开始生成',cancelButtonText:'取消'})
     rubricBusy.value=true
-    const response=await api.post(`/quick-entry/tasks/${task.value.id}/question-rubric`,{task_id:task.value.id,question:selected.value})
-    Object.assign(selected.value,response.data.question)
+    const response=await api.post(`/quick-entry/tasks/${task.value.id}/question-rubric`,{task_id:task.value.id,question:selected.value,subquestion_id:subquestionId})
+    if(subquestionId){
+      const sub=selected.value.subquestions.find(item=>item.subquestion_id===subquestionId)
+      if(sub&&response.data.scoring)sub.scoring=response.data.scoring
+    }else if(response.data.scoring)selected.value.scoring=response.data.scoring
     markDirty()
-    ElMessage.success(response.data.filled?`已补全 ${response.data.filled} 个评分标准`:'没有缺失的评分标准')
+    ElMessage.success(response.data.filled?'已补全当前评分标准':'当前评分标准无需补全')
   }catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}
   finally{rubricBusy.value=false}
 }
@@ -416,7 +420,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-answer'" v-model="sub.answer.value" v-model:document="selected.editor_documents[`sub-${index}-answer`]" label="小问答案"/>
                   <div class="field-heading"><label>解析</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-analysis'" v-model="sub.answer.analysis" v-model:document="selected.editor_documents[`sub-${index}-analysis`]" label="小问解析"/>
-                  <div class="field-heading"><label>评分标准</label><span v-if="sub.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="sub.scoring?.method!=='auto'" class="text-button" @click="fillRubric" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button></div>
+                  <div class="field-heading"><label>评分标准</label><span v-if="sub.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="sub.scoring?.method!=='auto'" class="text-button" @click="fillRubric(sub)" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button></div>
                   <p v-if="sub.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
                   <template v-else>
                     <div v-if="sub.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in sub.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-score-'+pi" v-model="point.criterion" v-model:document="point.editor_document" label="得分点编辑器"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(sub,pi)"><X :size="13"/></button></div></div>
