@@ -30,16 +30,26 @@ def cost(channel, usage, now=None):
     details=usage.get('prompt_tokens_details') or {}
     cached=int(usage.get('prompt_cache_hit_tokens',details.get('cached_tokens',0)) or 0)
     written=int(details.get('cache_write_tokens',0) or 0)
-    uncached=max(0,prompt-cached-written)
+    # DeepSeek returns the authoritative split in these two fields. Fall back
+    # to prompt-cached only for providers that do not expose a miss counter.
+    miss=usage.get('prompt_cache_miss_tokens')
+    uncached=int(miss) if miss is not None else max(0,prompt-cached-written)
     tier='base_gt_272k' if prompt>272000 else 'base_lt_272k'
     status='calculated' if usage else 'unknown'
+    priced_at=None
+    calendar_source=None
     if channel=='DEEPSEEK':
-        # Legal-holiday calendar was not supplied. Preserve the possible price range.
+        # Official peak: weekdays 09:00-12:00 and 14:00-18:00 Asia/Shanghai.
+        # Holiday calendars are not in the API response; keep that limitation
+        # explicit instead of silently guessing a different price window.
         now=now or datetime.now(timezone(timedelta(hours=8)))
         peak=now.weekday()<5 and (9<=now.hour<12 or 14<=now.hour<18)
         prices=(2,8,.04,0) if peak else (1,4,.02,0)
-        plan='deepseek-flash-user-2026-10-15';tier='weekday_peak_calendar_unverified' if peak else 'off_peak'
-        status='estimated' if usage else 'unknown'
+        plan='deepseek-flash-user-2026-10-15'
+        tier='peak' if peak else 'off_peak'
+        status='calculated' if usage else 'unknown'
+        priced_at=now.isoformat()
+        calendar_source='weekday_only_no_holiday_calendar'
     else:
         plan='a-enterprise' if channel=='STABLE' else ('full-plus' if channel=='LOW' else f'{channel.lower()}-provider')
         known={'a-enterprise':{'base_lt_272k':(1.4,7,.07,1.75),'base_gt_272k':(2.8,10.5,.14,3.5)},
@@ -47,12 +57,12 @@ def cost(channel, usage, now=None):
         priced=plan in known
         prices=known.get(plan,{}).get(tier,(0,0,0,0)); status='unknown' if not priced else status
     amount=((uncached*prices[0]+output*prices[1]+cached*prices[2]+written*prices[3])/1_000_000 if usage and (channel=='DEEPSEEK' or priced) else None)
-    result={'provider':'llm','pricing_plan_id':plan,'tier':tier,'currency':'CNY','input_tokens':prompt,
+    result={'provider':'llm','pricing_plan_id':plan,'tier':tier,'currency':'CNY',
+            'input_tokens':prompt,'input_cache_hit_tokens':cached,'input_cache_miss_tokens':uncached,
             'output_tokens':output,'cached_read_tokens':cached,'cached_write_tokens':written,
             'amount':round(amount,8) if amount is not None else None,'amount_status':status,
-            'unit_price_cny_per_million':dict(zip(['input','output','cache_read','cache_write'],prices)),
-            'pricing_basis':'用户提供单价×供应商usage；非账单核销'}
+            'unit_price_cny_per_million':dict(zip(['input_cache_miss','output','input_cache_hit','cache_write'],prices)),
+            'pricing_basis':'usage_tokens_x_official_price','priced_at':priced_at,'calendar_source':calendar_source}
     if channel=='DEEPSEEK' and usage:
-        result['amount_range']=[round((uncached+output*4+cached*.02)/1_000_000,8),round((uncached*2+output*8+cached*.04)/1_000_000,8)]
-        result['pricing_note']='节假日时段未接入官方日历，按北京时间工作日估算；最终以供应商账单为准'
+        result['pricing_note']='高峰：工作日09:00-12:00、14:00-18:00（北京时间）；其余时段按非高峰。未接入法定节假日日历。'
     return result

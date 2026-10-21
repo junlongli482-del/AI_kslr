@@ -122,7 +122,7 @@ def test_long_model_wait_and_price_unknown_are_not_zero(monkeypatch):
     assert timeout().read==1800 and timeout().connect==25
     assert cost('DEEPSEEK',{})['amount'] is None
     price=cost('DEEPSEEK',{'prompt_tokens':1000000,'prompt_cache_hit_tokens':500000,'completion_tokens':1000000},datetime(2026,10,15,10,tzinfo=timezone(timedelta(hours=8))))
-    assert price['amount']==9.02 and price['amount_status']=='estimated'
+    assert price['amount']==9.02 and price['amount_status']=='calculated'
 
 
 def test_comparison_runs_full_candidates_concurrently_and_preserves_results(tmp_path,monkeypatch):
