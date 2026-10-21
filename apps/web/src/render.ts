@@ -129,35 +129,44 @@ export function prepareEditorDocument(document:any,source:string,imageLayout:Rec
     }
     clone.content=blocks
   }
-  function splitImages(node:any){
+  function regroupImages(node:any,layout:Record<string,any>){
     if(!node||typeof node!=='object')return
-    if(Array.isArray(node.content)){
-      node.content=node.content.flatMap((child:any)=>{
-        if(child?.type==='paragraph'&&Array.isArray(child.content)){
-          const hasImage=child.content.some((part:any)=>part?.type==='image')
-          const hasOther=child.content.some((part:any)=>part?.type!=='image')
-          if(hasImage&&hasOther){
-            const groups:any[][]=[]
-            let current:any[]=[],currentImage:boolean|null=null
-            const blank=(part:any)=>part?.type==='text'&&!String(part.text||'').trim()&&!part.marks?.length
-            for(const part of child.content){
-              const image=part?.type==='image'
-              if(current.length&&currentImage===true&&blank(part)){
-                current.push(part);continue
-              }
-              if(current.length&&currentImage!==image){groups.push(current);current=[]}
-              current.push(part);currentImage=image
-            }
-            if(current.length)groups.push(current)
-            return groups.map(group=>({...child,content:group}))
-          }
-        }
-        splitImages(child)
-        return [child]
-      })
+    if(!Array.isArray(node.content))return
+    const imageKey=(part:any)=>{
+      const meta=layout[part?.attrs?.src]||{}
+      if(meta.group_id)return `g:${meta.group_id}`
+      if(meta.row!=null)return `r:${meta.document_id||''}:${meta.page_index??0}:${meta.row}`
+      const bbox=meta.bbox
+      if(Array.isArray(bbox)&&bbox.length===4)return `y:${meta.document_id||''}:${meta.page_index??0}:${Math.round(Number(bbox[1])/.04)}`
+      return null
     }
+    const isBlank=(part:any)=>part?.type==='text'&&!String(part.text||'').trim()&&!part.marks?.length
+    const arrange=(paragraph:any)=>{
+      const blocks:any[]=[];let text:any[]=[],group:any[]|null=null,key:any=null
+      const flushText=()=>{if(text.length){blocks.push({...paragraph,content:text});text=[]}}
+      const flushGroup=()=>{if(group){blocks.push({...paragraph,content:group});group=null;key=null}}
+      for(const part of paragraph.content||[]){
+        if(part?.type==='image'){
+          const nextKey=imageKey(part)
+          if(group&&nextKey===key){group.push(part);continue}
+          if(group&&nextKey===null&&key===null){group.push(part);continue}
+          flushText();flushGroup()
+          group=[part];key=nextKey
+          continue
+        }
+        if(group&&isBlank(part)){group.push(part);continue}
+        flushGroup();text.push(part)
+      }
+      flushText();flushGroup()
+      return blocks
+    }
+    node.content=node.content.flatMap((child:any)=>{
+      if(child?.type==='paragraph'&&Array.isArray(child.content)&&child.content.some((part:any)=>part?.type==='image'))return arrange(child)
+      regroupImages(child,layout)
+      return [child]
+    })
   }
-  splitImages(clone)
+  regroupImages(clone,imageLayout)
   function visit(node:any):any[] {
     const text=paragraphText(node)
     if(text!==null&&text&&node.content?.length>1&&mathParts(normalizeMathSource(text)).some(part=>part.latex!==undefined)){
