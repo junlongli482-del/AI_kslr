@@ -17,6 +17,7 @@ const showMobileSource=ref(false)
 const view=ref('tasks'),tasks=ref<Task[]>([]),busy=ref(false),task=ref<Task|null>(null)
 const result=ref<Result|null>(null),revision=ref(0),selectedId=ref(''),tab=ref('content'),filter=ref('all'),paperFilter=ref(''),search=ref(''),saveState=ref('已保存'),answerDoc=ref('')
 const paperOpen=ref(false)
+const costOpen=ref(false),costTask=ref<any>(null),costDetail=ref<any>(null),costLoading=ref(false)
 const zoneLayout=ref<'A3-2'|'A4-1'>('A3-2'),zoneDefaults=ref<Record<string,any>>({}),zonePreviewUrl=ref(''),zonePreviewBase64=ref(''),zonePreviewPdf=ref(false),zonePreviewName=ref(''),zoneBbox=ref<number[]>([.04,.015,.42,.068]),zoneSaving=ref(false),zoneDrag=ref<any>(null)
 const createDialog=ref(false),newTitle=ref(''),newMode=ref('textbook'),generate=ref(false),policy=ref('deepseek'),questionFiles=ref<File[]>([]),answerFiles=ref<File[]>([])
 const bank=ref<any[]>([]),bankSearch=ref(''),detail=ref<any|null>(null),detailDialog=ref(false),issuesDialog=ref(false),validationIssues=ref<any[]>([])
@@ -37,6 +38,7 @@ const modeName=(mode:string)=>({textbook:'教辅卷 / 作业',questions:'仅录�
 const statusName=(status:string)=>({running:'处理中',queued:'等待并发名额',pending:'正在准备',ready:'待审核',committed:'已入库',uploaded:'待处理',failed:'处理失败',interrupted:'待恢复'}[status]||status)
 const scoreSourceName=(source:string)=>({paper_declared:'卷面',ai_assigned:'AI分配',manual:'人工'}[source]||'')
 const formatDate=(s:string)=>s?.slice(5,16).replace('T',' ')
+const pretty=(value:any)=>value==null?'':typeof value==='string'?value:JSON.stringify(value,null,2)
 const paperTypes=['同步练','单元测','月考','期中','期末','一模二模','真题','模拟','课时作业','竞赛','其他']
 const paperInheritFields:[string,string][]=[['year','年份'],['semester','学期'],['region','地区'],['paper_type','试卷类型'],['textbook_version','教材版本'],['stage','学段'],['subject','学科'],['grade','年级']]
 function ensurePaper(paper:any){
@@ -50,6 +52,8 @@ function ensurePaper(paper:any){
   return paper
 }
 function openPaper(){if(activePaper.value){ensurePaper(activePaper.value);paperOpen.value=true}}
+async function openCost(t:any){costTask.value=t;costDetail.value=null;costOpen.value=true;if(!t.cost){try{costTask.value=(await api.get(`/quick-entry/tasks/${t.id}`)).data}catch(e){error(e)}}}
+async function inspectCost(item:any){if(!item?.call_id){ElMessage.info('这条调用是旧记录，没有原始输入输出');return}try{costLoading.value=true;costDetail.value=(await api.get(`/quick-entry/tasks/${costTask.value.id}/cost/calls/${item.call_id}`)).data}catch(e){error(e)}finally{costLoading.value=false}}
 function paperQuestions(paper:any){return result.value?.questions.filter(q=>q.paper_id===paper.id)||[]}
 function paperTotal(paper:any){return paperQuestions(paper).reduce((sum,q)=>sum+Number(q.attributes.score||0),0)}
 function paperDeclared(paper:any){const value=Number(paper.exam?.declared_total_score);return Number.isFinite(value)&&value>0?value:null}
@@ -369,7 +373,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
             <p v-if="concurrencyError" role="alert">{{concurrencyError}} <button class="text-button" @click="loadConcurrency">重新加载</button></p>
           </div>
           <div class="section-title-row"><h2>录入任务 <span class="muted">{{tasks.length}}</span></h2><div class="task-summary"><span v-if="running"><span class="status-dot working"/>{{running}} 个处理中</span><span v-if="ready"><span class="status-dot pending"/>{{ready}} 个待审核</span><button class="icon-button" title="刷新任务" aria-label="刷新任务" @click="loadTasks"><RefreshCw :size="16"/></button></div></div>
-          <div class="task-table-wrap"><table class="task-table"><thead><tr><th>资料名称</th><th>录入方式</th><th>状态</th><th>处理成本</th><th>创建时间</th><th class="align-right">操作</th></tr></thead><tbody><tr v-for="t in tasks" :key="t.id"><td><div class="document-name"><span class="file-icon"><FileText :size="20"/></span><div><strong>{{t.title}}</strong><small>{{t.stage}}{{['running','queued','failed','interrupted'].includes(t.status)?' · '+t.message:''}}</small></div></div></td><td>{{modeName(t.mode)}}</td><td><span :class="['status-pill',t.status]"><span class="status-dot"/>{{statusName(t.status)}}</span></td><td class="muted"><span v-if="t.cost">¥{{Number(t.cost.total||0).toFixed(6)}}</span><span v-else>待计算</span><small v-if="t.cost?.mineru_status==='free_service'"> · MinerU免费</small></td><td class="muted">{{formatDate(t.created_at)}}</td><td class="align-right"><button class="text-button" @click="openTask(t)">{{['ready','committed'].includes(t.status)?'对照审核':'查看进度'}}<ArrowRight :size="15"/></button></td></tr><tr v-if="!tasks.length"><td colspan="6"><div class="empty-state"><Files :size="34"/><h3>还没有录入任务</h3><p>上传第一份资料，识别结果会保存在这里。</p><el-button @click="createDialog=true">新建录入</el-button></div></td></tr></tbody></table></div>
+          <div class="task-table-wrap"><table class="task-table"><thead><tr><th>资料名称</th><th>录入方式</th><th>状态</th><th>处理成本</th><th>创建时间</th><th class="align-right">操作</th></tr></thead><tbody><tr v-for="t in tasks" :key="t.id"><td><div class="document-name"><span class="file-icon"><FileText :size="20"/></span><div><strong>{{t.title}}</strong><small>{{t.stage}}{{['running','queued','failed','interrupted'].includes(t.status)?' · '+t.message:''}}</small></div></div></td><td>{{modeName(t.mode)}}</td><td><span :class="['status-pill',t.status]"><span class="status-dot"/>{{statusName(t.status)}}</span></td><td class="muted"><button v-if="t.cost" class="cost-link" @click.stop="openCost(t)">¥{{Number(t.cost.total||0).toFixed(6)}}<ChevronRight :size="12"/></button><span v-else>待计算</span><small v-if="t.cost?.mineru_status==='free_service'"> · MinerU免费</small></td><td class="muted">{{formatDate(t.created_at)}}</td><td class="align-right"><button class="text-button" @click="openTask(t)">{{['ready','committed'].includes(t.status)?'对照审核':'查看进度'}}<ArrowRight :size="15"/></button></td></tr><tr v-if="!tasks.length"><td colspan="6"><div class="empty-state"><Files :size="34"/><h3>还没有录入任务</h3><p>上传第一份资料，识别结果会保存在这里。</p><el-button @click="createDialog=true">新建录入</el-button></div></td></tr></tbody></table></div>
           <div class="quiet-note"><ClipboardCheck :size="17"/><span>机器先整理，人工再确认。缺失或不确定的内容会在审核时提示。</span></div>
         </div>
       </template>
@@ -527,6 +531,38 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
         <div class="field-heading"><label>系统分节预览</label><span>按题型和题号生成，不写回原卷</span></div>
         <div class="section-preview"><div v-for="row in paperSections(paperForm)" :key="row.label">{{row.text}}</div><p v-if="!paperSections(paperForm).length" class="muted">还没有题目</p></div>
       </template>
+    </el-drawer>
+    <el-drawer v-model="costOpen" :title="`处理成本 · ${costTask?.title||''}`" size="min(1040px,97vw)">
+      <template v-if="costTask?.cost">
+        <div class="cost-summary">
+          <div><span>总成本</span><strong>¥{{Number(costTask.cost.total||0).toFixed(6)}}</strong></div>
+          <div><span>调用次数</span><strong>{{costTask.cost.calls||0}}</strong></div>
+          <div><span>缓存命中</span><strong>{{costTask.cost.cache_hits||0}}</strong></div>
+          <div><span>失败/未知</span><strong>{{costTask.cost.unknown_calls||0}}</strong></div>
+        </div>
+        <p class="muted">金额 = 本次调用 token × 官方单价；MinerU 免费。点击每条调用的「查看」可看完整输入、输出和计价过程。</p>
+        <div class="cost-table-wrap"><table class="cost-table"><thead><tr><th>时间</th><th>阶段</th><th>模型</th><th>状态</th><th>输入 hit / miss</th><th>输出</th><th>金额</th><th></th></tr></thead><tbody>
+          <tr v-for="item in costTask.cost.items" :key="item.call_id||item.at||item.operation">
+            <td class="muted">{{formatDate(item.at)}}</td>
+            <td><strong>{{item.operation||'调用'}}</strong><small>{{item.channel||''}}</small></td>
+            <td>{{item.model||'—'}}</td>
+            <td><span :class="['status-pill',item.status==='failed'?'failed':'ready']">{{item.status||item.amount_status}}</span></td>
+            <td class="mono">{{item.input_cache_hit_tokens??item.cached_read_tokens??0}} / {{item.input_cache_miss_tokens??(item.input_tokens?item.input_tokens-(item.cached_read_tokens||0):0)}}</td>
+            <td class="mono">{{item.output_tokens||0}}</td>
+            <td class="mono">¥{{Number(item.amount||0).toFixed(6)}}</td>
+            <td><button class="text-button" @click="inspectCost(item)" :disabled="!item.call_id">查看</button></td>
+          </tr>
+        </tbody></table></div>
+        <div v-if="costDetail" class="cost-detail">
+          <div class="cost-detail-head"><strong>{{costDetail.name}}</strong><span>{{formatDate(costDetail.started_at)}} · {{costDetail.model}} · {{costDetail.status}}</span><button class="text-button" @click="costDetail=null">收起</button></div>
+          <p class="mono">{{costDetail.usage?.prompt_tokens||0}} 输入 = {{costDetail.usage?.prompt_cache_hit_tokens||0}} hit + {{costDetail.usage?.prompt_cache_miss_tokens||0}} miss · {{costDetail.usage?.completion_tokens||0}} 输出 · ¥{{Number(costDetail.cost?.amount||0).toFixed(8)}}</p>
+          <p class="mono">hit×{{costDetail.cost?.unit_price_cny_per_million?.input_cache_hit}} + miss×{{costDetail.cost?.unit_price_cny_per_million?.input_cache_miss}} + output×{{costDetail.cost?.unit_price_cny_per_million?.output}} / 1,000,000</p>
+          <details open><summary>输入 · 系统指令</summary><pre>{{costDetail.request?.system||costDetail.request?.instruction||''}}</pre></details>
+          <details><summary>输入 · 用户内容</summary><pre>{{costDetail.request?.user||''}}</pre></details>
+          <details><summary>输出 · 原始响应</summary><pre>{{pretty(costDetail.response?.raw||costDetail.response?.parsed||costDetail.response||costDetail.error||'')}}</pre></details>
+        </div>
+      </template>
+      <div v-else class="empty-state"><p>正在读取成本明细…</p></div>
     </el-drawer>
     <el-dialog v-model="detailDialog" :title="detail?.title||('题目 '+(detail?.number||''))" width="min(900px, 94vw)"><template v-if="detail"><div v-if="detail.questions" class="paper-detail-list"><div class="template-notice" v-if="detail.templates?.length"><ScanLine :size="17"/>原卷区域模板已保存 · 实际扫描配准尚未接入</div><article v-for="row in detail.questions"><h3>第 {{row.content.number}} 题</h3><QuestionPreview :question="row.content"/></article></div><article v-else><QuestionPreview :question="detail.content"/><div class="region-preview-list"><img v-for="r in detail.content.regions" :src="r.crop_url" alt="来源区域"/></div></article></template><template #footer><el-button @click="detailDialog=false">关闭</el-button><el-button type="primary" @click="detailDialog=false;openTask(tasks.find(t=>t.id===detail.task_id)||{id:detail.task_id,status:'committed'} as Task)">返回来源审核</el-button></template></el-dialog>
   </div>

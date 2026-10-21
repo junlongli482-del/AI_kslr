@@ -53,6 +53,7 @@ public class TaskService {
     RestClient aiClient(){return ai;}
     public Map<String,Object> require(String id){var t=store.task(id);if(t==null)throw new ResponseStatusException(NOT_FOUND,"任务不存在");return t;}
     Map<String,Object> cost(String id){
+
         var out=new HashMap<String,Object>(); out.put("currency","CNY"); out.put("mineru_amount",0.0); out.put("mineru_status","free_service");
         double total=0; int calls=0, cacheHits=0, unknown=0, estimated=0; var items=new ArrayList<Object>();
         var p=data.resolve("tasks").resolve(id).resolve("llm").resolve("calls.json");
@@ -63,9 +64,16 @@ public class TaskService {
                 String status=n.path("amount_status").asText("unknown");
                 if(!"cache_hit".equals(c.path("status").asText()) && (!n.isObject()||n.path("amount").isNull()||"unknown".equals(status)))unknown++;
                 if("estimated".equals(status))estimated++;
-                if(n.isObject()){double amount=n.path("amount").asDouble(0); total+=amount; var item=n.deepCopy();if(item.isObject()){((com.fasterxml.jackson.databind.node.ObjectNode)item).put("channel",c.path("channel").asText());((com.fasterxml.jackson.databind.node.ObjectNode)item).put("operation",c.path("name").asText());}items.add(item);} }
+                if(n.isObject()){double amount=n.path("amount").asDouble(0); total+=amount; var item=n.deepCopy();if(item.isObject()){var o=(com.fasterxml.jackson.databind.node.ObjectNode)item;o.put("channel",c.path("channel").asText());o.put("operation",c.path("name").asText());o.put("call_id",c.path("call_id").asText());o.put("at",c.path("at").asText());o.put("status",c.path("status").asText());o.put("seconds",c.path("seconds").asDouble());o.put("model",c.path("model").asText());o.put("finish_reason",c.path("finish_reason").asText());o.set("usage",c.path("usage"));}items.add(item);} }
         }catch(Exception ignored){}
         out.put("llm_amount",total); out.put("total",total); out.put("status",unknown>0?"partial_unknown":estimated>0?"estimated":"calculated");out.put("unknown_calls",unknown);out.put("estimated_calls",estimated); out.put("calls",calls); out.put("cache_hits",cacheHits); out.put("items",items); return out;
+    }
+    public JsonNode costCall(String id,String callId){
+        require(id);
+        if(callId==null||!callId.matches("[A-Za-z0-9_-]{1,80}"))throw new ResponseStatusException(BAD_REQUEST,"调用ID无效");
+        Path p=data.resolve("tasks").resolve(id).resolve("llm").resolve("calls").resolve(callId+".json");
+        if(!Files.isRegularFile(p))throw new ResponseStatusException(NOT_FOUND,"该调用没有明细");
+        try{return json.readTree(Files.readString(p));}catch(Exception e){throw new ResponseStatusException(INTERNAL_SERVER_ERROR,"调用明细无法读取",e);}
     }
     public Map<String,Object> task(String id){var t=require(id);t.remove("review");t.put("files",store.files(id));t.put("events",store.events(id));t.put("cost",cost(id));
         var state=data.resolve("tasks").resolve(id).resolve("state.json");
