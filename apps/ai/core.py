@@ -559,6 +559,17 @@ def _plain_blank_source(text: str) -> str:
     return re.sub(r'\\_', '_', text or '')
 
 
+def _protect_token(index: int) -> str:
+    """Letters only: digits inside the token were rewritten by blank replacement."""
+    letters = ''
+    value = index
+    while True:
+        letters = chr(65 + value % 26) + letters
+        value = value // 26 - 1
+        if value < 0:
+            return f'@@QEB{letters}@@'
+
+
 def restore_blanks(question: dict, blocks: dict) -> int:
     """Rebuild fill-in blanks that the model dropped or left as raw underscores."""
     stem = question.get('stem') or ''
@@ -566,6 +577,8 @@ def restore_blanks(question: dict, blocks: dict) -> int:
         return 0
     source = _plain_blank_source('\n'.join((blocks.get(block_id) or {}).get('text') or ''
                                            for block_id in question.get('block_ids') or []))
+    # Image names like page_0_image_8.jpg look like "_0_" to the blank regex.
+    source = PROTECTED_SPAN.sub(' ', source)
     numbered = [match.group(1) for match in BLANK_INLINE.finditer(source) if match.group(1)]
     numbered += [match.group(1) for match in BLANK_LINE.finditer(source)]
     unnumbered = len(BLANK_UNDERSCORES.findall(BLANK_INLINE.sub(' ', source)))
@@ -575,7 +588,7 @@ def restore_blanks(question: dict, blocks: dict) -> int:
 
     def protect(text):
         def swap(match):
-            token = f'@@QEB{len(protected)}@@'
+            token = _protect_token(len(protected))
             protected[token] = match.group(0)
             return token
         return PROTECTED_SPAN.sub(swap, text)
@@ -1053,7 +1066,7 @@ STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整
 试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher；paper_type为同步练/单元测/月考/期中/期末/一模二模/真题/模拟/课时作业/竞赛/其他；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
 【原页图片】本次附带每一页的原图，命名形如“文档名-第01页.png”，并在消息里标注对应页码；图片仅用于版面与图文判断。
 - columns：已由系统在入参 columns 字段给出，直接沿用，不要自行推断或改写。
-- block_ids：必须使用完整块 ID（形如 d4a7b2c1-b12），不要只写 b12；不确定就留空。
+- 题干必须原样保留填空：原文的 `\\_42\\_`、`42. ____`、`____` 统一写成 `{{blank:42}}` 或 `{{blank}}`，不得删除、合并或改写；严禁改动图片链接、URL、公式与代码段；选择题的 `（ ）` 保持原样。\n- block_ids：必须使用完整块 ID（形如 d4a7b2c1-b12），不要只写 b12；不确定就留空。
 - excluded_block_ids：把不属于任何题目的块 ID 放进来——小节标题（如“第三部分 语言运用”）、大题说明（“本大题共…”“阅读下列…回答…”）、页眉页脚、分值说明、页码等；程序会让这些块不进入任何题框。
 - 图文归属：图片、表格、图注必须按原图判断属于哪一道题；MinerU 的 block_ids 与图片 URL 只作参考，图片被漏掉或放错位置时以原图为准。
 - 公式与文字：图片、MinerU 文本、上下文一起作为证据。当 MinerU 的公式、符号、表格或文字明显错误时，可以修正，但必须在 corrections 中逐条记录 {field,before,after,reason}，并在 issues 写“已按原图修正，请核对”；没有把握时保持原文并在 issues 写“需人工核对：…”，不得凭图片臆造内容。

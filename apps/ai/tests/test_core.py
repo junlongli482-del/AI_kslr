@@ -419,3 +419,12 @@ def test_column_answer_rejects_invalid_values():
     assert core._column_answer({'columns':2,'confidence':.9})==(2,0.9)
     assert core._column_answer({'columns':0,'confidence':.9})==(None,0.0)
     assert core._column_answer({'columns':'x','confidence':.9})==(None,0.0)
+
+def test_blank_detection_ignores_numbers_inside_image_urls():
+    stem='如图 ![](/api/assets?key=tasks%2Fdoc%2Fraw%2Fimages%2Fpage_0_image_8.jpg) 下列错误的是（ ）'
+    question={'id':'q','block_ids':['a'],'stem':stem,'issues':[]}
+    blocks={'a':{'text':stem}}
+    core.restore_blanks(question,blocks)
+    assert '@@' not in question['stem']
+    assert 'page_0_image_8.jpg' in question['stem']
+    assert '{{blank:0}}' not in question['stem']
