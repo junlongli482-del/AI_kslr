@@ -266,6 +266,20 @@
 - 与 028 的关系：028 解决“哪些块不是题目”的语义；029 只解决“栏边界在哪”，两者互补。
 - 状态：待开发（本轮仅记录）。
 
+### QE-FB-030 / P0 MinerU 密钥与上传 URL：403 InvalidAccessKeyId，换 key 后仍被服务端拒绝
+
+- 现象（2026-10-22）：多个任务卡在「MinerU识别」，报 `HTTP 403：InvalidAccessKeyId ... LTAI5t8...`；换新 key 后上传成功，但解析阶段统一返回 `unsupported file type`（等待 `waiting-file` 后约 4 秒失败），任务再次落 failed。
+- 定位证据：
+  1. 旧 key 的失败发生在 **PUT 预签名 OSS URL** 上；`mineru-task.json` 里缓存了 `file_url` 且 `uploaded=false`，重试会**反复 PUT 同一个过期 URL**，所以永远 403。
+  2. 新 key 的 batch 申请与 PUT 都返回 200；失败点在 MinerU 解析服务。
+  3. 用**曾经解析成功过的旧文件**、本次任务的 PDF、页面 JPEG、以及现场生成的 9KB 新 PDF 逐一测试，**全部**返回 `unsupported file type` → 不是文件损坏、不是扩展名、不是 A3 版式。
+- 已修复（代码）：
+  1. 支持多密钥：`MINERU_API_KEYS=key1,key2`（回退单 key `MINERU_API_KEY`），按顺序切换；
+  2. 遇到 401/403 或 `InvalidAccessKeyId` 时**删除 `mineru-task.json`**，重新申请上传 URL，不再复用过期 URL；
+  3. 每个 key 内最多重试 2 次，失败后换下一个 key，并在任务阶段里提示“第 N 个密钥失败”。
+- 未解决（服务端/账号）：新 key 能上传、不能解析，所有文件都 `unsupported file type`。需要确认 MinerU 控制台里该 key 的解析权限/额度/状态，或提供另一个可用 key（写入 `.env` 的 `MINERU_API_KEYS` 即可，无需改代码）。
+- 状态：本地代码已修；MinerU 解析被拒需外部确认。
+
 ## 2026-10-15 作答空白、图注与同题分框定位（仅记录）
 
 详见[作答空白、图注与同题左右分框定位](定位报告-作答空白图注与同题分框.md)：三份道法样本response区域为0，题型关键词门槛跳过简答/材料分析，且现有算法漏小问间空白；甲乙丙源caption已有但未进入完整布局合同；同题左右分框由“横向必须重叠”规则造成；另5处旧错误图片地址尚未清除。

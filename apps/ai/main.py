@@ -169,8 +169,42 @@ def process(request: ProcessRequest):
         scheduler.release(request.task_id)
 
 
+def mineru_keys():
+    raw = os.getenv('MINERU_API_KEYS') or os.getenv('MINERU_API_KEY') or ''
+    return [item.strip() for item in raw.split(',') if item.strip()]
+
+
+def mineru_key_error(exc: Exception) -> bool:
+    if isinstance(exc, httpx.HTTPStatusError):
+        return exc.response.status_code in (401, 403)
+    text = str(exc)
+    return 'InvalidAccessKeyId' in text or 'AccessKey' in text or text.startswith('MinerU: ')
+
+
 def recognize(source, archive, folder, name, progress):
-    headers = {'Authorization': 'Bearer ' + os.environ['MINERU_API_KEY']}
+    keys = mineru_keys()
+    if not keys:
+        raise ValueError('未配置 MinerU API Key')
+    manifest = folder / 'mineru-task.json'
+    last_error = None
+    for index, key in enumerate(keys):
+        for _attempt in range(2):
+            try:
+                recognize_with_key(source, archive, folder, name, progress, key)
+                return
+            except Exception as exc:
+                if not mineru_key_error(exc):
+                    raise
+                # A rejected upload URL (or revoked key) is useless for retries:
+                # drop the cached manifest so the next attempt requests a fresh one.
+                manifest.unlink(missing_ok=True)
+                last_error = exc
+        progress('MinerU识别', f'{name}：第 {index + 1} 个密钥失败，切换下一个')
+    raise last_error or ValueError('所有 MinerU 密钥均失败')
+
+
+def recognize_with_key(source, archive, folder, name, progress, key):
+    headers = {'Authorization': 'Bearer ' + key}
     base = os.getenv('MINERU_BASE_URL', 'https://mineru.net').rstrip('/')
     manifest = folder / 'mineru-task.json'
     with httpx.Client(timeout=120, follow_redirects=True) as client:
