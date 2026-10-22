@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -548,6 +548,8 @@ def validate(task_id: str, payload: dict):
         else:
             zones = result['template'].get('student_zones') or []
             result['template']['student_zones'] = [z for z in zones if z.get('role') != 'backup']
+        for question in result['questions']:
+            group_question_images(question)
         for paper in result['papers']:
             normalize_paper(paper)
             allocate_paper_scores(paper, result['questions'])

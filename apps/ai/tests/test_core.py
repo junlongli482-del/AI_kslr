@@ -393,3 +393,21 @@ def test_column_answer_rejects_invalid_values():
     assert core._column_answer({'columns':2,'confidence':.9})==(2,0.9)
     assert core._column_answer({'columns':0,'confidence':.9})==(None,0.0)
     assert core._column_answer({'columns':'x','confidence':.9})==(None,0.0)
+
+def test_group_images_by_original_row():
+    q={'id':'q1','stem':'如图 ![](u1) ![](u2)\n\n另一行 ![](u3)','image_layout':{
+        'u1':{'page_index':0,'bbox':[.1,.2,.3,.4],'caption':[{'bbox':[],'content':'图甲'}]},
+        'u2':{'page_index':0,'bbox':[.35,.22,.55,.42]},
+        'u3':{'page_index':0,'bbox':[.1,.6,.3,.8]}}}
+    core.group_question_images(q)
+    assert '![](u1) ![](u2)' in q['stem']
+    assert '![](u2)\n\n' in q['stem']
+    assert q['image_layout']['u1']['caption']==['图甲']
+
+
+def test_group_images_keeps_rows_separate():
+    q={'id':'q1','stem':'![](u1)\n\n![](u2)','image_layout':{
+        'u1':{'page_index':0,'bbox':[.1,.2,.3,.4]},
+        'u2':{'page_index':0,'bbox':[.1,.5,.3,.7]}}}
+    core.group_question_images(q)
+    assert '\n\n' in q['stem']

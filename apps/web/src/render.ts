@@ -86,11 +86,16 @@ function isolateImages(source:string){
   }).join('\n')
 }
 
+function captionText(meta:any){
+  const list=Array.isArray(meta?.caption)?meta.caption:[meta?.caption]
+  return list.map((item:any)=>typeof item==='string'?item:(item?.content||item?.text||'')).filter(Boolean).join(' ')
+}
+
 function applyImageLayout(html:string, imageLayout:Record<string,any>) {  return html.replace(/<img src="([^"]+)"([^>]*)>/g,(_all,src,attrs)=>{
     const meta=imageLayout[src.replaceAll('&amp;','&')]
     const raw=Number(meta?.manual_width_pct??meta?.render_width_pct??meta?.width_pct)
     const width=Number.isFinite(raw)&&raw>0?Math.min(100,raw):60
-    const caption=Array.isArray(meta?.caption)?meta.caption.join(' '):meta?.caption||''
+    const caption=captionText(meta)
     const safe=md.utils.escapeHtml(caption)
     return `<span data-type="layout-image" class="image-figure" style="width:${width}%;" data-width-pct="${width}"><img src="${src}"${attrs} data-caption="${safe}" data-width-pct="${width}" style="width:100%;height:auto;"/>${safe?`<span class="image-caption">${safe}</span>`:''}</span>`
   })
@@ -206,7 +211,7 @@ export function prepareEditorDocument(document:any,source:string,imageLayout:Rec
     if(!urls.has(match[1])){
       const meta=imageLayout[match[1]]||{}
       const width=meta.manual_width_pct??meta.render_width_pct??meta.width_pct
-      const caption=Array.isArray(meta.caption)?meta.caption.join(' '):meta.caption||''
+      const caption=captionText(meta)
       ;(clone.content??=[]).push({type:'paragraph',content:[{type:'image',attrs:{src:match[1],alt:'题目插图',widthPct:width??null,manualSize:meta.manual_width_pct!=null,caption}}]})
       urls.add(match[1])
     }

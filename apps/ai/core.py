@@ -739,6 +739,80 @@ def recover_visual_gaps(question: dict, documents: list[dict], folder: Path):
             question.setdefault('issues', []).append('已从原卷补回OCR块间图像，请核对补图')
 
 
+IMAGE_MARK = re.compile(r'!\[[^\]]*\]\([^)]*\)')
+
+
+def _caption_text(caption) -> list[str]:
+    if not caption:
+        return []
+    values = caption if isinstance(caption, list) else [caption]
+    return [str(item.get('content') or item.get('text') or '') if isinstance(item, dict) else str(item) for item in values if item]
+
+
+def group_question_images(question: dict) -> int:
+    """Group consecutive inline figures by their original page rows.
+
+    Same page and overlapping vertical ranges become one paragraph (side by side);
+    different rows stay in separate paragraphs.  Rendering may still wrap when
+    the combined widths overflow.
+    """
+    stem = question.get('stem') or ''
+    layout = question.get('image_layout') or {}
+    for url, meta in layout.items():
+        if isinstance(meta, dict) and meta.get('caption'):
+            meta['caption'] = _caption_text(meta['caption'])
+    marks = list(IMAGE_MARK.finditer(stem))
+    if len(marks) < 2:
+        return 0
+    changed = 0
+    # Work right-to-left so earlier offsets stay valid.
+    runs = []
+    current = [marks[0]]
+    for mark in marks[1:]:
+        gap = stem[current[-1].end():mark.start()]
+        if gap.strip() == '':
+            current.append(mark)
+        else:
+            runs.append(current)
+            current = [mark]
+    runs.append(current)
+    for run in runs:
+        if len(run) < 2:
+            continue
+        rows = []
+        for mark in run:
+            url = _image_url(mark.group(0))
+            meta = layout.get(url) or {}
+            rows.append((meta.get('page_index'), meta.get('bbox')))
+        clusters = []
+        for index, mark in enumerate(run):
+            page, box = rows[index]
+            if clusters:
+                last_page, last_box, last_members = clusters[-1]
+                if page is not None and page == last_page and box and last_box:
+                    overlap = min(box[3], last_box[3]) - max(box[1], last_box[1])
+                    height = min(box[3] - box[1], last_box[3] - last_box[1]) or 1
+                    if overlap / height >= .5:
+                        clusters[-1] = (page, [min(last_box[0], box[0]), min(last_box[1], box[1]),
+                                               max(last_box[2], box[2]), max(last_box[3], box[3])],
+                                        last_members + [mark])
+                        continue
+            clusters.append((page, box, [mark]))
+        if len(clusters) < 2:
+            continue
+        replacement = '\n\n'.join(' '.join(mark.group(0) for mark in members) for _, _, members in clusters)
+        stem = stem[:run[0].start()] + replacement + stem[run[-1].end():]
+        changed += 1
+    if changed:
+        question['stem'] = stem
+    return changed
+
+
+def _image_url(markdown: str) -> str:
+    match = re.search(r'\]\(([^)]*)\)', markdown)
+    return match.group(1) if match else ''
+
+
 def repair_json_text(text: str) -> str:
     """Conservative repairs only: BOM, trailing commas. Never rewrites content."""
     text = (text or '').lstrip('\ufeff')
