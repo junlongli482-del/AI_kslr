@@ -138,7 +138,7 @@ def test_question_span_uses_next_start_and_column_width():
     questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['b'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert questions[0]['regions'][0]['bbox']==[.06,.196,.45,.6]
+    assert questions[0]['regions'][0]['bbox']==[.04,.196,.96,.608]
     assert questions[1]['regions'][0]['bbox'][1]==.596
 
 
@@ -150,7 +150,7 @@ def test_question_span_splits_across_pages():
     questions=[{'id':'q1','block_ids':['a','b'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['c'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.5)]
+    assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.508)]
 
 
 def test_three_column_page_uses_per_column_frames():
@@ -164,11 +164,11 @@ def test_three_column_page_uses_per_column_frames():
                {'id':'q3','block_ids':['c'],'regions':[],'issues':[]},
                {'id':'q4','block_ids':['d2'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert [round(q['regions'][0]['bbox'][0],2) for q in questions]==[.04,.36,.68,.04]
-    assert questions[0]['regions'][0]['bbox'][2] <= .34
-    assert questions[1]['regions'][0]['bbox'][2] <= .66
-    assert questions[2]['regions'][0]['bbox'][2] <= .96
-    assert questions[0]['regions'][0]['bbox'][3] <= .50
+    assert [round(q['regions'][0]['bbox'][0],2) for q in questions]==[.04,.35,.67,.04]
+    assert round(questions[0]['regions'][0]['bbox'][2],2)==.33
+    assert round(questions[1]['regions'][0]['bbox'][2],2)==.65
+    assert round(questions[2]['regions'][0]['bbox'][2],2)==.96
+    assert questions[0]['regions'][0]['bbox'][3] <= .51
 
 
 def test_section_heading_is_not_framed_into_previous_question():
@@ -179,7 +179,7 @@ def test_section_heading_is_not_framed_into_previous_question():
     questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['b'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert round(questions[0]['regions'][0]['bbox'][3],3)==.237
+    assert round(questions[0]['regions'][0]['bbox'][3],3)==.245
 
 
 def test_subjective_question_frame_uses_whole_column():
@@ -236,6 +236,34 @@ def test_attach_columns_applies_paper_count_to_every_page():
     core.attach_page_columns([doc],[paper])
     assert doc['columns']==[3,3]
     assert paper['issues'] and '请核对' in paper['issues'][0]
+
+
+def test_restore_blanks_from_source_blocks():
+    blocks={'b1':{'id':'b1','text':'only one \\_42\\_ stands out'}}
+    question={'stem':'only one 42 stands out','block_ids':['b1'],'issues':[]}
+    assert core.restore_blanks(question,blocks)==1
+    assert '{{blank:42}}' in question['stem']
+
+
+def test_restore_blanks_ignores_years_and_math():
+    blocks={'b1':{'id':'b1','text':'\\_24\\_ and \\_25\\_'}}
+    question={'stem':'In 2024 we use $x=24$ then 25 here','block_ids':['b1'],'issues':[]}
+    core.restore_blanks(question,blocks)
+    assert '2024' in question['stem']
+    assert '$x=24$' in question['stem']
+    assert '{{blank:25}}' in question['stem']
+
+
+def test_excluded_block_is_dropped_from_frame():
+    docs=[{'id':'d','role':'question','pages':[{'width_px':800,'height_px':1200}],
+           'blocks':[{'id':'a','page_index':0,'bbox':[.06,.10,.45,.20]},
+                     {'id':'h','page_index':0,'bbox':[.06,.20,.45,.44],'text':'第三部分 语言运用（共两节）'},
+                     {'id':'b','page_index':0,'bbox':[.06,.50,.45,.60]}]}]
+    questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
+               {'id':'q2','block_ids':['h','b'],'regions':[],'issues':[]}]
+    core.question_span_regions(questions,docs,excluded=['h'])
+    assert questions[1]['regions'][0]['bbox'][1] >= .49
+    assert questions[0]['regions'][0]['bbox'][3] <= .51
 
 
 def test_allocate_sub_scores_keeps_integer_total():

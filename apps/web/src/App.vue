@@ -716,5 +716,8 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 .correction-before,.correction-after{margin:2px 0;line-height:1.6;word-break:break-word}
 .correction-before em,.correction-after em{font-style:normal;color:#9a8a6a;margin-right:6px;font-size:11px}
 .correction-after{color:#3f6b45}
+.cloze-blank{white-space:nowrap}
+.cloze-index{font-size:0.92em;color:#4a5d4b}
+.cloze-line{display:inline-block;min-width:4.2em;border-bottom:1px solid #4a5d4b;margin-left:2px;vertical-align:-2px}
 </style>
 

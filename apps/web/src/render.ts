@@ -45,7 +45,14 @@ function renderWithMath(source:string, editable:boolean) {
   })
   let html=md.render(text)
   formulas.forEach((formula,index)=>{html=html.replace(`QEFORMULA${index}PLACEHOLDER`,()=>formula)})
-  return html
+  return blanks(html)
+}
+
+function blanks(html:string){
+  return html.replace(/\{\{blank(?::(\d{1,3}))?\}\}/g,(_all,index)=>{
+    const label=index?`<span class="cloze-index">${index}.</span> `:''
+    return `<span class="cloze-blank">${label}<span class="cloze-line"></span></span>`
+  })
 }
 
 function isolateImages(source:string){

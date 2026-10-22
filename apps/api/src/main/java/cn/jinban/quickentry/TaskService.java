@@ -104,15 +104,23 @@ public class TaskService {
         store.state(id,"running","等待识别","正在准备文件");
         store.event(id,"等待识别","running","任务已提交");
     }
+    private int aiFailures = 0;
     @Scheduled(fixedDelay=2500)
     public void sync(){
         if(!syncEnabled)return;
+        try{
+            int minutes=30;
+            try{minutes=Integer.parseInt(System.getenv().getOrDefault("TASK_TIMEOUT_MINUTES","30"));}catch(NumberFormatException ignored){}
+            int stale=store.timeoutStaleTasks(Math.max(5,minutes));
+            if(stale>0)aiFailures=0;
+        }catch(Exception ignored){}
         for(var t:store.tasks()){
             if(!Set.of("running","queued","pending").contains(t.get("status")))continue;
             String id=t.get("id").toString();
             try{
                 JsonNode s=ai.get().uri("/tasks/{id}",id).retrieve().body(JsonNode.class);
                 if(s==null)continue;
+                aiFailures=0;
                 String status=s.path("status").asText(),stage=s.path("stage").asText(),message=s.path("message").asText();
                 if(!Set.of("queued","running","ready","failed","interrupted","pending").contains(status))continue;
                 if(!stage.equals(t.get("stage"))||!status.equals(t.get("status")))store.event(id,stage,status,message);
@@ -125,7 +133,20 @@ public class TaskService {
                     }else message="新处理结果已生成；现有人工稿保持不变";
                 }
                 store.state(id,status,stage,message);
-            }catch(Exception ignored){/* Keep durable state; next sync retries without resubmitting OCR. */}
+            }catch(Exception ignored){
+                // The AI service may be restarting; after a sustained outage mark work
+                // interrupted instead of leaving it "running" forever.
+                aiFailures++;
+                if(aiFailures>=10){
+                    for(var row:store.tasks()){
+                        String taskId=String.valueOf(row.get("id"));
+                        if(!Set.of("running","queued","pending").contains(row.get("status")))continue;
+                        store.state(taskId,"interrupted","AI服务无响应","模型服务无响应，可稍后点击恢复处理");
+                        store.event(taskId,"AI服务无响应","interrupted","连续探测失败，已标记为可恢复");
+                    }
+                    aiFailures=0;
+                }
+            }
         }
     }
     public JsonNode validate(String id,JsonNode draft){

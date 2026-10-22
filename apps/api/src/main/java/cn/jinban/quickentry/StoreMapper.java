@@ -67,4 +67,6 @@ public interface StoreMapper {
     void deleteQuestions(String id);
     @Delete("DELETE FROM jinban.qe_task WHERE id=#{id}")
     void deleteTask(String id);
+    @Update("UPDATE jinban.qe_task SET status='interrupted',stage='处理超时',message='长时间无进展，可点击恢复处理',updated_at=now() WHERE status IN ('running','queued') AND updated_at < now() - (#{minutes} * interval '1 minute')")
+    int timeoutStaleTasks(@Param("minutes") int minutes);
 }

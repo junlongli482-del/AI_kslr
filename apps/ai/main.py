@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, restore_question_blanks, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -44,6 +44,7 @@ settings_path = DATA / 'settings' / 'processing.json'
 initial_limit = (read(settings_path).get('max_concurrency', 0) if settings_path.exists()
                  else int(os.getenv('QUICK_ENTRY_MAX_CONCURRENCY', '0')))
 scheduler = TaskScheduler(max(0, initial_limit))
+APP_STARTED_AT = datetime.now(timezone.utc).isoformat()
 
 
 class QuestionRubricRequest(BaseModel):
@@ -80,6 +81,19 @@ def task_folder(task_id):
     if not task_id.replace('-', '').isalnum():
         raise HTTPException(400, 'Invalid task identifier')
     return DATA / 'tasks' / task_id
+
+
+def is_retryable_error(exc: Exception) -> bool:
+    if type(exc).__name__ in ('ValidationError', 'RequestValidationError'):
+        return False
+    if isinstance(exc, (httpx.TimeoutException, httpx.TransportError)):
+        return True
+    text = str(exc).lower()
+    if 'json' in text or '超时' in text or 'timeout' in text:
+        return True
+    response = getattr(exc, 'response', None)
+    code = getattr(response, 'status_code', None)
+    return bool(code and (code == 429 or code >= 500))
 
 
 def process(request: ProcessRequest):
@@ -142,6 +156,13 @@ def process(request: ProcessRequest):
         message = f'{current_stage}失败：{redact(exc)}'
         if isinstance(exc, httpx.HTTPError):
             message = f'{current_stage}失败：{error["detail"]}'
+        retry_marker = folder / 'auto-retry.json'
+        if is_retryable_error(exc) and not retry_marker.exists():
+            save(retry_marker, {'at': time.time(), 'stage': current_stage, 'detail': message[:500]})
+            save(state_path, {'status': 'running', 'stage': current_stage,
+                              'message': f'{current_stage}失败，自动重试一次（1/2）', 'updated_at': time.time()})
+            threading.Timer(1.0, lambda: start(request)).start()
+            return
         save(state_path, {'status': 'failed', 'stage': '处理失败', 'message': message,
                           'error': error, 'updated_at': time.time()})
     finally:
@@ -378,7 +399,9 @@ def save_student_zone_settings(request: StudentZoneSettingsRequest):
 def health():
     return {'status': 'ok', 'mineru_configured': bool(os.getenv('MINERU_API_KEY')),
             'llm_configured': bool(os.getenv('LLM_LOW_API_KEY') or os.getenv('LLM_STABLE_API_KEY') or os.getenv('LLM_DEEPSEEK_API_KEY')),
-            'read_timeout_seconds':float(os.getenv('LLM_READ_TIMEOUT_SECONDS','1800'))}
+            'read_timeout_seconds':float(os.getenv('LLM_READ_TIMEOUT_SECONDS','1800')),
+            'started_at': APP_STARTED_AT, 'scheduler': scheduler.snapshot(),
+            'vision': os.getenv('STRUCTURE_VISION', '1') not in ('0', 'false', 'False')}
 
 
 @app.post('/process')
@@ -462,6 +485,7 @@ def validate(task_id: str, payload: dict):
     if result['task_id'] == task_id:
         repair_result(result, DATA, task_id)
         sync_sub_scores(result['questions'])
+        restore_question_blanks(result['questions'], result['documents'])
         if not result.get('template'):
             result['template'] = build_template(result['documents'])
         else:
@@ -474,7 +498,8 @@ def validate(task_id: str, payload: dict):
         attach_page_columns(result['documents'], result['papers'])
         rebuild=payload.get('rebuild_region_question_ids',[])
         if rebuild:
-            question_span_regions(result['questions'],result['documents'],question_ids=rebuild)
+            question_span_regions(result['questions'],result['documents'],question_ids=rebuild,
+                                  excluded=result.get('excluded_block_ids') or [])
     issues = []
     if result['task_id'] != task_id:
         issues.append({'severity':'error','message':'结果不属于当前任务'})
