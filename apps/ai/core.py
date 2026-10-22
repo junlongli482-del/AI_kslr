@@ -470,30 +470,33 @@ def repair_math_escapes(text: str) -> str:
     return ''.join(parts)
 
 
-BLANK_SOURCE = re.compile(r'\\_+\s*(\d{1,2})\s*\\_+|(?<!\w)_{3,}(?!\w)')
+BLANK_SOURCE = re.compile(r'(?:\\_)+\s*(\d{1,2})?\s*(?:\\_)*|(?<!\w)_{3,}(?!\w)')
+BLANK_INLINE = re.compile(r'_{1,}[ \t]*(\d{1,2})[ \t]*_{1,}')
+BLANK_LINE = re.compile(r'(?m)^[ \t]*(\d{1,2})[.．][ \t]*_{1,}[ \t]*$')
+BLANK_UNDERSCORES = re.compile(r'(?<!\w)_{2,}(?!\w)')
 BLANK_TOKEN = re.compile(r'\{\{blank(?::(\d{1,3}))?\}\}')
 MATH_SPAN = re.compile(r'\$\$[\s\S]+?\$\$|\$[^$\n]+?\$')
 
 
+def _plain_blank_source(text: str) -> str:
+    return re.sub(r'\\_', '_', text or '')
+
+
 def restore_blanks(question: dict, blocks: dict) -> int:
-    """Rebuild fill-in blanks that the model dropped; only from this question's own source blocks."""
+    """Rebuild fill-in blanks that the model dropped or left as raw underscores."""
     stem = question.get('stem') or ''
     if not stem:
         return 0
-    source = '\n'.join((blocks.get(block_id) or {}).get('text') or ''
-                       for block_id in question.get('block_ids') or [])
-    numbered, unnumbered = [], 0
-    for match in BLANK_SOURCE.finditer(source):
-        if match.group(1):
-            numbered.append(match.group(1))
-        else:
-            unnumbered += 1
+    source = _plain_blank_source('\n'.join((blocks.get(block_id) or {}).get('text') or ''
+                                           for block_id in question.get('block_ids') or []))
+    numbered = [match.group(1) for match in BLANK_INLINE.finditer(source) if match.group(1)]
+    numbered += [match.group(1) for match in BLANK_LINE.finditer(source)]
+    unnumbered = len(BLANK_UNDERSCORES.findall(BLANK_INLINE.sub(' ', source)))
     if not numbered and not unnumbered:
         return 0
     changed = 0
 
     def outside_math(transform):
-        nonlocal changed
         parts, last = [], 0
         for span in MATH_SPAN.finditer(stem):
             parts.append(transform(stem[last:span.start()]))
@@ -502,25 +505,41 @@ def restore_blanks(question: dict, blocks: dict) -> int:
         parts.append(transform(stem[last:]))
         return ''.join(parts)
 
-    def replace_number(text, number):
+    def replace_inline(match):
         nonlocal changed
-        pattern = re.compile(rf'(?<![\d$_\\]){re.escape(number)}\b(?!\d)')
-        if pattern.search(text):
-            changed += 1
-            return pattern.sub(f'{{{{blank:{number}}}}}', text, count=1)
-        return text
+        changed += 1
+        return f'{{{{blank:{match.group(1)}}}}}'
+
+    stem = outside_math(lambda text: BLANK_INLINE.sub(replace_inline, text))
+
+    def replace_line(match):
+        nonlocal changed
+        changed += 1
+        return f'{{{{blank:{match.group(1)}}}}}'
+
+    stem = outside_math(lambda text: BLANK_LINE.sub(replace_line, text))
 
     for number in dict.fromkeys(numbered):
-        if f'{{{{blank:{number}}}}}' in stem:
+        marker = f'{{{{blank:{number}}}}}'
+        if marker in stem:
             continue
-        stem = outside_math(lambda text, n=number: replace_number(text, n))
-    if unnumbered and '{{blank}}' not in stem:
-        def to_blank(text):
+        def replace_number(text, n=number, mark=marker):
             nonlocal changed
-            updated, count = re.subn(r'(?<!\w)_{3,}(?!\w)', '{{blank}}', text, count=unnumbered)
+            pattern = re.compile(rf'(?<![\d$_\\]){re.escape(n)}\b(?!\d)')
+            if pattern.search(text):
+                changed += 1
+                return pattern.sub(mark, text, count=1)
+            return text
+        stem = outside_math(replace_number)
+
+    if unnumbered:
+        def replace_plain(text):
+            nonlocal changed
+            updated, count = BLANK_UNDERSCORES.subn('{{blank}}', text, count=unnumbered)
             changed += count
             return updated
-        stem = outside_math(to_blank)
+        stem = outside_math(replace_plain)
+
     if changed:
         question['stem'] = stem
     elif BLANK_TOKEN.search(stem) is None:
@@ -627,8 +646,9 @@ def question_span_regions(questions: list[dict], documents: list[dict], question
     """Frame each question from its first block to the next question in each page/column."""
     selected = set(question_ids) if question_ids is not None else None
     excluded = set(excluded or [])
-    overlap = max(0.0, min(0.03, float(os.getenv('FRAME_OVERLAP_PCT', '0.008'))))
+    overlap = max(0.0, min(0.03, float(os.getenv('FRAME_OVERLAP_PCT', '0.004'))))
     lookup = {b['id']: (d, b) for d in documents for b in d.get('blocks', [])}
+    excluded_blocks = [lookup[block_id][1] for block_id in excluded if block_id in lookup]
     by_question = {}
     starts = {}
     for qi, q in enumerate(questions):
@@ -669,25 +689,23 @@ def question_span_regions(questions: list[dict], documents: list[dict], question
             following = [y for other, y in starts[key] if other != qi and y > top + .002]
             if following:
                 next_start = min(following)
-                # Section titles between this question and the next one are structural,
-                # never part of the question frame.
-                limit = next_start
-                for heading in headings.get(doc_id, []):
-                    if heading['page_index'] != page_index:
-                        continue
-                    header = heading['bbox']
-                    if column_index(doc, page_index, header) != column:
-                        continue
-                    if content_bottom - .004 <= header[1] < next_start:
-                        limit = min(limit, header[1] - .003)
-                # Slight overlap is intentional: students may write a stroke past the
-                # nominal boundary. Extreme overlap is reported instead of silently kept.
-                bottom = min(.995, max(content_bottom + .002, limit + overlap))
+                base = min(.995, max(content_bottom + .002, next_start + overlap))
                 if content_bottom > next_start + .02:
                     q.setdefault('issues', []).append('题目框与下一题有重叠，请核对')
             else:
-                bottom = min(.995, max(.96, content_bottom + .004))
-            bottom = max(top + .004, bottom)
+                base = min(.995, max(.96, content_bottom + .004))
+            # Structural text (AI-labelled exclusions and regex headings) caps the frame.
+            barrier = .995
+            for source in (headings.get(doc_id, []), excluded_blocks):
+                for item in source:
+                    if item['page_index'] != page_index:
+                        continue
+                    box = item['bbox']
+                    if column_index(doc, page_index, box) != column:
+                        continue
+                    if box[1] > content_bottom - .004:
+                        barrier = min(barrier, box[1] - .002)
+            bottom = max(top + .004, min(base, barrier))
             # Answer space belongs to the question: every frame reaches the column cell.
             cell = page_cells(doc, page_index)[column]
             x0, x1 = cell['x0'], cell['x1']

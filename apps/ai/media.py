@@ -77,7 +77,7 @@ def detected_columns(doc, page_index):
 
 
 def page_cells(doc, page_index):
-    """Structural column cells for a page: equal split with a small gutter (supports 1/2/3/4 栏)."""
+    """Column cells derived from real block extents, so frames reach the printed gutter."""
     wide, blocks = _page_geometry(doc, page_index)
     if not wide:
         return [{'x0': .04, 'x1': .96}]
@@ -94,9 +94,29 @@ def page_cells(doc, page_index):
         count = 2
     if count <= 1:
         return [{'x0': .04, 'x1': .96}]
-    left, right, gap = .04, .96, .02
-    span = (right - left - gap * (count - 1)) / count
-    return [{'x0': left + i * (span + gap), 'x1': left + i * (span + gap) + span} for i in range(count)]
+    if not usable:
+        left, right, gap = .04, .96, .02
+        span = (right - left - gap * (count - 1)) / count
+        return [{'x0': left + i * (span + gap), 'x1': left + i * (span + gap) + span} for i in range(count)]
+    centers = _cluster_centers([(b['bbox'][0]+b['bbox'][2])/2 for b in usable], count)
+    groups = [[] for _ in centers]
+    for b in usable:
+        groups[min(range(len(centers)), key=lambda i: abs((b['bbox'][0]+b['bbox'][2])/2 - centers[i]))].append(b['bbox'])
+    bands = []
+    for group in groups:
+        if not group:
+            bands.append(None)
+            continue
+        bands.append({'x0': max(.02, min(a[0] for a in group)), 'x1': min(.98, max(a[2] for a in group))})
+    bands = [band for band in bands if band]
+    for i in range(len(bands) - 1):
+        middle = round((bands[i]['x1'] + bands[i+1]['x0']) / 2, 6)
+        bands[i]['x1'] = max(bands[i]['x1'], middle)
+        bands[i+1]['x0'] = min(bands[i+1]['x0'], middle)
+    if bands:
+        bands[0]['x0'] = min(bands[0]['x0'], .04)
+        bands[-1]['x1'] = max(bands[-1]['x1'], .96)
+    return bands or [{'x0': .04, 'x1': .96}]
 
 
 def column_index(doc, page_index, bbox):

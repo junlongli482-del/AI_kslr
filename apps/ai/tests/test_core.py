@@ -138,7 +138,7 @@ def test_question_span_uses_next_start_and_column_width():
     questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['b'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert questions[0]['regions'][0]['bbox']==[.04,.196,.96,.608]
+    assert questions[0]['regions'][0]['bbox']==[.04,.196,.96,.604]
     assert questions[1]['regions'][0]['bbox'][1]==.596
 
 
@@ -150,7 +150,7 @@ def test_question_span_splits_across_pages():
     questions=[{'id':'q1','block_ids':['a','b'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['c'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.508)]
+    assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.504)]
 
 
 def test_three_column_page_uses_per_column_frames():
@@ -164,7 +164,7 @@ def test_three_column_page_uses_per_column_frames():
                {'id':'q3','block_ids':['c'],'regions':[],'issues':[]},
                {'id':'q4','block_ids':['d2'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert [round(q['regions'][0]['bbox'][0],2) for q in questions]==[.04,.35,.67,.04]
+    assert [round(q['regions'][0]['bbox'][0],2) for q in questions]==[.04,.33,.65,.04]
     assert round(questions[0]['regions'][0]['bbox'][2],2)==.33
     assert round(questions[1]['regions'][0]['bbox'][2],2)==.65
     assert round(questions[2]['regions'][0]['bbox'][2],2)==.96
@@ -179,7 +179,7 @@ def test_section_heading_is_not_framed_into_previous_question():
     questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
                {'id':'q2','block_ids':['b'],'regions':[],'issues':[]}]
     core.question_span_regions(questions,docs)
-    assert round(questions[0]['regions'][0]['bbox'][3],3)==.245
+    assert round(questions[0]['regions'][0]['bbox'][3],3)==.238
 
 
 def test_subjective_question_frame_uses_whole_column():
@@ -187,7 +187,7 @@ def test_subjective_question_frame_uses_whole_column():
            'blocks':[{'id':'a','page_index':0,'bbox':[.06,.10,.30,.20]}]}]
     questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[],'attributes':{'question_type':'解答题'}}]
     core.question_span_regions(questions,docs)
-    assert [round(v,2) for v in questions[0]['regions'][0]['bbox'][:3]]==[.04,.10,.49]
+    assert [round(v,2) for v in questions[0]['regions'][0]['bbox'][:3]]==[.04,.10,.96]
 
 
 def test_question_issues_accept_model_objects():
