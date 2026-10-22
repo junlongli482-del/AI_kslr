@@ -79,8 +79,6 @@ def detected_columns(doc, page_index):
 def page_cells(doc, page_index):
     """Column cells derived from real block extents, so frames reach the printed gutter."""
     wide, blocks = _page_geometry(doc, page_index)
-    if not wide:
-        return [{'x0': .04, 'x1': .96}]
     declared = None
     columns = doc.get('columns')
     if isinstance(columns, list) and page_index < len(columns):
@@ -88,6 +86,10 @@ def page_cells(doc, page_index):
             declared = int(columns[page_index]) if columns[page_index] else None
         except (TypeError, ValueError):
             declared = None
+    # A4 portrait can still be two columns (A4-2), so only a declared count of 1
+    # may short-circuit; a single-page spread hint is not enough.
+    if not wide and not (declared and declared > 1):
+        return [{'x0': .04, 'x1': .96}]
     usable = [b for b in blocks if b['bbox'][2]-b['bbox'][0] >= .06 and b['bbox'][3] > .03 and b['bbox'][1] < .97]
     count = declared if declared and 1 <= declared <= 4 else (_coverage_runs(usable) if usable else 0)
     if not count or count <= 0:

@@ -411,3 +411,11 @@ def test_group_images_keeps_rows_separate():
         'u2':{'page_index':0,'bbox':[.1,.5,.3,.7]}}}
     core.group_question_images(q)
     assert '\n\n' in q['stem']
+
+def test_portrait_two_column_page_uses_declared_count():
+    docs=[{'id':'d','role':'question','columns':[2],'pages':[{'width_px':800,'height_px':1200}],
+           'blocks':[{'id':'a','page_index':0,'bbox':[.08,.1,.44,.3]},
+                     {'id':'b','page_index':0,'bbox':[.52,.1,.92,.3]}]}]
+    cells=core.page_cells(docs[0],0)
+    assert len(cells)==2
+    assert 0.3 < cells[0]['x1'] < 0.55
