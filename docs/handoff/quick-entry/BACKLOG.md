@@ -309,6 +309,18 @@
   4. 本地模型确认为 `MinerU2.5-Pro-2605-1.2B`，与云端同代。
 - 状态：已接入（2026-10-22）。`MINERU_PROVIDER=auto|local|cloud`，auto 先本地后云端；新增 `apps/ai/mineru_local.py`（健康检查、`/v1/file_parse` 取 zip、把 4.x 的 `structured_content.json` 转成 `content_list` 形状）；`normalize` 无需改动；`scripts\dev.cmd mineru` 常驻本地服务（8020、standard、并发 2）；`/health` 返回 `mineru.local_available`。实测：原先卡在 MinerU 的任务 `df5d183b` 用本地解析后完整跑到 ready（19 题）。
 
+### QE-FB-032 / P0 并发任务导致 pdfium.dll 崩溃，AI 端口假死（2026-10-22）
+
+- 现象：页面提示「无法读取并发设置」，点「对照审核」「查看进度」无反应；1003 端口在监听但所有请求超时。
+- 定位：
+  1. Windows 事件日志 15:44:07 `APPCRASH`，模块 `pdfium.dll`，进程 python.exe；
+  2. AI 日志显示崩溃前有 3 个任务并发（都是本地上传的新卷）；
+  3. 崩溃的是 uvicorn worker，**reloader 仍占着 1003**，所以连接被接受但没有响应 —— 与 QE-FB-026 同一表象，根因是 PDFium 线程不安全；
+  4. `render_pages`（每页渲染）、`region_recognize`（裁原卷）、学生区预览三处都直接调 pdfium，多任务并发时会撞。
+- 修复：新增全局 `PDFIUM_LOCK`，上述三处全部串行化（`core.render_pages`、`region_recognize`、学生区预览渲染）。
+- 处置：崩溃后重启 AI，`recover_pending_tasks` 恢复 3 个任务继续跑；当前以 **无 reload** 方式运行，避免 worker 崩溃后 reloader 占端口假死。
+- 状态：已修（2026-10-22），待并发回归确认。
+
 ## 2026-10-15 作答空白、图注与同题分框定位（仅记录）
 
 详见[作答空白、图注与同题左右分框定位](定位报告-作答空白图注与同题分框.md)：三份道法样本response区域为0，题型关键词门槛跳过简答/材料分析，且现有算法漏小问间空白；甲乙丙源caption已有但未进入完整布局合同；同题左右分框由“横向必须重叠”规则造成；另5处旧错误图片地址尚未清除。

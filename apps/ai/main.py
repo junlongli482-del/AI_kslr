@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, restore_question_blanks, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, restore_question_blanks, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -281,11 +281,12 @@ def region_recognize(request: RegionRecognizeRequest):
     source_pdf = next((folder / request.document_id / 'raw').glob('*_origin.pdf'), None)
     try:
         if source_pdf:
-            pdf = pdfium.PdfDocument(str(source_pdf))
-            bitmap = pdf[request.page_index].render(scale=300 / 72)
-            image = bitmap.to_pil().convert('RGB')
-            bitmap.close()
-            pdf.close()
+            with PDFIUM_LOCK:
+                pdf = pdfium.PdfDocument(str(source_pdf))
+                bitmap = pdf[request.page_index].render(scale=300 / 72)
+                image = bitmap.to_pil().convert('RGB')
+                bitmap.close()
+                pdf.close()
         else:
             image = Image.open(DATA / page['image_key']).convert('RGB')
         w, h = image.size
@@ -425,11 +426,12 @@ def save_student_zone_settings(request: StudentZoneSettingsRequest):
                     temp.write(image_bytes)
                     temp_path = Path(temp.name)
                 try:
-                    pdf = pdfium.PdfDocument(str(temp_path))
-                    bitmap = pdf[0].render(scale=300 / 72)
-                    bitmap.to_pil().convert('RGB').save(target)
-                    bitmap.close()
-                    pdf.close()
+                    with PDFIUM_LOCK:
+                        pdf = pdfium.PdfDocument(str(temp_path))
+                        bitmap = pdf[0].render(scale=300 / 72)
+                        bitmap.to_pil().convert('RGB').save(target)
+                        bitmap.close()
+                        pdf.close()
                 finally:
                     temp_path.unlink(missing_ok=True)
             else:

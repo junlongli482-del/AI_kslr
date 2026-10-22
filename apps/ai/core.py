@@ -7,6 +7,7 @@ import html
 import json
 import os
 import re
+import threading
 import time
 import uuid
 import zipfile
@@ -26,6 +27,9 @@ from channels import channels as configured_channels, timeout as model_timeout, 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'data'
 DATA.mkdir(exist_ok=True)
+# PDFium is not safe to drive from several threads at once; concurrent page
+# rendering has crashed the worker (pdfium.dll APPCRASH) under parallel tasks.
+PDFIUM_LOCK = threading.Lock()
 
 
 def requested_output_limit():
@@ -224,27 +228,30 @@ def render_pages(source: Path, out: Path):
     out.mkdir(parents=True, exist_ok=True)
     pages = []
     if source.suffix.lower() == '.pdf':
-        pdf = pdfium.PdfDocument(source)
-        for i in range(len(pdf)):
-            page = pdf[i]
-            w, h = page.get_size()
-            target = out / f'page-{i}.png'
-            expected = (max(1, round(w * 300 / 72)), max(1, round(h * 300 / 72)))
-            stale = True
-            if target.exists():
-                with Image.open(target) as current:
-                    stale = current.width < expected[0] * .95 or current.height < expected[1] * .95
-            if stale:
-                bitmap = page.render(scale=300 / 72)
-                bitmap.to_pil().save(target)
-                bitmap.close()
-            with Image.open(target) as img:
-                px = list(img.size)
-            url = asset_url(target) + (f'&v={int(target.stat().st_mtime)}' if stale else '')
-            pages.append({'page_index': i, 'width_pt': w, 'height_pt': h,
-                          'width_px': px[0], 'height_px': px[1], 'image_url': url, 'image_key': target.relative_to(DATA).as_posix()})
-            page.close()
-        pdf.close()
+        with PDFIUM_LOCK:
+            pdf = pdfium.PdfDocument(source)
+            try:
+                for i in range(len(pdf)):
+                    page = pdf[i]
+                    w, h = page.get_size()
+                    target = out / f'page-{i}.png'
+                    expected = (max(1, round(w * 300 / 72)), max(1, round(h * 300 / 72)))
+                    stale = True
+                    if target.exists():
+                        with Image.open(target) as current:
+                            stale = current.width < expected[0] * .95 or current.height < expected[1] * .95
+                    if stale:
+                        bitmap = page.render(scale=300 / 72)
+                        bitmap.to_pil().save(target)
+                        bitmap.close()
+                    with Image.open(target) as img:
+                        px = list(img.size)
+                    url = asset_url(target) + (f'&v={int(target.stat().st_mtime)}' if stale else '')
+                    pages.append({'page_index': i, 'width_pt': w, 'height_pt': h,
+                                  'width_px': px[0], 'height_px': px[1], 'image_url': url, 'image_key': target.relative_to(DATA).as_posix()})
+                    page.close()
+            finally:
+                pdf.close()
     else:
         target = out / 'page-0.png'
         with Image.open(source) as img:
