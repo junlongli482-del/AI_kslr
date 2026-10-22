@@ -277,7 +277,12 @@
   1. 支持多密钥：`MINERU_API_KEYS=key1,key2`（回退单 key `MINERU_API_KEY`），按顺序切换；
   2. 遇到 401/403 或 `InvalidAccessKeyId` 时**删除 `mineru-task.json`**，重新申请上传 URL，不再复用过期 URL；
   3. 每个 key 内最多重试 2 次，失败后换下一个 key，并在任务阶段里提示“第 N 个密钥失败”。
-- 未解决（服务端/账号）：新 key 能上传、不能解析，所有文件都 `unsupported file type`。需要确认 MinerU 控制台里该 key 的解析权限/额度/状态，或提供另一个可用 key（写入 `.env` 的 `MINERU_API_KEYS` 即可，无需改代码）。
+- 进一步证据（2026-10-22，三个新 key 全部测试）：
+  1. 三个 key（含用户本人账号）对**同一份 9KB 全新 PDF** 均返回 `unsupported file type`；
+  2. 用**公网 URL**（w3c dummy.pdf）调 `POST /api/v4/extract/task`，`vlm` 与 `pipeline` 都返回 `failed to read file` → 与本地文件/上传无关；
+  3. 同期 `POST /api/v1/agent/parse/file` 返回 200 并给出 task_id（Agent 轻量通道正常）。
+  结论：MinerU **标准解析（v4 Standard API）后端当前不可用**，不是密钥、账号、文件或代码问题；只能等待官方恢复或换解析渠道。
+- 处置：三个 key 已写入 `MINERU_API_KEYS`（本人账号优先），服务恢复后会自动轮换；现有三个失败任务在恢复后点「重试」即可。
 - 状态：本地代码已修；MinerU 解析被拒需外部确认。
 
 ## 2026-10-15 作答空白、图注与同题分框定位（仅记录）
