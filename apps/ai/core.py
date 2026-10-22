@@ -542,6 +542,11 @@ def restore_blanks(question: dict, blocks: dict) -> int:
 
     if changed:
         question['stem'] = stem
+        # The rich editor keeps its own document; drop the stale copy so it rebuilds
+        # from the repaired markdown instead of showing the old empty blanks.
+        documents = question.get('editor_documents')
+        if isinstance(documents, dict):
+            documents.pop('stem', None)
     elif BLANK_TOKEN.search(stem) is None:
         existing = (question.get('issues') or [])
         note = '需人工核对：填空线可能丢失'

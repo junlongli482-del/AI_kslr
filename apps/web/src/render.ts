@@ -45,11 +45,14 @@ function renderWithMath(source:string, editable:boolean) {
   })
   let html=md.render(text)
   formulas.forEach((formula,index)=>{html=html.replace(`QEFORMULA${index}PLACEHOLDER`,()=>formula)})
-  return blanks(html)
+  return blanks(html, editable)
 }
 
-function blanks(html:string){
+function blanks(html:string, editable:boolean){
   return html.replace(/\{\{blank(?::(\d{1,3}))?\}\}/g,(_all,index)=>{
+    // The rich editor drops unknown inline spans, so editable content keeps literal
+    // underscores; the read-only preview uses a styled blank line instead.
+    if(editable) return `${index?`${index}. `:''}____`
     const label=index?`<span class="cloze-index">${index}.</span> `:''
     return `<span class="cloze-blank">${label}<span class="cloze-line"></span></span>`
   })
