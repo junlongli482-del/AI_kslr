@@ -17,8 +17,8 @@ const showMobileSource=ref(false)
 const view=ref('tasks'),tasks=ref<Task[]>([]),busy=ref(false),task=ref<Task|null>(null)
 const result=ref<Result|null>(null),revision=ref(0),selectedId=ref(''),tab=ref('content'),filter=ref('all'),paperFilter=ref(''),search=ref(''),saveState=ref('已保存'),answerDoc=ref('')
 const paperOpen=ref(false)
-const costOpen=ref(false),costTask=ref<any>(null),costDetail=ref<any>(null),costLoading=ref(false)
-const zoneLayout=ref<'A3-2'|'A4-1'>('A3-2'),zoneDefaults=ref<Record<string,any>>({}),zonePreviewUrl=ref(''),zonePreviewBase64=ref(''),zonePreviewPdf=ref(false),zonePreviewName=ref(''),zoneBbox=ref<number[]>([.04,.015,.42,.068]),zoneSaving=ref(false),zoneDrag=ref<any>(null)
+const costTask=ref<any>(null),costDetail=ref<any>(null),costLoading=ref(false),costCallId=ref('')
+const zoneLayout=ref<'A3-2'|'A3-3'|'A4-1'>('A3-2'),zoneDefaults=ref<Record<string,any>>({}),zonePreviewUrl=ref(''),zonePreviewBase64=ref(''),zonePreviewPdf=ref(false),zonePreviewName=ref(''),zoneBbox=ref<number[]>([.04,.015,.42,.068]),zoneSaving=ref(false),zoneDrag=ref<any>(null)
 const createDialog=ref(false),newTitle=ref(''),newMode=ref('textbook'),generate=ref(false),policy=ref('deepseek'),questionFiles=ref<File[]>([]),answerFiles=ref<File[]>([])
 const bank=ref<any[]>([]),bankSearch=ref(''),detail=ref<any|null>(null),detailDialog=ref(false),issuesDialog=ref(false),validationIssues=ref<any[]>([])
 const concurrency=ref<{max_concurrency:number;running:number;queued:number}|null>(null)
@@ -52,8 +52,11 @@ function ensurePaper(paper:any){
   return paper
 }
 function openPaper(){if(activePaper.value){ensurePaper(activePaper.value);paperOpen.value=true}}
-async function openCost(t:any){costTask.value=t;costDetail.value=null;costOpen.value=true;if(!t.cost){try{costTask.value=(await api.get(`/quick-entry/tasks/${t.id}`)).data}catch(e){error(e)}}}
-async function inspectCost(item:any){if(!item?.call_id){ElMessage.info('这条调用是旧记录，没有原始输入输出');return}try{costLoading.value=true;costDetail.value=(await api.get(`/quick-entry/tasks/${costTask.value.id}/cost/calls/${item.call_id}`)).data}catch(e){error(e)}finally{costLoading.value=false}}
+async function openCost(t:any){costDetail.value=null;costCallId.value='';costTask.value=t;try{if(!t.cost)costTask.value=(await api.get(`/quick-entry/tasks/${t.id}`)).data;view.value='cost'}catch(e){error(e)}}
+async function inspectCost(item:any){if(!item?.call_id){ElMessage.info('这条调用是旧记录，没有原始输入输出');return}try{costLoading.value=true;costCallId.value=item.call_id;costDetail.value=(await api.get(`/quick-entry/tasks/${costTask.value.id}/cost/calls/${item.call_id}`)).data}catch(e){error(e)}finally{costLoading.value=false}}
+function closeCost(){view.value='tasks';costDetail.value=null;costCallId.value=''}
+const costRaw=(detail:any)=>pretty(detail?.response?.raw??detail?.response?.parsed??detail?.response??detail?.error??'')
+async function copyPrompt(text:string){if(!text){ElMessage.info('没有可复制的内容');return}try{await navigator.clipboard.writeText(text);ElMessage.success('已复制')}catch{ElMessage.warning('复制失败，请手动选择文本复制')}}
 function paperQuestions(paper:any){return result.value?.questions.filter(q=>q.paper_id===paper.id)||[]}
 function paperTotal(paper:any){return paperQuestions(paper).reduce((sum,q)=>sum+Number(q.attributes.score||0),0)}
 function paperDeclared(paper:any){const value=Number(paper.exam?.declared_total_score);return Number.isFinite(value)&&value>0?value:null}
@@ -75,6 +78,23 @@ function applyPaperInheritanceLocal(paper:any){
   }
 }
 function markAttributeManual(field:string){if(!selected.value)return;(selected.value.attribute_sources??={})[field]='manual';markDirty()}
+const noticeIssues=computed(()=>{const list=selected.value?.issues||[];const hasCorrections=!!selected.value?.corrections?.length;return list.filter(issue=>!(hasCorrections&&/^AI修正/.test(issue)))})
+function undoCorrection(target:any,index:number){
+  const list=target?.corrections||[]
+  const item=list[index]
+  if(!item)return
+  const field=String(item.field||'')
+  const before=typeof item.before==='string'?item.before:''
+  if(!before){ElMessage.warning('这条修正没有记录原文，无法一键撤销');return}
+  if(field==='stem')target.stem=before
+  else if(field==='answer')target.answer=before
+  else if(field==='analysis')target.analysis=before
+  else {ElMessage.warning('该字段暂不支持一键撤销，请按“原文”手动改回');return}
+  if(target.editor_documents)target.editor_documents={...target.editor_documents}
+  list.splice(index,1)
+  markDirty()
+  ElMessage.success('已撤销该处修正，请核对')
+}
 function markScoreManual(){if(!selected.value)return;selected.value.attributes.score_source='manual';markDirty()}
 const rubricBusy=ref(false)
 async function fillRubric(target?:any){
@@ -84,12 +104,18 @@ async function fillRubric(target?:any){
     await ElMessageBox.confirm(subquestionId?'只调用一次 AI，补全当前小问的评分标准；不会生成或覆盖其他小问。':'只调用一次 AI，补全整题的评分标准；已有内容不会被覆盖。','补全评分标准',{confirmButtonText:'开始生成',cancelButtonText:'取消'})
     rubricBusy.value=true
     const response=await api.post(`/quick-entry/tasks/${task.value.id}/question-rubric`,{task_id:task.value.id,question:selected.value,subquestion_id:subquestionId})
+    const scoring=response.data.scoring
     if(subquestionId){
       const sub=selected.value.subquestions.find(item=>item.subquestion_id===subquestionId)
-      if(sub&&response.data.scoring)sub.scoring=response.data.scoring
-    }else if(response.data.scoring)selected.value.scoring=response.data.scoring
-    markDirty()
-    ElMessage.success(response.data.filled?'已补全当前评分标准':'当前评分标准无需补全')
+      if(sub&&scoring){sub.scoring=scoring;markDirty()}
+    }else if(scoring){
+      selected.value.scoring=scoring
+      if(response.data.auto)selected.value.grading_method='auto'
+      markDirty()
+    }
+    if(response.data.auto)ElMessage.info(subquestionId?'AI 判定该小问为客观题（自动判分），无需得分点':'AI 判定该题为客观题（自动判分），无需得分点')
+    else if(response.data.filled)ElMessage.success('已补全当前评分标准')
+    else ElMessage.warning('AI 未返回可用的得分点，请重试或手动添加')
   }catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}
   finally{rubricBusy.value=false}
 }
@@ -165,7 +191,7 @@ function zonePointerDown(e:PointerEvent,resize=false){e.preventDefault();zoneSvg
 function zonePointerMove(e:PointerEvent){const drag=zoneDrag.value;if(!drag)return;const p=zonePoint(e),dx=p[0]-drag.start[0],dy=p[1]-drag.start[1],b=drag.bbox;if(drag.mode==='move'){const x=Math.max(0,Math.min(1-(b[2]-b[0]),b[0]+dx)),y=Math.max(0,Math.min(1-(b[3]-b[1]),b[1]+dy));zoneBbox.value=[x,y,x+b[2]-b[0],y+b[3]-b[1]]}else zoneBbox.value=[b[0],b[1],Math.max(b[0]+.02,p[0]),Math.max(b[1]+.01,p[1])]}
 function zonePointerUp(){zoneDrag.value=null}
 async function loadStudentZoneSettings(){try{zoneDefaults.value=(await api.get('/quick-entry/settings/student-zones')).data||{};selectZoneLayout(zoneLayout.value)}catch(e){error(e)}}
-function selectZoneLayout(layout:'A3-2'|'A4-1'){zoneLayout.value=layout;const entry=zoneDefaults.value[layout]||{};zoneBbox.value=[...(entry.bbox||[.04,.015,.42,.068])];zonePreviewUrl.value=entry.preview_url||'';zonePreviewBase64.value='';zonePreviewPdf.value=false;zonePreviewName.value=''}
+function selectZoneLayout(layout:'A3-2'|'A3-3'|'A4-1'){zoneLayout.value=layout;const entry=zoneDefaults.value[layout]||{};zoneBbox.value=[...(entry.bbox||[.04,.015,.42,.068])];zonePreviewUrl.value=entry.preview_url||'';zonePreviewBase64.value='';zonePreviewPdf.value=false;zonePreviewName.value=''}
 function zonePreviewFile(event:Event){const file=(event.target as HTMLInputElement).files?.[0];if(!file)return;zonePreviewName.value=file.name;zonePreviewPdf.value=/\.pdf$/i.test(file.name)||file.type==='application/pdf';const reader=new FileReader();reader.onload=()=>{zonePreviewBase64.value=String(reader.result);zonePreviewUrl.value=zonePreviewPdf.value?'':String(reader.result)};reader.readAsDataURL(file)}
 function resetStudentZone(){zoneBbox.value=[.04,.015,.42,.068]}
 async function saveStudentZone(){if(zoneSaving.value)return;try{zoneSaving.value=true;const response=await api.put('/quick-entry/settings/student-zones',{layout:zoneLayout.value,bbox:zoneBbox.value,preview_base64:zonePreviewBase64.value||null});zoneDefaults.value[zoneLayout.value]=response.data.settings;zonePreviewUrl.value=response.data.settings.preview_url||zonePreviewUrl.value;zonePreviewBase64.value='';zonePreviewPdf.value=false;ElMessage.success('学生信息区默认值已保存，只影响后续新任务')}catch(e){error(e)}finally{zoneSaving.value=false}}
@@ -178,6 +204,17 @@ function normalizeSubAnswers(r:Result){
       sub.answer.value??='';sub.answer.analysis??=''
     }
   }
+}
+function canDelete(t:Task){return t.status!=='committed'&&!['running','queued','pending'].includes(t.status)}
+async function deleteTask(t:Task){
+  if(!canDelete(t))return
+  try{
+    await ElMessageBox.confirm(`删除任务「${t.title}」及其上传原图、识别结果、审核稿和成本记录，删除后不可恢复。`,'删除任务',{confirmButtonText:'删除',cancelButtonText:'取消',type:'warning'})
+    await api.delete(`/quick-entry/tasks/${t.id}`)
+    ElMessage.success('任务已删除')
+    if(task.value?.id===t.id)task.value=null
+    await loadTasks()
+  }catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}
 }
 async function openTask(t:Task){
   comparison.value=null
@@ -266,9 +303,26 @@ function addSubquestion(){
   q.attributes.group_type=q.attributes.group_type||'material_question_group'
   q.review_status='pending';markDirty()
 }
+function syncSubScores(){
+  if(!selected.value)return
+  const subs=selected.value.subquestions||[]
+  if(!subs.length||subs.some((sub:any)=>sub.score==null))return
+  const total=subs.reduce((sum:number,sub:any)=>sum+Number(sub.score||0),0)
+  if(Number(selected.value.attributes.score)!==total){selected.value.attributes.score=total;selected.value.attributes.score_source='manual';markDirty()}
+}
+function subScoresPartial(target:any){return (target?.subquestions||[]).some((sub:any)=>sub.score==null)}
+function addOption(){
+  if(!selected.value)return
+  const options=selected.value.options
+  if(!options.length){'ABCD'.split('').forEach(label=>options.push({label,content:''}))}
+  else if(options.length<26){options.push({label:String.fromCharCode(65+options.length),content:''})}
+  selected.value.issues=(selected.value.issues||[]).filter(issue=>!(issue.includes('选项')&&issue.includes('未识别到')))
+  markDirty()
+}
 function removeSubquestion(index:number){
   if(!selected.value)return
   selected.value.subquestions.splice(index,1)
+  syncSubScores()
   selected.value.review_status='pending';markDirty()
 }
 function ensureScoring(target:any){
@@ -277,6 +331,7 @@ function ensureScoring(target:any){
   return target.scoring
 }
 function addScoringPoint(target:any){const scoring=ensureScoring(target);scoring.points.push({pct:0,criterion:''});markDirty()}
+function makeManualScoring(target:any){ensureScoring(target);markDirty()}
 function removeScoringPoint(target:any,index:number){target.scoring?.points?.splice(index,1);markDirty()}
 function scoringTotal(target:any){return Math.round((target.scoring?.points||[]).reduce((sum:number,point:any)=>sum+Number(point.pct||0),0))}
 function matchSubAnswer(entryId:string,index:number){
@@ -346,6 +401,16 @@ async function chooseCandidate(channel:string){
   try{await ElMessageBox.confirm('切换将用此模型的完整结果替换当前审核稿。当前稿会先保存并保留历史备份；人工修改不会合并到新候选。','选择模型结果');await saveDraft();if(dirty)return;const candidate=(await api.get(`/quick-entry/tasks/${task.value.id}/candidates/${channel}`)).data;const checked=(await api.post(`/quick-entry/tasks/${task.value.id}/validate`,candidate)).data;result.value=checked.result;selectedId.value=result.value!.questions[0]?.id||'';view.value='review';markDirty();await saveDraft()}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}
 }
 async function rebuildRegions(){if(!task.value||!selected.value||!result.value)return;try{await ElMessageBox.confirm('将按原始内容块重新生成本题内容框和作答区。已有手动题框会被替换，请核对后保存。','重建本题题框');const checked=(await api.post(`/quick-entry/tasks/${task.value.id}/validate`,{...result.value,rebuild_region_question_ids:[selected.value.id]})).data;result.value=checked.result;markDirty();ElMessage.success('本题题框已重建，请对照原卷核对')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
+async function rebuildAllRegions(){
+  if(!task.value||!result.value)return
+  try{
+    await ElMessageBox.confirm('按当前版式重算全部题框（多栏、主观题整栏、排除小节标题）。已手动调整过的题框会被覆盖，请核对后保存。','重建全部题框',{confirmButtonText:'开始重建',cancelButtonText:'取消'})
+    busy.value=true
+    const ids=result.value.questions.map(q=>q.id)
+    const checked=(await api.post(`/quick-entry/tasks/${task.value.id}/validate`,{...result.value,rebuild_region_question_ids:ids})).data
+    if(checked.result){result.value=checked.result;markDirty();ElMessage.success('全部题框已重建，请对照检查')}
+  }catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}finally{busy.value=false}
+}
 async function poll(){clockNow.value=Date.now();if(view.value==='tasks'){await loadTasks();if(!concurrencyEdited.value)await loadConcurrency()}if(view.value==='progress'&&task.value){try{task.value=(await api.get(`/quick-entry/tasks/${task.value.id}`)).data;comparison.value=(await api.get(`/quick-entry/tasks/${task.value!.id}/comparison`).catch(()=>({data:null}))).data;if(task.value?.status==='ready')await openTask(task.value)}catch{}}}
 onMounted(()=>{loadTasks();loadConcurrency();timer=setInterval(poll,4000)})
 onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(saveTimer)})
@@ -356,11 +421,11 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
     <aside class="app-sidebar">
       <a class="brand" href="#" @click.prevent="navigate('tasks')"><span class="brand-mark"><BookOpen :size="23"/></span><span>金版<span class="brand-caption">智慧教学</span></span></a>
       <div class="workspace-label">内容工作空间</div>
-      <nav><button :class="{active:['tasks','review','progress'].includes(view)}" @click="navigate('tasks')"><ScanLine :size="19"/><span>快速录入</span><span class="nav-count" v-if="ready">{{ready}}</span></button><button :class="{active:view==='questions'}" @click="navigate('questions')"><Library :size="19"/><span>题库</span></button><button :class="{active:view==='papers'}" @click="navigate('papers')"><Files :size="19"/><span>试卷库</span></button><button :class="{active:view==='student-zones'}" @click="navigate('student-zones')"><Crop :size="19"/><span>学生信息区</span></button></nav>
+      <nav><button :class="{active:['tasks','review','progress','cost'].includes(view)}" @click="navigate('tasks')"><ScanLine :size="19"/><span>快速录入</span><span class="nav-count" v-if="ready">{{ready}}</span></button><button :class="{active:view==='questions'}" @click="navigate('questions')"><Library :size="19"/><span>题库</span></button><button :class="{active:view==='papers'}" @click="navigate('papers')"><Files :size="19"/><span>试卷库</span></button><button :class="{active:view==='student-zones'}" @click="navigate('student-zones')"><Crop :size="19"/><span>学生信息区</span></button></nav>
       <div class="sidebar-bottom"><span class="local-dot"/>本地验证工作台<div class="sidebar-footnote">原始资料与处理结果留档</div></div>
     </aside>
     <main class="app-main">
-      <header class="topbar"><div class="breadcrumb">内容管理 <ChevronRight :size="14"/><span>{{view==='questions'?'题库':view==='papers'?'试卷库':view==='student-zones'?'学生信息区':view==='review'?'快速录入 / 对照审核':'快速录入'}}</span></div><div class="topbar-right"><span class="workspace-badge">九年级数学 · 验证空间</span><span class="avatar">编</span></div></header>
+      <header class="topbar"><div class="breadcrumb">内容管理 <ChevronRight :size="14"/><span>{{view==='questions'?'题库':view==='papers'?'试卷库':view==='student-zones'?'学生信息区':view==='review'?'快速录入 / 对照审核':view==='cost'?'快速录入 / 处理成本':'快速录入'}}</span></div><div class="topbar-right"><span class="workspace-badge">九年级数学 · 验证空间</span><span class="avatar">编</span></div></header>
 
       <template v-if="view==='tasks'">
         <div class="page-content">
@@ -373,7 +438,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
             <p v-if="concurrencyError" role="alert">{{concurrencyError}} <button class="text-button" @click="loadConcurrency">重新加载</button></p>
           </div>
           <div class="section-title-row"><h2>录入任务 <span class="muted">{{tasks.length}}</span></h2><div class="task-summary"><span v-if="running"><span class="status-dot working"/>{{running}} 个处理中</span><span v-if="ready"><span class="status-dot pending"/>{{ready}} 个待审核</span><button class="icon-button" title="刷新任务" aria-label="刷新任务" @click="loadTasks"><RefreshCw :size="16"/></button></div></div>
-          <div class="task-table-wrap"><table class="task-table"><thead><tr><th>资料名称</th><th>录入方式</th><th>状态</th><th>处理成本</th><th>创建时间</th><th class="align-right">操作</th></tr></thead><tbody><tr v-for="t in tasks" :key="t.id"><td><div class="document-name"><span class="file-icon"><FileText :size="20"/></span><div><strong>{{t.title}}</strong><small>{{t.stage}}{{['running','queued','failed','interrupted'].includes(t.status)?' · '+t.message:''}}</small></div></div></td><td>{{modeName(t.mode)}}</td><td><span :class="['status-pill',t.status]"><span class="status-dot"/>{{statusName(t.status)}}</span></td><td class="muted"><button v-if="t.cost" class="cost-link" @click.stop="openCost(t)">¥{{Number(t.cost.total||0).toFixed(6)}}<ChevronRight :size="12"/></button><span v-else>待计算</span><small v-if="t.cost?.mineru_status==='free_service'"> · MinerU免费</small></td><td class="muted">{{formatDate(t.created_at)}}</td><td class="align-right"><button class="text-button" @click="openTask(t)">{{['ready','committed'].includes(t.status)?'对照审核':'查看进度'}}<ArrowRight :size="15"/></button></td></tr><tr v-if="!tasks.length"><td colspan="6"><div class="empty-state"><Files :size="34"/><h3>还没有录入任务</h3><p>上传第一份资料，识别结果会保存在这里。</p><el-button @click="createDialog=true">新建录入</el-button></div></td></tr></tbody></table></div>
+          <div class="task-table-wrap"><table class="task-table"><thead><tr><th>资料名称</th><th>录入方式</th><th>状态</th><th>处理成本</th><th>创建时间</th><th class="align-right">操作</th></tr></thead><tbody><tr v-for="t in tasks" :key="t.id"><td><div class="document-name"><span class="file-icon"><FileText :size="20"/></span><div><strong>{{t.title}}</strong><small>{{t.stage}}{{['running','queued','failed','interrupted'].includes(t.status)?' · '+t.message:''}}</small></div></div></td><td>{{modeName(t.mode)}}</td><td><span :class="['status-pill',t.status]"><span class="status-dot"/>{{statusName(t.status)}}</span></td><td class="muted"><button v-if="t.cost" class="cost-link" @click.stop="openCost(t)">¥{{Number(t.cost.total||0).toFixed(6)}}<ChevronRight :size="12"/></button><span v-else>待计算</span><small v-if="t.cost?.mineru_status==='free_service'"> · MinerU免费</small></td><td class="muted">{{formatDate(t.created_at)}}</td><td class="align-right"><button class="icon-button row-delete" :disabled="!canDelete(t)" :title="canDelete(t)?'删除任务':'审核通过的任务不能删除'" :aria-label="canDelete(t)?'删除任务':'审核通过的任务不能删除'" @click.stop="canDelete(t)&&deleteTask(t)"><Trash2 :size="15"/></button><button class="text-button" @click="openTask(t)">{{['ready','committed'].includes(t.status)?'对照审核':'查看进度'}}<ArrowRight :size="15"/></button></td></tr><tr v-if="!tasks.length"><td colspan="6"><div class="empty-state"><Files :size="34"/><h3>还没有录入任务</h3><p>上传第一份资料，识别结果会保存在这里。</p><el-button @click="createDialog=true">新建录入</el-button></div></td></tr></tbody></table></div>
           <div class="quiet-note"><ClipboardCheck :size="17"/><span>机器先整理，人工再确认。缺失或不确定的内容会在审核时提示。</span></div>
         </div>
       </template>
@@ -390,18 +455,29 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
       </template>
 
       <template v-else-if="view==='review'&&result&&task">
-        <div class="review-top"><button class="mobile-source-toggle" @click="showMobileSource=!showMobileSource">{{showMobileSource?'收起原卷':'对照原卷'}}</button><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/></button><div class="review-title"><strong>{{task.title}}</strong><span>{{reviewed}} / {{result.questions.length}} 题已核对</span></div><span class="save-status" :class="{'save-error':saveState==='保存失败'}"><Check v-if="saveState==='已保存'" :size="14"/><LoaderCircle v-else-if="saveState==='保存中'" class="spin" :size="14"/>{{saveState}}</span><el-button @click="openPaper"><Files :size="15"/>试卷信息</el-button><el-button @click="saveNow"><Save :size="15"/>保存草稿</el-button><el-button @click="validate" :loading="busy">规则检查</el-button><el-button type="primary" @click="commit" :loading="busy">审核入库<ArrowUpRight :size="15"/></el-button></div>
+        <div class="review-top"><button class="mobile-source-toggle" @click="showMobileSource=!showMobileSource">{{showMobileSource?'收起原卷':'对照原卷'}}</button><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/></button><div class="review-title"><strong>{{task.title}}</strong><span>{{reviewed}} / {{result.questions.length}} 题已核对</span></div><span class="save-status" :class="{'save-error':saveState==='保存失败'}"><Check v-if="saveState==='已保存'" :size="14"/><LoaderCircle v-else-if="saveState==='保存中'" class="spin" :size="14"/>{{saveState}}</span><el-button @click="openPaper"><Files :size="15"/>试卷信息</el-button><el-button @click="saveNow"><Save :size="15"/>保存草稿</el-button><el-button @click="rebuildAllRegions" :loading="busy">重建全部题框</el-button><el-button @click="validate" :loading="busy">规则检查</el-button><el-button type="primary" @click="commit" :loading="busy">审核入库<ArrowUpRight :size="15"/></el-button></div>
         <ComparisonPanel :report="comparison" @choose="chooseCandidate"/><div class="review-workbench" :class="{'mobile-source-hidden':!showMobileSource}">
           <SourceViewer :documents="result.documents" :questions="result.questions" :selected="selected" :answer-document-id="answerDoc" :template="result.template" @select="select" @change="refreshRegions" @template-change="markDirty"/>
           <aside class="question-navigator"><div class="pane-heading"><span>题目</span><button class="icon-button" aria-label="新增漏题" title="新增漏题" @click="newQuestion"><Plus :size="16"/></button></div><div class="navigator-filters"><select v-model="paperFilter" aria-label="试卷筛选"><option value="">全部试卷</option><option v-for="p in result.papers" :value="p.id">{{p.title}}</option></select><div class="navigator-tabs"><button :class="{active:filter==='all'}" @click="filter='all'">全部</button><button :class="{active:filter==='pending'}" @click="filter='pending'">待核对</button></div></div><div class="question-nav-list"><button v-for="q in shownQuestions" :key="q.id" :class="{active:q.id===selectedId,reviewed:q.review_status==='reviewed'}" @click="select(q.id)"><span class="q-number">{{q.number}}</span><span class="q-nav-copy"><strong>{{q.attributes.question_type||'题目'}}</strong><small>{{q.attributes.score!=null?q.attributes.score+' 分':'分值未定'}} <span v-if="q.attributes.score_source" :class="['score-source',q.attributes.score_source]">{{scoreSourceName(q.attributes.score_source)}}</span> · {{q.regions.length}} 区域</small></span><Check v-if="q.review_status==='reviewed'" :size="14"/><span v-else-if="q.issues.length" class="issue-indicator"/></button></div><div class="navigator-bottom"><span class="legend-dot"/>待核对 <Check :size="12"/>已确认</div></aside>
           <section class="question-detail" v-if="selected" :key="selected.id"><div class="pane-heading"><span>第 {{selected.number}} 题 <span class="muted">{{result.papers.find(p=>p.id===selected!.paper_id)?.title}}</span></span><div class="question-actions"><button class="icon-button" title="上移题目" aria-label="上移题目" @click="reorder(-1)"><ArrowLeft class="rotate90" :size="15"/></button><button class="icon-button" title="下移题目" aria-label="下移题目" @click="reorder(1)"><ArrowRight class="rotate90" :size="15"/></button><el-dropdown trigger="click"><button class="icon-button" title="题目操作" aria-label="题目操作"><Settings2 :size="17"/></button><template #dropdown><el-dropdown-menu><el-dropdown-item @click="mergeNext">合并下一题</el-dropdown-item><el-dropdown-item @click="splitQuestion">拆出最后区域</el-dropdown-item><el-dropdown-item @click="removeQuestion" divided>删除误识别题目</el-dropdown-item></el-dropdown-menu></template></el-dropdown></div></div>
             <div class="detail-tabs"><button :class="{active:tab==='content'}" @click="tab='content'">题目内容</button><button :class="{active:tab==='attributes'}" @click="tab='attributes'">属性标签</button></div>
-            <div class="detail-scroll"><div v-if="selected.issues.length" class="review-notice"><CircleAlert :size="15"/><span>{{selected.issues.join('；')}}</span></div>
+            <div class="detail-scroll"><div v-if="noticeIssues.length" class="review-notice"><CircleAlert :size="15"/><span>{{noticeIssues.join('；')}}</span></div>
+              <div v-if="selected.corrections?.length" class="correction-panel">
+                <details open>
+                  <summary><strong>AI 修正 {{selected.corrections.length}} 处</strong><span class="muted">逐条核对；有误可撤销</span></summary>
+                  <div v-for="(item,ci) in selected.corrections" :key="ci" class="correction-item">
+                    <div class="correction-meta"><span class="correction-field">{{fieldName(item.field||'')}}</span><span class="muted">{{item.reason||'未记录依据'}}</span><button class="text-button" @click="undoCorrection(selected,ci)">撤销此修正</button></div>
+                    <p class="correction-before"><em>原文</em>{{item.before||'（未记录）'}}</p>
+                    <p class="correction-after"><em>改为</em>{{item.after||'（未记录）'}}</p>
+                  </div>
+                </details>
+              </div>
               <template v-if="tab==='content'">
                 <div class="field-heading"><label>题干</label><span>点击文字或公式即可编辑</span></div>
                 <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'stem'" v-model="selected.stem" v-model:document="selected.editor_documents.stem" label="题干编辑器"/>
+                <div class="field-heading"><label>选项</label><button class="text-button" @click="addOption"><Plus :size="13"/>新增选项</button></div>
+                <p v-if="!selected.options.length" class="muted">未识别到选项，点击「新增选项」补齐 A–D，或从原卷补框后重新识别。</p>
                 <template v-if="selected.options.length">
-                  <div class="field-heading"><label>选项</label><button class="text-button" @click="selected.options.push({label:String.fromCharCode(65+selected.options.length),content:''})"><Plus :size="13"/>添加</button></div>
                   <div class="option-editor" :style="selected.options_layout?.columns?{display:'inline-flex',width:`${100/selected.options_layout.columns}%`,verticalAlign:'top'}:undefined" :class="{'image-option':!!selected.options_layout?.columns}" v-for="(option,index) in selected.options" :key="index"><span class="option-label">{{option.label}}</span><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="option.content" v-model:document="selected.editor_documents['option-'+index]" :label="'选项'+option.label"/><button class="icon-button option-delete" aria-label="删除选项" @click="selected.options.splice(index,1)"><X :size="13"/></button></div>
                 </template>
                 <template v-if="selected.subquestions.length && (selected.answer || selected.analysis)">
@@ -417,14 +493,15 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <div class="subquestion-options" v-if="sub.options.length">
                     <div v-for="(option,oi) in sub.options" :key="oi" class="subquestion-option"><span>{{option.label}}</span><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" v-model="option.content" v-model:document="selected.editor_documents[`sub-${index}-option-${oi}`]" :label="'小问选项'+option.label"/><button class="icon-button" aria-label="删除小问选项" @click="sub.options.splice(oi,1)"><X :size="13"/></button></div>
                   </div>
-                  <div class="subquestion-actions"><button class="text-button" @click="sub.options.push({label:String.fromCharCode(65+sub.options.length),content:''})"><Plus :size="13"/>添加选项</button><label>分值 <el-input-number v-model="sub.score" :min="0" :max="1000"/></label><el-checkbox v-model="sub.requires_manual_drawing_review">需要人工看图</el-checkbox></div>
+                  <div class="subquestion-actions"><button class="text-button" @click="sub.options.push({label:String.fromCharCode(65+sub.options.length),content:''})"><Plus :size="13"/>添加选项</button><label>分值 <el-input-number v-model="sub.score" :min="0" :max="1000" @change="syncSubScores"/></label><el-checkbox v-model="sub.requires_manual_drawing_review">需要人工看图</el-checkbox></div>
                   <div class="field-heading"><label>答案来源</label></div>
                   <el-select :model-value="sub.answer_entry_id||''" clearable filterable placeholder="选择小问答案" @change="(value:string)=>value&&matchSubAnswer(value,index)"><el-option v-for="entry in result.answer_entries" :key="entry.id" :value="entry.id" :label="entry.group+' · 第'+entry.number+'题'"/></el-select>
                   <div class="field-heading"><label>答案</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-answer'" v-model="sub.answer.value" v-model:document="selected.editor_documents[`sub-${index}-answer`]" label="小问答案"/>
                   <div class="field-heading"><label>解析</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-analysis'" v-model="sub.answer.analysis" v-model:document="selected.editor_documents[`sub-${index}-analysis`]" label="小问解析"/>
-                  <div class="field-heading"><label>评分标准</label><span v-if="sub.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="sub.scoring?.method!=='auto'" class="text-button" @click="fillRubric(sub)" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button></div>
+                  <div v-if="sub.corrections?.length" class="correction-panel compact"><details><summary><strong>AI 修正小问 {{sub.corrections.length}} 处</strong><span class="muted">按“原文”核对</span></summary><div v-for="(item,ci) in sub.corrections" :key="ci" class="correction-item"><div class="correction-meta"><span class="correction-field">{{fieldName(item.field||'')}}</span><span class="muted">{{item.reason||'未记录依据'}}</span></div><p class="correction-before"><em>原文</em>{{item.before||'（未记录）'}}</p><p class="correction-after"><em>改为</em>{{item.after||'（未记录）'}}</p></div></details></div>
+                  <div class="field-heading"><label>评分标准</label><span v-if="sub.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="sub.scoring?.method!=='auto'" class="text-button" @click="fillRubric(sub)" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button><button v-if="sub.scoring?.method==='auto'" class="text-button" @click="makeManualScoring(sub)">改为手动评分</button></div>
                   <p v-if="sub.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
                   <template v-else>
                     <div v-if="sub.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in sub.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-sub-'+index+'-score-'+pi" v-model="point.criterion" v-model:document="point.editor_document" label="得分点编辑器"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(sub,pi)"><X :size="13"/></button></div></div>
@@ -437,7 +514,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-single-answer'" v-model="selected.answer" v-model:document="selected.editor_documents.answer" label="答案编辑器"/>
                   <div class="field-heading"><label>解析</label></div>
                   <QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-single-analysis'" v-model="selected.analysis" v-model:document="selected.editor_documents.analysis" label="解析编辑器"/>
-                  <div class="field-heading"><label>评分标准</label><span v-if="selected.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="!selected.subquestions?.length && selected.scoring?.method!=='auto'" class="text-button" @click="fillRubric" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button></div>
+                  <div class="field-heading"><label>评分标准</label><span v-if="selected.scoring?.method==='auto'">客观题自动判分</span><span v-else>得分点合计需为100%</span><button v-if="!selected.subquestions?.length && selected.scoring?.method!=='auto'" class="text-button" @click="fillRubric" :disabled="rubricBusy">{{rubricBusy?'生成中…':'补全评分标准'}}</button><button v-if="!selected.subquestions?.length && selected.scoring?.method==='auto'" class="text-button" @click="makeManualScoring(selected)">改为手动评分</button></div>
                   <p v-if="selected.scoring?.method==='auto'" class="muted">客观题：按标准答案自动判分</p>
                   <template v-else>
                     <div v-if="selected.scoring?.points?.length" class="rubric-list"><div v-for="(point,pi) in selected.scoring.points" :key="pi" class="rubric-item"><el-input-number v-model="point.pct" :min="0" :max="100" :step="5" controls-position="right" class="rubric-pct"/><div class="rubric-criterion"><QuestionEditor @image-references="updateImageReferences" @image-layout-change="updateImageLayout" :task-id="task.id" :image-layout="selected.image_layout" :key="selected.id+'-score-'+pi" v-model="point.criterion" v-model:document="point.editor_document" label="得分点编辑器"/></div><button class="icon-button" aria-label="删除得分点" @click="removeScoringPoint(selected,pi)"><X :size="13"/></button></div></div>
@@ -448,10 +525,48 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                 <div class="field-heading"><label>原卷区域</label><button class="text-button" @click="rebuildRegions">重建本题题框与作答区</button><span>{{selected.regions.length}} 个区域，可在左侧拖动调整</span></div>
                 <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview" :key="index"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(r,index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="insertRegionImage(r.crop_url)"><Plus :size="13"/>插入题干</button><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="">通用</option><option value="content">题目内容</option><option value="both">内容与作答</option><option value="reference_answer">参考答案</option><option value="recovered_visual">原卷补图</option></select></div><div v-if="r.recognition" class="recognition-panel"><div class="recognition-meta"><span>{{categoryName(r.recognition.category)}}</span><span v-if="r.recognition.created_at">{{recognitionTime(r.recognition.created_at)}}</span><span v-if="r.recognition.model">{{r.recognition.model}}</span></div><p v-if="r.recognition.error" class="recognition-error">{{r.recognition.error}}</p><template v-else-if="r.recognition.image_only"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题原卷补图'"/><p class="muted">原卷补图，不调用模型</p></template><QuestionEditor v-else :ref="el=>setRegionEditor(regionKey(selected?.id||'',index),el)" :readonly="true" :task-id="task.id" :image-layout="selected.image_layout" :model-value="r.recognition.markdown||''" v-model:document="r.recognition.editor_document" label="区域识别结果"/><div class="recognition-actions"><button class="text-button" @click="copyRecognition(r,index)">复制</button><button class="text-button" @click="recognizeRegion(r,index)">重新识别</button><button class="text-button" @click="clearRecognition(r)">清空</button></div></div></div></div>
               </template>
-              <template v-else><div class="attribute-grid"><label>题号<el-input v-model="selected.number"/></label><label>分值<el-input-number v-model="selected.attributes.score" :min="0" :max="1000" @change="markScoreManual"/><span v-if="selected.attributes.score_source" class="score-source">{{scoreSourceName(selected.attributes.score_source)}}</span></label><label v-for="[key,label] in [['subject','学科'],['stage','学段'],['grade','年级'],['textbook_version','教材版本'],['question_type','题型'],['paper_type','试卷类型'],['year','年份'],['semester','学期'],['region','地区'],['source_type','来源类型']]" :key="key">{{label}}<span v-if="selected.attribute_sources?.[key]==='paper'" class="inherit-badge">继承</span><el-input v-model="selected.attributes[key]" placeholder="未识别" @change="markAttributeManual(key)"/></label><label>难度<el-select v-model="selected.attributes.difficulty" clearable><el-option v-for="(name,index) in ['简单','较易','中等','较难','困难']" :value="index+1" :label="name"/></el-select><span v-if="selected.attributes.difficulty_reason" class="muted">{{selected.attributes.difficulty_reason}}</span></label><label>审核状态<el-select v-model="selected.review_status"><el-option value="pending" label="待核对"/><el-option value="reviewed" label="已确认"/></el-select></label></div><div class="inherit-actions"><button v-for="[field,label] in paperInheritFields" :key="field" @click="restoreInherited(field)">跟随{{label}}</button></div><div class="field-heading"><label>知识点与教材章节</label><span class="neutral-badge">目录未配置</span></div><div class="catalog-empty">正式目录接入后自动分层匹配，并根据教材映射章节。当前不生成未经绑定的正式知识点。</div><div class="field-heading"><label>能力维度</label></div><el-select v-model="selected.attributes.ability_dimensions" multiple filterable allow-create default-first-option placeholder="输入或选择能力维度"><el-option v-for="label in ['理解','应用','分析','推理','建模','运算']" :value="label" :label="label"/></el-select><div class="field-heading"><label>作答形式</label></div><el-select v-model="selected.attributes.response_form" multiple filterable allow-create><el-option v-for="label in ['客观','主观','作图','填空','计算','证明']" :value="label" :label="label"/></el-select><div class="field-heading"><label>情景与背景</label></div><el-input v-model="selected.attributes.background" type="textarea" :rows="2"/><div class="field-heading"><label>扩展标签</label><button class="text-button" @click="(selected.attributes.extension_attributes ||= []).push({name:'',value:''})"><Plus :size="13"/>新增</button></div><div class="extension-row" v-for="(tag,index) in selected.attributes.extension_attributes"><el-input v-model="tag.name" placeholder="标签名称"/><el-input v-model="tag.value" placeholder="标签值"/><button class="icon-button" aria-label="删除标签" @click="selected.attributes.extension_attributes.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>授权与排序</label></div><p class="muted">授权尚未确认。重要程度算法未启用，不生成无依据的推荐分。</p></template>
+              <template v-else><div class="attribute-grid"><label>题号<el-input v-model="selected.number"/></label><label>分值<template v-if="selected.subquestions?.length"><span>{{selected.attributes.score ?? '—'}} 分</span><span class="muted">（小问分值合计）</span><span v-if="subScoresPartial(selected)" class="muted">，还有小问未填分值</span></template><el-input-number v-else v-model="selected.attributes.score" :min="0" :max="1000" @change="markScoreManual"/><span v-if="selected.attributes.score_source" class="score-source">{{scoreSourceName(selected.attributes.score_source)}}</span></label><label v-for="[key,label] in [['subject','学科'],['stage','学段'],['grade','年级'],['textbook_version','教材版本'],['question_type','题型'],['paper_type','试卷类型'],['year','年份'],['semester','学期'],['region','地区'],['source_type','来源类型']]" :key="key">{{label}}<span v-if="selected.attribute_sources?.[key]==='paper'" class="inherit-badge">继承</span><el-input v-model="selected.attributes[key]" placeholder="未识别" @change="markAttributeManual(key)"/></label><label>难度<el-select v-model="selected.attributes.difficulty" clearable><el-option v-for="(name,index) in ['简单','较易','中等','较难','困难']" :value="index+1" :label="name"/></el-select><span v-if="selected.attributes.difficulty_reason" class="muted">{{selected.attributes.difficulty_reason}}</span></label><label>审核状态<el-select v-model="selected.review_status"><el-option value="pending" label="待核对"/><el-option value="reviewed" label="已确认"/></el-select></label></div><div class="inherit-actions"><button v-for="[field,label] in paperInheritFields" :key="field" @click="restoreInherited(field)">跟随{{label}}</button></div><div class="field-heading"><label>知识点与教材章节</label><span class="neutral-badge">目录未配置</span></div><div class="catalog-empty">正式目录接入后自动分层匹配，并根据教材映射章节。当前不生成未经绑定的正式知识点。</div><div class="field-heading"><label>能力维度</label></div><el-select v-model="selected.attributes.ability_dimensions" multiple filterable allow-create default-first-option placeholder="输入或选择能力维度"><el-option v-for="label in ['理解','应用','分析','推理','建模','运算']" :value="label" :label="label"/></el-select><div class="field-heading"><label>作答形式</label></div><el-select v-model="selected.attributes.response_form" multiple filterable allow-create><el-option v-for="label in ['客观','主观','作图','填空','计算','证明']" :value="label" :label="label"/></el-select><div class="field-heading"><label>情景与背景</label></div><el-input v-model="selected.attributes.background" type="textarea" :rows="2"/><div class="field-heading"><label>扩展标签</label><button class="text-button" @click="(selected.attributes.extension_attributes ||= []).push({name:'',value:''})"><Plus :size="13"/>新增</button></div><div class="extension-row" v-for="(tag,index) in selected.attributes.extension_attributes"><el-input v-model="tag.name" placeholder="标签名称"/><el-input v-model="tag.value" placeholder="标签值"/><button class="icon-button" aria-label="删除标签" @click="selected.attributes.extension_attributes.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>授权与排序</label></div><p class="muted">授权尚未确认。重要程度算法未启用，不生成无依据的推荐分。</p></template>
             </div>
             <div class="detail-footer"><button class="text-button" @click="nextQuestion(-1)"><ArrowLeft :size="15"/>上一题</button><el-button type="primary" @click="confirmQuestion"><Check :size="15"/>确认并继续</el-button><button class="text-button" @click="nextQuestion(1)">下一题<ArrowRight :size="15"/></button></div>
           </section><div v-else class="empty-state"><h3>没有题目</h3><el-button @click="newQuestion">添加漏题</el-button></div>
+        </div>
+      </template>
+
+      <template v-else-if="view==='cost'">
+        <div class="page-content cost-page">
+          <button class="text-button back-link" @click="closeCost"><ArrowLeft :size="14"/>返回快速录入</button>
+          <div class="page-title-row"><div><h1>处理成本</h1><p class="page-description">{{costTask?.title}} · {{formatDate(costTask?.created_at)}} · 任务 {{costTask?.id}}</p></div></div>
+          <template v-if="costTask?.cost">
+            <div class="cost-summary">
+              <div><span>总成本</span><strong>¥{{Number(costTask.cost.total||0).toFixed(6)}}</strong></div>
+              <div><span>调用次数</span><strong>{{costTask.cost.calls||0}}</strong></div>
+              <div><span>缓存命中</span><strong>{{costTask.cost.cache_hits||0}}</strong></div>
+              <div><span>失败/未知</span><strong>{{costTask.cost.unknown_calls||0}}</strong></div>
+            </div>
+            <p class="muted">金额 = 本次调用 token × 官方单价；MinerU 免费。点击任意一行，查看该次调用的系统指令、用户内容、原始响应和计价过程。</p>
+            <div class="cost-table-wrap"><table class="cost-table"><thead><tr><th>时间</th><th>阶段</th><th>模型</th><th>状态</th><th>输入 hit / miss</th><th>输出</th><th>金额</th></tr></thead><tbody>
+              <tr v-for="item in costTask.cost.items" :key="item.call_id||item.at||item.operation" :class="{clickable:!!item.call_id,selected:costCallId===item.call_id}" @click="inspectCost(item)">
+                <td class="muted">{{formatDate(item.at)}}</td>
+                <td><strong>{{item.operation||'调用'}}</strong><small>{{item.channel||''}}</small></td>
+                <td>{{item.model||'—'}}</td>
+                <td><span :class="['status-pill',item.status==='failed'?'failed':'ready']">{{item.status||item.amount_status}}</span></td>
+                <td class="mono">{{item.input_cache_hit_tokens??item.cached_read_tokens??0}} / {{item.input_cache_miss_tokens??(item.input_tokens?item.input_tokens-(item.cached_read_tokens||0):0)}}</td>
+                <td class="mono">{{item.output_tokens||0}}</td>
+                <td class="mono">¥{{Number(item.amount||0).toFixed(6)}}</td>
+              </tr>
+            </tbody></table></div>
+            <section v-if="costLoading" class="cost-detail"><p class="muted">正在读取调用明细…</p></section>
+            <section v-else-if="costDetail" class="cost-detail cost-call">
+              <div class="cost-detail-head"><strong>{{costDetail.name}}</strong><span>{{formatDate(costDetail.started_at)}} · {{costDetail.model||'—'}} · {{costDetail.status||''}} · 用时 {{costDetail.seconds??'—'}}s</span><button class="text-button" @click="costDetail=null;costCallId=''">关闭明细</button></div>
+              <p class="mono">{{costDetail.usage?.prompt_tokens||0}} 输入 = {{costDetail.usage?.prompt_cache_hit_tokens||0}} hit + {{costDetail.usage?.prompt_cache_miss_tokens||0}} miss · {{costDetail.usage?.completion_tokens||0}} 输出 · ¥{{Number(costDetail.cost?.amount||0).toFixed(8)}}</p>
+              <p class="mono">hit×{{costDetail.cost?.unit_price_cny_per_million?.input_cache_hit}} + miss×{{costDetail.cost?.unit_price_cny_per_million?.input_cache_miss}} + output×{{costDetail.cost?.unit_price_cny_per_million?.output}} / 1,000,000</p>
+              <div class="prompt-block"><div class="prompt-block-head"><strong>输入 · 系统指令</strong><span>{{(costDetail.system||'').length}} 字符</span><button class="text-button" @click="copyPrompt(costDetail.system)">复制</button></div><pre>{{costDetail.system||'（这次调用没有记录系统指令）'}}</pre></div>
+              <div class="prompt-block"><div class="prompt-block-head"><strong>输入 · 用户内容</strong><span>{{(costDetail.user||'').length}} 字符</span><button class="text-button" @click="copyPrompt(costDetail.user)">复制</button></div><pre>{{costDetail.user||'（这次调用没有记录用户内容）'}}</pre></div>
+              <div class="prompt-block"><div class="prompt-block-head"><strong>输出 · 原始响应</strong><span>{{costRaw(costDetail).length}} 字符</span><button class="text-button" @click="copyPrompt(costRaw(costDetail))">复制</button></div><pre>{{costRaw(costDetail)||'（这次调用没有记录原始响应）'}}</pre></div>
+            </section>
+            <div v-else class="cost-empty"><p class="muted">从上方列表选择一次调用，查看完整输入、输出和计价过程。</p></div>
+          </template>
+          <div v-else class="empty-state"><p>该任务还没有成本记录。</p></div>
         </div>
       </template>
 
@@ -462,7 +577,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
             <section class="zone-settings-panel">
               <div class="field-heading"><label>版面类型</label><span>当前只维护 A3 双栏和 A4 单栏</span></div>
               <div class="mode-options">
-                <button v-for="item in [{id:'A3-2',title:'A3-2',desc:'A3 两栏'},{id:'A4-1',title:'A4-1',desc:'A4 一栏'}]" :key="item.id" :class="{active:zoneLayout===item.id}" @click="selectZoneLayout(item.id as 'A3-2'|'A4-1')"><strong>{{item.title}}</strong><span>{{item.desc}}</span><Check v-if="zoneLayout===item.id" :size="15"/></button>
+                <button v-for="item in [{id:'A3-2',title:'A3-2',desc:'A3 两栏'},{id:'A3-3',title:'A3-3',desc:'A3 三栏'},{id:'A4-1',title:'A4-1',desc:'A4 一栏'}]" :key="item.id" :class="{active:zoneLayout===item.id}" @click="selectZoneLayout(item.id as 'A3-2'|'A3-3'|'A4-1')"><strong>{{item.title}}</strong><span>{{item.desc}}</span><Check v-if="zoneLayout===item.id" :size="15"/></button>
               </div>
               <div class="field-heading"><label>预览页</label><span>上传该版面的真实页面</span></div>
               <label class="file-drop zone-upload"><UploadCloud :size="24"/><strong>选择预览文件</strong><span>PDF、PNG、JPG · PDF 取第一页</span><input type="file" accept=".pdf,application/pdf,image/png,image/jpeg,image/webp" @change="zonePreviewFile"/></label>
@@ -532,38 +647,6 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
         <div class="section-preview"><div v-for="row in paperSections(paperForm)" :key="row.label">{{row.text}}</div><p v-if="!paperSections(paperForm).length" class="muted">还没有题目</p></div>
       </template>
     </el-drawer>
-    <el-drawer v-model="costOpen" :title="`处理成本 · ${costTask?.title||''}`" size="min(1040px,97vw)">
-      <template v-if="costTask?.cost">
-        <div class="cost-summary">
-          <div><span>总成本</span><strong>¥{{Number(costTask.cost.total||0).toFixed(6)}}</strong></div>
-          <div><span>调用次数</span><strong>{{costTask.cost.calls||0}}</strong></div>
-          <div><span>缓存命中</span><strong>{{costTask.cost.cache_hits||0}}</strong></div>
-          <div><span>失败/未知</span><strong>{{costTask.cost.unknown_calls||0}}</strong></div>
-        </div>
-        <p class="muted">金额 = 本次调用 token × 官方单价；MinerU 免费。点击每条调用的「查看」可看完整输入、输出和计价过程。</p>
-        <div class="cost-table-wrap"><table class="cost-table"><thead><tr><th>时间</th><th>阶段</th><th>模型</th><th>状态</th><th>输入 hit / miss</th><th>输出</th><th>金额</th><th></th></tr></thead><tbody>
-          <tr v-for="item in costTask.cost.items" :key="item.call_id||item.at||item.operation">
-            <td class="muted">{{formatDate(item.at)}}</td>
-            <td><strong>{{item.operation||'调用'}}</strong><small>{{item.channel||''}}</small></td>
-            <td>{{item.model||'—'}}</td>
-            <td><span :class="['status-pill',item.status==='failed'?'failed':'ready']">{{item.status||item.amount_status}}</span></td>
-            <td class="mono">{{item.input_cache_hit_tokens??item.cached_read_tokens??0}} / {{item.input_cache_miss_tokens??(item.input_tokens?item.input_tokens-(item.cached_read_tokens||0):0)}}</td>
-            <td class="mono">{{item.output_tokens||0}}</td>
-            <td class="mono">¥{{Number(item.amount||0).toFixed(6)}}</td>
-            <td><button class="text-button" @click="inspectCost(item)" :disabled="!item.call_id">查看</button></td>
-          </tr>
-        </tbody></table></div>
-        <div v-if="costDetail" class="cost-detail">
-          <div class="cost-detail-head"><strong>{{costDetail.name}}</strong><span>{{formatDate(costDetail.started_at)}} · {{costDetail.model}} · {{costDetail.status}}</span><button class="text-button" @click="costDetail=null">收起</button></div>
-          <p class="mono">{{costDetail.usage?.prompt_tokens||0}} 输入 = {{costDetail.usage?.prompt_cache_hit_tokens||0}} hit + {{costDetail.usage?.prompt_cache_miss_tokens||0}} miss · {{costDetail.usage?.completion_tokens||0}} 输出 · ¥{{Number(costDetail.cost?.amount||0).toFixed(8)}}</p>
-          <p class="mono">hit×{{costDetail.cost?.unit_price_cny_per_million?.input_cache_hit}} + miss×{{costDetail.cost?.unit_price_cny_per_million?.input_cache_miss}} + output×{{costDetail.cost?.unit_price_cny_per_million?.output}} / 1,000,000</p>
-          <details open><summary>输入 · 系统指令</summary><pre>{{costDetail.request?.system||costDetail.request?.instruction||''}}</pre></details>
-          <details><summary>输入 · 用户内容</summary><pre>{{costDetail.request?.user||''}}</pre></details>
-          <details><summary>输出 · 原始响应</summary><pre>{{pretty(costDetail.response?.raw||costDetail.response?.parsed||costDetail.response||costDetail.error||'')}}</pre></details>
-        </div>
-      </template>
-      <div v-else class="empty-state"><p>正在读取成本明细…</p></div>
-    </el-drawer>
     <el-dialog v-model="detailDialog" :title="detail?.title||('题目 '+(detail?.number||''))" width="min(900px, 94vw)"><template v-if="detail"><div v-if="detail.questions" class="paper-detail-list"><div class="template-notice" v-if="detail.templates?.length"><ScanLine :size="17"/>原卷区域模板已保存 · 实际扫描配准尚未接入</div><article v-for="row in detail.questions"><h3>第 {{row.content.number}} 题</h3><QuestionPreview :question="row.content"/></article></div><article v-else><QuestionPreview :question="detail.content"/><div class="region-preview-list"><img v-for="r in detail.content.regions" :src="r.crop_url" alt="来源区域"/></div></article></template><template #footer><el-button @click="detailDialog=false">关闭</el-button><el-button type="primary" @click="detailDialog=false;openTask(tasks.find(t=>t.id===detail.task_id)||{id:detail.task_id,status:'committed'} as Task)">返回来源审核</el-button></template></el-dialog>
   </div>
 </template>
@@ -605,5 +688,33 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 .recognition-panel img{max-width:100%;max-height:260px;display:block;margin:6px 0}
 .rich-editor.readonly .tiptap{background:#fbfcfa}
 .rich-editor.readonly .tiptap:focus{outline:none}
+.cost-page{max-width:none}
+.back-link{display:inline-flex;align-items:center;gap:4px;margin-bottom:8px}
+.cost-table tbody tr.clickable{cursor:pointer}
+.cost-table tbody tr.clickable:hover{background:#f7faf5}
+.cost-table tbody tr.selected{background:#eef6ec}
+.cost-empty{margin-top:16px;padding:18px;border:1px dashed #dbe5d7;border-radius:7px;text-align:center}
+.cost-call{margin-top:16px}
+.prompt-block{margin-top:12px;border:1px solid #e2e9df;border-radius:7px;background:#fff;overflow:hidden}
+.prompt-block-head{display:flex;align-items:center;gap:10px;padding:8px 12px;background:#f5f8f2;border-bottom:1px solid #e8eee5}
+.prompt-block-head strong{font-size:12px;color:#2f5d45}
+.prompt-block-head span{font-size:11px;color:#8a998b}
+.prompt-block-head button{margin-left:auto}
+.cost-detail .prompt-block pre{margin:0;padding:12px;max-height:56vh;overflow:auto;white-space:pre-wrap;word-break:break-word;background:#fff;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;line-height:1.6}
+.row-delete{margin-right:6px;color:#8a998b}
+.row-delete:hover:not(:disabled){color:#b3452f;background:#fdf1ee}
+.row-delete:disabled{opacity:.35;cursor:not-allowed}
+.correction-panel{margin:0 0 10px;border:1px solid #f0e0c8;background:#fffaf0;border-radius:7px;padding:8px 10px;font-size:12px}
+.correction-panel.compact{margin-top:8px;background:#fffdf7}
+.correction-panel summary{cursor:pointer;display:flex;gap:8px;align-items:center;color:#8a6420}
+.correction-panel summary strong{font-size:12px}
+.correction-item{margin-top:8px;padding-top:8px;border-top:1px dashed #efe2cc}
+.correction-item:first-of-type{border-top:0;padding-top:4px}
+.correction-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.correction-field{background:#f6ead2;color:#8a6420;border-radius:4px;padding:1px 6px;font-size:11px}
+.correction-meta .text-button{margin-left:auto}
+.correction-before,.correction-after{margin:2px 0;line-height:1.6;word-break:break-word}
+.correction-before em,.correction-after em{font-style:normal;color:#9a8a6a;margin-right:6px;font-size:11px}
+.correction-after{color:#3f6b45}
 </style>
 

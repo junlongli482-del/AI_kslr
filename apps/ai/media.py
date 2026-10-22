@@ -25,21 +25,91 @@ def one_edit(a, b):
     return any(long[:i]+long[i+1:]==short for i in range(len(long)))
 
 
+def _page_geometry(doc, page_index):
+    pages = doc.get('pages') or []
+    page = pages[page_index] if page_index < len(pages) else {}
+    wide = page.get('width_px', 1) > page.get('height_px', 1) * 1.15
+    blocks = [b for b in doc.get('blocks', []) if b.get('page_index') == page_index and len(b.get('bbox', [])) == 4]
+    return wide, blocks
+
+
+def _cluster_centers(values, count, iterations=12):
+    values = sorted(values)
+    if not values or count <= 1:
+        return [values[len(values)//2]] if values else []
+    count = min(count, len(values))
+    centers = [values[min(len(values)-1, int((i+.5)*len(values)/count))] for i in range(count)]
+    for _ in range(iterations):
+        groups = [[] for _ in centers]
+        for value in values:
+            groups[min(range(len(centers)), key=lambda i: abs(value - centers[i]))].append(value)
+        updated = [sum(g)/len(g) if g else centers[i] for i, g in enumerate(groups)]
+        if all(abs(a-b) < 1e-4 for a, b in zip(updated, centers)):
+            break
+        centers = updated
+    return sorted(centers)
+
+
+def _infer_column_count(blocks):
+    centers = sorted((b['bbox'][0]+b['bbox'][2])/2 for b in blocks)
+    if not centers:
+        return 1
+    count, previous = 1, centers[0]
+    for center in centers[1:]:
+        if center - previous > .12:
+            count += 1
+        previous = center
+    return min(4, max(1, count))
+
+
+def page_cells(doc, page_index):
+    """Structural column cells for a page: equal split with a small gutter (supports 1/2/3/4 栏)."""
+    wide, blocks = _page_geometry(doc, page_index)
+    if not wide:
+        return [{'x0': .04, 'x1': .96}]
+    declared = None
+    columns = doc.get('columns')
+    if isinstance(columns, list) and page_index < len(columns):
+        try:
+            declared = int(columns[page_index]) if columns[page_index] else None
+        except (TypeError, ValueError):
+            declared = None
+    usable = [b for b in blocks if b['bbox'][2]-b['bbox'][0] >= .06 and b['bbox'][3] > .03 and b['bbox'][1] < .97]
+    count = declared if declared and 1 <= declared <= 4 else (_infer_column_count(usable) if usable else 0)
+    if not count or count <= 0:
+        count = 2
+    if count <= 1:
+        return [{'x0': .04, 'x1': .96}]
+    left, right, gap = .04, .96, .02
+    span = (right - left - gap * (count - 1)) / count
+    return [{'x0': left + i * (span + gap), 'x1': left + i * (span + gap) + span} for i in range(count)]
+
+
+def column_index(doc, page_index, bbox):
+    cells = page_cells(doc, page_index)
+    center = (bbox[0] + bbox[2]) / 2
+    return min(range(len(cells)), key=lambda i: abs(center - (cells[i]['x0'] + cells[i]['x1']) / 2))
+
+
 def column_bounds(doc, page_index, bbox):
-    page=doc.get('pages', [{}])[page_index] if page_index<len(doc.get('pages', [])) else {}
-    wide=page.get('width_px',1)>page.get('height_px',1)*1.15
-    side=(bbox[0]+bbox[2])/2>.5
-    candidates=[]
+    cells = page_cells(doc, page_index)
+    index = column_index(doc, page_index, bbox)
+    cell = cells[index]
+    candidates = []
     for b in doc.get('blocks', []):
-        a=b.get('bbox', [])
-        if b.get('page_index')!=page_index or len(a)!=4 or a[2]-a[0]<.18: continue
-        if wide and (a[0]<.48 and a[2]>.52): continue
-        if wide and ((a[0]+a[2])/2>.5)!=side: continue
-        if a[1]<.035 or a[3]>.98: continue
+        a = b.get('bbox', [])
+        if b.get('page_index') != page_index or len(a) != 4 or a[2] - a[0] < .18:
+            continue
+        if column_index(doc, page_index, a) != index:
+            continue
+        if a[1] < .035 or a[3] > .98:
+            continue
         candidates.append(a)
     if candidates:
-        return [min(b[0] for b in candidates),max(b[2] for b in candidates)]
-    return [.51,.96] if wide and side else ([.04,.49] if wide else [.04,.96])
+        left = min(b[0] for b in candidates)
+        right = max(b[2] for b in candidates)
+        return [max(cell['x0'], left), min(cell['x1'], right)]
+    return [cell['x0'], cell['x1']]
 
 
 def repair_assets(question, documents, data, task_id):

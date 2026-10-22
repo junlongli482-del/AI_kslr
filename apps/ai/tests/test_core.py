@@ -153,6 +153,59 @@ def test_question_span_splits_across_pages():
     assert [(r['page_index'],round(r['bbox'][1],3),round(r['bbox'][3],3)) for r in questions[0]['regions']]==[(0,.696,.96),(1,.046,.5)]
 
 
+def test_three_column_page_uses_per_column_frames():
+    docs=[{'id':'d','role':'question','pages':[{'width_px':1400,'height_px':1000}],'columns':[3],
+           'blocks':[{'id':'a','page_index':0,'bbox':[.04,.10,.30,.20]},
+                     {'id':'b','page_index':0,'bbox':[.36,.10,.62,.20]},
+                     {'id':'c','page_index':0,'bbox':[.68,.10,.95,.20]},
+                     {'id':'d2','page_index':0,'bbox':[.04,.50,.30,.60]}]}]
+    questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
+               {'id':'q2','block_ids':['b'],'regions':[],'issues':[]},
+               {'id':'q3','block_ids':['c'],'regions':[],'issues':[]},
+               {'id':'q4','block_ids':['d2'],'regions':[],'issues':[]}]
+    core.question_span_regions(questions,docs)
+    assert [round(q['regions'][0]['bbox'][0],2) for q in questions]==[.04,.36,.68,.04]
+    assert questions[0]['regions'][0]['bbox'][2] <= .34
+    assert questions[1]['regions'][0]['bbox'][2] <= .66
+    assert questions[2]['regions'][0]['bbox'][2] <= .96
+    assert questions[0]['regions'][0]['bbox'][3] <= .50
+
+
+def test_section_heading_is_not_framed_into_previous_question():
+    docs=[{'id':'d','role':'question','pages':[{'width_px':800,'height_px':1200}],
+           'blocks':[{'id':'a','page_index':0,'bbox':[.06,.10,.45,.20]},
+                     {'id':'h','page_index':0,'bbox':[.06,.24,.45,.27],'text':'二、多项选择题（本题共3小题）'},
+                     {'id':'b','page_index':0,'bbox':[.06,.32,.45,.45]}]}]
+    questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[]},
+               {'id':'q2','block_ids':['b'],'regions':[],'issues':[]}]
+    core.question_span_regions(questions,docs)
+    assert round(questions[0]['regions'][0]['bbox'][3],3)==.237
+
+
+def test_subjective_question_frame_uses_whole_column():
+    docs=[{'id':'d','role':'question','pages':[{'width_px':1200,'height_px':800}],'columns':[2],
+           'blocks':[{'id':'a','page_index':0,'bbox':[.06,.10,.30,.20]}]}]
+    questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[],'attributes':{'question_type':'解答题'}}]
+    core.question_span_regions(questions,docs)
+    assert [round(v,2) for v in questions[0]['regions'][0]['bbox'][:3]]==[.04,.10,.49]
+
+
+def test_question_issues_accept_model_objects():
+    question=core.Question.model_validate({'id':'q1','paper_id':'p','number':'1','stem':'',
+                                           'issues':[{'type':'subquestion_block_missing','message':'block_ids为空'},'需人工核对：图不清',None]})
+    assert question.issues==['subquestion_block_missing: block_ids为空','需人工核对：图不清']
+
+
+def test_row_break_before_letter_survives_escape_repair():
+    stem=r'$a_1=3,a_{n+1}=\begin{cases}a_n+1,&n\text{为奇数},\\a_n+2,&n\text{为偶数}.\end{cases}$'
+    question={'stem':stem,'answer':'','analysis':'','options':[],'subquestions':[]}
+    core.normalize_question_content(question,[])
+    assert r'\\a_n+2' in question['stem']
+    doubled={'stem':r'$x=\\frac{1}{2}$','answer':'','analysis':'','options':[],'subquestions':[]}
+    core.normalize_question_content(doubled,[])
+    assert r'\frac{1}{2}' in doubled['stem']
+
+
 def test_allocate_sub_scores_keeps_integer_total():
     subs=[{'weight_pct':33.3},{'weight_pct':33.3},{'weight_pct':33.4}]
     core.allocate_sub_scores(10,subs)
@@ -180,6 +233,29 @@ def test_apply_rubrics_merges_points_and_allocates_integer_scores():
     assert [sub['score'] for sub in q['subquestions']]==[4,6]
     assert q['attributes']['difficulty']==4
     assert q['subquestions'][0]['scoring']['points'][0]['pct']==100
+
+
+def test_fill_rubric_marks_objective_target_as_auto():
+    class Fake:
+        def json(self,*args):return {'items':[{'question_id':'q1','grading_method':'auto','subquestions':[{'subquestion_id':'s2','weight_pct':100}]}]}
+    q={'id':'q1','number':'11','stem':'','options':[],'answer':'','analysis':'','attributes':{'score':4},
+       'subquestions':[{'subquestion_id':'s1','number':'(1)','stem':'','options':[],'answer':{'value':'','analysis':''},'scoring':{'method':'auto'}},
+                       {'subquestion_id':'s2','number':'(2)','stem':'','options':[],'answer':{'value':'变小','analysis':''}}]}
+    assert core.fill_question_rubric(q,Fake(),'s2')==1
+    assert q['subquestions'][1]['scoring']=={'method':'auto'}
+    assert core.missing_rubric_targets(q,'s2')==[]
+    assert core.fill_question_rubric(q,Fake(),'s2')==0
+
+
+def test_sync_sub_scores_sets_question_total_from_subquestions():
+    qs=[{'id':'q1','attributes':{'score':6,'score_source':'ai_assigned'},'subquestions':[{'score':4},{'score':2},{'score':2}]},
+        {'id':'q2','attributes':{'score':5,'score_source':'paper_declared'},'subquestions':[{'score':None},{'score':2}]},
+        {'id':'q3','attributes':{'score':5}}]
+    core.sync_sub_scores(qs)
+    assert qs[0]['attributes']['score']==8
+    assert qs[0]['attributes']['score_source']=='manual'
+    assert qs[1]['attributes']['score']==5
+    assert qs[2]['attributes']['score']==5
 
 
 def test_allocate_paper_scores_fills_only_missing_to_declared_total():

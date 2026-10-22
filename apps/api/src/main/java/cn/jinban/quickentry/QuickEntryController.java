@@ -26,6 +26,7 @@ public class QuickEntryController {
         return service.task(id);
     }
     @GetMapping("/quick-entry/tasks/{id}") public Object task(@PathVariable String id){return service.task(id);}
+    @DeleteMapping("/quick-entry/tasks/{id}") public Object deleteTask(@PathVariable String id){return service.deleteTask(id);}
     @GetMapping("/quick-entry/tasks/{id}/cost/calls/{callId}") public Object costCall(@PathVariable String id,@PathVariable String callId){return service.costCall(id,callId);}
     @GetMapping("/quick-entry/tasks/{id}/comparison") public Object comparison(@PathVariable String id)throws Exception{
         service.require(id);Path p=service.dataRoot().resolve("tasks").resolve(id).resolve("comparison.json");

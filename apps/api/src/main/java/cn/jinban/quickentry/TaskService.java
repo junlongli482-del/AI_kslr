@@ -241,6 +241,37 @@ public class TaskService {
     static String digest(String value){try{return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(value.getBytes(java.nio.charset.StandardCharsets.UTF_8)));}catch(Exception e){throw new IllegalStateException(e);}}
 
     @Transactional
+    public Map<String,Object> deleteTask(String id){
+        if(id==null||!id.matches("[A-Za-z0-9-]{1,80}"))throw new ResponseStatusException(BAD_REQUEST,"任务ID无效");
+        var t=require(id);
+        String status=String.valueOf(t.get("status"));
+        if("committed".equals(status))throw new ResponseStatusException(CONFLICT,"审核通过的任务不能删除");
+        if(Set.of("running","queued","pending").contains(status))throw new ResponseStatusException(CONFLICT,"任务正在处理，请等处理结束后再删除");
+        var keys=new ArrayList<String>();
+        for(var row:store.files(id))keys.add(String.valueOf(row.get("storage_key")));
+        store.deleteEvents(id);
+        store.deleteFiles(id);
+        store.deletePaperQuestions(id);
+        store.deleteTemplates(id);
+        store.deletePapers(id);
+        store.deleteQuestions(id);
+        store.deleteTask(id);
+        for(String key:keys)removePath(data.resolve(key));
+        removePath(data.resolve("tasks").resolve(id));
+        removePath(data.resolve("uploads").resolve(id));
+        return Map.of("deleted",true,"id",id);
+    }
+    void removePath(Path path){
+        Path target=path.toAbsolutePath().normalize();
+        if(!target.startsWith(data)||target.equals(data))return;
+        try{
+            if(!Files.exists(target))return;
+            try(var walk=Files.walk(target)){
+                walk.sorted(Comparator.reverseOrder()).forEach(p->{try{Files.deleteIfExists(p);}catch(Exception ignored){}});
+            }
+        }catch(Exception ignored){}
+    }
+    @Transactional
     public Map<String,Object> commit(String id,int revision){
         var t=store.lock(id);if(t==null)throw new ResponseStatusException(NOT_FOUND,"任务不存在");
         if(((Number)t.get("revision")).intValue()!=revision)throw new ResponseStatusException(CONFLICT,"请先保存最新审核稿");

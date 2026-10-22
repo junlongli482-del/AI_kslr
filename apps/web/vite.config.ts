@@ -9,6 +9,8 @@ export default defineConfig({
   server: {
     port,
     strictPort: true,
+    // 允许通过 cpolar 等隧道域名访问（免费版域名会变，用通配）。
+    allowedHosts: ['.cpolar.cn', '.cpolar.top'],
     // Editors that save atomically create short-lived tmpdirs; watching them can crash Vite with EBUSY.
     watch: { ignored: ['**/*.tmpdir/**', '**/*.tmp'] },
     proxy: { '/api': api }

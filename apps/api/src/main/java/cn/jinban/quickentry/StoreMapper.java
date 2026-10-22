@@ -53,4 +53,18 @@ public interface StoreMapper {
     List<Map<String,Object>> paperQuestions(String id);
     @Select("SELECT id,content::text,review_status,scan_capability FROM jinban.source_template WHERE paper_id=#{id}")
     List<Map<String,Object>> templates(String id);
+    @Delete("DELETE FROM jinban.qe_stage_event WHERE task_id=#{id}")
+    void deleteEvents(String id);
+    @Delete("DELETE FROM jinban.qe_file WHERE task_id=#{id}")
+    void deleteFiles(String id);
+    @Delete("DELETE FROM jinban.paper_question WHERE paper_id IN (SELECT id FROM jinban.paper_revision WHERE task_id=#{id})")
+    void deletePaperQuestions(String id);
+    @Delete("DELETE FROM jinban.source_template WHERE paper_id IN (SELECT id FROM jinban.paper_revision WHERE task_id=#{id})")
+    void deleteTemplates(String id);
+    @Delete("DELETE FROM jinban.paper_revision WHERE task_id=#{id}")
+    void deletePapers(String id);
+    @Delete("DELETE FROM jinban.question_revision WHERE task_id=#{id}")
+    void deleteQuestions(String id);
+    @Delete("DELETE FROM jinban.qe_task WHERE id=#{id}")
+    void deleteTask(String id);
 }

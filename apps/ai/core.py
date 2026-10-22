@@ -17,9 +17,9 @@ from typing import Any
 import httpx
 import pypdfium2 as pdfium
 from PIL import Image
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from diagnostics import PipelineError, describe_error, redact
-from media import repair_assets, apply_layout, column_bounds
+from media import repair_assets, apply_layout, column_bounds, column_index, page_cells
 from channels import channels as configured_channels, timeout as model_timeout, cost as model_cost
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -73,6 +73,32 @@ def safe_extract(archive: Path, dest: Path):
         z.extractall(dest)
 
 
+def clean_issues(items) -> list[str]:
+    """Models sometimes return {'type','message'} objects; the contract is plain strings."""
+    if items is None:
+        return []
+    if isinstance(items, (str, dict)):
+        items = [items]
+    elif not isinstance(items, (list, tuple)):
+        return []
+    out = []
+    for item in items:
+        if item is None:
+            continue
+        if isinstance(item, str):
+            text = item.strip()
+        elif isinstance(item, dict):
+            text = str(item.get('message') or item.get('text') or item.get('detail') or '').strip()
+            kind = str(item.get('type') or '').strip()
+            if kind and kind not in text:
+                text = f'{kind}: {text}' if text else kind
+        else:
+            text = str(item).strip()
+        if text and text not in out:
+            out.append(text)
+    return out
+
+
 class Region(BaseModel):
     document_id: str
     page_index: int = Field(ge=0)
@@ -103,12 +129,19 @@ class Question(BaseModel):
     answer_entry_id: str | None = None
     review_status: str = 'pending'
     issues: list[str] = Field(default_factory=list)
+    corrections: list[dict] = Field(default_factory=list)
     editor_documents: dict = Field(default_factory=dict)
     image_layout: dict = Field(default_factory=dict)
     tables: list[dict] = Field(default_factory=list)
     options_layout: dict = Field(default_factory=dict)
     excluded_image_urls: list[str] = Field(default_factory=list)
     asset_repairs: list[dict] = Field(default_factory=list)
+
+    @field_validator('issues', mode='before')
+    @classmethod
+    def _issues_as_text(cls, value):
+        return clean_issues(value)
+
 
 
 class Result(BaseModel):
@@ -350,12 +383,36 @@ def regions_from_blocks(ids: list[str], documents: list[dict]):
     return groups
 
 
+MULTI_ROW_ENV = re.compile(r'\\begin\{(cases|array|matrix|aligned|alignedat|gathered|split|eqnarray|subarray)\}.*?\\end\{\1\}', re.S)
+LATEX_COMMANDS = (
+    'frac|dfrac|tfrac|sqrt|text|textrm|textbf|mathrm|mathbf|mathit|mathbb|mathcal|operatorname|'
+    'left|right|begin|end|cdot|times|div|pm|mp|le|ge|ne|leq|geq|approx|in|notin|subset|supset|'
+    'cup|cap|sum|prod|int|lim|log|ln|lg|sin|cos|tan|cot|alpha|beta|gamma|delta|epsilon|varepsilon|'
+    'theta|lambda|mu|nu|xi|pi|rho|sigma|tau|phi|varphi|omega|quad|qquad|overline|underline|vec|hat|bar|binom|angle|circ|degree|'
+    'triangle|parallel|perp|sim|cong|because|therefore|cdots|ldots|dots|vdots|ddots|to|rightarrow|leftarrow|'
+    'Rightarrow|Leftarrow|leftrightarrow|mapsto|forall|exists|neg|land|lor|oplus|otimes|emptyset|varnothing|'
+    'partial|nabla|infty|propto|simeq|equiv|prime|ast|star|bullet|sqcup|sqcap|bigcup|bigcap|displaystyle'
+)
+DOUBLE_BACKSLASH = re.compile(r'\\\\(?=(?:' + LATEX_COMMANDS + r')\b)')
+
+
+def repair_math_escapes(text: str) -> str:
+    """Collapse doubled commands (\\\\frac -> \\frac) but never touch row breaks inside cases/array."""
+    parts, last = [], 0
+    for match in MULTI_ROW_ENV.finditer(text):
+        parts.append(DOUBLE_BACKSLASH.sub(lambda _: '\\', text[last:match.start()]))
+        parts.append(match.group())
+        last = match.end()
+    parts.append(DOUBLE_BACKSLASH.sub(lambda _: '\\', text[last:]))
+    return ''.join(parts)
+
+
 def normalize_question_content(question: dict, documents: list[dict]):
     def clean(text):
         text = (text or '').replace(r'\n\n', '\n\n')
         text = re.sub(r'\\\[([\s\S]+?)\\\]|\\\(([\s\S]+?)\\\)',
                       lambda m: '$$' + m[1] + '$$' if m[1] is not None else '$' + m[2] + '$', text)
-        return re.sub(r'\$\$[\s\S]+?\$\$|\$[^$\n]+?\$', lambda m: re.sub(r'\\\\(?=[A-Za-z])', lambda _: '\\', m.group()), text)
+        return re.sub(r'\$\$[\s\S]+?\$\$|\$[^$\n]+?\$', lambda m: repair_math_escapes(m.group()), text)
     for key in ('stem', 'answer', 'analysis'):
         question[key] = clean(question.get(key))
     for option in question.get('options', []): option['content'] = clean(option.get('content'))
@@ -373,6 +430,53 @@ def normalize_question_content(question: dict, documents: list[dict]):
         if a.get('page_index') == b.get('page_index') and a.get('bbox') and b.get('bbox') and abs(a['bbox'][1]-b['bbox'][1]) < .035:
             pattern = r'(!\[[^\]]*\]\(' + re.escape(first) + r'\))\s*(!\[[^\]]*\]\(' + re.escape(second) + r'\))'
             question['stem'] = re.sub(pattern, r'\1 \2', question['stem'])
+
+
+SECTION_HEADING = re.compile(r'^\s*(?:[一二三四五六七八九十]+\s*[、.．]|第[一二三四五六七八九十]+部分)')
+SECTION_WORDS = ('选择题', '非选择题', '填空题', '解答题', '实验题', '计算题', '综合题', '判断题', '作图题', '材料题')
+SUBJECTIVE_WORDS = ('解答', '计算', '证明', '实验', '材料', '论述', '综合', '作图', '简答', '分析')
+
+
+def is_subjective_question(question: dict) -> bool:
+    text = str((question.get('attributes') or {}).get('question_type') or '')
+    return any(word in text for word in SUBJECTIVE_WORDS)
+
+
+def section_headings(documents: list[dict]) -> dict:
+    """Structural section titles ('一、单项选择题…') must never be framed as question content."""
+    lookup = {}
+    for doc in documents:
+        for block in doc.get('blocks', []):
+            text = (block.get('text') or '').strip()
+            if not text or len(text) > 120:
+                continue
+            if SECTION_HEADING.match(text) and any(word in text for word in SECTION_WORDS):
+                lookup.setdefault(doc['id'], []).append(block)
+    return lookup
+
+
+def attach_page_columns(documents: list[dict], papers: list[dict]):
+    """Carry the paper's declared column count (MinerU/AI source.columns) onto its documents."""
+    by_id = {doc['id']: doc for doc in documents}
+    for paper in papers or []:
+        mapping = {}
+        for item in (paper.get('source') or {}).get('columns') or []:
+            if not isinstance(item, dict):
+                continue
+            try:
+                mapping[int(item.get('page')) - 1] = int(item.get('columns'))
+            except (TypeError, ValueError):
+                continue
+        if not mapping:
+            continue
+        for doc_id in paper.get('source_document_ids') or []:
+            doc = by_id.get(doc_id)
+            if not doc:
+                continue
+            columns = doc.setdefault('columns', [None] * len(doc.get('pages') or []))
+            for page_index, count in mapping.items():
+                if 0 <= page_index < len(columns) and count:
+                    columns[page_index] = count
 
 
 def question_span_regions(questions: list[dict], documents: list[dict], question_ids=None):
@@ -395,20 +499,20 @@ def question_span_regions(questions: list[dict], documents: list[dict], question
             page_index = block['page_index']
             if page_index >= len(doc.get('pages', [])):
                 continue
-            page = doc['pages'][page_index]
-            spread = page.get('width_px', 1) > page.get('height_px', 1) * 1.15
-            column = int((block['bbox'][0] + block['bbox'][2]) / 2 > .5) if spread else 0
+            column = column_index(doc, page_index, block['bbox'])
             key = (doc['id'], page_index, column)
             groups.setdefault(key, []).append(block['bbox'])
         by_question[qi] = groups
         for key, boxes in groups.items():
             starts.setdefault(key, []).append((qi, min(box[1] for box in boxes)))
+    headings = section_headings(documents)
     for qi, q in enumerate(questions):
         if selected is not None and q.get('id') not in selected:
             continue
         q['issues'] = [issue for issue in (q.get('issues') or []) if issue not in (
             '题目内容越过下一题起点，整题框已截到下一题前，请核对',
             '题目框与下一题有重叠，请核对')]
+        subjective = is_subjective_question(q)
         regions = []
         for key, boxes in by_question.get(qi, {}).items():
             doc_id, page_index, column = key
@@ -418,9 +522,20 @@ def question_span_regions(questions: list[dict], documents: list[dict], question
             following = [y for other, y in starts[key] if other != qi and y > top + .002]
             if following:
                 next_start = min(following)
+                # Section titles between this question and the next one are structural,
+                # never part of the question frame.
+                limit = next_start
+                for heading in headings.get(doc_id, []):
+                    if heading['page_index'] != page_index:
+                        continue
+                    header = heading['bbox']
+                    if column_index(doc, page_index, header) != column:
+                        continue
+                    if content_bottom - .004 <= header[1] < next_start:
+                        limit = min(limit, header[1] - .003)
                 # Prefer a complete question over a cosmetic gap: touch the next
                 # question start, and overlap only when the content itself does.
-                bottom = max(content_bottom + .002, next_start)
+                bottom = max(content_bottom + .002, limit)
                 if content_bottom > next_start + .02:
                     q.setdefault('issues', []).append('题目框与下一题有重叠，请核对')
             else:
@@ -428,6 +543,10 @@ def question_span_regions(questions: list[dict], documents: list[dict], question
             bottom = max(top + .004, bottom)
             aggregate = [min(box[0] for box in boxes), top, max(box[2] for box in boxes), content_bottom]
             x0, x1 = column_bounds(doc, page_index, aggregate)
+            if subjective:
+                # Answer space is part of a subjective question: use the whole column cell.
+                cell = page_cells(doc, page_index)[column]
+                x0, x1 = cell['x0'], cell['x1']
             regions.append({'document_id': doc_id, 'page_index': page_index,
                             'bbox': [max(.02, x0), max(.02, top - .004), min(.98, x1), bottom],
                             'purpose': 'content', 'order': len(regions)})
@@ -645,7 +764,7 @@ attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5必�
 题干和选项不要重复，小问保留原编号与层级。题库内容不包括页眉页脚密封线。block_ids必须来自输入，同一道题的跨页和跨栏内容全选；跨题共享块允许引用并在issues说明。
 内容修正规则（只修明显错误，不重写）：
 允许直接修正：LaTeX语法与转义错误（cases/matrix/aligned的行分隔必须是双反斜杠、花括号配对、上下标、分式根式）、明显OCR错字（如“己知”→“已知”、常见形近字）、漏一两个字导致句子不通且原意唯一时可补齐、公式中丢失的换行或对齐符。
-禁止：改题意、改数字、改单位、改选项、改答案结论、润色语句、增删学科内容、把两种读法都通的猜测写成正文。看不清、原卷本身可能如此、或需要外部知识才能判断时，保持原文并在issues写“需人工核对：…”。
+禁止：改题意、改数字、改单位、改选项、改答案结论、润色语句、增删学科内容、把两种读法都通的猜测写成正文。看不清、原卷本身可能如此、或需要外部知识才能判断时，保持原文并在issues写“需人工核对：…”。issues必须是字符串数组，禁止输出{"type":…,"message":…}对象；需要标注类型时写成“subquestion_unmatched：…”。
 每处修正必须记录到 corrections:[{"field":"stem","before":"原文","after":"修正后","reason":"修正依据"}]；未记录的改动视为违规。修正只还原原卷真实内容，不追求“更正确”或“更通顺”。
 JSON转义要求：LaTeX反斜杠在JSON字符串中要写两次；cases/matrix/aligned的行分隔在LaTeX里是两个反斜杠，因此JSON源文本里必须写四个反斜杠。正确示例（JSON源）："stem":"$a_{n+1}=\\begin{cases}\\frac{1}{3}a_n+n,&n\\text{为奇数}\\\\a_n-3n,&n\\text{为偶数}\\end{cases}$"。输出前逐条检查数学公式的JSON转义。
 忽略答案区中的内容作为题目，答案后续单独匹配。答案、解析、选项和小问中的每一个数学公式都必须用 $...$ 或 $$...$$ 包裹，禁止裸写 LaTeX 命令或纯文本公式。仅返回JSON，所有字符串正确转义LaTeX反斜线。'''
@@ -676,8 +795,9 @@ def compact_document(doc: dict):
 
 def normalize_model_question(question: dict):
     """Accept common model variants while keeping the internal layout contract a mapping."""
-    question.setdefault('corrections', [])
-    question.setdefault('issues', [])
+    corrections = question.get('corrections')
+    question['corrections'] = [item for item in corrections if isinstance(item, dict)] if isinstance(corrections, list) else []
+    question['issues'] = clean_issues(question.get('issues'))
     question.pop('response', None)
     layout = question.get('image_layout')
     if layout is None:
@@ -832,6 +952,22 @@ def allocate_sub_scores(total, subs: list[dict]):
         sub['weight_pct'] = round(100 * score / total, 3)
 
 
+def sync_sub_scores(questions: list[dict]):
+    """有小问的题目：整题分值 = 小问分值合计，避免人工改小问后总分不变。"""
+    for question in questions:
+        subs = question.get('subquestions') or []
+        if not subs:
+            continue
+        scores = [_number(sub.get('score')) for sub in subs]
+        if any(score is None for score in scores):
+            continue
+        total = sum(scores)
+        attributes = question.setdefault('attributes', {})
+        if _number(attributes.get('score')) != total:
+            attributes['score'] = total
+            attributes['score_source'] = 'manual'
+
+
 def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=None, preserve=False):
     payload = []
     for q in questions:
@@ -930,8 +1066,14 @@ def fill_question_rubric(question: dict, llm: LLM, subquestion_id: str | None = 
     item = next((entry for entry in response.get('items') or [] if entry.get('question_id') == question.get('id')), None)
     if item is None:
         item = (response.get('items') or [None])[0]
-    if not item or item.get('grading_method') == 'auto':
+    if not item:
         return 0
+    if item.get('grading_method') == 'auto':
+        # 客观题不需要得分点，但要把“客观题”这个结论写回，避免用户点完没有任何反馈。
+        target['scoring'] = {'method': 'auto'}
+        if not is_sub:
+            question['grading_method'] = 'auto'
+        return 1
     if is_sub:
         sub_item = next((entry for entry in item.get('subquestions') or [] if entry.get('subquestion_id') == subquestion_id), None)
         if not sub_item:
@@ -1337,6 +1479,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         recover_visual_gaps(q, documents, folder)
         if not q.get('answer') and not any(str((s.get('answer') or {}).get('value') or '').strip() for s in q.get('subquestions',[])):
             q['issues'].append('缺少答案')
+    attach_page_columns(documents, papers)
     question_span_regions(questions, documents)
     for q in questions: crop_regions(q, documents, folder)
     if bracket_future is not None:

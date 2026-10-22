@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, normalize_paper, allocate_paper_scores, apply_paper_inheritance, LLM, fill_question_rubric, build_template, asset_url
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -307,8 +307,10 @@ def question_rubric(request: QuestionRubricRequest):
         diagnostic = describe_error(exc, service='DeepSeek', operation='补全评分标准')
         raise HTTPException(502, diagnostic.get('detail') or '评分标准生成失败') from exc
     target = next((sub for sub in (question.get('subquestions') or []) if sub.get('subquestion_id') == request.subquestion_id), None) if request.subquestion_id else question
+    scoring = (target or {}).get('scoring') or {}
     return {'question': question, 'subquestion_id': request.subquestion_id,
-            'scoring': (target or {}).get('scoring'),
+            'scoring': scoring,
+            'auto': scoring.get('method') == 'auto',
             'filled': filled,
             'remaining': len([item for item in (question.get('subquestions') or [question])
                               if (item.get('scoring') or {}).get('method') != 'auto' and not (item.get('scoring') or {}).get('points')])}
@@ -320,7 +322,7 @@ def get_student_zone_settings():
     config = read(path) if path.exists() else {}
     if not isinstance(config, dict):
         config = {}
-    defaults = {'A3-2': [.04, .015, .42, .068], 'A4-1': [.04, .015, .42, .068]}
+    defaults = {'A3-2': [.04, .015, .42, .068], 'A3-3': [.04, .015, .30, .06], 'A4-1': [.04, .015, .42, .068]}
     for layout, bbox in defaults.items():
         entry = config.setdefault(layout, {})
         entry.setdefault('bbox', bbox)
@@ -331,7 +333,7 @@ def get_student_zone_settings():
 
 @app.put('/settings/student-zones')
 def save_student_zone_settings(request: StudentZoneSettingsRequest):
-    if request.layout not in ('A3-2', 'A4-1'):
+    if request.layout not in ('A3-2', 'A3-3', 'A4-1'):
         raise HTTPException(400, '未知版面类型')
     x0, y0, x1, y1 = [max(0.0, min(1.0, float(v))) for v in request.bbox]
     if x1 <= x0 or y1 <= y0:
@@ -459,6 +461,7 @@ def validate(task_id: str, payload: dict):
         return {'issues':[{'severity':'error','message':'题目结构不符合协议，请检查必填内容与字段类型'}],'valid':False,'result':payload}
     if result['task_id'] == task_id:
         repair_result(result, DATA, task_id)
+        sync_sub_scores(result['questions'])
         if not result.get('template'):
             result['template'] = build_template(result['documents'])
         else:
@@ -468,6 +471,7 @@ def validate(task_id: str, payload: dict):
             normalize_paper(paper)
             allocate_paper_scores(paper, result['questions'])
             apply_paper_inheritance(paper, result['questions'])
+        attach_page_columns(result['documents'], result['papers'])
         rebuild=payload.get('rebuild_region_question_ids',[])
         if rebuild:
             question_span_regions(result['questions'],result['documents'],question_ids=rebuild)
