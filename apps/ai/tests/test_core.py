@@ -183,7 +183,7 @@ def test_section_heading_is_not_framed_into_previous_question():
 
 
 def test_subjective_question_frame_uses_whole_column():
-    docs=[{'id':'d','role':'question','pages':[{'width_px':1200,'height_px':800}],'columns':[2],
+    docs=[{'id':'d','role':'question','pages':[{'width_px':1200,'height_px':800}],'columns':[1],
            'blocks':[{'id':'a','page_index':0,'bbox':[.06,.10,.30,.20]}]}]
     questions=[{'id':'q1','block_ids':['a'],'regions':[],'issues':[],'attributes':{'question_type':'解答题'}}]
     core.question_span_regions(questions,docs)

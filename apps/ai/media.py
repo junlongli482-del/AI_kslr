@@ -89,7 +89,7 @@ def page_cells(doc, page_index):
         except (TypeError, ValueError):
             declared = None
     usable = [b for b in blocks if b['bbox'][2]-b['bbox'][0] >= .06 and b['bbox'][3] > .03 and b['bbox'][1] < .97]
-    count = declared if declared and 1 <= declared <= 4 else (_infer_column_count(usable) if usable else 0)
+    count = declared if declared and 1 <= declared <= 4 else (_coverage_runs(usable) if usable else 0)
     if not count or count <= 0:
         count = 2
     if count <= 1:
@@ -98,25 +98,67 @@ def page_cells(doc, page_index):
         left, right, gap = .04, .96, .02
         span = (right - left - gap * (count - 1)) / count
         return [{'x0': left + i * (span + gap), 'x1': left + i * (span + gap) + span} for i in range(count)]
-    centers = _cluster_centers([(b['bbox'][0]+b['bbox'][2])/2 for b in usable], count)
-    groups = [[] for _ in centers]
-    for b in usable:
-        groups[min(range(len(centers)), key=lambda i: abs((b['bbox'][0]+b['bbox'][2])/2 - centers[i]))].append(b['bbox'])
-    bands = []
-    for group in groups:
-        if not group:
-            bands.append(None)
+    return _coverage_cells(usable, count)
+
+
+def _coverage_runs(blocks):
+    """Count contiguous covered x-ranges; empty margins never become columns."""
+    bins = 1000
+    cover = bytearray(bins)
+    for block in blocks:
+        x0 = max(0.0, min(1.0, block['bbox'][0]))
+        x1 = max(0.0, min(1.0, block['bbox'][2]))
+        for i in range(int(x0 * bins), min(bins, int(x1 * bins) + 1)):
+            cover[i] = 1
+    low, high = int(.04 * bins), int(.96 * bins)
+    runs, i = 0, low
+    while i < high:
+        if cover[i]:
+            runs += 1
+            while i < high and cover[i]:
+                i += 1
+        else:
+            i += 1
+    return min(4, max(1, runs))
+
+
+def _coverage_cells(blocks, count):
+    """Split at the widest whitespace gutters of the block coverage profile.
+
+    Wide blocks (a blank answer box, a full-width paragraph) break centre-based
+    clustering and used to collapse a three-column page into two, so gaps in the
+    covered x-range are the only signal we trust.
+    """
+    bins = 2000
+    cover = bytearray(bins)
+    for block in blocks:
+        x0 = max(0.0, min(1.0, block['bbox'][0]))
+        x1 = max(0.0, min(1.0, block['bbox'][2]))
+        for i in range(int(x0 * bins), min(bins, int(x1 * bins) + 1)):
+            cover[i] = 1
+    low, high = int(.04 * bins), int(.96 * bins)
+    gaps = []
+    i = low
+    while i < high:
+        if cover[i]:
+            i += 1
             continue
-        bands.append({'x0': max(.02, min(a[0] for a in group)), 'x1': min(.98, max(a[2] for a in group))})
-    bands = [band for band in bands if band]
-    for i in range(len(bands) - 1):
-        middle = round((bands[i]['x1'] + bands[i+1]['x0']) / 2, 6)
-        bands[i]['x1'] = max(bands[i]['x1'], middle)
-        bands[i+1]['x0'] = min(bands[i+1]['x0'], middle)
-    if bands:
-        bands[0]['x0'] = min(bands[0]['x0'], .04)
-        bands[-1]['x1'] = max(bands[-1]['x1'], .96)
-    return bands or [{'x0': .04, 'x1': .96}]
+        start = i
+        while i < high and not cover[i]:
+            i += 1
+        # Only a whitespace run with content on both sides is a real gutter.
+        if start > low and i < high and (i - start) >= int(.004 * bins):
+            gaps.append((i - start, (start + i) / 2 / bins))
+    gaps.sort(reverse=True)
+    edges = sorted(position for _, position in gaps[:count - 1])
+    if len(edges) < count - 1:
+        for k in range(1, count):
+            position = .04 + (.96 - .04) * k / count
+            if all(abs(position - edge) > .02 for edge in edges):
+                edges.append(position)
+        edges = sorted(edges)[:count - 1]
+    edges = [.04] + edges + [.96]
+    return [{'x0': edges[i], 'x1': edges[i + 1]} for i in range(count)]
 
 
 def column_index(doc, page_index, bbox):
