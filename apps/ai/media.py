@@ -50,16 +50,30 @@ def _cluster_centers(values, count, iterations=12):
     return sorted(centers)
 
 
-def _infer_column_count(blocks):
-    centers = sorted((b['bbox'][0]+b['bbox'][2])/2 for b in blocks)
-    if not centers:
+def _infer_column_count(blocks, bins=2000):
+    """Count columns from vertical whitespace gutters, not from centre-point gaps."""
+    usable = [b for b in blocks if b['bbox'][2]-b['bbox'][0] <= .55 and b['bbox'][3]-b['bbox'][1] < .6]
+    if not usable:
         return 1
-    count, previous = 1, centers[0]
-    for center in centers[1:]:
-        if center - previous > .12:
-            count += 1
-        previous = center
-    return min(4, max(1, count))
+    cover = [0] * bins
+    for b in usable:
+        for i in range(max(0, int(b['bbox'][0]*bins)), min(bins, int(b['bbox'][2]*bins))):
+            cover[i] = 1
+    gutters, start = 0, None
+    for i, value in enumerate(cover):
+        if value == 0 and start is None:
+            start = i
+        elif value == 1 and start is not None:
+            if .08 <= (start + i) / 2 / bins <= .92 and (i - start) / bins >= .015:
+                gutters += 1
+            start = None
+    return min(4, max(1, gutters + 1))
+
+
+def detected_columns(doc, page_index):
+    """Gutter-based column count for one page (used as a cross-check for model output)."""
+    blocks = [b for b in doc.get('blocks', []) if b.get('page_index') == page_index and len(b.get('bbox', [])) == 4]
+    return _infer_column_count(blocks)
 
 
 def page_cells(doc, page_index):

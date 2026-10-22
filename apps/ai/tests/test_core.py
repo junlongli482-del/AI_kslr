@@ -206,6 +206,38 @@ def test_row_break_before_letter_survives_escape_repair():
     assert r'\frac{1}{2}' in doubled['stem']
 
 
+def test_page_vision_image_names_and_resizes(tmp_path,monkeypatch):
+    from PIL import Image
+    monkeypatch.setattr(core,'DATA',tmp_path)
+    (tmp_path/'pages').mkdir()
+    Image.new('RGB',(2000,1000),'white').save(tmp_path/'pages'/'p0.png')
+    doc={'id':'doc1','name':'历史 试卷.pdf','pages':[{'image_key':'pages/p0.png'}]}
+    images=core.document_vision_images(doc,tmp_path/'task')
+    assert len(images)==1
+    assert images[0]['name']=='历史 试卷-第01页.png'
+    assert images[0]['data_url'].startswith('data:image/jpeg;base64,')
+    import base64,io
+    raw=base64.b64decode(images[0]['data_url'].split(',',1)[1])
+    assert max(Image.open(io.BytesIO(raw)).size)==1400
+
+
+def test_gutter_detection_reads_two_columns():
+    doc={'id':'d','pages':[{}],'blocks':[
+        {'id':'h','page_index':0,'bbox':[.04,.03,.96,.06]},
+        {'id':'a','page_index':0,'bbox':[.05,.10,.45,.30]},
+        {'id':'b','page_index':0,'bbox':[.54,.10,.95,.30]}]}
+    assert core.detected_columns(doc,0)==2
+
+
+def test_attach_columns_applies_paper_count_to_every_page():
+    doc={'id':'d','pages':[{'width_px':1400,'height_px':1000},{'width_px':1400,'height_px':1000}],
+         'blocks':[{'id':'a','page_index':0,'bbox':[.05,.1,.45,.3]},{'id':'b','page_index':1,'bbox':[.05,.1,.45,.3]}]}
+    paper={'id':'p','source':{'columns':3},'source_document_ids':['d']}
+    core.attach_page_columns([doc],[paper])
+    assert doc['columns']==[3,3]
+    assert paper['issues'] and '请核对' in paper['issues'][0]
+
+
 def test_allocate_sub_scores_keeps_integer_total():
     subs=[{'weight_pct':33.3},{'weight_pct':33.3},{'weight_pct':33.4}]
     core.allocate_sub_scores(10,subs)
@@ -280,7 +312,8 @@ def test_paper_inheritance_respects_manual_fields():
 def test_paper_source_shapes_are_normalized():
     paper=core.normalize_paper({'id':'p','source':{'printed_page_numbers':'1、2、3','columns':2}})
     assert paper['source']['printed_page_numbers']==['1','2','3']
-    assert paper['source']['columns']==[{'page':1,'columns':2}]
+    # A bare number is a whole-paper column count, not "page 1 only".
+    assert paper['source']['columns']==2
 
 
 def _deepseek_env(monkeypatch):
