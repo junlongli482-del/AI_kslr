@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, restore_question_blanks, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -543,7 +543,6 @@ def validate(task_id: str, payload: dict):
     if result['task_id'] == task_id:
         repair_result(result, DATA, task_id)
         sync_sub_scores(result['questions'])
-        restore_question_blanks(result['questions'], result['documents'])
         if not result.get('template'):
             result['template'] = build_template(result['documents'])
         else:

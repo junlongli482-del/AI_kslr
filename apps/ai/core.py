@@ -546,125 +546,6 @@ def repair_math_escapes(text: str) -> str:
     return ''.join(parts)
 
 
-BLANK_SOURCE = re.compile(r'(?:\\_)+\s*(\d{1,2})?\s*(?:\\_)*|(?<!\w)_{3,}(?!\w)')
-BLANK_INLINE = re.compile(r'_{1,}[ \t]*(\d{1,2})[ \t]*_{1,}')
-BLANK_LINE = re.compile(r'(?m)^[ \t]*(\d{1,2})[.．][ \t]*_{1,}[ \t]*$')
-BLANK_UNDERSCORES = re.compile(r'(?<!\w)_{2,}(?!\w)')
-BLANK_TOKEN = re.compile(r'\{\{blank(?::(\d{1,3}))?\}\}')
-MATH_SPAN = re.compile(r'\$\$[\s\S]+?\$\$|\$[^$\n]+?\$')
-PROTECTED_SPAN = re.compile(r'!\[[^\]]*\]\([^)]*\)|https?://[^\s)]+|\(/api/assets\?[^)]*\)')
-
-
-def _plain_blank_source(text: str) -> str:
-    return re.sub(r'\\_', '_', text or '')
-
-
-def _protect_token(index: int) -> str:
-    """Letters only: digits inside the token were rewritten by blank replacement."""
-    letters = ''
-    value = index
-    while True:
-        letters = chr(65 + value % 26) + letters
-        value = value // 26 - 1
-        if value < 0:
-            return f'@@QEB{letters}@@'
-
-
-def restore_blanks(question: dict, blocks: dict) -> int:
-    """Rebuild fill-in blanks that the model dropped or left as raw underscores."""
-    stem = question.get('stem') or ''
-    if not stem:
-        return 0
-    source = _plain_blank_source('\n'.join((blocks.get(block_id) or {}).get('text') or ''
-                                           for block_id in question.get('block_ids') or []))
-    # Image names like page_0_image_8.jpg look like "_0_" to the blank regex.
-    source = PROTECTED_SPAN.sub(' ', source)
-    numbered = [match.group(1) for match in BLANK_INLINE.finditer(source) if match.group(1)]
-    numbered += [match.group(1) for match in BLANK_LINE.finditer(source)]
-    unnumbered = len(BLANK_UNDERSCORES.findall(BLANK_INLINE.sub(' ', source)))
-    if not numbered and not unnumbered:
-        return 0
-    protected = {}
-
-    def protect(text):
-        def swap(match):
-            token = _protect_token(len(protected))
-            protected[token] = match.group(0)
-            return token
-        return PROTECTED_SPAN.sub(swap, text)
-
-    def unprotect(text):
-        for token, value in protected.items():
-            text = text.replace(token, value)
-        return text
-
-    stem = protect(stem)
-    changed = 0
-
-    def outside_math(transform):
-        parts, last = [], 0
-        for span in MATH_SPAN.finditer(stem):
-            parts.append(transform(stem[last:span.start()]))
-            parts.append(span.group())
-            last = span.end()
-        parts.append(transform(stem[last:]))
-        return ''.join(parts)
-
-    def replace_inline(match):
-        nonlocal changed
-        changed += 1
-        return f'{{{{blank:{match.group(1)}}}}}'
-
-    stem = outside_math(lambda text: BLANK_INLINE.sub(replace_inline, text))
-
-    def replace_line(match):
-        nonlocal changed
-        changed += 1
-        return f'{{{{blank:{match.group(1)}}}}}'
-
-    stem = outside_math(lambda text: BLANK_LINE.sub(replace_line, text))
-
-    for number in dict.fromkeys(numbered):
-        marker = f'{{{{blank:{number}}}}}'
-        if marker in stem:
-            continue
-        def replace_number(text, n=number, mark=marker):
-            nonlocal changed
-            pattern = re.compile(rf'(?<![\d$_\\]){re.escape(n)}\b(?!\d)')
-            if pattern.search(text):
-                changed += 1
-                return pattern.sub(mark, text, count=1)
-            return text
-        stem = outside_math(replace_number)
-
-    if unnumbered:
-        def replace_plain(text):
-            nonlocal changed
-            updated, count = BLANK_UNDERSCORES.subn('{{blank}}', text, count=unnumbered)
-            changed += count
-            return updated
-        stem = outside_math(replace_plain)
-
-    if changed:
-        question['stem'] = unprotect(stem)
-        # The rich editor keeps its own document; drop the stale copy so it rebuilds
-        # from the repaired markdown instead of showing the old empty blanks.
-        documents = question.get('editor_documents')
-        if isinstance(documents, dict):
-            documents.pop('stem', None)
-    elif BLANK_TOKEN.search(stem) is None:
-        existing = (question.get('issues') or [])
-        note = '需人工核对：填空线可能丢失'
-        if note not in existing:
-            question.setdefault('issues', []).append(note)
-    return changed
-
-
-def restore_question_blanks(questions: list[dict], documents: list[dict]) -> int:
-    blocks = {block['id']: block for document in documents for block in document.get('blocks', [])}
-    return sum(restore_blanks(question, blocks) for question in questions)
-
-
 def normalize_question_content(question: dict, documents: list[dict]):
     def clean(text):
         text = (text or '').replace(r'\n\n', '\n\n')
@@ -1815,7 +1696,6 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         recover_visual_gaps(q, documents, folder)
         if not q.get('answer') and not any(str((s.get('answer') or {}).get('value') or '').strip() for s in q.get('subquestions',[])):
             q['issues'].append('缺少答案')
-    restore_question_blanks(questions, documents)
     attach_page_columns(documents, papers)
     question_span_regions(questions, documents, excluded=excluded_block_ids)
     for q in questions: crop_regions(q, documents, folder)

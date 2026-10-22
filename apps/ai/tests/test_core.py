@@ -237,22 +237,6 @@ def test_attach_columns_applies_paper_count_to_every_page():
     assert paper['issues'] and '请核对' in paper['issues'][0]
 
 
-def test_restore_blanks_from_source_blocks():
-    blocks={'b1':{'id':'b1','text':'only one \\_42\\_ stands out'}}
-    question={'stem':'only one 42 stands out','block_ids':['b1'],'issues':[]}
-    assert core.restore_blanks(question,blocks)==1
-    assert '{{blank:42}}' in question['stem']
-
-
-def test_restore_blanks_ignores_years_and_math():
-    blocks={'b1':{'id':'b1','text':'\\_24\\_ and \\_25\\_'}}
-    question={'stem':'In 2024 we use $x=24$ then 25 here','block_ids':['b1'],'issues':[]}
-    core.restore_blanks(question,blocks)
-    assert '2024' in question['stem']
-    assert '$x=24$' in question['stem']
-    assert '{{blank:25}}' in question['stem']
-
-
 def test_excluded_block_is_dropped_from_frame():
     docs=[{'id':'d','role':'question','pages':[{'width_px':800,'height_px':1200}],
            'blocks':[{'id':'a','page_index':0,'bbox':[.06,.10,.45,.20]},
@@ -397,16 +381,6 @@ def test_option_image_without_source_metadata_does_not_crash_layout():
     core.apply_layout(q,[{'id':'d','asset_metadata':{},'pages':[],'blocks':[]}])
     assert q['image_layout']['/api/assets?key=k.png']=={}
 
-def test_restore_blanks_keeps_image_urls_intact():
-    stem='图中结构如下 ![示意图](/api/assets?key=tasks%2Ft%2Fraw%2Fimages%2Fpage_1_image_2.jpg) 空 1 是 ____'
-    question={'id':'q1','block_ids':['a'],'stem':stem,'issues':[]}
-    blocks={'a':{'text':'\\_1\\_ 参见图片 page_1_image_2.jpg'}}
-    core.restore_blanks(question,blocks)
-    assert 'page_1_image_2.jpg' in question['stem']
-    assert 'page{{blank' not in question['stem']
-    assert '{{blank:1}}' in question['stem']
-
-
 def test_regions_from_blocks_tolerates_short_and_unknown_ids():
     docs=[{'id':'d1','blocks':[{'id':'d1-b6','page_index':0,'bbox':[.05,.1,.3,.2]},
                                {'id':'d1-b7','page_index':0,'bbox':[.05,.3,.3,.4]}]}]
@@ -419,12 +393,3 @@ def test_column_answer_rejects_invalid_values():
     assert core._column_answer({'columns':2,'confidence':.9})==(2,0.9)
     assert core._column_answer({'columns':0,'confidence':.9})==(None,0.0)
     assert core._column_answer({'columns':'x','confidence':.9})==(None,0.0)
-
-def test_blank_detection_ignores_numbers_inside_image_urls():
-    stem='如图 ![](/api/assets?key=tasks%2Fdoc%2Fraw%2Fimages%2Fpage_0_image_8.jpg) 下列错误的是（ ）'
-    question={'id':'q','block_ids':['a'],'stem':stem,'issues':[]}
-    blocks={'a':{'text':stem}}
-    core.restore_blanks(question,blocks)
-    assert '@@' not in question['stem']
-    assert 'page_0_image_8.jpg' in question['stem']
-    assert '{{blank:0}}' not in question['stem']
