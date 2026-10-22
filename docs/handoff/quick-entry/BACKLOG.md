@@ -335,7 +335,7 @@
 - 定位：`scripts\dev.cmd ai` 用 `--reload` 启动，reloader 会再 spawn 一个 multiprocessing 子进程持有端口。worker 崩溃、reloader 退出后，**子进程仍存活并继续用旧代码服务 1003**；新实例因端口被占启动失败（日志只有一行 exit 1）。`netstat` 显示的 pid 甚至是已退出的父进程，容易误判。
 - 处置：杀掉孤儿 worker（`python -c "from multiprocessing..."`）后重启，`started_at` 更新，重建题框得到正确坐标。
 - 建议：日常用**无 reload** 启动 AI（崩溃时端口直接释放，不会假活）；必须 reload 时，重启前先确认 1003 的持有进程并一并清理子进程。
-- 状态：已定位（2026-10-22），启动方式待改成无 reload。
+- 状态：已修（2026-10-22）。`start-ai-dev.ps1` 去掉 `--reload`，AI 以无 reload 方式运行；改 Python 后手动重启。
 
 ## 2026-10-15 作答空白、图注与同题分框定位（仅记录）
 

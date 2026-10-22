@@ -25,9 +25,8 @@ def test_cross_column_question_retains_separate_regions():
     assert regions[2]['page_index']==1
 
 
-def test_unknown_content_block_is_not_silently_accepted():
-    with pytest.raises(ValueError,match='未知内容块'):
-        regions_from_blocks(['invented'],[])
+def test_unknown_content_block_is_dropped_without_failing_the_task():
+    assert regions_from_blocks(['invented'],[]) == []
 
 
 def test_zip_path_traversal_rejected(tmp_path):
@@ -397,3 +396,26 @@ def test_option_image_without_source_metadata_does_not_crash_layout():
        'image_layout':{'/api/assets?key=k.png':{}},'subquestions':[],'regions':[],'editor_documents':{}}
     core.apply_layout(q,[{'id':'d','asset_metadata':{},'pages':[],'blocks':[]}])
     assert q['image_layout']['/api/assets?key=k.png']=={}
+
+def test_restore_blanks_keeps_image_urls_intact():
+    stem='图中结构如下 ![示意图](/api/assets?key=tasks%2Ft%2Fraw%2Fimages%2Fpage_1_image_2.jpg) 空 1 是 ____'
+    question={'id':'q1','block_ids':['a'],'stem':stem,'issues':[]}
+    blocks={'a':{'text':'\\_1\\_ 参见图片 page_1_image_2.jpg'}}
+    core.restore_blanks(question,blocks)
+    assert 'page_1_image_2.jpg' in question['stem']
+    assert 'page{{blank' not in question['stem']
+    assert '{{blank:1}}' in question['stem']
+
+
+def test_regions_from_blocks_tolerates_short_and_unknown_ids():
+    docs=[{'id':'d1','blocks':[{'id':'d1-b6','page_index':0,'bbox':[.05,.1,.3,.2]},
+                               {'id':'d1-b7','page_index':0,'bbox':[.05,.3,.3,.4]}]}]
+    boxes=core.regions_from_blocks(['b6','b99'],docs)
+    assert len(boxes)==1
+    assert boxes[0]['bbox']==[.05,.1,.3,.2]
+
+
+def test_column_answer_rejects_invalid_values():
+    assert core._column_answer({'columns':2,'confidence':.9})==(2,0.9)
+    assert core._column_answer({'columns':0,'confidence':.9})==(None,0.0)
+    assert core._column_answer({'columns':'x','confidence':.9})==(None,0.0)

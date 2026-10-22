@@ -28,6 +28,7 @@ const pageAnnotations=computed(()=>{
 const displayAnnotations=computed(()=>pageAnnotations.value.filter(a=>a.kind==='brackets'&&(!templateLow.value||(a.item.score||0)<.6)&&(!templateUnbound.value||a.item.bound===false)))
 const displayZones=computed(()=>pageZones.value.filter((zone:any)=>zone.role!=='backup'&&(templateKind.value==='all'||templateKind.value==='student')))
 const filteredVisible=computed(()=>frameOnly.value&&props.selected?visible.value.filter(x=>x.q.id===props.selected!.id):visible.value)
+const bracketFailed=computed(()=>(props.template as any)?.bracket_status==='failed')
 const templateStats=computed(()=>{
   const brackets=(props.template?.annotations?.brackets||[])
   return {total:brackets.length,low:brackets.filter((b:any)=>(b.score||0)<.6).length,unbound:brackets.filter((b:any)=>!b.bound).length}
@@ -91,7 +92,7 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
   <section class="source-viewer">
     <div class="pane-heading"><span>原始资料</span><div class="layer-tabs"><button :class="{active:layer==='frames'}" @click="switchLayer('frames')">题框</button><button :class="{active:layer==='blocks'}" @click="switchLayer('blocks')">MinerU 识别块</button><button :class="{active:layer==='template'}" @click="switchLayer('template')">模板标注</button></div></div>
     <div class="source-tools"><select v-model="docId" aria-label="原卷文件"><option v-for="d in documents" :value="d.id" :key="d.id">{{d.name}}</option></select><button title="缩小" aria-label="缩小" @click="zoom=Math.max(.6,zoom-.2)"><ZoomOut :size="16"/></button><span>{{Math.round(zoom*100)}}%</span><button aria-label="定位本题" title="放大并定位本题" @click="focusQuestion">定位</button><button title="放大" aria-label="放大" @click="zoom=Math.min(3,zoom+.2)"><ZoomIn :size="16"/></button></div>
-    <div v-if="layer==='template'" class="template-stats">共 {{templateStats.total}} 个空 · 低置信度 {{templateStats.low}} 个 · 未绑定 {{templateStats.unbound}} 个</div>
+    <div v-if="layer==='template'" class="template-stats"><template v-if="bracketFailed">括号检测未完成（重新处理任务后再试）</template><template v-else>共 {{templateStats.total}} 个空 · 低置信度 {{templateStats.low}} 个 · 未绑定 {{templateStats.unbound}} 个</template></div>
     <div class="layer-filters" v-if="layer==='frames'"><label><input type="checkbox" v-model="frameOnly"/>只看当前题</label></div>
     <div class="layer-filters" v-else-if="layer==='blocks'"><select v-model="blockKind"><option value="all">全部类型</option><option value="text">文字</option><option value="header">页眉</option><option value="footer">页脚</option><option value="page_number">页码</option><option value="table">表格</option><option value="image">图片</option></select><label><input type="checkbox" v-model="blockMissingOnly"/>只看未引用</label></div>
     <div class="layer-filters" v-else><select v-model="templateKind"><option value="all">全部标注</option><option value="student">学生信息区</option><option value="brackets">括号</option></select><label><input type="checkbox" v-model="templateLow"/>只看低置信度</label><label><input type="checkbox" v-model="templateUnbound"/>只看未绑定</label><select v-if="selectedTemplate?.label" :value="selectedTemplate.question_id||''" @change="reassignSelected" aria-label="修改归属题目"><option value="">未绑定</option><option v-for="q in questions" :key="q.id" :value="q.id">第 {{q.number}} 题</option></select></div>

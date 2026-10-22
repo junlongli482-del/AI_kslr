@@ -99,6 +99,66 @@ def document_vision_images(doc: dict, folder: Path) -> list[dict]:
     return images
 
 
+COLUMNS_PROMPT = """你是试卷版面校对员。用户会给你一份试卷的每页原图，请你只判断这份试卷正文是几栏。
+
+规则：
+1. 只看正文的栏间距（相邻两栏文字之间的竖向空白带），不要因为表格跨栏、插图通栏、标题跨栏就判成单栏。
+2. 同一份试卷各页栏数应当一致；某页不同就先排除空白作答区、表格、横排标题的干扰再决定。
+3. 只允许 1、2、3 栏，极少见 4 栏必须能看到三条清晰栏缝。
+4. 若输入里带有 geometry 字段，那是程序按文本块覆盖空隙算出的结论，只作参考；以原图为准，可以推翻它。
+5. 不确定就降低 confidence，不要猜。
+
+只输出 JSON：{"columns": 2, "confidence": 0.98, "reason": "不超过40字，指出依据"}
+"""
+
+
+def _column_payload(doc: dict, images: list[dict], geometry: list[int] | None = None) -> dict:
+    payload = {'task': 'verify_columns',
+               'pages': [{'page': index + 1, 'image': image['name']} for index, image in enumerate(images)]}
+    if geometry:
+        payload['geometry'] = {'columns': max(set(geometry), key=geometry.count), 'per_page': geometry}
+    return payload
+
+
+def _column_answer(result: dict) -> tuple[int | None, float]:
+    try:
+        columns = int(result.get('columns'))
+    except (TypeError, ValueError):
+        return None, 0.0
+    if not 1 <= columns <= 4:
+        return None, 0.0
+    try:
+        confidence = float(result.get('confidence', 0.0))
+    except (TypeError, ValueError):
+        confidence = 0.0
+    return columns, confidence
+
+
+def detect_document_columns(llm, doc: dict, folder: Path) -> dict:
+    """Judge the paper column count from page images only, before structuring."""
+    pages = len(doc.get('pages') or [])
+    images = document_vision_images(doc, folder)
+    geometry = [detected_columns(doc, index) or 0 for index in range(pages)]
+    votes = [value for value in geometry if value]
+    geometric = max(set(votes), key=votes.count) if votes else 0
+    if not images:
+        return {'columns': geometric or 1, 'geometry': geometric, 'conflict': None}
+    columns, confidence = _column_answer(llm.json(f'columns-{doc["id"]}', COLUMNS_PROMPT,
+                                                 _column_payload(doc, images), images=images))
+    if columns is None or confidence < 0.6:
+        return {'columns': geometric or columns or 1, 'geometry': geometric, 'conflict': None}
+    if geometric and columns != geometric:
+        recheck, recheck_confidence = _column_answer(
+            llm.json(f'columns-recheck-{doc["id"]}', COLUMNS_PROMPT,
+                     _column_payload(doc, images, geometry), images=images))
+        if recheck is not None and recheck_confidence >= 0.6:
+            columns = recheck
+    conflict = None
+    if geometric and columns != geometric:
+        conflict = {'ai': columns, 'geometry': geometric, 'columns': columns, 'chosen': 'ai'}
+    return {'columns': columns, 'geometry': geometric, 'conflict': conflict}
+
+
 def save(path: Path, data: Any):
     path.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, ensure_ascii=False, indent=2)
@@ -423,10 +483,19 @@ def crop_regions(question: dict, documents: list[dict], folder: Path):
 
 def regions_from_blocks(ids: list[str], documents: list[dict]):
     lookup = {b['id']: (d['id'], b) for d in documents for b in d['blocks']}
+
+    def resolve(block_id):
+        if block_id in lookup:
+            return block_id
+        # Models sometimes copy the prompt example and answer with a short id.
+        matches = [key for key in lookup if key.endswith('-' + str(block_id))]
+        return matches[0] if len(matches) == 1 else None
+
     groups = []
     for block_id in ids:
-        if block_id not in lookup:
-            raise ValueError(f'未知内容块ID: {block_id}')
+        block_id = resolve(block_id)
+        if not block_id:
+            continue
         doc, b = lookup[block_id]
         box = b['bbox']
         # Merge adjacent, horizontally overlapping blocks, never a full spread envelope.
@@ -483,6 +552,7 @@ BLANK_LINE = re.compile(r'(?m)^[ \t]*(\d{1,2})[.．][ \t]*_{1,}[ \t]*$')
 BLANK_UNDERSCORES = re.compile(r'(?<!\w)_{2,}(?!\w)')
 BLANK_TOKEN = re.compile(r'\{\{blank(?::(\d{1,3}))?\}\}')
 MATH_SPAN = re.compile(r'\$\$[\s\S]+?\$\$|\$[^$\n]+?\$')
+PROTECTED_SPAN = re.compile(r'!\[[^\]]*\]\([^)]*\)|https?://[^\s)]+|\(/api/assets\?[^)]*\)')
 
 
 def _plain_blank_source(text: str) -> str:
@@ -501,6 +571,21 @@ def restore_blanks(question: dict, blocks: dict) -> int:
     unnumbered = len(BLANK_UNDERSCORES.findall(BLANK_INLINE.sub(' ', source)))
     if not numbered and not unnumbered:
         return 0
+    protected = {}
+
+    def protect(text):
+        def swap(match):
+            token = f'@@QEB{len(protected)}@@'
+            protected[token] = match.group(0)
+            return token
+        return PROTECTED_SPAN.sub(swap, text)
+
+    def unprotect(text):
+        for token, value in protected.items():
+            text = text.replace(token, value)
+        return text
+
+    stem = protect(stem)
     changed = 0
 
     def outside_math(transform):
@@ -548,7 +633,7 @@ def restore_blanks(question: dict, blocks: dict) -> int:
         stem = outside_math(replace_plain)
 
     if changed:
-        question['stem'] = stem
+        question['stem'] = unprotect(stem)
         # The rich editor keeps its own document; drop the stale copy so it rebuilds
         # from the repaired markdown instead of showing the old empty blanks.
         documents = question.get('editor_documents')
@@ -964,10 +1049,11 @@ class LLM:
 
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
-输出 {"papers":[{"id":"p1","title":"...","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"questions":[...],"excluded_block_ids":["b12"]}
+输出 {"papers":[{"id":"p1","title":"...","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"questions":[...],"excluded_block_ids":["d4a7b2c1-b12"]}
 试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher；paper_type为同步练/单元测/月考/期中/期末/一模二模/真题/模拟/课时作业/竞赛/其他；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
 【原页图片】本次附带每一页的原图，命名形如“文档名-第01页.png”，并在消息里标注对应页码；图片仅用于版面与图文判断。
-- columns：填整卷实际分栏数（整数，如 2 或 3），同一份卷各页一致；以图片版面为第一依据，不得用页数、题量或文件名去猜。
+- columns：已由系统在入参 columns 字段给出，直接沿用，不要自行推断或改写。
+- block_ids：必须使用完整块 ID（形如 d4a7b2c1-b12），不要只写 b12；不确定就留空。
 - excluded_block_ids：把不属于任何题目的块 ID 放进来——小节标题（如“第三部分 语言运用”）、大题说明（“本大题共…”“阅读下列…回答…”）、页眉页脚、分值说明、页码等；程序会让这些块不进入任何题框。
 - 图文归属：图片、表格、图注必须按原图判断属于哪一道题；MinerU 的 block_ids 与图片 URL 只作参考，图片被漏掉或放错位置时以原图为准。
 - 公式与文字：图片、MinerU 文本、上下文一起作为证据。当 MinerU 的公式、符号、表格或文字明显错误时，可以修正，但必须在 corrections 中逐条记录 {field,before,after,reason}，并在 issues 写“已按原图修正，请核对”；没有把握时保持原文并在 issues 写“需人工核对：…”，不得凭图片臆造内容。
@@ -1479,7 +1565,7 @@ def build_template(documents: list[dict]) -> dict:
 
 
 def run_bracket_detection(result: dict, folder: Path, progress=None):
-    if os.getenv('BRACKET_ENABLED', '0') != '1':
+    if os.getenv('BRACKET_ENABLED', '1') != '1':
         return
     import subprocess
     import sys
@@ -1581,9 +1667,15 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
     excluded_block_ids = []
     for di, doc in enumerate(d for d in documents if d['role'] != 'answer'):
         if progress:
+            progress('AI编排', f'正在判断分栏：{doc["name"]}')
+        column = detect_document_columns(llm, doc, folder)
+        doc['columns'] = [column['columns']] * len(doc.get('pages') or [])
+        if progress:
             progress('AI编排', f'正在结构化：{doc["name"]}')
-        data = llm.json(f'structure-{doc["id"]}', STRUCTURE_PROMPT,
-                        compact_document(doc), images=document_vision_images(doc, folder))
+        payload = compact_document(doc)
+        payload['columns'] = column['columns']
+        data = llm.json(f'structure-{doc["id"]}', STRUCTURE_PROMPT, payload,
+                        images=document_vision_images(doc, folder))
         for block_id in data.get('excluded_block_ids') or []:
             if isinstance(block_id, str) and block_id not in excluded_block_ids:
                 excluded_block_ids.append(block_id)
@@ -1591,6 +1683,9 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         for p in data['papers']:
             p['id'] = paper_map[p['id']]
             p['source_document_ids'] = [doc['id']]
+            p.setdefault('source', {})['columns'] = column['columns']
+            if column.get('conflict'):
+                p['column_conflict'] = dict(column['conflict'])
             papers.append(p)
         for qi, q in enumerate(data['questions']):
             normalize_model_question(q)
@@ -1623,7 +1718,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
     template_data = build_template(documents)
     bracket_pool = None
     bracket_future = None
-    if os.getenv('BRACKET_ENABLED', '0') == '1':
+    if os.getenv('BRACKET_ENABLED', '1') == '1':
         bracket_pool = ThreadPoolExecutor(max_workers=1)
         bracket_result = {'documents': documents, 'questions': questions, 'template': template_data}
         bracket_future = bracket_pool.submit(run_bracket_detection, bracket_result, folder, None)

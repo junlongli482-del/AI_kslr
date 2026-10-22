@@ -26,6 +26,7 @@ const concurrencyUnlimited=ref(true),concurrencyLimit=ref(3),concurrencyBusy=ref
 const concurrencyEdited=ref(false)
 const comparison=ref<any>(null),clockNow=ref(Date.now())
 const selected=computed(()=>result.value?.questions.find(q=>q.id===selectedId.value)||null)
+const columnConflicts=computed(()=>(result.value?.papers||[]).filter((p:any)=>p.column_conflict?.geometry).map((p:any)=>({id:p.id,title:p.title,ai:p.column_conflict.ai,geometry:p.column_conflict.geometry})))
 const activePaper=computed(()=>result.value?.papers.find(p=>p.id===paperFilter.value)||result.value?.papers.find(p=>p.id===selected.value?.paper_id)||result.value?.papers[0]||null)
 const paperForm=computed(()=>activePaper.value?ensurePaper(activePaper.value):null)
 const reviewed=computed(()=>result.value?.questions.filter(q=>q.review_status==='reviewed').length||0)
@@ -386,6 +387,15 @@ function splitQuestion(){if(!selected.value||!result.value)return;const q=select
 function reorder(delta:number){if(!result.value||!selected.value)return;const qs=result.value.questions,index=qs.indexOf(selected.value);if(qs[index+delta]){[qs[index],qs[index+delta]]=[qs[index+delta],qs[index]]}}
 function matchAnswer(entryId:string){if(!selected.value||!result.value)return;const q=selected.value;const old=result.value.answer_entries.find(e=>e.id===q.answer_entry_id);const entry=result.value.answer_entries.find(e=>e.id===entryId);if(entryId&&!entry)return;const other=result.value.questions.find(x=>x.id!==q.id&&x.answer_entry_id===entryId);if(entryId&&other){ElMessage.warning(`此答案已关联第 ${other.number} 题，请先解除原关联`);return}if(old)delete old.matched_question_id;q.answer_entry_id=entryId||undefined;q.answer=entry?.answer||'';q.analysis=entry?.analysis||'';q.answer_source=entry?(result.value.documents.find(d=>d.id===entry.document_id)?.role==='answer'?'answer_file':'original'):'missing';q.analysis_source=q.analysis?q.answer_source:'missing';if(entry)entry.matched_question_id=q.id;result.value.unmatched_answer_entry_ids=result.value.answer_entries.filter(e=>!e.matched_question_id).map(e=>e.id);q.editor_documents={...q.editor_documents,answer:undefined,analysis:undefined};q.review_status='pending';answerDoc.value=entry?.document_id||''}
 async function validate(){if(!task.value||!result.value)return;await saveDraft();busy.value=true;try{const checked=(await api.post(`/quick-entry/tasks/${task.value.id}/validate`,result.value)).data;validationIssues.value=checked.issues;if(checked.result){result.value=checked.result;markDirty()}issuesDialog.value=true}catch(e){error(e)}finally{busy.value=false}}
+async function chooseColumns(paperId:string,choice:'ai'|'geometry'){
+  if(!task.value||!result.value)return
+  busy.value=true
+  try{
+    const snapshot=JSON.parse(JSON.stringify(result.value))
+    const response=await api.post(`/quick-entry/tasks/${task.value.id}/validate`,{...snapshot,column_choice:choice,rebuild_region_question_ids:result.value.questions.map(q=>q.id)})
+    if(response.data.result){result.value=response.data.result;markDirty();ElMessage.success(`已按${choice==='ai'?' AI ':'几何'}结果重建题框`)}
+  }catch(e){error(e)}finally{busy.value=false}
+}
 async function refreshRegions(){
   markDirty();if(!task.value||!result.value)return
   const id=task.value.id,snapshot=JSON.parse(JSON.stringify(result.value))
@@ -445,7 +455,13 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 
       <template v-else-if="view==='progress'&&task">
         <div class="page-content"><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/>全部任务</button><div class="page-title-row"><div><h1>{{task.title}}</h1><p class="page-description">原文件与已完成阶段自动保留，离开页面不会丢失任务。</p></div><span :class="['status-pill',task.status]">{{statusName(task.status)}}</span></div>
-          <div class="progress-layout"><section class="processing-state"><LoaderCircle v-if="['running','queued'].includes(task.status)" class="spin" :size="40"/><CircleAlert v-else :size="40"/><h2>{{task.stage}}</h2><p class="task-message">{{task.message}}</p><p v-if="['running','queued'].includes(task.status)" class="muted">任务已持续 {{Math.max(0,Math.floor((clockNow-new Date(task.created_at).getTime())/1000))}} 秒 · 模型读取等待上限默认30分钟</p><ComparisonPanel :report="comparison" @choose="chooseCandidate"/>
+          <div class="progress-layout"><section class="processing-state"><LoaderCircle v-if="['running','queued'].includes(task.status)" class="spin" :size="40"/><CircleAlert v-else :size="40"/><h2>{{task.stage}}</h2><p class="task-message">{{task.message}}</p><p v-if="['running','queued'].includes(task.status)" class="muted">任务已持续 {{Math.max(0,Math.floor((clockNow-new Date(task.created_at).getTime())/1000))}} 秒 · 模型读取等待上限默认30分钟</p><div v-if="columnConflicts.length" class="column-conflict">
+          <CircleAlert :size="15"/>
+          <span v-for="p in columnConflicts" :key="p.id">{{p.title}}：AI 判定 {{p.ai}} 栏，几何判定 {{p.geometry}} 栏</span>
+          <el-button v-for="p in columnConflicts" :key="p.id+'-ai'" size="small" type="primary" @click="chooseColumns(p.id,'ai')">按 AI（{{p.ai}} 栏）</el-button>
+          <el-button v-for="p in columnConflicts" :key="p.id+'-geo'" size="small" @click="chooseColumns(p.id,'geometry')">按几何（{{p.geometry}} 栏）</el-button>
+        </div>
+        <ComparisonPanel :report="comparison" @choose="chooseCandidate"/>
             <div v-if="task.status==='failed'" class="failure-details" role="alert"><h3>失败原因</h3>
               <template v-if="task.error"><p>失败阶段：{{task.error.stage}}<span v-if="task.error.operation"> · {{task.error.operation}}</span></p><p>{{task.error.detail}}</p>
                 <article v-for="(attempt,index) in task.error.attempts" :key="index"><strong>{{attempt.channel==='stable'?'稳定渠道':attempt.channel==='low'?'低价渠道':attempt.service}} · {{attempt.operation}}</strong><p>{{attempt.detail}}</p><p>{{attempt.hint}}</p></article><p>{{task.error.hint}}</p></template>
@@ -719,5 +735,6 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 .cloze-blank{white-space:nowrap}
 .cloze-index{font-size:0.92em;color:#4a5d4b}
 .cloze-line{display:inline-block;min-width:4.2em;border-bottom:1px solid #4a5d4b;margin-left:2px;vertical-align:-2px}
+.column-conflict{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;margin:8px 12px;border:1px solid #e6a23c;background:#fdf6ec;border-radius:6px;font-size:13px;color:#8a5a00}
 </style>
 

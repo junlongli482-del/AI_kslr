@@ -141,6 +141,10 @@ def process(request: ProcessRequest):
             if not (docfolder / 'extracted.ok').exists():
                 safe_extract(archive, raw)
                 mineru_local.adapt(raw)
+                # Local bundles carry no origin PDF; keep one so bracket detection
+                # and region crops use the vector source instead of page bitmaps.
+                if not list(raw.glob('*_origin.pdf')):
+                    shutil.copyfile(source, raw / f'{source.stem}_origin.pdf')
                 (docfolder / 'extracted.ok').write_text('ok')
             progress('数据整理', f'提取内容、图片与坐标：{file["name"]}')
             documents.append(normalize(source, docfolder, doc_id, file['role'], file['name']))
@@ -549,8 +553,24 @@ def validate(task_id: str, payload: dict):
             normalize_paper(paper)
             allocate_paper_scores(paper, result['questions'])
             apply_paper_inheritance(paper, result['questions'])
+        choice = payload.get('column_choice')
+        if choice in ('ai', 'geometry'):
+            for paper in result['papers']:
+                conflict = paper.get('column_conflict') or {}
+                if not conflict.get('geometry'):
+                    continue
+                columns = conflict.get('ai') if choice == 'ai' else conflict['geometry']
+                columns = max(1, min(4, int(columns)))
+                paper.setdefault('source', {})['columns'] = columns
+                conflict.update(columns=columns, chosen=choice)
+                for doc_id in paper.get('source_document_ids') or []:
+                    doc = next((d for d in result['documents'] if d['id'] == doc_id), None)
+                    if doc:
+                        doc['columns'] = [columns] * len(doc.get('pages') or [])
+            rebuild = payload.get('rebuild_region_question_ids') or [q['id'] for q in result['questions']]
+        else:
+            rebuild = payload.get('rebuild_region_question_ids', [])
         attach_page_columns(result['documents'], result['papers'])
-        rebuild=payload.get('rebuild_region_question_ids',[])
         if rebuild:
             question_span_regions(result['questions'],result['documents'],question_ids=rebuild,
                                   excluded=result.get('excluded_block_ids') or [])
