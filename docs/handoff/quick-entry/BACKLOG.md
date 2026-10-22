@@ -285,6 +285,30 @@
 - 处置：三个 key 已写入 `MINERU_API_KEYS`（本人账号优先），服务恢复后会自动轮换；现有三个失败任务在恢复后点「重试」即可。
 - 状态：本地代码已修；MinerU 解析被拒需外部确认。
 
+### QE-FB-031 / P1 MinerU 本地部署评估：效率与效果（待验证）
+
+- 本机条件：i5-12400F / 32GB RAM / RTX 2080 Ti 22GB / 磁盘剩余 849GB，满足 `mineru[full]` 的 ≥8GB 显存要求，且余量充足。
+- 官方要求：Python 3.10–3.14；`mineru[full]` 需 NVIDIA Volta+、≥8GB 显存、≥16GB 内存、额外约 5GB 磁盘；基础安装为 ONNX CPU + llama.cpp(Vulkan)，CPU 可跑但慢。
+- 效率参考（第三方 42 页/文档实测，MinerU2.5-1.2B）：
+  | GPU | 每页耗时 | 显存峰值 |
+  |---|---|---|
+  | T4 16G | 447 ms | ~10GB |
+  | V100 16G | 267 ms | ~11.5GB |
+  | P40 24G | 323 ms | ~10.9GB |
+  | A10G 24G | 182 ms | ~13GB |
+  | A100 80G | 164 ms | ~14GB |
+  10 页文档显存约 3.2–3.8GB；CPU 模式比 GPU 慢 2.8–5.4 倍。2080 Ti（Turing、22GB）预计介于 V100 与 A10G 之间，教辅 4 页 A3 单份预计 10–30 秒（含模型热启动），稳定后更快。
+- 效果判断：云端 SaaS 的 `model_version=vlm` 属 MinerU2.5 系列（2.5-Pro 已上线 SaaS）；本地 4.0 `standard` 档同样是 2.5/2.5-Pro 1.2B 同族模型，理论上效果相当。但**不能假设 100% 等价**：云端可能是更新/更大的 checkpoint、后处理参数不同，必须用同一份卷做 A/B（文本、表格、公式、block 坐标）。
+- 兼容性：现有 `normalize()` 已按本地 MinerU 目录结构读取 `*middle.json`、`*content_list.json`、图片，接入只需在 `recognize()` 增加 local provider，输出到 `task/<doc>/raw/` 后复用同一套标准化。
+- 风险：Windows 下 CUDA/torch 安装、模型下载约数 GB、首次加载慢、许可为 Apache 2.0 + 附加条件（商用需核对）。
+- 建议：先装 `standard` 档并用一份三栏卷 A/B（与云端结果对比文本/坐标/耗时），通过后再做 provider 回退（cloud 主、local 备）。
+- 实测（2026-10-22，本机 2080 Ti 22GB，MinerU 4.0 + `MinerU2.5-Pro-2605-1.2B`，standard 档）：
+  1. 地理四页 A3 卷：模型推理 11.8s（0.34 页/秒 ≈ 2.9s/页），冷启动整体 53s（含加载模型）；
+  2. 输出结构与云端 zip 不同：本地为 `middle_json.json` + `structured_content.json` + `model_output.json`，**没有 `content_list.json`**；现有 `normalize()` 匹配的是 `*middle.json` / `*content_list.json`，需要适配；
+  3. 文本对比：本地 3390 字符 vs 云端 4531 字符，差异主要是**选项换行/分组不同**（36 行不一致多为 A./B./C./D. 的分行方式），并非整段丢失；接入后需按块/题目做字段级对比。
+  4. 本地模型确认为 `MinerU2.5-Pro-2605-1.2B`，与云端同代。
+- 状态：已接入（2026-10-22）。`MINERU_PROVIDER=auto|local|cloud`，auto 先本地后云端；新增 `apps/ai/mineru_local.py`（健康检查、`/v1/file_parse` 取 zip、把 4.x 的 `structured_content.json` 转成 `content_list` 形状）；`normalize` 无需改动；`scripts\dev.cmd mineru` 常驻本地服务（8020、standard、并发 2）；`/health` 返回 `mineru.local_available`。实测：原先卡在 MinerU 的任务 `df5d183b` 用本地解析后完整跑到 ready（19 题）。
+
 ## 2026-10-15 作答空白、图注与同题分框定位（仅记录）
 
 详见[作答空白、图注与同题左右分框定位](定位报告-作答空白图注与同题分框.md)：三份道法样本response区域为0，题型关键词门槛跳过简答/材料分析，且现有算法漏小问间空白；甲乙丙源caption已有但未进入完整布局合同；同题左右分框由“横向必须重叠”规则造成；另5处旧错误图片地址尚未清除。

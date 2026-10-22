@@ -54,6 +54,21 @@ scripts\dev.cmd
 
 也可在单个 CMD 窗口按需运行 `scripts\dev.cmd web`、`scripts\dev.cmd ai`、`scripts\dev.cmd api`。关闭时在各窗口 Ctrl+C；若 CMD 询问是否终止批处理，输入 Y。启动前数据库若未运行，已有容器用 `docker start quick-entry-postgres`；首次用 `docker compose -f deploy/compose.yaml up -d`。
 
+### 本地 MinerU（可选，云端不可用时的备用解析）
+
+同一台机器可以常驻一个本地 MinerU 解析服务，`MINERU_PROVIDER=auto` 时优先走本地，本地不在线再回落云端多密钥。
+
+```bat
+:: 另开一个 CMD 窗口常驻（模型首次请求时加载，之后复用；RTX 2080 Ti 实测并发 2、单份 A3 四页约 12 秒）
+scripts\dev.cmd mineru
+```
+
+- 服务地址 `http://127.0.0.1:8020`，`--tier standard`、`--concurrency 2`；
+- 运行目录 `runtime\mineru\`（模型、缓存、上传），不进版本库；环境是 `.venv-mineru`；
+- 相关配置：`MINERU_PROVIDER=auto|local|cloud`、`MINERU_LOCAL_URL`、`MINERU_LOCAL_TIER`、`MINERU_LOCAL_TIMEOUT`；
+- `scripts\dev.cmd mineru` 会设置 `MINERU_HOME`、`MINERU_MODEL_BASE_DIR`、`MODELSCOPE_CACHE`，不要重复开多个实例（每个实例都会加载一份模型、抢显存）；
+- 只跑云端时把 `MINERU_PROVIDER` 设为 `cloud`，无需启动本地服务。
+
 `scripts/start.ps1 -Build`保留给需要jar产物的交付验证；生产构建、完整测试不作为日常启动前置步骤。测试和 `pnpm build` 仍在相关变更的验收阶段运行，它们不等于启动开发服务器。
 
 仓库内 Maven Wrapper 首次需联网下载Maven与依赖。当前环境已有成功构建产物。Word转换使用本机LibreOffice，可通过SOFFICE_PATH设置执行文件路径。

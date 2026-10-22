@@ -28,6 +28,7 @@ from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
 from channels import channels as configured_channels, timeout as model_timeout, cost as model_cost
+import mineru_local
 
 load_dotenv(ROOT / '.env')
 
@@ -139,6 +140,7 @@ def process(request: ProcessRequest):
             raw = docfolder / 'raw'
             if not (docfolder / 'extracted.ok').exists():
                 safe_extract(archive, raw)
+                mineru_local.adapt(raw)
                 (docfolder / 'extracted.ok').write_text('ok')
             progress('数据整理', f'提取内容、图片与坐标：{file["name"]}')
             documents.append(normalize(source, docfolder, doc_id, file['role'], file['name']))
@@ -182,6 +184,19 @@ def mineru_key_error(exc: Exception) -> bool:
 
 
 def recognize(source, archive, folder, name, progress):
+    provider = os.getenv('MINERU_PROVIDER', 'auto').lower()
+    if provider in ('local', 'auto'):
+        if mineru_local.available():
+            progress('MinerU识别', f'{name}：本地解析')
+            try:
+                archive.write_bytes(mineru_local.fetch_zip(source))
+                return
+            except Exception as exc:
+                if provider == 'local':
+                    raise
+                progress('MinerU识别', f'本地解析失败，改用云端：{str(exc)[:80]}')
+        elif provider == 'local':
+            raise ValueError('本地 MinerU 服务未运行，请先执行 scripts\\dev.cmd mineru')
     keys = mineru_keys()
     if not keys:
         raise ValueError('未配置 MinerU API Key')
@@ -435,7 +450,10 @@ def health():
             'llm_configured': bool(os.getenv('LLM_LOW_API_KEY') or os.getenv('LLM_STABLE_API_KEY') or os.getenv('LLM_DEEPSEEK_API_KEY')),
             'read_timeout_seconds':float(os.getenv('LLM_READ_TIMEOUT_SECONDS','1800')),
             'started_at': APP_STARTED_AT, 'scheduler': scheduler.snapshot(),
-            'vision': os.getenv('STRUCTURE_VISION', '1') not in ('0', 'false', 'False')}
+            'vision': os.getenv('STRUCTURE_VISION', '1') not in ('0', 'false', 'False'),
+            'mineru': {'provider': os.getenv('MINERU_PROVIDER', 'auto'),
+                       'local_url': mineru_local.base_url(),
+                       'local_available': mineru_local.available(1.0)}}
 
 
 @app.post('/process')
