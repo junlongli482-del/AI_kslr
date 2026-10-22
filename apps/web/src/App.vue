@@ -287,13 +287,37 @@ function updateImageLayout(change:{src:string;widthPct:number;manual:boolean}){
   else delete layout[change.src].manual_width_pct
   markDirty()
 }
-function insertRegionImage(url?:string){
+function insertRegionImage(url?:string,target='stem'){
   if(!url||!selected.value)return
-  const q=selected.value
-  if(q.stem.includes(url)){ElMessage.info('这张区域图片已经在题干中');return}
-  q.stem+=`\n\n![](${url})`
-  if(q.editor_documents.stem)q.editor_documents.stem=prepareEditorDocument(q.editor_documents.stem,q.stem,q.image_layout)
-  q.review_status='pending';markDirty();ElMessage.success('原卷区域已插入题干，可继续编辑')
+  const q:any=selected.value, mark=`\n\n![](${url})`
+  const field=target==='answer'?'answer':target==='analysis'?'analysis':'stem'
+  if(target.startsWith('sub:')){
+    const sub=q.subquestions?.find((s:any)=>s.subquestion_id===target.slice(4))
+    if(!sub)return
+    if((sub.stem||'').includes(url)){ElMessage.info('\u8be5\u56fe\u7247\u5df2\u5728\u5c0f\u95ee\u4e2d');return}
+    sub.stem=(sub.stem||'')+mark
+  }else if(target.startsWith('subans:')){
+    const sub=q.subquestions?.find((s:any)=>s.subquestion_id===target.slice(7))
+    if(!sub)return
+    sub.answer=sub.answer||{value:'',analysis:'',scoring_criteria:null,source:'missing'}
+    sub.answer.value=(sub.answer.value||'')+mark
+  }else{
+    if((q[field]||'').includes(url)){ElMessage.info('\u8be5\u56fe\u7247\u5df2\u5728\u76ee\u6807\u4f4d\u7f6e');return}
+    q[field]=(q[field]||'')+mark
+  }
+  if(field==='stem'&&q.editor_documents?.stem)q.editor_documents.stem=prepareEditorDocument(q.editor_documents.stem,q.stem,q.image_layout)
+  q.review_status='pending';markDirty();ElMessage.success('\u5df2\u63d2\u5165\u56fe\u7247')
+}
+async function copyRegionImage(url?:string){
+  if(!url)return
+  try{
+    const blob=await (await fetch(url)).blob()
+    await navigator.clipboard.write([new ClipboardItem({'image/png':blob})])
+    ElMessage.success('\u533a\u57df\u622a\u56fe\u5df2\u590d\u5236\uff0c\u53ef\u76f4\u63a5\u7c98\u8d34')
+  }catch{
+    try{await navigator.clipboard.writeText(url);ElMessage.info('\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u590d\u5236\u56fe\u7247\uff0c\u5df2\u590d\u5236\u56fe\u7247\u94fe\u63a5')}
+    catch{ElMessage.error('\u590d\u5236\u5931\u8d25')}
+  }
 }
 function addSubquestion(){
   if(!selected.value)return
@@ -540,7 +564,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   </template>
                 </template>
                 <div class="field-heading"><label>原卷区域</label><button class="text-button" @click="rebuildRegions">重建本题题框与作答区</button><span>{{selected.regions.length}} 个区域，可在左侧拖动调整</span></div>
-                <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview" :key="index"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(r,index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="insertRegionImage(r.crop_url)"><Plus :size="13"/>插入题干</button><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="">通用</option><option value="content">题目内容</option><option value="both">内容与作答</option><option value="reference_answer">参考答案</option><option value="recovered_visual">原卷补图</option></select></div><div v-if="r.recognition" class="recognition-panel"><div class="recognition-meta"><span>{{categoryName(r.recognition.category)}}</span><span v-if="r.recognition.created_at">{{recognitionTime(r.recognition.created_at)}}</span><span v-if="r.recognition.model">{{r.recognition.model}}</span></div><p v-if="r.recognition.error" class="recognition-error">{{r.recognition.error}}</p><template v-else-if="r.recognition.image_only"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题原卷补图'"/><p class="muted">原卷补图，不调用模型</p></template><QuestionEditor v-else :ref="el=>setRegionEditor(regionKey(selected?.id||'',index),el)" :readonly="true" :task-id="task.id" :image-layout="selected.image_layout" :model-value="r.recognition.markdown||''" v-model:document="r.recognition.editor_document" label="区域识别结果"/><div class="recognition-actions"><button class="text-button" @click="copyRecognition(r,index)">复制</button><button class="text-button" @click="recognizeRegion(r,index)">重新识别</button><button class="text-button" @click="clearRecognition(r)">清空</button></div></div></div></div>
+                <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview" :key="index"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(r,index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="copyRegionImage(r.crop_url)">复制图片</button><el-dropdown v-if="r.crop_url" trigger="click"><button class="text-button"><Plus :size="13"/>插入到</button><template #dropdown><el-dropdown-menu><el-dropdown-item @click="insertRegionImage(r.crop_url,'stem')">题干</el-dropdown-item><el-dropdown-item @click="insertRegionImage(r.crop_url,'answer')">答案</el-dropdown-item><el-dropdown-item @click="insertRegionImage(r.crop_url,'analysis')">解析</el-dropdown-item><el-dropdown-item v-for="(sub,si) in selected.subquestions" :key="sub.subquestion_id" @click="insertRegionImage(r.crop_url,'sub:'+sub.subquestion_id)">小问 {{sub.number||si+1}}</el-dropdown-item><el-dropdown-item v-for="(sub,si) in selected.subquestions" :key="'a'+sub.subquestion_id" @click="insertRegionImage(r.crop_url,'subans:'+sub.subquestion_id)">小问 {{sub.number||si+1}} 答案</el-dropdown-item></el-dropdown-menu></template></el-dropdown><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="">通用</option><option value="content">题目内容</option><option value="both">内容与作答</option><option value="reference_answer">参考答案</option><option value="recovered_visual">原卷补图</option></select></div><div v-if="r.recognition" class="recognition-panel"><div class="recognition-meta"><span>{{categoryName(r.recognition.category)}}</span><span v-if="r.recognition.created_at">{{recognitionTime(r.recognition.created_at)}}</span><span v-if="r.recognition.model">{{r.recognition.model}}</span></div><p v-if="r.recognition.error" class="recognition-error">{{r.recognition.error}}</p><template v-else-if="r.recognition.image_only"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题原卷补图'"/><p class="muted">原卷补图，不调用模型</p></template><QuestionEditor v-else :ref="el=>setRegionEditor(regionKey(selected?.id||'',index),el)" :readonly="true" :task-id="task.id" :image-layout="selected.image_layout" :model-value="r.recognition.markdown||''" v-model:document="r.recognition.editor_document" label="区域识别结果"/><div class="recognition-actions"><button class="text-button" @click="copyRecognition(r,index)">复制</button><button class="text-button" @click="recognizeRegion(r,index)">重新识别</button><button class="text-button" @click="clearRecognition(r)">清空</button></div></div></div></div>
               </template>
               <template v-else><div class="attribute-grid"><label>题号<el-input v-model="selected.number"/></label><label>分值<template v-if="selected.subquestions?.length"><span>{{selected.attributes.score ?? '—'}} 分</span><span class="muted">（小问分值合计）</span><span v-if="subScoresPartial(selected)" class="muted">，还有小问未填分值</span></template><el-input-number v-else v-model="selected.attributes.score" :min="0" :max="1000" @change="markScoreManual"/><span v-if="selected.attributes.score_source" class="score-source">{{scoreSourceName(selected.attributes.score_source)}}</span></label><label v-for="[key,label] in [['subject','学科'],['stage','学段'],['grade','年级'],['textbook_version','教材版本'],['question_type','题型'],['paper_type','试卷类型'],['year','年份'],['semester','学期'],['region','地区'],['source_type','来源类型']]" :key="key">{{label}}<span v-if="selected.attribute_sources?.[key]==='paper'" class="inherit-badge">继承</span><el-input v-model="selected.attributes[key]" placeholder="未识别" @change="markAttributeManual(key)"/></label><label>难度<el-select v-model="selected.attributes.difficulty" clearable><el-option v-for="(name,index) in ['简单','较易','中等','较难','困难']" :value="index+1" :label="name"/></el-select><span v-if="selected.attributes.difficulty_reason" class="muted">{{selected.attributes.difficulty_reason}}</span></label><label>审核状态<el-select v-model="selected.review_status"><el-option value="pending" label="待核对"/><el-option value="reviewed" label="已确认"/></el-select></label></div><div class="inherit-actions"><button v-for="[field,label] in paperInheritFields" :key="field" @click="restoreInherited(field)">跟随{{label}}</button></div><div class="field-heading"><label>知识点与教材章节</label><span class="neutral-badge">目录未配置</span></div><div class="catalog-empty">正式目录接入后自动分层匹配，并根据教材映射章节。当前不生成未经绑定的正式知识点。</div><div class="field-heading"><label>能力维度</label></div><el-select v-model="selected.attributes.ability_dimensions" multiple filterable allow-create default-first-option placeholder="输入或选择能力维度"><el-option v-for="label in ['理解','应用','分析','推理','建模','运算']" :value="label" :label="label"/></el-select><div class="field-heading"><label>作答形式</label></div><el-select v-model="selected.attributes.response_form" multiple filterable allow-create><el-option v-for="label in ['客观','主观','作图','填空','计算','证明']" :value="label" :label="label"/></el-select><div class="field-heading"><label>情景与背景</label></div><el-input v-model="selected.attributes.background" type="textarea" :rows="2"/><div class="field-heading"><label>扩展标签</label><button class="text-button" @click="(selected.attributes.extension_attributes ||= []).push({name:'',value:''})"><Plus :size="13"/>新增</button></div><div class="extension-row" v-for="(tag,index) in selected.attributes.extension_attributes"><el-input v-model="tag.name" placeholder="标签名称"/><el-input v-model="tag.value" placeholder="标签值"/><button class="icon-button" aria-label="删除标签" @click="selected.attributes.extension_attributes.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>授权与排序</label></div><p class="muted">授权尚未确认。重要程度算法未启用，不生成无依据的推荐分。</p></template>
             </div>
