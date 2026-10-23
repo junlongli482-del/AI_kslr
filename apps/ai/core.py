@@ -1715,6 +1715,66 @@ def order_questions_by_band(papers: list[dict], questions: list[dict], documents
         questions[:] = other + own
 
 
+BLANK_MATCH_PROMPT = """你在把答案文档匹配到学生用书题干里的填空。
+
+输入是 JSON：lesson（本次课时标题）、blanks（待匹配的空清单，含题目ID、题号、题干片段、序号、锚点）、answers（答案文档原文）。
+
+要求：
+1. 答案文档可能同时包含多个节/课时，只取与 lesson 对得上的那部分，其余忽略；
+2. 不同教辅的层级和编号写法不同，按语义匹配，不要依赖固定格式；
+3. 一个编号下有多个答案时，按该题空的出现顺序对应；
+4. 英文答案可能自带空格，按语义切分，不要用空格硬拆；
+5. 找不到答案就留空并说明原因，严禁编造；
+6. 答案里的解析如果明确对应某题，放到 explanation。
+
+只输出 JSON：
+{"matches":[{"question_id":"q1","blank_index":1,"answer":"...","confidence":0.0,"reason":"","explanation":""}]}
+"""
+
+
+def assign_blank_answers(questions: list[dict], documents: list[dict], lessons: list[str], llm) -> int:
+    """Let the model read the answer document and fill each blank; no format rules."""
+    blanks = []
+    for question in questions:
+        for index, blank in enumerate(question.get('blanks') or [], 1):
+            blanks.append({'question_id': question['id'], 'number': question.get('number', ''),
+                           'stem_hint': (question.get('stem') or '')[:120],
+                           'blank_index': index, 'anchor': blank.get('anchor', '')})
+    if not blanks:
+        return 0
+    answers = '\n\n'.join(doc.get('markdown') or '' for doc in documents if doc.get('role') == 'answer')
+    if not answers.strip():
+        answers = '\n\n'.join(doc.get('markdown') or '' for doc in documents)
+    payload = {'lesson': lessons[0] if lessons else '', 'blanks': blanks, 'answers': answers[:200000]}
+    result = llm.json('blank-match', BLANK_MATCH_PROMPT, payload)
+    by_question = {q['id']: q for q in questions}
+    filled = 0
+    for match in result.get('matches') or []:
+        question = by_question.get(str(match.get('question_id')))
+        if not question:
+            continue
+        try:
+            index = int(match.get('blank_index')) - 1
+        except (TypeError, ValueError):
+            continue
+        items = question.get('blanks') or []
+        if not 0 <= index < len(items):
+            continue
+        answer = str(match.get('answer') or '').strip()
+        if not answer:
+            continue
+        items[index]['answer'] = answer
+        items[index]['answer_source'] = 'ai_match'
+        items[index]['confidence'] = match.get('confidence')
+        if match.get('explanation'):
+            items[index]['explanation'] = match.get('explanation')
+        filled += 1
+    missing = [q for q in questions if any(not b.get('answer') for b in q.get('blanks') or [])]
+    for question in missing:
+        question.setdefault('issues', []).append('部分填空未匹配到答案，请人工核对')
+    return filled
+
+
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
     llm = LLM(folder, policy)
     papers, questions = [], []
@@ -1828,6 +1888,9 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
                 q['issues'].append('原答案含略／图略，详细内容待完善')
             used.add(e['id'])
             matched.add(q['id'])
+    lessons = [p.get('lesson', {}).get('title', '') or p.get('title', '') for p in papers]
+    if any(q.get('blanks') for q in questions):
+        assign_blank_answers(questions, documents, lessons, llm)
     if generate:
         missing = [q for q in questions if not q.get('answer') or not q.get('analysis')]
         for offset in range(0, len(missing), 8):
