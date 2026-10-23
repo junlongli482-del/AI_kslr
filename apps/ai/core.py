@@ -1022,8 +1022,10 @@ STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整
 试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher；paper_type为同步练/单元测/月考/期中/期末/一模二模/真题/模拟/课时作业/竞赛/其他；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
 【原页图片】本次附带每一页的原图，命名形如“文档名-第01页.png”，并在消息里标注对应页码；图片仅用于版面与图文判断。
 - columns：已由系统在入参 columns 字段给出，直接沿用，不要自行推断或改写。
-- 题干必须原样保留填空：原文的 `\\_42\\_`、`42. ____`、`____` 统一写成 `{{blank:42}}` 或 `{{blank}}`，不得删除、合并或改写；严禁改动图片链接、URL、公式与代码段；选择题的 `（ ）` 保持原样。\n- 若这是学生用书/教材页面：先识别所有“通栏分区标题”（横跨整个版心、单独成行的短标题，如「自主学习·基础达标」「文本理解·素养构建」「语法突破·素养提升」等，不同学科措辞不同），按出现顺序输出 sections：[{"title":"...","banner_block_id":"完整块ID","page_index":1}]；再把不属于本节的内容（上一节末尾、下一节开头及其横幅、页眉页脚）放进 excluded_block_ids。
-- 图片是第一依据：MinerU 常漏填空线，必须对照页图补全；填空线统一写 {{blank}} 或 {{blank:n}}，并按出现顺序输出 blanks：[{"index":1,"anchor":"空位前6个字"}]；不得改动图片链接与公式。
+- 题干必须原样保留填空：原文的 `\\_42\\_`、`42. ____`、`____` 统一写成 `{{blank:42}}` 或 `{{blank}}`，不得删除、合并或改写；严禁改动图片链接、URL、公式与代码段；选择题的 `（ ）` 保持原样。\n- 若这是学生用书/教材页面：
+  1) sections 只放“第X章/第X节”这类真正的节标题，按先后顺序：[{"title":"第一节 地球的宇宙环境","banner_block_id":"完整块ID","page_index":0}]；
+  2) bands 放板块横幅（如「自主学习 基础达标」「重点探究 难点突破」「文本理解 素养构建」等，各学科措辞不同），同样给块 ID 和页码；不要把它们放进 sections；
+  3) 不属于本节的内容（上一节末尾、下一节开头及其节标题、页眉页脚）放进 excluded_block_ids。
 - block_ids：必须使用完整块 ID（形如 d4a7b2c1-b12），不要只写 b12；不确定就留空。
 - excluded_block_ids：把不属于任何题目的块 ID 放进来——小节标题（如“第三部分 语言运用”）、大题说明（“本大题共…”“阅读下列…回答…”）、页眉页脚、分值说明、页码等；程序会让这些块不进入任何题框。
 - 图文归属：图片、表格、图注必须按原图判断属于哪一道题；MinerU 的 block_ids 与图片 URL 只作参考，图片被漏掉或放错位置时以原图为准。
@@ -1681,8 +1683,8 @@ def order_questions_by_band(papers: list[dict], questions: list[dict], documents
     """Order student-book questions: band -> page -> column -> y."""
     lookup = {b['id']: (d, b) for d in documents for b in d.get('blocks', [])}
     for paper in papers:
-        sections = [s for s in (paper.get('sections') or []) if s.get('banner_block_id')]
-        if len(sections) < 2:
+        sections = [s for s in (paper.get('bands') or paper.get('sections') or []) if s.get('banner_block_id')]
+        if len(sections) < 1:
             continue
         sections.sort(key=lambda s: (_block_position(lookup, s['banner_block_id']) or (99, 1, 0, []))[:2])
         own = [q for q in questions if q.get('paper_id') == paper['id']]
@@ -1798,6 +1800,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             p['id'] = paper_map[p['id']]
             p['source_document_ids'] = [doc['id']]
             p['sections'] = data.get('sections') or []
+            p['bands'] = data.get('bands') or []
             p.setdefault('source', {})['columns'] = column['columns']
             if column.get('conflict'):
                 p['column_conflict'] = dict(column['conflict'])
