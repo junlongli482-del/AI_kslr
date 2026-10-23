@@ -258,6 +258,7 @@ class Question(BaseModel):
     corrections: list[dict] = Field(default_factory=list)
     editor_documents: dict = Field(default_factory=dict)
     image_layout: dict = Field(default_factory=dict)
+    blanks: list[dict] = Field(default_factory=list)
     tables: list[dict] = Field(default_factory=list)
     options_layout: dict = Field(default_factory=dict)
     excluded_image_urls: list[str] = Field(default_factory=list)
@@ -1021,7 +1022,9 @@ STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整
 试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher；paper_type为同步练/单元测/月考/期中/期末/一模二模/真题/模拟/课时作业/竞赛/其他；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
 【原页图片】本次附带每一页的原图，命名形如“文档名-第01页.png”，并在消息里标注对应页码；图片仅用于版面与图文判断。
 - columns：已由系统在入参 columns 字段给出，直接沿用，不要自行推断或改写。
-- 题干必须原样保留填空：原文的 `\\_42\\_`、`42. ____`、`____` 统一写成 `{{blank:42}}` 或 `{{blank}}`，不得删除、合并或改写；严禁改动图片链接、URL、公式与代码段；选择题的 `（ ）` 保持原样。\n- block_ids：必须使用完整块 ID（形如 d4a7b2c1-b12），不要只写 b12；不确定就留空。
+- 题干必须原样保留填空：原文的 `\\_42\\_`、`42. ____`、`____` 统一写成 `{{blank:42}}` 或 `{{blank}}`，不得删除、合并或改写；严禁改动图片链接、URL、公式与代码段；选择题的 `（ ）` 保持原样。\n- 若这是学生用书/教材页面：先识别所有“通栏分区标题”（横跨整个版心、单独成行的短标题，如「自主学习·基础达标」「文本理解·素养构建」「语法突破·素养提升」等，不同学科措辞不同），按出现顺序输出 sections：[{"title":"...","banner_block_id":"完整块ID","page_index":1}]；再把不属于本节的内容（上一节末尾、下一节开头及其横幅、页眉页脚）放进 excluded_block_ids。
+- 图片是第一依据：MinerU 常漏填空线，必须对照页图补全；填空线统一写 {{blank}} 或 {{blank:n}}，并按出现顺序输出 blanks：[{"index":1,"anchor":"空位前6个字"}]；不得改动图片链接与公式。
+- block_ids：必须使用完整块 ID（形如 d4a7b2c1-b12），不要只写 b12；不确定就留空。
 - excluded_block_ids：把不属于任何题目的块 ID 放进来——小节标题（如“第三部分 语言运用”）、大题说明（“本大题共…”“阅读下列…回答…”）、页眉页脚、分值说明、页码等；程序会让这些块不进入任何题框。
 - 图文归属：图片、表格、图注必须按原图判断属于哪一道题；MinerU 的 block_ids 与图片 URL 只作参考，图片被漏掉或放错位置时以原图为准。
 - 公式与文字：图片、MinerU 文本、上下文一起作为证据。当 MinerU 的公式、符号、表格或文字明显错误时，可以修正，但必须在 corrections 中逐条记录 {field,before,after,reason}，并在 issues 写“已按原图修正，请核对”；没有把握时保持原文并在 issues 写“需人工核对：…”，不得凭图片臆造内容。
@@ -1629,6 +1632,89 @@ def run_bracket_detection(result: dict, folder: Path, progress=None):
     template['bracket_status'] = 'done'
 
 
+def _block_position(lookup, block_id):
+    item = lookup.get(block_id)
+    if not item:
+        return None
+    doc, block = item
+    return (block.get('page_index', 0), (block['bbox'][1] + block['bbox'][3]) / 2, (block['bbox'][0] + block['bbox'][2]) / 2, block['bbox'])
+
+
+def apply_book_sections(papers: list[dict], questions: list[dict], documents: list[dict]) -> None:
+    """Student books: keep only the complete lesson between two section banners."""
+    lookup = {b['id']: (d, b) for d in documents for b in d.get('blocks', [])}
+    for paper in papers:
+        sections = [s for s in (paper.get('sections') or []) if s.get('banner_block_id')]
+        if len(sections) < 2:
+            continue
+        sections.sort(key=lambda s: (_block_position(lookup, s['banner_block_id']) or (99, 1, 0, []))[:2])
+        start = _block_position(lookup, sections[0]['banner_block_id'])
+        end = _block_position(lookup, sections[1]['banner_block_id'])
+        if not start or not end:
+            continue
+        kept = []
+        for question in questions:
+            if question.get('paper_id') != paper['id']:
+                continue
+            positions = [pos for pos in (_block_position(lookup, bid) for bid in question.get('block_ids') or []) if pos]
+            if not positions:
+                continue
+            anchor_pos = min(positions, key=lambda p: (p[0], p[1]))
+            if (start[0], start[1]) <= (anchor_pos[0], anchor_pos[1]) < (end[0], end[1]):
+                kept.append(question)
+        drop = {q['id'] for q in questions if q.get('paper_id') == paper['id']} - {q['id'] for q in kept}
+        if drop:
+            questions[:] = [q for q in questions if q['id'] not in drop]
+        paper['lesson'] = {'title': sections[0].get('title', ''), 'start_page': start[0], 'end_page': end[0],
+                           'bands': [s.get('title', '') for s in sections if _before(s, sections[1], lookup)]}
+        paper.setdefault('issues', []).append(
+            f"已按学生用书识别本节「{sections[0].get('title', '')}」，排除区间外内容 {len(drop)} 题")
+
+
+def _before(section, limit, lookup):
+    pos = _block_position(lookup, section.get('banner_block_id'))
+    end = _block_position(lookup, limit.get('banner_block_id'))
+    return bool(pos and end and (pos[0], pos[1]) < (end[0], end[1]))
+
+
+def order_questions_by_band(papers: list[dict], questions: list[dict], documents: list[dict]) -> None:
+    """Order student-book questions: band -> page -> column -> y."""
+    lookup = {b['id']: (d, b) for d in documents for b in d.get('blocks', [])}
+    for paper in papers:
+        sections = [s for s in (paper.get('sections') or []) if s.get('banner_block_id')]
+        if len(sections) < 2:
+            continue
+        sections.sort(key=lambda s: (_block_position(lookup, s['banner_block_id']) or (99, 1, 0, []))[:2])
+        own = [q for q in questions if q.get('paper_id') == paper['id']]
+        other = [q for q in questions if q.get('paper_id') != paper['id']]
+
+        def band_of(pos):
+            index = 0
+            for idx, section in enumerate(sections):
+                marker = _block_position(lookup, section['banner_block_id'])
+                if marker and (pos[0], pos[1]) >= (marker[0], marker[1]):
+                    index = idx
+            return index
+
+        def key(question):
+            anchors = [(d, b) for d, b in (lookup.get(bid) for bid in question.get('block_ids') or []) if b]
+            if not anchors:
+                return (99, 99, 99, 0.0)
+            doc = anchors[0][0]
+            pos = min(((b['page_index'], (b['bbox'][1] + b['bbox'][3]) / 2, b['bbox']) for _, b in anchors),
+                      key=lambda item: (item[0], item[1]))
+            try:
+                column = column_index(doc, pos[0], pos[2])
+            except Exception:
+                column = 0
+            return (band_of(pos), pos[0], column, pos[1])
+
+        own.sort(key=key)
+        for order, question in enumerate(own):
+            question['order'] = order
+        questions[:] = other + own
+
+
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
     llm = LLM(folder, policy)
     papers, questions = [], []
@@ -1651,6 +1737,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         for p in data['papers']:
             p['id'] = paper_map[p['id']]
             p['source_document_ids'] = [doc['id']]
+            p['sections'] = data.get('sections') or []
             p.setdefault('source', {})['columns'] = column['columns']
             if column.get('conflict'):
                 p['column_conflict'] = dict(column['conflict'])
@@ -1683,6 +1770,8 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         normalize_paper(paper)
         allocate_paper_scores(paper, questions)
         apply_paper_inheritance(paper, questions)
+    apply_book_sections(papers, questions, documents)
+    order_questions_by_band(papers, questions, documents)
     template_data = build_template(documents)
     bracket_pool = None
     bracket_future = None

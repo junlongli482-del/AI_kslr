@@ -26,6 +26,7 @@ const concurrencyUnlimited=ref(true),concurrencyLimit=ref(3),concurrencyBusy=ref
 const concurrencyEdited=ref(false)
 const comparison=ref<any>(null),clockNow=ref(Date.now())
 const selected=computed(()=>result.value?.questions.find(q=>q.id===selectedId.value)||null)
+const currentLesson=computed(()=>{const p=result.value?.papers.find((x:any)=>x.id===selected.value?.paper_id);const l=p?.lesson;return l&&l.title?`本节：${l.title}（第${(l.start_page||0)+1}页起）`:''})
 const columnConflicts=computed(()=>(result.value?.papers||[]).filter((p:any)=>p.column_conflict?.geometry).map((p:any)=>({id:p.id,title:p.title,ai:p.column_conflict.ai,geometry:p.column_conflict.geometry})))
 const activePaper=computed(()=>result.value?.papers.find(p=>p.id===paperFilter.value)||result.value?.papers.find(p=>p.id===selected.value?.paper_id)||result.value?.papers[0]||null)
 const paperForm=computed(()=>activePaper.value?ensurePaper(activePaper.value):null)
@@ -489,7 +490,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
       </template>
 
       <template v-else-if="view==='review'&&result&&task">
-        <div class="review-top"><button class="mobile-source-toggle" @click="showMobileSource=!showMobileSource">{{showMobileSource?'收起原卷':'对照原卷'}}</button><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/></button><div class="review-title"><strong>{{task.title}}</strong><span>{{reviewed}} / {{result.questions.length}} 题已核对</span></div><span class="save-status" :class="{'save-error':saveState==='保存失败'}"><Check v-if="saveState==='已保存'" :size="14"/><LoaderCircle v-else-if="saveState==='保存中'" class="spin" :size="14"/>{{saveState}}</span><el-button @click="openPaper"><Files :size="15"/>试卷信息</el-button><el-button @click="saveNow"><Save :size="15"/>保存草稿</el-button><el-button @click="rebuildAllRegions" :loading="busy">重建全部题框</el-button><el-button @click="validate" :loading="busy">规则检查</el-button><el-button type="primary" @click="commit" :loading="busy">审核入库<ArrowUpRight :size="15"/></el-button></div>
+        <div class="review-top"><button class="mobile-source-toggle" @click="showMobileSource=!showMobileSource">{{showMobileSource?'收起原卷':'对照原卷'}}</button><button class="back-button" @click="navigate('tasks')"><ArrowLeft :size="16"/></button><div class="review-title"><strong>{{task.title}}</strong><span>{{reviewed}} / {{result.questions.length}} 题已核对</span><span v-if="currentLesson" class="muted">{{currentLesson}}</span></div><span class="save-status" :class="{'save-error':saveState==='保存失败'}"><Check v-if="saveState==='已保存'" :size="14"/><LoaderCircle v-else-if="saveState==='保存中'" class="spin" :size="14"/>{{saveState}}</span><el-button @click="openPaper"><Files :size="15"/>试卷信息</el-button><el-button @click="saveNow"><Save :size="15"/>保存草稿</el-button><el-button @click="rebuildAllRegions" :loading="busy">重建全部题框</el-button><el-button @click="validate" :loading="busy">规则检查</el-button><el-button type="primary" @click="commit" :loading="busy">审核入库<ArrowUpRight :size="15"/></el-button></div>
         <div v-if="columnConflicts.length" class="column-conflict">
           <CircleAlert :size="15"/>
           <span v-for="p in columnConflicts" :key="p.id">{{p.title}}：AI 判定 {{p.ai}} 栏，几何判定 {{p.geometry}} 栏</span>
