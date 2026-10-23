@@ -1018,7 +1018,7 @@ class LLM:
 
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
-输出 {"papers":[{"id":"p1","title":"...","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"questions":[...],"excluded_block_ids":["d4a7b2c1-b12"]}
+输出 {"papers":[{"id":"p1","title":"...","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"sections":[{"title":"第一节 地球的宇宙环境","banner_block_id":"d4a7b2c1-b12","page_index":0}],"bands":[{"title":"自主学习 基础达标","banner_block_id":"d4a7b2c1-b20","page_index":0}],"questions":[{"id":"q1","paper_id":"p1","number":"1","stem":"...{{blank:1}}...","blanks":[{"index":1,"anchor":"天体：宇宙中"}],"options":[],"subquestions":[],"block_ids":["d4a7b2c1-b30"],"attributes":{}}],"excluded_block_ids":["d4a7b2c1-b12"]}
 试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher；paper_type为同步练/单元测/月考/期中/期末/一模二模/真题/模拟/课时作业/竞赛/其他；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
 【原页图片】本次附带每一页的原图，命名形如“文档名-第01页.png”，并在消息里标注对应页码；图片仅用于版面与图文判断。
 - columns：已由系统在入参 columns 字段给出，直接沿用，不要自行推断或改写。
@@ -1777,6 +1777,23 @@ def assign_blank_answers(questions: list[dict], documents: list[dict], lessons: 
     return filled
 
 
+BLANK_TOKEN_RE = re.compile(r'\{\{blank(?::(\d{1,3}))?\}\}')
+
+
+def fill_blanks_from_tokens(question: dict) -> int:
+    """If the model wrote tokens but omitted blanks[], derive the list from the stem."""
+    if question.get('blanks'):
+        return 0
+    stem = question.get('stem') or ''
+    blanks = []
+    for index, match in enumerate(BLANK_TOKEN_RE.finditer(stem), 1):
+        before = stem[max(0, match.start() - 20):match.start()].strip().replace('\n', ' ')
+        blanks.append({'index': index, 'anchor': before[-12:]})
+    if blanks:
+        question['blanks'] = blanks
+    return len(blanks)
+
+
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
     llm = LLM(folder, policy)
     papers, questions = [], []
@@ -1804,6 +1821,8 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             p.setdefault('source', {})['columns'] = column['columns']
             if column.get('conflict'):
                 p['column_conflict'] = dict(column['conflict'])
+            if not p.get('sections'):
+                p.setdefault('issues', []).append('未识别到「第X节」标题，暂未按课时裁剪')
             papers.append(p)
         for qi, q in enumerate(data['questions']):
             normalize_model_question(q)
@@ -1824,6 +1843,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             q['attributes']['extension_attributes'] = []
             q['review_status'] = 'pending'
             q['issues'] = q.get('issues', [])
+            fill_blanks_from_tokens(q)
             correction_count=len(q.get('corrections') or [])+sum(len(s.get('corrections') or []) for s in q.get('subquestions',[]))
             if correction_count:q['issues'].append(f'AI修正{correction_count}处内容，请核对')
             if not q['regions']:
