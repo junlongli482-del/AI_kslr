@@ -1,0 +1,80 @@
+name: quick-entry-prod
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: quickentry_prod
+      POSTGRES_USER: quickentry
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?set DB_PASSWORD in .env.prod}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quickentry -d quickentry_prod"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  ai:
+    build:
+      context: ../..
+      dockerfile: deploy/prod/ai/Dockerfile
+    environment:
+      QUICK_ENTRY_DATA_DIR: /data
+      AI_PORT: "2003"
+      MINERU_PROVIDER: ${MINERU_PROVIDER:-auto}
+      MINERU_LOCAL_URL: http://host.docker.internal:8020
+      MINERU_API_KEYS: ${MINERU_API_KEYS:-}
+      LLM_DEEPSEEK_API_KEY: ${LLM_DEEPSEEK_API_KEY:-}
+      LLM_STABLE_API_KEY: ${LLM_STABLE_API_KEY:-}
+      LLM_LOW_API_KEY: ${LLM_LOW_API_KEY:-}
+      LLM_READ_TIMEOUT_SECONDS: "1800"
+      STRUCTURE_VISION: "1"
+      BRACKET_ENABLED: "1"
+      TASK_TIMEOUT_MINUTES: "30"
+    volumes:
+      - proddata:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ../..
+      dockerfile: deploy/prod/api/Dockerfile
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      QUICK_ENTRY_DATA_DIR: /data
+      DATABASE_URL: jdbc:postgresql://db:5432/quickentry_prod
+      DB_USER: quickentry
+      DB_PASSWORD: ${DB_PASSWORD}
+      AI_SERVICE_URL: http://ai:2003
+      API_PORT: "2002"
+    volumes:
+      - proddata:/data
+    depends_on:
+      db:
+        condition: service_healthy
+      ai:
+        condition: service_started
+    restart: unless-stopped
+
+  nginx:
+    build:
+      context: ../..
+      dockerfile: deploy/prod/nginx/Dockerfile
+    environment:
+      AUTH_USER1: ${AUTH_USER1}
+      AUTH_PASS1: ${AUTH_PASS1}
+      AUTH_USER2: ${AUTH_USER2}
+      AUTH_PASS2: ${AUTH_PASS2}
+    ports:
+      - "${PROD_PORT:-2001}:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  proddata:
