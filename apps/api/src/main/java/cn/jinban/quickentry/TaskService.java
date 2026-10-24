@@ -194,6 +194,19 @@ public class TaskService {
         if(!"committed".equals(String.valueOf(task.get("status"))))throw new ResponseStatusException(CONFLICT,"试卷尚未审核入库");
         JsonNode paper=parse(row.get("content"));
         var out=json.createObjectNode();
+        var allFolders=store.folders();
+        var folderId=task.get("folder_id")==null?null:String.valueOf(task.get("folder_id"));
+        var folderPath=new java.util.ArrayList<String>();
+        var cursor=folderId;
+        while(cursor!=null&&folderPath.size()<20){
+            String next=null;boolean found=false;
+            for(var f:allFolders)if(cursor.equals(String.valueOf(f.get("id")))){folderPath.add(0,String.valueOf(f.get("name")));next=f.get("parent_id")==null?null:String.valueOf(f.get("parent_id"));found=true;break;}
+            cursor=found?next:null;
+        }
+        out.put("folder_id",folderId==null?"":folderId);
+        var folderPathNode=json.createArrayNode();
+        folderPath.forEach(folderPathNode::add);
+        out.set("folder_path",folderPathNode);
         out.put("schema_version","p1-export-v1");
         out.put("exported_at",java.time.Instant.now().toString());
         out.set("paper",paper);
