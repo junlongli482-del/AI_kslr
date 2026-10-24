@@ -108,7 +108,9 @@ public class QuickEntryController {
     }
     @PostMapping("/quick-entry/tasks/{id}/commit") public Object commit(@PathVariable String id,@RequestBody JsonNode body){return service.commit(id,body.path("revision").asInt(-1));}
     @GetMapping("/assets") public ResponseEntity<Resource> asset(@RequestParam String key)throws Exception{
-        Path path=service.dataRoot().resolve(key).normalize();
+        Path path;
+        try{path=service.dataRoot().resolve(key).normalize();}
+        catch(java.nio.file.InvalidPathException e){throw new ResponseStatusException(NOT_FOUND,"invalid asset path");}
         if(!path.startsWith(service.dataRoot())||!Files.isRegularFile(path))throw new ResponseStatusException(NOT_FOUND,"文件不存在");
         String ext=path.getFileName().toString().toLowerCase(Locale.ROOT);
         if(!ext.matches(".*\\.(pdf|png|jpg|jpeg|webp)$"))throw new ResponseStatusException(FORBIDDEN,"此资产不可通过浏览器读取");

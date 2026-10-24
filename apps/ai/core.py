@@ -1631,6 +1631,14 @@ def run_bracket_detection(result: dict, folder: Path, progress=None):
                                            'index_in_question': item['index_in_question'],
                                            'index_in_node': item.get('index_in_node'),
                                            'bind_reason': 'question_region_contains' if bound else 'unbound'})
+    for question in result.get('questions', []):
+        subs = question.get('subquestions') or []
+        if not subs:
+            continue
+        own = [b for b in annotations.get('brackets', []) if b.get('question_id') == question.get('id')]
+        if len(own) != len(subs):
+            question.setdefault('issues', []).append(
+                f'括号数量与小题数不符（小题 {len(subs)} 个，括号 {len(own)} 个），请核对')
     template['bracket_status'] = 'done'
 
 
@@ -1794,6 +1802,120 @@ def fill_blanks_from_tokens(question: dict) -> int:
     return len(blanks)
 
 
+QUESTION_TYPES_PATH = ROOT / 'apps' / 'ai' / 'question-types.md'
+
+TAXONOMY_PROMPT = """你是题型标注员。根据题目内容，从下面这份“本学段本学科题型清单”中选出唯一一个题型，必要时选择子形态。
+
+规则：
+1. 必须选一个，不允许留空；拿不准选最接近的，并给低置信度；
+2. 子形态可不选（填 null），选了子形态即代表选了该题型；
+3. 不要参考试卷原有的题型字段，独立判断；
+4. 图片只用于辅助判断题意。
+
+只输出 JSON：
+{"code":"qt104","type":"现代文阅读","subtype":null,"confidence":0.0,"reason":"不超过30字"}
+"""
+
+
+def question_type_table(stage: str, subject: str) -> str:
+    try:
+        lines = QUESTION_TYPES_PATH.read_text(encoding='utf-8').splitlines()
+    except OSError:
+        return ''
+    stage = (stage or '').strip()
+    subject = (subject or '').strip()
+    current_stage, capture, rows = '', False, []
+    for line in lines:
+        if line.startswith('## ') and not line.startswith('### '):
+            current_stage = line[3:].strip()
+            capture = False
+            continue
+        if line.startswith('### '):
+            title = line[4:].strip()
+            name = title.split('（')[0].split('(')[0].strip()
+            capture = current_stage == stage and subject and subject in name
+            if capture:
+                rows.append(line)
+            continue
+        if capture and line.strip().startswith('|'):
+            rows.append(line)
+    return '\n'.join(rows)
+
+
+def _question_images(question: dict, limit: int = 4) -> list[dict]:
+    import base64 as _b64
+    from urllib.parse import parse_qs, urlparse
+    texts = [question.get('stem') or '']
+    texts += [sub.get('stem') or '' for sub in question.get('subquestions') or []]
+    images, seen = [], set()
+    for text in texts:
+        for match in re.finditer(r'!\[[^\]]*\]\(([^)]+)\)', text):
+            url = match.group(1)
+            if '/api/assets?key=' not in url:
+                continue
+            key = parse_qs(urlparse(url).query).get('key', [''])[0]
+            if not key or key in seen:
+                continue
+            seen.add(key)
+            path = DATA / key
+            if not path.is_file():
+                continue
+            try:
+                image = Image.open(path).convert('RGB')
+                if max(image.size) > 1200:
+                    image.thumbnail((1200, 1200))
+                stream = __import__('io').BytesIO()
+                image.save(stream, format='JPEG', quality=85)
+                image.close()
+            except Exception:
+                continue
+            images.append({'name': f"题图-{len(images) + 1}.png",
+                           'data_url': 'data:image/jpeg;base64,' + _b64.b64encode(stream.getvalue()).decode()})
+            if len(images) >= limit:
+                return images
+    return images
+
+
+def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int:
+    stages = {}
+    for paper in papers:
+        attrs = paper.get('attributes') or {}
+        stages[paper['id']] = ((paper.get('source') or {}).get('stage') or attrs.get('stage') or '',
+                               (paper.get('source') or {}).get('subject') or attrs.get('subject') or '')
+    done = 0
+    for question in questions:
+        stage, subject = stages.get(question.get('paper_id'), ('', ''))
+        table = question_type_table(stage, subject)
+        if not table:
+            continue
+        instruction = TAXONOMY_PROMPT + '\n\n题型清单（' + f'{stage}{subject}' + '）：\n' + table
+        payload = {'number': question.get('number'), 'stage': stage, 'subject': subject,
+                   'stem': question.get('stem'), 'options': question.get('options'),
+                   'subquestions': [{'number': s.get('number'), 'stem': s.get('stem')} for s in question.get('subquestions') or []],
+                   'answer': question.get('answer'), 'analysis': question.get('analysis')}
+        try:
+            result = llm.json('question-type', instruction, payload, images=_question_images(question))
+        except Exception:
+            continue
+        qtype = str(result.get('type') or '').strip()
+        if not qtype:
+            continue
+        attributes = question.setdefault('attributes', {})
+        attributes['question_type'] = qtype
+        attributes['question_type_id'] = result.get('code')
+        attributes['question_type_sub'] = result.get('subtype')
+        try:
+            confidence = float(result.get('confidence') or 0)
+        except (TypeError, ValueError):
+            confidence = 0
+        attributes['question_type_confidence'] = confidence
+        attributes['question_type_source'] = 'ai_taxonomy'
+        if confidence < 0.6:
+            question.setdefault('issues', []).append('题型为 AI 推荐，置信度较低，请核对')
+        done += 1
+    return done
+
+
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
     llm = LLM(folder, policy)
     papers, questions = [], []
@@ -1931,6 +2053,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
                         q['analysis'] = item.get('analysis', '')
                         q['analysis_source'] = 'ai_generated'
                     q['issues'].append('含AI生成内容，待人工审核')
+    apply_question_types = assign_question_types(questions, papers, llm)
     apply_rubrics(questions, papers, llm, progress)
     for q in questions:
         restore_source_images(q, documents)
