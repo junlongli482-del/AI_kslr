@@ -231,6 +231,28 @@ def test_source_items_are_normalized():
 def test_paper_accepts_source_snapshot_keys():
     assert 'source_name' in core.PAPER_ATTRIBUTES
     assert 'source_nature' in core.PAPER_ATTRIBUTES
+    # 教材版本/册次归下游，快速录入不再产出
+    assert 'textbook_volume' not in core.PAPER_ATTRIBUTES
+    assert 'textbook_version' not in core.PAPER_ATTRIBUTES
+
+
+def test_grade_semester_year_are_normalized():
+    assert enums.normalize_grade('高一') == ('g10', True)
+    assert enums.normalize_grade('七年级') == ('g7', True)
+    assert enums.normalize_grade('g12') == ('g12', False)
+    assert enums.normalize_semester('上学期') == ('1', True)
+    assert enums.normalize_semester('2') == ('2', False)
+    assert enums.normalize_year('2024年') == ('2024', True)
+    assert enums.normalize_year('2024') == ('2024', False)
+
+    paper = {'id': 'p1', 'paper_type': '期末',
+             'attributes': {'grade': '高一', 'semester': '上学期', 'year': '2024年'}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['grade'] == 'g10'
+    assert paper['attributes']['semester'] == '1'
+    assert paper['attributes']['year'] == '2024'
+    assert any('年级' in message for message in paper['issues'])
+
 
 
 def test_provider_errors_are_classified():

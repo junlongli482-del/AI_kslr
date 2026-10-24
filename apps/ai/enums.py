@@ -30,6 +30,26 @@ STAGE_ALIASES = {
 # 来源字典的性质：题库按它区分教辅与公开卷
 SOURCE_NATURES = ('教辅', '校本', '公开', '其他')
 
+GRADES = (('g1', '小一'), ('g2', '小二'), ('g3', '小三'), ('g4', '小四'), ('g5', '小五'),
+          ('g6', '小六'), ('g7', '初一'), ('g8', '初二'), ('g9', '初三'),
+          ('g10', '高一'), ('g11', '高二'), ('g12', '高三'))
+
+GRADE_ALIASES = {
+    '小一': 'g1', '小二': 'g2', '小三': 'g3', '小四': 'g4', '小五': 'g5', '小六': 'g6',
+    '一年级': 'g1', '二年级': 'g2', '三年级': 'g3', '四年级': 'g4', '五年级': 'g5', '六年级': 'g6',
+    '初一': 'g7', '初二': 'g8', '初三': 'g9',
+    '七年级': 'g7', '八年级': 'g8', '九年级': 'g9',
+    '高一': 'g10', '高二': 'g11', '高三': 'g12',
+    '高1': 'g10', '高2': 'g11', '高3': 'g12',
+}
+
+SEMESTERS = (('1', '上学期'), ('2', '下学期'))
+
+SEMESTER_ALIASES = {'1': '1', '上': '1', '上学期': '1', '第一学期': '1', '秋': '1',
+                    '2': '2', '下': '2', '下学期': '2', '第二学期': '2', '春': '2'}
+
+_GRADE_CODES = {code for code, _ in GRADES}
+
 # 26 个卷型：25 个组卷网原值 + 其他（AI 无法归类时的兜底，占比用于发现枚举缺口）
 PAPER_TYPES = (
     '课前预习', '课堂例题', '随堂练习', '课后作业', '单元复习',
@@ -129,6 +149,41 @@ def normalize_paper_type(value: str):
     return '其他', True
 
 
+def normalize_grade(value: str):
+    text = (value or '').strip()
+    if not text:
+        return '', False
+    if text in _GRADE_CODES:
+        return text, False
+    alias = GRADE_ALIASES.get(text)
+    if alias:
+        return alias, True
+    return text, False
+
+
+def normalize_semester(value):
+    text = str(value or '').strip()
+    if not text:
+        return '', False
+    if text in ('1', '2'):
+        return text, False
+    alias = SEMESTER_ALIASES.get(text)
+    if alias:
+        return alias, True
+    return text, False
+
+
+def normalize_year(value):
+    text = str(value or '').strip()
+    if not text:
+        return '', False
+    digits = ''.join(ch for ch in text if ch.isdigit())
+    if len(digits) >= 4:
+        year = digits[:4]
+        return year, year != text
+    return text, False
+
+
 def normalize_subject(value: str):
     """返回 (规范化学科, 是否被改动)。认不出的保留原值，不硬塞。"""
     text = (value or '').strip()
@@ -222,4 +277,6 @@ def enums_payload() -> dict:
         'difficulty_bands': list(DIFFICULTY_BANDS),
         'source_natures': list(SOURCE_NATURES),
         'subjects_aliases': dict(SUBJECT_ALIASES),
+        'grades': [{'code': code, 'name': name} for code, name in GRADES],
+        'semesters': [{'code': code, 'name': name} for code, name in SEMESTERS],
     }

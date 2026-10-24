@@ -25,8 +25,9 @@ from diagnostics import PipelineError, describe_error, redact
 from media import repair_assets, apply_layout, column_bounds, column_index, page_cells, detected_columns
 from channels import channels as configured_channels, timeout as model_timeout, cost as model_cost
 from enums import (PAPER_TYPES, SOURCE_NATURES, allowed_exam_stages, derive_sub_type,
-                   exam_nature_of, normalize_grading_method, normalize_paper_type,
-                   normalize_subject)
+                   exam_nature_of, normalize_grading_method, normalize_grade,
+                   normalize_paper_type, normalize_semester, normalize_subject,
+                   normalize_year)
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'data'
@@ -1023,7 +1024,7 @@ class LLM:
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
 输出 {"papers":[{"id":"p1","title":"...","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"sections":[{"title":"第一节 地球的宇宙环境","banner_block_id":"d4a7b2c1-b12","page_index":0}],"bands":[{"title":"自主学习 基础达标","banner_block_id":"d4a7b2c1-b20","page_index":0}],"questions":[{"id":"q1","paper_id":"p1","number":"1","stem":"...{{blank:1}}...","blanks":[{"index":1,"anchor":"天体：宇宙中"}],"options":[],"subquestions":[],"block_ids":["d4a7b2c1-b30"],"attributes":{}}],"excluded_block_ids":["d4a7b2c1-b12"]}
-试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher,exam_stage,publisher_name,publisher_series；paper_type只能取以下26个之一：课前预习/课堂例题/随堂练习/课后作业/单元复习/单元测试/阶段检测/期中/期末/开学考试/专题练习/竞赛/学业考试/中考真题/高考真题/小升初真题/强基计划/中考模拟/高考模拟/小升初模拟/中考复习/高考复习/小升初复习/小升初衔接/初升高衔接/其他，选不出就填“其他”，不得另造；exam_stage只能取：真题类(高考/中考/学业水平/小升初/强基计划)、模拟类(一模/二模/三模/联考/摸底)、同步类(单元测试/阶段检测/期中/期末/开学考)，与卷型性质不符就留空；学科（subject）只能取：语文/数学/英语/物理/化学/生物/政治/历史/地理，不得写“生物学”“道法”“思想政治”“道德与法治”等变体；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
+试卷层字段：attributes含stage,subject,grade,year,semester,region,school_publisher,exam_stage,publisher_name,publisher_series,source_name,source_nature；教材版本与教材册次不输出（属性留空即可，教材归属由下游按知识点查）；paper_type只能取以下26个之一：课前预习/课堂例题/随堂练习/课后作业/单元复习/单元测试/阶段检测/期中/期末/开学考试/专题练习/竞赛/学业考试/中考真题/高考真题/小升初真题/强基计划/中考模拟/高考模拟/小升初模拟/中考复习/高考复习/小升初复习/小升初衔接/初升高衔接/其他，选不出就填“其他”，不得另造；exam_stage只能取：真题类(高考/中考/学业水平/小升初/强基计划)、模拟类(一模/二模/三模/联考/摸底)、同步类(单元测试/阶段检测/期中/期末/开学考)，与卷型性质不符就留空；学科（subject）只能取：语文/数学/英语/物理/化学/生物/政治/历史/地理，不得写“生物学”“道法”“思想政治”“道德与法治”等变体；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
 【原页图片】本次附带每一页的原图，命名形如“文档名-第01页.png”，并在消息里标注对应页码；图片仅用于版面与图文判断。
 - columns：已由系统在入参 columns 字段给出，直接沿用，不要自行推断或改写。
 - 题干必须原样保留填空：原文的 `\\_42\\_`、`42. ____`、`____` 统一写成 `{{blank:42}}` 或 `{{blank}}`，不得删除、合并或改写；严禁改动图片链接、URL、公式与代码段；选择题的 `（ ）` 保持原样。\n- 若这是学生用书/教材页面：
@@ -1378,8 +1379,8 @@ def fill_question_rubric(question: dict, llm: LLM, subquestion_id: str | None = 
     return 1
 
 
-PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'textbook_volume', 'textbook_version', 'year',
-                    'semester', 'region', 'exam_stage', 'exam_nature',
+PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'year', 'semester', 'region',
+                    'exam_stage', 'exam_nature',
                     'publisher_name', 'publisher_series', 'source_name', 'source_nature')
 
 
@@ -1396,6 +1397,14 @@ def normalize_paper(paper: dict):
         attrs['subject'] = subject_value
         paper.setdefault('issues', []).append(
             f'学科「{raw_subject}」不在九个学科内，已归一为「{subject_value}」')
+    for key, normalizer, label in (('grade', normalize_grade, '年级'),
+                                   ('semester', normalize_semester, '学期'),
+                                   ('year', normalize_year, '年份')):
+        raw_value = attrs.get(key)
+        value, changed = normalizer(raw_value)
+        if changed and value != raw_value:
+            attrs[key] = value
+            paper.setdefault('issues', []).append(f'{label}「{raw_value}」已归一为「{value}」')
     if attrs.get('source_nature') and attrs['source_nature'] not in SOURCE_NATURES:
         attrs['source_nature'] = ''
     raw_type = paper.get('paper_type') or ''
