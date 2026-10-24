@@ -217,6 +217,26 @@ public class TaskService {
                 for(int i=zones.size()-1;i>=0;i--)if("backup".equals(zones.get(i).path("role").asText()))zones.remove(i);
             }
             out.set("template",template);
+            var qIndex=new java.util.HashMap<String,JsonNode>();
+            for(JsonNode q:questions){qIndex.put(q.path("id").asText(),q);qIndex.put(q.path("content").path("id").asText(),q);}
+            if(template.isObject()&&template.path("blanks").isArray()){
+                for(JsonNode blank:template.path("blanks")){
+                    var node=(com.fasterxml.jackson.databind.node.ObjectNode)blank;
+                    var question=qIndex.get(blank.path("question_id").asText());
+                    var questionNumber=question==null?"":question.path("number").asText();
+                    var subId=blank.path("sub_node_id").asText("");
+                    var subNumber="";
+                    if(question!=null&&!subId.isEmpty()){
+                        for(JsonNode sub:question.path("subquestions")){
+                            if(subId.equals(sub.path("subquestion_id").asText()))subNumber=sub.path("number").asText();
+                        }
+                    }
+                    int index=blank.path("index_in_question").asInt(0);
+                    node.put("question_number",questionNumber);
+                    node.put("subquestion_number",subNumber);
+                    node.put("blank_label",questionNumber.isEmpty()?(""):(index>0?questionNumber+"-"+index:questionNumber));
+                }
+            }
             out.set("question_regions",templateContent.path("question_regions"));
             out.set("template_documents",templateContent.path("documents"));
             out.put("template_review_status",String.valueOf(trow.get("review_status")));
