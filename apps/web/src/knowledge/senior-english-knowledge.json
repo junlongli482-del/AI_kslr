@@ -1,0 +1,7418 @@
+{
+ "stage": "senior",
+ "subject": "english",
+ "subject_cn": "高中英语",
+ "bank_id": 12,
+ "root_id": "29978",
+ "root_title": "高中英语综合库",
+ "node_count": 823,
+ "nodes": [
+  {
+   "id": "188736",
+   "parent_id": "29978",
+   "title": "词汇",
+   "level": 1,
+   "href": "/gzyy/zsd188736",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188737",
+   "parent_id": "188736",
+   "title": "单词辨析",
+   "level": 2,
+   "href": "/gzyy/zsd188737",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41574",
+   "parent_id": "188737",
+   "title": "名词词义辨析",
+   "level": 3,
+   "href": "/gzyy/zsd41574",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41613",
+   "parent_id": "188737",
+   "title": "动词词义辨析",
+   "level": 3,
+   "href": "/gzyy/zsd41613",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41642",
+   "parent_id": "188737",
+   "title": "形容词词义辨析",
+   "level": 3,
+   "href": "/gzyy/zsd41642",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148986",
+   "parent_id": "188737",
+   "title": "-ing形容词和-ed形容词辨析",
+   "level": 3,
+   "href": "/gzyy/zsd148986",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41657",
+   "parent_id": "188737",
+   "title": "副词词义辨析",
+   "level": 3,
+   "href": "/gzyy/zsd41657",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188738",
+   "parent_id": "188737",
+   "title": "代词辨析",
+   "level": 3,
+   "href": "/gzyy/zsd188738",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188739",
+   "parent_id": "188737",
+   "title": "介词辨析",
+   "level": 3,
+   "href": "/gzyy/zsd188739",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188740",
+   "parent_id": "188737",
+   "title": "连词辨析",
+   "level": 3,
+   "href": "/gzyy/zsd188740",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188741",
+   "parent_id": "188736",
+   "title": "短语辨析",
+   "level": 2,
+   "href": "/gzyy/zsd188741",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188742",
+   "parent_id": "188741",
+   "title": "动词短语辨析",
+   "level": 3,
+   "href": "/gzyy/zsd188742",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188743",
+   "parent_id": "188741",
+   "title": "介词短语辨析",
+   "level": 3,
+   "href": "/gzyy/zsd188743",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208567",
+   "parent_id": "188741",
+   "title": "形容词短语辨析",
+   "level": 3,
+   "href": "/gzyy/zsd208567",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188744",
+   "parent_id": "188741",
+   "title": "其他短语辨析",
+   "level": 3,
+   "href": "/gzyy/zsd188744",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145384",
+   "parent_id": "29978",
+   "title": "语音",
+   "level": 1,
+   "href": "/gzyy/zsd145384",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188745",
+   "parent_id": "145384",
+   "title": "语音认知",
+   "level": 2,
+   "href": "/gzyy/zsd188745",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188749",
+   "parent_id": "145384",
+   "title": "基本读音",
+   "level": 2,
+   "href": "/gzyy/zsd188749",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188757",
+   "parent_id": "145384",
+   "title": "重音",
+   "level": 2,
+   "href": "/gzyy/zsd188757",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188760",
+   "parent_id": "145384",
+   "title": "意群",
+   "level": 2,
+   "href": "/gzyy/zsd188760",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188763",
+   "parent_id": "145384",
+   "title": "语调与节奏",
+   "level": 2,
+   "href": "/gzyy/zsd188763",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188767",
+   "parent_id": "145384",
+   "title": "单词的读音",
+   "level": 2,
+   "href": "/gzyy/zsd188767",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "29981",
+   "parent_id": "29978",
+   "title": "语法",
+   "level": 1,
+   "href": "/gzyy/zsd29981",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41682",
+   "parent_id": "29981",
+   "title": "时态",
+   "level": 2,
+   "href": "/gzyy/zsd41682",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41684",
+   "parent_id": "41682",
+   "title": "一般现在时",
+   "level": 3,
+   "href": "/gzyy/zsd41684",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197033",
+   "parent_id": "41684",
+   "title": "表经常性、习惯性 ",
+   "level": 4,
+   "href": "/gzyy/zsd197033",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197034",
+   "parent_id": "41684",
+   "title": "表客观真理、科学事实及自然现象 ",
+   "level": 4,
+   "href": "/gzyy/zsd197034",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197035",
+   "parent_id": "41684",
+   "title": "一般现在时表将来 ",
+   "level": 4,
+   "href": "/gzyy/zsd197035",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197036",
+   "parent_id": "41684",
+   "title": "一般现在时态用于具体语境(文学作品) ",
+   "level": 4,
+   "href": "/gzyy/zsd197036",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41685",
+   "parent_id": "41682",
+   "title": "现在进行时",
+   "level": 3,
+   "href": "/gzyy/zsd41685",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197037",
+   "parent_id": "41685",
+   "title": "现在进行时表进行 ",
+   "level": 4,
+   "href": "/gzyy/zsd197037",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197038",
+   "parent_id": "41685",
+   "title": "现在进行时表将来 ",
+   "level": 4,
+   "href": "/gzyy/zsd197038",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197039",
+   "parent_id": "41685",
+   "title": "现在进行时表喜恶 ",
+   "level": 4,
+   "href": "/gzyy/zsd197039",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41686",
+   "parent_id": "41682",
+   "title": "一般过去时",
+   "level": 3,
+   "href": "/gzyy/zsd41686",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197040",
+   "parent_id": "41686",
+   "title": "一般过去时表过去的动作和状态 ",
+   "level": 4,
+   "href": "/gzyy/zsd197040",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197041",
+   "parent_id": "41686",
+   "title": "used to do ",
+   "level": 4,
+   "href": "/gzyy/zsd197041",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41687",
+   "parent_id": "41682",
+   "title": "过去进行时",
+   "level": 3,
+   "href": "/gzyy/zsd41687",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197042",
+   "parent_id": "41687",
+   "title": "过去进行时表进行 ",
+   "level": 4,
+   "href": "/gzyy/zsd197042",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197043",
+   "parent_id": "41687",
+   "title": "过去进行时表过去将来 ",
+   "level": 4,
+   "href": "/gzyy/zsd197043",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197044",
+   "parent_id": "41687",
+   "title": "过去进行时表过去的喜恶 ",
+   "level": 4,
+   "href": "/gzyy/zsd197044",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197045",
+   "parent_id": "41687",
+   "title": "表现在（was/were wandering...） ",
+   "level": 4,
+   "href": "/gzyy/zsd197045",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41688",
+   "parent_id": "41682",
+   "title": "一般将来时",
+   "level": 3,
+   "href": "/gzyy/zsd41688",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197046",
+   "parent_id": "41688",
+   "title": "will/shall do ",
+   "level": 4,
+   "href": "/gzyy/zsd197046",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197047",
+   "parent_id": "41688",
+   "title": "be going to ",
+   "level": 4,
+   "href": "/gzyy/zsd197047",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197048",
+   "parent_id": "41688",
+   "title": "be (about) to do表安排计划 ",
+   "level": 4,
+   "href": "/gzyy/zsd197048",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41689",
+   "parent_id": "41682",
+   "title": "过去将来时",
+   "level": 3,
+   "href": "/gzyy/zsd41689",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197049",
+   "parent_id": "41689",
+   "title": "would do ",
+   "level": 4,
+   "href": "/gzyy/zsd197049",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197050",
+   "parent_id": "41689",
+   "title": "was/were going to do ",
+   "level": 4,
+   "href": "/gzyy/zsd197050",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197051",
+   "parent_id": "41689",
+   "title": "was/were (about) to do ",
+   "level": 4,
+   "href": "/gzyy/zsd197051",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197052",
+   "parent_id": "41689",
+   "title": "would do表过去习惯性动作 ",
+   "level": 4,
+   "href": "/gzyy/zsd197052",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41690",
+   "parent_id": "41682",
+   "title": "将来进行时",
+   "level": 3,
+   "href": "/gzyy/zsd41690",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197053",
+   "parent_id": "41690",
+   "title": "表将来某个时间将要进行的事情 ",
+   "level": 4,
+   "href": "/gzyy/zsd197053",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197054",
+   "parent_id": "41690",
+   "title": "表示对未来的预测 ",
+   "level": 4,
+   "href": "/gzyy/zsd197054",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197055",
+   "parent_id": "41690",
+   "title": "询问未来的计划或打算  ",
+   "level": 4,
+   "href": "/gzyy/zsd197055",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41691",
+   "parent_id": "41682",
+   "title": "现在完成时",
+   "level": 3,
+   "href": "/gzyy/zsd41691",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197056",
+   "parent_id": "41691",
+   "title": "表示影响（动作已完成） ",
+   "level": 4,
+   "href": "/gzyy/zsd197056",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197057",
+   "parent_id": "41691",
+   "title": "表示持续（动作未完成） ",
+   "level": 4,
+   "href": "/gzyy/zsd197057",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41692",
+   "parent_id": "41682",
+   "title": "过去完成时",
+   "level": 3,
+   "href": "/gzyy/zsd41692",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197058",
+   "parent_id": "41692",
+   "title": "过去完成时表过去的过去 ",
+   "level": 4,
+   "href": "/gzyy/zsd197058",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197059",
+   "parent_id": "41692",
+   "title": "had intended/planned/expceted表“原打算/计划/猜测......” ",
+   "level": 4,
+   "href": "/gzyy/zsd197059",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41693",
+   "parent_id": "41682",
+   "title": "现在完成进行时",
+   "level": 3,
+   "href": "/gzyy/zsd41693",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197060",
+   "parent_id": "41693",
+   "title": "表过去开始到现在仍在发生的动作",
+   "level": 4,
+   "href": "/gzyy/zsd197060",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197061",
+   "parent_id": "41693",
+   "title": "表过去开始而刚刚结束的动作 ",
+   "level": 4,
+   "href": "/gzyy/zsd197061",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41694",
+   "parent_id": "41682",
+   "title": "将来完成时",
+   "level": 3,
+   "href": "/gzyy/zsd41694",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41695",
+   "parent_id": "41682",
+   "title": "过去完成进行时",
+   "level": 3,
+   "href": "/gzyy/zsd41695",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157964",
+   "parent_id": "41682",
+   "title": "将来完成进行时",
+   "level": 3,
+   "href": "/gzyy/zsd157964",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41683",
+   "parent_id": "29981",
+   "title": "被动语态",
+   "level": 2,
+   "href": "/gzyy/zsd41683",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148989",
+   "parent_id": "41683",
+   "title": "被动语态的形式",
+   "level": 3,
+   "href": "/gzyy/zsd148989",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41696",
+   "parent_id": "148989",
+   "title": "一般现在时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41696",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41697",
+   "parent_id": "148989",
+   "title": "现在进行时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41697",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41698",
+   "parent_id": "148989",
+   "title": "一般过去时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41698",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41699",
+   "parent_id": "148989",
+   "title": "过去进行时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41699",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41700",
+   "parent_id": "148989",
+   "title": "一般将来时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41700",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41701",
+   "parent_id": "148989",
+   "title": "过去将来时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41701",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41703",
+   "parent_id": "148989",
+   "title": "现在完成时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41703",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41704",
+   "parent_id": "148989",
+   "title": "过去完成时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41704",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41705",
+   "parent_id": "148989",
+   "title": "将来完成时的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41706",
+   "parent_id": "148989",
+   "title": "含情态动词的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd41706",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148990",
+   "parent_id": "41683",
+   "title": "被动语态的用法",
+   "level": 3,
+   "href": "/gzyy/zsd148990",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41707",
+   "parent_id": "148990",
+   "title": "需要使用被动语态的情况",
+   "level": 4,
+   "href": "/gzyy/zsd41707",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149056",
+   "parent_id": "148990",
+   "title": "无被动语态的情况",
+   "level": 4,
+   "href": "/gzyy/zsd149056",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149057",
+   "parent_id": "148990",
+   "title": "主动表被动",
+   "level": 4,
+   "href": "/gzyy/zsd149057",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149058",
+   "parent_id": "148990",
+   "title": "省略to的不定式的被动语态",
+   "level": 4,
+   "href": "/gzyy/zsd149058",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41567",
+   "parent_id": "29981",
+   "title": "非谓语动词",
+   "level": 2,
+   "href": "/gzyy/zsd41567",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41618",
+   "parent_id": "41567",
+   "title": "动词不定式",
+   "level": 3,
+   "href": "/gzyy/zsd41618",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148977",
+   "parent_id": "41618",
+   "title": "不定式的构成",
+   "level": 4,
+   "href": "/gzyy/zsd148977",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149028",
+   "parent_id": "148977",
+   "title": "动词不定式的肯定结构",
+   "level": 5,
+   "href": "/gzyy/zsd149028",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149029",
+   "parent_id": "148977",
+   "title": "动词不定式的否定结构",
+   "level": 5,
+   "href": "/gzyy/zsd149029",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148978",
+   "parent_id": "41618",
+   "title": "不定式的时态和语态",
+   "level": 4,
+   "href": "/gzyy/zsd148978",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149031",
+   "parent_id": "148978",
+   "title": "不定式的一般式：to+动词原形",
+   "level": 5,
+   "href": "/gzyy/zsd149031",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149032",
+   "parent_id": "148978",
+   "title": "不定式的完成式：to have done",
+   "level": 5,
+   "href": "/gzyy/zsd149032",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149033",
+   "parent_id": "148978",
+   "title": "不定式的进行式：to be doing",
+   "level": 5,
+   "href": "/gzyy/zsd149033",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149034",
+   "parent_id": "148978",
+   "title": "不定式的完成进行式：to have been doing",
+   "level": 5,
+   "href": "/gzyy/zsd149034",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149035",
+   "parent_id": "148978",
+   "title": "不定式的被动语态",
+   "level": 5,
+   "href": "/gzyy/zsd149035",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148979",
+   "parent_id": "41618",
+   "title": "不定式的用法和意义",
+   "level": 4,
+   "href": "/gzyy/zsd148979",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41621",
+   "parent_id": "148979",
+   "title": "不定式作目的状语",
+   "level": 5,
+   "href": "/gzyy/zsd41621",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154235",
+   "parent_id": "148979",
+   "title": "不定式作结果状语",
+   "level": 5,
+   "href": "/gzyy/zsd154235",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154236",
+   "parent_id": "148979",
+   "title": "不定式作原因状语",
+   "level": 5,
+   "href": "/gzyy/zsd154236",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41622",
+   "parent_id": "148979",
+   "title": "不定式作主语",
+   "level": 5,
+   "href": "/gzyy/zsd41622",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41623",
+   "parent_id": "148979",
+   "title": "不定式作宾语",
+   "level": 5,
+   "href": "/gzyy/zsd41623",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41624",
+   "parent_id": "148979",
+   "title": "不定式作表语",
+   "level": 5,
+   "href": "/gzyy/zsd41624",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41625",
+   "parent_id": "148979",
+   "title": "不定式作宾语补足语",
+   "level": 5,
+   "href": "/gzyy/zsd41625",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41626",
+   "parent_id": "148979",
+   "title": "不定式作主语补足语",
+   "level": 5,
+   "href": "/gzyy/zsd41626",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41627",
+   "parent_id": "148979",
+   "title": "不定式作定语",
+   "level": 5,
+   "href": "/gzyy/zsd41627",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149036",
+   "parent_id": "148979",
+   "title": "不定式表示将要发生的动作",
+   "level": 5,
+   "href": "/gzyy/zsd149036",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149037",
+   "parent_id": "148979",
+   "title": "特殊疑问词加动词不定式的用法",
+   "level": 5,
+   "href": "/gzyy/zsd149037",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148976",
+   "parent_id": "41567",
+   "title": "动名词",
+   "level": 3,
+   "href": "/gzyy/zsd148976",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149043",
+   "parent_id": "148976",
+   "title": "动名词的时态和语态",
+   "level": 4,
+   "href": "/gzyy/zsd149043",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149046",
+   "parent_id": "149043",
+   "title": "动名词的一般式：doing",
+   "level": 5,
+   "href": "/gzyy/zsd149046",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149047",
+   "parent_id": "149043",
+   "title": "动名词的完成式：having done",
+   "level": 5,
+   "href": "/gzyy/zsd149047",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149048",
+   "parent_id": "149043",
+   "title": "动名词的被动语态",
+   "level": 5,
+   "href": "/gzyy/zsd149048",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149044",
+   "parent_id": "148976",
+   "title": "动名词的用法",
+   "level": 4,
+   "href": "/gzyy/zsd149044",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41628",
+   "parent_id": "149044",
+   "title": "动名词作主语",
+   "level": 5,
+   "href": "/gzyy/zsd41628",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41629",
+   "parent_id": "149044",
+   "title": "动名词作宾语",
+   "level": 5,
+   "href": "/gzyy/zsd41629",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149049",
+   "parent_id": "149044",
+   "title": "动名词作定语",
+   "level": 5,
+   "href": "/gzyy/zsd149049",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149050",
+   "parent_id": "149044",
+   "title": "动名词作表语",
+   "level": 5,
+   "href": "/gzyy/zsd149050",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149045",
+   "parent_id": "148976",
+   "title": "动名词的复合结构",
+   "level": 4,
+   "href": "/gzyy/zsd149045",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41619",
+   "parent_id": "41567",
+   "title": "现在分词",
+   "level": 3,
+   "href": "/gzyy/zsd41619",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148980",
+   "parent_id": "41619",
+   "title": "现在分词的时态和语态",
+   "level": 4,
+   "href": "/gzyy/zsd148980",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149038",
+   "parent_id": "148980",
+   "title": "现在分词的一般式：doing",
+   "level": 5,
+   "href": "/gzyy/zsd149038",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149039",
+   "parent_id": "148980",
+   "title": "现在分词的完成式：having done",
+   "level": 5,
+   "href": "/gzyy/zsd149039",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149040",
+   "parent_id": "148980",
+   "title": "现在分词的被动语态",
+   "level": 5,
+   "href": "/gzyy/zsd149040",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148981",
+   "parent_id": "41619",
+   "title": "现在分词的用法和意义",
+   "level": 4,
+   "href": "/gzyy/zsd148981",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41630",
+   "parent_id": "148981",
+   "title": "现在分词作表语",
+   "level": 5,
+   "href": "/gzyy/zsd41630",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41631",
+   "parent_id": "148981",
+   "title": "现在分词作定语",
+   "level": 5,
+   "href": "/gzyy/zsd41631",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41632",
+   "parent_id": "148981",
+   "title": "现在分词作补足语",
+   "level": 5,
+   "href": "/gzyy/zsd41632",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41633",
+   "parent_id": "148981",
+   "title": "现在分词作状语",
+   "level": 5,
+   "href": "/gzyy/zsd41633",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149041",
+   "parent_id": "148981",
+   "title": "现在分词表示主动意义",
+   "level": 5,
+   "href": "/gzyy/zsd149041",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149042",
+   "parent_id": "148981",
+   "title": "现在分词表示正在进行的动作",
+   "level": 5,
+   "href": "/gzyy/zsd149042",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41620",
+   "parent_id": "41567",
+   "title": "过去分词",
+   "level": 3,
+   "href": "/gzyy/zsd41620",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41634",
+   "parent_id": "41620",
+   "title": "过去分词作定语",
+   "level": 4,
+   "href": "/gzyy/zsd41634",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41635",
+   "parent_id": "41620",
+   "title": "过去分词作表语",
+   "level": 4,
+   "href": "/gzyy/zsd41635",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41636",
+   "parent_id": "41620",
+   "title": "过去分词作补足语",
+   "level": 4,
+   "href": "/gzyy/zsd41636",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41637",
+   "parent_id": "41620",
+   "title": "过去分词作状语",
+   "level": 4,
+   "href": "/gzyy/zsd41637",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148982",
+   "parent_id": "41620",
+   "title": "过去分词表示被动意义",
+   "level": 4,
+   "href": "/gzyy/zsd148982",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148983",
+   "parent_id": "41620",
+   "title": "过去分词表示已经完成的动作",
+   "level": 4,
+   "href": "/gzyy/zsd148983",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41614",
+   "parent_id": "41567",
+   "title": "动词的固定结构",
+   "level": 3,
+   "href": "/gzyy/zsd41614",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "127892",
+   "parent_id": "41567",
+   "title": "独立主格结构",
+   "level": 3,
+   "href": "/gzyy/zsd127892",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185470",
+   "parent_id": "41567",
+   "title": "with的复合结构",
+   "level": 3,
+   "href": "/gzyy/zsd185470",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41714",
+   "parent_id": "29981",
+   "title": "主谓一致",
+   "level": 2,
+   "href": "/gzyy/zsd41714",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41775",
+   "parent_id": "41714",
+   "title": "就近原则",
+   "level": 3,
+   "href": "/gzyy/zsd41775",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41777",
+   "parent_id": "41714",
+   "title": "意义一致",
+   "level": 3,
+   "href": "/gzyy/zsd41777",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41778",
+   "parent_id": "41714",
+   "title": "语法一致",
+   "level": 3,
+   "href": "/gzyy/zsd41778",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41733",
+   "parent_id": "29981",
+   "title": "名词性从句",
+   "level": 2,
+   "href": "/gzyy/zsd41733",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41737",
+   "parent_id": "41733",
+   "title": "主语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41737",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41741",
+   "parent_id": "41737",
+   "title": "主语从句的连接词",
+   "level": 4,
+   "href": "/gzyy/zsd41741",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149023",
+   "parent_id": "41737",
+   "title": "主语从句的语序",
+   "level": 4,
+   "href": "/gzyy/zsd149023",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41738",
+   "parent_id": "41733",
+   "title": "同位语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41738",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41743",
+   "parent_id": "41738",
+   "title": "同位语从句的连接词",
+   "level": 4,
+   "href": "/gzyy/zsd41743",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41744",
+   "parent_id": "41738",
+   "title": "同位语从句与定语从句的区别",
+   "level": 4,
+   "href": "/gzyy/zsd41744",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41739",
+   "parent_id": "41733",
+   "title": "表语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41739",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149024",
+   "parent_id": "41739",
+   "title": "表语从句的连接词",
+   "level": 4,
+   "href": "/gzyy/zsd149024",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41745",
+   "parent_id": "149024",
+   "title": "that, whether, as, as if, as though, because引导的表语从句 ",
+   "level": 5,
+   "href": "/gzyy/zsd41745",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41746",
+   "parent_id": "149024",
+   "title": "连接代词和连接副词引导的表语从句 ",
+   "level": 5,
+   "href": "/gzyy/zsd41746",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149025",
+   "parent_id": "41739",
+   "title": "表语从句的时态",
+   "level": 4,
+   "href": "/gzyy/zsd149025",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41740",
+   "parent_id": "41733",
+   "title": "宾语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41740",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148996",
+   "parent_id": "41740",
+   "title": "宾语从句的连接词",
+   "level": 4,
+   "href": "/gzyy/zsd148996",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41747",
+   "parent_id": "148996",
+   "title": "that,if, whether引导的宾语从句 ",
+   "level": 5,
+   "href": "/gzyy/zsd41747",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41748",
+   "parent_id": "148996",
+   "title": "连接代词和连接副词引导的宾语从句 ",
+   "level": 5,
+   "href": "/gzyy/zsd41748",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148997",
+   "parent_id": "41740",
+   "title": "宾语从句的语序",
+   "level": 4,
+   "href": "/gzyy/zsd148997",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148998",
+   "parent_id": "41740",
+   "title": "宾语从句的时态",
+   "level": 4,
+   "href": "/gzyy/zsd148998",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148999",
+   "parent_id": "41740",
+   "title": "宾语从句的否定前移",
+   "level": 4,
+   "href": "/gzyy/zsd148999",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41736",
+   "parent_id": "41740",
+   "title": "直接引语和间接引语",
+   "level": 4,
+   "href": "/gzyy/zsd41736",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41762",
+   "parent_id": "41736",
+   "title": "陈述句",
+   "level": 5,
+   "href": "/gzyy/zsd41762",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41763",
+   "parent_id": "41736",
+   "title": "一般疑问句",
+   "level": 5,
+   "href": "/gzyy/zsd41763",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41764",
+   "parent_id": "41736",
+   "title": "特殊疑问句",
+   "level": 5,
+   "href": "/gzyy/zsd41764",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41765",
+   "parent_id": "41736",
+   "title": "祈使句",
+   "level": 5,
+   "href": "/gzyy/zsd41765",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41734",
+   "parent_id": "29981",
+   "title": "定语从句",
+   "level": 2,
+   "href": "/gzyy/zsd41734",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41751",
+   "parent_id": "41734",
+   "title": "限制性定语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41751",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149000",
+   "parent_id": "41751",
+   "title": "关系代词",
+   "level": 4,
+   "href": "/gzyy/zsd149000",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149077",
+   "parent_id": "149000",
+   "title": "关系代词that引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149077",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149078",
+   "parent_id": "149000",
+   "title": "关系代词which引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149078",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149079",
+   "parent_id": "149000",
+   "title": "关系代词who引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149079",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149080",
+   "parent_id": "149000",
+   "title": "关系代词whom引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149080",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149081",
+   "parent_id": "149000",
+   "title": "关系代词whose引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149081",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149082",
+   "parent_id": "149000",
+   "title": "as引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149082",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149001",
+   "parent_id": "41751",
+   "title": "关系副词",
+   "level": 4,
+   "href": "/gzyy/zsd149001",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149083",
+   "parent_id": "149001",
+   "title": "关系副词when引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149083",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149084",
+   "parent_id": "149001",
+   "title": "关系副词where引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149084",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149085",
+   "parent_id": "149001",
+   "title": "关系副词why引导限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149085",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149086",
+   "parent_id": "149001",
+   "title": "关系副词=介词+关系代词",
+   "level": 5,
+   "href": "/gzyy/zsd149086",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149002",
+   "parent_id": "41751",
+   "title": "“介词+关系代词”引导限制性定语从句",
+   "level": 4,
+   "href": "/gzyy/zsd149002",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41752",
+   "parent_id": "41734",
+   "title": "非限制性定语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41752",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149003",
+   "parent_id": "41752",
+   "title": "关系代词",
+   "level": 4,
+   "href": "/gzyy/zsd149003",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149087",
+   "parent_id": "149003",
+   "title": "who引导非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149087",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149088",
+   "parent_id": "149003",
+   "title": "whom引导非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149088",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149089",
+   "parent_id": "149003",
+   "title": "whose引导非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149089",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149090",
+   "parent_id": "149003",
+   "title": "which引导非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149090",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149091",
+   "parent_id": "149003",
+   "title": "as引导非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149091",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149092",
+   "parent_id": "149003",
+   "title": "“介词+关系代词”引导的非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149092",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149004",
+   "parent_id": "41752",
+   "title": "关系副词",
+   "level": 4,
+   "href": "/gzyy/zsd149004",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149093",
+   "parent_id": "149004",
+   "title": "when引导的非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149093",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149094",
+   "parent_id": "149004",
+   "title": "where引导的非限制性定语从句",
+   "level": 5,
+   "href": "/gzyy/zsd149094",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149005",
+   "parent_id": "41752",
+   "title": "非限制性定语从句的注意事项",
+   "level": 4,
+   "href": "/gzyy/zsd149005",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149095",
+   "parent_id": "149005",
+   "title": "非限制性定语从句不可用that",
+   "level": 5,
+   "href": "/gzyy/zsd149095",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149096",
+   "parent_id": "149005",
+   "title": "非限制性定语从句不可用why，用for which代替why",
+   "level": 5,
+   "href": "/gzyy/zsd149096",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41735",
+   "parent_id": "29981",
+   "title": "状语从句",
+   "level": 2,
+   "href": "/gzyy/zsd41735",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41753",
+   "parent_id": "41735",
+   "title": "时间状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41753",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41754",
+   "parent_id": "41735",
+   "title": "地点状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41754",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41755",
+   "parent_id": "41735",
+   "title": "原因状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41755",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41756",
+   "parent_id": "41735",
+   "title": "目的状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41756",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41757",
+   "parent_id": "41735",
+   "title": "结果状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41757",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41758",
+   "parent_id": "41735",
+   "title": "条件状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41758",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41759",
+   "parent_id": "41735",
+   "title": "让步状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41759",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41760",
+   "parent_id": "41735",
+   "title": "方式状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41760",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41761",
+   "parent_id": "41735",
+   "title": "比较状语从句",
+   "level": 3,
+   "href": "/gzyy/zsd41761",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41562",
+   "parent_id": "29981",
+   "title": "名词",
+   "level": 2,
+   "href": "/gzyy/zsd41562",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41571",
+   "parent_id": "41562",
+   "title": "名词的数",
+   "level": 3,
+   "href": "/gzyy/zsd41571",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148966",
+   "parent_id": "41571",
+   "title": "可数名词的单复数",
+   "level": 4,
+   "href": "/gzyy/zsd148966",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148967",
+   "parent_id": "41571",
+   "title": "不可数名词",
+   "level": 4,
+   "href": "/gzyy/zsd148967",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41572",
+   "parent_id": "41562",
+   "title": "名词所有格",
+   "level": 3,
+   "href": "/gzyy/zsd41572",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41575",
+   "parent_id": "41562",
+   "title": "名词的功用",
+   "level": 3,
+   "href": "/gzyy/zsd41575",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41576",
+   "parent_id": "41575",
+   "title": "名词作定语",
+   "level": 4,
+   "href": "/gzyy/zsd41576",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41577",
+   "parent_id": "41575",
+   "title": "名词作状语",
+   "level": 4,
+   "href": "/gzyy/zsd41577",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41578",
+   "parent_id": "41575",
+   "title": "名词作主语",
+   "level": 4,
+   "href": "/gzyy/zsd41578",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41579",
+   "parent_id": "41575",
+   "title": "名词作宾语",
+   "level": 4,
+   "href": "/gzyy/zsd41579",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41580",
+   "parent_id": "41575",
+   "title": "名词作表语",
+   "level": 4,
+   "href": "/gzyy/zsd41580",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41581",
+   "parent_id": "41575",
+   "title": "名词作补语",
+   "level": 4,
+   "href": "/gzyy/zsd41581",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41566",
+   "parent_id": "29981",
+   "title": "动词",
+   "level": 2,
+   "href": "/gzyy/zsd41566",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148968",
+   "parent_id": "41566",
+   "title": "实义动词",
+   "level": 3,
+   "href": "/gzyy/zsd148968",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149026",
+   "parent_id": "148968",
+   "title": "及物动词",
+   "level": 4,
+   "href": "/gzyy/zsd149026",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149027",
+   "parent_id": "148968",
+   "title": "不及物动词",
+   "level": 4,
+   "href": "/gzyy/zsd149027",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41610",
+   "parent_id": "41566",
+   "title": "系动词",
+   "level": 3,
+   "href": "/gzyy/zsd41610",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148970",
+   "parent_id": "41610",
+   "title": "be动词",
+   "level": 4,
+   "href": "/gzyy/zsd148970",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148971",
+   "parent_id": "41610",
+   "title": "感官动词",
+   "level": 4,
+   "href": "/gzyy/zsd148971",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148972",
+   "parent_id": "41610",
+   "title": "其他系动词 ",
+   "level": 4,
+   "href": "/gzyy/zsd148972",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148969",
+   "parent_id": "41566",
+   "title": "使役动词",
+   "level": 3,
+   "href": "/gzyy/zsd148969",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "157961",
+   "parent_id": "148969",
+   "title": "使役动词let",
+   "level": 4,
+   "href": "/gzyy/zsd157961",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157962",
+   "parent_id": "148969",
+   "title": "使役动词make",
+   "level": 4,
+   "href": "/gzyy/zsd157962",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157963",
+   "parent_id": "148969",
+   "title": "使役动词have",
+   "level": 4,
+   "href": "/gzyy/zsd157963",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41612",
+   "parent_id": "41566",
+   "title": "助动词",
+   "level": 3,
+   "href": "/gzyy/zsd41612",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148973",
+   "parent_id": "41612",
+   "title": "be作助动词",
+   "level": 4,
+   "href": "/gzyy/zsd148973",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148974",
+   "parent_id": "41612",
+   "title": "do作助动词",
+   "level": 4,
+   "href": "/gzyy/zsd148974",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148975",
+   "parent_id": "41612",
+   "title": "have作助动词",
+   "level": 4,
+   "href": "/gzyy/zsd148975",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41638",
+   "parent_id": "29981",
+   "title": "形容词",
+   "level": 2,
+   "href": "/gzyy/zsd41638",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41644",
+   "parent_id": "41638",
+   "title": "形容词的位置",
+   "level": 3,
+   "href": "/gzyy/zsd41644",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41645",
+   "parent_id": "41638",
+   "title": "形容词的功用",
+   "level": 3,
+   "href": "/gzyy/zsd41645",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41646",
+   "parent_id": "41645",
+   "title": "形容词作定语",
+   "level": 4,
+   "href": "/gzyy/zsd41646",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41647",
+   "parent_id": "41645",
+   "title": "形容词作表语",
+   "level": 4,
+   "href": "/gzyy/zsd41647",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41648",
+   "parent_id": "41645",
+   "title": "形容词作补足语",
+   "level": 4,
+   "href": "/gzyy/zsd41648",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41649",
+   "parent_id": "41645",
+   "title": "形容词作状语",
+   "level": 4,
+   "href": "/gzyy/zsd41649",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41640",
+   "parent_id": "41638",
+   "title": "形容词的比较等级",
+   "level": 3,
+   "href": "/gzyy/zsd41640",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41662",
+   "parent_id": "41640",
+   "title": "形容词的原级",
+   "level": 4,
+   "href": "/gzyy/zsd41662",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41663",
+   "parent_id": "41640",
+   "title": "形容词的比较级",
+   "level": 4,
+   "href": "/gzyy/zsd41663",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41664",
+   "parent_id": "41640",
+   "title": "形容词的最高级",
+   "level": 4,
+   "href": "/gzyy/zsd41664",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41639",
+   "parent_id": "29981",
+   "title": "副词",
+   "level": 2,
+   "href": "/gzyy/zsd41639",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148984",
+   "parent_id": "41639",
+   "title": "副词的分类",
+   "level": 3,
+   "href": "/gzyy/zsd148984",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41650",
+   "parent_id": "148984",
+   "title": "时间副词",
+   "level": 4,
+   "href": "/gzyy/zsd41650",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41651",
+   "parent_id": "148984",
+   "title": "地点副词",
+   "level": 4,
+   "href": "/gzyy/zsd41651",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41652",
+   "parent_id": "148984",
+   "title": "方式副词",
+   "level": 4,
+   "href": "/gzyy/zsd41652",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41653",
+   "parent_id": "148984",
+   "title": "程度副词",
+   "level": 4,
+   "href": "/gzyy/zsd41653",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41654",
+   "parent_id": "148984",
+   "title": "频度副词",
+   "level": 4,
+   "href": "/gzyy/zsd41654",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41655",
+   "parent_id": "148984",
+   "title": "连接副词",
+   "level": 4,
+   "href": "/gzyy/zsd41655",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148985",
+   "parent_id": "41639",
+   "title": "副词的位置",
+   "level": 3,
+   "href": "/gzyy/zsd148985",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149051",
+   "parent_id": "148985",
+   "title": "副词enough修饰形容词或副词时后置",
+   "level": 4,
+   "href": "/gzyy/zsd149051",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149052",
+   "parent_id": "148985",
+   "title": "人称代词在动副短语中的位置",
+   "level": 4,
+   "href": "/gzyy/zsd149052",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41658",
+   "parent_id": "41639",
+   "title": "副词的功用",
+   "level": 3,
+   "href": "/gzyy/zsd41658",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41659",
+   "parent_id": "41658",
+   "title": "副词作状语",
+   "level": 4,
+   "href": "/gzyy/zsd41659",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41660",
+   "parent_id": "41658",
+   "title": "副词作定语",
+   "level": 4,
+   "href": "/gzyy/zsd41660",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41661",
+   "parent_id": "41658",
+   "title": "副词作表语",
+   "level": 4,
+   "href": "/gzyy/zsd41661",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "136339",
+   "parent_id": "41658",
+   "title": "副词作补足语",
+   "level": 4,
+   "href": "/gzyy/zsd136339",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41641",
+   "parent_id": "41639",
+   "title": "副词的比较等级",
+   "level": 3,
+   "href": "/gzyy/zsd41641",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41665",
+   "parent_id": "41641",
+   "title": "副词的原级",
+   "level": 4,
+   "href": "/gzyy/zsd41665",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41666",
+   "parent_id": "41641",
+   "title": "副词的比较级",
+   "level": 4,
+   "href": "/gzyy/zsd41666",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41667",
+   "parent_id": "41641",
+   "title": "副词的最高级",
+   "level": 4,
+   "href": "/gzyy/zsd41667",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41563",
+   "parent_id": "29981",
+   "title": "代词",
+   "level": 2,
+   "href": "/gzyy/zsd41563",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41582",
+   "parent_id": "41563",
+   "title": "人称代词",
+   "level": 3,
+   "href": "/gzyy/zsd41582",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41590",
+   "parent_id": "41582",
+   "title": "主格",
+   "level": 4,
+   "href": "/gzyy/zsd41590",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41591",
+   "parent_id": "41582",
+   "title": "宾格",
+   "level": 4,
+   "href": "/gzyy/zsd41591",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41583",
+   "parent_id": "41563",
+   "title": "物主代词",
+   "level": 3,
+   "href": "/gzyy/zsd41583",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41592",
+   "parent_id": "41583",
+   "title": "形容词性物主代词",
+   "level": 4,
+   "href": "/gzyy/zsd41592",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41593",
+   "parent_id": "41583",
+   "title": "名词性物主代词",
+   "level": 4,
+   "href": "/gzyy/zsd41593",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41584",
+   "parent_id": "41563",
+   "title": "反身代词",
+   "level": 3,
+   "href": "/gzyy/zsd41584",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41585",
+   "parent_id": "41563",
+   "title": "不定代词",
+   "level": 3,
+   "href": "/gzyy/zsd41585",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41594",
+   "parent_id": "41585",
+   "title": "简单不定代词",
+   "level": 4,
+   "href": "/gzyy/zsd41594",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41595",
+   "parent_id": "41585",
+   "title": "复合不定代词",
+   "level": 4,
+   "href": "/gzyy/zsd41595",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41586",
+   "parent_id": "41563",
+   "title": "相互代词",
+   "level": 3,
+   "href": "/gzyy/zsd41586",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41588",
+   "parent_id": "41563",
+   "title": "指示代词",
+   "level": 3,
+   "href": "/gzyy/zsd41588",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41589",
+   "parent_id": "41563",
+   "title": "it的特殊用法",
+   "level": 3,
+   "href": "/gzyy/zsd41589",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41596",
+   "parent_id": "41589",
+   "title": "代词it",
+   "level": 4,
+   "href": "/gzyy/zsd41596",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41597",
+   "parent_id": "41589",
+   "title": "it 作形式主语",
+   "level": 4,
+   "href": "/gzyy/zsd41597",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41598",
+   "parent_id": "41589",
+   "title": "it 作形式宾语",
+   "level": 4,
+   "href": "/gzyy/zsd41598",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41565",
+   "parent_id": "29981",
+   "title": "数词",
+   "level": 2,
+   "href": "/gzyy/zsd41565",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41603",
+   "parent_id": "41565",
+   "title": "基数词",
+   "level": 3,
+   "href": "/gzyy/zsd41603",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41604",
+   "parent_id": "41565",
+   "title": "序数词",
+   "level": 3,
+   "href": "/gzyy/zsd41604",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41605",
+   "parent_id": "41565",
+   "title": "分数、小数和百分数",
+   "level": 3,
+   "href": "/gzyy/zsd41605",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41607",
+   "parent_id": "41565",
+   "title": "时间表达法",
+   "level": 3,
+   "href": "/gzyy/zsd41607",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41608",
+   "parent_id": "41565",
+   "title": "倍数表达法",
+   "level": 3,
+   "href": "/gzyy/zsd41608",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41609",
+   "parent_id": "41565",
+   "title": "与数量有关的名词、代词和限定词",
+   "level": 3,
+   "href": "/gzyy/zsd41609",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41564",
+   "parent_id": "29981",
+   "title": "冠词",
+   "level": 2,
+   "href": "/gzyy/zsd41564",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41599",
+   "parent_id": "41564",
+   "title": "不定冠词",
+   "level": 3,
+   "href": "/gzyy/zsd41599",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41600",
+   "parent_id": "41564",
+   "title": "定冠词",
+   "level": 3,
+   "href": "/gzyy/zsd41600",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41601",
+   "parent_id": "41564",
+   "title": "零冠词",
+   "level": 3,
+   "href": "/gzyy/zsd41601",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41602",
+   "parent_id": "41564",
+   "title": "短语中有无冠词的意义区分",
+   "level": 3,
+   "href": "/gzyy/zsd41602",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41570",
+   "parent_id": "29981",
+   "title": "连词",
+   "level": 2,
+   "href": "/gzyy/zsd41570",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41680",
+   "parent_id": "41570",
+   "title": "并列连词",
+   "level": 3,
+   "href": "/gzyy/zsd41680",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41681",
+   "parent_id": "41570",
+   "title": "从属连词",
+   "level": 3,
+   "href": "/gzyy/zsd41681",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41569",
+   "parent_id": "29981",
+   "title": "介词",
+   "level": 2,
+   "href": "/gzyy/zsd41569",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41668",
+   "parent_id": "41569",
+   "title": "表示时间",
+   "level": 3,
+   "href": "/gzyy/zsd41668",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41669",
+   "parent_id": "41569",
+   "title": "表示地点方位",
+   "level": 3,
+   "href": "/gzyy/zsd41669",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41670",
+   "parent_id": "41569",
+   "title": "表示方式、方法或手段",
+   "level": 3,
+   "href": "/gzyy/zsd41670",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41671",
+   "parent_id": "41569",
+   "title": "表示伴随",
+   "level": 3,
+   "href": "/gzyy/zsd41671",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148987",
+   "parent_id": "41569",
+   "title": "表示“关于”",
+   "level": 3,
+   "href": "/gzyy/zsd148987",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41672",
+   "parent_id": "41569",
+   "title": "表示原因",
+   "level": 3,
+   "href": "/gzyy/zsd41672",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41673",
+   "parent_id": "41569",
+   "title": "表示“除……以外”",
+   "level": 3,
+   "href": "/gzyy/zsd41673",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41674",
+   "parent_id": "41569",
+   "title": "表示目的",
+   "level": 3,
+   "href": "/gzyy/zsd41674",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41675",
+   "parent_id": "41569",
+   "title": "表示比较",
+   "level": 3,
+   "href": "/gzyy/zsd41675",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41676",
+   "parent_id": "41569",
+   "title": "表示所属",
+   "level": 3,
+   "href": "/gzyy/zsd41676",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41677",
+   "parent_id": "41569",
+   "title": "表示条件",
+   "level": 3,
+   "href": "/gzyy/zsd41677",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148988",
+   "parent_id": "41569",
+   "title": "表示让步",
+   "level": 3,
+   "href": "/gzyy/zsd148988",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41678",
+   "parent_id": "41569",
+   "title": "表示其它",
+   "level": 3,
+   "href": "/gzyy/zsd41678",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41679",
+   "parent_id": "41569",
+   "title": "介词与其它词类的搭配",
+   "level": 3,
+   "href": "/gzyy/zsd41679",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41611",
+   "parent_id": "29981",
+   "title": "情态动词",
+   "level": 2,
+   "href": "/gzyy/zsd41611",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41615",
+   "parent_id": "41611",
+   "title": "情态动词的用法",
+   "level": 3,
+   "href": "/gzyy/zsd41615",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154570",
+   "parent_id": "41615",
+   "title": "can/could的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154570",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154571",
+   "parent_id": "154570",
+   "title": "can/could表示能力",
+   "level": 5,
+   "href": "/gzyy/zsd154571",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154572",
+   "parent_id": "154570",
+   "title": "can/could表示推测",
+   "level": 5,
+   "href": "/gzyy/zsd154572",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154573",
+   "parent_id": "154570",
+   "title": "can/could表示请求",
+   "level": 5,
+   "href": "/gzyy/zsd154573",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154574",
+   "parent_id": "41615",
+   "title": "may/might的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154574",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154575",
+   "parent_id": "154574",
+   "title": "may/might表示“可以”",
+   "level": 5,
+   "href": "/gzyy/zsd154575",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154576",
+   "parent_id": "154574",
+   "title": "may/might表示推测",
+   "level": 5,
+   "href": "/gzyy/zsd154576",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154577",
+   "parent_id": "41615",
+   "title": "must的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154577",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154578",
+   "parent_id": "154577",
+   "title": "must表示“必须”“应当”",
+   "level": 5,
+   "href": "/gzyy/zsd154578",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154579",
+   "parent_id": "154577",
+   "title": "must表示推测",
+   "level": 5,
+   "href": "/gzyy/zsd154579",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154580",
+   "parent_id": "154577",
+   "title": "mustn't的用法",
+   "level": 5,
+   "href": "/gzyy/zsd154580",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154581",
+   "parent_id": "41615",
+   "title": "should的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154581",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154582",
+   "parent_id": "41615",
+   "title": "would的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154582",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154583",
+   "parent_id": "41615",
+   "title": "will的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154583",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154584",
+   "parent_id": "41615",
+   "title": "ought (not) to的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154584",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154585",
+   "parent_id": "41615",
+   "title": "shall的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154585",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154586",
+   "parent_id": "41615",
+   "title": "need的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154586",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154587",
+   "parent_id": "41615",
+   "title": "have to的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154587",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154588",
+   "parent_id": "41615",
+   "title": "dare (not)的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154588",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154589",
+   "parent_id": "41615",
+   "title": "had better (not)的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154589",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41617",
+   "parent_id": "41611",
+   "title": "情态动词+have done",
+   "level": 3,
+   "href": "/gzyy/zsd41617",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154590",
+   "parent_id": "41617",
+   "title": "can/could have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154590",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154591",
+   "parent_id": "41617",
+   "title": "can’t/couldn’t have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154591",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154592",
+   "parent_id": "41617",
+   "title": "should(ought to) have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154592",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154593",
+   "parent_id": "41617",
+   "title": "shouldn’t(ought not to) have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154593",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154594",
+   "parent_id": "41617",
+   "title": "would have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154594",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154595",
+   "parent_id": "41617",
+   "title": "need have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154595",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154596",
+   "parent_id": "41617",
+   "title": "must have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154596",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154597",
+   "parent_id": "41617",
+   "title": "needn’t have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154597",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154598",
+   "parent_id": "41617",
+   "title": "may/might have done的用法",
+   "level": 4,
+   "href": "/gzyy/zsd154598",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149928",
+   "parent_id": "41611",
+   "title": "情态动词(not)+动词原形",
+   "level": 3,
+   "href": "/gzyy/zsd149928",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148965",
+   "parent_id": "29981",
+   "title": "构词法",
+   "level": 2,
+   "href": "/gzyy/zsd148965",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149053",
+   "parent_id": "148965",
+   "title": "派生法",
+   "level": 3,
+   "href": "/gzyy/zsd149053",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149054",
+   "parent_id": "148965",
+   "title": "合成法",
+   "level": 3,
+   "href": "/gzyy/zsd149054",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149055",
+   "parent_id": "148965",
+   "title": "转化法",
+   "level": 3,
+   "href": "/gzyy/zsd149055",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41560",
+   "parent_id": "29981",
+   "title": "虚拟语气",
+   "level": 2,
+   "href": "/gzyy/zsd41560",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149014",
+   "parent_id": "41560",
+   "title": "虚拟语气在非真实条件句中的运用",
+   "level": 3,
+   "href": "/gzyy/zsd149014",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149059",
+   "parent_id": "149014",
+   "title": "与现在事实相反的假设",
+   "level": 4,
+   "href": "/gzyy/zsd149059",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149060",
+   "parent_id": "149014",
+   "title": "与过去事实相反的假设",
+   "level": 4,
+   "href": "/gzyy/zsd149060",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149061",
+   "parent_id": "149014",
+   "title": "与将来事实相反的假设",
+   "level": 4,
+   "href": "/gzyy/zsd149061",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149015",
+   "parent_id": "41560",
+   "title": "虚拟语气在非真实条件句中的特殊句式",
+   "level": 3,
+   "href": "/gzyy/zsd149015",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149062",
+   "parent_id": "149015",
+   "title": "省略if的条件句",
+   "level": 4,
+   "href": "/gzyy/zsd149062",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149063",
+   "parent_id": "149015",
+   "title": "错综时间条件句",
+   "level": 4,
+   "href": "/gzyy/zsd149063",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149064",
+   "parent_id": "149015",
+   "title": "含蓄条件句",
+   "level": 4,
+   "href": "/gzyy/zsd149064",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149016",
+   "parent_id": "41560",
+   "title": "虚拟语气在主语从句中的运用",
+   "level": 3,
+   "href": "/gzyy/zsd149016",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149065",
+   "parent_id": "149016",
+   "title": "It be important/necessary…that+(should) do",
+   "level": 4,
+   "href": "/gzyy/zsd149065",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149066",
+   "parent_id": "149016",
+   "title": "It be a pity/shame…that+(should) do",
+   "level": 4,
+   "href": "/gzyy/zsd149066",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149067",
+   "parent_id": "149016",
+   "title": "It be suggested/desired…that+(should) do",
+   "level": 4,
+   "href": "/gzyy/zsd149067",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149017",
+   "parent_id": "41560",
+   "title": "虚拟语气在宾语从句中的运用",
+   "level": 3,
+   "href": "/gzyy/zsd149017",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149068",
+   "parent_id": "149017",
+   "title": "wish后的宾语从句中虚拟语气的用法",
+   "level": 4,
+   "href": "/gzyy/zsd149068",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149069",
+   "parent_id": "149017",
+   "title": "would rather等短语后的宾语从句",
+   "level": 4,
+   "href": "/gzyy/zsd149069",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149070",
+   "parent_id": "149017",
+   "title": "表示建议、命令等动词后的宾语从句+(should) do",
+   "level": 4,
+   "href": "/gzyy/zsd149070",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149018",
+   "parent_id": "41560",
+   "title": "虚拟语气在表语从句中的运用",
+   "level": 3,
+   "href": "/gzyy/zsd149018",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149071",
+   "parent_id": "149018",
+   "title": "在suggestion/advice等名词后的表语从句+(should) do",
+   "level": 4,
+   "href": "/gzyy/zsd149071",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149072",
+   "parent_id": "149018",
+   "title": "虚拟语气用于as if/though引导的表语从句",
+   "level": 4,
+   "href": "/gzyy/zsd149072",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149019",
+   "parent_id": "41560",
+   "title": "虚拟语气在同位语从句中的运用",
+   "level": 3,
+   "href": "/gzyy/zsd149019",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149020",
+   "parent_id": "41560",
+   "title": "虚拟语气在状语从句中的运用",
+   "level": 3,
+   "href": "/gzyy/zsd149020",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149073",
+   "parent_id": "149020",
+   "title": "虚拟语气用于as if/though引导的方式状语从句",
+   "level": 4,
+   "href": "/gzyy/zsd149073",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149074",
+   "parent_id": "149020",
+   "title": "虚拟语气用于in case, on condition, for fear that等引导的状语从句",
+   "level": 4,
+   "href": "/gzyy/zsd149074",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149021",
+   "parent_id": "41560",
+   "title": "虚拟语气在定语从句中的用法",
+   "level": 3,
+   "href": "/gzyy/zsd149021",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149022",
+   "parent_id": "41560",
+   "title": "虚拟语气的其他用法",
+   "level": 3,
+   "href": "/gzyy/zsd149022",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149075",
+   "parent_id": "149022",
+   "title": "if only句型",
+   "level": 4,
+   "href": "/gzyy/zsd149075",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149076",
+   "parent_id": "149022",
+   "title": "表示祝福",
+   "level": 4,
+   "href": "/gzyy/zsd149076",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153273",
+   "parent_id": "29981",
+   "title": "基本句型",
+   "level": 2,
+   "href": "/gzyy/zsd153273",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "153274",
+   "parent_id": "153273",
+   "title": "主谓",
+   "level": 3,
+   "href": "/gzyy/zsd153274",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153275",
+   "parent_id": "153273",
+   "title": "主系表",
+   "level": 3,
+   "href": "/gzyy/zsd153275",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153276",
+   "parent_id": "153273",
+   "title": "主谓宾",
+   "level": 3,
+   "href": "/gzyy/zsd153276",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153277",
+   "parent_id": "153273",
+   "title": "主谓宾宾",
+   "level": 3,
+   "href": "/gzyy/zsd153277",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153278",
+   "parent_id": "153273",
+   "title": "主谓宾补",
+   "level": 3,
+   "href": "/gzyy/zsd153278",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153279",
+   "parent_id": "153273",
+   "title": "主谓状",
+   "level": 3,
+   "href": "/gzyy/zsd153279",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153280",
+   "parent_id": "153273",
+   "title": "主谓宾状",
+   "level": 3,
+   "href": "/gzyy/zsd153280",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153281",
+   "parent_id": "29981",
+   "title": "句子成分",
+   "level": 2,
+   "href": "/gzyy/zsd153281",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "153282",
+   "parent_id": "153281",
+   "title": "主语",
+   "level": 3,
+   "href": "/gzyy/zsd153282",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153283",
+   "parent_id": "153281",
+   "title": "谓语",
+   "level": 3,
+   "href": "/gzyy/zsd153283",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153284",
+   "parent_id": "153281",
+   "title": "宾语",
+   "level": 3,
+   "href": "/gzyy/zsd153284",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153285",
+   "parent_id": "153281",
+   "title": "补语",
+   "level": 3,
+   "href": "/gzyy/zsd153285",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153286",
+   "parent_id": "153281",
+   "title": "状语",
+   "level": 3,
+   "href": "/gzyy/zsd153286",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153287",
+   "parent_id": "153281",
+   "title": "表语",
+   "level": 3,
+   "href": "/gzyy/zsd153287",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153288",
+   "parent_id": "153281",
+   "title": "定语",
+   "level": 3,
+   "href": "/gzyy/zsd153288",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41711",
+   "parent_id": "29981",
+   "title": "简单句",
+   "level": 2,
+   "href": "/gzyy/zsd41711",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41716",
+   "parent_id": "41711",
+   "title": "疑问句",
+   "level": 3,
+   "href": "/gzyy/zsd41716",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41722",
+   "parent_id": "41716",
+   "title": "反意疑问句及其回答",
+   "level": 4,
+   "href": "/gzyy/zsd41722",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41723",
+   "parent_id": "41716",
+   "title": "一般疑问句及其回答",
+   "level": 4,
+   "href": "/gzyy/zsd41723",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41724",
+   "parent_id": "41716",
+   "title": "特殊疑问句及其回答",
+   "level": 4,
+   "href": "/gzyy/zsd41724",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41587",
+   "parent_id": "41724",
+   "title": "疑问代词",
+   "level": 5,
+   "href": "/gzyy/zsd41587",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41656",
+   "parent_id": "41724",
+   "title": "疑问副词",
+   "level": 5,
+   "href": "/gzyy/zsd41656",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41725",
+   "parent_id": "41716",
+   "title": "选择疑问句及其回答",
+   "level": 4,
+   "href": "/gzyy/zsd41725",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41717",
+   "parent_id": "41711",
+   "title": "陈述句",
+   "level": 3,
+   "href": "/gzyy/zsd41717",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148991",
+   "parent_id": "41717",
+   "title": "陈述句的肯定形式",
+   "level": 4,
+   "href": "/gzyy/zsd148991",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148992",
+   "parent_id": "41717",
+   "title": "陈述句的否定形式",
+   "level": 4,
+   "href": "/gzyy/zsd148992",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148993",
+   "parent_id": "41717",
+   "title": "陈述句的语序",
+   "level": 4,
+   "href": "/gzyy/zsd148993",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41718",
+   "parent_id": "41711",
+   "title": "祈使句",
+   "level": 3,
+   "href": "/gzyy/zsd41718",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41726",
+   "parent_id": "41718",
+   "title": "祈使句的否定形式",
+   "level": 4,
+   "href": "/gzyy/zsd41726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41727",
+   "parent_id": "41718",
+   "title": "祈使句的肯定形式",
+   "level": 4,
+   "href": "/gzyy/zsd41727",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148994",
+   "parent_id": "41718",
+   "title": "祈使句+and/or+简单句",
+   "level": 4,
+   "href": "/gzyy/zsd148994",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41719",
+   "parent_id": "41711",
+   "title": "感叹句",
+   "level": 3,
+   "href": "/gzyy/zsd41719",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41728",
+   "parent_id": "41719",
+   "title": "what引导的感叹句",
+   "level": 4,
+   "href": "/gzyy/zsd41728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41729",
+   "parent_id": "41719",
+   "title": "how引导的感叹句",
+   "level": 4,
+   "href": "/gzyy/zsd41729",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41713",
+   "parent_id": "29981",
+   "title": "特殊句式",
+   "level": 2,
+   "href": "/gzyy/zsd41713",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41766",
+   "parent_id": "41713",
+   "title": "倒装",
+   "level": 3,
+   "href": "/gzyy/zsd41766",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41771",
+   "parent_id": "41766",
+   "title": "全部倒装",
+   "level": 4,
+   "href": "/gzyy/zsd41771",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41772",
+   "parent_id": "41766",
+   "title": "部分倒装",
+   "level": 4,
+   "href": "/gzyy/zsd41772",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41767",
+   "parent_id": "41713",
+   "title": "省略",
+   "level": 3,
+   "href": "/gzyy/zsd41767",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41773",
+   "parent_id": "41767",
+   "title": "状语从句中的省略",
+   "level": 4,
+   "href": "/gzyy/zsd41773",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41774",
+   "parent_id": "41767",
+   "title": "不定式符号to的省略",
+   "level": 4,
+   "href": "/gzyy/zsd41774",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41768",
+   "parent_id": "41713",
+   "title": "强调句",
+   "level": 3,
+   "href": "/gzyy/zsd41768",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149006",
+   "parent_id": "41768",
+   "title": "强调谓语（do+动词原形）",
+   "level": 4,
+   "href": "/gzyy/zsd149006",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149007",
+   "parent_id": "41768",
+   "title": "It be…that/who强调句型",
+   "level": 4,
+   "href": "/gzyy/zsd149007",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41770",
+   "parent_id": "41713",
+   "title": "插入语句式",
+   "level": 3,
+   "href": "/gzyy/zsd41770",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41720",
+   "parent_id": "41713",
+   "title": "There be或存在句",
+   "level": 3,
+   "href": "/gzyy/zsd41720",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41730",
+   "parent_id": "41720",
+   "title": "there be句型",
+   "level": 4,
+   "href": "/gzyy/zsd41730",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148995",
+   "parent_id": "41720",
+   "title": "存在句的其他句型",
+   "level": 4,
+   "href": "/gzyy/zsd148995",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41731",
+   "parent_id": "41720",
+   "title": "there be或存在句的时态",
+   "level": 4,
+   "href": "/gzyy/zsd41731",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41732",
+   "parent_id": "41720",
+   "title": "there be的非谓语形式",
+   "level": 4,
+   "href": "/gzyy/zsd41732",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188768",
+   "parent_id": "29978",
+   "title": "主题",
+   "level": 1,
+   "href": "/gzyy/zsd188768",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181230",
+   "parent_id": "188768",
+   "title": "人与自我",
+   "level": 2,
+   "href": "/gzyy/zsd181230",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197369",
+   "parent_id": "181230",
+   "title": "生活与学习 ",
+   "level": 3,
+   "href": "/gzyy/zsd197369",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41779",
+   "parent_id": "197369",
+   "title": "个人情况",
+   "level": 4,
+   "href": "/gzyy/zsd41779",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41807",
+   "parent_id": "41779",
+   "title": "个人信息 ",
+   "level": 5,
+   "href": "/gzyy/zsd41807",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181231",
+   "parent_id": "41779",
+   "title": "个人经历",
+   "level": 5,
+   "href": "/gzyy/zsd181231",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41808",
+   "parent_id": "41779",
+   "title": "家庭信息",
+   "level": 5,
+   "href": "/gzyy/zsd41808",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41809",
+   "parent_id": "41779",
+   "title": "学校信息 ",
+   "level": 5,
+   "href": "/gzyy/zsd41809",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188769",
+   "parent_id": "197369",
+   "title": "外表与形象",
+   "level": 4,
+   "href": "/gzyy/zsd188769",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41906",
+   "parent_id": "188769",
+   "title": "服饰穿戴",
+   "level": 5,
+   "href": "/gzyy/zsd41906",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188770",
+   "parent_id": "188769",
+   "title": "礼仪修养",
+   "level": 5,
+   "href": "/gzyy/zsd188770",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188771",
+   "parent_id": "188769",
+   "title": "外貌与神态",
+   "level": 5,
+   "href": "/gzyy/zsd188771",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188772",
+   "parent_id": "188769",
+   "title": "言谈举止",
+   "level": 5,
+   "href": "/gzyy/zsd188772",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41784",
+   "parent_id": "197369",
+   "title": "兴趣与爱好",
+   "level": 4,
+   "href": "/gzyy/zsd41784",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41827",
+   "parent_id": "41784",
+   "title": "游戏",
+   "level": 5,
+   "href": "/gzyy/zsd41827",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41828",
+   "parent_id": "41784",
+   "title": "爱好",
+   "level": 5,
+   "href": "/gzyy/zsd41828",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41829",
+   "parent_id": "41784",
+   "title": "阅读 ",
+   "level": 5,
+   "href": "/gzyy/zsd41829",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41830",
+   "parent_id": "41784",
+   "title": "娱乐活动 ",
+   "level": 5,
+   "href": "/gzyy/zsd41830",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41831",
+   "parent_id": "41784",
+   "title": "兴趣社交",
+   "level": 5,
+   "href": "/gzyy/zsd41831",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41780",
+   "parent_id": "197369",
+   "title": "家庭、朋友与周围的人",
+   "level": 4,
+   "href": "/gzyy/zsd41780",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41812",
+   "parent_id": "41780",
+   "title": "家人和亲人 ",
+   "level": 5,
+   "href": "/gzyy/zsd41812",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41813",
+   "parent_id": "41780",
+   "title": "朋友 ",
+   "level": 5,
+   "href": "/gzyy/zsd41813",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41814",
+   "parent_id": "41780",
+   "title": "其他人物关系",
+   "level": 5,
+   "href": "/gzyy/zsd41814",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41781",
+   "parent_id": "197369",
+   "title": "居住环境",
+   "level": 4,
+   "href": "/gzyy/zsd41781",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41815",
+   "parent_id": "41781",
+   "title": "房屋和家居",
+   "level": 5,
+   "href": "/gzyy/zsd41815",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41816",
+   "parent_id": "41781",
+   "title": "周边环境与场所",
+   "level": 5,
+   "href": "/gzyy/zsd41816",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188774",
+   "parent_id": "41781",
+   "title": "公园",
+   "level": 5,
+   "href": "/gzyy/zsd188774",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197370",
+   "parent_id": "41781",
+   "title": "房屋与租赁 ",
+   "level": 5,
+   "href": "/gzyy/zsd197370",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41782",
+   "parent_id": "197369",
+   "title": "日常活动",
+   "level": 4,
+   "href": "/gzyy/zsd41782",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41817",
+   "parent_id": "41782",
+   "title": "家庭生活 ",
+   "level": 5,
+   "href": "/gzyy/zsd41817",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41819",
+   "parent_id": "41782",
+   "title": "闲暇活动 ",
+   "level": 5,
+   "href": "/gzyy/zsd41819",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185708",
+   "parent_id": "41782",
+   "title": "时间管理",
+   "level": 5,
+   "href": "/gzyy/zsd185708",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41822",
+   "parent_id": "41782",
+   "title": "日常生活 ",
+   "level": 5,
+   "href": "/gzyy/zsd41822",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188775",
+   "parent_id": "41782",
+   "title": "家庭问题",
+   "level": 5,
+   "href": "/gzyy/zsd188775",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197371",
+   "parent_id": "41782",
+   "title": "邮局与邮寄 ",
+   "level": 5,
+   "href": "/gzyy/zsd197371",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41783",
+   "parent_id": "197369",
+   "title": "学校生活",
+   "level": 4,
+   "href": "/gzyy/zsd41783",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41823",
+   "parent_id": "41783",
+   "title": "学习",
+   "level": 5,
+   "href": "/gzyy/zsd41823",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181236",
+   "parent_id": "41783",
+   "title": "网课",
+   "level": 5,
+   "href": "/gzyy/zsd181236",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41826",
+   "parent_id": "41783",
+   "title": "课程",
+   "level": 5,
+   "href": "/gzyy/zsd41826",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41824",
+   "parent_id": "41783",
+   "title": "学校人员 ",
+   "level": 5,
+   "href": "/gzyy/zsd41824",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41825",
+   "parent_id": "41783",
+   "title": "学校活动",
+   "level": 5,
+   "href": "/gzyy/zsd41825",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181235",
+   "parent_id": "41783",
+   "title": "校园安全",
+   "level": 5,
+   "href": "/gzyy/zsd181235",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188776",
+   "parent_id": "41783",
+   "title": "大学生活",
+   "level": 5,
+   "href": "/gzyy/zsd188776",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188777",
+   "parent_id": "41783",
+   "title": "高中生活",
+   "level": 5,
+   "href": "/gzyy/zsd188777",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188778",
+   "parent_id": "41783",
+   "title": "专业选择",
+   "level": 5,
+   "href": "/gzyy/zsd188778",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188779",
+   "parent_id": "41783",
+   "title": "校园俱乐部",
+   "level": 5,
+   "href": "/gzyy/zsd188779",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197372",
+   "parent_id": "41783",
+   "title": "图书馆与借书 ",
+   "level": 5,
+   "href": "/gzyy/zsd197372",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41788",
+   "parent_id": "197369",
+   "title": "节假日活动",
+   "level": 4,
+   "href": "/gzyy/zsd41788",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181237",
+   "parent_id": "41788",
+   "title": "假日活动",
+   "level": 5,
+   "href": "/gzyy/zsd181237",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41820",
+   "parent_id": "41788",
+   "title": "庆祝活动 ",
+   "level": 5,
+   "href": "/gzyy/zsd41820",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41840",
+   "parent_id": "41788",
+   "title": "个人庆典",
+   "level": 5,
+   "href": "/gzyy/zsd41840",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185706",
+   "parent_id": "197369",
+   "title": "生活态度",
+   "level": 4,
+   "href": "/gzyy/zsd185706",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188790",
+   "parent_id": "185706",
+   "title": "认识压力",
+   "level": 5,
+   "href": "/gzyy/zsd188790",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188791",
+   "parent_id": "185706",
+   "title": "迎接挑战",
+   "level": 5,
+   "href": "/gzyy/zsd188791",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188792",
+   "parent_id": "185706",
+   "title": "认识成功",
+   "level": 5,
+   "href": "/gzyy/zsd188792",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41789",
+   "parent_id": "197369",
+   "title": "购物",
+   "level": 4,
+   "href": "/gzyy/zsd41789",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41841",
+   "parent_id": "41789",
+   "title": "商品 ",
+   "level": 5,
+   "href": "/gzyy/zsd41841",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41842",
+   "parent_id": "41789",
+   "title": "时尚 ",
+   "level": 5,
+   "href": "/gzyy/zsd41842",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181238",
+   "parent_id": "41789",
+   "title": "网购",
+   "level": 5,
+   "href": "/gzyy/zsd181238",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41843",
+   "parent_id": "41789",
+   "title": "购物选择",
+   "level": 5,
+   "href": "/gzyy/zsd41843",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181239",
+   "parent_id": "41789",
+   "title": "支付方式",
+   "level": 5,
+   "href": "/gzyy/zsd181239",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181240",
+   "parent_id": "41789",
+   "title": "个人购物喜好",
+   "level": 5,
+   "href": "/gzyy/zsd181240",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197373",
+   "parent_id": "41789",
+   "title": "商品价格 ",
+   "level": 5,
+   "href": "/gzyy/zsd197373",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41795",
+   "parent_id": "197369",
+   "title": "语言学习",
+   "level": 4,
+   "href": "/gzyy/zsd41795",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41876",
+   "parent_id": "41795",
+   "title": "体态语",
+   "level": 5,
+   "href": "/gzyy/zsd41876",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41874",
+   "parent_id": "41795",
+   "title": "语言与文化 ",
+   "level": 5,
+   "href": "/gzyy/zsd41874",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41873",
+   "parent_id": "41795",
+   "title": "语言学习经历",
+   "level": 5,
+   "href": "/gzyy/zsd41873",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41875",
+   "parent_id": "41795",
+   "title": "语言学习策略",
+   "level": 5,
+   "href": "/gzyy/zsd41875",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188793",
+   "parent_id": "41795",
+   "title": "语言变化及发展",
+   "level": 5,
+   "href": "/gzyy/zsd188793",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41790",
+   "parent_id": "197369",
+   "title": "饮食",
+   "level": 4,
+   "href": "/gzyy/zsd41790",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41844",
+   "parent_id": "41790",
+   "title": "食物与饮料 ",
+   "level": 5,
+   "href": "/gzyy/zsd41844",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41845",
+   "parent_id": "41790",
+   "title": "饮食习俗 ",
+   "level": 5,
+   "href": "/gzyy/zsd41845",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41846",
+   "parent_id": "41790",
+   "title": "点餐 ",
+   "level": 5,
+   "href": "/gzyy/zsd41846",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41847",
+   "parent_id": "41790",
+   "title": "烹饪 ",
+   "level": 5,
+   "href": "/gzyy/zsd41847",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41848",
+   "parent_id": "41790",
+   "title": "对食物的喜恶",
+   "level": 5,
+   "href": "/gzyy/zsd41848",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41791",
+   "parent_id": "197369",
+   "title": "健康",
+   "level": 4,
+   "href": "/gzyy/zsd41791",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41849",
+   "parent_id": "41791",
+   "title": "医疗 ",
+   "level": 5,
+   "href": "/gzyy/zsd41849",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41850",
+   "parent_id": "41791",
+   "title": "疾病 ",
+   "level": 5,
+   "href": "/gzyy/zsd41850",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181241",
+   "parent_id": "41791",
+   "title": "减肥",
+   "level": 5,
+   "href": "/gzyy/zsd181241",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41851",
+   "parent_id": "41791",
+   "title": "健康饮食 ",
+   "level": 5,
+   "href": "/gzyy/zsd41851",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41853",
+   "parent_id": "41791",
+   "title": "身体部位 ",
+   "level": 5,
+   "href": "/gzyy/zsd41853",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41854",
+   "parent_id": "41791",
+   "title": "个人保健",
+   "level": 5,
+   "href": "/gzyy/zsd41854",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41856",
+   "parent_id": "41791",
+   "title": "医护人员",
+   "level": 5,
+   "href": "/gzyy/zsd41856",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181242",
+   "parent_id": "41791",
+   "title": "安全与救护",
+   "level": 5,
+   "href": "/gzyy/zsd181242",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181243",
+   "parent_id": "41791",
+   "title": "锻炼/健身（个人）",
+   "level": 5,
+   "href": "/gzyy/zsd181243",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181222",
+   "parent_id": "41791",
+   "title": "新型冠状病毒",
+   "level": 5,
+   "href": "/gzyy/zsd181222",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197374",
+   "parent_id": "181230",
+   "title": "做人与做事",
+   "level": 3,
+   "href": "/gzyy/zsd197374",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "185709",
+   "parent_id": "197374",
+   "title": "道德与品行",
+   "level": 4,
+   "href": "/gzyy/zsd185709",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41787",
+   "parent_id": "197374",
+   "title": "计划与愿望",
+   "level": 4,
+   "href": "/gzyy/zsd41787",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41837",
+   "parent_id": "41787",
+   "title": "计划",
+   "level": 5,
+   "href": "/gzyy/zsd41837",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41838",
+   "parent_id": "41787",
+   "title": "愿望",
+   "level": 5,
+   "href": "/gzyy/zsd41838",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181232",
+   "parent_id": "197374",
+   "title": "工作与职业",
+   "level": 4,
+   "href": "/gzyy/zsd181232",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181233",
+   "parent_id": "181232",
+   "title": "职业规划",
+   "level": 5,
+   "href": "/gzyy/zsd181233",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181234",
+   "parent_id": "181232",
+   "title": "创业意识",
+   "level": 5,
+   "href": "/gzyy/zsd181234",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41811",
+   "parent_id": "181232",
+   "title": "职业内容",
+   "level": 5,
+   "href": "/gzyy/zsd41811",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188773",
+   "parent_id": "181232",
+   "title": "个人简历",
+   "level": 5,
+   "href": "/gzyy/zsd188773",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188780",
+   "parent_id": "197374",
+   "title": "精神与品格",
+   "level": 4,
+   "href": "/gzyy/zsd188780",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188781",
+   "parent_id": "188780",
+   "title": "勤劳",
+   "level": 5,
+   "href": "/gzyy/zsd188781",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188782",
+   "parent_id": "188780",
+   "title": "勇敢",
+   "level": 5,
+   "href": "/gzyy/zsd188782",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188783",
+   "parent_id": "188780",
+   "title": "幽默",
+   "level": 5,
+   "href": "/gzyy/zsd188783",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188784",
+   "parent_id": "188780",
+   "title": "坚韧",
+   "level": 5,
+   "href": "/gzyy/zsd188784",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188785",
+   "parent_id": "188780",
+   "title": "同理心",
+   "level": 5,
+   "href": "/gzyy/zsd188785",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188786",
+   "parent_id": "188780",
+   "title": "诚实守信",
+   "level": 5,
+   "href": "/gzyy/zsd188786",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188787",
+   "parent_id": "188780",
+   "title": "宽容大度",
+   "level": 5,
+   "href": "/gzyy/zsd188787",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188788",
+   "parent_id": "188780",
+   "title": "乐于助人",
+   "level": 5,
+   "href": "/gzyy/zsd188788",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188789",
+   "parent_id": "188780",
+   "title": "工匠精神",
+   "level": 5,
+   "href": "/gzyy/zsd188789",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181511",
+   "parent_id": "188780",
+   "title": "节约意识",
+   "level": 5,
+   "href": "/gzyy/zsd181511",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41785",
+   "parent_id": "197374",
+   "title": "情感与情绪",
+   "level": 4,
+   "href": "/gzyy/zsd41785",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41832",
+   "parent_id": "41785",
+   "title": "情绪",
+   "level": 5,
+   "href": "/gzyy/zsd41832",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41833",
+   "parent_id": "41785",
+   "title": "情感",
+   "level": 5,
+   "href": "/gzyy/zsd41833",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197375",
+   "parent_id": "197374",
+   "title": "方法与哲理 ",
+   "level": 4,
+   "href": "/gzyy/zsd197375",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41806",
+   "parent_id": "197375",
+   "title": "哲理感悟",
+   "level": 5,
+   "href": "/gzyy/zsd41806",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41803",
+   "parent_id": "197375",
+   "title": "方法/策略",
+   "level": 5,
+   "href": "/gzyy/zsd41803",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149008",
+   "parent_id": "197375",
+   "title": "申请/请求/建议",
+   "level": 5,
+   "href": "/gzyy/zsd149008",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149009",
+   "parent_id": "197375",
+   "title": "邀请",
+   "level": 5,
+   "href": "/gzyy/zsd149009",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181244",
+   "parent_id": "188768",
+   "title": "人与社会",
+   "level": 2,
+   "href": "/gzyy/zsd181244",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197376",
+   "parent_id": "181244",
+   "title": "社会服务与人际沟通 ",
+   "level": 3,
+   "href": "/gzyy/zsd197376",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41786",
+   "parent_id": "197376",
+   "title": "人际交往",
+   "level": 4,
+   "href": "/gzyy/zsd41786",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41834",
+   "parent_id": "41786",
+   "title": "友谊",
+   "level": 5,
+   "href": "/gzyy/zsd41834",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41835",
+   "parent_id": "41786",
+   "title": "社会关系",
+   "level": 5,
+   "href": "/gzyy/zsd41835",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181245",
+   "parent_id": "41786",
+   "title": "家庭关系",
+   "level": 5,
+   "href": "/gzyy/zsd181245",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188794",
+   "parent_id": "41786",
+   "title": "网络社交",
+   "level": 5,
+   "href": "/gzyy/zsd188794",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181246",
+   "parent_id": "41786",
+   "title": "合作与交流",
+   "level": 5,
+   "href": "/gzyy/zsd181246",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188795",
+   "parent_id": "41786",
+   "title": "冲突与和解",
+   "level": 5,
+   "href": "/gzyy/zsd188795",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188796",
+   "parent_id": "41786",
+   "title": "社交礼仪及规则",
+   "level": 5,
+   "href": "/gzyy/zsd188796",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181247",
+   "parent_id": "197376",
+   "title": "公益行为",
+   "level": 4,
+   "href": "/gzyy/zsd181247",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181248",
+   "parent_id": "181247",
+   "title": "善行义举（个人）",
+   "level": 5,
+   "href": "/gzyy/zsd181248",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41821",
+   "parent_id": "181247",
+   "title": "公益活动（组织机构）",
+   "level": 5,
+   "href": "/gzyy/zsd41821",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197377",
+   "parent_id": "181244",
+   "title": "文学、艺术与体育 ",
+   "level": 3,
+   "href": "/gzyy/zsd197377",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41793",
+   "parent_id": "197377",
+   "title": "文学/艺术 ",
+   "level": 4,
+   "href": "/gzyy/zsd41793",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188807",
+   "parent_id": "197377",
+   "title": "文学作品",
+   "level": 4,
+   "href": "/gzyy/zsd188807",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188808",
+   "parent_id": "188807",
+   "title": "人物传记",
+   "level": 5,
+   "href": "/gzyy/zsd188808",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188809",
+   "parent_id": "188807",
+   "title": "寓言童话",
+   "level": 5,
+   "href": "/gzyy/zsd188809",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188810",
+   "parent_id": "188807",
+   "title": "诗歌文学",
+   "level": 5,
+   "href": "/gzyy/zsd188810",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41911",
+   "parent_id": "188807",
+   "title": "文学形式与文学作品",
+   "level": 5,
+   "href": "/gzyy/zsd41911",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188797",
+   "parent_id": "197377",
+   "title": "艺术",
+   "level": 4,
+   "href": "/gzyy/zsd188797",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41862",
+   "parent_id": "188797",
+   "title": "电影与戏剧",
+   "level": 5,
+   "href": "/gzyy/zsd41862",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41863",
+   "parent_id": "188797",
+   "title": "音乐与舞蹈",
+   "level": 5,
+   "href": "/gzyy/zsd41863",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41912",
+   "parent_id": "188797",
+   "title": "美术与摄影",
+   "level": 5,
+   "href": "/gzyy/zsd41912",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188798",
+   "parent_id": "188797",
+   "title": "艺术作品",
+   "level": 5,
+   "href": "/gzyy/zsd188798",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188799",
+   "parent_id": "188797",
+   "title": "艺术史",
+   "level": 5,
+   "href": "/gzyy/zsd188799",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188800",
+   "parent_id": "197377",
+   "title": "文学形式",
+   "level": 4,
+   "href": "/gzyy/zsd188800",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188801",
+   "parent_id": "188800",
+   "title": "诗歌",
+   "level": 5,
+   "href": "/gzyy/zsd188801",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188802",
+   "parent_id": "188800",
+   "title": "小说",
+   "level": 5,
+   "href": "/gzyy/zsd188802",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188803",
+   "parent_id": "188800",
+   "title": "戏剧",
+   "level": 5,
+   "href": "/gzyy/zsd188803",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188804",
+   "parent_id": "188800",
+   "title": "散文",
+   "level": 5,
+   "href": "/gzyy/zsd188804",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188805",
+   "parent_id": "188800",
+   "title": "童话",
+   "level": 5,
+   "href": "/gzyy/zsd188805",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188806",
+   "parent_id": "188800",
+   "title": "寓言",
+   "level": 5,
+   "href": "/gzyy/zsd188806",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149010",
+   "parent_id": "197377",
+   "title": "体育",
+   "level": 4,
+   "href": "/gzyy/zsd149010",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41864",
+   "parent_id": "149010",
+   "title": "竞技/比赛",
+   "level": 5,
+   "href": "/gzyy/zsd41864",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41852",
+   "parent_id": "149010",
+   "title": "体育健身 ",
+   "level": 5,
+   "href": "/gzyy/zsd41852",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181251",
+   "parent_id": "149010",
+   "title": "体育精神",
+   "level": 5,
+   "href": "/gzyy/zsd181251",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188811",
+   "parent_id": "149010",
+   "title": "运动种类",
+   "level": 5,
+   "href": "/gzyy/zsd188811",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188812",
+   "parent_id": "149010",
+   "title": "体育运动规则",
+   "level": 5,
+   "href": "/gzyy/zsd188812",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181223",
+   "parent_id": "149010",
+   "title": "新北京冬奥会",
+   "level": 5,
+   "href": "/gzyy/zsd181223",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181264",
+   "parent_id": "197377",
+   "title": "旅游",
+   "level": 4,
+   "href": "/gzyy/zsd181264",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41866",
+   "parent_id": "181264",
+   "title": "旅游观光",
+   "level": 5,
+   "href": "/gzyy/zsd41866",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181265",
+   "parent_id": "181264",
+   "title": "城市",
+   "level": 5,
+   "href": "/gzyy/zsd181265",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181266",
+   "parent_id": "181264",
+   "title": "建筑",
+   "level": 5,
+   "href": "/gzyy/zsd181266",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41794",
+   "parent_id": "197377",
+   "title": "交通",
+   "level": 4,
+   "href": "/gzyy/zsd41794",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41869",
+   "parent_id": "41794",
+   "title": "问路",
+   "level": 5,
+   "href": "/gzyy/zsd41869",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41870",
+   "parent_id": "41794",
+   "title": "交通方式",
+   "level": 5,
+   "href": "/gzyy/zsd41870",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41871",
+   "parent_id": "41794",
+   "title": "交通规则",
+   "level": 5,
+   "href": "/gzyy/zsd41871",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41872",
+   "parent_id": "41794",
+   "title": "行程描绘",
+   "level": 5,
+   "href": "/gzyy/zsd41872",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41867",
+   "parent_id": "41794",
+   "title": "交通与运输 ",
+   "level": 5,
+   "href": "/gzyy/zsd41867",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197378",
+   "parent_id": "181244",
+   "title": "历史、社会与文化 ",
+   "level": 3,
+   "href": "/gzyy/zsd197378",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41800",
+   "parent_id": "197378",
+   "title": "历史",
+   "level": 4,
+   "href": "/gzyy/zsd41800",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41899",
+   "parent_id": "41800",
+   "title": "历史知识",
+   "level": 5,
+   "href": "/gzyy/zsd41899",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41901",
+   "parent_id": "41800",
+   "title": "历史事件",
+   "level": 5,
+   "href": "/gzyy/zsd41901",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181260",
+   "parent_id": "41800",
+   "title": "考古发现",
+   "level": 5,
+   "href": "/gzyy/zsd181260",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41801",
+   "parent_id": "197378",
+   "title": "社会",
+   "level": 4,
+   "href": "/gzyy/zsd41801",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149013",
+   "parent_id": "41801",
+   "title": "组织与机构",
+   "level": 5,
+   "href": "/gzyy/zsd149013",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41894",
+   "parent_id": "41801",
+   "title": "犯罪与惩罚",
+   "level": 5,
+   "href": "/gzyy/zsd41894",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185713",
+   "parent_id": "41801",
+   "title": "危险与安全",
+   "level": 5,
+   "href": "/gzyy/zsd185713",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188813",
+   "parent_id": "41801",
+   "title": "奖励与惩罚",
+   "level": 5,
+   "href": "/gzyy/zsd188813",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188814",
+   "parent_id": "41801",
+   "title": "可持续农业",
+   "level": 5,
+   "href": "/gzyy/zsd188814",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188815",
+   "parent_id": "41801",
+   "title": "贫困问题",
+   "level": 5,
+   "href": "/gzyy/zsd188815",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188816",
+   "parent_id": "41801",
+   "title": "劳工就业",
+   "level": 5,
+   "href": "/gzyy/zsd188816",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41898",
+   "parent_id": "41801",
+   "title": "意外事故",
+   "level": 5,
+   "href": "/gzyy/zsd41898",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41897",
+   "parent_id": "41801",
+   "title": "社会问题与社会现象",
+   "level": 5,
+   "href": "/gzyy/zsd41897",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181262",
+   "parent_id": "197378",
+   "title": "文化交流 ",
+   "level": 4,
+   "href": "/gzyy/zsd181262",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41907",
+   "parent_id": "181262",
+   "title": "宗教与文化",
+   "level": 5,
+   "href": "/gzyy/zsd41907",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181263",
+   "parent_id": "181262",
+   "title": "文化差异",
+   "level": 5,
+   "href": "/gzyy/zsd181263",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41892",
+   "parent_id": "181262",
+   "title": "文化保护",
+   "level": 5,
+   "href": "/gzyy/zsd41892",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185714",
+   "parent_id": "181262",
+   "title": "文化传播",
+   "level": 5,
+   "href": "/gzyy/zsd185714",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185715",
+   "parent_id": "181262",
+   "title": "未知文化",
+   "level": 5,
+   "href": "/gzyy/zsd185715",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188824",
+   "parent_id": "181262",
+   "title": "文化遗产",
+   "level": 5,
+   "href": "/gzyy/zsd188824",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41908",
+   "parent_id": "181262",
+   "title": "中国文化与节日",
+   "level": 5,
+   "href": "/gzyy/zsd41908",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41839",
+   "parent_id": "181262",
+   "title": "外国文化与节日",
+   "level": 5,
+   "href": "/gzyy/zsd41839",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181249",
+   "parent_id": "197378",
+   "title": "通讯与媒体",
+   "level": 4,
+   "href": "/gzyy/zsd181249",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149011",
+   "parent_id": "181249",
+   "title": "电视与电台",
+   "level": 5,
+   "href": "/gzyy/zsd149011",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149012",
+   "parent_id": "181249",
+   "title": "印刷媒体",
+   "level": 5,
+   "href": "/gzyy/zsd149012",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41865",
+   "parent_id": "181249",
+   "title": "观众和粉丝",
+   "level": 5,
+   "href": "/gzyy/zsd41865",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41804",
+   "parent_id": "181249",
+   "title": "广告/布告",
+   "level": 5,
+   "href": "/gzyy/zsd41804",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181250",
+   "parent_id": "181249",
+   "title": "微信/微博/短视频",
+   "level": 5,
+   "href": "/gzyy/zsd181250",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41797",
+   "parent_id": "197378",
+   "title": "世界",
+   "level": 4,
+   "href": "/gzyy/zsd41797",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "185712",
+   "parent_id": "41797",
+   "title": "战争与和平",
+   "level": 5,
+   "href": "/gzyy/zsd185712",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41884",
+   "parent_id": "41797",
+   "title": "国家与民族 ",
+   "level": 5,
+   "href": "/gzyy/zsd41884",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41903",
+   "parent_id": "41797",
+   "title": "国籍和人民",
+   "level": 5,
+   "href": "/gzyy/zsd41903",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185710",
+   "parent_id": "41797",
+   "title": "全球一体化",
+   "level": 5,
+   "href": "/gzyy/zsd185710",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185711",
+   "parent_id": "41797",
+   "title": "民族信仰",
+   "level": 5,
+   "href": "/gzyy/zsd185711",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41885",
+   "parent_id": "41797",
+   "title": "人口 ",
+   "level": 5,
+   "href": "/gzyy/zsd41885",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41904",
+   "parent_id": "197378",
+   "title": "著名人物",
+   "level": 4,
+   "href": "/gzyy/zsd41904",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181252",
+   "parent_id": "41904",
+   "title": "科学家",
+   "level": 5,
+   "href": "/gzyy/zsd181252",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181253",
+   "parent_id": "41904",
+   "title": "文学家",
+   "level": 5,
+   "href": "/gzyy/zsd181253",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181254",
+   "parent_id": "41904",
+   "title": "艺术家",
+   "level": 5,
+   "href": "/gzyy/zsd181254",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181255",
+   "parent_id": "41904",
+   "title": "政治家",
+   "level": 5,
+   "href": "/gzyy/zsd181255",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181256",
+   "parent_id": "41904",
+   "title": "体育名人",
+   "level": 5,
+   "href": "/gzyy/zsd181256",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181257",
+   "parent_id": "41904",
+   "title": "商业人物",
+   "level": 5,
+   "href": "/gzyy/zsd181257",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181258",
+   "parent_id": "41904",
+   "title": "其他著名人物",
+   "level": 5,
+   "href": "/gzyy/zsd181258",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188817",
+   "parent_id": "197378",
+   "title": "政治与经济",
+   "level": 4,
+   "href": "/gzyy/zsd188817",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41905",
+   "parent_id": "188817",
+   "title": "法律法治",
+   "level": 5,
+   "href": "/gzyy/zsd41905",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41910",
+   "parent_id": "188817",
+   "title": "政治政策",
+   "level": 5,
+   "href": "/gzyy/zsd41910",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181261",
+   "parent_id": "188817",
+   "title": "市场与经济",
+   "level": 5,
+   "href": "/gzyy/zsd181261",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188818",
+   "parent_id": "197378",
+   "title": "教育",
+   "level": 4,
+   "href": "/gzyy/zsd188818",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188819",
+   "parent_id": "188818",
+   "title": "文化知识教育",
+   "level": 5,
+   "href": "/gzyy/zsd188819",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188820",
+   "parent_id": "188818",
+   "title": "习惯养成教育",
+   "level": 5,
+   "href": "/gzyy/zsd188820",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188821",
+   "parent_id": "188818",
+   "title": "才艺竞技教育",
+   "level": 5,
+   "href": "/gzyy/zsd188821",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188822",
+   "parent_id": "188818",
+   "title": "思想品德教育",
+   "level": 5,
+   "href": "/gzyy/zsd188822",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188823",
+   "parent_id": "188818",
+   "title": "当代教育问题",
+   "level": 5,
+   "href": "/gzyy/zsd188823",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181270",
+   "parent_id": "197378",
+   "title": "时代变迁",
+   "level": 4,
+   "href": "/gzyy/zsd181270",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181271",
+   "parent_id": "181270",
+   "title": "叙事忆旧",
+   "level": 5,
+   "href": "/gzyy/zsd181271",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41891",
+   "parent_id": "181270",
+   "title": "畅想未来",
+   "level": 5,
+   "href": "/gzyy/zsd41891",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181272",
+   "parent_id": "181270",
+   "title": "过去与未来",
+   "level": 5,
+   "href": "/gzyy/zsd181272",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41805",
+   "parent_id": "197378",
+   "title": "故事",
+   "level": 4,
+   "href": "/gzyy/zsd41805",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181273",
+   "parent_id": "41805",
+   "title": "生活故事",
+   "level": 5,
+   "href": "/gzyy/zsd181273",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181274",
+   "parent_id": "41805",
+   "title": "寓言故事",
+   "level": 5,
+   "href": "/gzyy/zsd181274",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181275",
+   "parent_id": "41805",
+   "title": "励志故事",
+   "level": 5,
+   "href": "/gzyy/zsd181275",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181276",
+   "parent_id": "41805",
+   "title": "历史故事",
+   "level": 5,
+   "href": "/gzyy/zsd181276",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181277",
+   "parent_id": "41805",
+   "title": "动物故事",
+   "level": 5,
+   "href": "/gzyy/zsd181277",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197379",
+   "parent_id": "181244",
+   "title": "中国文化",
+   "level": 3,
+   "href": "/gzyy/zsd197379",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197380",
+   "parent_id": "197379",
+   "title": "艺术与手工艺",
+   "level": 4,
+   "href": "/gzyy/zsd197380",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197381",
+   "parent_id": "197380",
+   "title": "京剧",
+   "level": 5,
+   "href": "/gzyy/zsd197381",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197382",
+   "parent_id": "197380",
+   "title": "地方戏剧",
+   "level": 5,
+   "href": "/gzyy/zsd197382",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197383",
+   "parent_id": "197380",
+   "title": "皮影戏",
+   "level": 5,
+   "href": "/gzyy/zsd197383",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197384",
+   "parent_id": "197380",
+   "title": "书法",
+   "level": 5,
+   "href": "/gzyy/zsd197384",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197385",
+   "parent_id": "197380",
+   "title": "棋类",
+   "level": 5,
+   "href": "/gzyy/zsd197385",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197386",
+   "parent_id": "197380",
+   "title": "国画",
+   "level": 5,
+   "href": "/gzyy/zsd197386",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197387",
+   "parent_id": "197380",
+   "title": "剪纸",
+   "level": 5,
+   "href": "/gzyy/zsd197387",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197388",
+   "parent_id": "197380",
+   "title": "刺绣",
+   "level": 5,
+   "href": "/gzyy/zsd197388",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197389",
+   "parent_id": "197380",
+   "title": "丝绸",
+   "level": 5,
+   "href": "/gzyy/zsd197389",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197390",
+   "parent_id": "197380",
+   "title": "传统乐器",
+   "level": 5,
+   "href": "/gzyy/zsd197390",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197391",
+   "parent_id": "197380",
+   "title": "传统服饰",
+   "level": 5,
+   "href": "/gzyy/zsd197391",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197392",
+   "parent_id": "197379",
+   "title": "习俗礼仪",
+   "level": 4,
+   "href": "/gzyy/zsd197392",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197393",
+   "parent_id": "197392",
+   "title": "打招呼",
+   "level": 5,
+   "href": "/gzyy/zsd197393",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197394",
+   "parent_id": "197392",
+   "title": "婚礼",
+   "level": 5,
+   "href": "/gzyy/zsd197394",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197395",
+   "parent_id": "197392",
+   "title": "民族舞蹈",
+   "level": 5,
+   "href": "/gzyy/zsd197395",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197396",
+   "parent_id": "197379",
+   "title": "传统节日",
+   "level": 4,
+   "href": "/gzyy/zsd197396",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197397",
+   "parent_id": "197396",
+   "title": "春节",
+   "level": 5,
+   "href": "/gzyy/zsd197397",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197398",
+   "parent_id": "197396",
+   "title": "元宵节",
+   "level": 5,
+   "href": "/gzyy/zsd197398",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197399",
+   "parent_id": "197396",
+   "title": "清明节",
+   "level": 5,
+   "href": "/gzyy/zsd197399",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197400",
+   "parent_id": "197396",
+   "title": "端午节",
+   "level": 5,
+   "href": "/gzyy/zsd197400",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197401",
+   "parent_id": "197396",
+   "title": "七夕节",
+   "level": 5,
+   "href": "/gzyy/zsd197401",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197402",
+   "parent_id": "197396",
+   "title": "中秋节",
+   "level": 5,
+   "href": "/gzyy/zsd197402",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197403",
+   "parent_id": "197396",
+   "title": "重阳节",
+   "level": 5,
+   "href": "/gzyy/zsd197403",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197404",
+   "parent_id": "197396",
+   "title": "腊八节",
+   "level": 5,
+   "href": "/gzyy/zsd197404",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197405",
+   "parent_id": "197396",
+   "title": "民族节日",
+   "level": 5,
+   "href": "/gzyy/zsd197405",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197406",
+   "parent_id": "197379",
+   "title": "中国元素",
+   "level": 4,
+   "href": "/gzyy/zsd197406",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197407",
+   "parent_id": "197406",
+   "title": "二十四节气",
+   "level": 5,
+   "href": "/gzyy/zsd197407",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197408",
+   "parent_id": "197406",
+   "title": "中国龙",
+   "level": 5,
+   "href": "/gzyy/zsd197408",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197409",
+   "parent_id": "197406",
+   "title": "中国结",
+   "level": 5,
+   "href": "/gzyy/zsd197409",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197410",
+   "parent_id": "197406",
+   "title": "灯笼",
+   "level": 5,
+   "href": "/gzyy/zsd197410",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197411",
+   "parent_id": "197406",
+   "title": "算盘",
+   "level": 5,
+   "href": "/gzyy/zsd197411",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197412",
+   "parent_id": "197406",
+   "title": "文房四宝",
+   "level": 5,
+   "href": "/gzyy/zsd197412",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197413",
+   "parent_id": "197406",
+   "title": "天干地支",
+   "level": 5,
+   "href": "/gzyy/zsd197413",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197414",
+   "parent_id": "197406",
+   "title": "中医",
+   "level": 5,
+   "href": "/gzyy/zsd197414",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197415",
+   "parent_id": "197406",
+   "title": "扎染",
+   "level": 5,
+   "href": "/gzyy/zsd197415",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197416",
+   "parent_id": "197406",
+   "title": "万年历",
+   "level": 5,
+   "href": "/gzyy/zsd197416",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197417",
+   "parent_id": "197379",
+   "title": "体育与武术",
+   "level": 4,
+   "href": "/gzyy/zsd197417",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197418",
+   "parent_id": "197417",
+   "title": "中国功夫",
+   "level": 5,
+   "href": "/gzyy/zsd197418",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197419",
+   "parent_id": "197417",
+   "title": "八段锦",
+   "level": 5,
+   "href": "/gzyy/zsd197419",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197420",
+   "parent_id": "197417",
+   "title": "蹴鞠",
+   "level": 5,
+   "href": "/gzyy/zsd197420",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197421",
+   "parent_id": "197417",
+   "title": "太极拳",
+   "level": 5,
+   "href": "/gzyy/zsd197421",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197422",
+   "parent_id": "197379",
+   "title": "语言文字",
+   "level": 4,
+   "href": "/gzyy/zsd197422",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197423",
+   "parent_id": "197422",
+   "title": "汉字",
+   "level": 5,
+   "href": "/gzyy/zsd197423",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197424",
+   "parent_id": "197422",
+   "title": "中国颜色文化",
+   "level": 5,
+   "href": "/gzyy/zsd197424",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197425",
+   "parent_id": "197422",
+   "title": "成语与成语故事",
+   "level": 5,
+   "href": "/gzyy/zsd197425",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197426",
+   "parent_id": "197422",
+   "title": "寓言/神话故事/名著故事",
+   "level": 5,
+   "href": "/gzyy/zsd197426",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197427",
+   "parent_id": "197379",
+   "title": "饮食文化",
+   "level": 4,
+   "href": "/gzyy/zsd197427",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197428",
+   "parent_id": "197427",
+   "title": "茶文化",
+   "level": 5,
+   "href": "/gzyy/zsd197428",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197429",
+   "parent_id": "197427",
+   "title": "传统食物",
+   "level": 5,
+   "href": "/gzyy/zsd197429",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197430",
+   "parent_id": "197427",
+   "title": "筷子",
+   "level": 5,
+   "href": "/gzyy/zsd197430",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197431",
+   "parent_id": "197427",
+   "title": "餐桌礼仪",
+   "level": 5,
+   "href": "/gzyy/zsd197431",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197432",
+   "parent_id": "197427",
+   "title": "中华菜系",
+   "level": 5,
+   "href": "/gzyy/zsd197432",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197433",
+   "parent_id": "197379",
+   "title": "技术与发明",
+   "level": 4,
+   "href": "/gzyy/zsd197433",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197434",
+   "parent_id": "197433",
+   "title": "造纸术",
+   "level": 5,
+   "href": "/gzyy/zsd197434",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197435",
+   "parent_id": "197433",
+   "title": "指南针",
+   "level": 5,
+   "href": "/gzyy/zsd197435",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197436",
+   "parent_id": "197433",
+   "title": "火药",
+   "level": 5,
+   "href": "/gzyy/zsd197436",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197437",
+   "parent_id": "197433",
+   "title": "印刷术",
+   "level": 5,
+   "href": "/gzyy/zsd197437",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197438",
+   "parent_id": "197379",
+   "title": "人文思想",
+   "level": 4,
+   "href": "/gzyy/zsd197438",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "197439",
+   "parent_id": "197438",
+   "title": "古代诗人",
+   "level": 5,
+   "href": "/gzyy/zsd197439",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197440",
+   "parent_id": "197438",
+   "title": "儒家思想",
+   "level": 5,
+   "href": "/gzyy/zsd197440",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197441",
+   "parent_id": "197438",
+   "title": "道教哲学",
+   "level": 5,
+   "href": "/gzyy/zsd197441",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197442",
+   "parent_id": "197438",
+   "title": "佛教文化",
+   "level": 5,
+   "href": "/gzyy/zsd197442",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197443",
+   "parent_id": "197379",
+   "title": "发展历程",
+   "level": 4,
+   "href": "/gzyy/zsd197443",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197444",
+   "parent_id": "197379",
+   "title": "中式建筑与园林",
+   "level": 4,
+   "href": "/gzyy/zsd197444",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197445",
+   "parent_id": "197379",
+   "title": "中国城市",
+   "level": 4,
+   "href": "/gzyy/zsd197445",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197446",
+   "parent_id": "197379",
+   "title": "中国河流",
+   "level": 4,
+   "href": "/gzyy/zsd197446",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197447",
+   "parent_id": "197379",
+   "title": "历史遗迹",
+   "level": 4,
+   "href": "/gzyy/zsd197447",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197448",
+   "parent_id": "197379",
+   "title": "风景名胜",
+   "level": 4,
+   "href": "/gzyy/zsd197448",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197449",
+   "parent_id": "181244",
+   "title": "科学与技术 ",
+   "level": 3,
+   "href": "/gzyy/zsd197449",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41798",
+   "parent_id": "197449",
+   "title": "科学科普 ",
+   "level": 4,
+   "href": "/gzyy/zsd41798",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41890",
+   "parent_id": "41798",
+   "title": "科学技术 ",
+   "level": 5,
+   "href": "/gzyy/zsd41890",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181268",
+   "parent_id": "41798",
+   "title": "科学精神",
+   "level": 5,
+   "href": "/gzyy/zsd181268",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41888",
+   "parent_id": "41798",
+   "title": "发明与创造 ",
+   "level": 5,
+   "href": "/gzyy/zsd41888",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41886",
+   "parent_id": "41798",
+   "title": "科普知识 ",
+   "level": 5,
+   "href": "/gzyy/zsd41886",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197450",
+   "parent_id": "197449",
+   "title": "现代技术 ",
+   "level": 4,
+   "href": "/gzyy/zsd197450",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181267",
+   "parent_id": "197450",
+   "title": "信息安全",
+   "level": 5,
+   "href": "/gzyy/zsd181267",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41887",
+   "parent_id": "197450",
+   "title": "信息技术 ",
+   "level": 5,
+   "href": "/gzyy/zsd41887",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181269",
+   "parent_id": "197450",
+   "title": "网络的利弊",
+   "level": 5,
+   "href": "/gzyy/zsd181269",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181225",
+   "parent_id": "197450",
+   "title": "通信技术",
+   "level": 5,
+   "href": "/gzyy/zsd181225",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197451",
+   "parent_id": "197450",
+   "title": "新能源汽车 ",
+   "level": 5,
+   "href": "/gzyy/zsd197451",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181226",
+   "parent_id": "197450",
+   "title": "网络直播",
+   "level": 5,
+   "href": "/gzyy/zsd181226",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185705",
+   "parent_id": "197450",
+   "title": "人工智能",
+   "level": 5,
+   "href": "/gzyy/zsd185705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181228",
+   "parent_id": "197450",
+   "title": "共享经济",
+   "level": 5,
+   "href": "/gzyy/zsd181228",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181278",
+   "parent_id": "188768",
+   "title": "人与自然",
+   "level": 2,
+   "href": "/gzyy/zsd181278",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181282",
+   "parent_id": "181278",
+   "title": "环境",
+   "level": 3,
+   "href": "/gzyy/zsd181282",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188826",
+   "parent_id": "181282",
+   "title": "碳足迹",
+   "level": 4,
+   "href": "/gzyy/zsd188826",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41893",
+   "parent_id": "181282",
+   "title": "环境保护",
+   "level": 4,
+   "href": "/gzyy/zsd41893",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41896",
+   "parent_id": "181282",
+   "title": "环境污染",
+   "level": 4,
+   "href": "/gzyy/zsd41896",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188827",
+   "parent_id": "181282",
+   "title": "空气污染",
+   "level": 4,
+   "href": "/gzyy/zsd188827",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185716",
+   "parent_id": "181282",
+   "title": "生态旅游",
+   "level": 4,
+   "href": "/gzyy/zsd185716",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181283",
+   "parent_id": "181282",
+   "title": "人与环境",
+   "level": 4,
+   "href": "/gzyy/zsd181283",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181224",
+   "parent_id": "181282",
+   "title": "垃圾分类",
+   "level": 4,
+   "href": "/gzyy/zsd181224",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197452",
+   "parent_id": "181278",
+   "title": "自然生态 ",
+   "level": 3,
+   "href": "/gzyy/zsd197452",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41792",
+   "parent_id": "197452",
+   "title": "天气与气候",
+   "level": 4,
+   "href": "/gzyy/zsd41792",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41860",
+   "parent_id": "41792",
+   "title": "季节",
+   "level": 5,
+   "href": "/gzyy/zsd41860",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41861",
+   "parent_id": "41792",
+   "title": "气候",
+   "level": 5,
+   "href": "/gzyy/zsd41861",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41858",
+   "parent_id": "41792",
+   "title": "描绘天气",
+   "level": 5,
+   "href": "/gzyy/zsd41858",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41859",
+   "parent_id": "41792",
+   "title": "天气预报",
+   "level": 5,
+   "href": "/gzyy/zsd41859",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188825",
+   "parent_id": "41792",
+   "title": "气候变化及影响",
+   "level": 5,
+   "href": "/gzyy/zsd188825",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181259",
+   "parent_id": "197452",
+   "title": "地理",
+   "level": 4,
+   "href": "/gzyy/zsd181259",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41879",
+   "parent_id": "181259",
+   "title": "自然地理",
+   "level": 5,
+   "href": "/gzyy/zsd41879",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41900",
+   "parent_id": "181259",
+   "title": "人文地理",
+   "level": 5,
+   "href": "/gzyy/zsd41900",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188828",
+   "parent_id": "181259",
+   "title": "地形地貌",
+   "level": 5,
+   "href": "/gzyy/zsd188828",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41796",
+   "parent_id": "197452",
+   "title": "自然",
+   "level": 4,
+   "href": "/gzyy/zsd41796",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181279",
+   "parent_id": "41796",
+   "title": "植物",
+   "level": 5,
+   "href": "/gzyy/zsd181279",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41878",
+   "parent_id": "41796",
+   "title": "动物",
+   "level": 5,
+   "href": "/gzyy/zsd41878",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41880",
+   "parent_id": "41796",
+   "title": "季节 ",
+   "level": 5,
+   "href": "/gzyy/zsd41880",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41881",
+   "parent_id": "41796",
+   "title": "颜色 ",
+   "level": 5,
+   "href": "/gzyy/zsd41881",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181280",
+   "parent_id": "41796",
+   "title": "自然遗产",
+   "level": 5,
+   "href": "/gzyy/zsd181280",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181281",
+   "parent_id": "41796",
+   "title": "自然科学",
+   "level": 5,
+   "href": "/gzyy/zsd181281",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41882",
+   "parent_id": "41796",
+   "title": "人与动植物",
+   "level": 5,
+   "href": "/gzyy/zsd41882",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "185707",
+   "parent_id": "197452",
+   "title": "户外探险",
+   "level": 4,
+   "href": "/gzyy/zsd185707",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188829",
+   "parent_id": "185707",
+   "title": "海洋探险",
+   "level": 5,
+   "href": "/gzyy/zsd188829",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188831",
+   "parent_id": "185707",
+   "title": "登山探险",
+   "level": 5,
+   "href": "/gzyy/zsd188831",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188832",
+   "parent_id": "185707",
+   "title": "丛林探险",
+   "level": 5,
+   "href": "/gzyy/zsd188832",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188833",
+   "parent_id": "185707",
+   "title": "探险旅行",
+   "level": 5,
+   "href": "/gzyy/zsd188833",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197453",
+   "parent_id": "181278",
+   "title": "灾害防范 ",
+   "level": 3,
+   "href": "/gzyy/zsd197453",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "41877",
+   "parent_id": "197453",
+   "title": "自然灾害与防范",
+   "level": 4,
+   "href": "/gzyy/zsd41877",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197454",
+   "parent_id": "197453",
+   "title": "安全常识 ",
+   "level": 4,
+   "href": "/gzyy/zsd197454",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197455",
+   "parent_id": "197453",
+   "title": "自我保护 ",
+   "level": 4,
+   "href": "/gzyy/zsd197455",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "197456",
+   "parent_id": "181278",
+   "title": "宇宙探索",
+   "level": 3,
+   "href": "/gzyy/zsd197456",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181227",
+   "parent_id": "197456",
+   "title": "航空航天",
+   "level": 4,
+   "href": "/gzyy/zsd181227",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "41883",
+   "parent_id": "197456",
+   "title": "天体和宇宙",
+   "level": 4,
+   "href": "/gzyy/zsd41883",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188830",
+   "parent_id": "197456",
+   "title": "宇宙探险",
+   "level": 4,
+   "href": "/gzyy/zsd188830",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148962",
+   "parent_id": "29978",
+   "title": "语篇范围",
+   "level": 1,
+   "href": "/gzyy/zsd148962",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149097",
+   "parent_id": "148962",
+   "title": "体裁分类",
+   "level": 2,
+   "href": "/gzyy/zsd149097",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149099",
+   "parent_id": "149097",
+   "title": "记叙文",
+   "level": 3,
+   "href": "/gzyy/zsd149099",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149100",
+   "parent_id": "149097",
+   "title": "说明文",
+   "level": 3,
+   "href": "/gzyy/zsd149100",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149101",
+   "parent_id": "149097",
+   "title": "议论文",
+   "level": 3,
+   "href": "/gzyy/zsd149101",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149102",
+   "parent_id": "149097",
+   "title": "夹叙夹议",
+   "level": 3,
+   "href": "/gzyy/zsd149102",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149103",
+   "parent_id": "149097",
+   "title": "应用文",
+   "level": 3,
+   "href": "/gzyy/zsd149103",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149104",
+   "parent_id": "149097",
+   "title": "新闻报道",
+   "level": 3,
+   "href": "/gzyy/zsd149104",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149105",
+   "parent_id": "149097",
+   "title": "其他",
+   "level": 3,
+   "href": "/gzyy/zsd149105",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149098",
+   "parent_id": "148962",
+   "title": "题型分类",
+   "level": 2,
+   "href": "/gzyy/zsd149098",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149106",
+   "parent_id": "149098",
+   "title": "细节理解",
+   "level": 3,
+   "href": "/gzyy/zsd149106",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149111",
+   "parent_id": "149106",
+   "title": "直接理解",
+   "level": 4,
+   "href": "/gzyy/zsd149111",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149112",
+   "parent_id": "149106",
+   "title": "语意转化",
+   "level": 4,
+   "href": "/gzyy/zsd149112",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149113",
+   "parent_id": "149106",
+   "title": "数字计算",
+   "level": 4,
+   "href": "/gzyy/zsd149113",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149114",
+   "parent_id": "149106",
+   "title": "正误判断",
+   "level": 4,
+   "href": "/gzyy/zsd149114",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149115",
+   "parent_id": "149106",
+   "title": "细节排序",
+   "level": 4,
+   "href": "/gzyy/zsd149115",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149107",
+   "parent_id": "149098",
+   "title": "推理判断",
+   "level": 3,
+   "href": "/gzyy/zsd149107",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149116",
+   "parent_id": "149107",
+   "title": "逻辑推理",
+   "level": 4,
+   "href": "/gzyy/zsd149116",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149117",
+   "parent_id": "149107",
+   "title": "观点态度",
+   "level": 4,
+   "href": "/gzyy/zsd149117",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149118",
+   "parent_id": "149107",
+   "title": "目的意图",
+   "level": 4,
+   "href": "/gzyy/zsd149118",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149119",
+   "parent_id": "149107",
+   "title": "文章出处",
+   "level": 4,
+   "href": "/gzyy/zsd149119",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149120",
+   "parent_id": "149107",
+   "title": "读者对象",
+   "level": 4,
+   "href": "/gzyy/zsd149120",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149121",
+   "parent_id": "149107",
+   "title": "论证方式",
+   "level": 4,
+   "href": "/gzyy/zsd149121",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149122",
+   "parent_id": "149107",
+   "title": "篇章结构",
+   "level": 4,
+   "href": "/gzyy/zsd149122",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149108",
+   "parent_id": "149098",
+   "title": "主旨大意",
+   "level": 3,
+   "href": "/gzyy/zsd149108",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149123",
+   "parent_id": "149108",
+   "title": "文章大意",
+   "level": 4,
+   "href": "/gzyy/zsd149123",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149124",
+   "parent_id": "149108",
+   "title": "段落大意",
+   "level": 4,
+   "href": "/gzyy/zsd149124",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149125",
+   "parent_id": "149108",
+   "title": "标题判断",
+   "level": 4,
+   "href": "/gzyy/zsd149125",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149109",
+   "parent_id": "149098",
+   "title": "词句猜测",
+   "level": 3,
+   "href": "/gzyy/zsd149109",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "149126",
+   "parent_id": "149109",
+   "title": "词义猜测",
+   "level": 4,
+   "href": "/gzyy/zsd149126",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149127",
+   "parent_id": "149109",
+   "title": "短语猜测",
+   "level": 4,
+   "href": "/gzyy/zsd149127",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149128",
+   "parent_id": "149109",
+   "title": "指代猜测",
+   "level": 4,
+   "href": "/gzyy/zsd149128",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149129",
+   "parent_id": "149109",
+   "title": "句意猜测",
+   "level": 4,
+   "href": "/gzyy/zsd149129",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "149130",
+   "parent_id": "149109",
+   "title": "习语猜测",
+   "level": 4,
+   "href": "/gzyy/zsd149130",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188834",
+   "parent_id": "29978",
+   "title": "语用",
+   "level": 1,
+   "href": "/gzyy/zsd188834",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188835",
+   "parent_id": "188834",
+   "title": "常识",
+   "level": 2,
+   "href": "/gzyy/zsd188835",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188836",
+   "parent_id": "188834",
+   "title": "谚语/习语",
+   "level": 2,
+   "href": "/gzyy/zsd188836",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "29982",
+   "parent_id": "188834",
+   "title": "情景交际",
+   "level": 2,
+   "href": "/gzyy/zsd29982",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "29983",
+   "parent_id": "29978",
+   "title": "其他",
+   "level": 1,
+   "href": "/gzyy/zsd29983",
+   "is_leaf": true,
+   "is_knowledge": true
+  }
+ ]
+}

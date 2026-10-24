@@ -1,0 +1,4457 @@
+{
+ "stage": "primary",
+ "subject": "chinese",
+ "subject_cn": "小学语文",
+ "bank_id": 24,
+ "root_id": "100987",
+ "root_title": "小学语文综合库",
+ "node_count": 494,
+ "nodes": [
+  {
+   "id": "100988",
+   "parent_id": "100987",
+   "title": "基础知识",
+   "level": 1,
+   "href": "/xxyw/zsd100988",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "100994",
+   "parent_id": "100988",
+   "title": "拼音",
+   "level": 2,
+   "href": "/xxyw/zsd100994",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "100999",
+   "parent_id": "100994",
+   "title": "声母",
+   "level": 3,
+   "href": "/xxyw/zsd100999",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133723",
+   "parent_id": "100999",
+   "title": "平舌音",
+   "level": 4,
+   "href": "/xxyw/zsd133723",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133724",
+   "parent_id": "100999",
+   "title": "翘舌音",
+   "level": 4,
+   "href": "/xxyw/zsd133724",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101000",
+   "parent_id": "100994",
+   "title": "韵母",
+   "level": 3,
+   "href": "/xxyw/zsd101000",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133725",
+   "parent_id": "101000",
+   "title": "单韵母",
+   "level": 4,
+   "href": "/xxyw/zsd133725",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133726",
+   "parent_id": "101000",
+   "title": "复韵母",
+   "level": 4,
+   "href": "/xxyw/zsd133726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133727",
+   "parent_id": "101000",
+   "title": "鼻韵母",
+   "level": 4,
+   "href": "/xxyw/zsd133727",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133892",
+   "parent_id": "133727",
+   "title": "前鼻韵母",
+   "level": 5,
+   "href": "/xxyw/zsd133892",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133893",
+   "parent_id": "133727",
+   "title": "后鼻韵母",
+   "level": 5,
+   "href": "/xxyw/zsd133893",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133728",
+   "parent_id": "101000",
+   "title": "特殊韵母",
+   "level": 4,
+   "href": "/xxyw/zsd133728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101002",
+   "parent_id": "100994",
+   "title": "音节",
+   "level": 3,
+   "href": "/xxyw/zsd101002",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133729",
+   "parent_id": "101002",
+   "title": "儿化音节",
+   "level": 4,
+   "href": "/xxyw/zsd133729",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133730",
+   "parent_id": "101002",
+   "title": "零声母音节",
+   "level": 4,
+   "href": "/xxyw/zsd133730",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133731",
+   "parent_id": "101002",
+   "title": "整体认读音节",
+   "level": 4,
+   "href": "/xxyw/zsd133731",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133719",
+   "parent_id": "101002",
+   "title": "音节拼写规则",
+   "level": 4,
+   "href": "/xxyw/zsd133719",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133896",
+   "parent_id": "133719",
+   "title": "轻声",
+   "level": 5,
+   "href": "/xxyw/zsd133896",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133897",
+   "parent_id": "133719",
+   "title": "ü的用法",
+   "level": 5,
+   "href": "/xxyw/zsd133897",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133898",
+   "parent_id": "133719",
+   "title": "隔音符号",
+   "level": 5,
+   "href": "/xxyw/zsd133898",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133899",
+   "parent_id": "133719",
+   "title": "变调规律",
+   "level": 5,
+   "href": "/xxyw/zsd133899",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133900",
+   "parent_id": "133719",
+   "title": "大写字母的使用",
+   "level": 5,
+   "href": "/xxyw/zsd133900",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133901",
+   "parent_id": "133719",
+   "title": "y、w的作用和使用",
+   "level": 5,
+   "href": "/xxyw/zsd133901",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100998",
+   "parent_id": "100994",
+   "title": "字母（表）",
+   "level": 3,
+   "href": "/xxyw/zsd100998",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133720",
+   "parent_id": "100998",
+   "title": "字母表顺序",
+   "level": 4,
+   "href": "/xxyw/zsd133720",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133721",
+   "parent_id": "100998",
+   "title": "大小写对应",
+   "level": 4,
+   "href": "/xxyw/zsd133721",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133722",
+   "parent_id": "100998",
+   "title": "字母书写规则",
+   "level": 4,
+   "href": "/xxyw/zsd133722",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101001",
+   "parent_id": "100994",
+   "title": "声调与标调",
+   "level": 3,
+   "href": "/xxyw/zsd101001",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133718",
+   "parent_id": "100994",
+   "title": "拼读方法",
+   "level": 3,
+   "href": "/xxyw/zsd133718",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133894",
+   "parent_id": "133718",
+   "title": "两拼法",
+   "level": 4,
+   "href": "/xxyw/zsd133894",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133895",
+   "parent_id": "133718",
+   "title": "三拼法",
+   "level": 4,
+   "href": "/xxyw/zsd133895",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101003",
+   "parent_id": "100994",
+   "title": "拼合规律",
+   "level": 3,
+   "href": "/xxyw/zsd101003",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100995",
+   "parent_id": "100988",
+   "title": "汉字",
+   "level": 2,
+   "href": "/xxyw/zsd100995",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101009",
+   "parent_id": "100995",
+   "title": "字音",
+   "level": 3,
+   "href": "/xxyw/zsd101009",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101015",
+   "parent_id": "101009",
+   "title": "同音字",
+   "level": 4,
+   "href": "/xxyw/zsd101015",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101016",
+   "parent_id": "101009",
+   "title": "多音字",
+   "level": 4,
+   "href": "/xxyw/zsd101016",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133748",
+   "parent_id": "101009",
+   "title": "看拼音写汉字",
+   "level": 4,
+   "href": "/xxyw/zsd133748",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101008",
+   "parent_id": "100995",
+   "title": "字形",
+   "level": 3,
+   "href": "/xxyw/zsd101008",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101014",
+   "parent_id": "101008",
+   "title": "形近字",
+   "level": 4,
+   "href": "/xxyw/zsd101014",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101012",
+   "parent_id": "101008",
+   "title": "独体字",
+   "level": 4,
+   "href": "/xxyw/zsd101012",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101013",
+   "parent_id": "101008",
+   "title": "合体字",
+   "level": 4,
+   "href": "/xxyw/zsd101013",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133746",
+   "parent_id": "101008",
+   "title": "猜字谜",
+   "level": 4,
+   "href": "/xxyw/zsd133746",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101010",
+   "parent_id": "101008",
+   "title": "字形易错字",
+   "level": 4,
+   "href": "/xxyw/zsd101010",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133751",
+   "parent_id": "101008",
+   "title": "笔顺易错字",
+   "level": 4,
+   "href": "/xxyw/zsd133751",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101007",
+   "parent_id": "100995",
+   "title": "字义",
+   "level": 3,
+   "href": "/xxyw/zsd101007",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133744",
+   "parent_id": "101007",
+   "title": "多义字",
+   "level": 4,
+   "href": "/xxyw/zsd133744",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133745",
+   "parent_id": "101007",
+   "title": "多音多义字",
+   "level": 4,
+   "href": "/xxyw/zsd133745",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101011",
+   "parent_id": "100995",
+   "title": "查字典",
+   "level": 3,
+   "href": "/xxyw/zsd101011",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133752",
+   "parent_id": "101011",
+   "title": "音序查字法",
+   "level": 4,
+   "href": "/xxyw/zsd133752",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133753",
+   "parent_id": "101011",
+   "title": "部首查字法",
+   "level": 4,
+   "href": "/xxyw/zsd133753",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133754",
+   "parent_id": "101011",
+   "title": "数笔画查字法",
+   "level": 4,
+   "href": "/xxyw/zsd133754",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133732",
+   "parent_id": "100995",
+   "title": "汉字书写",
+   "level": 3,
+   "href": "/xxyw/zsd133732",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101005",
+   "parent_id": "100995",
+   "title": "书写笔画",
+   "level": 3,
+   "href": "/xxyw/zsd101005",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133733",
+   "parent_id": "101005",
+   "title": "基本笔画",
+   "level": 4,
+   "href": "/xxyw/zsd133733",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133735",
+   "parent_id": "101005",
+   "title": "笔顺规则",
+   "level": 4,
+   "href": "/xxyw/zsd133735",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101006",
+   "parent_id": "100995",
+   "title": "汉字造字法及演变",
+   "level": 3,
+   "href": "/xxyw/zsd101006",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133737",
+   "parent_id": "101006",
+   "title": "象形字",
+   "level": 4,
+   "href": "/xxyw/zsd133737",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133739",
+   "parent_id": "101006",
+   "title": "会意字",
+   "level": 4,
+   "href": "/xxyw/zsd133739",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133740",
+   "parent_id": "101006",
+   "title": "形声字",
+   "level": 4,
+   "href": "/xxyw/zsd133740",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101004",
+   "parent_id": "100995",
+   "title": "汉字结构",
+   "level": 3,
+   "href": "/xxyw/zsd101004",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133736",
+   "parent_id": "101004",
+   "title": "间架结构",
+   "level": 4,
+   "href": "/xxyw/zsd133736",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133734",
+   "parent_id": "101004",
+   "title": "偏旁部首",
+   "level": 4,
+   "href": "/xxyw/zsd133734",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100996",
+   "parent_id": "100988",
+   "title": "词语",
+   "level": 2,
+   "href": "/xxyw/zsd100996",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101024",
+   "parent_id": "100996",
+   "title": "词性",
+   "level": 3,
+   "href": "/xxyw/zsd101024",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133775",
+   "parent_id": "101024",
+   "title": "量词",
+   "level": 4,
+   "href": "/xxyw/zsd133775",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133776",
+   "parent_id": "101024",
+   "title": "语气词",
+   "level": 4,
+   "href": "/xxyw/zsd133776",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "156634",
+   "parent_id": "101024",
+   "title": "拟声词",
+   "level": 4,
+   "href": "/xxyw/zsd156634",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133777",
+   "parent_id": "101024",
+   "title": "的、地、得",
+   "level": 4,
+   "href": "/xxyw/zsd133777",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "174717",
+   "parent_id": "100996",
+   "title": "词义辨析",
+   "level": 3,
+   "href": "/xxyw/zsd174717",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101017",
+   "parent_id": "174717",
+   "title": "近义词",
+   "level": 4,
+   "href": "/xxyw/zsd101017",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101018",
+   "parent_id": "174717",
+   "title": "反义词",
+   "level": 4,
+   "href": "/xxyw/zsd101018",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101019",
+   "parent_id": "174717",
+   "title": "多义词",
+   "level": 4,
+   "href": "/xxyw/zsd101019",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101028",
+   "parent_id": "174717",
+   "title": "关联词",
+   "level": 4,
+   "href": "/xxyw/zsd101028",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133755",
+   "parent_id": "174717",
+   "title": "易混词",
+   "level": 4,
+   "href": "/xxyw/zsd133755",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101025",
+   "parent_id": "174717",
+   "title": "感情色彩",
+   "level": 4,
+   "href": "/xxyw/zsd101025",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101022",
+   "parent_id": "100996",
+   "title": "成语",
+   "level": 3,
+   "href": "/xxyw/zsd101022",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133767",
+   "parent_id": "101022",
+   "title": "近义成语",
+   "level": 4,
+   "href": "/xxyw/zsd133767",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133768",
+   "parent_id": "101022",
+   "title": "反义成语",
+   "level": 4,
+   "href": "/xxyw/zsd133768",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133769",
+   "parent_id": "101022",
+   "title": "多义成语",
+   "level": 4,
+   "href": "/xxyw/zsd133769",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133770",
+   "parent_id": "101022",
+   "title": "八字成语",
+   "level": 4,
+   "href": "/xxyw/zsd133770",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133771",
+   "parent_id": "101022",
+   "title": "神话故事成语",
+   "level": 4,
+   "href": "/xxyw/zsd133771",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133772",
+   "parent_id": "101022",
+   "title": "带数字的成语",
+   "level": 4,
+   "href": "/xxyw/zsd133772",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133773",
+   "parent_id": "101022",
+   "title": "带反义词的成语",
+   "level": 4,
+   "href": "/xxyw/zsd133773",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133774",
+   "parent_id": "101022",
+   "title": "成语的感情色彩",
+   "level": 4,
+   "href": "/xxyw/zsd133774",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133758",
+   "parent_id": "101022",
+   "title": "成语常考题型",
+   "level": 4,
+   "href": "/xxyw/zsd133758",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133905",
+   "parent_id": "133758",
+   "title": "解释成语",
+   "level": 5,
+   "href": "/xxyw/zsd133905",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133906",
+   "parent_id": "133758",
+   "title": "成语造句",
+   "level": 5,
+   "href": "/xxyw/zsd133906",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133907",
+   "parent_id": "133758",
+   "title": "补全成语",
+   "level": 5,
+   "href": "/xxyw/zsd133907",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133908",
+   "parent_id": "133758",
+   "title": "成语归类",
+   "level": 5,
+   "href": "/xxyw/zsd133908",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101020",
+   "parent_id": "100996",
+   "title": "四字词语及叠词",
+   "level": 3,
+   "href": "/xxyw/zsd101020",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101031",
+   "parent_id": "101020",
+   "title": "AABB",
+   "level": 4,
+   "href": "/xxyw/zsd101031",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101032",
+   "parent_id": "101020",
+   "title": "ABAB",
+   "level": 4,
+   "href": "/xxyw/zsd101032",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101033",
+   "parent_id": "101020",
+   "title": "AABC",
+   "level": 4,
+   "href": "/xxyw/zsd101033",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101034",
+   "parent_id": "101020",
+   "title": "ABCC",
+   "level": 4,
+   "href": "/xxyw/zsd101034",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101035",
+   "parent_id": "101020",
+   "title": "ABAC",
+   "level": 4,
+   "href": "/xxyw/zsd101035",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101036",
+   "parent_id": "101020",
+   "title": "ABB的",
+   "level": 4,
+   "href": "/xxyw/zsd101036",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101037",
+   "parent_id": "101020",
+   "title": "AAB的",
+   "level": 4,
+   "href": "/xxyw/zsd101037",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133759",
+   "parent_id": "101020",
+   "title": "又A又B",
+   "level": 4,
+   "href": "/xxyw/zsd133759",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133760",
+   "parent_id": "101020",
+   "title": "A来A去",
+   "level": 4,
+   "href": "/xxyw/zsd133760",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133757",
+   "parent_id": "100996",
+   "title": "考点（词语）",
+   "level": 3,
+   "href": "/xxyw/zsd133757",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101030",
+   "parent_id": "133757",
+   "title": "组词",
+   "level": 4,
+   "href": "/xxyw/zsd101030",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133778",
+   "parent_id": "101030",
+   "title": "给字组词",
+   "level": 5,
+   "href": "/xxyw/zsd133778",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133779",
+   "parent_id": "101030",
+   "title": "看图组词",
+   "level": 5,
+   "href": "/xxyw/zsd133779",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133872",
+   "parent_id": "133757",
+   "title": "词语仿写",
+   "level": 4,
+   "href": "/xxyw/zsd133872",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101027",
+   "parent_id": "133757",
+   "title": "词语解释",
+   "level": 4,
+   "href": "/xxyw/zsd101027",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133873",
+   "parent_id": "133757",
+   "title": "词语造句",
+   "level": 4,
+   "href": "/xxyw/zsd133873",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133874",
+   "parent_id": "133757",
+   "title": "选字、选词填空",
+   "level": 4,
+   "href": "/xxyw/zsd133874",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133875",
+   "parent_id": "133757",
+   "title": "补全词语",
+   "level": 4,
+   "href": "/xxyw/zsd133875",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101026",
+   "parent_id": "133757",
+   "title": "词语搭配",
+   "level": 4,
+   "href": "/xxyw/zsd101026",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101029",
+   "parent_id": "133757",
+   "title": "词语排列归类",
+   "level": 4,
+   "href": "/xxyw/zsd101029",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172206",
+   "parent_id": "133757",
+   "title": "看图写词语",
+   "level": 4,
+   "href": "/xxyw/zsd172206",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100997",
+   "parent_id": "100987",
+   "title": "句法实践",
+   "level": 1,
+   "href": "/xxyw/zsd100997",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "174718",
+   "parent_id": "100997",
+   "title": "句子考查分类",
+   "level": 2,
+   "href": "/xxyw/zsd174718",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101046",
+   "parent_id": "174718",
+   "title": "句式转换",
+   "level": 3,
+   "href": "/xxyw/zsd101046",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101052",
+   "parent_id": "101046",
+   "title": "陈述句与设问句的互换",
+   "level": 4,
+   "href": "/xxyw/zsd101052",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101054",
+   "parent_id": "101046",
+   "title": "陈述句、反问句与感叹句的互换",
+   "level": 4,
+   "href": "/xxyw/zsd101054",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101053",
+   "parent_id": "101046",
+   "title": "把字句、被字句与陈述句的互换",
+   "level": 4,
+   "href": "/xxyw/zsd101053",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101055",
+   "parent_id": "101046",
+   "title": "肯定句与双重否定句的互换",
+   "level": 4,
+   "href": "/xxyw/zsd101055",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101056",
+   "parent_id": "101046",
+   "title": "引述句与转述句的互换",
+   "level": 4,
+   "href": "/xxyw/zsd101056",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133784",
+   "parent_id": "101046",
+   "title": "句子的拆分与合并",
+   "level": 4,
+   "href": "/xxyw/zsd133784",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101042",
+   "parent_id": "174718",
+   "title": "连词成句",
+   "level": 3,
+   "href": "/xxyw/zsd101042",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101038",
+   "parent_id": "174718",
+   "title": "仿写句子",
+   "level": 3,
+   "href": "/xxyw/zsd101038",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101044",
+   "parent_id": "174718",
+   "title": "句子排序",
+   "level": 3,
+   "href": "/xxyw/zsd101044",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133782",
+   "parent_id": "174718",
+   "title": "补充句子",
+   "level": 3,
+   "href": "/xxyw/zsd133782",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101039",
+   "parent_id": "174718",
+   "title": "扩写句子",
+   "level": 3,
+   "href": "/xxyw/zsd101039",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101040",
+   "parent_id": "174718",
+   "title": "缩写句子",
+   "level": 3,
+   "href": "/xxyw/zsd101040",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101041",
+   "parent_id": "174718",
+   "title": "改写句子",
+   "level": 3,
+   "href": "/xxyw/zsd101041",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101043",
+   "parent_id": "174718",
+   "title": "翻译句子",
+   "level": 3,
+   "href": "/xxyw/zsd101043",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133783",
+   "parent_id": "174718",
+   "title": "朗读句子",
+   "level": 3,
+   "href": "/xxyw/zsd133783",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101045",
+   "parent_id": "174718",
+   "title": "理解句子含义",
+   "level": 3,
+   "href": "/xxyw/zsd101045",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101048",
+   "parent_id": "100997",
+   "title": "单句句型",
+   "level": 2,
+   "href": "/xxyw/zsd101048",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133785",
+   "parent_id": "101048",
+   "title": "陈述句",
+   "level": 3,
+   "href": "/xxyw/zsd133785",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133786",
+   "parent_id": "101048",
+   "title": "疑问句",
+   "level": 3,
+   "href": "/xxyw/zsd133786",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133787",
+   "parent_id": "101048",
+   "title": "祈使句",
+   "level": 3,
+   "href": "/xxyw/zsd133787",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133788",
+   "parent_id": "101048",
+   "title": "感叹句",
+   "level": 3,
+   "href": "/xxyw/zsd133788",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101047",
+   "parent_id": "100997",
+   "title": "标点符号",
+   "level": 2,
+   "href": "/xxyw/zsd101047",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101050",
+   "parent_id": "100997",
+   "title": "病句辨析",
+   "level": 2,
+   "href": "/xxyw/zsd101050",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133797",
+   "parent_id": "101050",
+   "title": "成分残缺",
+   "level": 3,
+   "href": "/xxyw/zsd133797",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133798",
+   "parent_id": "101050",
+   "title": "搭配不当",
+   "level": 3,
+   "href": "/xxyw/zsd133798",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133799",
+   "parent_id": "101050",
+   "title": "用词不当",
+   "level": 3,
+   "href": "/xxyw/zsd133799",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133800",
+   "parent_id": "101050",
+   "title": "分类不当",
+   "level": 3,
+   "href": "/xxyw/zsd133800",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133801",
+   "parent_id": "101050",
+   "title": "重复啰嗦",
+   "level": 3,
+   "href": "/xxyw/zsd133801",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133802",
+   "parent_id": "101050",
+   "title": "语序颠倒",
+   "level": 3,
+   "href": "/xxyw/zsd133802",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133803",
+   "parent_id": "101050",
+   "title": "前后矛盾",
+   "level": 3,
+   "href": "/xxyw/zsd133803",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133804",
+   "parent_id": "101050",
+   "title": "不合事理",
+   "level": 3,
+   "href": "/xxyw/zsd133804",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133805",
+   "parent_id": "101050",
+   "title": "指代不明",
+   "level": 3,
+   "href": "/xxyw/zsd133805",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133806",
+   "parent_id": "101050",
+   "title": "含糊不清",
+   "level": 3,
+   "href": "/xxyw/zsd133806",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133807",
+   "parent_id": "101050",
+   "title": "标点用错",
+   "level": 3,
+   "href": "/xxyw/zsd133807",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133808",
+   "parent_id": "101050",
+   "title": "比喻不当",
+   "level": 3,
+   "href": "/xxyw/zsd133808",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133809",
+   "parent_id": "101050",
+   "title": "关联词语不当",
+   "level": 3,
+   "href": "/xxyw/zsd133809",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101051",
+   "parent_id": "100997",
+   "title": "修辞手法",
+   "level": 2,
+   "href": "/xxyw/zsd101051",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101058",
+   "parent_id": "101051",
+   "title": "比喻",
+   "level": 3,
+   "href": "/xxyw/zsd101058",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101059",
+   "parent_id": "101051",
+   "title": "拟人",
+   "level": 3,
+   "href": "/xxyw/zsd101059",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101063",
+   "parent_id": "101051",
+   "title": "排比",
+   "level": 3,
+   "href": "/xxyw/zsd101063",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101060",
+   "parent_id": "101051",
+   "title": "夸张",
+   "level": 3,
+   "href": "/xxyw/zsd101060",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101061",
+   "parent_id": "101051",
+   "title": "反问",
+   "level": 3,
+   "href": "/xxyw/zsd101061",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101062",
+   "parent_id": "101051",
+   "title": "设问",
+   "level": 3,
+   "href": "/xxyw/zsd101062",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133810",
+   "parent_id": "101051",
+   "title": "对偶",
+   "level": 3,
+   "href": "/xxyw/zsd133810",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133811",
+   "parent_id": "101051",
+   "title": "对比",
+   "level": 3,
+   "href": "/xxyw/zsd133811",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133812",
+   "parent_id": "101051",
+   "title": "借代",
+   "level": 3,
+   "href": "/xxyw/zsd133812",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133813",
+   "parent_id": "101051",
+   "title": "引用",
+   "level": 3,
+   "href": "/xxyw/zsd133813",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133814",
+   "parent_id": "101051",
+   "title": "反复",
+   "level": 3,
+   "href": "/xxyw/zsd133814",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133815",
+   "parent_id": "101051",
+   "title": "双关",
+   "level": 3,
+   "href": "/xxyw/zsd133815",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133816",
+   "parent_id": "101051",
+   "title": "反语",
+   "level": 3,
+   "href": "/xxyw/zsd133816",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100990",
+   "parent_id": "100987",
+   "title": "阅读鉴赏",
+   "level": 1,
+   "href": "/xxyw/zsd100990",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101073",
+   "parent_id": "100990",
+   "title": "现代文阅读",
+   "level": 2,
+   "href": "/xxyw/zsd101073",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101076",
+   "parent_id": "101073",
+   "title": "记叙文",
+   "level": 3,
+   "href": "/xxyw/zsd101076",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101077",
+   "parent_id": "101073",
+   "title": "说明文",
+   "level": 3,
+   "href": "/xxyw/zsd101077",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101079",
+   "parent_id": "101073",
+   "title": "议论文",
+   "level": 3,
+   "href": "/xxyw/zsd101079",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165854",
+   "parent_id": "101073",
+   "title": "非连续性文本阅读",
+   "level": 3,
+   "href": "/xxyw/zsd165854",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133830",
+   "parent_id": "101073",
+   "title": "体裁（现代文）",
+   "level": 3,
+   "href": "/xxyw/zsd133830",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101078",
+   "parent_id": "133830",
+   "title": "散文",
+   "level": 4,
+   "href": "/xxyw/zsd101078",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133880",
+   "parent_id": "133830",
+   "title": "寓言故事",
+   "level": 4,
+   "href": "/xxyw/zsd133880",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133881",
+   "parent_id": "133830",
+   "title": "童话故事（现代文）",
+   "level": 4,
+   "href": "/xxyw/zsd133881",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133882",
+   "parent_id": "133830",
+   "title": "科学小品",
+   "level": 4,
+   "href": "/xxyw/zsd133882",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148955",
+   "parent_id": "133830",
+   "title": "小说",
+   "level": 4,
+   "href": "/xxyw/zsd148955",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148956",
+   "parent_id": "133830",
+   "title": "神话故事",
+   "level": 4,
+   "href": "/xxyw/zsd148956",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148957",
+   "parent_id": "133830",
+   "title": "成语故事",
+   "level": 4,
+   "href": "/xxyw/zsd148957",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148958",
+   "parent_id": "133830",
+   "title": "剧本",
+   "level": 4,
+   "href": "/xxyw/zsd148958",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "156740",
+   "parent_id": "133830",
+   "title": "儿歌",
+   "level": 4,
+   "href": "/xxyw/zsd156740",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "156741",
+   "parent_id": "133830",
+   "title": "历史故事",
+   "level": 4,
+   "href": "/xxyw/zsd156741",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "156742",
+   "parent_id": "133830",
+   "title": "民间故事",
+   "level": 4,
+   "href": "/xxyw/zsd156742",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133837",
+   "parent_id": "101073",
+   "title": "考点（现代文）",
+   "level": 3,
+   "href": "/xxyw/zsd133837",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "172212",
+   "parent_id": "133837",
+   "title": "听力与听写",
+   "level": 4,
+   "href": "/xxyw/zsd172212",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181509",
+   "parent_id": "133837",
+   "title": "数自然段和句子",
+   "level": 4,
+   "href": "/xxyw/zsd181509",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133923",
+   "parent_id": "133837",
+   "title": "划分段落层次",
+   "level": 4,
+   "href": "/xxyw/zsd133923",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133924",
+   "parent_id": "133837",
+   "title": "概括段落层意",
+   "level": 4,
+   "href": "/xxyw/zsd133924",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "176608",
+   "parent_id": "133837",
+   "title": "阅读策略和方法",
+   "level": 4,
+   "href": "/xxyw/zsd176608",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133915",
+   "parent_id": "133837",
+   "title": "叙述人物",
+   "level": 4,
+   "href": "/xxyw/zsd133915",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133914",
+   "parent_id": "133837",
+   "title": "叙述人称",
+   "level": 4,
+   "href": "/xxyw/zsd133914",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181198",
+   "parent_id": "133837",
+   "title": "标题的拟写/含义/作用",
+   "level": 4,
+   "href": "/xxyw/zsd181198",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133921",
+   "parent_id": "133837",
+   "title": "找关键词/句/段",
+   "level": 4,
+   "href": "/xxyw/zsd133921",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181200",
+   "parent_id": "133837",
+   "title": "分析字词句段的含义或作用",
+   "level": 4,
+   "href": "/xxyw/zsd181200",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181510",
+   "parent_id": "133837",
+   "title": "文章内容概括/理解",
+   "level": 4,
+   "href": "/xxyw/zsd181510",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133928",
+   "parent_id": "133837",
+   "title": "概括内容主旨",
+   "level": 4,
+   "href": "/xxyw/zsd133928",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181199",
+   "parent_id": "133837",
+   "title": "分析人物形象",
+   "level": 4,
+   "href": "/xxyw/zsd181199",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133834",
+   "parent_id": "133837",
+   "title": "描写手法",
+   "level": 4,
+   "href": "/xxyw/zsd133834",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133919",
+   "parent_id": "133837",
+   "title": "人物描写",
+   "level": 4,
+   "href": "/xxyw/zsd133919",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133920",
+   "parent_id": "133837",
+   "title": "环境描写",
+   "level": 4,
+   "href": "/xxyw/zsd133920",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181201",
+   "parent_id": "133837",
+   "title": "修辞手法（现代文）",
+   "level": 4,
+   "href": "/xxyw/zsd181201",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133836",
+   "parent_id": "133837",
+   "title": "表现手法",
+   "level": 4,
+   "href": "/xxyw/zsd133836",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133835",
+   "parent_id": "133837",
+   "title": "表达方式",
+   "level": 4,
+   "href": "/xxyw/zsd133835",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133918",
+   "parent_id": "133837",
+   "title": "写作顺序",
+   "level": 4,
+   "href": "/xxyw/zsd133918",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133917",
+   "parent_id": "133837",
+   "title": "详略安排",
+   "level": 4,
+   "href": "/xxyw/zsd133917",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133916",
+   "parent_id": "133837",
+   "title": "文章线索",
+   "level": 4,
+   "href": "/xxyw/zsd133916",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133913",
+   "parent_id": "133837",
+   "title": "文章结构",
+   "level": 4,
+   "href": "/xxyw/zsd133913",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133929",
+   "parent_id": "133837",
+   "title": "分析主旨/情感",
+   "level": 4,
+   "href": "/xxyw/zsd133929",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181211",
+   "parent_id": "133837",
+   "title": "说明方法",
+   "level": 4,
+   "href": "/xxyw/zsd181211",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181212",
+   "parent_id": "133837",
+   "title": "说明顺序",
+   "level": 4,
+   "href": "/xxyw/zsd181212",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181213",
+   "parent_id": "133837",
+   "title": "说明对象",
+   "level": 4,
+   "href": "/xxyw/zsd181213",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181214",
+   "parent_id": "133837",
+   "title": "说明语言",
+   "level": 4,
+   "href": "/xxyw/zsd181214",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181216",
+   "parent_id": "133837",
+   "title": "提取关键信息",
+   "level": 4,
+   "href": "/xxyw/zsd181216",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181215",
+   "parent_id": "133837",
+   "title": "论点、观点",
+   "level": 4,
+   "href": "/xxyw/zsd181215",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181202",
+   "parent_id": "133837",
+   "title": "开放性作答",
+   "level": 4,
+   "href": "/xxyw/zsd181202",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101074",
+   "parent_id": "100990",
+   "title": "文言文阅读",
+   "level": 2,
+   "href": "/xxyw/zsd101074",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133845",
+   "parent_id": "101074",
+   "title": "文化常识（文言文）",
+   "level": 3,
+   "href": "/xxyw/zsd133845",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133839",
+   "parent_id": "101074",
+   "title": "通假字",
+   "level": 3,
+   "href": "/xxyw/zsd133839",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133842",
+   "parent_id": "101074",
+   "title": "字词解释",
+   "level": 3,
+   "href": "/xxyw/zsd133842",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133840",
+   "parent_id": "101074",
+   "title": "古今异义",
+   "level": 3,
+   "href": "/xxyw/zsd133840",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133838",
+   "parent_id": "101074",
+   "title": "语气词（文言文）",
+   "level": 3,
+   "href": "/xxyw/zsd133838",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133841",
+   "parent_id": "101074",
+   "title": "一词多义",
+   "level": 3,
+   "href": "/xxyw/zsd133841",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133843",
+   "parent_id": "101074",
+   "title": "句子翻译",
+   "level": 3,
+   "href": "/xxyw/zsd133843",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133844",
+   "parent_id": "101074",
+   "title": "文言断句",
+   "level": 3,
+   "href": "/xxyw/zsd133844",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181217",
+   "parent_id": "101074",
+   "title": "内容理解",
+   "level": 3,
+   "href": "/xxyw/zsd181217",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181218",
+   "parent_id": "101074",
+   "title": "人物形象（文言文）",
+   "level": 3,
+   "href": "/xxyw/zsd181218",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133846",
+   "parent_id": "101074",
+   "title": "主旨概括",
+   "level": 3,
+   "href": "/xxyw/zsd133846",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101075",
+   "parent_id": "100990",
+   "title": "诗词曲鉴赏",
+   "level": 2,
+   "href": "/xxyw/zsd101075",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133847",
+   "parent_id": "101075",
+   "title": "体裁（诗词曲鉴赏）",
+   "level": 3,
+   "href": "/xxyw/zsd133847",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133930",
+   "parent_id": "133847",
+   "title": "古诗",
+   "level": 4,
+   "href": "/xxyw/zsd133930",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "156743",
+   "parent_id": "133847",
+   "title": "现代诗",
+   "level": 4,
+   "href": "/xxyw/zsd156743",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133931",
+   "parent_id": "133847",
+   "title": "词",
+   "level": 4,
+   "href": "/xxyw/zsd133931",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133932",
+   "parent_id": "133847",
+   "title": "曲",
+   "level": 4,
+   "href": "/xxyw/zsd133932",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133848",
+   "parent_id": "101075",
+   "title": "题材",
+   "level": 3,
+   "href": "/xxyw/zsd133848",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133933",
+   "parent_id": "133848",
+   "title": "亲情",
+   "level": 4,
+   "href": "/xxyw/zsd133933",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133934",
+   "parent_id": "133848",
+   "title": "爱情",
+   "level": 4,
+   "href": "/xxyw/zsd133934",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133935",
+   "parent_id": "133848",
+   "title": "友情",
+   "level": 4,
+   "href": "/xxyw/zsd133935",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133936",
+   "parent_id": "133848",
+   "title": "爱国",
+   "level": 4,
+   "href": "/xxyw/zsd133936",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133937",
+   "parent_id": "133848",
+   "title": "哲理",
+   "level": 4,
+   "href": "/xxyw/zsd133937",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133938",
+   "parent_id": "133848",
+   "title": "讽喻",
+   "level": 4,
+   "href": "/xxyw/zsd133938",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133939",
+   "parent_id": "133848",
+   "title": "田园",
+   "level": 4,
+   "href": "/xxyw/zsd133939",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133940",
+   "parent_id": "133848",
+   "title": "战争",
+   "level": 4,
+   "href": "/xxyw/zsd133940",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172213",
+   "parent_id": "133848",
+   "title": "送别",
+   "level": 4,
+   "href": "/xxyw/zsd172213",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172214",
+   "parent_id": "133848",
+   "title": "咏志",
+   "level": 4,
+   "href": "/xxyw/zsd172214",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172215",
+   "parent_id": "133848",
+   "title": "思乡怀人",
+   "level": 4,
+   "href": "/xxyw/zsd172215",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172216",
+   "parent_id": "133848",
+   "title": "写景咏物",
+   "level": 4,
+   "href": "/xxyw/zsd172216",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172217",
+   "parent_id": "133848",
+   "title": "借物喻人",
+   "level": 4,
+   "href": "/xxyw/zsd172217",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172218",
+   "parent_id": "133848",
+   "title": "边塞风光",
+   "level": 4,
+   "href": "/xxyw/zsd172218",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177033",
+   "parent_id": "133848",
+   "title": "儿童生活",
+   "level": 4,
+   "href": "/xxyw/zsd177033",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133850",
+   "parent_id": "101075",
+   "title": "鉴赏常考题型",
+   "level": 3,
+   "href": "/xxyw/zsd133850",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133951",
+   "parent_id": "133850",
+   "title": "字词理解",
+   "level": 4,
+   "href": "/xxyw/zsd133951",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133952",
+   "parent_id": "133850",
+   "title": "诗句翻译",
+   "level": 4,
+   "href": "/xxyw/zsd133952",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181219",
+   "parent_id": "133850",
+   "title": "内容理解与分析",
+   "level": 4,
+   "href": "/xxyw/zsd181219",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133947",
+   "parent_id": "133850",
+   "title": "人物形象",
+   "level": 4,
+   "href": "/xxyw/zsd133947",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133949",
+   "parent_id": "133850",
+   "title": "意象意境",
+   "level": 4,
+   "href": "/xxyw/zsd133949",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133849",
+   "parent_id": "133850",
+   "title": "技巧手法",
+   "level": 4,
+   "href": "/xxyw/zsd133849",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133950",
+   "parent_id": "133850",
+   "title": "主旨情感",
+   "level": 4,
+   "href": "/xxyw/zsd133950",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145829",
+   "parent_id": "100990",
+   "title": "课外名著阅读",
+   "level": 2,
+   "href": "/xxyw/zsd145829",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "157978",
+   "parent_id": "145829",
+   "title": "中国名著",
+   "level": 3,
+   "href": "/xxyw/zsd157978",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "157979",
+   "parent_id": "157978",
+   "title": "红楼梦",
+   "level": 4,
+   "href": "/xxyw/zsd157979",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157980",
+   "parent_id": "157978",
+   "title": "西游记",
+   "level": 4,
+   "href": "/xxyw/zsd157980",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157981",
+   "parent_id": "157978",
+   "title": "水浒传",
+   "level": 4,
+   "href": "/xxyw/zsd157981",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157982",
+   "parent_id": "157978",
+   "title": "三国演义",
+   "level": 4,
+   "href": "/xxyw/zsd157982",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157983",
+   "parent_id": "157978",
+   "title": "十万个为什么",
+   "level": 4,
+   "href": "/xxyw/zsd157983",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157984",
+   "parent_id": "157978",
+   "title": "阿凡提的故事",
+   "level": 4,
+   "href": "/xxyw/zsd157984",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157985",
+   "parent_id": "157978",
+   "title": "三毛流浪记",
+   "level": 4,
+   "href": "/xxyw/zsd157985",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157988",
+   "parent_id": "157978",
+   "title": "三寄小读者",
+   "level": 4,
+   "href": "/xxyw/zsd157988",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157989",
+   "parent_id": "157978",
+   "title": "皮皮鲁传",
+   "level": 4,
+   "href": "/xxyw/zsd157989",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157990",
+   "parent_id": "157978",
+   "title": "稻草人",
+   "level": 4,
+   "href": "/xxyw/zsd157990",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157991",
+   "parent_id": "157978",
+   "title": "草房子",
+   "level": 4,
+   "href": "/xxyw/zsd157991",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157992",
+   "parent_id": "157978",
+   "title": "上下五千年",
+   "level": 4,
+   "href": "/xxyw/zsd157992",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157994",
+   "parent_id": "157978",
+   "title": "呼兰河传",
+   "level": 4,
+   "href": "/xxyw/zsd157994",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157995",
+   "parent_id": "157978",
+   "title": "城南旧事",
+   "level": 4,
+   "href": "/xxyw/zsd157995",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158919",
+   "parent_id": "157978",
+   "title": "狼王梦",
+   "level": 4,
+   "href": "/xxyw/zsd158919",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "160487",
+   "parent_id": "157978",
+   "title": "青铜葵花",
+   "level": 4,
+   "href": "/xxyw/zsd160487",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157996",
+   "parent_id": "145829",
+   "title": "外国名著",
+   "level": 3,
+   "href": "/xxyw/zsd157996",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "157997",
+   "parent_id": "157996",
+   "title": "鲁滨逊漂流记",
+   "level": 4,
+   "href": "/xxyw/zsd157997",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157998",
+   "parent_id": "157996",
+   "title": "格列佛游记",
+   "level": 4,
+   "href": "/xxyw/zsd157998",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157999",
+   "parent_id": "157996",
+   "title": "羊脂球",
+   "level": 4,
+   "href": "/xxyw/zsd157999",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158000",
+   "parent_id": "157996",
+   "title": "汤姆索亚历险记",
+   "level": 4,
+   "href": "/xxyw/zsd158000",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158001",
+   "parent_id": "157996",
+   "title": "海底两万里",
+   "level": 4,
+   "href": "/xxyw/zsd158001",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158002",
+   "parent_id": "157996",
+   "title": "安徒生童话",
+   "level": 4,
+   "href": "/xxyw/zsd158002",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158003",
+   "parent_id": "157996",
+   "title": "格林童话",
+   "level": 4,
+   "href": "/xxyw/zsd158003",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158004",
+   "parent_id": "157996",
+   "title": "伊索寓言",
+   "level": 4,
+   "href": "/xxyw/zsd158004",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158005",
+   "parent_id": "157996",
+   "title": "列那狐的故事",
+   "level": 4,
+   "href": "/xxyw/zsd158005",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158006",
+   "parent_id": "157996",
+   "title": "爱的教育",
+   "level": 4,
+   "href": "/xxyw/zsd158006",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158007",
+   "parent_id": "157996",
+   "title": "昆虫记",
+   "level": 4,
+   "href": "/xxyw/zsd158007",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158008",
+   "parent_id": "157996",
+   "title": "木偶奇遇记",
+   "level": 4,
+   "href": "/xxyw/zsd158008",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158009",
+   "parent_id": "157996",
+   "title": "童年",
+   "level": 4,
+   "href": "/xxyw/zsd158009",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158010",
+   "parent_id": "157996",
+   "title": "我的母亲",
+   "level": 4,
+   "href": "/xxyw/zsd158010",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "158011",
+   "parent_id": "157996",
+   "title": "大学",
+   "level": 4,
+   "href": "/xxyw/zsd158011",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "160488",
+   "parent_id": "157996",
+   "title": "时代广场的蟋蟀",
+   "level": 4,
+   "href": "/xxyw/zsd160488",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "168714",
+   "parent_id": "157996",
+   "title": "一千零一夜",
+   "level": 4,
+   "href": "/xxyw/zsd168714",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177032",
+   "parent_id": "157996",
+   "title": "窗边的小豆豆",
+   "level": 4,
+   "href": "/xxyw/zsd177032",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157968",
+   "parent_id": "100990",
+   "title": "绘本阅读",
+   "level": 2,
+   "href": "/xxyw/zsd157968",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100989",
+   "parent_id": "100987",
+   "title": "积累运用",
+   "level": 1,
+   "href": "/xxyw/zsd100989",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101067",
+   "parent_id": "100989",
+   "title": "文学文化常识",
+   "level": 2,
+   "href": "/xxyw/zsd101067",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "174719",
+   "parent_id": "101067",
+   "title": "文学常识",
+   "level": 3,
+   "href": "/xxyw/zsd174719",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133823",
+   "parent_id": "174719",
+   "title": "经典名著",
+   "level": 4,
+   "href": "/xxyw/zsd133823",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133824",
+   "parent_id": "174719",
+   "title": "作家作品",
+   "level": 4,
+   "href": "/xxyw/zsd133824",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133825",
+   "parent_id": "174719",
+   "title": "名家名画",
+   "level": 4,
+   "href": "/xxyw/zsd133825",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133826",
+   "parent_id": "174719",
+   "title": "童话故事",
+   "level": 4,
+   "href": "/xxyw/zsd133826",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101068",
+   "parent_id": "174719",
+   "title": "诸子百家",
+   "level": 4,
+   "href": "/xxyw/zsd101068",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133876",
+   "parent_id": "174719",
+   "title": "国学常识",
+   "level": 4,
+   "href": "/xxyw/zsd133876",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101069",
+   "parent_id": "174719",
+   "title": "谚语俗语",
+   "level": 4,
+   "href": "/xxyw/zsd101069",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133819",
+   "parent_id": "174719",
+   "title": "名言警句",
+   "level": 4,
+   "href": "/xxyw/zsd133819",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133879",
+   "parent_id": "174719",
+   "title": "对子歌",
+   "level": 4,
+   "href": "/xxyw/zsd133879",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101070",
+   "parent_id": "174719",
+   "title": "歇后语",
+   "level": 4,
+   "href": "/xxyw/zsd101070",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133877",
+   "parent_id": "174719",
+   "title": "谜语",
+   "level": 4,
+   "href": "/xxyw/zsd133877",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133878",
+   "parent_id": "174719",
+   "title": "对联",
+   "level": 4,
+   "href": "/xxyw/zsd133878",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101066",
+   "parent_id": "174719",
+   "title": "背景资料",
+   "level": 4,
+   "href": "/xxyw/zsd101066",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133828",
+   "parent_id": "174719",
+   "title": "其它文学常识",
+   "level": 4,
+   "href": "/xxyw/zsd133828",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "174720",
+   "parent_id": "101067",
+   "title": "文化常识",
+   "level": 3,
+   "href": "/xxyw/zsd174720",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133827",
+   "parent_id": "174720",
+   "title": "中国的组成",
+   "level": 4,
+   "href": "/xxyw/zsd133827",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172207",
+   "parent_id": "174720",
+   "title": "节气",
+   "level": 4,
+   "href": "/xxyw/zsd172207",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172208",
+   "parent_id": "174720",
+   "title": "十二生肖",
+   "level": 4,
+   "href": "/xxyw/zsd172208",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172209",
+   "parent_id": "174720",
+   "title": "重要节假日",
+   "level": 4,
+   "href": "/xxyw/zsd172209",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172210",
+   "parent_id": "174720",
+   "title": "中国古代四大发明",
+   "level": 4,
+   "href": "/xxyw/zsd172210",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172211",
+   "parent_id": "174720",
+   "title": "中国戏曲",
+   "level": 4,
+   "href": "/xxyw/zsd172211",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133817",
+   "parent_id": "174720",
+   "title": "其他文化常识",
+   "level": 4,
+   "href": "/xxyw/zsd133817",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181220",
+   "parent_id": "174720",
+   "title": "书法",
+   "level": 4,
+   "href": "/xxyw/zsd181220",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133821",
+   "parent_id": "100989",
+   "title": "名篇名句默写与理解",
+   "level": 2,
+   "href": "/xxyw/zsd133821",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133820",
+   "parent_id": "100989",
+   "title": "课内文章理解",
+   "level": 2,
+   "href": "/xxyw/zsd133820",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133822",
+   "parent_id": "100989",
+   "title": "课外搜集与积累",
+   "level": 2,
+   "href": "/xxyw/zsd133822",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100991",
+   "parent_id": "100987",
+   "title": "语言表达",
+   "level": 1,
+   "href": "/xxyw/zsd100991",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101080",
+   "parent_id": "100991",
+   "title": "口语交际",
+   "level": 2,
+   "href": "/xxyw/zsd101080",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133851",
+   "parent_id": "100991",
+   "title": "常见话题",
+   "level": 2,
+   "href": "/xxyw/zsd133851",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133953",
+   "parent_id": "133851",
+   "title": "自我介绍",
+   "level": 3,
+   "href": "/xxyw/zsd133953",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133954",
+   "parent_id": "133851",
+   "title": "口述见闻",
+   "level": 3,
+   "href": "/xxyw/zsd133954",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133955",
+   "parent_id": "133851",
+   "title": "介绍推荐",
+   "level": 3,
+   "href": "/xxyw/zsd133955",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133956",
+   "parent_id": "133851",
+   "title": "劝告慰勉",
+   "level": 3,
+   "href": "/xxyw/zsd133956",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133957",
+   "parent_id": "133851",
+   "title": "祝贺感谢",
+   "level": 3,
+   "href": "/xxyw/zsd133957",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133958",
+   "parent_id": "133851",
+   "title": "辩论讨论",
+   "level": 3,
+   "href": "/xxyw/zsd133958",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133959",
+   "parent_id": "133851",
+   "title": "人物采访",
+   "level": 3,
+   "href": "/xxyw/zsd133959",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133960",
+   "parent_id": "133851",
+   "title": "看图说话",
+   "level": 3,
+   "href": "/xxyw/zsd133960",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133961",
+   "parent_id": "133851",
+   "title": "礼貌用语",
+   "level": 3,
+   "href": "/xxyw/zsd133961",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133962",
+   "parent_id": "133851",
+   "title": "言外之意",
+   "level": 3,
+   "href": "/xxyw/zsd133962",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101081",
+   "parent_id": "133851",
+   "title": "综合实践",
+   "level": 3,
+   "href": "/xxyw/zsd101081",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "100992",
+   "parent_id": "100987",
+   "title": "写作训练",
+   "level": 1,
+   "href": "/xxyw/zsd100992",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "101082",
+   "parent_id": "100992",
+   "title": "写句子",
+   "level": 2,
+   "href": "/xxyw/zsd101082",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101086",
+   "parent_id": "100992",
+   "title": "写话",
+   "level": 2,
+   "href": "/xxyw/zsd101086",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133858",
+   "parent_id": "101086",
+   "title": "看图写话",
+   "level": 3,
+   "href": "/xxyw/zsd133858",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133859",
+   "parent_id": "101086",
+   "title": "情景写话",
+   "level": 3,
+   "href": "/xxyw/zsd133859",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133860",
+   "parent_id": "101086",
+   "title": "续写写话",
+   "level": 3,
+   "href": "/xxyw/zsd133860",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133861",
+   "parent_id": "101086",
+   "title": "想象写话",
+   "level": 3,
+   "href": "/xxyw/zsd133861",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133855",
+   "parent_id": "100992",
+   "title": "习作",
+   "level": 2,
+   "href": "/xxyw/zsd133855",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133883",
+   "parent_id": "133855",
+   "title": "记叙文（记人）",
+   "level": 3,
+   "href": "/xxyw/zsd133883",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133884",
+   "parent_id": "133855",
+   "title": "记叙文（叙事）",
+   "level": 3,
+   "href": "/xxyw/zsd133884",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133885",
+   "parent_id": "133855",
+   "title": "记叙文（状物）",
+   "level": 3,
+   "href": "/xxyw/zsd133885",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133886",
+   "parent_id": "133855",
+   "title": "记叙文（写景）",
+   "level": 3,
+   "href": "/xxyw/zsd133886",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101083",
+   "parent_id": "133855",
+   "title": "命题作文",
+   "level": 3,
+   "href": "/xxyw/zsd101083",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133856",
+   "parent_id": "133855",
+   "title": "半命题作文",
+   "level": 3,
+   "href": "/xxyw/zsd133856",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101084",
+   "parent_id": "133855",
+   "title": "材料作文",
+   "level": 3,
+   "href": "/xxyw/zsd101084",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133857",
+   "parent_id": "133855",
+   "title": "看图作文",
+   "level": 3,
+   "href": "/xxyw/zsd133857",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101085",
+   "parent_id": "133855",
+   "title": "话题作文",
+   "level": 3,
+   "href": "/xxyw/zsd101085",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133887",
+   "parent_id": "133855",
+   "title": "扩写作文",
+   "level": 3,
+   "href": "/xxyw/zsd133887",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133888",
+   "parent_id": "133855",
+   "title": "缩写作文",
+   "level": 3,
+   "href": "/xxyw/zsd133888",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133889",
+   "parent_id": "133855",
+   "title": "续写作文",
+   "level": 3,
+   "href": "/xxyw/zsd133889",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133890",
+   "parent_id": "133855",
+   "title": "改写作文",
+   "level": 3,
+   "href": "/xxyw/zsd133890",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133891",
+   "parent_id": "133855",
+   "title": "想象作文",
+   "level": 3,
+   "href": "/xxyw/zsd133891",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133963",
+   "parent_id": "133855",
+   "title": "童话作文",
+   "level": 3,
+   "href": "/xxyw/zsd133963",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "160847",
+   "parent_id": "133855",
+   "title": "诗歌创作",
+   "level": 3,
+   "href": "/xxyw/zsd160847",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "175806",
+   "parent_id": "133855",
+   "title": "习作材料和方法",
+   "level": 3,
+   "href": "/xxyw/zsd175806",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "101087",
+   "parent_id": "100992",
+   "title": "应用文",
+   "level": 2,
+   "href": "/xxyw/zsd101087",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "133862",
+   "parent_id": "101087",
+   "title": "日记、周记、写信",
+   "level": 3,
+   "href": "/xxyw/zsd133862",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133863",
+   "parent_id": "101087",
+   "title": "借条、收条、领条",
+   "level": 3,
+   "href": "/xxyw/zsd133863",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133864",
+   "parent_id": "101087",
+   "title": "通知、启事、告示",
+   "level": 3,
+   "href": "/xxyw/zsd133864",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133865",
+   "parent_id": "101087",
+   "title": "请假条、留言条",
+   "level": 3,
+   "href": "/xxyw/zsd133865",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133866",
+   "parent_id": "101087",
+   "title": "读后感、观后感",
+   "level": 3,
+   "href": "/xxyw/zsd133866",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133867",
+   "parent_id": "101087",
+   "title": "表扬信、感谢信",
+   "level": 3,
+   "href": "/xxyw/zsd133867",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133868",
+   "parent_id": "101087",
+   "title": "发言稿、演讲稿",
+   "level": 3,
+   "href": "/xxyw/zsd133868",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "172219",
+   "parent_id": "101087",
+   "title": "广播稿、板报稿",
+   "level": 3,
+   "href": "/xxyw/zsd172219",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133869",
+   "parent_id": "101087",
+   "title": "建议书、倡议书",
+   "level": 3,
+   "href": "/xxyw/zsd133869",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133870",
+   "parent_id": "101087",
+   "title": "新闻、宣传语、调查报告",
+   "level": 3,
+   "href": "/xxyw/zsd133870",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "212",
+   "parent_id": "-1",
+   "title": "作家作品",
+   "level": 1,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9230",
+   "parent_id": "0",
+   "title": "文章作者",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9231",
+   "parent_id": "9230",
+   "title": "中国古代作家",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9232",
+   "parent_id": "9231",
+   "title": "春秋",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9233",
+   "parent_id": "9232",
+   "title": "孔子",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9234",
+   "parent_id": "9232",
+   "title": "老子",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9235",
+   "parent_id": "9232",
+   "title": "孙子",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9236",
+   "parent_id": "9231",
+   "title": "战国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9237",
+   "parent_id": "9236",
+   "title": " 孟子",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9238",
+   "parent_id": "9236",
+   "title": "屈原",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9239",
+   "parent_id": "9236",
+   "title": " 韩非子",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9240",
+   "parent_id": "9231",
+   "title": "三国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9241",
+   "parent_id": "9240",
+   "title": "曹操",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9242",
+   "parent_id": "9240",
+   "title": "曹植",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9243",
+   "parent_id": "9231",
+   "title": "东晋",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9244",
+   "parent_id": "9243",
+   "title": "陶渊明",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9245",
+   "parent_id": "9231",
+   "title": "唐代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9246",
+   "parent_id": "9245",
+   "title": "杜牧",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9247",
+   "parent_id": "9245",
+   "title": "李白",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9248",
+   "parent_id": "9245",
+   "title": "刘禹锡",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9249",
+   "parent_id": "9245",
+   "title": "王建",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9250",
+   "parent_id": "9245",
+   "title": "韩翃",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9251",
+   "parent_id": "9245",
+   "title": "李贺",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9252",
+   "parent_id": "9245",
+   "title": "韩愈",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9253",
+   "parent_id": "9245",
+   "title": "白居易",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9254",
+   "parent_id": "9245",
+   "title": "王维",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9255",
+   "parent_id": "9245",
+   "title": "韦应物",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9256",
+   "parent_id": "9245",
+   "title": "李商隐",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9257",
+   "parent_id": "9245",
+   "title": " 林杰",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9258",
+   "parent_id": "9245",
+   "title": "王翰",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9259",
+   "parent_id": "9245",
+   "title": "王昌龄",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9260",
+   "parent_id": "9245",
+   "title": "杜甫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9261",
+   "parent_id": "9245",
+   "title": "卢纶",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9262",
+   "parent_id": "9245",
+   "title": " 王之涣",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9263",
+   "parent_id": "9245",
+   "title": "贺知章",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9264",
+   "parent_id": "9245",
+   "title": "张继",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9265",
+   "parent_id": "9245",
+   "title": " 张志和",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9266",
+   "parent_id": "9245",
+   "title": "孟浩然",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9267",
+   "parent_id": "9245",
+   "title": "王勃",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9268",
+   "parent_id": "9245",
+   "title": "贾岛",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9269",
+   "parent_id": "9245",
+   "title": "孟郊",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9270",
+   "parent_id": "9245",
+   "title": "高适",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9271",
+   "parent_id": "9245",
+   "title": " 骆宾王",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9272",
+   "parent_id": "9245",
+   "title": "柳宗元",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9273",
+   "parent_id": "9245",
+   "title": "戎昱",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9274",
+   "parent_id": "9245",
+   "title": "虞世南",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9275",
+   "parent_id": "9245",
+   "title": " 李绅",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9276",
+   "parent_id": "9245",
+   "title": " 其他唐代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9277",
+   "parent_id": "9245",
+   "title": " 胡令能",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9278",
+   "parent_id": "9231",
+   "title": "宋代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9279",
+   "parent_id": "9278",
+   "title": "苏轼",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9280",
+   "parent_id": "9278",
+   "title": "陆游",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9281",
+   "parent_id": "9278",
+   "title": " 王安石",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9282",
+   "parent_id": "9278",
+   "title": " 曾几",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9283",
+   "parent_id": "9278",
+   "title": " 卢钺",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9284",
+   "parent_id": "9278",
+   "title": " 李清照",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9285",
+   "parent_id": "9278",
+   "title": "叶绍翁",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9286",
+   "parent_id": "9278",
+   "title": "杨万里",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9287",
+   "parent_id": "9278",
+   "title": "林升",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9288",
+   "parent_id": "9278",
+   "title": "朱熹",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9289",
+   "parent_id": "9278",
+   "title": "辛弃疾",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9290",
+   "parent_id": "9278",
+   "title": "范成大",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9291",
+   "parent_id": "9278",
+   "title": "雷震",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9292",
+   "parent_id": "9278",
+   "title": "张耒",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9293",
+   "parent_id": "9278",
+   "title": "范仲淹",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9294",
+   "parent_id": "9278",
+   "title": "王观",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9295",
+   "parent_id": "9278",
+   "title": "黄庭坚",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9296",
+   "parent_id": "9278",
+   "title": "欧阳修",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9297",
+   "parent_id": "9278",
+   "title": "司马光",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9298",
+   "parent_id": "9278",
+   "title": "文天祥",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9299",
+   "parent_id": "9278",
+   "title": "周邦彦",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9300",
+   "parent_id": "9278",
+   "title": "其他宋代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9301",
+   "parent_id": "9231",
+   "title": "元代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9302",
+   "parent_id": "9301",
+   "title": "王冕",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9303",
+   "parent_id": "9301",
+   "title": "马致远",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9304",
+   "parent_id": "9301",
+   "title": "施耐庵",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9305",
+   "parent_id": "9301",
+   "title": "白朴",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9306",
+   "parent_id": "9301",
+   "title": "其他元代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9307",
+   "parent_id": "9231",
+   "title": "明代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9308",
+   "parent_id": "9307",
+   "title": "李言恭",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9309",
+   "parent_id": "9307",
+   "title": "于谦",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9310",
+   "parent_id": "9307",
+   "title": "罗贯中",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9311",
+   "parent_id": "9307",
+   "title": "吴承恩",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9312",
+   "parent_id": "9307",
+   "title": "其他明代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9313",
+   "parent_id": "9231",
+   "title": "清代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9314",
+   "parent_id": "9313",
+   "title": "袁枚",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9315",
+   "parent_id": "9313",
+   "title": "高鼎",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9316",
+   "parent_id": "9313",
+   "title": "龚自珍",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9317",
+   "parent_id": "9313",
+   "title": "郑燮（郑板桥）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9318",
+   "parent_id": "9313",
+   "title": "曹雪芹",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9319",
+   "parent_id": "9313",
+   "title": "纳兰性德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9320",
+   "parent_id": "9313",
+   "title": "查慎行",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9321",
+   "parent_id": "9313",
+   "title": "其他清代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9322",
+   "parent_id": "9231",
+   "title": "其他古代作家",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9323",
+   "parent_id": "9230",
+   "title": "中国现当代作家",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9324",
+   "parent_id": "9323",
+   "title": "近现代作家",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9325",
+   "parent_id": "9324",
+   "title": "梁启超",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9326",
+   "parent_id": "9324",
+   "title": "许地山",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9327",
+   "parent_id": "9324",
+   "title": "康有为",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9328",
+   "parent_id": "9324",
+   "title": "鲁迅",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9329",
+   "parent_id": "9324",
+   "title": "毛泽东",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9330",
+   "parent_id": "9324",
+   "title": "朱自清",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9331",
+   "parent_id": "9324",
+   "title": "冰心",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9332",
+   "parent_id": "9324",
+   "title": "臧克家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9333",
+   "parent_id": "9324",
+   "title": "老舍",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9334",
+   "parent_id": "9324",
+   "title": "叶圣陶",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9335",
+   "parent_id": "9324",
+   "title": "萧红",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9336",
+   "parent_id": "9324",
+   "title": "其他近现代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9337",
+   "parent_id": "9323",
+   "title": "当代作家",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9338",
+   "parent_id": "9337",
+   "title": " 金庸",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9339",
+   "parent_id": "9337",
+   "title": " 路遥",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9340",
+   "parent_id": "9337",
+   "title": "毕淑敏",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9341",
+   "parent_id": "9337",
+   "title": "梁晓声",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9342",
+   "parent_id": "9337",
+   "title": "冯骥才",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9343",
+   "parent_id": "9337",
+   "title": "其他当代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9344",
+   "parent_id": "9230",
+   "title": " 外国作家",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9345",
+   "parent_id": "9344",
+   "title": "安徒生",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9346",
+   "parent_id": "9344",
+   "title": "格林兄弟",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9347",
+   "parent_id": "9344",
+   "title": "列夫托尔斯泰",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9348",
+   "parent_id": "9344",
+   "title": "高尔基",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9349",
+   "parent_id": "9344",
+   "title": "其他外国作家",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  }
+ ]
+}

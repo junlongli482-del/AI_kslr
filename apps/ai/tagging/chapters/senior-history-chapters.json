@@ -1,0 +1,9330 @@
+{
+ "stage": "senior",
+ "subject": "history",
+ "subject_cn": "高中历史",
+ "bank_id": 17,
+ "book_count": 5,
+ "node_count": 1032,
+ "books": [
+  {
+   "zj_code": "zj136098",
+   "edition_name": "统编版",
+   "volume_name": "必修中外历史纲要上",
+   "node_count": 433
+  },
+  {
+   "zj_code": "zj149285",
+   "edition_name": "统编版",
+   "volume_name": "必修中外历史纲要下",
+   "node_count": 190
+  },
+  {
+   "zj_code": "zj164717",
+   "edition_name": "统编版",
+   "volume_name": "选择性必修1 国家制度与社会治理",
+   "node_count": 153
+  },
+  {
+   "zj_code": "zj164718",
+   "edition_name": "统编版",
+   "volume_name": "选择性必修2 经济与社会生活",
+   "node_count": 140
+  },
+  {
+   "zj_code": "zj164719",
+   "edition_name": "统编版",
+   "volume_name": "选择性必修3 文化交流与传播",
+   "node_count": 116
+  }
+ ],
+ "nodes": [
+  {
+   "zj_code": "zj136098",
+   "id": "136099",
+   "parent_id": "136098",
+   "title": "第一单元 从中华文明起源到秦汉统一多民族封建国家的建立与巩固",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136099"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136110",
+   "parent_id": "136099",
+   "title": "第1课 中华文明的起源与早期国家",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136110"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171439",
+   "parent_id": "149932",
+   "title": "旧石器时代的文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk171439"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213000",
+   "parent_id": "171440",
+   "title": "仰韶文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213000"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213001",
+   "parent_id": "171440",
+   "title": "河姆渡文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213001"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213002",
+   "parent_id": "171440",
+   "title": "龙山文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213002"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213003",
+   "parent_id": "171440",
+   "title": "良渚文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213003"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213004",
+   "parent_id": "171440",
+   "title": "红山文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213004"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213005",
+   "parent_id": "171440",
+   "title": "大汶口文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213005"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188357",
+   "parent_id": "149932",
+   "title": "原始社会的组织形态",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk188357"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213006",
+   "parent_id": "171442",
+   "title": "炎帝和黄帝",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213006"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213007",
+   "parent_id": "171442",
+   "title": "尧舜禹和禅让制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213007"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213008",
+   "parent_id": "171442",
+   "title": "“万邦”时代",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213008"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213009",
+   "parent_id": "171443",
+   "title": "大禹治水与夏朝的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213009"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213010",
+   "parent_id": "171443",
+   "title": "世袭制代替禅让制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213010"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213011",
+   "parent_id": "171443",
+   "title": "夏朝的制度与社会",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213011"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213012",
+   "parent_id": "171443",
+   "title": "二里头遗址",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213012"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213013",
+   "parent_id": "149933",
+   "title": "商汤灭夏",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213013"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213016",
+   "parent_id": "171444",
+   "title": "商朝的国家结构",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213016"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213017",
+   "parent_id": "171444",
+   "title": "商纣暴行与武王伐纣",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213017"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188358",
+   "parent_id": "171445",
+   "title": "分封制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk188358"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188359",
+   "parent_id": "171445",
+   "title": "宗法制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk188359"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188360",
+   "parent_id": "171445",
+   "title": "礼乐制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk188360"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213018",
+   "parent_id": "149934",
+   "title": "西周的灭亡与平王东迁",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213018"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213019",
+   "parent_id": "171446",
+   "title": "农业生产方式",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213019"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213020",
+   "parent_id": "171446",
+   "title": "井田制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213020"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213021",
+   "parent_id": "171446",
+   "title": "青铜文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136110/ctk213021"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136111",
+   "parent_id": "136099",
+   "title": "第2课 诸侯纷争与变法运动",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136111"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171447",
+   "parent_id": "149936",
+   "title": "“春秋五霸”与争霸战争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171447"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171448",
+   "parent_id": "149936",
+   "title": "“战国七雄”及兼并战争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171448"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171449",
+   "parent_id": "149936",
+   "title": "华夏族的发展和华夏认同",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171449"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171450",
+   "parent_id": "149937",
+   "title": "春秋战国的农业、水利、工商业",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171450"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171451",
+   "parent_id": "149937",
+   "title": "春秋战国的改革与变法活动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171451"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213022",
+   "parent_id": "171452",
+   "title": "孔子及其主张",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk213022"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213023",
+   "parent_id": "171452",
+   "title": "孔子的教育成就",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk213023"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171453",
+   "parent_id": "149938",
+   "title": "老子的主张",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171453"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171454",
+   "parent_id": "149939",
+   "title": "百家争鸣出现的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171454"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171455",
+   "parent_id": "149939",
+   "title": "孟子、荀子及儒家思想",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171455"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171456",
+   "parent_id": "149939",
+   "title": "庄子及道家、邹衍及阴阳家的思想",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171456"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171457",
+   "parent_id": "149939",
+   "title": "墨子及墨家、韩非及法家的思想",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171457"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171458",
+   "parent_id": "149939",
+   "title": "百家争鸣的意义及影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk171458"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213024",
+   "parent_id": "149939",
+   "title": "诸子思想的交流与融合",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136111/ctk213024"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136112",
+   "parent_id": "136099",
+   "title": "第3课 秦统一多民族封建国家的建立",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136112"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213025",
+   "parent_id": "149941",
+   "title": "秦统一的条件与基础",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213025"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213026",
+   "parent_id": "149941",
+   "title": "秦的疆域与统一的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213026"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171459",
+   "parent_id": "149941",
+   "title": "秦朝的建立过程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk171459"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171460",
+   "parent_id": "149941",
+   "title": "秦朝的政治制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk171460"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171461",
+   "parent_id": "149941",
+   "title": "秦巩固统一的措施",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk171461"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171462",
+   "parent_id": "149941",
+   "title": "秦巩固统一的制度的影响、评价",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk171462"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213027",
+   "parent_id": "149942",
+   "title": "穷奢极欲的秦始皇",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213027"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213028",
+   "parent_id": "149942",
+   "title": "沉重的赋税与徭役",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213028"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213029",
+   "parent_id": "149942",
+   "title": "秦朝的严刑峻法",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213029"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213030",
+   "parent_id": "149942",
+   "title": "焚书坑儒",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213030"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213031",
+   "parent_id": "149942",
+   "title": "秦二世即位与矛盾激化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213031"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213032",
+   "parent_id": "149943",
+   "title": "秦末大起义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136112/ctk213032"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136113",
+   "parent_id": "136099",
+   "title": "第4课 西汉与东汉—统一多民族封建国家的巩固",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136113"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213035",
+   "parent_id": "149945",
+   "title": "西汉的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213035"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213036",
+   "parent_id": "149945",
+   "title": "“文景之治”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213036"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171623",
+   "parent_id": "213038",
+   "title": "汉武帝加强中央集权的政治措施",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk171623"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171624",
+   "parent_id": "213038",
+   "title": "汉武帝加强中央集权的经济措施",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk171624"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213039",
+   "parent_id": "213038",
+   "title": "汉武帝加强中央集权的文化措施",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213039"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213037",
+   "parent_id": "149945",
+   "title": "郡国并行与“王国问题”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213037"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213041",
+   "parent_id": "213040",
+   "title": "卫青与霍去病",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213041"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213042",
+   "parent_id": "213040",
+   "title": "张骞出使西域与“丝绸之路”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213042"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213043",
+   "parent_id": "213040",
+   "title": "西域都护府的设立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213043"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213044",
+   "parent_id": "213040",
+   "title": "西汉对东南沿海和西南地区的治理",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213044"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213045",
+   "parent_id": "149947",
+   "title": "西汉的灭亡与王莽改制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213045"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213047",
+   "parent_id": "213046",
+   "title": "光武中兴",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213047"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213048",
+   "parent_id": "213046",
+   "title": "外戚宦官交替专权与“党锢之祸”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213048"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213049",
+   "parent_id": "149947",
+   "title": "黄巾起义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213049"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213051",
+   "parent_id": "213050",
+   "title": "《史记》与司马迁",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213051"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213052",
+   "parent_id": "213050",
+   "title": "《汉书》与班固",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213052"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213054",
+   "parent_id": "213053",
+   "title": "汉赋",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213054"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213055",
+   "parent_id": "213053",
+   "title": "乐府诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213055"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213057",
+   "parent_id": "213056",
+   "title": "《黄帝内经》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213057"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213058",
+   "parent_id": "213056",
+   "title": "《神农本草经》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213058"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213059",
+   "parent_id": "213056",
+   "title": "《九章算术》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213059"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213060",
+   "parent_id": "213056",
+   "title": "其他重要科技成就",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136113/ctk213060"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136100",
+   "parent_id": "136098",
+   "title": "第二单元 三国两晋南北朝的民族交融与隋唐统一多民族封建国家的发展",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136100"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136115",
+   "parent_id": "136100",
+   "title": "第5课 三国两晋南北朝的政权更迭与民族交融",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136115"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171463",
+   "parent_id": "149950",
+   "title": "三国鼎立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171463"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171464",
+   "parent_id": "149950",
+   "title": "西晋的统一与兴亡",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171464"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171465",
+   "parent_id": "149950",
+   "title": "少数民族内迁",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171465"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171466",
+   "parent_id": "149951",
+   "title": "东晋的兴亡与士族的兴盛",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171466"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171467",
+   "parent_id": "149951",
+   "title": "南朝的更替与统治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171467"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171468",
+   "parent_id": "149951",
+   "title": "衣冠南渡与江南地区的开发",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171468"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171469",
+   "parent_id": "149952",
+   "title": "十六国的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171469"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171470",
+   "parent_id": "149952",
+   "title": "北魏的建立与孝文帝改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171470"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171471",
+   "parent_id": "149952",
+   "title": "北朝的统治和政权更迭",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136115/ctk171471"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136116",
+   "parent_id": "136100",
+   "title": "第6课 从隋唐盛世到五代十国",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136116"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213061",
+   "parent_id": "149954",
+   "title": "隋朝的建立与建设",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk213061"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213062",
+   "parent_id": "149954",
+   "title": "隋朝的灭亡",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk213062"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213064",
+   "parent_id": "213063",
+   "title": "唐朝的建立与统一",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk213064"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213065",
+   "parent_id": "213063",
+   "title": "“贞观之治”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk213065"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213066",
+   "parent_id": "213063",
+   "title": "武则天和武周政权",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk213066"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171473",
+   "parent_id": "213063",
+   "title": "“开元盛世”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk171473"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171474",
+   "parent_id": "213063",
+   "title": "唐代社会经济的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk171474"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213067",
+   "parent_id": "171475",
+   "title": "回纥与突厥",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk213067"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213068",
+   "parent_id": "171475",
+   "title": "吐蕃与“唐蕃会盟”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk213068"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188480",
+   "parent_id": "149956",
+   "title": "安史之乱与藩镇割据",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk188480"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188481",
+   "parent_id": "149956",
+   "title": "宦官专权和朋党之争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk188481"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188482",
+   "parent_id": "149956",
+   "title": "黄巢起义和五代十国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136116/ctk188482"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136117",
+   "parent_id": "136100",
+   "title": "第7课 隋唐制度的变化与创新",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136117"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171628",
+   "parent_id": "149958",
+   "title": "九品中正制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136117/ctk171628"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171629",
+   "parent_id": "149958",
+   "title": "科举制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136117/ctk171629"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "149959",
+   "parent_id": "149957",
+   "title": "三省六部制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136117/ctk149959"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213069",
+   "parent_id": "149960",
+   "title": "租调制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136117/ctk213069"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213070",
+   "parent_id": "149960",
+   "title": "租庸调制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136117/ctk213070"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213071",
+   "parent_id": "149960",
+   "title": "两税法",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136117/ctk213071"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136118",
+   "parent_id": "136100",
+   "title": "第8课 三国至隋唐的文化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136118"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "46928",
+   "parent_id": "46924",
+   "title": "唐诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk46928"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213072",
+   "parent_id": "149962",
+   "title": "三教合流与三教并行",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213072"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213073",
+   "parent_id": "149962",
+   "title": "佛教的盛行与灭佛事件",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213073"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213074",
+   "parent_id": "149962",
+   "title": "儒学危机与儒学复兴运动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213074"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213076",
+   "parent_id": "213075",
+   "title": "魏晋南北朝时期的文学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213076"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213079",
+   "parent_id": "213078",
+   "title": "书法",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213079"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213080",
+   "parent_id": "213078",
+   "title": "绘画",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213080"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213081",
+   "parent_id": "213078",
+   "title": "石刻艺术",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213081"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213082",
+   "parent_id": "149964",
+   "title": "农学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213082"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213083",
+   "parent_id": "149964",
+   "title": "医学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213083"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213084",
+   "parent_id": "149964",
+   "title": "天文学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213084"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213085",
+   "parent_id": "149964",
+   "title": "地理学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213085"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213086",
+   "parent_id": "149964",
+   "title": "古建筑",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213086"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213087",
+   "parent_id": "149964",
+   "title": "数学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213087"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213088",
+   "parent_id": "149964",
+   "title": "四大发明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213088"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213090",
+   "parent_id": "213089",
+   "title": "法显",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213090"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213091",
+   "parent_id": "213089",
+   "title": "玄奘",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213091"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213094",
+   "parent_id": "213093",
+   "title": "遣唐使",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213094"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213095",
+   "parent_id": "213093",
+   "title": "唐朝的对外交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136118/ctk213095"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136101",
+   "parent_id": "136098",
+   "title": "第三单元 辽宋夏金多民族政权的并立与元朝的统一",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136101"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136120",
+   "parent_id": "136101",
+   "title": "第9课 两宋的政治和军事",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136120"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213096",
+   "parent_id": "149967",
+   "title": "加强对中央的控制（二府三司制）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213096"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213098",
+   "parent_id": "213097",
+   "title": "文官政治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213098"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213099",
+   "parent_id": "213097",
+   "title": "四监司与通判",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213099"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213101",
+   "parent_id": "213100",
+   "title": "禁军与厢军",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213101"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213102",
+   "parent_id": "213100",
+   "title": "三衙与三帅",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213102"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213103",
+   "parent_id": "149967",
+   "title": "宋初中央集权加强的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213103"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213105",
+   "parent_id": "213104",
+   "title": "北宋与辽的战与和",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213105"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213106",
+   "parent_id": "213104",
+   "title": "北宋与西夏的和议",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213106"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213107",
+   "parent_id": "149968",
+   "title": "财政危机",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213107"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213108",
+   "parent_id": "149969",
+   "title": "王安石变法的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213108"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213109",
+   "parent_id": "149969",
+   "title": "王安石变法的内容",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213109"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213110",
+   "parent_id": "149969",
+   "title": "王安石变法的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213110"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213111",
+   "parent_id": "149970",
+   "title": "北宋的灭亡与南宋的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213111"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213112",
+   "parent_id": "149970",
+   "title": "南宋与金的战与和",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136120/ctk213112"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136121",
+   "parent_id": "136101",
+   "title": "第10课 辽夏金元的统治",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136121"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213114",
+   "parent_id": "213113",
+   "title": "契丹族的兴起",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213114"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213115",
+   "parent_id": "213113",
+   "title": "南北面官",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213115"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213116",
+   "parent_id": "149972",
+   "title": "西夏的建立与统治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213116"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213117",
+   "parent_id": "149973",
+   "title": "金朝的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213117"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213118",
+   "parent_id": "149973",
+   "title": "“猛安谋克”制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213118"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213119",
+   "parent_id": "149973",
+   "title": "金朝的鼎盛与灭亡",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213119"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171476",
+   "parent_id": "149974",
+   "title": "成吉思汗统一蒙古和对外征战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk171476"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "171477",
+   "parent_id": "213120",
+   "title": "忽必烈改革及元朝的统一",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk171477"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213122",
+   "parent_id": "213120",
+   "title": "行省制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213122"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213123",
+   "parent_id": "149975",
+   "title": "四等人",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213123"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213124",
+   "parent_id": "149975",
+   "title": "回族的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213124"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213125",
+   "parent_id": "149975",
+   "title": "宣政院",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136121/ctk213125"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136122",
+   "parent_id": "136101",
+   "title": "第11课 辽宋夏金元的经济、社会与文化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136122"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "149977",
+   "parent_id": "193488",
+   "title": "宋元农业和手工业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk149977"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "149978",
+   "parent_id": "193488",
+   "title": "宋元商业和城市的繁荣",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk149978"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "149979",
+   "parent_id": "193488",
+   "title": "经济重心南移（宋元）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk149979"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213126",
+   "parent_id": "149980",
+   "title": "门第观念的衰败",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213126"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213127",
+   "parent_id": "149980",
+   "title": "人身依附关系的减弱",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213127"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213128",
+   "parent_id": "149982",
+   "title": "程朱理学的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213128"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213130",
+   "parent_id": "213129",
+   "title": "北宋五子及其主张",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213130"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213131",
+   "parent_id": "213129",
+   "title": "二程与朱熹及其主张",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213131"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213132",
+   "parent_id": "149982",
+   "title": "程朱理学的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213132"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213133",
+   "parent_id": "149983",
+   "title": "宋词",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213133"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213134",
+   "parent_id": "149983",
+   "title": "元曲",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213134"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213135",
+   "parent_id": "149983",
+   "title": "宋元话本",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213135"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213136",
+   "parent_id": "149983",
+   "title": "宋元书画",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213136"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213137",
+   "parent_id": "149984",
+   "title": "印刷术、火药、指南针",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213137"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213138",
+   "parent_id": "149984",
+   "title": "沈括与《梦溪笔谈》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213138"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213139",
+   "parent_id": "149984",
+   "title": "郭守敬与《授时历》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213139"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213140",
+   "parent_id": "149984",
+   "title": "王祯与《农书》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk213140"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "149985",
+   "parent_id": "193489",
+   "title": "少数民族文字",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136122/ctk149985"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136102",
+   "parent_id": "136098",
+   "title": "第四单元 明清中国版图的奠定与面临的挑战",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136102"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136125",
+   "parent_id": "136102",
+   "title": "第12课 从明朝建立到清军入关",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136125"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213141",
+   "parent_id": "149987",
+   "title": "元朝的灭亡与明朝的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213141"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213143",
+   "parent_id": "213142",
+   "title": "内阁制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213143"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213144",
+   "parent_id": "213142",
+   "title": "厂卫制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213144"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213145",
+   "parent_id": "149988",
+   "title": "郑和下西洋",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213145"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213146",
+   "parent_id": "149988",
+   "title": "倭寇侵扰东南沿海与戚家军抗倭",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213146"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213147",
+   "parent_id": "149988",
+   "title": "葡萄牙获得澳门租住权",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213147"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213148",
+   "parent_id": "149988",
+   "title": "荷兰、西班牙侵占台湾",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213148"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213149",
+   "parent_id": "149989",
+   "title": "明朝与蒙古",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213149"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213150",
+   "parent_id": "149989",
+   "title": "明朝与西藏",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213150"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213151",
+   "parent_id": "149989",
+   "title": "明朝与满洲",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213151"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213152",
+   "parent_id": "149989",
+   "title": "明朝灭亡与清军入关",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136125/ctk213152"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136126",
+   "parent_id": "136102",
+   "title": "第13课 清朝前中期的鼎盛与危机",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136126"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213153",
+   "parent_id": "149991",
+   "title": "“康乾盛世”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213153"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213154",
+   "parent_id": "149991",
+   "title": "军机处的设立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213154"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213156",
+   "parent_id": "213155",
+   "title": "密折制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213156"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213157",
+   "parent_id": "213155",
+   "title": "文字狱",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213157"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213158",
+   "parent_id": "149992",
+   "title": "郑成功收复台湾",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213158"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213159",
+   "parent_id": "149992",
+   "title": "中俄《尼布楚条约》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213159"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213161",
+   "parent_id": "213160",
+   "title": "平定准噶尔部",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213161"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213162",
+   "parent_id": "213160",
+   "title": "乾隆平定大、小和卓",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213162"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213163",
+   "parent_id": "213160",
+   "title": "设立伊犁将军",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213163"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213165",
+   "parent_id": "213164",
+   "title": "达赖与班禅",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213165"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213164",
+   "parent_id": "149992",
+   "title": "清朝对西藏地区的管控",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213164"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213167",
+   "parent_id": "213164",
+   "title": "金瓶掣签",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213167"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213168",
+   "parent_id": "149992",
+   "title": "理藩院的设置",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213168"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213169",
+   "parent_id": "149992",
+   "title": "改土归流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213169"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213170",
+   "parent_id": "149992",
+   "title": "清朝鼎盛时期的疆域",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213170"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213171",
+   "parent_id": "149993",
+   "title": "农民起义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213171"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213172",
+   "parent_id": "149993",
+   "title": "闭关锁国政策",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136126/ctk213172"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136127",
+   "parent_id": "136102",
+   "title": "第14课 明至清中叶的经济与文化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136127"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213173",
+   "parent_id": "149995",
+   "title": "农业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213173"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213174",
+   "parent_id": "149995",
+   "title": "手工业的进步",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213174"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213175",
+   "parent_id": "149995",
+   "title": "商品经济的繁荣",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213175"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213176",
+   "parent_id": "149995",
+   "title": "农耕经济的局限性",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213176"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213177",
+   "parent_id": "149996",
+   "title": "陆王心学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213177"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213178",
+   "parent_id": "149996",
+   "title": "李贽",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213178"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213179",
+   "parent_id": "149996",
+   "title": "黄宗羲、顾炎武、王夫之",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213179"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213181",
+   "parent_id": "213180",
+   "title": "《水浒传》和《三国演义》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213181"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213182",
+   "parent_id": "213180",
+   "title": "《西游记》和《儒林外史》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213182"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213183",
+   "parent_id": "213180",
+   "title": "《红楼梦》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213183"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213185",
+   "parent_id": "213184",
+   "title": "戏曲的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213185"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213186",
+   "parent_id": "213184",
+   "title": "京剧的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213186"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213187",
+   "parent_id": "154701",
+   "title": "李时珍与《本草纲目》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213187"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213188",
+   "parent_id": "154701",
+   "title": "徐光启与《农政全书》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213188"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213189",
+   "parent_id": "154701",
+   "title": "宋应星与《天工开物》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213189"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213190",
+   "parent_id": "154701",
+   "title": "《徐霞客游记》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213190"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213191",
+   "parent_id": "154701",
+   "title": "传教士与中外交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136127/ctk213191"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136103",
+   "parent_id": "136098",
+   "title": "第五单元 晚清时期的内忧外患与救亡图存",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136103"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136129",
+   "parent_id": "136103",
+   "title": "第15课 两次鸦片战争",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136129"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "150000",
+   "parent_id": "149999",
+   "title": "19世纪中期的世界与中国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk150000"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213192",
+   "parent_id": "188484",
+   "title": "第一次鸦片战争的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213192"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213193",
+   "parent_id": "188484",
+   "title": "第一次鸦片战争的过程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213193"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213194",
+   "parent_id": "188484",
+   "title": "《南京条约》及其附件",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213194"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213195",
+   "parent_id": "188484",
+   "title": "第一次鸦片战争的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213195"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213196",
+   "parent_id": "188485",
+   "title": "第二次鸦片战争的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213196"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213197",
+   "parent_id": "188485",
+   "title": "第二次鸦片战争的过程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213197"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213198",
+   "parent_id": "188485",
+   "title": "《天津条约》与《北京条约》等",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213198"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213199",
+   "parent_id": "188485",
+   "title": "沙俄侵吞中国领土",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213199"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213200",
+   "parent_id": "188485",
+   "title": "第二次鸦片战争的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213200"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213201",
+   "parent_id": "150002",
+   "title": "林则徐与魏源",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213201"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213202",
+   "parent_id": "150002",
+   "title": "徐继畬",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136129/ctk213202"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136130",
+   "parent_id": "136103",
+   "title": "第16课 国家出路的探索与列强侵略的加剧",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136130"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213203",
+   "parent_id": "150004",
+   "title": "太平天国运动的兴起与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213203"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213204",
+   "parent_id": "150004",
+   "title": "《天朝田亩制度》与《资政新篇》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213204"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213205",
+   "parent_id": "150004",
+   "title": "天京事变与太平天国运动的失败",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213205"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213206",
+   "parent_id": "150004",
+   "title": "太平天国运动的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213206"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213207",
+   "parent_id": "150005",
+   "title": "洋务运动的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213207"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213208",
+   "parent_id": "150005",
+   "title": "洋务运动的内容",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213208"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213209",
+   "parent_id": "150005",
+   "title": "洋务运动的评价",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213209"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213211",
+   "parent_id": "213210",
+   "title": "左宗棠收复新疆",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213211"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213212",
+   "parent_id": "213210",
+   "title": "中法战争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213212"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213214",
+   "parent_id": "213213",
+   "title": "甲午中日战争的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213214"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213215",
+   "parent_id": "213213",
+   "title": "甲午中日战争的过程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213215"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213216",
+   "parent_id": "213213",
+   "title": "《马关条约》的签订",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213216"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213217",
+   "parent_id": "213213",
+   "title": "甲午中日战争的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213217"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213218",
+   "parent_id": "150007",
+   "title": "三国干涉还辽",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213218"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213219",
+   "parent_id": "150007",
+   "title": "租借地与势力范围",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213219"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213220",
+   "parent_id": "150007",
+   "title": "门户开放",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136130/ctk213220"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136131",
+   "parent_id": "136103",
+   "title": "第17课 挽救民族危亡的斗争",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136131"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213221",
+   "parent_id": "150009",
+   "title": "戊戌维新运动的背景与爆发",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213221"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213222",
+   "parent_id": "150009",
+   "title": "“百日维新”与戊戌政变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213222"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213223",
+   "parent_id": "150009",
+   "title": "戊戌维新运动的意义与局限",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213223"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213224",
+   "parent_id": "150010",
+   "title": "义和团运动的兴衰",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213224"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213225",
+   "parent_id": "150010",
+   "title": "“扶清灭洋”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213225"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213226",
+   "parent_id": "150011",
+   "title": "八国联军侵华的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213226"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213227",
+   "parent_id": "150011",
+   "title": "八国联军侵华的经过",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213227"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213228",
+   "parent_id": "150011",
+   "title": "东南互保",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213228"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213229",
+   "parent_id": "150012",
+   "title": "《辛丑条约》的内容",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213229"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213230",
+   "parent_id": "150012",
+   "title": "《辛丑条约》的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136131/ctk213230"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136104",
+   "parent_id": "136098",
+   "title": "第六单元 辛亥革命与中华民国的建立",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136104"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136133",
+   "parent_id": "136104",
+   "title": "第18课 辛亥革命",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136133"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213231",
+   "parent_id": "150014",
+   "title": "清末新政与预备立宪",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136133/ctk213231"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213232",
+   "parent_id": "150014",
+   "title": "孙中山与同盟会",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136133/ctk213232"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213233",
+   "parent_id": "150014",
+   "title": "“三民主义”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136133/ctk213233"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213234",
+   "parent_id": "150015",
+   "title": "保路运动与武昌起义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136133/ctk213234"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213235",
+   "parent_id": "150015",
+   "title": "临时政府与《临时约法》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136133/ctk213235"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213236",
+   "parent_id": "150015",
+   "title": "北洋政府的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136133/ctk213236"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "150016",
+   "parent_id": "150013",
+   "title": "辛亥革命的历史意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136133/ctk150016"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136134",
+   "parent_id": "136104",
+   "title": "第19课 北洋军阀统治时期的政治、经济与文化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136134"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213237",
+   "parent_id": "150018",
+   "title": "袁世凯复辟帝制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213237"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213238",
+   "parent_id": "150018",
+   "title": "护国战争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213238"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213239",
+   "parent_id": "150019",
+   "title": "北洋军阀的分裂与混战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213239"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213241",
+   "parent_id": "213240",
+   "title": "府院之争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213241"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213242",
+   "parent_id": "213240",
+   "title": "张勋复辟",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213242"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213243",
+   "parent_id": "150019",
+   "title": "华工与第一次世界大战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213243"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213244",
+   "parent_id": "150020",
+   "title": "民族工商业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213244"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213245",
+   "parent_id": "150020",
+   "title": "社会生活的新气象",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213245"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213246",
+   "parent_id": "150021",
+   "title": "新文化运动的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213246"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213247",
+   "parent_id": "150021",
+   "title": "新文化运动的内容",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213247"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213248",
+   "parent_id": "150021",
+   "title": "新文化运动的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136134/ctk213248"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136105",
+   "parent_id": "136098",
+   "title": "第七单元 中国共产党成立与新民主主义革命兴起",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136105"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136136",
+   "parent_id": "136105",
+   "title": "第20课 五四运动与中国共产党的诞生",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136136"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213249",
+   "parent_id": "150023",
+   "title": "五四运动的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213249"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213250",
+   "parent_id": "150023",
+   "title": "五四运动的过程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213250"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213251",
+   "parent_id": "150023",
+   "title": "五四运动的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213251"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213252",
+   "parent_id": "150023",
+   "title": "马克思主义在中国的广泛传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213252"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213253",
+   "parent_id": "150024",
+   "title": "中国共产党诞生的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213253"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213254",
+   "parent_id": "150024",
+   "title": "中共一大的内容与历史意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213254"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213255",
+   "parent_id": "150024",
+   "title": "中共二大的内容与影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213255"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213256",
+   "parent_id": "150025",
+   "title": "国民党一大与第一次国共合作",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213256"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213257",
+   "parent_id": "150025",
+   "title": "国民革命的进程与意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213257"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213258",
+   "parent_id": "150025",
+   "title": "国民革命的失败",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136136/ctk213258"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136137",
+   "parent_id": "136105",
+   "title": "第21课 南京国民政府的统治和中国共产党开辟革命新道路",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136137"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213259",
+   "parent_id": "150027",
+   "title": "宁汉合流与东北易帜",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213259"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213260",
+   "parent_id": "150027",
+   "title": "民族资本主义的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213260"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213261",
+   "parent_id": "150028",
+   "title": "南昌起义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213261"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213262",
+   "parent_id": "150028",
+   "title": "八七会议",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213262"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213263",
+   "parent_id": "150028",
+   "title": "秋收起义与井冈山革命根据地的建设",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213263"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213264",
+   "parent_id": "150028",
+   "title": "工农武装割据理论与中华苏维埃共和国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213264"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213265",
+   "parent_id": "150029",
+   "title": "红军长征的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213265"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213266",
+   "parent_id": "150029",
+   "title": "红军长征的进程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213266"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213267",
+   "parent_id": "150029",
+   "title": "遵义会议",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213267"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213268",
+   "parent_id": "150029",
+   "title": "红军长征的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136137/ctk213268"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136106",
+   "parent_id": "136098",
+   "title": "第八单元 中华民族的抗日战争和人民解放战争",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136106"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136139",
+   "parent_id": "136106",
+   "title": "第22课 从局部抗战到全国抗战",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136139"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213270",
+   "parent_id": "213269",
+   "title": "九一八事变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213270"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213271",
+   "parent_id": "213269",
+   "title": "伪满洲国与东北问题",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213271"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213272",
+   "parent_id": "213269",
+   "title": "东北人民革命军的英勇抵抗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213272"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213273",
+   "parent_id": "150031",
+   "title": "华北事变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213273"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213275",
+   "parent_id": "213274",
+   "title": "西安事变的爆发",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213275"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213276",
+   "parent_id": "213274",
+   "title": "西安事变的和平解决",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213276"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213277",
+   "parent_id": "150032",
+   "title": "七七事变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213277"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213278",
+   "parent_id": "150032",
+   "title": "国共第二次合作与抗日民族统一战线的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213278"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213279",
+   "parent_id": "150033",
+   "title": "汪伪政府的成立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213279"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213280",
+   "parent_id": "150033",
+   "title": "日本的经济侵略",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213280"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213282",
+   "parent_id": "213281",
+   "title": "南京大屠杀",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213282"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213283",
+   "parent_id": "213281",
+   "title": "重庆大轰炸",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213283"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213284",
+   "parent_id": "213281",
+   "title": "“三光”政策",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213284"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213285",
+   "parent_id": "213281",
+   "title": "731部队",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136139/ctk213285"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136140",
+   "parent_id": "136106",
+   "title": "第23课 全民族浴血奋战与抗日战争的胜利",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136140"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213286",
+   "parent_id": "150035",
+   "title": "淞沪会战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213286"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213287",
+   "parent_id": "150035",
+   "title": "平型关大捷",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213287"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213288",
+   "parent_id": "150035",
+   "title": "台儿庄战役",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213288"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213289",
+   "parent_id": "150035",
+   "title": "武汉会战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213289"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213290",
+   "parent_id": "150035",
+   "title": "《论持久战》的发表",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213290"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213291",
+   "parent_id": "150035",
+   "title": "第三次长沙会战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213291"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213292",
+   "parent_id": "150035",
+   "title": "迁移西南大后方的壮举",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213292"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213293",
+   "parent_id": "150036",
+   "title": "抗日根据地的建立与游击战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213293"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213294",
+   "parent_id": "150036",
+   "title": "沦陷区的抗日斗争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213294"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213295",
+   "parent_id": "150036",
+   "title": "百团大战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213295"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213296",
+   "parent_id": "150036",
+   "title": "皖南事变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213296"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213297",
+   "parent_id": "150036",
+   "title": "减租减息与“三三制”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213297"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213298",
+   "parent_id": "150037",
+   "title": "世界反法西斯战争的东方主战场",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213298"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213299",
+   "parent_id": "150037",
+   "title": "世界反法西斯统一战线的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213299"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213300",
+   "parent_id": "150037",
+   "title": "中国远征军",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213300"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213301",
+   "parent_id": "150038",
+   "title": "中共七大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213301"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213302",
+   "parent_id": "150038",
+   "title": "日本投降",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213302"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213303",
+   "parent_id": "150038",
+   "title": "抗日战争胜利的历史意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136140/ctk213303"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136141",
+   "parent_id": "136106",
+   "title": "第24课 人民解放战争",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136141"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "150040",
+   "parent_id": "150039",
+   "title": "争取和平民主的斗争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk150040"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "150041",
+   "parent_id": "150039",
+   "title": "全面内战的爆发",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk150041"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "150042",
+   "parent_id": "150039",
+   "title": "国民党政权的统治危机",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk150042"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213304",
+   "parent_id": "150043",
+   "title": "解放区的土地改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk213304"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213305",
+   "parent_id": "150043",
+   "title": "挺进大别山",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk213305"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213306",
+   "parent_id": "150043",
+   "title": "三大战役",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk213306"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213307",
+   "parent_id": "150043",
+   "title": "中共七届二中全会",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk213307"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213308",
+   "parent_id": "150043",
+   "title": "北平和谈",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk213308"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213309",
+   "parent_id": "150043",
+   "title": "渡江战役",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk213309"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213310",
+   "parent_id": "150043",
+   "title": "新民主主义革命胜利的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136141/ctk213310"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136107",
+   "parent_id": "136098",
+   "title": "第九单元 中华人民共和国成立和社会主义革命与建设",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136107"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136143",
+   "parent_id": "136107",
+   "title": "第25课 中华人民共和国成立和向社会主义的过渡",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136143"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213311",
+   "parent_id": "150045",
+   "title": "第一届政协会议与《共同纲领》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk213311"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213312",
+   "parent_id": "150045",
+   "title": "中华人民共和国成立的历史意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk213312"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188486",
+   "parent_id": "150046",
+   "title": "土地改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188486"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188487",
+   "parent_id": "150046",
+   "title": "恢复国民经济",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188487"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213313",
+   "parent_id": "188488",
+   "title": "抗美援朝的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk213313"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213314",
+   "parent_id": "188488",
+   "title": "抗美援朝战争的进程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk213314"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213315",
+   "parent_id": "188488",
+   "title": "抗美援朝战争的历史意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk213315"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188489",
+   "parent_id": "150047",
+   "title": "独立自主的和平外交方针及三大政策",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188489"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188490",
+   "parent_id": "150047",
+   "title": "日内瓦会议与和平共处五项条约的提出",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188490"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188492",
+   "parent_id": "150047",
+   "title": "万隆会议与“求同存异”方针",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188492"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188493",
+   "parent_id": "150048",
+   "title": "一五计划",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188493"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188494",
+   "parent_id": "150048",
+   "title": "三大改造",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188494"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188495",
+   "parent_id": "150048",
+   "title": "第一届人大与五四宪法",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk188495"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213316",
+   "parent_id": "150048",
+   "title": "社会主义基本制度建立的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136143/ctk213316"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136144",
+   "parent_id": "136107",
+   "title": "第26课 社会主义建设在探索中曲折发展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136144"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188361",
+   "parent_id": "150050",
+   "title": "中共八大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk188361"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213317",
+   "parent_id": "150050",
+   "title": "“双百”方针的提出",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk213317"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213318",
+   "parent_id": "150050",
+   "title": "整风运动与反右派斗争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk213318"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188362",
+   "parent_id": "150050",
+   "title": "“大跃进”运动与人民公社化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk188362"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188364",
+   "parent_id": "150050",
+   "title": "国民经济的调整",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk188364"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "150051",
+   "parent_id": "150049",
+   "title": "“文化大革命”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk150051"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188365",
+   "parent_id": "150052",
+   "title": "工业、农业领域的成就（1949-1976）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk188365"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188366",
+   "parent_id": "150052",
+   "title": "教育、卫生、文化领域的成就（1949-1976）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk188366"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188367",
+   "parent_id": "150052",
+   "title": "国防领域的成就（1949-1976）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk188367"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188368",
+   "parent_id": "150052",
+   "title": "先进典型和模范人物（1949-1976）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk188368"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213319",
+   "parent_id": "188369",
+   "title": "恢复联合国合法席位",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk213319"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213320",
+   "parent_id": "188369",
+   "title": "中美关系正常化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk213320"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213321",
+   "parent_id": "188369",
+   "title": "中日建交",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136144/ctk213321"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136108",
+   "parent_id": "136098",
+   "title": "第十单元 改革开放和社会主义现代化建设新时期",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136108"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136146",
+   "parent_id": "136108",
+   "title": "第27课 中国特色社会主义的开创与发展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136146"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213322",
+   "parent_id": "150054",
+   "title": "十一届三中全会",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213322"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213323",
+   "parent_id": "150054",
+   "title": "拨乱反正",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213323"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213324",
+   "parent_id": "150054",
+   "title": "八二宪法",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213324"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188370",
+   "parent_id": "150055",
+   "title": "农村经济体制改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk188370"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188371",
+   "parent_id": "150055",
+   "title": "城市经济体制改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk188371"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188373",
+   "parent_id": "150055",
+   "title": "对外开放格局的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk188373"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213325",
+   "parent_id": "150055",
+   "title": "中共十二大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213325"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213326",
+   "parent_id": "150055",
+   "title": "中共十三大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213326"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213327",
+   "parent_id": "150055",
+   "title": "南方谈话",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213327"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213328",
+   "parent_id": "150055",
+   "title": "中共十四大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213328"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213329",
+   "parent_id": "150055",
+   "title": "中共十五大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213329"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213330",
+   "parent_id": "150055",
+   "title": "中国加入世贸组织",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213330"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213331",
+   "parent_id": "150055",
+   "title": "重大战略与中国特色社会主义事业的跨世纪发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213331"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213332",
+   "parent_id": "150055",
+   "title": "中共十六大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213332"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213333",
+   "parent_id": "150055",
+   "title": "中共十七大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213333"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "188372",
+   "parent_id": "150055",
+   "title": "社会主义市场经济体制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk188372"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213334",
+   "parent_id": "150058",
+   "title": "邓小平理论",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213334"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213335",
+   "parent_id": "150058",
+   "title": "“三个代表”重要思想",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213335"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213336",
+   "parent_id": "150058",
+   "title": "科学发展观",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136146/ctk213336"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136147",
+   "parent_id": "136108",
+   "title": "第28课 改革开放和社会主义现代化建设的巨大成就",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj136147"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213337",
+   "parent_id": "150059",
+   "title": "中国经济的加速发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213337"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213338",
+   "parent_id": "150059",
+   "title": "科技领域的新成就",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213338"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213339",
+   "parent_id": "150059",
+   "title": "教育事业的新发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213339"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213340",
+   "parent_id": "150059",
+   "title": "航空事业的重大突破",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213340"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213341",
+   "parent_id": "150059",
+   "title": "重大工程的建设",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213341"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213342",
+   "parent_id": "150059",
+   "title": "21世纪以来的巨大成就",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213342"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213343",
+   "parent_id": "150056",
+   "title": "“一国两制”思想的提出",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213343"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213344",
+   "parent_id": "150056",
+   "title": "香港、澳门回归祖国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213344"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "213345",
+   "parent_id": "150056",
+   "title": "海峡两岸的交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk213345"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "150060",
+   "parent_id": "150057",
+   "title": "国际影响力不断扩大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj136147/ctk150060"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193515",
+   "parent_id": "136098",
+   "title": "第十一单元  中国特色社会主义新时代",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj193515"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193516",
+   "parent_id": "193515",
+   "title": "第29课 中国特色社会主义进入新时代",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj193516"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193491",
+   "parent_id": "193490",
+   "title": "中共十八大和中华民族伟大复兴的中国梦",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj193516/ctk193491"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193492",
+   "parent_id": "193490",
+   "title": "中共十九大和习近平新时代中国特色社会主义思想",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj193516/ctk193492"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193493",
+   "parent_id": "193490",
+   "title": "中共二十大与全面建设社会主义现代化国家新征程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj193516/ctk193493"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193517",
+   "parent_id": "193515",
+   "title": "第30课 新时代中国特色社会主义的伟大成就",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj193517"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193495",
+   "parent_id": "193494",
+   "title": "全面建成小康社会",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj193517/ctk193495"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193496",
+   "parent_id": "193494",
+   "title": "综合国力显著提升",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj193517/ctk193496"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193497",
+   "parent_id": "193494",
+   "title": "在应对风险挑战中推进各项事业",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj193517/ctk193497"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "193498",
+   "parent_id": "193494",
+   "title": "中国特色大国外交和推动构建人类命运共同体",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj193517/ctk193498"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "136148",
+   "parent_id": "136098",
+   "title": "活动课 家国情怀与统一多民族国家的演进",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj136148"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "236091",
+   "parent_id": "136098",
+   "title": "附录",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236091"
+  },
+  {
+   "zj_code": "zj136098",
+   "id": "236092",
+   "parent_id": "136098",
+   "title": "后记",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236092"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149286",
+   "parent_id": "149285",
+   "title": "第一单元 古代文明的产生与发展",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149286"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149296",
+   "parent_id": "149286",
+   "title": "第1课 文明的产生与早期发展 ",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149296"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "150063",
+   "parent_id": "150062",
+   "title": "人类文明的产生",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk150063"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181986",
+   "parent_id": "150064",
+   "title": "两河流域文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk181986"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213346",
+   "parent_id": "150064",
+   "title": "古代西亚文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk213346"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181987",
+   "parent_id": "150064",
+   "title": "古代埃及文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk181987"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213347",
+   "parent_id": "181988",
+   "title": "种姓制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk213347"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213348",
+   "parent_id": "181988",
+   "title": "古代印度文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk213348"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213349",
+   "parent_id": "181989",
+   "title": "雅典民主政治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk213349"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213350",
+   "parent_id": "181989",
+   "title": "古希腊文学与哲学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149296/ctk213350"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149297",
+   "parent_id": "149286",
+   "title": "第2课 古代世界的帝国与文明的交流 ",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149297"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213352",
+   "parent_id": "213351",
+   "title": "古代文明的扩展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149297/ctk213352"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182182",
+   "parent_id": "150065",
+   "title": "波斯帝国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149297/ctk182182"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182183",
+   "parent_id": "150065",
+   "title": "亚历山大帝国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149297/ctk182183"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182184",
+   "parent_id": "150065",
+   "title": "古代罗马及罗马帝国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149297/ctk182184"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182185",
+   "parent_id": "150065",
+   "title": "基督教的产生及发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149297/ctk182185"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "150066",
+   "parent_id": "213351",
+   "title": "文明的交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149297/ctk150066"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149287",
+   "parent_id": "149285",
+   "title": "第二单元 中古时期的世界",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149287"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149299",
+   "parent_id": "149287",
+   "title": "第3课 中古时期的欧洲 ",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149299"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188497",
+   "parent_id": "150068",
+   "title": "西欧封君封臣制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149299/ctk188497"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188496",
+   "parent_id": "150068",
+   "title": "西欧封建庄园",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149299/ctk188496"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182380",
+   "parent_id": "150069",
+   "title": "王权的加强",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149299/ctk182380"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182382",
+   "parent_id": "150069",
+   "title": "中世纪城市的自治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149299/ctk182382"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182381",
+   "parent_id": "150069",
+   "title": "基督教",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149299/ctk182381"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188498",
+   "parent_id": "150070",
+   "title": "拜占庭的兴衰",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149299/ctk188498"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188499",
+   "parent_id": "150070",
+   "title": "俄罗斯的扩张",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149299/ctk188499"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149300",
+   "parent_id": "149287",
+   "title": "第4课 中古时期的亚洲",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149300"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188500",
+   "parent_id": "150071",
+   "title": "阿拉伯帝国的兴起与鼎盛",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk188500"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213354",
+   "parent_id": "150071",
+   "title": "阿拉伯文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk213354"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188501",
+   "parent_id": "213353",
+   "title": "奥斯曼帝国的兴起",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk188501"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213355",
+   "parent_id": "188502",
+   "title": "孔雀帝国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk213355"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213356",
+   "parent_id": "188502",
+   "title": "笈多帝国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk213356"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213357",
+   "parent_id": "188502",
+   "title": "德里苏丹国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk213357"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213358",
+   "parent_id": "188503",
+   "title": "大化改新",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk213358"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213359",
+   "parent_id": "188503",
+   "title": "幕府与武士集团",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk213359"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188504",
+   "parent_id": "150072",
+   "title": "中古时期的朝鲜",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149300/ctk188504"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149301",
+   "parent_id": "149287",
+   "title": "第5课 古代非洲与美洲",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149301"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "150073",
+   "parent_id": "213360",
+   "title": "古代非洲文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149301/ctk150073"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181990",
+   "parent_id": "150074",
+   "title": "玛雅文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149301/ctk181990"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181991",
+   "parent_id": "150074",
+   "title": "阿兹特克文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149301/ctk181991"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181992",
+   "parent_id": "150074",
+   "title": " 印加文明",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149301/ctk181992"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149288",
+   "parent_id": "149285",
+   "title": "第三单元 走向整体的世界",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149288"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149303",
+   "parent_id": "149288",
+   "title": "第6课 全球航路的开辟 ",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149303"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213363",
+   "parent_id": "213362",
+   "title": "新航路开辟的动因",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149303/ctk213363"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213364",
+   "parent_id": "213362",
+   "title": "新航路开辟的条件",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149303/ctk213364"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213366",
+   "parent_id": "213365",
+   "title": "迪亚士与达·伽马",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149303/ctk213366"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213367",
+   "parent_id": "213365",
+   "title": "哥伦布",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149303/ctk213367"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213368",
+   "parent_id": "213365",
+   "title": "麦哲伦与其船队的环球航行",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149303/ctk213368"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213369",
+   "parent_id": "150076",
+   "title": "其他航路的开辟",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149303/ctk213369"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149304",
+   "parent_id": "149288",
+   "title": "第7课 全球联系的初步建立与世界格局的演变 ",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149304"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213371",
+   "parent_id": "150077",
+   "title": "新航路开辟后的人口迁移",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149304/ctk213371"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213372",
+   "parent_id": "150077",
+   "title": "新航路开辟后的物种交换",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149304/ctk213372"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213373",
+   "parent_id": "150077",
+   "title": "人口全球流动的弊端",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149304/ctk213373"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "150078",
+   "parent_id": "213370",
+   "title": "商品的世界性流动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149304/ctk150078"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213374",
+   "parent_id": "150079",
+   "title": "早期殖民扩张的过程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149304/ctk213374"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213375",
+   "parent_id": "150079",
+   "title": "早期殖民扩张的意义和影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149304/ctk213375"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149289",
+   "parent_id": "149285",
+   "title": "第四单元 资本主义制度的确立",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149289"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149306",
+   "parent_id": "149289",
+   "title": "第8课 欧洲的思想解放运动",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149306"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213376",
+   "parent_id": "150081",
+   "title": "文艺复兴的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213376"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213377",
+   "parent_id": "150081",
+   "title": "文艺复兴的内容",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213377"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213378",
+   "parent_id": "150081",
+   "title": "文艺复兴的代表人物及作品",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213378"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213379",
+   "parent_id": "150081",
+   "title": "文艺复兴的扩展及其意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213379"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "150082",
+   "parent_id": "150080",
+   "title": "宗教改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk150082"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213380",
+   "parent_id": "150083",
+   "title": "近代科学兴起的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213380"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213381",
+   "parent_id": "150083",
+   "title": "近代科学的代表人物及理论",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213381"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213382",
+   "parent_id": "150083",
+   "title": "科学革命的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213382"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213383",
+   "parent_id": "150084",
+   "title": "启蒙运动的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213383"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213384",
+   "parent_id": "150084",
+   "title": "启蒙运动的代表人物及思想",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213384"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213385",
+   "parent_id": "150084",
+   "title": "启蒙运动的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149306/ctk213385"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149307",
+   "parent_id": "149289",
+   "title": "第9课 资产阶级革命与资本主义制度的确立",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149307"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213387",
+   "parent_id": "181993",
+   "title": "“光荣革命”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk213387"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213388",
+   "parent_id": "181993",
+   "title": "权利法案",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk213388"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181994",
+   "parent_id": "150085",
+   "title": "美国独立战争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk181994"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213389",
+   "parent_id": "181995",
+   "title": "法国大革命的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk213389"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213390",
+   "parent_id": "181995",
+   "title": "法国大革命的进程与《人权宣言》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk213390"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213391",
+   "parent_id": "181995",
+   "title": "拿破仑与拿破仑帝国",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk213391"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213392",
+   "parent_id": "181995",
+   "title": "法国大革命的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk213392"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "185220",
+   "parent_id": "150086",
+   "title": "英国君主立宪制的确立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk185220"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "185221",
+   "parent_id": "150086",
+   "title": "美国共和制的确立与《1787宪法》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk185221"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "185222",
+   "parent_id": "150086",
+   "title": "法国共和制的最终确立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk185222"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181850",
+   "parent_id": "150087",
+   "title": "俄国农奴制改革 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk181850"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181851",
+   "parent_id": "150087",
+   "title": "美国内战 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk181851"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181852",
+   "parent_id": "150087",
+   "title": "意大利、德意志统一",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk181852"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181853",
+   "parent_id": "150087",
+   "title": "日本明治维新 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk181853"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213393",
+   "parent_id": "150087",
+   "title": "资本主义扩展的评价",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149307/ctk213393"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149290",
+   "parent_id": "149285",
+   "title": "第五单元 工业革命与马克思主义的诞生",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149290"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149309",
+   "parent_id": "149290",
+   "title": "第10课 影响世界的工业革命",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149309"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "150089",
+   "parent_id": "150088",
+   "title": "工业革命的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149309/ctk150089"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213394",
+   "parent_id": "188505",
+   "title": "瓦特与蒸汽机",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149309/ctk213394"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213395",
+   "parent_id": "188505",
+   "title": "第一次工业革命的扩展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149309/ctk213395"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213396",
+   "parent_id": "188506",
+   "title": "第二次工业革命的内容",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149309/ctk213396"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213397",
+   "parent_id": "188506",
+   "title": "第二次工业革命的评价",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149309/ctk213397"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213398",
+   "parent_id": "150091",
+   "title": "工业革命的积极影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149309/ctk213398"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213399",
+   "parent_id": "150091",
+   "title": "工业革命的消极影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149309/ctk213399"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149310",
+   "parent_id": "149290",
+   "title": "第11课 马克思主义的诞生与传播",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149310"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213402",
+   "parent_id": "213401",
+   "title": "早期工人运动爆发的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213402"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213403",
+   "parent_id": "213401",
+   "title": "早期工人运动发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213403"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213404",
+   "parent_id": "213400",
+   "title": "社会主义思想的萌发",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213404"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213405",
+   "parent_id": "188509",
+   "title": "马克思与恩格斯",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213405"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213406",
+   "parent_id": "188509",
+   "title": "《共产党宣言》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213406"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213407",
+   "parent_id": "188509",
+   "title": "马克思主义的历史意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213407"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213409",
+   "parent_id": "213408",
+   "title": "“第一国际”与国际工人运动的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213409"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213410",
+   "parent_id": "188510",
+   "title": "巴黎公社的爆发与进程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213410"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213411",
+   "parent_id": "188510",
+   "title": "巴黎公社的历史意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149310/ctk213411"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149291",
+   "parent_id": "149285",
+   "title": "第六单元 世界殖民体系与亚非拉民族独立运动",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149291"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149312",
+   "parent_id": "149291",
+   "title": "第12课 资本主义世界殖民体系的形成",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149312"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188374",
+   "parent_id": "150094",
+   "title": "拉丁美洲的殖民地化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149312/ctk188374"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188375",
+   "parent_id": "150094",
+   "title": "亚洲沦为殖民地半殖民地",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149312/ctk188375"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188376",
+   "parent_id": "150094",
+   "title": "西方列强瓜分非洲",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149312/ctk188376"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188377",
+   "parent_id": "150094",
+   "title": "世界殖民体系的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149312/ctk188377"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149313",
+   "parent_id": "149291",
+   "title": "第13课 亚非拉民族独立运动",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149313"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "150095",
+   "parent_id": "213412",
+   "title": "拉丁美洲的民族独立运动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149313/ctk150095"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181999",
+   "parent_id": "150096",
+   "title": "印度民族解放运动 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149313/ctk181999"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182000",
+   "parent_id": "150096",
+   "title": "伊朗立宪革命 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149313/ctk182000"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182001",
+   "parent_id": "150096",
+   "title": "中国辛亥革命",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149313/ctk182001"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182002",
+   "parent_id": "213413",
+   "title": "埃及抗英斗争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149313/ctk182002"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182003",
+   "parent_id": "213413",
+   "title": "苏丹马赫迪起义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149313/ctk182003"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182004",
+   "parent_id": "213413",
+   "title": "埃塞俄比亚抗意战争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149313/ctk182004"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149292",
+   "parent_id": "149285",
+   "title": "第七单元 两次世界大战、十月革命与国际秩序的演变 ",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149292"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149315",
+   "parent_id": "149292",
+   "title": "第14课 第一次世界大战与战后国际秩序",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149315"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182005",
+   "parent_id": "150098",
+   "title": "帝国主义与世界大战的酝酿",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149315/ctk182005"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182006",
+   "parent_id": "150098",
+   "title": "第一次世界大战的进程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149315/ctk182006"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213415",
+   "parent_id": "182007",
+   "title": "凡尔赛——华盛顿体系的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149315/ctk213415"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213416",
+   "parent_id": "182007",
+   "title": "第一次世界大战的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149315/ctk213416"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149316",
+   "parent_id": "149292",
+   "title": "第15课 十月革命的胜利与苏联的社会主义实践",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149316"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182008",
+   "parent_id": "150099",
+   "title": "列宁主义的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149316/ctk182008"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182009",
+   "parent_id": "150099",
+   "title": "十月革命的胜利",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149316/ctk182009"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188512",
+   "parent_id": "182010",
+   "title": "战时共产主义政策",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149316/ctk188512"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188513",
+   "parent_id": "182010",
+   "title": "新经济政策",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149316/ctk188513"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188514",
+   "parent_id": "182010",
+   "title": " 斯大林模式 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149316/ctk188514"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149317",
+   "parent_id": "149292",
+   "title": "第16课 亚非拉民族民主运动的高涨",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149317"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213417",
+   "parent_id": "182011",
+   "title": "印尼民族大起义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk213417"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213418",
+   "parent_id": "182011",
+   "title": "甘地领导“非暴力不合作”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk213418"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213419",
+   "parent_id": "182012",
+   "title": "埃及华夫脱党运动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk213419"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213420",
+   "parent_id": "182012",
+   "title": "摩洛哥抗击侵略者",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk213420"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213421",
+   "parent_id": "182012",
+   "title": "埃塞俄比亚抗击法西斯",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk213421"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181996",
+   "parent_id": "182013",
+   "title": "阿根廷和智利的斗争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk181996"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181997",
+   "parent_id": "182013",
+   "title": "尼加拉瓜抗美斗争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk181997"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "181998",
+   "parent_id": "182013",
+   "title": "墨西哥卡德纳斯改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149317/ctk181998"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149318",
+   "parent_id": "149292",
+   "title": "第17课 第二次世界大战与战后国际秩序的形成",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149318"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213422",
+   "parent_id": "182014",
+   "title": "欧洲法西斯势力的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213422"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213423",
+   "parent_id": "182014",
+   "title": "日本法西斯势力的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213423"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213424",
+   "parent_id": "182014",
+   "title": "欧亚战争策源地的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213424"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213425",
+   "parent_id": "182015",
+   "title": "第二次世界大战的爆发",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213425"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213426",
+   "parent_id": "182015",
+   "title": "第二次世界大战的进程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213426"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213427",
+   "parent_id": "182015",
+   "title": "世界反法西斯战争胜利的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213427"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213428",
+   "parent_id": "182016",
+   "title": "雅尔塔体系与联合国的成立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213428"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213429",
+   "parent_id": "182016",
+   "title": "国际格局的转折",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149318/ctk213429"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149293",
+   "parent_id": "149285",
+   "title": "第八单元 20世纪下半叶世界的新变化",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149293"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149323",
+   "parent_id": "149293",
+   "title": "第18课 冷战与国际格局的演变",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149323"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213430",
+   "parent_id": "188378",
+   "title": "冷战爆发的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213430"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213432",
+   "parent_id": "213431",
+   "title": "杜鲁门主义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213432"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213433",
+   "parent_id": "213431",
+   "title": "马歇尔计划的提出",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213433"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213434",
+   "parent_id": "213431",
+   "title": "北约与华约的对峙",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213434"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213435",
+   "parent_id": "213431",
+   "title": "德国分裂",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213435"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213437",
+   "parent_id": "213436",
+   "title": "第二次柏林危机",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213437"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213438",
+   "parent_id": "213436",
+   "title": "古巴导弹危机",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213438"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213439",
+   "parent_id": "188379",
+   "title": "多极力量的成长",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk213439"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188380",
+   "parent_id": "150106",
+   "title": "两极格局的瓦解",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149323/ctk188380"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149320",
+   "parent_id": "149293",
+   "title": "第19课 资本主义国家的新变化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149320"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213440",
+   "parent_id": "182383",
+   "title": "国家宏观调控出现的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149320/ctk213440"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213441",
+   "parent_id": "182383",
+   "title": "各国调控经济的措施",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149320/ctk213441"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213442",
+   "parent_id": "182383",
+   "title": "国际经济组织的相继建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149320/ctk213442"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182384",
+   "parent_id": "150103",
+   "title": "科学技术的新发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149320/ctk182384"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182385",
+   "parent_id": "150103",
+   "title": "社会结构的新变化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149320/ctk182385"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182386",
+   "parent_id": "150103",
+   "title": "“福利国家”与社会运动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149320/ctk182386"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149321",
+   "parent_id": "149293",
+   "title": "第20课 社会主义国家的发展与变化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149321"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188516",
+   "parent_id": "188515",
+   "title": "赫鲁晓夫改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149321/ctk188516"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188517",
+   "parent_id": "188515",
+   "title": "勃列日涅夫改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149321/ctk188517"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188518",
+   "parent_id": "188515",
+   "title": "戈尔巴乔夫改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149321/ctk188518"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188519",
+   "parent_id": "150104",
+   "title": "东欧的社会主义建设、改革和剧变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149321/ctk188519"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213443",
+   "parent_id": "150104",
+   "title": "中国社会主义的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149321/ctk213443"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149322",
+   "parent_id": "149293",
+   "title": "第21课 世界殖民体系的瓦解与新兴国家的发展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149322"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182387",
+   "parent_id": "213444",
+   "title": "战后亚洲的民族独立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149322/ctk182387"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182388",
+   "parent_id": "213444",
+   "title": "战后非洲的民族独立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149322/ctk182388"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182389",
+   "parent_id": "213444",
+   "title": "战后拉丁美洲的民族独立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149322/ctk182389"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213445",
+   "parent_id": "150105",
+   "title": "发展中国家的成就",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149322/ctk213445"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "213446",
+   "parent_id": "150105",
+   "title": "发展中国家面临的挑战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149322/ctk213446"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149294",
+   "parent_id": "149285",
+   "title": "第九单元 当代世界发展的特点与主要趋势",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj149294"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149325",
+   "parent_id": "149294",
+   "title": "第22课 世界多极化与经济全球化 ",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149325"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182391",
+   "parent_id": "150108",
+   "title": "世界多极化发展趋势",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149325/ctk182391"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182392",
+   "parent_id": "150108",
+   "title": "经济全球化进程加快",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149325/ctk182392"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "182393",
+   "parent_id": "150108",
+   "title": "社会信息化和文化多样性",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149325/ctk182393"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "149326",
+   "parent_id": "149294",
+   "title": "第23课 和平发展合作共赢的历史潮流",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj149326"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188381",
+   "parent_id": "150109",
+   "title": "对世界和平与发展的追求",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149326/ctk188381"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188382",
+   "parent_id": "150109",
+   "title": "人类发展面临的问题",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149326/ctk188382"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "188383",
+   "parent_id": "150109",
+   "title": "推动构建人类命运共同体",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj149326/ctk188383"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "236093",
+   "parent_id": "149285",
+   "title": "活动课  放眼世界，推动构建人类命运共同体 ",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236093"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "236094",
+   "parent_id": "149285",
+   "title": "附录   中外历史大事年表",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236094"
+  },
+  {
+   "zj_code": "zj149285",
+   "id": "236095",
+   "parent_id": "149285",
+   "title": "后记",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236095"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164720",
+   "parent_id": "164717",
+   "title": "第一单元 政治制度",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164720"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164721",
+   "parent_id": "164720",
+   "title": "第1课 中国古代政治制度的形成与发展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164721"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213669",
+   "parent_id": "213668",
+   "title": "禅让制与世袭制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213669"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213670",
+   "parent_id": "213668",
+   "title": "内外服制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213670"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213672",
+   "parent_id": "213671",
+   "title": "分封制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213672"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213673",
+   "parent_id": "213671",
+   "title": "宗法制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213673"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213674",
+   "parent_id": "213671",
+   "title": "原始民主特色",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213674"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213675",
+   "parent_id": "160440",
+   "title": "皇帝制度的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213675"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213676",
+   "parent_id": "160440",
+   "title": "三公九卿制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213676"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213677",
+   "parent_id": "160440",
+   "title": "郡县制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213677"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213678",
+   "parent_id": "160440",
+   "title": "文书制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213678"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213680",
+   "parent_id": "213679",
+   "title": "汉朝的中外朝与尚书台",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213680"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213681",
+   "parent_id": "213679",
+   "title": "隋唐的三省六部制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213681"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213682",
+   "parent_id": "213679",
+   "title": "元朝的中书省",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213682"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213683",
+   "parent_id": "213679",
+   "title": "明朝“废宰相，设内阁”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213683"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213684",
+   "parent_id": "213679",
+   "title": "清朝军机处的设立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213684"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213686",
+   "parent_id": "213685",
+   "title": "汉朝的郡国并行制与中央集权",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213686"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213687",
+   "parent_id": "213685",
+   "title": "东汉晚期州、郡、县三级制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213687"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213688",
+   "parent_id": "213685",
+   "title": "隋唐州县二级制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213688"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213689",
+   "parent_id": "213685",
+   "title": "唐朝的节度使",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213689"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213690",
+   "parent_id": "213685",
+   "title": "宋朝地方行政机构的变革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213690"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213691",
+   "parent_id": "213685",
+   "title": "元朝的行省制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213691"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213692",
+   "parent_id": "213685",
+   "title": "明朝的三司使制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213692"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213693",
+   "parent_id": "213685",
+   "title": "明清的督抚制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164721/ctk213693"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164722",
+   "parent_id": "164720",
+   "title": "第2课 西方国家古代和近代政治制度的演变",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164722"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213694",
+   "parent_id": "160442",
+   "title": "雅典民主政治与斯巴达寡头政治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164722/ctk213694"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213695",
+   "parent_id": "160442",
+   "title": "古罗马的政治制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164722/ctk213695"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213696",
+   "parent_id": "160443",
+   "title": "封君封臣制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164722/ctk213696"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213697",
+   "parent_id": "160443",
+   "title": "王权与教权",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164722/ctk213697"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213698",
+   "parent_id": "160443",
+   "title": "国王与议会",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164722/ctk213698"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213699",
+   "parent_id": "160444",
+   "title": "英、美、法资本主义制度的确立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164722/ctk213699"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213700",
+   "parent_id": "160444",
+   "title": "西方资本主义制度的拓展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164722/ctk213700"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164723",
+   "parent_id": "164720",
+   "title": "第3课 中国近代至当代政治制度的演变",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164723"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213701",
+   "parent_id": "160445",
+   "title": "临时政府与《临时约法》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213701"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213702",
+   "parent_id": "160445",
+   "title": "政党政治与“二次革命”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213702"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213703",
+   "parent_id": "160445",
+   "title": "袁世凯复辟帝制与北洋军阀的混战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213703"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213704",
+   "parent_id": "160445",
+   "title": "国民党“训政”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213704"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213705",
+   "parent_id": "160446",
+   "title": "苏区政府的制度探索",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213705"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213706",
+   "parent_id": "160446",
+   "title": "边区政府的制度探索",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213706"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213707",
+   "parent_id": "160446",
+   "title": "军政委员会的制度探索",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213707"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213708",
+   "parent_id": "160447",
+   "title": "人民代表大会制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213708"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213709",
+   "parent_id": "160447",
+   "title": "政治协商制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213709"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213710",
+   "parent_id": "160447",
+   "title": "民族区域自治制度和基层群众自治制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213710"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213711",
+   "parent_id": "160447",
+   "title": "中国特色社会主义制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164723/ctk213711"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "168229",
+   "parent_id": "164720",
+   "title": "第4课 中国历代变法和改革",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj168229"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "188385",
+   "parent_id": "188384",
+   "title": "战国时期的变法运动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk188385"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "188386",
+   "parent_id": "188384",
+   "title": "北魏孝文帝汉化改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk188386"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "188387",
+   "parent_id": "188384",
+   "title": "庆历新政与王安石变法",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk188387"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "188388",
+   "parent_id": "188384",
+   "title": "张居正改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk188388"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213712",
+   "parent_id": "188384",
+   "title": "历代重要变法和改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk213712"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "188390",
+   "parent_id": "188389",
+   "title": "百日维新",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk188390"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "188391",
+   "parent_id": "188389",
+   "title": "清末新政",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk188391"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "188392",
+   "parent_id": "172205",
+   "title": "新中国成立以来的重要改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168229/ctk188392"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164725",
+   "parent_id": "164717",
+   "title": "第二单元 官员的选拔与管理",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164725"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164726",
+   "parent_id": "164725",
+   "title": "第5课 中国古代官员的选拔与管理",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164726"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213714",
+   "parent_id": "213713",
+   "title": "世官制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213714"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213715",
+   "parent_id": "213713",
+   "title": "军功爵制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213715"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213717",
+   "parent_id": "213716",
+   "title": "察举制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213717"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213718",
+   "parent_id": "213716",
+   "title": "九品中正制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213718"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213719",
+   "parent_id": "160448",
+   "title": "秦汉至魏晋时期的官员管理制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213719"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213720",
+   "parent_id": "160449",
+   "title": "科举制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213720"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213721",
+   "parent_id": "160449",
+   "title": "隋唐至两宋时期的官员考核",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213721"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213722",
+   "parent_id": "160449",
+   "title": "隋唐至两宋时期的官员监察制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk213722"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160450",
+   "parent_id": "160368",
+   "title": "元明清时期的官员选拔与管理",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164726/ctk160450"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164727",
+   "parent_id": "164725",
+   "title": "第6课 西方的文官制度",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164727"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160451",
+   "parent_id": "160369",
+   "title": "西方文官制度出现的背景",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164727/ctk160451"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160452",
+   "parent_id": "160369",
+   "title": "西方文官制度的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164727/ctk160452"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160453",
+   "parent_id": "160369",
+   "title": "西方文官制度的特点",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164727/ctk160453"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164728",
+   "parent_id": "164725",
+   "title": "第7课 近代以来中国的官员选拔与管理",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164728"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213723",
+   "parent_id": "160454",
+   "title": "科举制的废除",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164728/ctk213723"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213724",
+   "parent_id": "160454",
+   "title": "清政府选官制度改革",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164728/ctk213724"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213725",
+   "parent_id": "160455",
+   "title": "文官选拔制度的建设",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164728/ctk213725"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213726",
+   "parent_id": "160455",
+   "title": "北洋时期的文官制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164728/ctk213726"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213727",
+   "parent_id": "160455",
+   "title": "南京国民政府的公务员制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164728/ctk213727"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213728",
+   "parent_id": "160456",
+   "title": "干部制度的发展、改革和完善",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164728/ctk213728"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213729",
+   "parent_id": "160456",
+   "title": "中华人民共和国公务员制度的形成与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164728/ctk213729"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164730",
+   "parent_id": "164717",
+   "title": "第三单元 法律与教化",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164730"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164731",
+   "parent_id": "164730",
+   "title": "第8课 中国古代的法治与教化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164731"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160457",
+   "parent_id": "160372",
+   "title": "先秦时期的德治与法治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164731/ctk160457"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160458",
+   "parent_id": "160372",
+   "title": "秦汉至隋唐时期的法律与教化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164731/ctk160458"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213730",
+   "parent_id": "160459",
+   "title": "宋元至明清时期的法律",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164731/ctk213730"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213732",
+   "parent_id": "213731",
+   "title": "儒学的基层教化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164731/ctk213732"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213733",
+   "parent_id": "213731",
+   "title": "明清时期的乡约",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164731/ctk213733"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164732",
+   "parent_id": "164730",
+   "title": "第9课 近代西方的法律与教化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164732"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213735",
+   "parent_id": "213734",
+   "title": "《十二铜表法》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164732/ctk213735"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213736",
+   "parent_id": "213734",
+   "title": "《罗马民法大全》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164732/ctk213736"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213738",
+   "parent_id": "213737",
+   "title": "英国《大宪章》与英美法系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164732/ctk213738"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213739",
+   "parent_id": "213737",
+   "title": "法国《拿破仑法典》与大陆法系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164732/ctk213739"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213740",
+   "parent_id": "160461",
+   "title": "国家权力机构层面",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164732/ctk213740"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213741",
+   "parent_id": "160461",
+   "title": "国家法制建设层面",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164732/ctk213741"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160462",
+   "parent_id": "160373",
+   "title": "宗教伦理与教化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164732/ctk160462"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164733",
+   "parent_id": "164730",
+   "title": "第10课 当代中国的法治与精神文明建设",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164733"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213742",
+   "parent_id": "160463",
+   "title": "新中国成立初期的法治建设",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164733/ctk213742"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213743",
+   "parent_id": "160463",
+   "title": "改革开放后社会主义法治建设的加强",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164733/ctk213743"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213744",
+   "parent_id": "160463",
+   "title": "十八大以来全面依法治国的建设",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164733/ctk213744"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213745",
+   "parent_id": "160464",
+   "title": "社会主义革命和建设时期的英雄模范",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164733/ctk213745"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213746",
+   "parent_id": "160464",
+   "title": "改革开放后社会主义精神文明建设的加强",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164733/ctk213746"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213747",
+   "parent_id": "160464",
+   "title": "十八大以来社会主义核心价值观的建设",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164733/ctk213747"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164735",
+   "parent_id": "164717",
+   "title": "第四单元 民族关系与国家关系",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164735"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164736",
+   "parent_id": "164735",
+   "title": "第11课 中国古代的民族关系与对外交往",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164736"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213748",
+   "parent_id": "160465",
+   "title": "秦朝的民族关系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213748"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213749",
+   "parent_id": "160465",
+   "title": "两汉的民族关系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213749"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213750",
+   "parent_id": "160466",
+   "title": "隋唐时期的民族关系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213750"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213751",
+   "parent_id": "160466",
+   "title": "两宋时期的民族关系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213751"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213752",
+   "parent_id": "160467",
+   "title": "元朝的民族关系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213752"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213753",
+   "parent_id": "160467",
+   "title": "明朝的民族关系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213753"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213754",
+   "parent_id": "160467",
+   "title": "清朝的民族关系",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213754"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213756",
+   "parent_id": "213755",
+   "title": "秦汉时期的对外交往",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213756"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213757",
+   "parent_id": "213755",
+   "title": "隋唐时期的对外交往",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213757"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213758",
+   "parent_id": "213755",
+   "title": "元明清时期的对外交往",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164736/ctk213758"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164737",
+   "parent_id": "164735",
+   "title": "第12课 近代西方民族国家与国际法的发展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164737"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160468",
+   "parent_id": "160377",
+   "title": "近代西方民族国家的产生",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164737/ctk160468"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160469",
+   "parent_id": "160377",
+   "title": "国际法的形成与外交制度的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164737/ctk160469"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160470",
+   "parent_id": "160377",
+   "title": "20世纪国际法的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164737/ctk160470"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164738",
+   "parent_id": "164735",
+   "title": "第13课 当代中国的民族政策",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164738"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160471",
+   "parent_id": "160378",
+   "title": "民族区域自治制度的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164738/ctk160471"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213759",
+   "parent_id": "160378",
+   "title": "民族区域自治制度的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164738/ctk213759"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213760",
+   "parent_id": "160378",
+   "title": "中共十八大以来民族区域自治制度的完善",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164738/ctk213760"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "168230",
+   "parent_id": "164735",
+   "title": "第14课 当代中国的外交",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj168230"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160472",
+   "parent_id": "213761",
+   "title": "开创独立自主的和平外交",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168230/ctk160472"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213762",
+   "parent_id": "213761",
+   "title": "改革开放后的外交成就",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168230/ctk213762"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213763",
+   "parent_id": "213761",
+   "title": "中共十八大以来的中国特色大国外交",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj168230/ctk213763"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164744",
+   "parent_id": "164717",
+   "title": "第五单元 货币与赋税制度",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164744"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164745",
+   "parent_id": "164744",
+   "title": "第15课 货币的使用与世界货币体系的形成",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164745"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213764",
+   "parent_id": "160480",
+   "title": "货币的出现",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164745/ctk213764"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213765",
+   "parent_id": "160480",
+   "title": "铜钱的流通与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164745/ctk213765"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213766",
+   "parent_id": "160480",
+   "title": "纸币的诞生",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164745/ctk213766"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213767",
+   "parent_id": "160480",
+   "title": "白银货币化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164745/ctk213767"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213768",
+   "parent_id": "160480",
+   "title": "近代银元与法币的出现与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164745/ctk213768"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213769",
+   "parent_id": "160480",
+   "title": "人民币的诞生与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164745/ctk213769"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160481",
+   "parent_id": "160479",
+   "title": "世界货币体系的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164745/ctk160481"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164746",
+   "parent_id": "164744",
+   "title": "第16课 中国赋税制度的演变",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164746"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213770",
+   "parent_id": "160483",
+   "title": "秦汉时期的赋役制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164746/ctk213770"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213771",
+   "parent_id": "160483",
+   "title": "隋唐时期的赋役制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164746/ctk213771"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213772",
+   "parent_id": "160483",
+   "title": "宋元时期的赋役制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164746/ctk213772"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213773",
+   "parent_id": "160483",
+   "title": "明清时期的赋役制度",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164746/ctk213773"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213774",
+   "parent_id": "160484",
+   "title": "近代关税制度的起源与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164746/ctk213774"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213775",
+   "parent_id": "160484",
+   "title": "现代关税制度的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164746/ctk213775"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213776",
+   "parent_id": "160484",
+   "title": "个人所得税的起源与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164746/ctk213776"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164740",
+   "parent_id": "164717",
+   "title": "第六单元 基层治理与社会保障",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164740"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164741",
+   "parent_id": "164740",
+   "title": "第17课 中国古代的户籍制度与社会治理",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164741"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213777",
+   "parent_id": "160473",
+   "title": "秦的什伍连坐制",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk213777"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213778",
+   "parent_id": "160473",
+   "title": "汉的编户齐民",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk213778"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213779",
+   "parent_id": "160473",
+   "title": "隋的大索貌阅",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk213779"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213780",
+   "parent_id": "160473",
+   "title": "户籍制度的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk213780"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160474",
+   "parent_id": "160380",
+   "title": "历代基层组织形态与基层社会治理",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk160474"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213781",
+   "parent_id": "160475",
+   "title": "历代社会救济政策",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk213781"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213782",
+   "parent_id": "160475",
+   "title": "中国古代政府的优抚政策",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk213782"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "213783",
+   "parent_id": "160475",
+   "title": "宋朝以来的民间救助",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164741/ctk213783"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "164742",
+   "parent_id": "164740",
+   "title": "第18课 世界主要国家的基层治理与社会保障",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164742"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160476",
+   "parent_id": "160381",
+   "title": "西方主要国家基层治理的历史与特点",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164742/ctk160476"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "160477",
+   "parent_id": "160381",
+   "title": "现代社会保障制度的建立与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164742/ctk160477"
+  },
+  {
+   "zj_code": "zj164717",
+   "id": "236096",
+   "parent_id": "164717",
+   "title": "后记",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236096"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164749",
+   "parent_id": "164718",
+   "title": "第一单元 食物生产与社会生活",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164749"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164750",
+   "parent_id": "164749",
+   "title": "第1课 从食物采集到食物生产",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164750"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213785",
+   "parent_id": "213784",
+   "title": "原始农耕出现前的人类生产与生活",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213785"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213786",
+   "parent_id": "213784",
+   "title": "原始农耕的出现",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213786"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213787",
+   "parent_id": "213784",
+   "title": "农业出现的意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213787"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213789",
+   "parent_id": "213788",
+   "title": "两河流域和尼罗河流域的农业",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213789"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213790",
+   "parent_id": "213788",
+   "title": "古代中国的农业发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213790"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213791",
+   "parent_id": "213788",
+   "title": "古希腊与古罗马的农业发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213791"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213792",
+   "parent_id": "213788",
+   "title": "美洲的农业发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213792"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213793",
+   "parent_id": "160384",
+   "title": "生产关系的变化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164750/ctk213793"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164751",
+   "parent_id": "164749",
+   "title": "第2课 新航路开辟后的食物物种交流",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164751"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213795",
+   "parent_id": "213794",
+   "title": "玉米、马铃薯在欧洲与亚洲的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164751/ctk213795"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213796",
+   "parent_id": "213794",
+   "title": "番茄的流动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164751/ctk213796"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213797",
+   "parent_id": "213794",
+   "title": "辣椒的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164751/ctk213797"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213799",
+   "parent_id": "213798",
+   "title": "欧亚作物在美洲的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164751/ctk213799"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213800",
+   "parent_id": "213798",
+   "title": "禽畜在美洲的繁衍生息",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164751/ctk213800"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213801",
+   "parent_id": "160385",
+   "title": "食物物种交流带来的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164751/ctk213801"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164752",
+   "parent_id": "164749",
+   "title": "第3课 现代食物的生产、 储备与食品安全",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164752"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213803",
+   "parent_id": "213802",
+   "title": "工业革命后现代农业的建立",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213803"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213804",
+   "parent_id": "213802",
+   "title": "21世纪农业自动化的转变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213804"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213805",
+   "parent_id": "213802",
+   "title": "现代科学技术在养殖业的推广",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213805"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213806",
+   "parent_id": "213802",
+   "title": "粮食作物的杂交技术",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213806"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213807",
+   "parent_id": "160386",
+   "title": "食物储备技术的进步",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213807"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213809",
+   "parent_id": "213808",
+   "title": "世界范围内的消除饥饿",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213809"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213810",
+   "parent_id": "213808",
+   "title": "中国为消除饥饿做出的努力",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213810"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213811",
+   "parent_id": "213808",
+   "title": "食品安全的重视",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164752/ctk213811"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164754",
+   "parent_id": "164718",
+   "title": "第二单元 生产工具与劳作方式",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164754"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164755",
+   "parent_id": "164754",
+   "title": "第4课 古代的生产工具与劳作",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164755"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213814",
+   "parent_id": "213813",
+   "title": "石制农具与青铜农具",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213814"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213815",
+   "parent_id": "213813",
+   "title": "铁制农具的推广",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213815"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213816",
+   "parent_id": "213812",
+   "title": "灌溉工具的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213816"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213817",
+   "parent_id": "213812",
+   "title": "畜牧业工具的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213817"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213819",
+   "parent_id": "213818",
+   "title": "纺织工具的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213819"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213820",
+   "parent_id": "213818",
+   "title": "陶瓷业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213820"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213821",
+   "parent_id": "213818",
+   "title": "冶炼技术的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213821"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213823",
+   "parent_id": "213822",
+   "title": "从集体劳作到家庭式劳作",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213823"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213824",
+   "parent_id": "213822",
+   "title": "农业庄园式劳作",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213824"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213825",
+   "parent_id": "213822",
+   "title": "手工业家庭",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164755/ctk213825"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164756",
+   "parent_id": "164754",
+   "title": "第5课 工业革命与工厂制度",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164756"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213827",
+   "parent_id": "213826",
+   "title": "工厂制度的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213827"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213828",
+   "parent_id": "213826",
+   "title": "中国工厂制度的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213828"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213830",
+   "parent_id": "213829",
+   "title": "城市化的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213830"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213831",
+   "parent_id": "213829",
+   "title": "交通运输业的进步",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213831"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213832",
+   "parent_id": "213829",
+   "title": "乡村的变化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213832"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213833",
+   "parent_id": "213829",
+   "title": "时间观念的提升",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213833"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213834",
+   "parent_id": "213829",
+   "title": "教育的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213834"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213835",
+   "parent_id": "213829",
+   "title": "工业革命在生活方式上的消极影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164756/ctk213835"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164757",
+   "parent_id": "164754",
+   "title": "第6课 现代科技进步与人类社会发展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164757"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213837",
+   "parent_id": "213836",
+   "title": "计算机技术的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164757/ctk213837"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213838",
+   "parent_id": "213836",
+   "title": "人工智能技术的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164757/ctk213838"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213839",
+   "parent_id": "213836",
+   "title": "航天技术的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164757/ctk213839"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213840",
+   "parent_id": "213836",
+   "title": "海洋技术的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164757/ctk213840"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213841",
+   "parent_id": "213836",
+   "title": "新材料技术的应用 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164757/ctk213841"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213842",
+   "parent_id": "160390",
+   "title": "现代科技进步的革命性意义",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164757/ctk213842"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164759",
+   "parent_id": "164718",
+   "title": "第三单元  商业贸易与日常生活",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164759"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164760",
+   "parent_id": "164759",
+   "title": "第7课 古代的商业贸易",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164760"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213845",
+   "parent_id": "213844",
+   "title": "市的出现",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164760/ctk213845"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213846",
+   "parent_id": "213844",
+   "title": "坊市制度的瓦解",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164760/ctk213846"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213847",
+   "parent_id": "213844",
+   "title": "商帮兴盛",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164760/ctk213847"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213848",
+   "parent_id": "213843",
+   "title": "古代世界的商业贸易发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164760/ctk213848"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213849",
+   "parent_id": "213843",
+   "title": "丝绸之路的开辟与中国古代对外的商业贸易发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164760/ctk213849"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213850",
+   "parent_id": "213843",
+   "title": "商品贸易的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164760/ctk213850"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213851",
+   "parent_id": "160392",
+   "title": "货币、信贷、商业契约",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164760/ctk213851"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164761",
+   "parent_id": "164759",
+   "title": "第8课 世界市场与商业贸易",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164761"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213852",
+   "parent_id": "160393",
+   "title": "世界市场的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164761/ctk213852"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213854",
+   "parent_id": "213853",
+   "title": "新航路开辟后世界贸易中心的转移",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164761/ctk213854"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213855",
+   "parent_id": "213853",
+   "title": "商业经营方式的变化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164761/ctk213855"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213856",
+   "parent_id": "213853",
+   "title": "近代中国的商业发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164761/ctk213856"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164762",
+   "parent_id": "164759",
+   "title": "第9课 20世纪以来人类的经济与生活",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164762"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213858",
+   "parent_id": "213857",
+   "title": "资本主义发展不平衡与第一次世界大战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213858"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213859",
+   "parent_id": "213857",
+   "title": "资本主义世界大危机与第二次世界大战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213859"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213860",
+   "parent_id": "213857",
+   "title": "全球化发展下的经济危机",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213860"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213861",
+   "parent_id": "213857",
+   "title": "社会主义经济发展的问题与挑战",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213861"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213862",
+   "parent_id": "213857",
+   "title": "中华人民共和国经济的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213862"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213863",
+   "parent_id": "213857",
+   "title": "二战后新兴国家与发展中国家的经济发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213863"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213864",
+   "parent_id": "213857",
+   "title": "经济全球化的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213864"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213865",
+   "parent_id": "160394",
+   "title": "国际贸易与人类生活",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213865"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213866",
+   "parent_id": "160394",
+   "title": "国际金融与人类生活",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164762/ctk213866"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164764",
+   "parent_id": "164718",
+   "title": "第四单元 村落、城镇与居住环境",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164764"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164765",
+   "parent_id": "164764",
+   "title": "第10课 古代的村落、集镇和城市",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164765"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213867",
+   "parent_id": "160396",
+   "title": "村落的出现",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213867"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213868",
+   "parent_id": "160396",
+   "title": "集镇的出现",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213868"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213870",
+   "parent_id": "213869",
+   "title": "两河流域城市的出现",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213870"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213871",
+   "parent_id": "213869",
+   "title": "中国古代城市的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213871"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213872",
+   "parent_id": "213869",
+   "title": "西方古代城市的典型",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213872"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213874",
+   "parent_id": "213873",
+   "title": "两河流域的民居",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213874"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213875",
+   "parent_id": "213873",
+   "title": "古埃及的民居",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213875"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213876",
+   "parent_id": "213873",
+   "title": "中国的民居发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213876"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213877",
+   "parent_id": "213873",
+   "title": "古希腊罗马的民居与建筑",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213877"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213878",
+   "parent_id": "213873",
+   "title": "美洲的民居",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164765/ctk213878"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164766",
+   "parent_id": "164764",
+   "title": "第11课 近代以来的城市化进程",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164766"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213880",
+   "parent_id": "213879",
+   "title": "工业革命后的城市化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164766/ctk213880"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213881",
+   "parent_id": "213879",
+   "title": "中国近现代的城市化发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164766/ctk213881"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213882",
+   "parent_id": "160397",
+   "title": "居住条件的改善",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164766/ctk213882"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213883",
+   "parent_id": "160397",
+   "title": "基础设施的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164766/ctk213883"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213884",
+   "parent_id": "160397",
+   "title": "城市化进程中的问题",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164766/ctk213884"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164768",
+   "parent_id": "164718",
+   "title": "第五单元 交通与社会变迁",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164768"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164769",
+   "parent_id": "164768",
+   "title": "第12课 水陆交通的变迁",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164769"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213886",
+   "parent_id": "213885",
+   "title": "古代陆路交通的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213886"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213887",
+   "parent_id": "213885",
+   "title": "古代水路交通的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213887"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213890",
+   "parent_id": "213889",
+   "title": "中国海上丝绸之路的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213890"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213891",
+   "parent_id": "213889",
+   "title": "世界早期对海洋的探索",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213891"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213895",
+   "parent_id": "213894",
+   "title": "世界铁路的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213895"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213896",
+   "parent_id": "213894",
+   "title": "中国近代铁路事业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213896"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213897",
+   "parent_id": "213893",
+   "title": "轮船的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213897"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213898",
+   "parent_id": "213893",
+   "title": "自行车与汽车的诞生",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213898"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213899",
+   "parent_id": "160399",
+   "title": "交通与社会变迁",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164769/ctk213899"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164770",
+   "parent_id": "164768",
+   "title": "第13课  现代交通运输的新变化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164770"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213902",
+   "parent_id": "213901",
+   "title": "世界汽车产业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213902"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213903",
+   "parent_id": "213901",
+   "title": "中国汽车工业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213903"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213904",
+   "parent_id": "213900",
+   "title": "高速公路的出现与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213904"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213905",
+   "parent_id": "213900",
+   "title": "高速铁路的出现与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213905"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213906",
+   "parent_id": "213900",
+   "title": "航运技术的进一步发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213906"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213908",
+   "parent_id": "213907",
+   "title": "世界航空事业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213908"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213909",
+   "parent_id": "213907",
+   "title": "中国航空事业的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213909"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213910",
+   "parent_id": "160400",
+   "title": "现代交通与社会生活",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164770/ctk213910"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164772",
+   "parent_id": "164718",
+   "title": "第六单元 医疗与公共卫生",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164772"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164773",
+   "parent_id": "164772",
+   "title": "第14课 历史上的疫病与医学成就",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164773"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213913",
+   "parent_id": "213912",
+   "title": "天花",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213913"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213914",
+   "parent_id": "213912",
+   "title": "鼠疫",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213914"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213915",
+   "parent_id": "213912",
+   "title": "疫病的危害与影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213915"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213917",
+   "parent_id": "213916",
+   "title": "古代疫病的防治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213917"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213918",
+   "parent_id": "213916",
+   "title": "古代疫病的救治",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213918"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213919",
+   "parent_id": "213916",
+   "title": "近代医学的进步",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213919"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213922",
+   "parent_id": "213921",
+   "title": "扁鹊与四诊法",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213922"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213923",
+   "parent_id": "213921",
+   "title": "《黄帝内经》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213923"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213924",
+   "parent_id": "213921",
+   "title": "华佗与“麻沸散”“五禽戏”",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213924"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213925",
+   "parent_id": "213921",
+   "title": "张仲景与《伤寒杂病论》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213925"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213926",
+   "parent_id": "213921",
+   "title": "孙思邈与《千金方》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213926"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213927",
+   "parent_id": "213921",
+   "title": "针灸",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213927"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213928",
+   "parent_id": "213921",
+   "title": "《唐本草》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213928"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213929",
+   "parent_id": "213921",
+   "title": "李时珍与《本草纲目》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213929"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213931",
+   "parent_id": "213930",
+   "title": "中医药治疗水平的进步",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213931"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213932",
+   "parent_id": "213930",
+   "title": "屠呦呦与青蒿素",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213932"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213933",
+   "parent_id": "160402",
+   "title": "西医在中国的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164773/ctk213933"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "164774",
+   "parent_id": "164772",
+   "title": "第15课 现代医疗卫生体系与社会生活",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164774"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213935",
+   "parent_id": "213934",
+   "title": "西方现代医疗卫生体系的建立与完善",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164774/ctk213935"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213936",
+   "parent_id": "213934",
+   "title": "中国现代医疗卫生体系的建立与完善",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164774/ctk213936"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "213937",
+   "parent_id": "160403",
+   "title": "医疗卫生事业的发展与社会生活",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164774/ctk213937"
+  },
+  {
+   "zj_code": "zj164718",
+   "id": "236097",
+   "parent_id": "164718",
+   "title": "后记",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236097"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164777",
+   "parent_id": "164719",
+   "title": "第一单元 源远流长的中华文化",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164777"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164778",
+   "parent_id": "164777",
+   "title": "第1课 中华优秀传统文化的内涵与特点",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164778"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213939",
+   "parent_id": "213938",
+   "title": "中华文明多元起源",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213939"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213940",
+   "parent_id": "213938",
+   "title": "先秦——中华文化的奠基时代",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213940"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213941",
+   "parent_id": "213938",
+   "title": "从秦汉至宋元——儒学的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213941"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213942",
+   "parent_id": "213938",
+   "title": "明清——中华文化发展的突破与遭受的禁锢",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213942"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213943",
+   "parent_id": "213938",
+   "title": "近代中华文化的新发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213943"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213945",
+   "parent_id": "213944",
+   "title": "以人为本",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213945"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213946",
+   "parent_id": "213944",
+   "title": "天人合一，道法自然",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213946"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213947",
+   "parent_id": "213944",
+   "title": "家国情怀",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213947"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213948",
+   "parent_id": "213944",
+   "title": "崇德尚贤，天下为公",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213948"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213949",
+   "parent_id": "213944",
+   "title": "自强不息，厚德载物",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213949"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213950",
+   "parent_id": "213944",
+   "title": "和而不同",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213950"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213951",
+   "parent_id": "160406",
+   "title": "中华优秀传统文化的特点和价值",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164778/ctk213951"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164779",
+   "parent_id": "164777",
+   "title": "第2课 中华文化的世界意义",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164779"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213953",
+   "parent_id": "213952",
+   "title": "佛教文化的传播与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213953"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213954",
+   "parent_id": "213952",
+   "title": "西学东渐",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213954"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213955",
+   "parent_id": "213952",
+   "title": "近代西学的传播与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213955"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213956",
+   "parent_id": "213952",
+   "title": "新文化运动与马克思主义在中国的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213956"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213958",
+   "parent_id": "213957",
+   "title": "汉字与儒学、佛教的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213958"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213959",
+   "parent_id": "213957",
+   "title": "古代制度与社会生活的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213959"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213960",
+   "parent_id": "213957",
+   "title": "中国科技在世界的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213960"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213961",
+   "parent_id": "213957",
+   "title": "郑和下西洋与中华文化传播范围的扩大",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213961"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213962",
+   "parent_id": "213957",
+   "title": "中华文化在欧洲的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164779/ctk213962"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164781",
+   "parent_id": "164719",
+   "title": "第二单元 丰富多样的世界文化",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164781"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164782",
+   "parent_id": "164781",
+   "title": "第3课 古代西亚、 非洲文化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164782"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213964",
+   "parent_id": "213963",
+   "title": "古代西亚的文字",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213964"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213965",
+   "parent_id": "213963",
+   "title": "古代西亚的文学作品",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213965"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213966",
+   "parent_id": "213963",
+   "title": "古代西亚的建筑和艺术成就",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213966"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213967",
+   "parent_id": "213963",
+   "title": "《汉谟拉比法典》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213967"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213969",
+   "parent_id": "213968",
+   "title": "象形文字",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213969"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213970",
+   "parent_id": "213968",
+   "title": "古代埃及的文字",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213970"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213971",
+   "parent_id": "213968",
+   "title": "古代埃及的建筑艺术",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213971"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213972",
+   "parent_id": "213968",
+   "title": "古代埃及的科技",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213972"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213974",
+   "parent_id": "213973",
+   "title": "阿拉伯艺术",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213974"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213975",
+   "parent_id": "213973",
+   "title": "阿拉伯的科学发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213975"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213976",
+   "parent_id": "213973",
+   "title": "东西文化交流的桥梁",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164782/ctk213976"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164783",
+   "parent_id": "164781",
+   "title": "第4课 欧洲文化的形成",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164783"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213978",
+   "parent_id": "213977",
+   "title": "古希腊哲学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164783/ctk213978"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213979",
+   "parent_id": "213977",
+   "title": "古希腊文学、雕塑与建筑",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164783/ctk213979"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213980",
+   "parent_id": "213977",
+   "title": "古罗马文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164783/ctk213980"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213982",
+   "parent_id": "213981",
+   "title": "基督教的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164783/ctk213982"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213983",
+   "parent_id": "213981",
+   "title": "骑士文学和市民文学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164783/ctk213983"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213985",
+   "parent_id": "213984",
+   "title": "拜占庭文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164783/ctk213985"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213986",
+   "parent_id": "213984",
+   "title": "俄罗斯文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164783/ctk213986"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164784",
+   "parent_id": "164781",
+   "title": "第5课 南亚、 东亚与美洲的文化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164784"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213988",
+   "parent_id": "213987",
+   "title": "佛教与印度教",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164784/ctk213988"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213989",
+   "parent_id": "213987",
+   "title": "古印度文学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164784/ctk213989"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213990",
+   "parent_id": "213987",
+   "title": "古印度的艺术",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164784/ctk213990"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213991",
+   "parent_id": "213987",
+   "title": "古印度文化的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164784/ctk213991"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213993",
+   "parent_id": "213992",
+   "title": "古代朝鲜文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164784/ctk213993"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213994",
+   "parent_id": "213992",
+   "title": "古代日本文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164784/ctk213994"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213995",
+   "parent_id": "160411",
+   "title": "美洲印第安文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164784/ctk213995"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164786",
+   "parent_id": "164719",
+   "title": "第三单元 人口迁徙、文化交融与认同",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164786"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164787",
+   "parent_id": "164786",
+   "title": "第6课 古代人类的迁徙和区域文化的形成",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164787"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213996",
+   "parent_id": "160413",
+   "title": "印欧人的迁徙及其对早期区域文化的影响 ",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164787/ctk213996"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213997",
+   "parent_id": "160413",
+   "title": "亚欧游牧民族大迁徙对区域文化发展的影响",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164787/ctk213997"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164788",
+   "parent_id": "164786",
+   "title": "第7课 近代殖民活动和人口的跨地域转移",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164788"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213998",
+   "parent_id": "160414",
+   "title": "殖民扩张与美洲族群的变化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164788/ctk213998"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "213999",
+   "parent_id": "160414",
+   "title": "英国的殖民活动与大洋洲人口结构的改变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164788/ctk213999"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214000",
+   "parent_id": "160414",
+   "title": "华工与美洲、大洋洲的开发",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164788/ctk214000"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164789",
+   "parent_id": "164786",
+   "title": "第8课 现代社会的移民和多元文化",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164789"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214001",
+   "parent_id": "160415",
+   "title": "经济全球化和劳动力的全球流动",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164789/ctk214001"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214002",
+   "parent_id": "160415",
+   "title": "难民的困境和救助",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164789/ctk214002"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214004",
+   "parent_id": "214003",
+   "title": "美国的移民文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164789/ctk214004"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214005",
+   "parent_id": "214003",
+   "title": "新加坡的移民文化",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164789/ctk214005"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164791",
+   "parent_id": "164719",
+   "title": "第四单元 商路、贸易与文化交流",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164791"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164792",
+   "parent_id": "164791",
+   "title": "第9课 古代的商路、 贸易与文化交流",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164792"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214006",
+   "parent_id": "160417",
+   "title": "丝绸之路",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164792/ctk214006"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214007",
+   "parent_id": "160417",
+   "title": "欧亚大陆其他重要商路",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164792/ctk214007"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214008",
+   "parent_id": "160417",
+   "title": "古代商路上的中西文化交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164792/ctk214008"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164793",
+   "parent_id": "164791",
+   "title": "第10课 近代以来的世界贸易与文化交流的扩展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164793"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214010",
+   "parent_id": "214009",
+   "title": "欧洲为中心的世界市场的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164793/ctk214010"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214011",
+   "parent_id": "214009",
+   "title": "工业革命后世界贸易的增长",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164793/ctk214011"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214012",
+   "parent_id": "214009",
+   "title": "两次大战后世界贸易的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164793/ctk214012"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214014",
+   "parent_id": "214013",
+   "title": "饮食文化的交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164793/ctk214014"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214015",
+   "parent_id": "214013",
+   "title": "服饰的交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164793/ctk214015"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214016",
+   "parent_id": "214013",
+   "title": "钟表的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164793/ctk214016"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214017",
+   "parent_id": "214013",
+   "title": "现代文化产品的贸易与交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164793/ctk214017"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164795",
+   "parent_id": "164719",
+   "title": "第五单元 战争与文化交锋",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164795"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164796",
+   "parent_id": "164795",
+   "title": "第11课 古代战争与地域文化的演变",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164796"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214019",
+   "parent_id": "214018",
+   "title": "亚历山大远征",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164796/ctk214019"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214020",
+   "parent_id": "214018",
+   "title": "希腊化时代",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164796/ctk214020"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214022",
+   "parent_id": "214021",
+   "title": "蒙古西征",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164796/ctk214022"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214023",
+   "parent_id": "214021",
+   "title": "东西方文化交流",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164796/ctk214023"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214024",
+   "parent_id": "214021",
+   "title": "大规模的民族迁徙",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164796/ctk214024"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164797",
+   "parent_id": "164795",
+   "title": "第12课 近代战争与西方文化的扩张",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164797"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214026",
+   "parent_id": "214025",
+   "title": "独立战争前的种族歧视与文化交融",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214026"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214027",
+   "parent_id": "214025",
+   "title": "独立战争后美利坚文化的形成",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214027"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214028",
+   "parent_id": "214025",
+   "title": "拉丁美洲的文化演变",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214028"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214030",
+   "parent_id": "214029",
+   "title": "欧洲政治文化的重构",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214030"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214031",
+   "parent_id": "214029",
+   "title": "俄国革命思想的传播",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214031"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214032",
+   "parent_id": "214029",
+   "title": "波兰的民族独立斗争",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214032"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214033",
+   "parent_id": "214029",
+   "title": "德意志统一思想的诞生",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214033"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214034",
+   "parent_id": "160421",
+   "title": "欧洲殖民者的文化侵略",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164797/ctk214034"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164798",
+   "parent_id": "164795",
+   "title": "第13课 现代战争与不同文化的碰撞和交流",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164798"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214035",
+   "parent_id": "160422",
+   "title": "第一次世界大战与民族民主意识的觉醒",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164798/ctk214035"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214036",
+   "parent_id": "160422",
+   "title": "第二次世界大战与世界殖民体系的瓦解",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164798/ctk214036"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214037",
+   "parent_id": "160422",
+   "title": "第二次世界大战后新兴民族国家的文化发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164798/ctk214037"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164800",
+   "parent_id": "164719",
+   "title": "第六单元 文化的传承与保护",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj164800"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164801",
+   "parent_id": "164800",
+   "title": "第14课 文化传承的多种载体及其发展",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164801"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214039",
+   "parent_id": "214038",
+   "title": "中国古代的官学",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214039"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214040",
+   "parent_id": "214038",
+   "title": "私学的产生与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214040"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214041",
+   "parent_id": "214038",
+   "title": "欧洲的学校发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214041"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214042",
+   "parent_id": "214038",
+   "title": "中国近代学校与近代教育的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214042"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214043",
+   "parent_id": "214038",
+   "title": "新中国成立后国民教育体系的发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214043"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214044",
+   "parent_id": "214038",
+   "title": "改革开放后中国教育的新征程",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214044"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214046",
+   "parent_id": "214045",
+   "title": "早期书籍的雏形",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214046"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214047",
+   "parent_id": "214045",
+   "title": "书籍的普及与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214047"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214048",
+   "parent_id": "160424",
+   "title": "图书馆的成长",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214048"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214049",
+   "parent_id": "160424",
+   "title": "博物馆的建设与发展",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164801/ctk214049"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "164802",
+   "parent_id": "164800",
+   "title": "第15课 文化遗产:全人类共同的财富",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzls/zj164802"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214050",
+   "parent_id": "160425",
+   "title": "文化遗产的保护与利用",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164802/ctk214050"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214051",
+   "parent_id": "160425",
+   "title": "《世界遗产公约》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164802/ctk214051"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "214052",
+   "parent_id": "160425",
+   "title": "各国的历史遗迹与文化遗产",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzls/zj164802/ctk214052"
+  },
+  {
+   "zj_code": "zj164719",
+   "id": "236098",
+   "parent_id": "164719",
+   "title": "后记",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzls/zj236098"
+  }
+ ]
+}

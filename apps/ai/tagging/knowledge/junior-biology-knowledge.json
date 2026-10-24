@@ -1,0 +1,4394 @@
+{
+ "stage": "junior",
+ "subject": "biology",
+ "subject_cn": "初中生物",
+ "bank_id": 6,
+ "root_id": "19922",
+ "root_title": "初中生物综合库",
+ "node_count": 487,
+ "nodes": [
+  {
+   "id": "19923",
+   "parent_id": "19922",
+   "title": "走进生命世界",
+   "level": 1,
+   "href": "/czsw/zsd19923",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19934",
+   "parent_id": "19923",
+   "title": "生物与生物学",
+   "level": 2,
+   "href": "/czsw/zsd19934",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19936",
+   "parent_id": "19934",
+   "title": "生物的特征",
+   "level": 3,
+   "href": "/czsw/zsd19936",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19937",
+   "parent_id": "19934",
+   "title": "生物学研究的主要内容及意义",
+   "level": 3,
+   "href": "/czsw/zsd19937",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19935",
+   "parent_id": "19923",
+   "title": "生物学的基本研究方法",
+   "level": 2,
+   "href": "/czsw/zsd19935",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19938",
+   "parent_id": "19935",
+   "title": "科学研究的基本方法",
+   "level": 3,
+   "href": "/czsw/zsd19938",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19939",
+   "parent_id": "19935",
+   "title": "科学探究的基本过程",
+   "level": 3,
+   "href": "/czsw/zsd19939",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19924",
+   "parent_id": "19922",
+   "title": "生物和生物圈",
+   "level": 1,
+   "href": "/czsw/zsd19924",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19940",
+   "parent_id": "19924",
+   "title": "调查周边环境中的生物",
+   "level": 2,
+   "href": "/czsw/zsd19940",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19942",
+   "parent_id": "19940",
+   "title": "调查的基本方法",
+   "level": 3,
+   "href": "/czsw/zsd19942",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19943",
+   "parent_id": "19940",
+   "title": "生物的归类",
+   "level": 3,
+   "href": "/czsw/zsd19943",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "209240",
+   "parent_id": "19924",
+   "title": "观察周边环境中的生物",
+   "level": 2,
+   "href": "/czsw/zsd209240",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19941",
+   "parent_id": "19924",
+   "title": "了解生物圈",
+   "level": 2,
+   "href": "/czsw/zsd19941",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19944",
+   "parent_id": "19941",
+   "title": "生物生存的环境及其归类",
+   "level": 3,
+   "href": "/czsw/zsd19944",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19945",
+   "parent_id": "19941",
+   "title": "生物与环境的关系",
+   "level": 3,
+   "href": "/czsw/zsd19945",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19948",
+   "parent_id": "19945",
+   "title": "非生物因素对生物的影响",
+   "level": 4,
+   "href": "/czsw/zsd19948",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19949",
+   "parent_id": "19945",
+   "title": "探究光对鼠妇分布的影响",
+   "level": 4,
+   "href": "/czsw/zsd19949",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19950",
+   "parent_id": "19945",
+   "title": "生物因素对生物的影响",
+   "level": 4,
+   "href": "/czsw/zsd19950",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19951",
+   "parent_id": "19945",
+   "title": "生物与生物之间有密切的联系",
+   "level": 4,
+   "href": "/czsw/zsd19951",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19952",
+   "parent_id": "19945",
+   "title": "生物对环境的适应",
+   "level": 4,
+   "href": "/czsw/zsd19952",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19953",
+   "parent_id": "19945",
+   "title": "保护色、警戒色和拟态",
+   "level": 4,
+   "href": "/czsw/zsd19953",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19954",
+   "parent_id": "19945",
+   "title": "生物对环境的影响",
+   "level": 4,
+   "href": "/czsw/zsd19954",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19955",
+   "parent_id": "19945",
+   "title": "探究植物对空气湿度的影响",
+   "level": 4,
+   "href": "/czsw/zsd19955",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19946",
+   "parent_id": "19941",
+   "title": "生物与环境组成生态系统",
+   "level": 3,
+   "href": "/czsw/zsd19946",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19956",
+   "parent_id": "19946",
+   "title": "生态系统的概念",
+   "level": 4,
+   "href": "/czsw/zsd19956",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19957",
+   "parent_id": "19946",
+   "title": "生态系统的组成成分及各成分的功能",
+   "level": 4,
+   "href": "/czsw/zsd19957",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19958",
+   "parent_id": "19946",
+   "title": "食物链和食物网",
+   "level": 4,
+   "href": "/czsw/zsd19958",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19959",
+   "parent_id": "19946",
+   "title": "有毒物质通过食物链积累",
+   "level": 4,
+   "href": "/czsw/zsd19959",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19960",
+   "parent_id": "19946",
+   "title": "生态系统中能量流动的过程及特点",
+   "level": 4,
+   "href": "/czsw/zsd19960",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19961",
+   "parent_id": "19946",
+   "title": "生态系统中物质循环的含义及特点",
+   "level": 4,
+   "href": "/czsw/zsd19961",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19962",
+   "parent_id": "19946",
+   "title": "生态系统具有一定的自动调节能力",
+   "level": 4,
+   "href": "/czsw/zsd19962",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19963",
+   "parent_id": "19946",
+   "title": "建设生态家园",
+   "level": 4,
+   "href": "/czsw/zsd19963",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19947",
+   "parent_id": "19941",
+   "title": "生物圈是人类与其他生物的共同家园",
+   "level": 3,
+   "href": "/czsw/zsd19947",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19964",
+   "parent_id": "19947",
+   "title": "生物圈的范围",
+   "level": 4,
+   "href": "/czsw/zsd19964",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19965",
+   "parent_id": "19947",
+   "title": "生态系统的类型",
+   "level": 4,
+   "href": "/czsw/zsd19965",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19966",
+   "parent_id": "19947",
+   "title": "生物圈是一个统一的整体",
+   "level": 4,
+   "href": "/czsw/zsd19966",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19967",
+   "parent_id": "19947",
+   "title": "保护生态系统与人类对环境的影响",
+   "level": 4,
+   "href": "/czsw/zsd19967",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19925",
+   "parent_id": "19922",
+   "title": "生物体的结构层次",
+   "level": 1,
+   "href": "/czsw/zsd19925",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19968",
+   "parent_id": "19925",
+   "title": "细胞是生物体结构和功能的基本单位",
+   "level": 2,
+   "href": "/czsw/zsd19968",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19970",
+   "parent_id": "19968",
+   "title": "中学生物学实验的常用工具",
+   "level": 3,
+   "href": "/czsw/zsd19970",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19973",
+   "parent_id": "19970",
+   "title": "生物实验中常用工具及正确操作方法",
+   "level": 4,
+   "href": "/czsw/zsd19973",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19974",
+   "parent_id": "19970",
+   "title": "光学显微镜的结构和各部分的功能",
+   "level": 4,
+   "href": "/czsw/zsd19974",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19975",
+   "parent_id": "19970",
+   "title": "光学显微镜的使用步骤及注意事项",
+   "level": 4,
+   "href": "/czsw/zsd19975",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19976",
+   "parent_id": "19970",
+   "title": "学生使用显微镜常见问题及解决办法",
+   "level": 4,
+   "href": "/czsw/zsd19976",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19977",
+   "parent_id": "19970",
+   "title": "显微镜的镜头及其放大倍数",
+   "level": 4,
+   "href": "/czsw/zsd19977",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19978",
+   "parent_id": "19970",
+   "title": "显微镜的成像特点及应用",
+   "level": 4,
+   "href": "/czsw/zsd19978",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19971",
+   "parent_id": "19968",
+   "title": "动物细胞和植物细胞",
+   "level": 3,
+   "href": "/czsw/zsd19971",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19979",
+   "parent_id": "19971",
+   "title": "制作并观察植物细胞临时装片",
+   "level": 4,
+   "href": "/czsw/zsd19979",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19980",
+   "parent_id": "19971",
+   "title": "观察人的口腔上皮细胞",
+   "level": 4,
+   "href": "/czsw/zsd19980",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19981",
+   "parent_id": "19971",
+   "title": "生物图的画法及注意事项",
+   "level": 4,
+   "href": "/czsw/zsd19981",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19982",
+   "parent_id": "19971",
+   "title": "植物细胞的基本结构",
+   "level": 4,
+   "href": "/czsw/zsd19982",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19983",
+   "parent_id": "19971",
+   "title": "动物细胞的基本结构",
+   "level": 4,
+   "href": "/czsw/zsd19983",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19984",
+   "parent_id": "19971",
+   "title": "细胞壁及其功能",
+   "level": 4,
+   "href": "/czsw/zsd19984",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19985",
+   "parent_id": "19971",
+   "title": "细胞膜的功能",
+   "level": 4,
+   "href": "/czsw/zsd19985",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19986",
+   "parent_id": "19971",
+   "title": "细胞质的功能",
+   "level": 4,
+   "href": "/czsw/zsd19986",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "178818",
+   "parent_id": "19971",
+   "title": "液泡",
+   "level": 4,
+   "href": "/czsw/zsd178818",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19987",
+   "parent_id": "19971",
+   "title": "叶绿体和线粒体",
+   "level": 4,
+   "href": "/czsw/zsd19987",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19988",
+   "parent_id": "19971",
+   "title": "细胞核的功能",
+   "level": 4,
+   "href": "/czsw/zsd19988",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19989",
+   "parent_id": "19971",
+   "title": "动植物细胞的异同",
+   "level": 4,
+   "href": "/czsw/zsd19989",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19972",
+   "parent_id": "19968",
+   "title": "细胞的生活",
+   "level": 3,
+   "href": "/czsw/zsd19972",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19990",
+   "parent_id": "19972",
+   "title": "细胞生活需要的物质",
+   "level": 4,
+   "href": "/czsw/zsd19990",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19991",
+   "parent_id": "19972",
+   "title": "细胞生活需要的能量",
+   "level": 4,
+   "href": "/czsw/zsd19991",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19992",
+   "parent_id": "19972",
+   "title": "细胞膜能够控制物质的进出",
+   "level": 4,
+   "href": "/czsw/zsd19992",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19993",
+   "parent_id": "19972",
+   "title": "细胞核是控制中心",
+   "level": 4,
+   "href": "/czsw/zsd19993",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19969",
+   "parent_id": "19925",
+   "title": "细胞怎样构成生物体",
+   "level": 2,
+   "href": "/czsw/zsd19969",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19994",
+   "parent_id": "19969",
+   "title": "细胞通过分裂产生新细胞",
+   "level": 3,
+   "href": "/czsw/zsd19994",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19997",
+   "parent_id": "19994",
+   "title": "细胞的生长",
+   "level": 4,
+   "href": "/czsw/zsd19997",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19998",
+   "parent_id": "19994",
+   "title": "细胞的分裂",
+   "level": 4,
+   "href": "/czsw/zsd19998",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19995",
+   "parent_id": "19969",
+   "title": "多细胞生物体的结构层次",
+   "level": 3,
+   "href": "/czsw/zsd19995",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19999",
+   "parent_id": "19995",
+   "title": "细胞分化",
+   "level": 4,
+   "href": "/czsw/zsd19999",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20000",
+   "parent_id": "19995",
+   "title": "人体基本组织的类型",
+   "level": 4,
+   "href": "/czsw/zsd20000",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20001",
+   "parent_id": "19995",
+   "title": "动物器官的形成",
+   "level": 4,
+   "href": "/czsw/zsd20001",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20002",
+   "parent_id": "19995",
+   "title": "动物系统的形成",
+   "level": 4,
+   "href": "/czsw/zsd20002",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20003",
+   "parent_id": "19995",
+   "title": "人和高等动物的结构层次",
+   "level": 4,
+   "href": "/czsw/zsd20003",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20004",
+   "parent_id": "19995",
+   "title": "植物基本组织的类型及功能",
+   "level": 4,
+   "href": "/czsw/zsd20004",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20005",
+   "parent_id": "19995",
+   "title": "绿色开花植物的六大器官",
+   "level": 4,
+   "href": "/czsw/zsd20005",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20006",
+   "parent_id": "19995",
+   "title": "植物体的结构层次",
+   "level": 4,
+   "href": "/czsw/zsd20006",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20007",
+   "parent_id": "19995",
+   "title": "动植物体结构层次的异同",
+   "level": 4,
+   "href": "/czsw/zsd20007",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19996",
+   "parent_id": "19969",
+   "title": "单个细胞构成生物体",
+   "level": 3,
+   "href": "/czsw/zsd19996",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20008",
+   "parent_id": "19996",
+   "title": "单细胞生物的结构和生活",
+   "level": 4,
+   "href": "/czsw/zsd20008",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20009",
+   "parent_id": "19996",
+   "title": "观察草履虫并探究其趋性",
+   "level": 4,
+   "href": "/czsw/zsd20009",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20010",
+   "parent_id": "19996",
+   "title": "单细胞生物的常见种类及与人类的关系",
+   "level": 4,
+   "href": "/czsw/zsd20010",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "209241",
+   "parent_id": "19969",
+   "title": "制作细胞模型",
+   "level": 3,
+   "href": "/czsw/zsd209241",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19926",
+   "parent_id": "19922",
+   "title": "生物圈中的绿色植物",
+   "level": 1,
+   "href": "/czsw/zsd19926",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20011",
+   "parent_id": "19926",
+   "title": "生物圈中有哪些绿色植物",
+   "level": 2,
+   "href": "/czsw/zsd20011",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20018",
+   "parent_id": "20011",
+   "title": "藻类、苔藓、蕨类植物",
+   "level": 3,
+   "href": "/czsw/zsd20018",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20020",
+   "parent_id": "20018",
+   "title": "藻类",
+   "level": 4,
+   "href": "/czsw/zsd20020",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20021",
+   "parent_id": "20018",
+   "title": "苔藓植物",
+   "level": 4,
+   "href": "/czsw/zsd20021",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20022",
+   "parent_id": "20018",
+   "title": "蕨类植物",
+   "level": 4,
+   "href": "/czsw/zsd20022",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20019",
+   "parent_id": "20011",
+   "title": "种子植物",
+   "level": 3,
+   "href": "/czsw/zsd20019",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20023",
+   "parent_id": "20019",
+   "title": "裸子植物",
+   "level": 4,
+   "href": "/czsw/zsd20023",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20024",
+   "parent_id": "20019",
+   "title": "被子植物",
+   "level": 4,
+   "href": "/czsw/zsd20024",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20025",
+   "parent_id": "20019",
+   "title": "被子植物和裸子植物的比较",
+   "level": 4,
+   "href": "/czsw/zsd20025",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20012",
+   "parent_id": "19926",
+   "title": "绿色开花植物的一生",
+   "level": 2,
+   "href": "/czsw/zsd20012",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20026",
+   "parent_id": "20012",
+   "title": "种子的萌发",
+   "level": 3,
+   "href": "/czsw/zsd20026",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20029",
+   "parent_id": "20026",
+   "title": "种子的结构及各部分的功能",
+   "level": 4,
+   "href": "/czsw/zsd20029",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20030",
+   "parent_id": "20026",
+   "title": "双子叶植物与单子叶植物",
+   "level": 4,
+   "href": "/czsw/zsd20030",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20031",
+   "parent_id": "20026",
+   "title": "种子萌发的环境条件及探究实验",
+   "level": 4,
+   "href": "/czsw/zsd20031",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20032",
+   "parent_id": "20026",
+   "title": "种子萌发的自身条件与休眠",
+   "level": 4,
+   "href": "/czsw/zsd20032",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20033",
+   "parent_id": "20026",
+   "title": "种子萌发的过程",
+   "level": 4,
+   "href": "/czsw/zsd20033",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20034",
+   "parent_id": "20026",
+   "title": "测定种子的发芽率",
+   "level": 4,
+   "href": "/czsw/zsd20034",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20027",
+   "parent_id": "20012",
+   "title": "植株的生长",
+   "level": 3,
+   "href": "/czsw/zsd20027",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20035",
+   "parent_id": "20027",
+   "title": "根的类型",
+   "level": 4,
+   "href": "/czsw/zsd20035",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20036",
+   "parent_id": "20027",
+   "title": "根尖的结构",
+   "level": 4,
+   "href": "/czsw/zsd20036",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20037",
+   "parent_id": "20027",
+   "title": "幼根的生长",
+   "level": 4,
+   "href": "/czsw/zsd20037",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "178819",
+   "parent_id": "20027",
+   "title": "芽的分类",
+   "level": 4,
+   "href": "/czsw/zsd178819",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20038",
+   "parent_id": "20027",
+   "title": "芽发育成枝条",
+   "level": 4,
+   "href": "/czsw/zsd20038",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20039",
+   "parent_id": "20027",
+   "title": "叶芽的结构",
+   "level": 4,
+   "href": "/czsw/zsd20039",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20040",
+   "parent_id": "20027",
+   "title": "茎的结构与生长",
+   "level": 4,
+   "href": "/czsw/zsd20040",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20041",
+   "parent_id": "20027",
+   "title": "叶的组成和分类",
+   "level": 4,
+   "href": "/czsw/zsd20041",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "178820",
+   "parent_id": "20027",
+   "title": "制作叶片临时装片",
+   "level": 4,
+   "href": "/czsw/zsd178820",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20042",
+   "parent_id": "20027",
+   "title": "叶片的结构和功能",
+   "level": 4,
+   "href": "/czsw/zsd20042",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20043",
+   "parent_id": "20027",
+   "title": "气孔",
+   "level": 4,
+   "href": "/czsw/zsd20043",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20028",
+   "parent_id": "20012",
+   "title": "开花和结果",
+   "level": 3,
+   "href": "/czsw/zsd20028",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20044",
+   "parent_id": "20028",
+   "title": "花的类型、结构及各部分的功能",
+   "level": 4,
+   "href": "/czsw/zsd20044",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20045",
+   "parent_id": "20028",
+   "title": "传粉及其方式",
+   "level": 4,
+   "href": "/czsw/zsd20045",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20046",
+   "parent_id": "20028",
+   "title": "（双）受精及其过程",
+   "level": 4,
+   "href": "/czsw/zsd20046",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20047",
+   "parent_id": "20028",
+   "title": "果实和种子的形成",
+   "level": 4,
+   "href": "/czsw/zsd20047",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20048",
+   "parent_id": "20028",
+   "title": "探究果实发育过程中体积的变化",
+   "level": 4,
+   "href": "/czsw/zsd20048",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20013",
+   "parent_id": "19926",
+   "title": "绿色植物的生活需要水和无机盐",
+   "level": 2,
+   "href": "/czsw/zsd20013",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20049",
+   "parent_id": "20013",
+   "title": "绿色植物的生活需要无机盐",
+   "level": 3,
+   "href": "/czsw/zsd20049",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20050",
+   "parent_id": "20013",
+   "title": "植物对水分的吸收和运输",
+   "level": 3,
+   "href": "/czsw/zsd20050",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20052",
+   "parent_id": "20050",
+   "title": "植物对水分的吸收",
+   "level": 4,
+   "href": "/czsw/zsd20052",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20053",
+   "parent_id": "20050",
+   "title": "植物细胞的吸水和失水",
+   "level": 4,
+   "href": "/czsw/zsd20053",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20054",
+   "parent_id": "20050",
+   "title": "合理施肥及合理灌溉",
+   "level": 4,
+   "href": "/czsw/zsd20054",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20055",
+   "parent_id": "20050",
+   "title": "导管的特点及功能",
+   "level": 4,
+   "href": "/czsw/zsd20055",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20056",
+   "parent_id": "20050",
+   "title": "植物对水分和无机盐的运输",
+   "level": 4,
+   "href": "/czsw/zsd20056",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20051",
+   "parent_id": "20013",
+   "title": "植物的蒸腾作用",
+   "level": 3,
+   "href": "/czsw/zsd20051",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20057",
+   "parent_id": "20051",
+   "title": "蒸腾作用的过程及其对植物生活的意义",
+   "level": 4,
+   "href": "/czsw/zsd20057",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20058",
+   "parent_id": "20051",
+   "title": "测定植物的蒸腾作用",
+   "level": 4,
+   "href": "/czsw/zsd20058",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20059",
+   "parent_id": "20051",
+   "title": "蒸腾作用在农业生产中的应用",
+   "level": 4,
+   "href": "/czsw/zsd20059",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20014",
+   "parent_id": "19926",
+   "title": "绿色植物是生物圈中有机物的制造者",
+   "level": 2,
+   "href": "/czsw/zsd20014",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20060",
+   "parent_id": "20014",
+   "title": "绿叶在光下制造有机物的实验",
+   "level": 3,
+   "href": "/czsw/zsd20060",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20061",
+   "parent_id": "20014",
+   "title": "绿叶通过光合作用制造有机物",
+   "level": 3,
+   "href": "/czsw/zsd20061",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20015",
+   "parent_id": "19926",
+   "title": "绿色植物的光合作用和呼吸作用",
+   "level": 2,
+   "href": "/czsw/zsd20015",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20062",
+   "parent_id": "20015",
+   "title": "绿色植物的光合作用",
+   "level": 3,
+   "href": "/czsw/zsd20062",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20064",
+   "parent_id": "20062",
+   "title": "光合作用的概念及实质",
+   "level": 4,
+   "href": "/czsw/zsd20064",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20065",
+   "parent_id": "20062",
+   "title": "光合作用利用二氧化碳作为原料",
+   "level": 4,
+   "href": "/czsw/zsd20065",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20066",
+   "parent_id": "20062",
+   "title": "光合作用还能产生氧气",
+   "level": 4,
+   "href": "/czsw/zsd20066",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20067",
+   "parent_id": "20062",
+   "title": "筛管的特点和功能",
+   "level": 4,
+   "href": "/czsw/zsd20067",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20068",
+   "parent_id": "20062",
+   "title": "光合作用原理在农业生产中的应用",
+   "level": 4,
+   "href": "/czsw/zsd20068",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20063",
+   "parent_id": "20015",
+   "title": "绿色植物的呼吸作用",
+   "level": 3,
+   "href": "/czsw/zsd20063",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20069",
+   "parent_id": "20063",
+   "title": "呼吸作用的概念",
+   "level": 4,
+   "href": "/czsw/zsd20069",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20070",
+   "parent_id": "20063",
+   "title": "植物呼吸作用消耗氧气的探究",
+   "level": 4,
+   "href": "/czsw/zsd20070",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20071",
+   "parent_id": "20063",
+   "title": "植物呼吸作用产生二氧化碳的探究",
+   "level": 4,
+   "href": "/czsw/zsd20071",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20072",
+   "parent_id": "20063",
+   "title": "植物呼吸作用释放能量的探究",
+   "level": 4,
+   "href": "/czsw/zsd20072",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20073",
+   "parent_id": "20063",
+   "title": "生物体对呼吸作用释放能量的利用",
+   "level": 4,
+   "href": "/czsw/zsd20073",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20074",
+   "parent_id": "20063",
+   "title": "呼吸作用原理在生产、生活中的应用",
+   "level": 4,
+   "href": "/czsw/zsd20074",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20016",
+   "parent_id": "19926",
+   "title": "绿色植物在生物圈中的作用",
+   "level": 2,
+   "href": "/czsw/zsd20016",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20075",
+   "parent_id": "20016",
+   "title": "光合作用制造的有机物的用途",
+   "level": 3,
+   "href": "/czsw/zsd20075",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20076",
+   "parent_id": "20016",
+   "title": "绿色植物在维持生物圈的碳---氧平衡中的作用",
+   "level": 3,
+   "href": "/czsw/zsd20076",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20077",
+   "parent_id": "20016",
+   "title": "生物圈中的水循环",
+   "level": 3,
+   "href": "/czsw/zsd20077",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20078",
+   "parent_id": "20016",
+   "title": "绿色植物在生物圈中的其他作用",
+   "level": 3,
+   "href": "/czsw/zsd20078",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20017",
+   "parent_id": "19926",
+   "title": "我国的植被类型及现状",
+   "level": 2,
+   "href": "/czsw/zsd20017",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20079",
+   "parent_id": "20017",
+   "title": "我国主要的植被类型",
+   "level": 3,
+   "href": "/czsw/zsd20079",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20080",
+   "parent_id": "20017",
+   "title": "我国植被面临的主要问题",
+   "level": 3,
+   "href": "/czsw/zsd20080",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20081",
+   "parent_id": "20017",
+   "title": "保护植被，从我做起",
+   "level": 3,
+   "href": "/czsw/zsd20081",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19927",
+   "parent_id": "19922",
+   "title": "生物圈中的人",
+   "level": 1,
+   "href": "/czsw/zsd19927",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20082",
+   "parent_id": "19927",
+   "title": "人的由来",
+   "level": 2,
+   "href": "/czsw/zsd20082",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20088",
+   "parent_id": "20082",
+   "title": "人的起源和进化",
+   "level": 3,
+   "href": "/czsw/zsd20088",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20090",
+   "parent_id": "20088",
+   "title": "人类的起源",
+   "level": 4,
+   "href": "/czsw/zsd20090",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20091",
+   "parent_id": "20088",
+   "title": "人类的进化",
+   "level": 4,
+   "href": "/czsw/zsd20091",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20092",
+   "parent_id": "20088",
+   "title": "人类和动物的亲缘关系",
+   "level": 4,
+   "href": "/czsw/zsd20092",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20089",
+   "parent_id": "20082",
+   "title": "人的生殖和发育",
+   "level": 3,
+   "href": "/czsw/zsd20089",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20093",
+   "parent_id": "20089",
+   "title": "男性生殖系统组成及各器官功能",
+   "level": 4,
+   "href": "/czsw/zsd20093",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20094",
+   "parent_id": "20089",
+   "title": "女性生殖系统组成及各器官功能",
+   "level": 4,
+   "href": "/czsw/zsd20094",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20095",
+   "parent_id": "20089",
+   "title": "生殖细胞的产生及受精",
+   "level": 4,
+   "href": "/czsw/zsd20095",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20096",
+   "parent_id": "20089",
+   "title": "胚胎发育、营养及分娩",
+   "level": 4,
+   "href": "/czsw/zsd20096",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20097",
+   "parent_id": "20089",
+   "title": "试管婴儿",
+   "level": 4,
+   "href": "/czsw/zsd20097",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20098",
+   "parent_id": "20089",
+   "title": "青春期卫生",
+   "level": 4,
+   "href": "/czsw/zsd20098",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20099",
+   "parent_id": "20089",
+   "title": "青春期身体变化的特点",
+   "level": 4,
+   "href": "/czsw/zsd20099",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20100",
+   "parent_id": "20089",
+   "title": "青春期的心理变化",
+   "level": 4,
+   "href": "/czsw/zsd20100",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20083",
+   "parent_id": "19927",
+   "title": "人体的营养",
+   "level": 2,
+   "href": "/czsw/zsd20083",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20101",
+   "parent_id": "20083",
+   "title": "食物中的营养物质",
+   "level": 3,
+   "href": "/czsw/zsd20101",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20104",
+   "parent_id": "20101",
+   "title": "人体需要的主要营养物质及作用",
+   "level": 4,
+   "href": "/czsw/zsd20104",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20105",
+   "parent_id": "20101",
+   "title": "测定某种食物中的能量",
+   "level": 4,
+   "href": "/czsw/zsd20105",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20102",
+   "parent_id": "20083",
+   "title": "消化和吸收",
+   "level": 3,
+   "href": "/czsw/zsd20102",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20106",
+   "parent_id": "20102",
+   "title": "消化系统的组成",
+   "level": 4,
+   "href": "/czsw/zsd20106",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20107",
+   "parent_id": "20102",
+   "title": "探究馒头在口腔中的变化",
+   "level": 4,
+   "href": "/czsw/zsd20107",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20108",
+   "parent_id": "20102",
+   "title": "消化道各器官的结构和功能",
+   "level": 4,
+   "href": "/czsw/zsd20108",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20109",
+   "parent_id": "20102",
+   "title": "食物的消化过程",
+   "level": 4,
+   "href": "/czsw/zsd20109",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20110",
+   "parent_id": "20102",
+   "title": "各种消化腺的位置和功能",
+   "level": 4,
+   "href": "/czsw/zsd20110",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20111",
+   "parent_id": "20102",
+   "title": "营养物质的吸收及小肠的结构特点",
+   "level": 4,
+   "href": "/czsw/zsd20111",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20103",
+   "parent_id": "20083",
+   "title": "合理营养与食品安全",
+   "level": 3,
+   "href": "/czsw/zsd20103",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20112",
+   "parent_id": "20103",
+   "title": "合理营养的含义及“平衡膳食宝塔”",
+   "level": 4,
+   "href": "/czsw/zsd20112",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20113",
+   "parent_id": "20103",
+   "title": "《中国居民膳食指南》的基本原则",
+   "level": 4,
+   "href": "/czsw/zsd20113",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20114",
+   "parent_id": "20103",
+   "title": "食品安全",
+   "level": 4,
+   "href": "/czsw/zsd20114",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20084",
+   "parent_id": "19927",
+   "title": "人体内物质的运输",
+   "level": 2,
+   "href": "/czsw/zsd20084",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20115",
+   "parent_id": "20084",
+   "title": "呼吸系统",
+   "level": 3,
+   "href": "/czsw/zsd20115",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20122",
+   "parent_id": "20115",
+   "title": "呼吸系统的组成",
+   "level": 4,
+   "href": "/czsw/zsd20122",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20123",
+   "parent_id": "20115",
+   "title": "呼吸道的结构和功能",
+   "level": 4,
+   "href": "/czsw/zsd20123",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20116",
+   "parent_id": "20084",
+   "title": "气体的交换与运输",
+   "level": 3,
+   "href": "/czsw/zsd20116",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20124",
+   "parent_id": "20116",
+   "title": "肺与外界的气体交换",
+   "level": 4,
+   "href": "/czsw/zsd20124",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20125",
+   "parent_id": "20116",
+   "title": "肺泡与血液的气体交换",
+   "level": 4,
+   "href": "/czsw/zsd20125",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20126",
+   "parent_id": "20116",
+   "title": "组织细胞与血液的气体交换",
+   "level": 4,
+   "href": "/czsw/zsd20126",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20127",
+   "parent_id": "20116",
+   "title": "模拟膈肌的运动",
+   "level": 4,
+   "href": "/czsw/zsd20127",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20128",
+   "parent_id": "20116",
+   "title": "呼吸的总述",
+   "level": 4,
+   "href": "/czsw/zsd20128",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20117",
+   "parent_id": "20084",
+   "title": "流动的组织---血液",
+   "level": 3,
+   "href": "/czsw/zsd20117",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20129",
+   "parent_id": "20117",
+   "title": "血液的成分及功能",
+   "level": 4,
+   "href": "/czsw/zsd20129",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20130",
+   "parent_id": "20117",
+   "title": "血细胞的种类及功能",
+   "level": 4,
+   "href": "/czsw/zsd20130",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20131",
+   "parent_id": "20117",
+   "title": "观察人血的永久涂片",
+   "level": 4,
+   "href": "/czsw/zsd20131",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20118",
+   "parent_id": "20084",
+   "title": "血流的管道---血管",
+   "level": 3,
+   "href": "/czsw/zsd20118",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20132",
+   "parent_id": "20118",
+   "title": "动脉",
+   "level": 4,
+   "href": "/czsw/zsd20132",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20133",
+   "parent_id": "20118",
+   "title": "静脉",
+   "level": 4,
+   "href": "/czsw/zsd20133",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20134",
+   "parent_id": "20118",
+   "title": "毛细血管",
+   "level": 4,
+   "href": "/czsw/zsd20134",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20135",
+   "parent_id": "20118",
+   "title": "观察小鱼尾鳍内血液的流动的实验",
+   "level": 4,
+   "href": "/czsw/zsd20135",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20119",
+   "parent_id": "20084",
+   "title": "输送血液的泵---心脏",
+   "level": 3,
+   "href": "/czsw/zsd20119",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20136",
+   "parent_id": "20119",
+   "title": "心脏的位置、结构和功能",
+   "level": 4,
+   "href": "/czsw/zsd20136",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20137",
+   "parent_id": "20119",
+   "title": "心脏工作的过程",
+   "level": 4,
+   "href": "/czsw/zsd20137",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20138",
+   "parent_id": "20119",
+   "title": "心率、脉搏和血压",
+   "level": 4,
+   "href": "/czsw/zsd20138",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20139",
+   "parent_id": "20119",
+   "title": "心输出量",
+   "level": 4,
+   "href": "/czsw/zsd20139",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20140",
+   "parent_id": "20119",
+   "title": "血液循环",
+   "level": 4,
+   "href": "/czsw/zsd20140",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20141",
+   "parent_id": "20119",
+   "title": "动脉血与静脉血",
+   "level": 4,
+   "href": "/czsw/zsd20141",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20120",
+   "parent_id": "20084",
+   "title": "心脏和血管的保护",
+   "level": 3,
+   "href": "/czsw/zsd20120",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20121",
+   "parent_id": "20084",
+   "title": "输血与血型",
+   "level": 3,
+   "href": "/czsw/zsd20121",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20145",
+   "parent_id": "20121",
+   "title": "血量与输血",
+   "level": 4,
+   "href": "/czsw/zsd20145",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20146",
+   "parent_id": "20121",
+   "title": "血型",
+   "level": 4,
+   "href": "/czsw/zsd20146",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20147",
+   "parent_id": "20121",
+   "title": "安全输血的原则",
+   "level": 4,
+   "href": "/czsw/zsd20147",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20148",
+   "parent_id": "20121",
+   "title": "无偿献血的原则及意义",
+   "level": 4,
+   "href": "/czsw/zsd20148",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20085",
+   "parent_id": "19927",
+   "title": "人体内的废物排入环境",
+   "level": 2,
+   "href": "/czsw/zsd20085",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20149",
+   "parent_id": "20085",
+   "title": "泌尿系统",
+   "level": 3,
+   "href": "/czsw/zsd20149",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20151",
+   "parent_id": "20149",
+   "title": "泌尿系统的组成",
+   "level": 4,
+   "href": "/czsw/zsd20151",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20152",
+   "parent_id": "20149",
+   "title": "肾脏的结构及功能",
+   "level": 4,
+   "href": "/czsw/zsd20152",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20150",
+   "parent_id": "20085",
+   "title": "人体内废物的排出",
+   "level": 3,
+   "href": "/czsw/zsd20150",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20153",
+   "parent_id": "20150",
+   "title": "尿液的形成过程",
+   "level": 4,
+   "href": "/czsw/zsd20153",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20154",
+   "parent_id": "20150",
+   "title": "尿液的排出过程及意义",
+   "level": 4,
+   "href": "/czsw/zsd20154",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20155",
+   "parent_id": "20150",
+   "title": "血浆、原尿、尿液的对比",
+   "level": 4,
+   "href": "/czsw/zsd20155",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20156",
+   "parent_id": "20150",
+   "title": "排泄的途径及意义",
+   "level": 4,
+   "href": "/czsw/zsd20156",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223839",
+   "parent_id": "20150",
+   "title": "汗液的形成与排出",
+   "level": 4,
+   "href": "/czsw/zsd223839",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20086",
+   "parent_id": "19927",
+   "title": "人体生命活动的调节",
+   "level": 2,
+   "href": "/czsw/zsd20086",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20157",
+   "parent_id": "20086",
+   "title": "人体对外界环境的感知",
+   "level": 3,
+   "href": "/czsw/zsd20157",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20160",
+   "parent_id": "20157",
+   "title": "眼球的结构与视觉的形成",
+   "level": 4,
+   "href": "/czsw/zsd20160",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20161",
+   "parent_id": "20157",
+   "title": "近视和远视的形成原因及矫正",
+   "level": 4,
+   "href": "/czsw/zsd20161",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20162",
+   "parent_id": "20157",
+   "title": "眼的卫生保健",
+   "level": 4,
+   "href": "/czsw/zsd20162",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20163",
+   "parent_id": "20157",
+   "title": "眼球成像的实验",
+   "level": 4,
+   "href": "/czsw/zsd20163",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20164",
+   "parent_id": "20157",
+   "title": "耳的基本结构和各部分的功能",
+   "level": 4,
+   "href": "/czsw/zsd20164",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20165",
+   "parent_id": "20157",
+   "title": "听觉的形成过程",
+   "level": 4,
+   "href": "/czsw/zsd20165",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20166",
+   "parent_id": "20157",
+   "title": "耳聋的类型及成因",
+   "level": 4,
+   "href": "/czsw/zsd20166",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20167",
+   "parent_id": "20157",
+   "title": "耳的卫生保健",
+   "level": 4,
+   "href": "/czsw/zsd20167",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20168",
+   "parent_id": "20157",
+   "title": "其他感觉器官",
+   "level": 4,
+   "href": "/czsw/zsd20168",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20158",
+   "parent_id": "20086",
+   "title": "人体的神经调节",
+   "level": 3,
+   "href": "/czsw/zsd20158",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20169",
+   "parent_id": "20158",
+   "title": "神经系统的组成及各部分的功能",
+   "level": 4,
+   "href": "/czsw/zsd20169",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20170",
+   "parent_id": "20158",
+   "title": "神经元的结构及功能",
+   "level": 4,
+   "href": "/czsw/zsd20170",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20171",
+   "parent_id": "20158",
+   "title": "神经调节的基本方式---反射",
+   "level": 4,
+   "href": "/czsw/zsd20171",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20172",
+   "parent_id": "20158",
+   "title": "膝跳反射实验",
+   "level": 4,
+   "href": "/czsw/zsd20172",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20173",
+   "parent_id": "20158",
+   "title": "反射弧的组成及各部分的功能",
+   "level": 4,
+   "href": "/czsw/zsd20173",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20174",
+   "parent_id": "20158",
+   "title": "反射的类型",
+   "level": 4,
+   "href": "/czsw/zsd20174",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20175",
+   "parent_id": "20158",
+   "title": "测定反应速度",
+   "level": 4,
+   "href": "/czsw/zsd20175",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20159",
+   "parent_id": "20086",
+   "title": "人体的激素调节 ",
+   "level": 3,
+   "href": "/czsw/zsd20159",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20176",
+   "parent_id": "20159",
+   "title": "外分泌腺与内分泌腺",
+   "level": 4,
+   "href": "/czsw/zsd20176",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20177",
+   "parent_id": "20159",
+   "title": "人体主要内分泌腺及其功能",
+   "level": 4,
+   "href": "/czsw/zsd20177",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20178",
+   "parent_id": "20159",
+   "title": "激素的调节作用",
+   "level": 4,
+   "href": "/czsw/zsd20178",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20087",
+   "parent_id": "19927",
+   "title": "人类活动对生物圈的影响",
+   "level": 2,
+   "href": "/czsw/zsd20087",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20179",
+   "parent_id": "20087",
+   "title": "人类活动对生态环境的影响",
+   "level": 3,
+   "href": "/czsw/zsd20179",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20182",
+   "parent_id": "20179",
+   "title": "人口问题及人口增长对环境的影响",
+   "level": 4,
+   "href": "/czsw/zsd20182",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20183",
+   "parent_id": "20179",
+   "title": "有效控制人口的措施及意义",
+   "level": 4,
+   "href": "/czsw/zsd20183",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20184",
+   "parent_id": "20179",
+   "title": "人类活动影响生态环境的事例",
+   "level": 4,
+   "href": "/czsw/zsd20184",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "178821",
+   "parent_id": "20179",
+   "title": "垃圾分类",
+   "level": 4,
+   "href": "/czsw/zsd178821",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20180",
+   "parent_id": "20087",
+   "title": "环境污染对生物的影响",
+   "level": 3,
+   "href": "/czsw/zsd20180",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20181",
+   "parent_id": "20087",
+   "title": "保护生态环境的计划和措施",
+   "level": 3,
+   "href": "/czsw/zsd20181",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19928",
+   "parent_id": "19922",
+   "title": "生物圈中的其他生物",
+   "level": 1,
+   "href": "/czsw/zsd19928",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20185",
+   "parent_id": "19928",
+   "title": "多种多样的动物类群",
+   "level": 2,
+   "href": "/czsw/zsd20185",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20187",
+   "parent_id": "20185",
+   "title": "无脊椎动物类群",
+   "level": 3,
+   "href": "/czsw/zsd20187",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20190",
+   "parent_id": "20187",
+   "title": "腔肠动物（刺胞动物）",
+   "level": 4,
+   "href": "/czsw/zsd20190",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20191",
+   "parent_id": "20187",
+   "title": "扁形动物",
+   "level": 4,
+   "href": "/czsw/zsd20191",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20192",
+   "parent_id": "20187",
+   "title": "线形动物（线虫动物）",
+   "level": 4,
+   "href": "/czsw/zsd20192",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20193",
+   "parent_id": "20187",
+   "title": "环节动物",
+   "level": 4,
+   "href": "/czsw/zsd20193",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20194",
+   "parent_id": "20187",
+   "title": "软体动物",
+   "level": 4,
+   "href": "/czsw/zsd20194",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20195",
+   "parent_id": "20187",
+   "title": "节肢动物",
+   "level": 4,
+   "href": "/czsw/zsd20195",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "209242",
+   "parent_id": "20187",
+   "title": "棘皮动物",
+   "level": 4,
+   "href": "/czsw/zsd209242",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20188",
+   "parent_id": "20185",
+   "title": "脊椎动物类群",
+   "level": 3,
+   "href": "/czsw/zsd20188",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20196",
+   "parent_id": "20188",
+   "title": "鱼的主要特征及与其水中生活相适应的特点",
+   "level": 4,
+   "href": "/czsw/zsd20196",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20197",
+   "parent_id": "20188",
+   "title": "鱼的常见类型及与人类生活的关系",
+   "level": 4,
+   "href": "/czsw/zsd20197",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20198",
+   "parent_id": "20188",
+   "title": "两栖动物",
+   "level": 4,
+   "href": "/czsw/zsd20198",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20199",
+   "parent_id": "20188",
+   "title": "爬行动物",
+   "level": 4,
+   "href": "/czsw/zsd20199",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20200",
+   "parent_id": "20188",
+   "title": "鸟类的主要特征及适于飞行的形态结构特点",
+   "level": 4,
+   "href": "/czsw/zsd20200",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20201",
+   "parent_id": "20188",
+   "title": "多种多样的鸟",
+   "level": 4,
+   "href": "/czsw/zsd20201",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20202",
+   "parent_id": "20188",
+   "title": "哺乳动物的主要特征",
+   "level": 4,
+   "href": "/czsw/zsd20202",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20203",
+   "parent_id": "20188",
+   "title": "哺乳动物常见种类及其与人类生活的关系",
+   "level": 4,
+   "href": "/czsw/zsd20203",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20189",
+   "parent_id": "20185",
+   "title": "动物在生物圈中的作用",
+   "level": 3,
+   "href": "/czsw/zsd20189",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20186",
+   "parent_id": "19928",
+   "title": "分布广泛的微生物",
+   "level": 2,
+   "href": "/czsw/zsd20186",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20206",
+   "parent_id": "20186",
+   "title": "细菌和真菌",
+   "level": 3,
+   "href": "/czsw/zsd20206",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20212",
+   "parent_id": "20206",
+   "title": "细菌和真菌的分布",
+   "level": 4,
+   "href": "/czsw/zsd20212",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20213",
+   "parent_id": "20206",
+   "title": "检测不同环境中的细菌和真菌",
+   "level": 4,
+   "href": "/czsw/zsd20213",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20214",
+   "parent_id": "20206",
+   "title": "细菌的发现",
+   "level": 4,
+   "href": "/czsw/zsd20214",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20215",
+   "parent_id": "20206",
+   "title": "细菌的形态和结构",
+   "level": 4,
+   "href": "/czsw/zsd20215",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20216",
+   "parent_id": "20206",
+   "title": "细菌的营养和生殖",
+   "level": 4,
+   "href": "/czsw/zsd20216",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20217",
+   "parent_id": "20206",
+   "title": "真菌的种类和结构",
+   "level": 4,
+   "href": "/czsw/zsd20217",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20218",
+   "parent_id": "20206",
+   "title": "真菌的营养及生殖",
+   "level": 4,
+   "href": "/czsw/zsd20218",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20219",
+   "parent_id": "20206",
+   "title": "细菌和真菌的区别",
+   "level": 4,
+   "href": "/czsw/zsd20219",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20220",
+   "parent_id": "20206",
+   "title": "观察酵母菌和霉菌",
+   "level": 4,
+   "href": "/czsw/zsd20220",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20207",
+   "parent_id": "20206",
+   "title": "细菌和真菌在自然界中的作用",
+   "level": 4,
+   "href": "/czsw/zsd20207",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20208",
+   "parent_id": "20206",
+   "title": "人类对细菌和真菌的利用",
+   "level": 4,
+   "href": "/czsw/zsd20208",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20209",
+   "parent_id": "20186",
+   "title": "放线菌",
+   "level": 3,
+   "href": "/czsw/zsd20209",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20210",
+   "parent_id": "20186",
+   "title": "蓝细菌",
+   "level": 3,
+   "href": "/czsw/zsd20210",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20211",
+   "parent_id": "20186",
+   "title": "病毒",
+   "level": 3,
+   "href": "/czsw/zsd20211",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20221",
+   "parent_id": "20211",
+   "title": "病毒的形态和种类",
+   "level": 4,
+   "href": "/czsw/zsd20221",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20222",
+   "parent_id": "20211",
+   "title": "病毒的结构特征",
+   "level": 4,
+   "href": "/czsw/zsd20222",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20223",
+   "parent_id": "20211",
+   "title": "病毒的繁殖和生活",
+   "level": 4,
+   "href": "/czsw/zsd20223",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20224",
+   "parent_id": "20211",
+   "title": "病毒在自然界中的作用及与人类生活的关系",
+   "level": 4,
+   "href": "/czsw/zsd20224",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19929",
+   "parent_id": "19922",
+   "title": "动物的运动和行为",
+   "level": 1,
+   "href": "/czsw/zsd19929",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20225",
+   "parent_id": "19929",
+   "title": "动物的运动",
+   "level": 2,
+   "href": "/czsw/zsd20225",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20227",
+   "parent_id": "20225",
+   "title": "脊椎动物运动系统的组成",
+   "level": 3,
+   "href": "/czsw/zsd20227",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20229",
+   "parent_id": "20227",
+   "title": "关节的结构与功能",
+   "level": 4,
+   "href": "/czsw/zsd20229",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20230",
+   "parent_id": "20227",
+   "title": "骨骼肌的组成及生理特性",
+   "level": 4,
+   "href": "/czsw/zsd20230",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20231",
+   "parent_id": "20227",
+   "title": "骨的结构和功能",
+   "level": 4,
+   "href": "/czsw/zsd20231",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20228",
+   "parent_id": "20225",
+   "title": "运动的完成、方式及意义",
+   "level": 3,
+   "href": "/czsw/zsd20228",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20232",
+   "parent_id": "20228",
+   "title": "动物运动的能量来源",
+   "level": 4,
+   "href": "/czsw/zsd20232",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20233",
+   "parent_id": "20228",
+   "title": "运动的完成需要骨、关节和肌肉的协调配合",
+   "level": 4,
+   "href": "/czsw/zsd20233",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20234",
+   "parent_id": "20228",
+   "title": "动物运动方式及意义",
+   "level": 4,
+   "href": "/czsw/zsd20234",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20226",
+   "parent_id": "19929",
+   "title": "动物的行为",
+   "level": 2,
+   "href": "/czsw/zsd20226",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20237",
+   "parent_id": "20226",
+   "title": "动物行为的类型与特点",
+   "level": 3,
+   "href": "/czsw/zsd20237",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20238",
+   "parent_id": "20226",
+   "title": "区分先天性行为和学习行为",
+   "level": 3,
+   "href": "/czsw/zsd20238",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20239",
+   "parent_id": "20226",
+   "title": "研究动物的行为",
+   "level": 3,
+   "href": "/czsw/zsd20239",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20236",
+   "parent_id": "20226",
+   "title": "社会行为的特征和意义",
+   "level": 3,
+   "href": "/czsw/zsd20236",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19930",
+   "parent_id": "19922",
+   "title": "生物的多样性的认识及其保护",
+   "level": 1,
+   "href": "/czsw/zsd19930",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20240",
+   "parent_id": "19930",
+   "title": "根据生物的特征进行分类",
+   "level": 2,
+   "href": "/czsw/zsd20240",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20242",
+   "parent_id": "20240",
+   "title": "尝试对生物进行分类",
+   "level": 3,
+   "href": "/czsw/zsd20242",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "199369",
+   "parent_id": "20242",
+   "title": "双名法",
+   "level": 4,
+   "href": "/czsw/zsd199369",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20244",
+   "parent_id": "20242",
+   "title": "尝试对植物分类",
+   "level": 4,
+   "href": "/czsw/zsd20244",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20245",
+   "parent_id": "20242",
+   "title": "尝试对动物分类",
+   "level": 4,
+   "href": "/czsw/zsd20245",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20246",
+   "parent_id": "20242",
+   "title": "尝试对微生物分类",
+   "level": 4,
+   "href": "/czsw/zsd20246",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20243",
+   "parent_id": "20240",
+   "title": "从种到界",
+   "level": 3,
+   "href": "/czsw/zsd20243",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20247",
+   "parent_id": "20243",
+   "title": "生物分类的等级",
+   "level": 4,
+   "href": "/czsw/zsd20247",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20248",
+   "parent_id": "20243",
+   "title": "生物分类的特点",
+   "level": 4,
+   "href": "/czsw/zsd20248",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20241",
+   "parent_id": "19930",
+   "title": "认识和保护生物的多样性",
+   "level": 2,
+   "href": "/czsw/zsd20241",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20249",
+   "parent_id": "20241",
+   "title": "认识生物的多样性",
+   "level": 3,
+   "href": "/czsw/zsd20249",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223760",
+   "parent_id": "20241",
+   "title": "我国的珍惜动植物资源",
+   "level": 3,
+   "href": "/czsw/zsd223760",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20250",
+   "parent_id": "20241",
+   "title": "保护生物的多样性",
+   "level": 3,
+   "href": "/czsw/zsd20250",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20251",
+   "parent_id": "20250",
+   "title": "生物多样性面临的威胁及其原因",
+   "level": 4,
+   "href": "/czsw/zsd20251",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20252",
+   "parent_id": "20250",
+   "title": "保护生物多样性的主要措施",
+   "level": 4,
+   "href": "/czsw/zsd20252",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19931",
+   "parent_id": "19922",
+   "title": "生物圈中生命的延续和发展",
+   "level": 1,
+   "href": "/czsw/zsd19931",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20253",
+   "parent_id": "19931",
+   "title": "生物的生殖和发育",
+   "level": 2,
+   "href": "/czsw/zsd20253",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20256",
+   "parent_id": "20253",
+   "title": "植物的生殖",
+   "level": 3,
+   "href": "/czsw/zsd20256",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20260",
+   "parent_id": "20256",
+   "title": "植物的有性生殖",
+   "level": 4,
+   "href": "/czsw/zsd20260",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20261",
+   "parent_id": "20256",
+   "title": "植物的无性生殖",
+   "level": 4,
+   "href": "/czsw/zsd20261",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20257",
+   "parent_id": "20253",
+   "title": "昆虫的生殖和发育",
+   "level": 3,
+   "href": "/czsw/zsd20257",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20262",
+   "parent_id": "20257",
+   "title": "昆虫的生殖",
+   "level": 4,
+   "href": "/czsw/zsd20262",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20263",
+   "parent_id": "20257",
+   "title": "不完全变态发育",
+   "level": 4,
+   "href": "/czsw/zsd20263",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20264",
+   "parent_id": "20257",
+   "title": "完全变态发育及实例",
+   "level": 4,
+   "href": "/czsw/zsd20264",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20258",
+   "parent_id": "20253",
+   "title": "两栖动物的生殖和发育",
+   "level": 3,
+   "href": "/czsw/zsd20258",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20265",
+   "parent_id": "20258",
+   "title": "两栖动物的生殖",
+   "level": 4,
+   "href": "/czsw/zsd20265",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20266",
+   "parent_id": "20258",
+   "title": "两栖动物的发育",
+   "level": 4,
+   "href": "/czsw/zsd20266",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20259",
+   "parent_id": "20253",
+   "title": "鸟的生殖和发育",
+   "level": 3,
+   "href": "/czsw/zsd20259",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20267",
+   "parent_id": "20259",
+   "title": "鸟卵的结构",
+   "level": 4,
+   "href": "/czsw/zsd20267",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20268",
+   "parent_id": "20259",
+   "title": "鸟类的生殖方式和发育过程",
+   "level": 4,
+   "href": "/czsw/zsd20268",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20254",
+   "parent_id": "19931",
+   "title": "生物的遗传和变异",
+   "level": 2,
+   "href": "/czsw/zsd20254",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20269",
+   "parent_id": "20254",
+   "title": "DNA是主要的遗传物质",
+   "level": 3,
+   "href": "/czsw/zsd20269",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20270",
+   "parent_id": "20254",
+   "title": "生物的性状和遗传",
+   "level": 3,
+   "href": "/czsw/zsd20270",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20277",
+   "parent_id": "20270",
+   "title": "遗传的概念及实例",
+   "level": 4,
+   "href": "/czsw/zsd20277",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20278",
+   "parent_id": "20270",
+   "title": "生物的性状与相对性状的概念",
+   "level": 4,
+   "href": "/czsw/zsd20278",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20279",
+   "parent_id": "20270",
+   "title": "基因控制生物的性状及相关实验",
+   "level": 4,
+   "href": "/czsw/zsd20279",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20280",
+   "parent_id": "20270",
+   "title": "基因、DNA、染色体之间的关系",
+   "level": 4,
+   "href": "/czsw/zsd20280",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20281",
+   "parent_id": "20270",
+   "title": "基因在亲子代之间的传递",
+   "level": 4,
+   "href": "/czsw/zsd20281",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20282",
+   "parent_id": "20270",
+   "title": "孟德尔杂交实验的过程及解释",
+   "level": 4,
+   "href": "/czsw/zsd20282",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20283",
+   "parent_id": "20270",
+   "title": "显性性状和隐性性状",
+   "level": 4,
+   "href": "/czsw/zsd20283",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20271",
+   "parent_id": "20254",
+   "title": "人的性别决定",
+   "level": 3,
+   "href": "/czsw/zsd20271",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20284",
+   "parent_id": "20271",
+   "title": "男女染色体的差别",
+   "level": 4,
+   "href": "/czsw/zsd20284",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20285",
+   "parent_id": "20271",
+   "title": "生男生女的机会均等",
+   "level": 4,
+   "href": "/czsw/zsd20285",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20272",
+   "parent_id": "20254",
+   "title": "遗传病和优生优育",
+   "level": 3,
+   "href": "/czsw/zsd20272",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20286",
+   "parent_id": "20272",
+   "title": "遗传病及其分析",
+   "level": 4,
+   "href": "/czsw/zsd20286",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20287",
+   "parent_id": "20272",
+   "title": "优生优育",
+   "level": 4,
+   "href": "/czsw/zsd20287",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20273",
+   "parent_id": "20254",
+   "title": "生物的变异",
+   "level": 3,
+   "href": "/czsw/zsd20273",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20288",
+   "parent_id": "20273",
+   "title": "变异的概念及实例",
+   "level": 4,
+   "href": "/czsw/zsd20288",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20289",
+   "parent_id": "20273",
+   "title": "生物变异的类型和原因",
+   "level": 4,
+   "href": "/czsw/zsd20289",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20290",
+   "parent_id": "20273",
+   "title": "遗传变异在育种中的应用",
+   "level": 4,
+   "href": "/czsw/zsd20290",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20255",
+   "parent_id": "19931",
+   "title": "生命的起源和生物的进化",
+   "level": 2,
+   "href": "/czsw/zsd20255",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20291",
+   "parent_id": "20255",
+   "title": "地球上生命的起源",
+   "level": 3,
+   "href": "/czsw/zsd20291",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20294",
+   "parent_id": "20291",
+   "title": "生命起源的过程",
+   "level": 4,
+   "href": "/czsw/zsd20294",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20295",
+   "parent_id": "20291",
+   "title": "生命起源的条件",
+   "level": 4,
+   "href": "/czsw/zsd20295",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20292",
+   "parent_id": "20255",
+   "title": "生物进化的历程",
+   "level": 3,
+   "href": "/czsw/zsd20292",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20296",
+   "parent_id": "20292",
+   "title": "生物进化的证据及实例",
+   "level": 4,
+   "href": "/czsw/zsd20296",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20297",
+   "parent_id": "20292",
+   "title": "学习研究生物进化的方法",
+   "level": 4,
+   "href": "/czsw/zsd20297",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20298",
+   "parent_id": "20292",
+   "title": "生物进化的大致历程",
+   "level": 4,
+   "href": "/czsw/zsd20298",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20293",
+   "parent_id": "20255",
+   "title": "生物进化的原因",
+   "level": 3,
+   "href": "/czsw/zsd20293",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20299",
+   "parent_id": "20293",
+   "title": "分析生物进化原因的实例",
+   "level": 4,
+   "href": "/czsw/zsd20299",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20300",
+   "parent_id": "20293",
+   "title": "用进废退学说与自然选择学说",
+   "level": 4,
+   "href": "/czsw/zsd20300",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20301",
+   "parent_id": "20293",
+   "title": "自然选择与人工选择",
+   "level": 4,
+   "href": "/czsw/zsd20301",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19932",
+   "parent_id": "19922",
+   "title": "现代生物技术",
+   "level": 1,
+   "href": "/czsw/zsd19932",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20302",
+   "parent_id": "19932",
+   "title": "现代生物技术的应用",
+   "level": 2,
+   "href": "/czsw/zsd20302",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20304",
+   "parent_id": "20302",
+   "title": "基因工程和转基因技术",
+   "level": 3,
+   "href": "/czsw/zsd20304",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20305",
+   "parent_id": "20302",
+   "title": "细胞工程和克隆技术",
+   "level": 3,
+   "href": "/czsw/zsd20305",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20303",
+   "parent_id": "19932",
+   "title": "生物技术的安全性问题",
+   "level": 2,
+   "href": "/czsw/zsd20303",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19933",
+   "parent_id": "19922",
+   "title": "健康地生活",
+   "level": 1,
+   "href": "/czsw/zsd19933",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20306",
+   "parent_id": "19933",
+   "title": "传染病和免疫",
+   "level": 2,
+   "href": "/czsw/zsd20306",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20309",
+   "parent_id": "20306",
+   "title": "传染病及其预防",
+   "level": 3,
+   "href": "/czsw/zsd20309",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20311",
+   "parent_id": "20309",
+   "title": "传染病的概念及常见的传染病",
+   "level": 4,
+   "href": "/czsw/zsd20311",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20312",
+   "parent_id": "20309",
+   "title": "传染病流行的基本环节",
+   "level": 4,
+   "href": "/czsw/zsd20312",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20313",
+   "parent_id": "20309",
+   "title": "传染病的预防措施",
+   "level": 4,
+   "href": "/czsw/zsd20313",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20314",
+   "parent_id": "20309",
+   "title": "艾滋病的流行与发生",
+   "level": 4,
+   "href": "/czsw/zsd20314",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20310",
+   "parent_id": "20306",
+   "title": "免疫与计划免疫",
+   "level": 3,
+   "href": "/czsw/zsd20310",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20315",
+   "parent_id": "20310",
+   "title": "人体的三道防线",
+   "level": 4,
+   "href": "/czsw/zsd20315",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20316",
+   "parent_id": "20310",
+   "title": "免疫的功能",
+   "level": 4,
+   "href": "/czsw/zsd20316",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20317",
+   "parent_id": "20310",
+   "title": "抗原和抗体",
+   "level": 4,
+   "href": "/czsw/zsd20317",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20318",
+   "parent_id": "20310",
+   "title": "过敏反应与免疫排斥",
+   "level": 4,
+   "href": "/czsw/zsd20318",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20319",
+   "parent_id": "20310",
+   "title": "计划免疫及意义",
+   "level": 4,
+   "href": "/czsw/zsd20319",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20307",
+   "parent_id": "19933",
+   "title": "用药与急救",
+   "level": 2,
+   "href": "/czsw/zsd20307",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20320",
+   "parent_id": "20307",
+   "title": "安全用药",
+   "level": 3,
+   "href": "/czsw/zsd20320",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20322",
+   "parent_id": "20320",
+   "title": "安全用药及常识",
+   "level": 4,
+   "href": "/czsw/zsd20322",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20323",
+   "parent_id": "20320",
+   "title": "学会阅读药物使用说明及家庭小药箱的配备原则",
+   "level": 4,
+   "href": "/czsw/zsd20323",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20321",
+   "parent_id": "20307",
+   "title": "急救",
+   "level": 3,
+   "href": "/czsw/zsd20321",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20324",
+   "parent_id": "20321",
+   "title": "紧急急救及注意事项",
+   "level": 4,
+   "href": "/czsw/zsd20324",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20325",
+   "parent_id": "20321",
+   "title": "胸外心脏按压与人工呼吸",
+   "level": 4,
+   "href": "/czsw/zsd20325",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20326",
+   "parent_id": "20321",
+   "title": "出血和止血",
+   "level": 4,
+   "href": "/czsw/zsd20326",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20327",
+   "parent_id": "20321",
+   "title": "煤气中毒的急救、预防及其他的急救方法",
+   "level": 4,
+   "href": "/czsw/zsd20327",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20308",
+   "parent_id": "19933",
+   "title": "了解自己，增进健康",
+   "level": 2,
+   "href": "/czsw/zsd20308",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20328",
+   "parent_id": "20308",
+   "title": "评价自己的健康状况",
+   "level": 3,
+   "href": "/czsw/zsd20328",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20330",
+   "parent_id": "20328",
+   "title": "健康的新概念及对自己健康状况的评价",
+   "level": 4,
+   "href": "/czsw/zsd20330",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20331",
+   "parent_id": "20328",
+   "title": "保持愉快心情的方法",
+   "level": 4,
+   "href": "/czsw/zsd20331",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20329",
+   "parent_id": "20308",
+   "title": "选择健康的生活方式",
+   "level": 3,
+   "href": "/czsw/zsd20329",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "20332",
+   "parent_id": "20329",
+   "title": "生活方式对健康的影响",
+   "level": 4,
+   "href": "/czsw/zsd20332",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20333",
+   "parent_id": "20329",
+   "title": "探究酒精或烟草浸出液对水蚤心率的影响",
+   "level": 4,
+   "href": "/czsw/zsd20333",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "20334",
+   "parent_id": "20329",
+   "title": "健康生活方式及意义",
+   "level": 4,
+   "href": "/czsw/zsd20334",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "111",
+   "parent_id": "-1",
+   "title": "实验",
+   "level": 1,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "561",
+   "parent_id": "0",
+   "title": "生命体的结构层次",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "562",
+   "parent_id": "561",
+   "title": "调查周边环境中的生物",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "563",
+   "parent_id": "561",
+   "title": "练习使用光学显微镜",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "564",
+   "parent_id": "561",
+   "title": "非生物因素对生物的影响",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "565",
+   "parent_id": "561",
+   "title": "观察池塘水中的微小生物",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "566",
+   "parent_id": "561",
+   "title": "观察草履虫",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "567",
+   "parent_id": "561",
+   "title": "制作并观察植物细胞临时装片",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "568",
+   "parent_id": "561",
+   "title": "观察多种细胞的基本结构",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "569",
+   "parent_id": "561",
+   "title": "制作动植物细胞结构模型",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "570",
+   "parent_id": "561",
+   "title": "观察根尖细胞分裂的切片",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "571",
+   "parent_id": "0",
+   "title": "生物的多样性",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "572",
+   "parent_id": "571",
+   "title": "尝试对生物进行分类",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "573",
+   "parent_id": "571",
+   "title": "认识校园内的植物并设计校园绿化方案",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "574",
+   "parent_id": "571",
+   "title": "培养并观察细菌的菌落",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "575",
+   "parent_id": "571",
+   "title": "观察酵母菌、霉菌",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "576",
+   "parent_id": "571",
+   "title": "调查食用菌的种类及生产情况",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "577",
+   "parent_id": "571",
+   "title": "调查当地具有重要经济价值的生物资源",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6392",
+   "parent_id": "571",
+   "title": "观察不同类群的植物",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6393",
+   "parent_id": "571",
+   "title": "观察不同类群的动物",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "578",
+   "parent_id": "0",
+   "title": "生物与环境",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "579",
+   "parent_id": "578",
+   "title": "探究影响生物分布的环境因素",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "580",
+   "parent_id": "578",
+   "title": "探究植物对空气湿度的影响",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "581",
+   "parent_id": "578",
+   "title": "调查校园或附近环境中生物之间的关系",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "582",
+   "parent_id": "578",
+   "title": "保护生态环境的计划和措施",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "583",
+   "parent_id": "578",
+   "title": "调查人类活动破坏或改善生态环境的实例",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "584",
+   "parent_id": "0",
+   "title": "植物的生活",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "585",
+   "parent_id": "584",
+   "title": "种子的结构及各部分的功能",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "586",
+   "parent_id": "584",
+   "title": "种子萌发的环境条件及探究实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "587",
+   "parent_id": "584",
+   "title": "栽培一种常见植物并观察其生长发育的全过程",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "588",
+   "parent_id": "584",
+   "title": "运用无土栽培技术栽培一种植物",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "589",
+   "parent_id": "584",
+   "title": "比较不同植被环境中的大气湿度",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "590",
+   "parent_id": "584",
+   "title": "探究植物光合作用的条件、原料和产物",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "591",
+   "parent_id": "584",
+   "title": "调查生产中利用植物光合作用和呼吸作用原理的有关措施",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6394",
+   "parent_id": "584",
+   "title": "解剖和观察花的结构",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "592",
+   "parent_id": "0",
+   "title": "人体生理与健康",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "593",
+   "parent_id": "592",
+   "title": "探究唾液淀粉酶对淀粉的消化作用",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "594",
+   "parent_id": "592",
+   "title": "制作小肠壁结构模型",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "595",
+   "parent_id": "592",
+   "title": "测定某种食物中的能量",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "596",
+   "parent_id": "592",
+   "title": "制订合理的膳食计划",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "597",
+   "parent_id": "592",
+   "title": "调查当地是否存在食品安全问题",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "598",
+   "parent_id": "592",
+   "title": "观察血涂片",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "599",
+   "parent_id": "592",
+   "title": "观察小鱼尾鳍内血液的流动的实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "600",
+   "parent_id": "592",
+   "title": "观察人体某些反射活动（如膝跳反射）",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "601",
+   "parent_id": "592",
+   "title": "调查班级学生的近视率并分析其原因",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "602",
+   "parent_id": "592",
+   "title": "观察某种脊椎动物的肌肉、骨骼、关节的基本结构",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "603",
+   "parent_id": "592",
+   "title": "调查当地主要传染病并参与预防传染病宣传活动",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "604",
+   "parent_id": "592",
+   "title": "科学合理设计家庭药箱药品",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "605",
+   "parent_id": "592",
+   "title": "心肺复苏与包扎止血的模拟操作",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "606",
+   "parent_id": "592",
+   "title": "探究酒精或烟草浸出液对水蚤心率的影响",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6395",
+   "parent_id": "592",
+   "title": "验证人体呼出的气体中含有较多的二氧化碳",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6396",
+   "parent_id": "592",
+   "title": "模拟吸气与呼气时肺与胸廓的变化",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6397",
+   "parent_id": "592",
+   "title": "观察哺乳动物心脏的形态与结构",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6398",
+   "parent_id": "592",
+   "title": "观察哺乳动物肾脏的形态与结构",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "607",
+   "parent_id": "0",
+   "title": "遗传与进化",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "608",
+   "parent_id": "607",
+   "title": "人的性别决定的模拟活动",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "609",
+   "parent_id": "607",
+   "title": "遗传性状显隐性的模拟活动",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "610",
+   "parent_id": "607",
+   "title": "调查人体常见性状",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "611",
+   "parent_id": "607",
+   "title": "调查家族内遗传性状的表现",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6399",
+   "parent_id": "607",
+   "title": "观察鸡卵的结构",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6400",
+   "parent_id": "607",
+   "title": "探究某种植物果实的性状差异",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "6401",
+   "parent_id": "607",
+   "title": "模拟保护色的形成过程",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "612",
+   "parent_id": "0",
+   "title": "生物学与社会·跨学科实践",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "613",
+   "parent_id": "612",
+   "title": "眼球成像的实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "614",
+   "parent_id": "612",
+   "title": "制作实验装置，模拟吸烟有害健康",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "615",
+   "parent_id": "612",
+   "title": "设计并制作能较长时间维持平衡的生态瓶",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "616",
+   "parent_id": "612",
+   "title": "探究栽培一种植物所需的物理和化学环境条件",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "617",
+   "parent_id": "612",
+   "title": "探究植物无土栽培条件的控制",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "618",
+   "parent_id": "612",
+   "title": "探究影响扦插植物成活的生物和非生物因素",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "619",
+   "parent_id": "612",
+   "title": "饲养家蚕并观察家蚕的生殖与发育",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "620",
+   "parent_id": "612",
+   "title": "制作水族箱，饲养热带鱼",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "621",
+   "parent_id": "612",
+   "title": "收集当地面包酵母菌种并比较发酵效果",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "622",
+   "parent_id": "612",
+   "title": "设计简单装置，制作酸奶",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "623",
+   "parent_id": "612",
+   "title": "制作泡菜并探究影响泡菜亚硝酸盐浓度的因素",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  }
+ ]
+}

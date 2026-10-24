@@ -1,0 +1,4326 @@
+{
+ "stage": "senior",
+ "subject": "chinese",
+ "subject_cn": "高中语文",
+ "bank_id": 10,
+ "book_count": 5,
+ "node_count": 476,
+ "books": [
+  {
+   "zj_code": "zj135937",
+   "edition_name": "统编版",
+   "volume_name": "必修上册",
+   "node_count": 138
+  },
+  {
+   "zj_code": "zj136029",
+   "edition_name": "统编版",
+   "volume_name": "必修下册",
+   "node_count": 94
+  },
+  {
+   "zj_code": "zj166430",
+   "edition_name": "统编版",
+   "volume_name": "选择性必修上册",
+   "node_count": 72
+  },
+  {
+   "zj_code": "zj166432",
+   "edition_name": "统编版",
+   "volume_name": "选择性必修中册",
+   "node_count": 83
+  },
+  {
+   "zj_code": "zj166431",
+   "edition_name": "统编版",
+   "volume_name": "选择性必修下册",
+   "node_count": 89
+  }
+ ],
+ "nodes": [
+  {
+   "zj_code": "zj135937",
+   "id": "135938",
+   "parent_id": "135937",
+   "title": "第一单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135938"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135947",
+   "parent_id": "135938",
+   "title": "第1课 沁园春·长沙/毛泽东",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135947"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26789",
+   "parent_id": "26673",
+   "title": "《沁园春·长沙》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135947/ctk26789"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185476",
+   "parent_id": "135938",
+   "title": "第2课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185476"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135949",
+   "parent_id": "185476",
+   "title": "2-1 立在地球边上放号/郭沫若",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135949"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26672",
+   "parent_id": "26664",
+   "title": "郭沫若(1892-1978)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135949/ctk26672"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135948",
+   "parent_id": "185476",
+   "title": "2-2 红烛/闻一多",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135948"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26825",
+   "parent_id": "26690",
+   "title": "《红烛》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135948/ctk26825"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135950",
+   "parent_id": "185476",
+   "title": "2-3 *峨日朵雪峰之侧/昌耀",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135950"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135950/ctk26666"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135951",
+   "parent_id": "185476",
+   "title": "2-4 *致云雀/雪莱",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135951"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27479",
+   "parent_id": "27445",
+   "title": "《致云雀》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135951/ctk27479"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185477",
+   "parent_id": "135938",
+   "title": "第3课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185477"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135954",
+   "parent_id": "185477",
+   "title": "3-1 百合花/茹志鹃",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135954"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135954/ctk27877"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27025",
+   "parent_id": "26972",
+   "title": "《百合花》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135954/ctk27025"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135953",
+   "parent_id": "185477",
+   "title": "3-2 *哦，香雪/铁凝",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135953"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135953/ctk27877"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135956",
+   "parent_id": "135938",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135956"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135939",
+   "parent_id": "135937",
+   "title": "第二单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135939"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185478",
+   "parent_id": "135939",
+   "title": "第4课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185478"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135974",
+   "parent_id": "185478",
+   "title": "4-1 喜看稻菽千重浪――记首届国家最高科技奖获得者袁隆平/ 沈英甲",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135974"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135974/ctk27881"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135974/ctk26666"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149795",
+   "parent_id": "185478",
+   "title": "4-2 *心有一团火，温暖众人心/林为民",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149795"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149795/ctk27881"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149795/ctk26666"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149796",
+   "parent_id": "185478",
+   "title": "4-3 *“探界者”钟扬/叶雨婷",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149796"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149796/ctk27881"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149796/ctk26666"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149797",
+   "parent_id": "135939",
+   "title": "第5课 以工匠精神雕琢时代品质/李斌",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149797"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149797/ctk27881"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27020",
+   "parent_id": "26665",
+   "title": "其他当代作家",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149797/ctk27020"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185479",
+   "parent_id": "135939",
+   "title": "第6课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185479"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149798",
+   "parent_id": "185479",
+   "title": "6-1 芣苢/《诗经·周南》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149798"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149798/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26242",
+   "parent_id": "26219",
+   "title": "其他春秋作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149798/ctk26242"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "166903",
+   "parent_id": "185479",
+   "title": "6-2 插秧歌/杨万里",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166903"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149800",
+   "parent_id": "135939",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149800"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135940",
+   "parent_id": "135937",
+   "title": "第三单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135940"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185480",
+   "parent_id": "135940",
+   "title": "第7课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185480"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135970",
+   "parent_id": "185480",
+   "title": "7-1 短歌行/曹操",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135970"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135970/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26279",
+   "parent_id": "26223",
+   "title": "曹操(155-220)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135970/ctk26279"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149787",
+   "parent_id": "185480",
+   "title": "7-2 *归园田居（其一）/陶渊明",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149787"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149787/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26305",
+   "parent_id": "26225",
+   "title": "陶渊明(365-427)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149787/ctk26305"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185481",
+   "parent_id": "135940",
+   "title": "第8课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185481"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149788",
+   "parent_id": "185481",
+   "title": "8-1 梦游天姥吟留别/李白",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149788"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149788/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26397",
+   "parent_id": "26347",
+   "title": "《梦游天姥吟留别》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149788/ctk26397"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149789",
+   "parent_id": "185481",
+   "title": "8-2 登高/杜甫",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149789"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149789/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26350",
+   "parent_id": "26227",
+   "title": "杜甫(712-770)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149789/ctk26350"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149790",
+   "parent_id": "185481",
+   "title": "8-3 *琵琶行并序/白居易",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149790"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149790/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26419",
+   "parent_id": "26357",
+   "title": "《琵琶行》（并序）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149790/ctk26419"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185482",
+   "parent_id": "135940",
+   "title": "第9课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185482"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149791",
+   "parent_id": "185482",
+   "title": "9-1 念奴娇·赤壁怀古/苏轼",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149791"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27866",
+   "parent_id": "157854",
+   "title": "词",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149791/ctk27866"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26500",
+   "parent_id": "26472",
+   "title": "《念奴娇·赤壁怀古》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149791/ctk26500"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149792",
+   "parent_id": "185482",
+   "title": "9-2 *永遇乐·京口北固亭怀古/辛弃疾",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149792"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27866",
+   "parent_id": "157854",
+   "title": "词",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149792/ctk27866"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26519",
+   "parent_id": "26230",
+   "title": "辛弃疾(1140-1207)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149792/ctk26519"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149793",
+   "parent_id": "185482",
+   "title": "9-3 *声声慢（寻寻觅觅）/李清照",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149793"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27866",
+   "parent_id": "157854",
+   "title": "词",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149793/ctk27866"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26510",
+   "parent_id": "26479",
+   "title": "《声声慢·寻寻觅觅》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj149793/ctk26510"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "149794",
+   "parent_id": "135940",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj149794"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135941",
+   "parent_id": "135937",
+   "title": "第四单元 家乡文化生活",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135941"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135977",
+   "parent_id": "135941",
+   "title": "学习活动",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135977"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135981",
+   "parent_id": "135977",
+   "title": "一  记录家乡的人和物",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135981"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135982",
+   "parent_id": "135977",
+   "title": "二  家乡文化生活现状调查",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135982"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135983",
+   "parent_id": "135977",
+   "title": "三  参与家乡文化建设",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135983"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135942",
+   "parent_id": "135937",
+   "title": "第五单元  整本书阅读",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135942"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135993",
+   "parent_id": "135942",
+   "title": "《乡土中国》 ",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135993"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135993/ctk27873"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "99360",
+   "parent_id": "26664",
+   "title": "费孝通",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135993/ctk99360"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135943",
+   "parent_id": "135937",
+   "title": "第六单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135943"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185483",
+   "parent_id": "135943",
+   "title": "第10课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185483"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135995",
+   "parent_id": "185483",
+   "title": "10-1 劝学/《荀子》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135995"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135995/ctk27861"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26253",
+   "parent_id": "26220",
+   "title": "荀子(前313-前238)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135995/ctk26253"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135996",
+   "parent_id": "185483",
+   "title": "10-2  *师说/韩愈",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135996"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135996/ctk27861"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26355",
+   "parent_id": "26227",
+   "title": "韩愈(768-824)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135996/ctk26355"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135998",
+   "parent_id": "135943",
+   "title": "第11课 反对党八股（节选）/毛泽东",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135998"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27872",
+   "parent_id": "157908",
+   "title": "政论文",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135998/ctk27872"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26673",
+   "parent_id": "26664",
+   "title": "毛泽东(1893-1976)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135998/ctk26673"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135999",
+   "parent_id": "135943",
+   "title": "第12课 拿来主义/鲁迅",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135999"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27874",
+   "parent_id": "157908",
+   "title": "时评",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135999/ctk27874"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26667",
+   "parent_id": "26664",
+   "title": "鲁迅(1881-1936)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj135999/ctk26667"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185484",
+   "parent_id": "135943",
+   "title": "第13课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185484"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136001",
+   "parent_id": "185484",
+   "title": "13-1 *读书：目的和前提/黑塞",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136001"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136001/ctk27873"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27176",
+   "parent_id": "26217",
+   "title": "其他外国作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136001/ctk27176"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136002",
+   "parent_id": "185484",
+   "title": "13-2 *上图书馆/王佐良",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136002"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27874",
+   "parent_id": "157908",
+   "title": "时评",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136002/ctk27874"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136002/ctk26666"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136004",
+   "parent_id": "135943",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136004"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "135944",
+   "parent_id": "135937",
+   "title": "第七单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj135944"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185485",
+   "parent_id": "135944",
+   "title": "第14课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185485"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136005",
+   "parent_id": "185485",
+   "title": "14-1 故都的秋/郁达夫",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136005"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27878",
+   "parent_id": "157917",
+   "title": "其他散文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136005/ctk27878"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26808",
+   "parent_id": "26682",
+   "title": "《故都的秋》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136005/ctk26808"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136006",
+   "parent_id": "185485",
+   "title": "14-2 *荷塘月色/朱自清",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136006"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27878",
+   "parent_id": "157917",
+   "title": "其他散文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136006/ctk27878"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26818",
+   "parent_id": "26686",
+   "title": "《荷塘月色》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136006/ctk26818"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136007",
+   "parent_id": "135944",
+   "title": "第15课 我与地坛（节选）/史铁生",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136007"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27878",
+   "parent_id": "157917",
+   "title": "其他散文",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136007/ctk27878"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27123",
+   "parent_id": "26998",
+   "title": "《我与地坛》《务虚笔记》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136007/ctk27123"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "185486",
+   "parent_id": "135944",
+   "title": "第16课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185486"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136010",
+   "parent_id": "185486",
+   "title": "16-1 赤壁赋/苏轼",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136010"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136010/ctk27861"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26501",
+   "parent_id": "26472",
+   "title": "《赤壁赋》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136010/ctk26501"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136011",
+   "parent_id": "185486",
+   "title": "16-2 *登泰山记/姚鼐",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136011"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136011/ctk27861"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26640",
+   "parent_id": "26619",
+   "title": "《登泰山记》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136011/ctk26640"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136013",
+   "parent_id": "135944",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136013"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136014",
+   "parent_id": "135937",
+   "title": "第八单元  词语积累与词语解释",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136014"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "150374",
+   "parent_id": "136014",
+   "title": "学习活动",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj150374"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136018",
+   "parent_id": "150374",
+   "title": "一 丰富词语积累",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136018"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "23188",
+   "parent_id": "23183",
+   "title": "一般词语",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136018/ctk23188"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136019",
+   "parent_id": "150374",
+   "title": "二 把握古今词义的联系与区别",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136019"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136020",
+   "parent_id": "150374",
+   "title": "三 词义的辨析和词语的使用",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136020"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "23188",
+   "parent_id": "23183",
+   "title": "一般词语",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136020/ctk23188"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136016",
+   "parent_id": "135937",
+   "title": "古诗词诵读",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136016"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136024",
+   "parent_id": "136016",
+   "title": "静女/《诗经·邶风》",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136024"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136024/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26242",
+   "parent_id": "26219",
+   "title": "其他春秋作家",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136024/ctk26242"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136026",
+   "parent_id": "136016",
+   "title": "涉江采芙蓉/《古诗十九首》",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136026"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136026/ctk27865"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26277",
+   "parent_id": "26222",
+   "title": "其他东汉作家",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136026/ctk26277"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136027",
+   "parent_id": "136016",
+   "title": "虞美人（春花秋月何时了)/李煜",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136027"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27866",
+   "parent_id": "157854",
+   "title": "词",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136027/ctk27866"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26453",
+   "parent_id": "26444",
+   "title": "《虞美人》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136027/ctk26453"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "136025",
+   "parent_id": "136016",
+   "title": "鹊桥仙（纤云弄巧）/秦观",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136025"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "27866",
+   "parent_id": "157854",
+   "title": "词",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136025/ctk27866"
+  },
+  {
+   "zj_code": "zj135937",
+   "id": "26507",
+   "parent_id": "26476",
+   "title": "《鹊桥仙》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136025/ctk26507"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136030",
+   "parent_id": "136029",
+   "title": "第一单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136030"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185487",
+   "parent_id": "136030",
+   "title": "第1课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185487"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136039",
+   "parent_id": "185487",
+   "title": "1-1 子路、曾皙、冉有、公西华侍坐/《论语》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136039"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26244",
+   "parent_id": "26237",
+   "title": "《论语》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136039/ctk26244"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136040",
+   "parent_id": "185487",
+   "title": "1-2 *齐桓晋文之事/《孟子》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136040"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26260",
+   "parent_id": "26251",
+   "title": "《孟子》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136040/ctk26260"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136041",
+   "parent_id": "185487",
+   "title": "1-3 庖丁解牛/《庄子》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136041"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26261",
+   "parent_id": "26252",
+   "title": "《庄子》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136041/ctk26261"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136043",
+   "parent_id": "136030",
+   "title": "第2课 烛之武退秦师/《左传》",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136043"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26245",
+   "parent_id": "26238",
+   "title": "《左传》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136043/ctk26245"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136044",
+   "parent_id": "136030",
+   "title": "第3课 *鸿门宴/司马迁",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136044"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26273",
+   "parent_id": "26269",
+   "title": "《史记》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136044/ctk26273"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136045",
+   "parent_id": "136030",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136045"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136031",
+   "parent_id": "136029",
+   "title": "第二单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136031"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136046",
+   "parent_id": "136031",
+   "title": "第4课 《窦娥冤》（节选）/关汉卿",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136046"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26555",
+   "parent_id": "26543",
+   "title": "《窦娥冤》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136046/ctk26555"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136049",
+   "parent_id": "136031",
+   "title": "第5课 《雷雨》（节选）/曹禺",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136049"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26898",
+   "parent_id": "26722",
+   "title": "《雷雨》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136049/ctk26898"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136050",
+   "parent_id": "136031",
+   "title": "第6课 *《哈姆莱特》（节选）/莎士比亚",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136050"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27469",
+   "parent_id": "27436",
+   "title": "《哈姆雷特》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136050/ctk27469"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136051",
+   "parent_id": "136031",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136051"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136032",
+   "parent_id": "136029",
+   "title": "第三单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136032"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185488",
+   "parent_id": "136032",
+   "title": "第7课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185488"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136052",
+   "parent_id": "185488",
+   "title": "7-1 青蒿素:人类征服疾病的一小步/屠呦呦",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136052"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27886",
+   "parent_id": "157937",
+   "title": "科普-自然科学类",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136052/ctk27886"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136052/ctk26666"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136053",
+   "parent_id": "185488",
+   "title": "7-2 *一名物理学家的教育历程/加来道雄",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136053"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27176",
+   "parent_id": "26217",
+   "title": "其他外国作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136053/ctk27176"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27887",
+   "parent_id": "157937",
+   "title": "科普-社会科学类",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136053/ctk27887"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136055",
+   "parent_id": "136032",
+   "title": "第8课  *中国建筑的特征/梁思成",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136055"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26838",
+   "parent_id": "26697",
+   "title": "《梁思成文集》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136055/ctk26838"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27887",
+   "parent_id": "157937",
+   "title": "科普-社会科学类",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136055/ctk27887"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136058",
+   "parent_id": "136032",
+   "title": "第9课 说“木叶”/林庚",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136058"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26772",
+   "parent_id": "26664",
+   "title": "其他现代作家",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136058/ctk26772"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136058/ctk27873"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136061",
+   "parent_id": "136032",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136061"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136033",
+   "parent_id": "136029",
+   "title": "第四单元 信息时代的语文生活",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136033"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136062",
+   "parent_id": "136033",
+   "title": "学习活动",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136062"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159622",
+   "parent_id": "136062",
+   "title": "一 认识多媒介",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159622"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159623",
+   "parent_id": "136062",
+   "title": "二  善用多媒介",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159623"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159624",
+   "parent_id": "136062",
+   "title": "三  辨识媒介信息",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159624"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136034",
+   "parent_id": "136029",
+   "title": "第五单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136034"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185489",
+   "parent_id": "136034",
+   "title": "第10课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185489"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136072",
+   "parent_id": "185489",
+   "title": "10-1 在《人民报》创刊纪念会上的演说/马克思",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136072"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136072/ctk27881"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27176",
+   "parent_id": "26217",
+   "title": "其他外国作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136072/ctk27176"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159481",
+   "parent_id": "185489",
+   "title": "10-2 在马克思墓前的讲话/恩格斯",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159481"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159481/ctk27881"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27176",
+   "parent_id": "26217",
+   "title": "其他外国作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159481/ctk27176"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185490",
+   "parent_id": "136034",
+   "title": "第11课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185490"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136073",
+   "parent_id": "185490",
+   "title": "11-1 谏逐客书/李斯",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136073"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26259",
+   "parent_id": "26220",
+   "title": "其他战国作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136073/ctk26259"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136074",
+   "parent_id": "185490",
+   "title": "11-2 *与妻书/林觉民",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136074"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26652",
+   "parent_id": "26235",
+   "title": "其他近代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136074/ctk26652"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136077",
+   "parent_id": "136034",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136077"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136036",
+   "parent_id": "136029",
+   "title": "第六单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136036"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136079",
+   "parent_id": "136036",
+   "title": "第12课  祝福/鲁迅",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136079"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "158636",
+   "parent_id": "157917",
+   "title": "中国现当代小说",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136079/ctk158636"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26667",
+   "parent_id": "26664",
+   "title": "鲁迅(1881-1936)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136079/ctk26667"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185491",
+   "parent_id": "136036",
+   "title": "第13课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185491"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136082",
+   "parent_id": "185491",
+   "title": "13-1 林教头风雪山神庙/施耐庵",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136082"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26568",
+   "parent_id": "26551",
+   "title": "《水浒传》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136082/ctk26568"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "158635",
+   "parent_id": "157917",
+   "title": "古代白话小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136082/ctk158635"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136083",
+   "parent_id": "185491",
+   "title": "13-2 *装在套子里的人/契诃夫",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136083"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "158637",
+   "parent_id": "157917",
+   "title": "外国小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136083/ctk158637"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27223",
+   "parent_id": "27152",
+   "title": "契诃夫",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136083/ctk27223"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185492",
+   "parent_id": "136036",
+   "title": "第14课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185492"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136085",
+   "parent_id": "185492",
+   "title": "14-1 促织/蒲松龄",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136085"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26629",
+   "parent_id": "26609",
+   "title": "《聊斋志异》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136085/ctk26629"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159482",
+   "parent_id": "185492",
+   "title": "14-2  *变形记（节选）/卡夫卡",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159482"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "158637",
+   "parent_id": "157917",
+   "title": "外国小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159482/ctk158637"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "27182",
+   "parent_id": "27180",
+   "title": "《变形记》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159482/ctk27182"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136086",
+   "parent_id": "136036",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136086"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136035",
+   "parent_id": "136029",
+   "title": "第七单元 整本书阅读",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136035"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136078",
+   "parent_id": "136035",
+   "title": "《红楼梦》",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136078"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26638",
+   "parent_id": "26617",
+   "title": "《红楼梦》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136078/ctk26638"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "158635",
+   "parent_id": "157917",
+   "title": "古代白话小说",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj136078/ctk158635"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136037",
+   "parent_id": "136029",
+   "title": "第八单元 ",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136037"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185493",
+   "parent_id": "136037",
+   "title": "第15课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185493"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159483",
+   "parent_id": "185493",
+   "title": "15-1 谏太宗十思疏/魏征",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159483"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26371",
+   "parent_id": "26227",
+   "title": "魏征等",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159483/ctk26371"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159484",
+   "parent_id": "185493",
+   "title": "15-2 *答司马谏议书/王安石",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159484"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26470",
+   "parent_id": "26229",
+   "title": "王安石(1021-1086)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159484/ctk26470"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "185494",
+   "parent_id": "136037",
+   "title": "第16课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185494"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159486",
+   "parent_id": "185494",
+   "title": "16-1 阿房宫赋/杜牧",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159486"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26363",
+   "parent_id": "26227",
+   "title": "杜牧(803-853)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159486/ctk26363"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159487",
+   "parent_id": "185494",
+   "title": "16-2 *六国论/苏洵",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159487"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "26493",
+   "parent_id": "26467",
+   "title": "《六国论》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj159487/ctk26493"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136089",
+   "parent_id": "136037",
+   "title": "单元学习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136089"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "136038",
+   "parent_id": "136029",
+   "title": "古诗词诵读",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj136038"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159625",
+   "parent_id": "136038",
+   "title": "登岳阳楼/杜甫",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159625"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159626",
+   "parent_id": "136038",
+   "title": "桂枝香·金陵怀古/王安石",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159626"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159627",
+   "parent_id": "136038",
+   "title": "念奴娇·过洞庭/张孝祥",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159627"
+  },
+  {
+   "zj_code": "zj136029",
+   "id": "159628",
+   "parent_id": "136038",
+   "title": "游园(【皂罗袍】)/汤显祖",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj159628"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166447",
+   "parent_id": "166430",
+   "title": "第一单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166447"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166448",
+   "parent_id": "166447",
+   "title": "第1课 中国人民站起来了/毛泽东",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166448"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26673",
+   "parent_id": "26664",
+   "title": "毛泽东(1893-1976)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166448/ctk26673"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166448/ctk27881"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "185495",
+   "parent_id": "166447",
+   "title": "第2课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185495"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166449",
+   "parent_id": "185495",
+   "title": "2-1 长征胜利万岁/杨成武",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166449"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166449/ctk27881"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166449/ctk26666"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166450",
+   "parent_id": "185495",
+   "title": "2-2 *大战中的插曲/聂荣臻",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166450"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166450/ctk27881"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166450/ctk26666"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "185496",
+   "parent_id": "166447",
+   "title": "第3课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185496"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166451",
+   "parent_id": "185496",
+   "title": "3-1 别了，“不列颠尼亚”/周婷  杨兴",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166451"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27881",
+   "parent_id": "157937",
+   "title": "新闻（消息、通讯、报告文学、特写）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166451/ctk27881"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166451/ctk26666"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166452",
+   "parent_id": "185496",
+   "title": "3-2 *县委书记的榜样——焦裕禄/穆青  冯健  周原",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166452"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27882",
+   "parent_id": "157937",
+   "title": "传记",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166452/ctk27882"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26666",
+   "parent_id": "26216",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166452/ctk26666"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "183102",
+   "parent_id": "166447",
+   "title": "第4课 在民族复兴的历史丰碑上——2020中国抗疫记/钟华论",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj183102"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166453",
+   "parent_id": "166447",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166453"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166454",
+   "parent_id": "166430",
+   "title": "第二单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166454"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "185497",
+   "parent_id": "166454",
+   "title": "第5课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185497"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166455",
+   "parent_id": "185497",
+   "title": "5-1 《论语》十二章",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166455"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26244",
+   "parent_id": "26237",
+   "title": "《论语》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166455/ctk26244"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166455/ctk27861"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166456",
+   "parent_id": "185497",
+   "title": "5-2 大学之道/《礼记》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166456"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26242",
+   "parent_id": "26219",
+   "title": "其他春秋作家",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166456/ctk26242"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166457",
+   "parent_id": "185497",
+   "title": "5-3 *人皆有不忍人之心/《孟子》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166457"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26251",
+   "parent_id": "26220",
+   "title": "孟子(前372-前289)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166457/ctk26251"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "185498",
+   "parent_id": "166454",
+   "title": "第6课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185498"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166458",
+   "parent_id": "185498",
+   "title": "6-1 《老子》四章",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166458"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26240",
+   "parent_id": "26219",
+   "title": "老子(约前570-500)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166458/ctk26240"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166458/ctk27861"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166459",
+   "parent_id": "185498",
+   "title": "6-2 *五石之瓠/《庄子》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166459"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26252",
+   "parent_id": "26220",
+   "title": "庄子(约前369-前286)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166459/ctk26252"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166459/ctk27861"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166460",
+   "parent_id": "166454",
+   "title": "第7课 *兼爱/《墨子》",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166460"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26239",
+   "parent_id": "26219",
+   "title": "墨子(约前468-前376)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166460/ctk26239"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166460/ctk27861"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166461",
+   "parent_id": "166454",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166461"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166462",
+   "parent_id": "166430",
+   "title": "第三单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166462"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166463",
+   "parent_id": "166462",
+   "title": "第8课 大卫·科波菲尔（节选）/狄更斯",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166463"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27446",
+   "parent_id": "27168",
+   "title": "狄更斯",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166463/ctk27446"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "158637",
+   "parent_id": "157917",
+   "title": "外国小说",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166463/ctk158637"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166464",
+   "parent_id": "166462",
+   "title": "第9课 复活（节选）/列夫·托尔斯泰",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166464"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27222",
+   "parent_id": "27152",
+   "title": "列夫·托尔斯泰",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166464/ctk27222"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "158637",
+   "parent_id": "157917",
+   "title": "外国小说",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166464/ctk158637"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166465",
+   "parent_id": "166462",
+   "title": "第10课 *老人与海（节选）/海明威",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166465"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27331",
+   "parent_id": "27159",
+   "title": "海明威",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166465/ctk27331"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "158637",
+   "parent_id": "157917",
+   "title": "外国小说",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166465/ctk158637"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166466",
+   "parent_id": "166462",
+   "title": "第11课 *百年孤独（节选）/加西亚•马尔克斯",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166466"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27298",
+   "parent_id": "27297",
+   "title": "《百年孤独》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166466/ctk27298"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "158637",
+   "parent_id": "157917",
+   "title": "外国小说",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166466/ctk158637"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166467",
+   "parent_id": "166462",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166467"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166468",
+   "parent_id": "166430",
+   "title": "第四单元  逻辑的力量",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166468"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "185499",
+   "parent_id": "166468",
+   "title": "学习活动",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185499"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166469",
+   "parent_id": "185499",
+   "title": "一 发现潜藏的逻辑谬误",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166469"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166470",
+   "parent_id": "185499",
+   "title": "二 运用有效的推理形式",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166470"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166471",
+   "parent_id": "185499",
+   "title": "三 采用合理的论证方法",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166471"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166472",
+   "parent_id": "166430",
+   "title": "古诗词诵读",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166472"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166473",
+   "parent_id": "166472",
+   "title": "无衣/《诗经·秦风》",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166473"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "158628",
+   "parent_id": "26219",
+   "title": "诗经",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166473/ctk158628"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166473/ctk27865"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166474",
+   "parent_id": "166472",
+   "title": "春江花月夜/张若虚",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166474"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26378",
+   "parent_id": "26337",
+   "title": "《春江花月夜》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166474/ctk26378"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166474/ctk157855"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166475",
+   "parent_id": "166472",
+   "title": "将进酒/李白",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166475"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26347",
+   "parent_id": "26227",
+   "title": "李白(701-762)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166475/ctk26347"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166475/ctk157855"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "166476",
+   "parent_id": "166472",
+   "title": "江城子·乙卯正月二十日夜记梦/苏轼",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166476"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "26472",
+   "parent_id": "26229",
+   "title": "苏轼(1037-1101)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166476/ctk26472"
+  },
+  {
+   "zj_code": "zj166430",
+   "id": "27866",
+   "parent_id": "157854",
+   "title": "词",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166476/ctk27866"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166509",
+   "parent_id": "166432",
+   "title": "第一单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166509"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166510",
+   "parent_id": "166509",
+   "title": "第1课 社会历史的决定性基础/恩格斯",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166510"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166510/ctk27873"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "185500",
+   "parent_id": "166509",
+   "title": "第2课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185500"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166511",
+   "parent_id": "185500",
+   "title": "2-1 改造我们的学习/毛泽东",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166511"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26673",
+   "parent_id": "26664",
+   "title": "毛泽东(1893-1976)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166511/ctk26673"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27872",
+   "parent_id": "157908",
+   "title": "政论文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166511/ctk27872"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166512",
+   "parent_id": "185500",
+   "title": "2-2 人的正确思想是从哪里来的？/毛泽东",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166512"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26673",
+   "parent_id": "26664",
+   "title": "毛泽东(1893-1976)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166512/ctk26673"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27872",
+   "parent_id": "157908",
+   "title": "政论文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166512/ctk27872"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166513",
+   "parent_id": "166509",
+   "title": "第3课 实践是检验真理的唯一标准/《光明日报》特约评论员",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166513"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27872",
+   "parent_id": "157908",
+   "title": "政论文",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166513/ctk27872"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "278084",
+   "parent_id": "166509",
+   "title": "第4课 深刻理解“两个结合”的重大意义/习近平",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj278084"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "278085",
+   "parent_id": "166509",
+   "title": "第5课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj278085"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166514",
+   "parent_id": "278085",
+   "title": "5-1 *修辞立其诚/张岱年",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166514"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166514/ctk27873"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166516",
+   "parent_id": "278085",
+   "title": "5-2 *人应当坚持正义/柏拉图",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166516"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166516/ctk27873"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27303",
+   "parent_id": "27156",
+   "title": "柏拉图",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166516/ctk27303"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "170955",
+   "parent_id": "166509",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170955"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "185501",
+   "parent_id": "170955",
+   "title": "第4课【新版已删除】",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185501"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166515",
+   "parent_id": "185501",
+   "title": " *怜悯是人的天性/卢梭【新版已删除】",
+   "level": 4,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166515"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 5,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166515/ctk27873"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27241",
+   "parent_id": "27153",
+   "title": "卢梭",
+   "level": 5,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166515/ctk27241"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166517",
+   "parent_id": "166432",
+   "title": "第二单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166517"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "185502",
+   "parent_id": "166517",
+   "title": "第6课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185502"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166518",
+   "parent_id": "185502",
+   "title": "6-1 记念刘和珍君/鲁迅",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166518"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26776",
+   "parent_id": "26667",
+   "title": "《记念刘和珍君》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166518/ctk26776"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27878",
+   "parent_id": "157917",
+   "title": "其他散文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166518/ctk27878"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166519",
+   "parent_id": "185502",
+   "title": "6-2 *为了忘却的记念/鲁迅",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166519"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26667",
+   "parent_id": "26664",
+   "title": "鲁迅(1881-1936)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166519/ctk26667"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27878",
+   "parent_id": "157917",
+   "title": "其他散文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166519/ctk27878"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166520",
+   "parent_id": "166517",
+   "title": "第7课 包身工/夏衍",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166520"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26832",
+   "parent_id": "26693",
+   "title": "《包身工》",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166520/ctk26832"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27883",
+   "parent_id": "157937",
+   "title": "报告",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166520/ctk27883"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "185503",
+   "parent_id": "166517",
+   "title": "第8课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185503"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166521",
+   "parent_id": "185503",
+   "title": "8-1 荷花淀/孙犁",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166521"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26915",
+   "parent_id": "26729",
+   "title": "《荷花淀》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166521/ctk26915"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166521/ctk27877"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166522",
+   "parent_id": "185503",
+   "title": "8-2 *小二黑结婚（节选）/赵树理",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166522"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26876",
+   "parent_id": "26712",
+   "title": "《小二黑结婚》",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166522/ctk26876"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166522/ctk27877"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166523",
+   "parent_id": "185503",
+   "title": "8-3 *党费/王愿坚",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166523"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26978",
+   "parent_id": "26665",
+   "title": "王愿坚(1929-1991)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166523/ctk26978"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166523/ctk27877"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "170958",
+   "parent_id": "166517",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170958"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166524",
+   "parent_id": "166432",
+   "title": "第三单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166524"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166525",
+   "parent_id": "166524",
+   "title": "第9课 屈原列传/司马迁",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166525"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26269",
+   "parent_id": "26221",
+   "title": "司马迁(前145-前90)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166525/ctk26269"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166526",
+   "parent_id": "166524",
+   "title": "第10课 *苏武传/班固",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166526"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26276",
+   "parent_id": "26222",
+   "title": "班固(32-92)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166526/ctk26276"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "185504",
+   "parent_id": "166524",
+   "title": "第11课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185504"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166527",
+   "parent_id": "185504",
+   "title": "11-1 过秦论/贾谊",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166527"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26268",
+   "parent_id": "26221",
+   "title": "贾谊(前200-前168)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166527/ctk26268"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166528",
+   "parent_id": "185504",
+   "title": "11-2 *五代史伶官传序/欧阳修",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166528"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26466",
+   "parent_id": "26229",
+   "title": "欧阳修(1007-1072)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166528/ctk26466"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "170959",
+   "parent_id": "166524",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170959"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166529",
+   "parent_id": "166432",
+   "title": "第四单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166529"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166530",
+   "parent_id": "166529",
+   "title": "第12课 玩偶之家（节选）/易卜生",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166530"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27384",
+   "parent_id": "27160",
+   "title": "易卜生",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166530/ctk27384"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27879",
+   "parent_id": "157917",
+   "title": "戏剧",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166530/ctk27879"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "185505",
+   "parent_id": "166529",
+   "title": "第13课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185505"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166531",
+   "parent_id": "185505",
+   "title": "13-1 迷娘（之一）/歌德",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166531"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27195",
+   "parent_id": "27151",
+   "title": "歌德",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166531/ctk27195"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166532",
+   "parent_id": "185505",
+   "title": "13-2 致大海/普希金",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166532"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27215",
+   "parent_id": "27152",
+   "title": "普希金",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166532/ctk27215"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166533",
+   "parent_id": "185505",
+   "title": "13-3 *自己之歌（节选）/惠特曼",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166533"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27323",
+   "parent_id": "27159",
+   "title": "惠特曼",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166533/ctk27323"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166534",
+   "parent_id": "185505",
+   "title": "13-4 *树和天空/特朗斯特罗姆",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166534"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "170961",
+   "parent_id": "166529",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170961"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166535",
+   "parent_id": "166432",
+   "title": "古诗词诵读",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166535"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166536",
+   "parent_id": "166535",
+   "title": "燕歌行并序/高适",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166536"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26348",
+   "parent_id": "26227",
+   "title": "高适(700-765)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166536/ctk26348"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166536/ctk157855"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166537",
+   "parent_id": "166535",
+   "title": "李凭箜篌引/李贺",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166537"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26362",
+   "parent_id": "26227",
+   "title": "李贺(790-816)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166537/ctk26362"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166537/ctk157855"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166538",
+   "parent_id": "166535",
+   "title": "锦瑟/李商隐",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166538"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26365",
+   "parent_id": "26227",
+   "title": "李商隐(813-858)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166538/ctk26365"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166538/ctk27865"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "166539",
+   "parent_id": "166535",
+   "title": "书愤/陆游",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166539"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "26515",
+   "parent_id": "26230",
+   "title": "陆游(1125-1207)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166539/ctk26515"
+  },
+  {
+   "zj_code": "zj166432",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166539/ctk157855"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166477",
+   "parent_id": "166431",
+   "title": "第一单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166477"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185506",
+   "parent_id": "166477",
+   "title": "第1课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185506"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166478",
+   "parent_id": "185506",
+   "title": "1-1 氓/《诗经·卫风》",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166478"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "158628",
+   "parent_id": "26219",
+   "title": "诗经",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166478/ctk158628"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27865",
+   "parent_id": "157854",
+   "title": "诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166478/ctk27865"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166479",
+   "parent_id": "185506",
+   "title": "1-2 离骚（节选）/屈原",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166479"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26257",
+   "parent_id": "26220",
+   "title": "屈原(约前340-约前278)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166479/ctk26257"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166479/ctk157855"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166480",
+   "parent_id": "166477",
+   "title": "第2课 *孔雀东南飞并序",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166480"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166480/ctk157855"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185507",
+   "parent_id": "166477",
+   "title": "第3课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185507"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166481",
+   "parent_id": "185507",
+   "title": "3-1 蜀道难/李白",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166481"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26347",
+   "parent_id": "26227",
+   "title": "李白(701-762)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166481/ctk26347"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166481/ctk157855"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166482",
+   "parent_id": "185507",
+   "title": "3-2 *蜀相/杜甫",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166482"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26350",
+   "parent_id": "26227",
+   "title": "杜甫(712-770)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166482/ctk26350"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157856",
+   "parent_id": "27865",
+   "title": "近体诗（律诗和绝句）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166482/ctk157856"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185508",
+   "parent_id": "166477",
+   "title": "第4课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185508"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166483",
+   "parent_id": "185508",
+   "title": "4-1 *望海潮（东南形胜）/柳永",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166483"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26461",
+   "parent_id": "26229",
+   "title": "柳永(约971-1053)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166483/ctk26461"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27866",
+   "parent_id": "157854",
+   "title": "词",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166483/ctk27866"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166484",
+   "parent_id": "185508",
+   "title": "4-2 *扬州慢（淮左名都）/姜夔",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166484"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26520",
+   "parent_id": "26230",
+   "title": "姜夔(1155-1221)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166484/ctk26520"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "158632",
+   "parent_id": "27866",
+   "title": "婉约词",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166484/ctk158632"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "170967",
+   "parent_id": "166477",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170967"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166485",
+   "parent_id": "166431",
+   "title": "第二单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166485"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185509",
+   "parent_id": "166485",
+   "title": "第5课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185509"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166486",
+   "parent_id": "185509",
+   "title": "5-1 阿Q正传（节选）/鲁迅",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166486"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26667",
+   "parent_id": "26664",
+   "title": "鲁迅(1881-1936)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166486/ctk26667"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166486/ctk27877"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166487",
+   "parent_id": "185509",
+   "title": "5-2 *边城（节选）/沈从文",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166487"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26699",
+   "parent_id": "26664",
+   "title": "沈从文(1902-1988)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166487/ctk26699"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166487/ctk27877"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185510",
+   "parent_id": "166485",
+   "title": "第6课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185510"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166488",
+   "parent_id": "185510",
+   "title": "6-1 大堰河——我的保姆/艾青",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166488"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26723",
+   "parent_id": "26664",
+   "title": "艾青(1910-1996)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166488/ctk26723"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27853",
+   "parent_id": "27870",
+   "title": "现代诗歌",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166488/ctk27853"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166489",
+   "parent_id": "185510",
+   "title": "6-2 *再别康桥/徐志摩",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166489"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26683",
+   "parent_id": "26664",
+   "title": "徐志摩(1896-1945)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166489/ctk26683"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185511",
+   "parent_id": "166485",
+   "title": "第7课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185511"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "193485",
+   "parent_id": "185511",
+   "title": "7-1 风景谈/茅盾",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj193485"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166491",
+   "parent_id": "185511",
+   "title": "7-2 *秦腔/贾平凹",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166491"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26994",
+   "parent_id": "26665",
+   "title": "贾平凹(1952-)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166491/ctk26994"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27877",
+   "parent_id": "157917",
+   "title": "其他小说",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166491/ctk27877"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166492",
+   "parent_id": "166485",
+   "title": "第8课 茶馆（节选）/老舍",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166492"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26691",
+   "parent_id": "26664",
+   "title": "老舍(1899-1966)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166492/ctk26691"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "170971",
+   "parent_id": "166485",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170971"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166493",
+   "parent_id": "166431",
+   "title": "第三单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166493"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185512",
+   "parent_id": "166493",
+   "title": "第9课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185512"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166494",
+   "parent_id": "185512",
+   "title": "9-1 陈情表/李密",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166494"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26296",
+   "parent_id": "26224",
+   "title": "李密(224-287)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166494/ctk26296"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27862",
+   "parent_id": "157848",
+   "title": "应用类",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166494/ctk27862"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166495",
+   "parent_id": "185512",
+   "title": "9-2 *项脊轩志/归有光",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166495"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26577",
+   "parent_id": "26232",
+   "title": "归有光(1506-1571)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166495/ctk26577"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166495/ctk27861"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185513",
+   "parent_id": "166493",
+   "title": "第10课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185513"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166496",
+   "parent_id": "185513",
+   "title": "10-1 兰亭集序/王羲之",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166496"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26308",
+   "parent_id": "26225",
+   "title": "王羲之(303-361)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166496/ctk26308"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166497",
+   "parent_id": "185513",
+   "title": "10-2 归去来兮辞并序/陶渊明",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166497"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26305",
+   "parent_id": "26225",
+   "title": "陶渊明(365-427)",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166497/ctk26305"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166498",
+   "parent_id": "166493",
+   "title": "第11课 *种树郭橐驼传/柳宗元",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166498"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26358",
+   "parent_id": "26227",
+   "title": "柳宗元(773-819)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166498/ctk26358"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166498/ctk27861"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166499",
+   "parent_id": "166493",
+   "title": "第12课 *石钟山记/苏轼",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166499"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26472",
+   "parent_id": "26229",
+   "title": "苏轼(1037-1101)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166499/ctk26472"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27861",
+   "parent_id": "192925",
+   "title": "杂记（山川、景物、人事记）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166499/ctk27861"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "170974",
+   "parent_id": "166493",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170974"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166500",
+   "parent_id": "166431",
+   "title": "第四单元",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166500"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "185514",
+   "parent_id": "166500",
+   "title": "第13课",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj185514"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166501",
+   "parent_id": "185514",
+   "title": "13-1 自然选择的证明/达尔文",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166501"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27873",
+   "parent_id": "157908",
+   "title": "学术论文",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166501/ctk27873"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166502",
+   "parent_id": "185514",
+   "title": "13-2 *宇宙的边疆/卡尔·萨根",
+   "level": 3,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166502"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27886",
+   "parent_id": "157937",
+   "title": "科普-自然科学类",
+   "level": 4,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166502/ctk27886"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166503",
+   "parent_id": "166500",
+   "title": "第14课 *天文学上的旷世之争/关增建",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166503"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "27887",
+   "parent_id": "157937",
+   "title": "科普-社会科学类",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166503/ctk27887"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "170976",
+   "parent_id": "166500",
+   "title": "单元研习任务",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj170976"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166504",
+   "parent_id": "166431",
+   "title": "古诗词诵读",
+   "level": 1,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166504"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166505",
+   "parent_id": "166504",
+   "title": "拟行路难（其四）/鲍照",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166505"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26319",
+   "parent_id": "26226",
+   "title": "鲍照(约414-466)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166505/ctk26319"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157855",
+   "parent_id": "27865",
+   "title": "古体诗",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166505/ctk157855"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166506",
+   "parent_id": "166504",
+   "title": "客至/杜甫",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166506"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26350",
+   "parent_id": "26227",
+   "title": "杜甫(712-770)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166506/ctk26350"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157856",
+   "parent_id": "27865",
+   "title": "近体诗（律诗和绝句）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166506/ctk157856"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166507",
+   "parent_id": "166504",
+   "title": "登快阁/黄庭坚",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166507"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26475",
+   "parent_id": "26229",
+   "title": "黄庭坚(1045-1105)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166507/ctk26475"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157856",
+   "parent_id": "27865",
+   "title": "近体诗（律诗和绝句）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166507/ctk157856"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "166508",
+   "parent_id": "166504",
+   "title": "临安春雨初霁/陆游",
+   "level": 2,
+   "is_knowledge": false,
+   "href": "/gzyw/zj166508"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "26515",
+   "parent_id": "26230",
+   "title": "陆游(1125-1207)",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166508/ctk26515"
+  },
+  {
+   "zj_code": "zj166431",
+   "id": "157856",
+   "parent_id": "27865",
+   "title": "近体诗（律诗和绝句）",
+   "level": 3,
+   "is_knowledge": true,
+   "href": "/gzyw/zj166508/ctk157856"
+  }
+ ]
+}

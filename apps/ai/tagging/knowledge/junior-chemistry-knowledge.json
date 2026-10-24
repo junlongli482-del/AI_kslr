@@ -1,0 +1,6059 @@
+{
+ "stage": "junior",
+ "subject": "chemistry",
+ "subject_cn": "初中化学",
+ "bank_id": 5,
+ "root_id": "19366",
+ "root_title": "初中化学综合库",
+ "node_count": 672,
+ "nodes": [
+  {
+   "id": "19367",
+   "parent_id": "19366",
+   "title": "物质的化学变化",
+   "level": 1,
+   "href": "/czhx/zsd19367",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19373",
+   "parent_id": "19367",
+   "title": "走进化学",
+   "level": 2,
+   "href": "/czhx/zsd19373",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19376",
+   "parent_id": "19373",
+   "title": "化学研究对象",
+   "level": 3,
+   "href": "/czhx/zsd19376",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19377",
+   "parent_id": "19373",
+   "title": "化学发展史",
+   "level": 3,
+   "href": "/czhx/zsd19377",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19379",
+   "parent_id": "19367",
+   "title": "物质的变化和性质",
+   "level": 2,
+   "href": "/czhx/zsd19379",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19381",
+   "parent_id": "19379",
+   "title": "化学变化和物理变化",
+   "level": 3,
+   "href": "/czhx/zsd19381",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19383",
+   "parent_id": "19381",
+   "title": "化学变化与物理变化判断",
+   "level": 4,
+   "href": "/czhx/zsd19383",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19384",
+   "parent_id": "19381",
+   "title": "化学反应现象和结论判断",
+   "level": 4,
+   "href": "/czhx/zsd19384",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19382",
+   "parent_id": "19379",
+   "title": "化学性质和物理性质",
+   "level": 3,
+   "href": "/czhx/zsd19382",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19375",
+   "parent_id": "19367",
+   "title": "化学反应及质量守恒定律",
+   "level": 2,
+   "href": "/czhx/zsd19375",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19387",
+   "parent_id": "19375",
+   "title": "四种基本反应类型",
+   "level": 3,
+   "href": "/czhx/zsd19387",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19391",
+   "parent_id": "19387",
+   "title": "化合反应",
+   "level": 4,
+   "href": "/czhx/zsd19391",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19392",
+   "parent_id": "19387",
+   "title": "分解反应",
+   "level": 4,
+   "href": "/czhx/zsd19392",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19393",
+   "parent_id": "19387",
+   "title": "复分解反应",
+   "level": 4,
+   "href": "/czhx/zsd19393",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19395",
+   "parent_id": "19393",
+   "title": "复分解反应的定义",
+   "level": 5,
+   "href": "/czhx/zsd19395",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19396",
+   "parent_id": "19393",
+   "title": "复分解反应发生的条件",
+   "level": 5,
+   "href": "/czhx/zsd19396",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19397",
+   "parent_id": "19393",
+   "title": "复分解反应的实质与应用",
+   "level": 5,
+   "href": "/czhx/zsd19397",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19394",
+   "parent_id": "19387",
+   "title": "置换反应",
+   "level": 4,
+   "href": "/czhx/zsd19394",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19388",
+   "parent_id": "19375",
+   "title": "氧化反应",
+   "level": 3,
+   "href": "/czhx/zsd19388",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19398",
+   "parent_id": "19388",
+   "title": "氧化反应概念及判断",
+   "level": 4,
+   "href": "/czhx/zsd19398",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19399",
+   "parent_id": "19388",
+   "title": "还原剂、氧化剂",
+   "level": 4,
+   "href": "/czhx/zsd19399",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19380",
+   "parent_id": "19375",
+   "title": "催化剂",
+   "level": 3,
+   "href": "/czhx/zsd19380",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19385",
+   "parent_id": "19380",
+   "title": "催化剂的概念、性质与用途",
+   "level": 4,
+   "href": "/czhx/zsd19385",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19386",
+   "parent_id": "19380",
+   "title": "催化作用",
+   "level": 4,
+   "href": "/czhx/zsd19386",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19802",
+   "parent_id": "19375",
+   "title": "燃烧和灭火",
+   "level": 3,
+   "href": "/czhx/zsd19802",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19806",
+   "parent_id": "19802",
+   "title": "燃烧",
+   "level": 4,
+   "href": "/czhx/zsd19806",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19809",
+   "parent_id": "19806",
+   "title": "燃烧的定义及条件",
+   "level": 5,
+   "href": "/czhx/zsd19809",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19810",
+   "parent_id": "19806",
+   "title": "实验探究燃烧条件",
+   "level": 5,
+   "href": "/czhx/zsd19810",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19811",
+   "parent_id": "19806",
+   "title": "控制变量法在实验设计中的应用",
+   "level": 5,
+   "href": "/czhx/zsd19811",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19812",
+   "parent_id": "19806",
+   "title": "燃料充分燃烧的方法及其重要性",
+   "level": 5,
+   "href": "/czhx/zsd19812",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19813",
+   "parent_id": "19806",
+   "title": "着火点",
+   "level": 5,
+   "href": "/czhx/zsd19813",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19807",
+   "parent_id": "19802",
+   "title": "灭火",
+   "level": 4,
+   "href": "/czhx/zsd19807",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19814",
+   "parent_id": "19807",
+   "title": "灭火原理与方法",
+   "level": 5,
+   "href": "/czhx/zsd19814",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19815",
+   "parent_id": "19807",
+   "title": "火灾的预防及自救措施",
+   "level": 5,
+   "href": "/czhx/zsd19815",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19816",
+   "parent_id": "19807",
+   "title": "常用的灭火器相关知识",
+   "level": 5,
+   "href": "/czhx/zsd19816",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19808",
+   "parent_id": "19802",
+   "title": "爆炸",
+   "level": 4,
+   "href": "/czhx/zsd19808",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19817",
+   "parent_id": "19808",
+   "title": "爆炸、燃烧、缓慢氧化与自燃",
+   "level": 5,
+   "href": "/czhx/zsd19817",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19818",
+   "parent_id": "19808",
+   "title": "爆炸原理的实验探究",
+   "level": 5,
+   "href": "/czhx/zsd19818",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19819",
+   "parent_id": "19808",
+   "title": "与爆炸和燃烧有关图标的辨认",
+   "level": 5,
+   "href": "/czhx/zsd19819",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19389",
+   "parent_id": "19375",
+   "title": "质量守恒定律",
+   "level": 3,
+   "href": "/czhx/zsd19389",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19400",
+   "parent_id": "19389",
+   "title": "质量守恒定律分析",
+   "level": 4,
+   "href": "/czhx/zsd19400",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19402",
+   "parent_id": "19400",
+   "title": "质量守恒定律内容及适用范围",
+   "level": 5,
+   "href": "/czhx/zsd19402",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19403",
+   "parent_id": "19400",
+   "title": "实验探究质量守恒定律",
+   "level": 5,
+   "href": "/czhx/zsd19403",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19404",
+   "parent_id": "19400",
+   "title": "质量守恒定律的微观解释",
+   "level": 5,
+   "href": "/czhx/zsd19404",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19401",
+   "parent_id": "19389",
+   "title": "质量守恒定律的应用",
+   "level": 4,
+   "href": "/czhx/zsd19401",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19405",
+   "parent_id": "19401",
+   "title": "有关质量守恒定律的计算",
+   "level": 5,
+   "href": "/czhx/zsd19405",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19406",
+   "parent_id": "19401",
+   "title": "用质量守恒定律确定物质组成",
+   "level": 5,
+   "href": "/czhx/zsd19406",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19407",
+   "parent_id": "19401",
+   "title": "用质量守恒定律解释现象",
+   "level": 5,
+   "href": "/czhx/zsd19407",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19390",
+   "parent_id": "19375",
+   "title": "化学方程式",
+   "level": 3,
+   "href": "/czhx/zsd19390",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19408",
+   "parent_id": "19390",
+   "title": "化学方程式含义",
+   "level": 4,
+   "href": "/czhx/zsd19408",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19409",
+   "parent_id": "19390",
+   "title": "化学方程式的书写",
+   "level": 4,
+   "href": "/czhx/zsd19409",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19410",
+   "parent_id": "19390",
+   "title": "根据方程式推测化学式",
+   "level": 4,
+   "href": "/czhx/zsd19410",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19411",
+   "parent_id": "19390",
+   "title": "化学方程式配平",
+   "level": 4,
+   "href": "/czhx/zsd19411",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19412",
+   "parent_id": "19390",
+   "title": "化学方程式有关计算",
+   "level": 4,
+   "href": "/czhx/zsd19412",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19413",
+   "parent_id": "19412",
+   "title": "根据化学方程式计算质量比",
+   "level": 5,
+   "href": "/czhx/zsd19413",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19414",
+   "parent_id": "19412",
+   "title": "不含杂质的化学方程式计算",
+   "level": 5,
+   "href": "/czhx/zsd19414",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19415",
+   "parent_id": "19412",
+   "title": "含杂质的化学方程式计算",
+   "level": 5,
+   "href": "/czhx/zsd19415",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19416",
+   "parent_id": "19412",
+   "title": "化学方程式与实验的计算",
+   "level": 5,
+   "href": "/czhx/zsd19416",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19368",
+   "parent_id": "19366",
+   "title": "物质的组成与结构",
+   "level": 1,
+   "href": "/czhx/zsd19368",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19418",
+   "parent_id": "19368",
+   "title": "构成物质的微粒",
+   "level": 2,
+   "href": "/czhx/zsd19418",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19429",
+   "parent_id": "19418",
+   "title": "分子",
+   "level": 3,
+   "href": "/czhx/zsd19429",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19432",
+   "parent_id": "19429",
+   "title": "物质的微粒性",
+   "level": 4,
+   "href": "/czhx/zsd19432",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19434",
+   "parent_id": "19432",
+   "title": "微粒的共性",
+   "level": 5,
+   "href": "/czhx/zsd19434",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19435",
+   "parent_id": "19432",
+   "title": "微粒的观点解释现象",
+   "level": 5,
+   "href": "/czhx/zsd19435",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19433",
+   "parent_id": "19429",
+   "title": "分子、原子的关系",
+   "level": 4,
+   "href": "/czhx/zsd19433",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19436",
+   "parent_id": "19433",
+   "title": "分子、原子的区别与联系",
+   "level": 5,
+   "href": "/czhx/zsd19436",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148942",
+   "parent_id": "19433",
+   "title": "分子是保持物质化学性质的最小微粒",
+   "level": 5,
+   "href": "/czhx/zsd148942",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148943",
+   "parent_id": "19433",
+   "title": "原子是化学变化中最小的粒子",
+   "level": 5,
+   "href": "/czhx/zsd148943",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19437",
+   "parent_id": "19433",
+   "title": "微粒图像的分析及应用",
+   "level": 5,
+   "href": "/czhx/zsd19437",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19430",
+   "parent_id": "19418",
+   "title": "原子",
+   "level": 3,
+   "href": "/czhx/zsd19430",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19438",
+   "parent_id": "19430",
+   "title": "原子的构成",
+   "level": 4,
+   "href": "/czhx/zsd19438",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19440",
+   "parent_id": "19438",
+   "title": "原子结构",
+   "level": 5,
+   "href": "/czhx/zsd19440",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19441",
+   "parent_id": "19438",
+   "title": "原子论观点发展",
+   "level": 5,
+   "href": "/czhx/zsd19441",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19442",
+   "parent_id": "19438",
+   "title": "原子中各类微粒的数值关系",
+   "level": 5,
+   "href": "/czhx/zsd19442",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19443",
+   "parent_id": "19438",
+   "title": "原子结构相关信息分析及应用",
+   "level": 5,
+   "href": "/czhx/zsd19443",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19444",
+   "parent_id": "19438",
+   "title": "基于构成原子的各微粒数值关系的计算",
+   "level": 5,
+   "href": "/czhx/zsd19444",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19445",
+   "parent_id": "19438",
+   "title": "相对原子质量的概念及有关计算",
+   "level": 5,
+   "href": "/czhx/zsd19445",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19439",
+   "parent_id": "19430",
+   "title": "原子核外电子排布",
+   "level": 4,
+   "href": "/czhx/zsd19439",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19446",
+   "parent_id": "19439",
+   "title": "原子核外电子的分层排布认识",
+   "level": 5,
+   "href": "/czhx/zsd19446",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19447",
+   "parent_id": "19439",
+   "title": "原子结构示意图含义及应用",
+   "level": 5,
+   "href": "/czhx/zsd19447",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19448",
+   "parent_id": "19439",
+   "title": "原子结构示意图的相关计算",
+   "level": 5,
+   "href": "/czhx/zsd19448",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19449",
+   "parent_id": "19439",
+   "title": "微粒结构示意图书写",
+   "level": 5,
+   "href": "/czhx/zsd19449",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19450",
+   "parent_id": "19439",
+   "title": "核外电子排布规律的理解及应用",
+   "level": 5,
+   "href": "/czhx/zsd19450",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19451",
+   "parent_id": "19439",
+   "title": "最外层电子在化学变化中的作用",
+   "level": 5,
+   "href": "/czhx/zsd19451",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19431",
+   "parent_id": "19418",
+   "title": "离子",
+   "level": 3,
+   "href": "/czhx/zsd19431",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19452",
+   "parent_id": "19431",
+   "title": "离子的概念及形成",
+   "level": 4,
+   "href": "/czhx/zsd19452",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19453",
+   "parent_id": "19431",
+   "title": "离子中各类微粒间数值关系",
+   "level": 4,
+   "href": "/czhx/zsd19453",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19454",
+   "parent_id": "19431",
+   "title": "同一元素的离子与原子相互转化",
+   "level": 4,
+   "href": "/czhx/zsd19454",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19455",
+   "parent_id": "19431",
+   "title": "物质化学性质的决定因素",
+   "level": 4,
+   "href": "/czhx/zsd19455",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19456",
+   "parent_id": "19431",
+   "title": "离子符号的含义及书写",
+   "level": 4,
+   "href": "/czhx/zsd19456",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19419",
+   "parent_id": "19368",
+   "title": "化学元素",
+   "level": 2,
+   "href": "/czhx/zsd19419",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19457",
+   "parent_id": "19419",
+   "title": "元素",
+   "level": 3,
+   "href": "/czhx/zsd19457",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19461",
+   "parent_id": "19457",
+   "title": "元素的概念",
+   "level": 4,
+   "href": "/czhx/zsd19461",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19460",
+   "parent_id": "19457",
+   "title": "地壳中元素的含量",
+   "level": 4,
+   "href": "/czhx/zsd19460",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "132418",
+   "parent_id": "19457",
+   "title": "多种多样的物质及其组成",
+   "level": 4,
+   "href": "/czhx/zsd132418",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19458",
+   "parent_id": "19419",
+   "title": "常见元素名称及符号",
+   "level": 3,
+   "href": "/czhx/zsd19458",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19462",
+   "parent_id": "19458",
+   "title": "元素符号书写及含义",
+   "level": 4,
+   "href": "/czhx/zsd19462",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19463",
+   "parent_id": "19458",
+   "title": "元素与原子、物质的区别与联系",
+   "level": 4,
+   "href": "/czhx/zsd19463",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19464",
+   "parent_id": "19458",
+   "title": "前20号元素的原子序数、名称及符号",
+   "level": 4,
+   "href": "/czhx/zsd19464",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19459",
+   "parent_id": "19419",
+   "title": "元素周期表简介",
+   "level": 3,
+   "href": "/czhx/zsd19459",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19465",
+   "parent_id": "19459",
+   "title": "元素周期表结构及简单规律",
+   "level": 4,
+   "href": "/czhx/zsd19465",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19466",
+   "parent_id": "19459",
+   "title": "元素周期表及元素分类",
+   "level": 4,
+   "href": "/czhx/zsd19466",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19467",
+   "parent_id": "19459",
+   "title": "元素周期表信息示意图",
+   "level": 4,
+   "href": "/czhx/zsd19467",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19468",
+   "parent_id": "19459",
+   "title": "原子结构示意图与元素在周期表中的位置相互推断",
+   "level": 4,
+   "href": "/czhx/zsd19468",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19469",
+   "parent_id": "19459",
+   "title": "周期表信息示意图及结构示意图的综合考查",
+   "level": 4,
+   "href": "/czhx/zsd19469",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19420",
+   "parent_id": "19368",
+   "title": "物质组成的表示",
+   "level": 2,
+   "href": "/czhx/zsd19420",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19470",
+   "parent_id": "19420",
+   "title": "化学式与化合价",
+   "level": 3,
+   "href": "/czhx/zsd19470",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19472",
+   "parent_id": "19470",
+   "title": "化学式",
+   "level": 4,
+   "href": "/czhx/zsd19472",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19475",
+   "parent_id": "19472",
+   "title": "化学式、分子式及涵义",
+   "level": 5,
+   "href": "/czhx/zsd19475",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19476",
+   "parent_id": "19472",
+   "title": "化学式书写及读法",
+   "level": 5,
+   "href": "/czhx/zsd19476",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19477",
+   "parent_id": "19472",
+   "title": "化学符号周围数字的含义",
+   "level": 5,
+   "href": "/czhx/zsd19477",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19478",
+   "parent_id": "19472",
+   "title": "化学式图示的分析",
+   "level": 5,
+   "href": "/czhx/zsd19478",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19479",
+   "parent_id": "19472",
+   "title": "化学式量及相对分子质量的定义",
+   "level": 5,
+   "href": "/czhx/zsd19479",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19473",
+   "parent_id": "19470",
+   "title": "化学式的简单计算",
+   "level": 4,
+   "href": "/czhx/zsd19473",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19480",
+   "parent_id": "19473",
+   "title": "根据化学式计算相对分子质量",
+   "level": 5,
+   "href": "/czhx/zsd19480",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19481",
+   "parent_id": "19473",
+   "title": "根据化学式计算元素质量比",
+   "level": 5,
+   "href": "/czhx/zsd19481",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19482",
+   "parent_id": "19473",
+   "title": "根据化学式计算元素质量分数",
+   "level": 5,
+   "href": "/czhx/zsd19482",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "132419",
+   "parent_id": "19473",
+   "title": "计算混合物中物质或元素的质量分数",
+   "level": 5,
+   "href": "/czhx/zsd132419",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19474",
+   "parent_id": "19470",
+   "title": "化合价",
+   "level": 4,
+   "href": "/czhx/zsd19474",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19483",
+   "parent_id": "19474",
+   "title": "常用化合价规律",
+   "level": 5,
+   "href": "/czhx/zsd19483",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19484",
+   "parent_id": "19474",
+   "title": "化合价代数和的计算与应用",
+   "level": 5,
+   "href": "/czhx/zsd19484",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19485",
+   "parent_id": "19474",
+   "title": "常见元素、原子团的化合价",
+   "level": 5,
+   "href": "/czhx/zsd19485",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19471",
+   "parent_id": "19420",
+   "title": "物质的量",
+   "level": 3,
+   "href": "/czhx/zsd19471",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19486",
+   "parent_id": "19471",
+   "title": "物质的量及其单位",
+   "level": 4,
+   "href": "/czhx/zsd19486",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19487",
+   "parent_id": "19471",
+   "title": "物质的量与微粒数目间的计算",
+   "level": 4,
+   "href": "/czhx/zsd19487",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19488",
+   "parent_id": "19471",
+   "title": "摩尔质量",
+   "level": 4,
+   "href": "/czhx/zsd19488",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19489",
+   "parent_id": "19471",
+   "title": "摩尔质量的有关计算",
+   "level": 4,
+   "href": "/czhx/zsd19489",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19369",
+   "parent_id": "19366",
+   "title": "物质的性质与应用",
+   "level": 1,
+   "href": "/czhx/zsd19369",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19417",
+   "parent_id": "19369",
+   "title": "化学物质的多样性",
+   "level": 2,
+   "href": "/czhx/zsd19417",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19421",
+   "parent_id": "19417",
+   "title": "纯净物和混合物的判断",
+   "level": 3,
+   "href": "/czhx/zsd19421",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19422",
+   "parent_id": "19417",
+   "title": "单质和化合物的判断",
+   "level": 3,
+   "href": "/czhx/zsd19422",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19423",
+   "parent_id": "19417",
+   "title": "有机物定义和常见的有机物",
+   "level": 3,
+   "href": "/czhx/zsd19423",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19424",
+   "parent_id": "19417",
+   "title": "无机物的分类",
+   "level": 3,
+   "href": "/czhx/zsd19424",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19425",
+   "parent_id": "19424",
+   "title": "酸的定义",
+   "level": 4,
+   "href": "/czhx/zsd19425",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19426",
+   "parent_id": "19424",
+   "title": "碱的定义",
+   "level": 4,
+   "href": "/czhx/zsd19426",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19427",
+   "parent_id": "19424",
+   "title": "盐的定义",
+   "level": 4,
+   "href": "/czhx/zsd19427",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19428",
+   "parent_id": "19424",
+   "title": "氧化物的定义",
+   "level": 4,
+   "href": "/czhx/zsd19428",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19490",
+   "parent_id": "19369",
+   "title": "空气",
+   "level": 2,
+   "href": "/czhx/zsd19490",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19498",
+   "parent_id": "19490",
+   "title": "空气的组成",
+   "level": 3,
+   "href": "/czhx/zsd19498",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19500",
+   "parent_id": "19498",
+   "title": "拉瓦锡测定空气组成的实验",
+   "level": 4,
+   "href": "/czhx/zsd19500",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19501",
+   "parent_id": "19498",
+   "title": "空气各成分及其体积分数",
+   "level": 4,
+   "href": "/czhx/zsd19501",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19502",
+   "parent_id": "19498",
+   "title": "测定空气中氧气的含量实验的过程",
+   "level": 4,
+   "href": "/czhx/zsd19502",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19503",
+   "parent_id": "19498",
+   "title": "测定空气中氧气含量的实验误差分析",
+   "level": 4,
+   "href": "/czhx/zsd19503",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19504",
+   "parent_id": "19498",
+   "title": "测定空气中氧气含量实验的改进",
+   "level": 4,
+   "href": "/czhx/zsd19504",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19505",
+   "parent_id": "19498",
+   "title": "证明空气及各成分的存在及性质",
+   "level": 4,
+   "href": "/czhx/zsd19505",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19499",
+   "parent_id": "19490",
+   "title": "空气的应用",
+   "level": 3,
+   "href": "/czhx/zsd19499",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19506",
+   "parent_id": "19499",
+   "title": "空气中各成分的用途",
+   "level": 4,
+   "href": "/czhx/zsd19506",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19507",
+   "parent_id": "19499",
+   "title": "空气的污染与防治",
+   "level": 4,
+   "href": "/czhx/zsd19507",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19508",
+   "parent_id": "19499",
+   "title": "空气的分离",
+   "level": 4,
+   "href": "/czhx/zsd19508",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19509",
+   "parent_id": "19499",
+   "title": "空气质量报告",
+   "level": 4,
+   "href": "/czhx/zsd19509",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19491",
+   "parent_id": "19369",
+   "title": "氧气",
+   "level": 2,
+   "href": "/czhx/zsd19491",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19510",
+   "parent_id": "19491",
+   "title": "氧气的性质",
+   "level": 3,
+   "href": "/czhx/zsd19510",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19512",
+   "parent_id": "19510",
+   "title": "氧气的物理性质及贮存",
+   "level": 4,
+   "href": "/czhx/zsd19512",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19513",
+   "parent_id": "19510",
+   "title": "氧气的化学性质",
+   "level": 4,
+   "href": "/czhx/zsd19513",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19514",
+   "parent_id": "19513",
+   "title": "物质与氧气反应的共性分析",
+   "level": 5,
+   "href": "/czhx/zsd19514",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19515",
+   "parent_id": "19513",
+   "title": "自然界的氧循环",
+   "level": 5,
+   "href": "/czhx/zsd19515",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19516",
+   "parent_id": "19513",
+   "title": "氧气助燃性及实验",
+   "level": 5,
+   "href": "/czhx/zsd19516",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19517",
+   "parent_id": "19513",
+   "title": "铁在氧气中燃烧及其实验",
+   "level": 5,
+   "href": "/czhx/zsd19517",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19518",
+   "parent_id": "19513",
+   "title": "硫在氧气中燃烧及其实验",
+   "level": 5,
+   "href": "/czhx/zsd19518",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19519",
+   "parent_id": "19513",
+   "title": "木炭在氧气中燃烧及其实验",
+   "level": 5,
+   "href": "/czhx/zsd19519",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19520",
+   "parent_id": "19513",
+   "title": "铝与氧气反应原理及探究",
+   "level": 5,
+   "href": "/czhx/zsd19520",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19521",
+   "parent_id": "19513",
+   "title": "氧气与石蜡的反应",
+   "level": 5,
+   "href": "/czhx/zsd19521",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19522",
+   "parent_id": "19513",
+   "title": "氧气中燃烧实验装置的异同",
+   "level": 5,
+   "href": "/czhx/zsd19522",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19523",
+   "parent_id": "19513",
+   "title": "空气和氧气中的燃烧现象差异",
+   "level": 5,
+   "href": "/czhx/zsd19523",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19525",
+   "parent_id": "19513",
+   "title": "缓慢氧化",
+   "level": 5,
+   "href": "/czhx/zsd19525",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "128130",
+   "parent_id": "19513",
+   "title": "镁在氧气中燃烧及其实验",
+   "level": 5,
+   "href": "/czhx/zsd128130",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19511",
+   "parent_id": "19491",
+   "title": "氧气的制取",
+   "level": 3,
+   "href": "/czhx/zsd19511",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19526",
+   "parent_id": "19511",
+   "title": "工业制取氧气",
+   "level": 4,
+   "href": "/czhx/zsd19526",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19527",
+   "parent_id": "19511",
+   "title": "实验室制取氧气",
+   "level": 4,
+   "href": "/czhx/zsd19527",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19528",
+   "parent_id": "19527",
+   "title": "过氧化氢制取氧气实验",
+   "level": 5,
+   "href": "/czhx/zsd19528",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19529",
+   "parent_id": "19527",
+   "title": "高锰酸钾制取氧气实验",
+   "level": 5,
+   "href": "/czhx/zsd19529",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19530",
+   "parent_id": "19527",
+   "title": "氯酸钾制取氧气",
+   "level": 5,
+   "href": "/czhx/zsd19530",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19531",
+   "parent_id": "19527",
+   "title": "其他制取氧气方法的相关考查",
+   "level": 5,
+   "href": "/czhx/zsd19531",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19532",
+   "parent_id": "19527",
+   "title": "制取氧气实验的图像问题",
+   "level": 5,
+   "href": "/czhx/zsd19532",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19533",
+   "parent_id": "19527",
+   "title": "氧气的检验及验满",
+   "level": 5,
+   "href": "/czhx/zsd19533",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19534",
+   "parent_id": "19527",
+   "title": "氧气的制取中装置的选择",
+   "level": 5,
+   "href": "/czhx/zsd19534",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19535",
+   "parent_id": "19527",
+   "title": "固液加热型装置气密性的检验",
+   "level": 5,
+   "href": "/czhx/zsd19535",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19492",
+   "parent_id": "19369",
+   "title": "碳和碳的氧化物",
+   "level": 2,
+   "href": "/czhx/zsd19492",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19536",
+   "parent_id": "19492",
+   "title": "碳的单质",
+   "level": 3,
+   "href": "/czhx/zsd19536",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19539",
+   "parent_id": "19536",
+   "title": "同种元素组成的物质",
+   "level": 4,
+   "href": "/czhx/zsd19539",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19540",
+   "parent_id": "19536",
+   "title": "金刚石的相关知识",
+   "level": 4,
+   "href": "/czhx/zsd19540",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19541",
+   "parent_id": "19536",
+   "title": "石墨的相关知识",
+   "level": 4,
+   "href": "/czhx/zsd19541",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19542",
+   "parent_id": "19536",
+   "title": "C60的相关知识",
+   "level": 4,
+   "href": "/czhx/zsd19542",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19543",
+   "parent_id": "19536",
+   "title": "活性炭的吸附性",
+   "level": 4,
+   "href": "/czhx/zsd19543",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19544",
+   "parent_id": "19536",
+   "title": "根据新信息判断碳单质的性质",
+   "level": 4,
+   "href": "/czhx/zsd19544",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19545",
+   "parent_id": "19536",
+   "title": "结构、性质与用途的关系",
+   "level": 4,
+   "href": "/czhx/zsd19545",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19537",
+   "parent_id": "19492",
+   "title": "碳单质的化学性质",
+   "level": 3,
+   "href": "/czhx/zsd19537",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19546",
+   "parent_id": "19537",
+   "title": "碳单质的稳定性",
+   "level": 4,
+   "href": "/czhx/zsd19546",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19547",
+   "parent_id": "19537",
+   "title": "碳单质的可燃性",
+   "level": 4,
+   "href": "/czhx/zsd19547",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19548",
+   "parent_id": "19537",
+   "title": "碳单质与某些氧化物的反应",
+   "level": 4,
+   "href": "/czhx/zsd19548",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19549",
+   "parent_id": "19537",
+   "title": "木炭还原氧化铜的实验",
+   "level": 4,
+   "href": "/czhx/zsd19549",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19550",
+   "parent_id": "19537",
+   "title": "木炭还原其他金属氧化物的实验",
+   "level": 4,
+   "href": "/czhx/zsd19550",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19551",
+   "parent_id": "19537",
+   "title": "碳单质与二氧化碳的反应",
+   "level": 4,
+   "href": "/czhx/zsd19551",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19538",
+   "parent_id": "19492",
+   "title": "二氧化碳和一氧化碳",
+   "level": 3,
+   "href": "/czhx/zsd19538",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19552",
+   "parent_id": "19538",
+   "title": "二氧化碳的制取",
+   "level": 4,
+   "href": "/czhx/zsd19552",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19555",
+   "parent_id": "19552",
+   "title": "制取二氧化碳的原理",
+   "level": 5,
+   "href": "/czhx/zsd19555",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19556",
+   "parent_id": "19552",
+   "title": "制取二氧化碳的装置",
+   "level": 5,
+   "href": "/czhx/zsd19556",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19557",
+   "parent_id": "19552",
+   "title": "启普发生器原理及使用",
+   "level": 5,
+   "href": "/czhx/zsd19557",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19558",
+   "parent_id": "19552",
+   "title": "制取二氧化碳实验的改进",
+   "level": 5,
+   "href": "/czhx/zsd19558",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19559",
+   "parent_id": "19552",
+   "title": "制取二氧化碳步骤及操作",
+   "level": 5,
+   "href": "/czhx/zsd19559",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19560",
+   "parent_id": "19552",
+   "title": "二氧化碳制取的综合考查",
+   "level": 5,
+   "href": "/czhx/zsd19560",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19561",
+   "parent_id": "19552",
+   "title": "制取二氧化碳原理的拓展",
+   "level": 5,
+   "href": "/czhx/zsd19561",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19562",
+   "parent_id": "19552",
+   "title": "二氧化碳的检验、验满及净化",
+   "level": 5,
+   "href": "/czhx/zsd19562",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19553",
+   "parent_id": "19538",
+   "title": "二氧化碳",
+   "level": 4,
+   "href": "/czhx/zsd19553",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19563",
+   "parent_id": "19553",
+   "title": "二氧化碳物理性质及实验",
+   "level": 5,
+   "href": "/czhx/zsd19563",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19564",
+   "parent_id": "19553",
+   "title": "二氧化碳不可燃、不支持燃烧性质",
+   "level": 5,
+   "href": "/czhx/zsd19564",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19565",
+   "parent_id": "19553",
+   "title": "二氧化碳与水的反应及实验",
+   "level": 5,
+   "href": "/czhx/zsd19565",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19566",
+   "parent_id": "19553",
+   "title": "二氧化碳与碱的反应及实验",
+   "level": 5,
+   "href": "/czhx/zsd19566",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19567",
+   "parent_id": "19553",
+   "title": "二氧化碳的用途",
+   "level": 5,
+   "href": "/czhx/zsd19567",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19568",
+   "parent_id": "19553",
+   "title": "二氧化碳对生活环境的影响",
+   "level": 5,
+   "href": "/czhx/zsd19568",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19569",
+   "parent_id": "19553",
+   "title": "自然界碳循环",
+   "level": 5,
+   "href": "/czhx/zsd19569",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19554",
+   "parent_id": "19538",
+   "title": "一氧化碳",
+   "level": 4,
+   "href": "/czhx/zsd19554",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19570",
+   "parent_id": "19554",
+   "title": "一氧化碳的物理性质",
+   "level": 5,
+   "href": "/czhx/zsd19570",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19571",
+   "parent_id": "19554",
+   "title": "一氧化碳的毒性及安全使用",
+   "level": 5,
+   "href": "/czhx/zsd19571",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19572",
+   "parent_id": "19554",
+   "title": "一氧化碳的还原性",
+   "level": 5,
+   "href": "/czhx/zsd19572",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19573",
+   "parent_id": "19554",
+   "title": "一氧化碳的可燃性",
+   "level": 5,
+   "href": "/czhx/zsd19573",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19574",
+   "parent_id": "19554",
+   "title": "一氧化碳的用途",
+   "level": 5,
+   "href": "/czhx/zsd19574",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19575",
+   "parent_id": "19554",
+   "title": "碳的氧化物组合气体的计算",
+   "level": 5,
+   "href": "/czhx/zsd19575",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19576",
+   "parent_id": "19554",
+   "title": "碳及其化合物间相互转化",
+   "level": 5,
+   "href": "/czhx/zsd19576",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19577",
+   "parent_id": "19554",
+   "title": "碳的氧化物的全面比较",
+   "level": 5,
+   "href": "/czhx/zsd19577",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19578",
+   "parent_id": "19554",
+   "title": "一氧化碳燃烧实验",
+   "level": 5,
+   "href": "/czhx/zsd19578",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19579",
+   "parent_id": "19554",
+   "title": "一氧化碳还原氧化铜实验",
+   "level": 5,
+   "href": "/czhx/zsd19579",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19493",
+   "parent_id": "19369",
+   "title": "金属和金属矿物",
+   "level": 2,
+   "href": "/czhx/zsd19493",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19580",
+   "parent_id": "19493",
+   "title": "金属材料",
+   "level": 3,
+   "href": "/czhx/zsd19580",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19583",
+   "parent_id": "19580",
+   "title": "几种重要的金属",
+   "level": 4,
+   "href": "/czhx/zsd19583",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19585",
+   "parent_id": "19583",
+   "title": "金属材料和非金属材料",
+   "level": 5,
+   "href": "/czhx/zsd19585",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19586",
+   "parent_id": "19583",
+   "title": "金属的物理通性与用途",
+   "level": 5,
+   "href": "/czhx/zsd19586",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19587",
+   "parent_id": "19583",
+   "title": "金属之最和分类",
+   "level": 5,
+   "href": "/czhx/zsd19587",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19588",
+   "parent_id": "19583",
+   "title": "金属材料选择依据",
+   "level": 5,
+   "href": "/czhx/zsd19588",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19584",
+   "parent_id": "19580",
+   "title": "合金",
+   "level": 4,
+   "href": "/czhx/zsd19584",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19589",
+   "parent_id": "19584",
+   "title": "合金的认识",
+   "level": 5,
+   "href": "/czhx/zsd19589",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19590",
+   "parent_id": "19584",
+   "title": "常见合金",
+   "level": 5,
+   "href": "/czhx/zsd19590",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19581",
+   "parent_id": "19493",
+   "title": "金属的化学性质",
+   "level": 3,
+   "href": "/czhx/zsd19581",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19591",
+   "parent_id": "19581",
+   "title": "金属与氧气反应",
+   "level": 4,
+   "href": "/czhx/zsd19591",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19592",
+   "parent_id": "19581",
+   "title": "金属与酸反应",
+   "level": 4,
+   "href": "/czhx/zsd19592",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19596",
+   "parent_id": "19592",
+   "title": "金属与酸反应原理",
+   "level": 5,
+   "href": "/czhx/zsd19596",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19597",
+   "parent_id": "19592",
+   "title": "金属与酸反应的图像",
+   "level": 5,
+   "href": "/czhx/zsd19597",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19593",
+   "parent_id": "19581",
+   "title": "金属与盐溶液反应",
+   "level": 4,
+   "href": "/czhx/zsd19593",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19594",
+   "parent_id": "19581",
+   "title": "金属活动顺序表及应用",
+   "level": 4,
+   "href": "/czhx/zsd19594",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19598",
+   "parent_id": "19594",
+   "title": "金属活动顺序理解和判断",
+   "level": 5,
+   "href": "/czhx/zsd19598",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19599",
+   "parent_id": "19594",
+   "title": "应用金属活动性解释相关现象",
+   "level": 5,
+   "href": "/czhx/zsd19599",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19600",
+   "parent_id": "19594",
+   "title": "金属活动顺序图像分析",
+   "level": 5,
+   "href": "/czhx/zsd19600",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19601",
+   "parent_id": "19594",
+   "title": "金属活动性强弱的探究",
+   "level": 5,
+   "href": "/czhx/zsd19601",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19595",
+   "parent_id": "19581",
+   "title": "有关金属性质的计算",
+   "level": 4,
+   "href": "/czhx/zsd19595",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19602",
+   "parent_id": "19595",
+   "title": "有关天平问题的计算",
+   "level": 5,
+   "href": "/czhx/zsd19602",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19603",
+   "parent_id": "19595",
+   "title": "酸过量--金属性质的计算",
+   "level": 5,
+   "href": "/czhx/zsd19603",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19604",
+   "parent_id": "19595",
+   "title": "酸不足--金属性质的计算",
+   "level": 5,
+   "href": "/czhx/zsd19604",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19605",
+   "parent_id": "19595",
+   "title": "置换反应中的质量变化",
+   "level": 5,
+   "href": "/czhx/zsd19605",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19606",
+   "parent_id": "19595",
+   "title": "根据计算结果推断金属混合物的组成",
+   "level": 5,
+   "href": "/czhx/zsd19606",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19607",
+   "parent_id": "19595",
+   "title": "分析不同反应后体系质量变化问题",
+   "level": 5,
+   "href": "/czhx/zsd19607",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19582",
+   "parent_id": "19493",
+   "title": "金属资源的利用和保护",
+   "level": 3,
+   "href": "/czhx/zsd19582",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19608",
+   "parent_id": "19582",
+   "title": "金属矿物",
+   "level": 4,
+   "href": "/czhx/zsd19608",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19611",
+   "parent_id": "19608",
+   "title": "金属元素的存在",
+   "level": 5,
+   "href": "/czhx/zsd19611",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19612",
+   "parent_id": "19608",
+   "title": "常见金属矿石",
+   "level": 5,
+   "href": "/czhx/zsd19612",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19613",
+   "parent_id": "19608",
+   "title": "保护和利用金属资源的有效途径",
+   "level": 5,
+   "href": "/czhx/zsd19613",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19609",
+   "parent_id": "19582",
+   "title": "金属的冶炼",
+   "level": 4,
+   "href": "/czhx/zsd19609",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19614",
+   "parent_id": "19609",
+   "title": "工业炼铁的原理及装置",
+   "level": 5,
+   "href": "/czhx/zsd19614",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19615",
+   "parent_id": "19609",
+   "title": "一氧化碳还原氧化铁实验",
+   "level": 5,
+   "href": "/czhx/zsd19615",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19616",
+   "parent_id": "19609",
+   "title": "金属冶炼的计算",
+   "level": 5,
+   "href": "/czhx/zsd19616",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19610",
+   "parent_id": "19582",
+   "title": "金属资源的保护",
+   "level": 4,
+   "href": "/czhx/zsd19610",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19618",
+   "parent_id": "19610",
+   "title": "废弃金属对环境的影响及回收",
+   "level": 5,
+   "href": "/czhx/zsd19618",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19619",
+   "parent_id": "19610",
+   "title": "金属资源现状及保护措施",
+   "level": 5,
+   "href": "/czhx/zsd19619",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19620",
+   "parent_id": "19610",
+   "title": "钢铁的锈蚀",
+   "level": 5,
+   "href": "/czhx/zsd19620",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19621",
+   "parent_id": "19610",
+   "title": "金属的防锈措施",
+   "level": 5,
+   "href": "/czhx/zsd19621",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19622",
+   "parent_id": "19610",
+   "title": "探究铁生锈的条件",
+   "level": 5,
+   "href": "/czhx/zsd19622",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19494",
+   "parent_id": "19369",
+   "title": "水",
+   "level": 2,
+   "href": "/czhx/zsd19494",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19623",
+   "parent_id": "19494",
+   "title": "水的净化",
+   "level": 3,
+   "href": "/czhx/zsd19623",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19625",
+   "parent_id": "19623",
+   "title": "水的净化方法",
+   "level": 4,
+   "href": "/czhx/zsd19625",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19627",
+   "parent_id": "19625",
+   "title": "自来水厂净化过程",
+   "level": 5,
+   "href": "/czhx/zsd19627",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19628",
+   "parent_id": "19625",
+   "title": "简易净水器的构造和各部分的作用",
+   "level": 5,
+   "href": "/czhx/zsd19628",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19629",
+   "parent_id": "19625",
+   "title": "常见几种净化水操作的比较",
+   "level": 5,
+   "href": "/czhx/zsd19629",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19630",
+   "parent_id": "19625",
+   "title": "过滤操作要点",
+   "level": 5,
+   "href": "/czhx/zsd19630",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19631",
+   "parent_id": "19625",
+   "title": "过滤操作问题分析",
+   "level": 5,
+   "href": "/czhx/zsd19631",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19626",
+   "parent_id": "19623",
+   "title": "纯水与某些天然水",
+   "level": 4,
+   "href": "/czhx/zsd19626",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19632",
+   "parent_id": "19626",
+   "title": "硬水和软水定义及鉴别",
+   "level": 5,
+   "href": "/czhx/zsd19632",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19633",
+   "parent_id": "19626",
+   "title": "硬水的危害及软化方法",
+   "level": 5,
+   "href": "/czhx/zsd19633",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19634",
+   "parent_id": "19626",
+   "title": "纯水、天然水与自来水",
+   "level": 5,
+   "href": "/czhx/zsd19634",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19624",
+   "parent_id": "19494",
+   "title": "水的组成",
+   "level": 3,
+   "href": "/czhx/zsd19624",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19635",
+   "parent_id": "19624",
+   "title": "水的电解实验",
+   "level": 4,
+   "href": "/czhx/zsd19635",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19638",
+   "parent_id": "19635",
+   "title": "水的组成实验",
+   "level": 5,
+   "href": "/czhx/zsd19638",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19639",
+   "parent_id": "19635",
+   "title": "电解水原理",
+   "level": 5,
+   "href": "/czhx/zsd19639",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19640",
+   "parent_id": "19635",
+   "title": "电解水实验的现象和结论",
+   "level": 5,
+   "href": "/czhx/zsd19640",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19641",
+   "parent_id": "19635",
+   "title": "电解水生成物的验证",
+   "level": 5,
+   "href": "/czhx/zsd19641",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19642",
+   "parent_id": "19635",
+   "title": "基于电解水实验结论的相关计算",
+   "level": 5,
+   "href": "/czhx/zsd19642",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19636",
+   "parent_id": "19624",
+   "title": "氢气",
+   "level": 4,
+   "href": "/czhx/zsd19636",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19643",
+   "parent_id": "19636",
+   "title": "氢气的可燃性",
+   "level": 5,
+   "href": "/czhx/zsd19643",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19644",
+   "parent_id": "19636",
+   "title": "氢气还原金属氧化物",
+   "level": 5,
+   "href": "/czhx/zsd19644",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19645",
+   "parent_id": "19636",
+   "title": "氢气的检验和验纯",
+   "level": 5,
+   "href": "/czhx/zsd19645",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19646",
+   "parent_id": "19636",
+   "title": "氢气的物理性质",
+   "level": 5,
+   "href": "/czhx/zsd19646",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19647",
+   "parent_id": "19636",
+   "title": "氢气的用途",
+   "level": 5,
+   "href": "/czhx/zsd19647",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19637",
+   "parent_id": "19624",
+   "title": "水的性质",
+   "level": 4,
+   "href": "/czhx/zsd19637",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19648",
+   "parent_id": "19637",
+   "title": "水的构成及物理性质",
+   "level": 5,
+   "href": "/czhx/zsd19648",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19649",
+   "parent_id": "19637",
+   "title": "水的用途",
+   "level": 5,
+   "href": "/czhx/zsd19649",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19650",
+   "parent_id": "19637",
+   "title": "水的化学性质",
+   "level": 5,
+   "href": "/czhx/zsd19650",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19651",
+   "parent_id": "19637",
+   "title": "水的性质实验",
+   "level": 5,
+   "href": "/czhx/zsd19651",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19804",
+   "parent_id": "19494",
+   "title": "水资源",
+   "level": 3,
+   "href": "/czhx/zsd19804",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19836",
+   "parent_id": "19804",
+   "title": "水资源的现状",
+   "level": 4,
+   "href": "/czhx/zsd19836",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19837",
+   "parent_id": "19804",
+   "title": "爱护水资源",
+   "level": 4,
+   "href": "/czhx/zsd19837",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19495",
+   "parent_id": "19369",
+   "title": "溶液",
+   "level": 2,
+   "href": "/czhx/zsd19495",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19652",
+   "parent_id": "19495",
+   "title": "溶液的形成",
+   "level": 3,
+   "href": "/czhx/zsd19652",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19656",
+   "parent_id": "19652",
+   "title": "溶解现象及溶液",
+   "level": 4,
+   "href": "/czhx/zsd19656",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19660",
+   "parent_id": "19656",
+   "title": "溶液、溶质和溶剂概念",
+   "level": 5,
+   "href": "/czhx/zsd19660",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19661",
+   "parent_id": "19656",
+   "title": "溶液的基本特征",
+   "level": 5,
+   "href": "/czhx/zsd19661",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19662",
+   "parent_id": "19656",
+   "title": "m溶质+m溶剂=m溶液的应用",
+   "level": 5,
+   "href": "/czhx/zsd19662",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19663",
+   "parent_id": "19656",
+   "title": "判断物质是否能形成溶液",
+   "level": 5,
+   "href": "/czhx/zsd19663",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19664",
+   "parent_id": "19656",
+   "title": "悬浊液、乳浊液",
+   "level": 5,
+   "href": "/czhx/zsd19664",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19665",
+   "parent_id": "19656",
+   "title": "溶液的用途及意义",
+   "level": 5,
+   "href": "/czhx/zsd19665",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19666",
+   "parent_id": "19656",
+   "title": "溶液的微观构成",
+   "level": 5,
+   "href": "/czhx/zsd19666",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19667",
+   "parent_id": "19656",
+   "title": "形成溶液的熔沸点变化",
+   "level": 5,
+   "href": "/czhx/zsd19667",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19657",
+   "parent_id": "19652",
+   "title": "溶解性",
+   "level": 4,
+   "href": "/czhx/zsd19657",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19668",
+   "parent_id": "19657",
+   "title": "影响溶解速率的因素",
+   "level": 5,
+   "href": "/czhx/zsd19668",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19669",
+   "parent_id": "19657",
+   "title": "溶解性概念及影响因素",
+   "level": 5,
+   "href": "/czhx/zsd19669",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19670",
+   "parent_id": "19657",
+   "title": "溶解性相关的实验探究",
+   "level": 5,
+   "href": "/czhx/zsd19670",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19658",
+   "parent_id": "19652",
+   "title": "溶解时能量的变化",
+   "level": 4,
+   "href": "/czhx/zsd19658",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19659",
+   "parent_id": "19652",
+   "title": "乳化现象与结晶现象",
+   "level": 4,
+   "href": "/czhx/zsd19659",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19671",
+   "parent_id": "19659",
+   "title": "乳化现象及应用",
+   "level": 5,
+   "href": "/czhx/zsd19671",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19672",
+   "parent_id": "19659",
+   "title": "晶体与非晶体",
+   "level": 5,
+   "href": "/czhx/zsd19672",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19673",
+   "parent_id": "19659",
+   "title": "结晶分离混合物",
+   "level": 5,
+   "href": "/czhx/zsd19673",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19653",
+   "parent_id": "19495",
+   "title": "溶解度",
+   "level": 3,
+   "href": "/czhx/zsd19653",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19674",
+   "parent_id": "19653",
+   "title": "饱和溶液",
+   "level": 4,
+   "href": "/czhx/zsd19674",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19676",
+   "parent_id": "19674",
+   "title": "饱和溶液和不饱和溶液判断",
+   "level": 5,
+   "href": "/czhx/zsd19676",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19677",
+   "parent_id": "19674",
+   "title": "溶液浓稀与溶液饱和的关系",
+   "level": 5,
+   "href": "/czhx/zsd19677",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19678",
+   "parent_id": "19674",
+   "title": "饱和溶液和不饱和溶液的转换",
+   "level": 5,
+   "href": "/czhx/zsd19678",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19675",
+   "parent_id": "19653",
+   "title": "物质的溶解度",
+   "level": 4,
+   "href": "/czhx/zsd19675",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19679",
+   "parent_id": "19675",
+   "title": "固体溶解度概念",
+   "level": 5,
+   "href": "/czhx/zsd19679",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19680",
+   "parent_id": "19675",
+   "title": "固体溶解度曲线的应用",
+   "level": 5,
+   "href": "/czhx/zsd19680",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19681",
+   "parent_id": "19675",
+   "title": "固体溶解度的影响因素",
+   "level": 5,
+   "href": "/czhx/zsd19681",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19682",
+   "parent_id": "19675",
+   "title": "气体溶解度的影响因素",
+   "level": 5,
+   "href": "/czhx/zsd19682",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19683",
+   "parent_id": "19675",
+   "title": "溶解度的相关计算",
+   "level": 5,
+   "href": "/czhx/zsd19683",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19654",
+   "parent_id": "19495",
+   "title": "溶液的浓度",
+   "level": 3,
+   "href": "/czhx/zsd19654",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19684",
+   "parent_id": "19654",
+   "title": "溶质的质量分数",
+   "level": 4,
+   "href": "/czhx/zsd19684",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19686",
+   "parent_id": "19684",
+   "title": " 溶质质量分数概念",
+   "level": 5,
+   "href": "/czhx/zsd19686",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19687",
+   "parent_id": "19684",
+   "title": "溶质质量分数的涵义",
+   "level": 5,
+   "href": "/czhx/zsd19687",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19688",
+   "parent_id": "19684",
+   "title": "图像分析溶质质量分数的变化",
+   "level": 5,
+   "href": "/czhx/zsd19688",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19685",
+   "parent_id": "19654",
+   "title": "配制一定溶质质量分数的溶液",
+   "level": 4,
+   "href": "/czhx/zsd19685",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19689",
+   "parent_id": "19685",
+   "title": "配制一定质量分数溶液的仪器",
+   "level": 5,
+   "href": "/czhx/zsd19689",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19690",
+   "parent_id": "19685",
+   "title": "固体配制一定质量分数溶液",
+   "level": 5,
+   "href": "/czhx/zsd19690",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19691",
+   "parent_id": "19685",
+   "title": "浓溶液稀释配制一定质量分数溶液",
+   "level": 5,
+   "href": "/czhx/zsd19691",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19655",
+   "parent_id": "19495",
+   "title": "有关溶液的计算",
+   "level": 3,
+   "href": "/czhx/zsd19655",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19692",
+   "parent_id": "19655",
+   "title": "配制一定溶质质量分数的计算",
+   "level": 4,
+   "href": "/czhx/zsd19692",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19693",
+   "parent_id": "19655",
+   "title": "溶质质量分数公式运用",
+   "level": 4,
+   "href": "/czhx/zsd19693",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19694",
+   "parent_id": "19655",
+   "title": "有关溶液浓缩、稀释的计算",
+   "level": 4,
+   "href": "/czhx/zsd19694",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19695",
+   "parent_id": "19655",
+   "title": "溶质质量分数结合化学方程式的计算",
+   "level": 4,
+   "href": "/czhx/zsd19695",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19696",
+   "parent_id": "19655",
+   "title": "溶液和化学方程式的综合计算",
+   "level": 4,
+   "href": "/czhx/zsd19696",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19496",
+   "parent_id": "19369",
+   "title": "生活中常见化合物",
+   "level": 2,
+   "href": "/czhx/zsd19496",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19697",
+   "parent_id": "19496",
+   "title": "酸和碱",
+   "level": 3,
+   "href": "/czhx/zsd19697",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19700",
+   "parent_id": "19697",
+   "title": "常见酸主要性质及用途",
+   "level": 4,
+   "href": "/czhx/zsd19700",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19705",
+   "parent_id": "19700",
+   "title": "浓硫酸的物理、化学性质",
+   "level": 5,
+   "href": "/czhx/zsd19705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19706",
+   "parent_id": "19700",
+   "title": "浓硫酸的稀释",
+   "level": 5,
+   "href": "/czhx/zsd19706",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19707",
+   "parent_id": "19700",
+   "title": "浓硫酸做干燥剂",
+   "level": 5,
+   "href": "/czhx/zsd19707",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19708",
+   "parent_id": "19700",
+   "title": "浓酸敞口放置的变化和现象",
+   "level": 5,
+   "href": "/czhx/zsd19708",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19709",
+   "parent_id": "19700",
+   "title": "酸的概念、组成",
+   "level": 5,
+   "href": "/czhx/zsd19709",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19710",
+   "parent_id": "19700",
+   "title": "盐酸的物理性质",
+   "level": 5,
+   "href": "/czhx/zsd19710",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19711",
+   "parent_id": "19700",
+   "title": "其他常见的酸",
+   "level": 5,
+   "href": "/czhx/zsd19711",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19712",
+   "parent_id": "19700",
+   "title": "酸碱溶液导电的原理",
+   "level": 5,
+   "href": "/czhx/zsd19712",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19717",
+   "parent_id": "19700",
+   "title": "常见几种酸的用途",
+   "level": 5,
+   "href": "/czhx/zsd19717",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19701",
+   "parent_id": "19697",
+   "title": "酸的化学性质",
+   "level": 4,
+   "href": "/czhx/zsd19701",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19713",
+   "parent_id": "19701",
+   "title": "酸的通性",
+   "level": 5,
+   "href": "/czhx/zsd19713",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19714",
+   "parent_id": "19701",
+   "title": "酸的通性的微观实质",
+   "level": 5,
+   "href": "/czhx/zsd19714",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19715",
+   "parent_id": "19701",
+   "title": "根据酸的通性推断物质的性质",
+   "level": 5,
+   "href": "/czhx/zsd19715",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19716",
+   "parent_id": "19701",
+   "title": "水对酸的化学反应的影响",
+   "level": 5,
+   "href": "/czhx/zsd19716",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19702",
+   "parent_id": "19697",
+   "title": "常见碱主要性质及用途",
+   "level": 4,
+   "href": "/czhx/zsd19702",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19718",
+   "parent_id": "19702",
+   "title": "常见酸、碱的俗称及化学式",
+   "level": 5,
+   "href": "/czhx/zsd19718",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19719",
+   "parent_id": "19702",
+   "title": "碱的概念、组成",
+   "level": 5,
+   "href": "/czhx/zsd19719",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19720",
+   "parent_id": "19702",
+   "title": "几种常见碱的物理性质及用途",
+   "level": 5,
+   "href": "/czhx/zsd19720",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19721",
+   "parent_id": "19702",
+   "title": "强碱露置在空气中的变质",
+   "level": 5,
+   "href": "/czhx/zsd19721",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19722",
+   "parent_id": "19702",
+   "title": "酸碱的腐蚀性及安全使用",
+   "level": 5,
+   "href": "/czhx/zsd19722",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19723",
+   "parent_id": "19702",
+   "title": "生石灰的性质及用途",
+   "level": 5,
+   "href": "/czhx/zsd19723",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19724",
+   "parent_id": "19702",
+   "title": "生石灰变质的探究",
+   "level": 5,
+   "href": "/czhx/zsd19724",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19725",
+   "parent_id": "19702",
+   "title": "氢氧化钠与氢氧化钙的制取",
+   "level": 5,
+   "href": "/czhx/zsd19725",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19703",
+   "parent_id": "19697",
+   "title": "碱的化学性质",
+   "level": 4,
+   "href": "/czhx/zsd19703",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19726",
+   "parent_id": "19703",
+   "title": "碱的通性",
+   "level": 5,
+   "href": "/czhx/zsd19726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19727",
+   "parent_id": "19703",
+   "title": "根据碱的性质推断其他物质的性质",
+   "level": 5,
+   "href": "/czhx/zsd19727",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19728",
+   "parent_id": "19703",
+   "title": "碱的通性的微观实质",
+   "level": 5,
+   "href": "/czhx/zsd19728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19704",
+   "parent_id": "19697",
+   "title": "酸碱指示剂",
+   "level": 4,
+   "href": "/czhx/zsd19704",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19729",
+   "parent_id": "19704",
+   "title": "酸碱指示剂的应用",
+   "level": 5,
+   "href": "/czhx/zsd19729",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19730",
+   "parent_id": "19704",
+   "title": "常见的酸碱指示剂及其变色情况",
+   "level": 5,
+   "href": "/czhx/zsd19730",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19731",
+   "parent_id": "19704",
+   "title": "酸碱指示剂的选择及自制",
+   "level": 5,
+   "href": "/czhx/zsd19731",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19698",
+   "parent_id": "19496",
+   "title": "中和反应",
+   "level": 3,
+   "href": "/czhx/zsd19698",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19732",
+   "parent_id": "19698",
+   "title": "中和反应原理",
+   "level": 4,
+   "href": "/czhx/zsd19732",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19735",
+   "parent_id": "19732",
+   "title": "中和反应的概念及微观本质",
+   "level": 5,
+   "href": "/czhx/zsd19735",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19736",
+   "parent_id": "19732",
+   "title": "中和反应相关实验与计算",
+   "level": 5,
+   "href": "/czhx/zsd19736",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19737",
+   "parent_id": "19732",
+   "title": "中和反应与复分解反应的关系",
+   "level": 5,
+   "href": "/czhx/zsd19737",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19738",
+   "parent_id": "19732",
+   "title": "无明显现象的中和反应的判断",
+   "level": 5,
+   "href": "/czhx/zsd19738",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19733",
+   "parent_id": "19698",
+   "title": "中和反应的应用",
+   "level": 4,
+   "href": "/czhx/zsd19733",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19739",
+   "parent_id": "19733",
+   "title": "中和反应过程中能量的变化",
+   "level": 5,
+   "href": "/czhx/zsd19739",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19740",
+   "parent_id": "19733",
+   "title": "中和反应的实际应用",
+   "level": 5,
+   "href": "/czhx/zsd19740",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19734",
+   "parent_id": "19698",
+   "title": "溶液的酸碱性和pH",
+   "level": 4,
+   "href": "/czhx/zsd19734",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19741",
+   "parent_id": "19734",
+   "title": "溶液的酸碱性的判断与pH的测定",
+   "level": 5,
+   "href": "/czhx/zsd19741",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19742",
+   "parent_id": "19734",
+   "title": "溶液酸碱性及pH相关关系",
+   "level": 5,
+   "href": "/czhx/zsd19742",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19743",
+   "parent_id": "19734",
+   "title": "酸碱性对生命活动和农作物生长的影响",
+   "level": 5,
+   "href": "/czhx/zsd19743",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19699",
+   "parent_id": "19496",
+   "title": "盐和化肥",
+   "level": 3,
+   "href": "/czhx/zsd19699",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19744",
+   "parent_id": "19699",
+   "title": "常见盐",
+   "level": 4,
+   "href": "/czhx/zsd19744",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19747",
+   "parent_id": "19744",
+   "title": "常见盐的俗名、用途",
+   "level": 5,
+   "href": "/czhx/zsd19747",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19748",
+   "parent_id": "19744",
+   "title": "正盐、酸式盐及结晶水合物",
+   "level": 5,
+   "href": "/czhx/zsd19748",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19749",
+   "parent_id": "19744",
+   "title": "盐的组成及分类",
+   "level": 5,
+   "href": "/czhx/zsd19749",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19750",
+   "parent_id": "19744",
+   "title": "氯化钠",
+   "level": 5,
+   "href": "/czhx/zsd19750",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19751",
+   "parent_id": "19744",
+   "title": "碳酸氢钠、碳酸钠、碳酸钙",
+   "level": 5,
+   "href": "/czhx/zsd19751",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19752",
+   "parent_id": "19744",
+   "title": "石笋、钟乳石的形成",
+   "level": 5,
+   "href": "/czhx/zsd19752",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19753",
+   "parent_id": "19744",
+   "title": "其他常见的盐",
+   "level": 5,
+   "href": "/czhx/zsd19753",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19745",
+   "parent_id": "19699",
+   "title": "盐的性质",
+   "level": 4,
+   "href": "/czhx/zsd19745",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19754",
+   "parent_id": "19745",
+   "title": "盐类参与的反应",
+   "level": 5,
+   "href": "/czhx/zsd19754",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19755",
+   "parent_id": "19745",
+   "title": "常见酸碱盐的溶解性",
+   "level": 5,
+   "href": "/czhx/zsd19755",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19756",
+   "parent_id": "19745",
+   "title": "碳酸根离子的验证",
+   "level": 5,
+   "href": "/czhx/zsd19756",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19746",
+   "parent_id": "19699",
+   "title": "化学肥料",
+   "level": 4,
+   "href": "/czhx/zsd19746",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19757",
+   "parent_id": "19746",
+   "title": "化肥的有关计算",
+   "level": 5,
+   "href": "/czhx/zsd19757",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19758",
+   "parent_id": "19746",
+   "title": "常见化肥的种类及性质",
+   "level": 5,
+   "href": "/czhx/zsd19758",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19759",
+   "parent_id": "19746",
+   "title": "合理使用化肥和农药",
+   "level": 5,
+   "href": "/czhx/zsd19759",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19760",
+   "parent_id": "19746",
+   "title": "鉴别常见化肥",
+   "level": 5,
+   "href": "/czhx/zsd19760",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19761",
+   "parent_id": "19746",
+   "title": "铵根离子的验证",
+   "level": 5,
+   "href": "/czhx/zsd19761",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19497",
+   "parent_id": "19369",
+   "title": "几种简单的有机物",
+   "level": 2,
+   "href": "/czhx/zsd19497",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19762",
+   "parent_id": "19497",
+   "title": "甲烷",
+   "level": 3,
+   "href": "/czhx/zsd19762",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19763",
+   "parent_id": "19497",
+   "title": "乙醇",
+   "level": 3,
+   "href": "/czhx/zsd19763",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19764",
+   "parent_id": "19497",
+   "title": "乙酸",
+   "level": 3,
+   "href": "/czhx/zsd19764",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19370",
+   "parent_id": "19366",
+   "title": "化学与社会",
+   "level": 1,
+   "href": "/czhx/zsd19370",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19765",
+   "parent_id": "19370",
+   "title": "化学物质与健康",
+   "level": 2,
+   "href": "/czhx/zsd19765",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19769",
+   "parent_id": "19765",
+   "title": "基本营养物质",
+   "level": 3,
+   "href": "/czhx/zsd19769",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19772",
+   "parent_id": "19769",
+   "title": "蛋白质",
+   "level": 4,
+   "href": "/czhx/zsd19772",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19773",
+   "parent_id": "19769",
+   "title": "维生素",
+   "level": 4,
+   "href": "/czhx/zsd19773",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19777",
+   "parent_id": "19773",
+   "title": "维生素的组成与作用",
+   "level": 5,
+   "href": "/czhx/zsd19777",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19778",
+   "parent_id": "19773",
+   "title": "维生素的来源",
+   "level": 5,
+   "href": "/czhx/zsd19778",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19779",
+   "parent_id": "19773",
+   "title": "常见维生素的缺乏症",
+   "level": 5,
+   "href": "/czhx/zsd19779",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19774",
+   "parent_id": "19769",
+   "title": "油脂",
+   "level": 4,
+   "href": "/czhx/zsd19774",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19780",
+   "parent_id": "19774",
+   "title": "油脂的组成及性质",
+   "level": 5,
+   "href": "/czhx/zsd19780",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19781",
+   "parent_id": "19774",
+   "title": "油脂作用",
+   "level": 5,
+   "href": "/czhx/zsd19781",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19782",
+   "parent_id": "19774",
+   "title": "油脂的来源",
+   "level": 5,
+   "href": "/czhx/zsd19782",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19775",
+   "parent_id": "19769",
+   "title": "糖类",
+   "level": 4,
+   "href": "/czhx/zsd19775",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19783",
+   "parent_id": "19775",
+   "title": "糖类的组成与作用",
+   "level": 5,
+   "href": "/czhx/zsd19783",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19784",
+   "parent_id": "19775",
+   "title": "糖类的来源",
+   "level": 5,
+   "href": "/czhx/zsd19784",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19785",
+   "parent_id": "19775",
+   "title": "糖类在人体中的分解过程",
+   "level": 5,
+   "href": "/czhx/zsd19785",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19786",
+   "parent_id": "19775",
+   "title": "葡萄糖、淀粉的检验",
+   "level": 5,
+   "href": "/czhx/zsd19786",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19776",
+   "parent_id": "19769",
+   "title": "高分子化合物",
+   "level": 4,
+   "href": "/czhx/zsd19776",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19770",
+   "parent_id": "19765",
+   "title": "元素与人体健康",
+   "level": 3,
+   "href": "/czhx/zsd19770",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19787",
+   "parent_id": "19770",
+   "title": "人体内的常量元素",
+   "level": 4,
+   "href": "/czhx/zsd19787",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19788",
+   "parent_id": "19770",
+   "title": "人体内的微量元素",
+   "level": 4,
+   "href": "/czhx/zsd19788",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19790",
+   "parent_id": "19788",
+   "title": "人体内的微量元素——碘、铁元素",
+   "level": 5,
+   "href": "/czhx/zsd19790",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19791",
+   "parent_id": "19788",
+   "title": "其他人体必需微量元素对人体的作用",
+   "level": 5,
+   "href": "/czhx/zsd19791",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19792",
+   "parent_id": "19788",
+   "title": "某些元素的缺乏症",
+   "level": 5,
+   "href": "/czhx/zsd19792",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19793",
+   "parent_id": "19788",
+   "title": "某些元素的食物来源",
+   "level": 5,
+   "href": "/czhx/zsd19793",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19789",
+   "parent_id": "19770",
+   "title": "合理饮食",
+   "level": 4,
+   "href": "/czhx/zsd19789",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19771",
+   "parent_id": "19765",
+   "title": "对人体健康危害的物质",
+   "level": 3,
+   "href": "/czhx/zsd19771",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19766",
+   "parent_id": "19370",
+   "title": "化学合成材料",
+   "level": 2,
+   "href": "/czhx/zsd19766",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19794",
+   "parent_id": "19766",
+   "title": "有机化合物",
+   "level": 3,
+   "href": "/czhx/zsd19794",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19795",
+   "parent_id": "19766",
+   "title": "合成材料",
+   "level": 3,
+   "href": "/czhx/zsd19795",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19798",
+   "parent_id": "19795",
+   "title": "常见物品质材的辨别",
+   "level": 4,
+   "href": "/czhx/zsd19798",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19799",
+   "parent_id": "19795",
+   "title": "塑料、合成橡胶、合成纤维",
+   "level": 4,
+   "href": "/czhx/zsd19799",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19800",
+   "parent_id": "19795",
+   "title": "有机材料对环境的影响及应对措施",
+   "level": 4,
+   "href": "/czhx/zsd19800",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19801",
+   "parent_id": "19795",
+   "title": "羊毛、合成纤维、棉的鉴别",
+   "level": 4,
+   "href": "/czhx/zsd19801",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19796",
+   "parent_id": "19766",
+   "title": "新型材料",
+   "level": 3,
+   "href": "/czhx/zsd19796",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19797",
+   "parent_id": "19766",
+   "title": "无机非金属材料",
+   "level": 3,
+   "href": "/czhx/zsd19797",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19767",
+   "parent_id": "19370",
+   "title": "化学与能源的开发利用",
+   "level": 2,
+   "href": "/czhx/zsd19767",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19803",
+   "parent_id": "19767",
+   "title": "燃料的合理利用与开发",
+   "level": 3,
+   "href": "/czhx/zsd19803",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19820",
+   "parent_id": "19803",
+   "title": "化学反应中的能量变化",
+   "level": 4,
+   "href": "/czhx/zsd19820",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19824",
+   "parent_id": "19820",
+   "title": "能量转化与化学变化的关系",
+   "level": 5,
+   "href": "/czhx/zsd19824",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19825",
+   "parent_id": "19820",
+   "title": "化学反应中能量变化的实际应用",
+   "level": 5,
+   "href": "/czhx/zsd19825",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19826",
+   "parent_id": "19820",
+   "title": "常见吸热反应及放热反应",
+   "level": 5,
+   "href": "/czhx/zsd19826",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19821",
+   "parent_id": "19803",
+   "title": "绿色能源",
+   "level": 4,
+   "href": "/czhx/zsd19821",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19827",
+   "parent_id": "19821",
+   "title": "氢能源的优点",
+   "level": 5,
+   "href": "/czhx/zsd19827",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19828",
+   "parent_id": "19821",
+   "title": "氢气的制备及应用",
+   "level": 5,
+   "href": "/czhx/zsd19828",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19829",
+   "parent_id": "19821",
+   "title": "制备氢气实验的探究",
+   "level": 5,
+   "href": "/czhx/zsd19829",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19822",
+   "parent_id": "19803",
+   "title": "资源综合利用和新能源开发",
+   "level": 4,
+   "href": "/czhx/zsd19822",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19830",
+   "parent_id": "19822",
+   "title": "绿色能源的开发及利用",
+   "level": 5,
+   "href": "/czhx/zsd19830",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19831",
+   "parent_id": "19822",
+   "title": "几种可燃气体的鉴别",
+   "level": 5,
+   "href": "/czhx/zsd19831",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19832",
+   "parent_id": "19822",
+   "title": "资源综合利用和新能源开发的重要意义",
+   "level": 5,
+   "href": "/czhx/zsd19832",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19823",
+   "parent_id": "19803",
+   "title": "化石燃料",
+   "level": 4,
+   "href": "/czhx/zsd19823",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19833",
+   "parent_id": "19823",
+   "title": "化石燃料的形成及现状",
+   "level": 5,
+   "href": "/czhx/zsd19833",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19834",
+   "parent_id": "19823",
+   "title": "常见几种燃料使用对环境的影响",
+   "level": 5,
+   "href": "/czhx/zsd19834",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19835",
+   "parent_id": "19823",
+   "title": "甲烷的燃烧",
+   "level": 5,
+   "href": "/czhx/zsd19835",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19805",
+   "parent_id": "19767",
+   "title": "海洋资源",
+   "level": 3,
+   "href": "/czhx/zsd19805",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19838",
+   "parent_id": "19805",
+   "title": "海洋化学资源",
+   "level": 4,
+   "href": "/czhx/zsd19838",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19841",
+   "parent_id": "19838",
+   "title": "海水中的物质",
+   "level": 5,
+   "href": "/czhx/zsd19841",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19842",
+   "parent_id": "19838",
+   "title": "海底矿物",
+   "level": 5,
+   "href": "/czhx/zsd19842",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19843",
+   "parent_id": "19838",
+   "title": "海水淡化",
+   "level": 5,
+   "href": "/czhx/zsd19843",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19844",
+   "parent_id": "19838",
+   "title": "海水提取镁",
+   "level": 5,
+   "href": "/czhx/zsd19844",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19839",
+   "parent_id": "19805",
+   "title": "海水晒盐",
+   "level": 4,
+   "href": "/czhx/zsd19839",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19845",
+   "parent_id": "19839",
+   "title": "海水晒盐原理及流程",
+   "level": 5,
+   "href": "/czhx/zsd19845",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19846",
+   "parent_id": "19839",
+   "title": "粗盐提纯",
+   "level": 5,
+   "href": "/czhx/zsd19846",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19847",
+   "parent_id": "19839",
+   "title": "粗盐的精制",
+   "level": 5,
+   "href": "/czhx/zsd19847",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19840",
+   "parent_id": "19805",
+   "title": "海水制碱",
+   "level": 4,
+   "href": "/czhx/zsd19840",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19848",
+   "parent_id": "19840",
+   "title": "氨碱法制纯碱",
+   "level": 5,
+   "href": "/czhx/zsd19848",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19849",
+   "parent_id": "19840",
+   "title": "侯氏制碱法",
+   "level": 5,
+   "href": "/czhx/zsd19849",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19768",
+   "parent_id": "19370",
+   "title": "化学与环境",
+   "level": 2,
+   "href": "/czhx/zsd19768",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19850",
+   "parent_id": "19768",
+   "title": "绿色化学",
+   "level": 3,
+   "href": "/czhx/zsd19850",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19851",
+   "parent_id": "19768",
+   "title": "空气污染及其保护",
+   "level": 3,
+   "href": "/czhx/zsd19851",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19852",
+   "parent_id": "19768",
+   "title": "土壤污染",
+   "level": 3,
+   "href": "/czhx/zsd19852",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19853",
+   "parent_id": "19768",
+   "title": "水体的污染及保护",
+   "level": 3,
+   "href": "/czhx/zsd19853",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19854",
+   "parent_id": "19768",
+   "title": "“三废”处理",
+   "level": 3,
+   "href": "/czhx/zsd19854",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19855",
+   "parent_id": "19768",
+   "title": "合理使用化肥与农药",
+   "level": 3,
+   "href": "/czhx/zsd19855",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164815",
+   "parent_id": "19768",
+   "title": "垃圾分类（上海）",
+   "level": 3,
+   "href": "/czhx/zsd164815",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164816",
+   "parent_id": "19768",
+   "title": "垃圾分类（北京）",
+   "level": 3,
+   "href": "/czhx/zsd164816",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19371",
+   "parent_id": "19366",
+   "title": "科学探究与化学实验",
+   "level": 1,
+   "href": "/czhx/zsd19371",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19856",
+   "parent_id": "19371",
+   "title": "实验基础",
+   "level": 2,
+   "href": "/czhx/zsd19856",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19861",
+   "parent_id": "19856",
+   "title": "怎样进行化学实验",
+   "level": 3,
+   "href": "/czhx/zsd19861",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19864",
+   "parent_id": "19861",
+   "title": "实验安全问题及处理",
+   "level": 4,
+   "href": "/czhx/zsd19864",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19865",
+   "parent_id": "19861",
+   "title": "化学实验室安全规则",
+   "level": 4,
+   "href": "/czhx/zsd19865",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19866",
+   "parent_id": "19861",
+   "title": "常用危险化学品标志",
+   "level": 4,
+   "href": "/czhx/zsd19866",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19867",
+   "parent_id": "19861",
+   "title": "科学探究的基本环节的辨析",
+   "level": 4,
+   "href": "/czhx/zsd19867",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19868",
+   "parent_id": "19861",
+   "title": "探究蜡烛及其燃烧",
+   "level": 4,
+   "href": "/czhx/zsd19868",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19872",
+   "parent_id": "19868",
+   "title": "蜡烛点燃前的性质",
+   "level": 5,
+   "href": "/czhx/zsd19872",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19873",
+   "parent_id": "19868",
+   "title": "蜡烛燃烧的实验探究及产物分析",
+   "level": 5,
+   "href": "/czhx/zsd19873",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19869",
+   "parent_id": "19861",
+   "title": "探究人体吸入空气和呼出气体",
+   "level": 4,
+   "href": "/czhx/zsd19869",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19874",
+   "parent_id": "19869",
+   "title": "人体吸入空气和呼出气体实验结论",
+   "level": 5,
+   "href": "/czhx/zsd19874",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19875",
+   "parent_id": "19869",
+   "title": "探究人体吸入和呼出气体成分",
+   "level": 5,
+   "href": "/czhx/zsd19875",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19870",
+   "parent_id": "19861",
+   "title": "金属铜化学性质的探究",
+   "level": 4,
+   "href": "/czhx/zsd19870",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19871",
+   "parent_id": "19861",
+   "title": "化学变化现象的观察及描述",
+   "level": 4,
+   "href": "/czhx/zsd19871",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19862",
+   "parent_id": "19856",
+   "title": "常用化学实验仪器",
+   "level": 3,
+   "href": "/czhx/zsd19862",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19876",
+   "parent_id": "19862",
+   "title": "量筒的正确使用方法和注意事项",
+   "level": 4,
+   "href": "/czhx/zsd19876",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19877",
+   "parent_id": "19862",
+   "title": "托盘天平的正确使用方法和注意事项",
+   "level": 4,
+   "href": "/czhx/zsd19877",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19878",
+   "parent_id": "19862",
+   "title": "酒精灯的正确使用方法和注意事项",
+   "level": 4,
+   "href": "/czhx/zsd19878",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19879",
+   "parent_id": "19862",
+   "title": "胶头滴管的正确使用方法和注意事项",
+   "level": 4,
+   "href": "/czhx/zsd19879",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19880",
+   "parent_id": "19862",
+   "title": "容器",
+   "level": 4,
+   "href": "/czhx/zsd19880",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19885",
+   "parent_id": "19880",
+   "title": "可直接加热的仪器",
+   "level": 5,
+   "href": "/czhx/zsd19885",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19886",
+   "parent_id": "19880",
+   "title": "可间接加热的仪器以及陶土网的使用",
+   "level": 5,
+   "href": "/czhx/zsd19886",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19887",
+   "parent_id": "19880",
+   "title": "不可加热的仪器",
+   "level": 5,
+   "href": "/czhx/zsd19887",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19881",
+   "parent_id": "19862",
+   "title": "玻璃棒的作用",
+   "level": 4,
+   "href": "/czhx/zsd19881",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19882",
+   "parent_id": "19862",
+   "title": "常见仪器及制材的辨认",
+   "level": 4,
+   "href": "/czhx/zsd19882",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19883",
+   "parent_id": "19862",
+   "title": "分离物质及加热的仪器",
+   "level": 4,
+   "href": "/czhx/zsd19883",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19884",
+   "parent_id": "19862",
+   "title": "根据量程和精确度进行数据合理性的判断",
+   "level": 4,
+   "href": "/czhx/zsd19884",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19863",
+   "parent_id": "19856",
+   "title": "基本实验操作",
+   "level": 3,
+   "href": "/czhx/zsd19863",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19888",
+   "parent_id": "19863",
+   "title": "试剂的取用",
+   "level": 4,
+   "href": "/czhx/zsd19888",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19895",
+   "parent_id": "19888",
+   "title": "固体试剂的取用",
+   "level": 5,
+   "href": "/czhx/zsd19895",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19896",
+   "parent_id": "19888",
+   "title": "液体试剂的取用",
+   "level": 5,
+   "href": "/czhx/zsd19896",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19897",
+   "parent_id": "19888",
+   "title": "试剂的保存",
+   "level": 5,
+   "href": "/czhx/zsd19897",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19889",
+   "parent_id": "19863",
+   "title": "仪器连接",
+   "level": 4,
+   "href": "/czhx/zsd19889",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19890",
+   "parent_id": "19863",
+   "title": "气密性检测",
+   "level": 4,
+   "href": "/czhx/zsd19890",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19891",
+   "parent_id": "19863",
+   "title": "仪器的洗涤",
+   "level": 4,
+   "href": "/czhx/zsd19891",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19892",
+   "parent_id": "19863",
+   "title": "物质的加热",
+   "level": 4,
+   "href": "/czhx/zsd19892",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19894",
+   "parent_id": "19863",
+   "title": "振荡和搅拌",
+   "level": 4,
+   "href": "/czhx/zsd19894",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19857",
+   "parent_id": "19371",
+   "title": "物质的鉴别、推断与分离、提纯",
+   "level": 2,
+   "href": "/czhx/zsd19857",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19898",
+   "parent_id": "19857",
+   "title": "物质的分离、提纯",
+   "level": 3,
+   "href": "/czhx/zsd19898",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19893",
+   "parent_id": "19898",
+   "title": "蒸发",
+   "level": 4,
+   "href": "/czhx/zsd19893",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19900",
+   "parent_id": "19898",
+   "title": "过滤",
+   "level": 4,
+   "href": "/czhx/zsd19900",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19901",
+   "parent_id": "19898",
+   "title": "吸附",
+   "level": 4,
+   "href": "/czhx/zsd19901",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19902",
+   "parent_id": "19898",
+   "title": "蒸馏",
+   "level": 4,
+   "href": "/czhx/zsd19902",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19903",
+   "parent_id": "19898",
+   "title": "除杂",
+   "level": 4,
+   "href": "/czhx/zsd19903",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19899",
+   "parent_id": "19857",
+   "title": "物质的鉴别与推断",
+   "level": 3,
+   "href": "/czhx/zsd19899",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19904",
+   "parent_id": "19899",
+   "title": "物质的鉴别",
+   "level": 4,
+   "href": "/czhx/zsd19904",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19906",
+   "parent_id": "19904",
+   "title": "溶液中物质是否共存相关判断",
+   "level": 5,
+   "href": "/czhx/zsd19906",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19907",
+   "parent_id": "19904",
+   "title": "物质鉴别——选用试剂鉴别",
+   "level": 5,
+   "href": "/czhx/zsd19907",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19908",
+   "parent_id": "19904",
+   "title": "几种常见阴、阳离子的鉴别",
+   "level": 5,
+   "href": "/czhx/zsd19908",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19905",
+   "parent_id": "19899",
+   "title": "物质的推断",
+   "level": 4,
+   "href": "/czhx/zsd19905",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "129201",
+   "parent_id": "19905",
+   "title": "常见物质的颜色",
+   "level": 5,
+   "href": "/czhx/zsd129201",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "129202",
+   "parent_id": "19905",
+   "title": "常见物质的溶解性",
+   "level": 5,
+   "href": "/czhx/zsd129202",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19909",
+   "parent_id": "19905",
+   "title": "设计实验探究物质的成分",
+   "level": 5,
+   "href": "/czhx/zsd19909",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19911",
+   "parent_id": "19905",
+   "title": "各类物质间反应的总结",
+   "level": 5,
+   "href": "/czhx/zsd19911",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19910",
+   "parent_id": "19905",
+   "title": "物质推断的综合应用",
+   "level": 5,
+   "href": "/czhx/zsd19910",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19858",
+   "parent_id": "19371",
+   "title": "气体制取和净化",
+   "level": 2,
+   "href": "/czhx/zsd19858",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19912",
+   "parent_id": "19858",
+   "title": "气体制取",
+   "level": 3,
+   "href": "/czhx/zsd19912",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19914",
+   "parent_id": "19912",
+   "title": "实验室制取气体的一般思路",
+   "level": 4,
+   "href": "/czhx/zsd19914",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19915",
+   "parent_id": "19912",
+   "title": "气体制备实验的反应条件的控制",
+   "level": 4,
+   "href": "/czhx/zsd19915",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19916",
+   "parent_id": "19912",
+   "title": "气体发生、收集装置",
+   "level": 4,
+   "href": "/czhx/zsd19916",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19913",
+   "parent_id": "19858",
+   "title": "气体收集、净化及处理",
+   "level": 3,
+   "href": "/czhx/zsd19913",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19917",
+   "parent_id": "19913",
+   "title": "气体的收集方式",
+   "level": 4,
+   "href": "/czhx/zsd19917",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19918",
+   "parent_id": "19913",
+   "title": "气体净化、干燥",
+   "level": 4,
+   "href": "/czhx/zsd19918",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19919",
+   "parent_id": "19913",
+   "title": "污染性、可燃性尾气的处理",
+   "level": 4,
+   "href": "/czhx/zsd19919",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "129203",
+   "parent_id": "19913",
+   "title": "万能瓶的使用",
+   "level": 4,
+   "href": "/czhx/zsd129203",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19859",
+   "parent_id": "19371",
+   "title": "气体制备综合考查",
+   "level": 2,
+   "href": "/czhx/zsd19859",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19860",
+   "parent_id": "19371",
+   "title": "实验探究与设计",
+   "level": 2,
+   "href": "/czhx/zsd19860",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "19920",
+   "parent_id": "19860",
+   "title": "实验和探究常考模块",
+   "level": 3,
+   "href": "/czhx/zsd19920",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "165274",
+   "parent_id": "19920",
+   "title": "实验的猜想与假设",
+   "level": 4,
+   "href": "/czhx/zsd165274",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165275",
+   "parent_id": "19920",
+   "title": "实验的设计与操作",
+   "level": 4,
+   "href": "/czhx/zsd165275",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165276",
+   "parent_id": "19920",
+   "title": "实验的解释与结论",
+   "level": 4,
+   "href": "/czhx/zsd165276",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165277",
+   "parent_id": "19920",
+   "title": "实验的结果与测量",
+   "level": 4,
+   "href": "/czhx/zsd165277",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165278",
+   "parent_id": "19920",
+   "title": "实验的设计与评价",
+   "level": 4,
+   "href": "/czhx/zsd165278",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19921",
+   "parent_id": "19860",
+   "title": "实验探究的方法",
+   "level": 3,
+   "href": "/czhx/zsd19921",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "165279",
+   "parent_id": "19921",
+   "title": "定量实验",
+   "level": 4,
+   "href": "/czhx/zsd165279",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165280",
+   "parent_id": "19921",
+   "title": "定性实验",
+   "level": 4,
+   "href": "/czhx/zsd165280",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "165281",
+   "parent_id": "165280",
+   "title": "控制变量",
+   "level": 5,
+   "href": "/czhx/zsd165281",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165282",
+   "parent_id": "165280",
+   "title": "空白实验",
+   "level": 5,
+   "href": "/czhx/zsd165282",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "165283",
+   "parent_id": "165280",
+   "title": "对比实验",
+   "level": 5,
+   "href": "/czhx/zsd165283",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "147480",
+   "parent_id": "19366",
+   "title": "物化综合试题",
+   "level": 1,
+   "href": "/czhx/zsd147480",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "147481",
+   "parent_id": "147480",
+   "title": "节约能源与绿色化学（理综）",
+   "level": 2,
+   "href": "/czhx/zsd147481",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "147482",
+   "parent_id": "147480",
+   "title": "生活常识与科学应用（理综）",
+   "level": 2,
+   "href": "/czhx/zsd147482",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "147483",
+   "parent_id": "147480",
+   "title": "物理变化与化学变化（理综）",
+   "level": 2,
+   "href": "/czhx/zsd147483",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "147484",
+   "parent_id": "147480",
+   "title": "实验操作与注意事项（理综）",
+   "level": 2,
+   "href": "/czhx/zsd147484",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "147485",
+   "parent_id": "147480",
+   "title": "分子动理论（理综）",
+   "level": 2,
+   "href": "/czhx/zsd147485",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "147486",
+   "parent_id": "147480",
+   "title": "物质的分类（理综）",
+   "level": 2,
+   "href": "/czhx/zsd147486",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "147487",
+   "parent_id": "147480",
+   "title": "观索现象与总结规律（理综）",
+   "level": 2,
+   "href": "/czhx/zsd147487",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "115",
+   "parent_id": "-1",
+   "title": "实验",
+   "level": 1,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "673",
+   "parent_id": "0",
+   "title": "科学探究与化学实验",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "674",
+   "parent_id": "673",
+   "title": "基本的化学实验技能",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "675",
+   "parent_id": "674",
+   "title": "化学实验的基本操作",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "676",
+   "parent_id": "673",
+   "title": "体验化学科学探究",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "677",
+   "parent_id": "676",
+   "title": "探究过氧化氢分解反应中二氧化锰的催化作用",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "678",
+   "parent_id": "676",
+   "title": "探究铜片在空气中灼烧后发生的变化",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "679",
+   "parent_id": "676",
+   "title": "探究二氧化碳与水或氢氧化钠稀溶液的反应",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "680",
+   "parent_id": "676",
+   "title": "探究氢氧化钠溶液和稀盐酸发生中和反应时的温度变化、pH 变化",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "681",
+   "parent_id": "676",
+   "title": "探究人体吸入空气和呼出气体",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "682",
+   "parent_id": "0",
+   "title": "物质的化学变化",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "683",
+   "parent_id": "682",
+   "title": "物质的性质和变化",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "684",
+   "parent_id": "683",
+   "title": "水的沸腾实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "685",
+   "parent_id": "683",
+   "title": "胆矾的研碎实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "686",
+   "parent_id": "682",
+   "title": "化学变化的特征",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "687",
+   "parent_id": "686",
+   "title": "结合实验论证物质是否发生了化学变化",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "688",
+   "parent_id": "686",
+   "title": "探究燃烧条件",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "689",
+   "parent_id": "682",
+   "title": "质量守恒定律",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "690",
+   "parent_id": "689",
+   "title": "探究质量守恒定律",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "691",
+   "parent_id": "0",
+   "title": "物质的组成与结构",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "692",
+   "parent_id": "691",
+   "title": "分子的运动",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "693",
+   "parent_id": "692",
+   "title": "品红在水中的扩散实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "694",
+   "parent_id": "692",
+   "title": "探究分子运动现象",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "695",
+   "parent_id": "691",
+   "title": "探究物质元素组成",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "696",
+   "parent_id": "695",
+   "title": "探究水的组成及变化",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "697",
+   "parent_id": "695",
+   "title": "通过蜡烛、甲烷、乙醇的燃烧实验探究物质元素组成",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "698",
+   "parent_id": "0",
+   "title": "物质的性质与应用",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "699",
+   "parent_id": "698",
+   "title": "空气",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "700",
+   "parent_id": "699",
+   "title": "空气中氧气含量的测定",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "701",
+   "parent_id": "698",
+   "title": "氧气",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "702",
+   "parent_id": "701",
+   "title": "木炭在氧气中燃烧的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "703",
+   "parent_id": "701",
+   "title": "铁丝在氧气中燃烧的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "704",
+   "parent_id": "701",
+   "title": "硫在空气和氧气中燃烧的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "705",
+   "parent_id": "701",
+   "title": "带火星的木条在氧气中复燃的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "706",
+   "parent_id": "701",
+   "title": "高锰酸钾制取氧气实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "707",
+   "parent_id": "701",
+   "title": "过氧化氢制取氧气实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "708",
+   "parent_id": "698",
+   "title": "碳和碳的氧化物",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "709",
+   "parent_id": "708",
+   "title": "探究活性炭的吸附性",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "710",
+   "parent_id": "708",
+   "title": "木炭还原氧化铜的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "711",
+   "parent_id": "708",
+   "title": "生成炭黑的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "712",
+   "parent_id": "708",
+   "title": "实验室制取二氧化碳",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "713",
+   "parent_id": "708",
+   "title": "探究二氧化碳的物理性质",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "714",
+   "parent_id": "698",
+   "title": "金属与金属矿物",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "715",
+   "parent_id": "714",
+   "title": "探究合金和纯金属的物理性质",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "716",
+   "parent_id": "714",
+   "title": "金属与酸反应的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "717",
+   "parent_id": "714",
+   "title": "探究金属活动性强弱",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "718",
+   "parent_id": "714",
+   "title": "一氧化碳还原氧化铁实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "719",
+   "parent_id": "714",
+   "title": "探究铁生锈的条件",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "720",
+   "parent_id": "698",
+   "title": "水",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "721",
+   "parent_id": "720",
+   "title": "明矾净水实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "722",
+   "parent_id": "720",
+   "title": "过滤操作",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "723",
+   "parent_id": "720",
+   "title": "用肥皂水区分软水和硬水的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "724",
+   "parent_id": "720",
+   "title": "实验室制取蒸馏水",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "725",
+   "parent_id": "698",
+   "title": "溶液",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "726",
+   "parent_id": "725",
+   "title": "探究溶解性",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "727",
+   "parent_id": "725",
+   "title": "溶解时能量变化的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "728",
+   "parent_id": "725",
+   "title": "探究乳化现象",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "729",
+   "parent_id": "725",
+   "title": "配制一定溶质质量分数的溶液",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "730",
+   "parent_id": "698",
+   "title": "常见的酸、碱、盐",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "731",
+   "parent_id": "730",
+   "title": "向溶液中加入酸碱指示剂",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "732",
+   "parent_id": "730",
+   "title": "自制酸碱指示剂",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "733",
+   "parent_id": "730",
+   "title": "测定溶液的pH",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "734",
+   "parent_id": "730",
+   "title": "浓硫酸的腐蚀性实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "735",
+   "parent_id": "730",
+   "title": "浓硫酸的稀释实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "736",
+   "parent_id": "730",
+   "title": "稀盐酸除铁锈的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "737",
+   "parent_id": "730",
+   "title": "探究溶液的导电性",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "738",
+   "parent_id": "730",
+   "title": "碳酸钠、碳酸氢钠与盐酸反应的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "739",
+   "parent_id": "730",
+   "title": "碳酸钠溶液与澄清石灰水反应的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "740",
+   "parent_id": "730",
+   "title": "氢氧化钠、氯化钡溶液与硫酸铜反应的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "741",
+   "parent_id": "730",
+   "title": "探究某些酸、碱、盐之间是否发生反应",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "742",
+   "parent_id": "730",
+   "title": "粗盐中难溶性杂质的去除",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "743",
+   "parent_id": "730",
+   "title": "鉴别稀硫酸、氢氧化钠、碳酸钠、氯化钠溶液",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "744",
+   "parent_id": "730",
+   "title": "鉴别氮肥、磷肥和钾肥",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "745",
+   "parent_id": "698",
+   "title": "几种简单的有机物",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "746",
+   "parent_id": "745",
+   "title": "加热氯乙烯塑料",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "747",
+   "parent_id": "0",
+   "title": "化学与能源",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "748",
+   "parent_id": "747",
+   "title": "灭火",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "749",
+   "parent_id": "748",
+   "title": "探究灭火原理",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "750",
+   "parent_id": "748",
+   "title": "粉尘爆炸实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "751",
+   "parent_id": "747",
+   "title": "燃料的合理利用与开发",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "752",
+   "parent_id": "751",
+   "title": "实验室制取氢气",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "753",
+   "parent_id": "751",
+   "title": "氢气在空气中燃烧的实验",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "754",
+   "parent_id": "0",
+   "title": "化学与社会·跨学科实践",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "755",
+   "parent_id": "754",
+   "title": "跨学科实践活动",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "756",
+   "parent_id": "755",
+   "title": "微型空气质量“检测站”的组装与使用",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "757",
+   "parent_id": "755",
+   "title": "基于特定需求设计和制作简易供氧器",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "758",
+   "parent_id": "755",
+   "title": "水质检测及自制净水器",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "759",
+   "parent_id": "755",
+   "title": "基于碳中和理念设计低碳行动方案",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "760",
+   "parent_id": "755",
+   "title": "垃圾的分类与回收利用",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "761",
+   "parent_id": "755",
+   "title": "探究土壤酸碱性对植物生长的影响",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "762",
+   "parent_id": "755",
+   "title": "海洋资源的综合利用与制盐",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "763",
+   "parent_id": "755",
+   "title": "制作模型并展示科学家探索物质组成与结构的历程",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "764",
+   "parent_id": "755",
+   "title": "调查家用燃料的变迁与合理使用",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "765",
+   "parent_id": "755",
+   "title": "调查我国航天科技领域中新型材料、新型能源的应用",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  }
+ ]
+}

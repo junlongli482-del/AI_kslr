@@ -1,0 +1,5708 @@
+{
+ "stage": "senior",
+ "subject": "biology",
+ "subject_cn": "高中生物",
+ "bank_id": 15,
+ "root_id": "44886",
+ "root_title": "高中生物综合库",
+ "node_count": 633,
+ "nodes": [
+  {
+   "id": "44887",
+   "parent_id": "44886",
+   "title": "分子与细胞",
+   "level": 1,
+   "href": "/gzsw/zsd44887",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44898",
+   "parent_id": "44887",
+   "title": "组成细胞的分子",
+   "level": 2,
+   "href": "/gzsw/zsd44898",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44906",
+   "parent_id": "44898",
+   "title": "细胞中的元素和化合物",
+   "level": 3,
+   "href": "/gzsw/zsd44906",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44912",
+   "parent_id": "44906",
+   "title": "组成细胞的元素",
+   "level": 4,
+   "href": "/gzsw/zsd44912",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44913",
+   "parent_id": "44906",
+   "title": "组成细胞的化合物",
+   "level": 4,
+   "href": "/gzsw/zsd44913",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44914",
+   "parent_id": "44906",
+   "title": "检测生物组织中的糖类、脂肪和蛋白质",
+   "level": 4,
+   "href": "/gzsw/zsd44914",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153290",
+   "parent_id": "44906",
+   "title": "细胞中的元素和化合物综合",
+   "level": 4,
+   "href": "/gzsw/zsd153290",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44910",
+   "parent_id": "44898",
+   "title": "细胞中的无机物",
+   "level": 3,
+   "href": "/gzsw/zsd44910",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44923",
+   "parent_id": "44910",
+   "title": "细胞中的水",
+   "level": 4,
+   "href": "/gzsw/zsd44923",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44924",
+   "parent_id": "44910",
+   "title": "细胞中的无机盐",
+   "level": 4,
+   "href": "/gzsw/zsd44924",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153303",
+   "parent_id": "44910",
+   "title": "细胞中的水和无机盐综合",
+   "level": 4,
+   "href": "/gzsw/zsd153303",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44909",
+   "parent_id": "44898",
+   "title": "细胞中的糖类和脂质",
+   "level": 3,
+   "href": "/gzsw/zsd44909",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "153298",
+   "parent_id": "44909",
+   "title": "糖类的元素组成",
+   "level": 4,
+   "href": "/gzsw/zsd153298",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153299",
+   "parent_id": "44909",
+   "title": "糖类的种类及分布",
+   "level": 4,
+   "href": "/gzsw/zsd153299",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153300",
+   "parent_id": "44909",
+   "title": "糖类的功能",
+   "level": 4,
+   "href": "/gzsw/zsd153300",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44921",
+   "parent_id": "44909",
+   "title": "细胞中的糖类综合",
+   "level": 4,
+   "href": "/gzsw/zsd44921",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153301",
+   "parent_id": "44909",
+   "title": "脂质的元素组成",
+   "level": 4,
+   "href": "/gzsw/zsd153301",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153302",
+   "parent_id": "44909",
+   "title": "脂质的种类及功能",
+   "level": 4,
+   "href": "/gzsw/zsd153302",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44922",
+   "parent_id": "44909",
+   "title": "细胞中的脂质综合",
+   "level": 4,
+   "href": "/gzsw/zsd44922",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44907",
+   "parent_id": "44898",
+   "title": "蛋白质是生命活动的主要承担者",
+   "level": 3,
+   "href": "/gzsw/zsd44907",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "153291",
+   "parent_id": "44907",
+   "title": "蛋白质的元素组成",
+   "level": 4,
+   "href": "/gzsw/zsd153291",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44915",
+   "parent_id": "44907",
+   "title": "蛋白质的基本组成单位--氨基酸",
+   "level": 4,
+   "href": "/gzsw/zsd44915",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44916",
+   "parent_id": "44907",
+   "title": "蛋白质的结构及多样性",
+   "level": 4,
+   "href": "/gzsw/zsd44916",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44917",
+   "parent_id": "44907",
+   "title": "蛋白质的功能",
+   "level": 4,
+   "href": "/gzsw/zsd44917",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44918",
+   "parent_id": "44907",
+   "title": "与蛋白质相关的计算",
+   "level": 4,
+   "href": "/gzsw/zsd44918",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153292",
+   "parent_id": "44907",
+   "title": "蛋白质的变性",
+   "level": 4,
+   "href": "/gzsw/zsd153292",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153293",
+   "parent_id": "44907",
+   "title": "蛋白质的结构和功能综合",
+   "level": 4,
+   "href": "/gzsw/zsd153293",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44908",
+   "parent_id": "44898",
+   "title": "核酸",
+   "level": 3,
+   "href": "/gzsw/zsd44908",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "153294",
+   "parent_id": "44908",
+   "title": "核酸的元素组成及基本单位",
+   "level": 4,
+   "href": "/gzsw/zsd153294",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44919",
+   "parent_id": "44908",
+   "title": "核酸的种类及分布",
+   "level": 4,
+   "href": "/gzsw/zsd44919",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153295",
+   "parent_id": "44908",
+   "title": "DNA与RNA的异同",
+   "level": 4,
+   "href": "/gzsw/zsd153295",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153296",
+   "parent_id": "44908",
+   "title": "核酸的功能",
+   "level": 4,
+   "href": "/gzsw/zsd153296",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44920",
+   "parent_id": "44908",
+   "title": "观察DNA和RNA在细胞中的分布实验",
+   "level": 4,
+   "href": "/gzsw/zsd44920",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153297",
+   "parent_id": "44908",
+   "title": "核酸综合",
+   "level": 4,
+   "href": "/gzsw/zsd153297",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44911",
+   "parent_id": "44898",
+   "title": "生物大分子以碳链为骨架",
+   "level": 3,
+   "href": "/gzsw/zsd44911",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44899",
+   "parent_id": "44898",
+   "title": "细胞的分子组成综合",
+   "level": 3,
+   "href": "/gzsw/zsd44899",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44900",
+   "parent_id": "44887",
+   "title": "细胞的结构和功能",
+   "level": 2,
+   "href": "/gzsw/zsd44900",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44925",
+   "parent_id": "44900",
+   "title": "细胞是生命活动的基本单位",
+   "level": 3,
+   "href": "/gzsw/zsd44925",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44936",
+   "parent_id": "44925",
+   "title": "细胞学说及其建立过程",
+   "level": 4,
+   "href": "/gzsw/zsd44936",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44930",
+   "parent_id": "44925",
+   "title": "病毒结构、分类和增殖",
+   "level": 4,
+   "href": "/gzsw/zsd44930",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44931",
+   "parent_id": "44925",
+   "title": "生命活动与细胞的关系",
+   "level": 4,
+   "href": "/gzsw/zsd44931",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44932",
+   "parent_id": "44925",
+   "title": "细胞是基本的生命系统",
+   "level": 4,
+   "href": "/gzsw/zsd44932",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44926",
+   "parent_id": "44900",
+   "title": "细胞的多样性和统一性",
+   "level": 3,
+   "href": "/gzsw/zsd44926",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44933",
+   "parent_id": "44926",
+   "title": "显微镜的构造及使用",
+   "level": 4,
+   "href": "/gzsw/zsd44933",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44937",
+   "parent_id": "44933",
+   "title": "显微镜的种类、构造及使用",
+   "level": 5,
+   "href": "/gzsw/zsd44937",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44938",
+   "parent_id": "44933",
+   "title": "显微镜放大倍数及细胞个数的计算",
+   "level": 5,
+   "href": "/gzsw/zsd44938",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44939",
+   "parent_id": "44933",
+   "title": "显微镜的成像特点及装片的移动方向问题",
+   "level": 5,
+   "href": "/gzsw/zsd44939",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44934",
+   "parent_id": "44926",
+   "title": "真核细胞与原核细胞",
+   "level": 4,
+   "href": "/gzsw/zsd44934",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44935",
+   "parent_id": "44926",
+   "title": "细胞的大小和形态",
+   "level": 4,
+   "href": "/gzsw/zsd44935",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44927",
+   "parent_id": "44900",
+   "title": "细胞膜和细胞壁",
+   "level": 3,
+   "href": "/gzsw/zsd44927",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44940",
+   "parent_id": "44927",
+   "title": "细胞壁的成分及功能",
+   "level": 4,
+   "href": "/gzsw/zsd44940",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44941",
+   "parent_id": "44927",
+   "title": "细胞膜的结构与功能",
+   "level": 4,
+   "href": "/gzsw/zsd44941",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44943",
+   "parent_id": "44941",
+   "title": "细胞膜的成分",
+   "level": 5,
+   "href": "/gzsw/zsd44943",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44944",
+   "parent_id": "44941",
+   "title": "制备细胞膜",
+   "level": 5,
+   "href": "/gzsw/zsd44944",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44945",
+   "parent_id": "44941",
+   "title": "细胞膜的功能",
+   "level": 5,
+   "href": "/gzsw/zsd44945",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153304",
+   "parent_id": "44941",
+   "title": "细胞膜的结构和功能综合",
+   "level": 5,
+   "href": "/gzsw/zsd153304",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44942",
+   "parent_id": "44927",
+   "title": "生物膜系统",
+   "level": 4,
+   "href": "/gzsw/zsd44942",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44946",
+   "parent_id": "44942",
+   "title": "生物膜结构的探索历程",
+   "level": 5,
+   "href": "/gzsw/zsd44946",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44947",
+   "parent_id": "44942",
+   "title": "生物膜的流动镶嵌模型",
+   "level": 5,
+   "href": "/gzsw/zsd44947",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153305",
+   "parent_id": "44942",
+   "title": "生物膜的结构特点",
+   "level": 5,
+   "href": "/gzsw/zsd153305",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153306",
+   "parent_id": "44942",
+   "title": "生物膜的功能特性",
+   "level": 5,
+   "href": "/gzsw/zsd153306",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44953",
+   "parent_id": "44942",
+   "title": "生物膜系统的组成、功能及应用",
+   "level": 5,
+   "href": "/gzsw/zsd44953",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44928",
+   "parent_id": "44900",
+   "title": "细胞质",
+   "level": 3,
+   "href": "/gzsw/zsd44928",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44948",
+   "parent_id": "44928",
+   "title": "细胞骨架",
+   "level": 4,
+   "href": "/gzsw/zsd44948",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44949",
+   "parent_id": "44928",
+   "title": "细胞质基质（细胞溶胶）",
+   "level": 4,
+   "href": "/gzsw/zsd44949",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44950",
+   "parent_id": "44928",
+   "title": "细胞器的结构、功能及分离方法",
+   "level": 4,
+   "href": "/gzsw/zsd44950",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230047",
+   "parent_id": "44928",
+   "title": "内共生学说",
+   "level": 4,
+   "href": "/gzsw/zsd230047",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44951",
+   "parent_id": "44928",
+   "title": "观察叶绿体、线粒体和细胞质流动实验",
+   "level": 4,
+   "href": "/gzsw/zsd44951",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44952",
+   "parent_id": "44928",
+   "title": "细胞器之间的协调配合",
+   "level": 4,
+   "href": "/gzsw/zsd44952",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44929",
+   "parent_id": "44900",
+   "title": "细胞核",
+   "level": 3,
+   "href": "/gzsw/zsd44929",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44955",
+   "parent_id": "44929",
+   "title": "细胞核的结构",
+   "level": 4,
+   "href": "/gzsw/zsd44955",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44954",
+   "parent_id": "44929",
+   "title": "细胞核的功能及有关的实验探究",
+   "level": 4,
+   "href": "/gzsw/zsd44954",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153307",
+   "parent_id": "44929",
+   "title": "真核细胞的三维结构模型",
+   "level": 4,
+   "href": "/gzsw/zsd153307",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153308",
+   "parent_id": "44929",
+   "title": "细胞核的结构和功能综合",
+   "level": 4,
+   "href": "/gzsw/zsd153308",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44901",
+   "parent_id": "44900",
+   "title": "细胞的结构和功能综合",
+   "level": 3,
+   "href": "/gzsw/zsd44901",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44902",
+   "parent_id": "44887",
+   "title": "细胞的代谢",
+   "level": 2,
+   "href": "/gzsw/zsd44902",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44956",
+   "parent_id": "44902",
+   "title": "物质跨膜运输的实例",
+   "level": 3,
+   "href": "/gzsw/zsd44956",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44962",
+   "parent_id": "44956",
+   "title": "渗透作用",
+   "level": 4,
+   "href": "/gzsw/zsd44962",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44963",
+   "parent_id": "44956",
+   "title": "细胞的吸水和失水",
+   "level": 4,
+   "href": "/gzsw/zsd44963",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44964",
+   "parent_id": "44956",
+   "title": "质壁分离及其复原实验",
+   "level": 4,
+   "href": "/gzsw/zsd44964",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44965",
+   "parent_id": "44956",
+   "title": "质壁分离及其复原实验的应用",
+   "level": 4,
+   "href": "/gzsw/zsd44965",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44966",
+   "parent_id": "44956",
+   "title": "物质跨膜运输的其他实例",
+   "level": 4,
+   "href": "/gzsw/zsd44966",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44957",
+   "parent_id": "44902",
+   "title": "细胞的物质输入和输出",
+   "level": 3,
+   "href": "/gzsw/zsd44957",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44967",
+   "parent_id": "44957",
+   "title": "被动运输",
+   "level": 4,
+   "href": "/gzsw/zsd44967",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188576",
+   "parent_id": "44967",
+   "title": "自由扩散",
+   "level": 5,
+   "href": "/gzsw/zsd188576",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188577",
+   "parent_id": "44967",
+   "title": "协助扩散",
+   "level": 5,
+   "href": "/gzsw/zsd188577",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44968",
+   "parent_id": "44957",
+   "title": "主动运输",
+   "level": 4,
+   "href": "/gzsw/zsd44968",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44969",
+   "parent_id": "44957",
+   "title": "胞吞和胞吐",
+   "level": 4,
+   "href": "/gzsw/zsd44969",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153309",
+   "parent_id": "44957",
+   "title": "物质出入细胞的方式综合",
+   "level": 4,
+   "href": "/gzsw/zsd153309",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44958",
+   "parent_id": "44902",
+   "title": "酶与ATP",
+   "level": 3,
+   "href": "/gzsw/zsd44958",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44970",
+   "parent_id": "44958",
+   "title": "酶",
+   "level": 4,
+   "href": "/gzsw/zsd44970",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44973",
+   "parent_id": "44970",
+   "title": "酶的作用及机理",
+   "level": 5,
+   "href": "/gzsw/zsd44973",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44974",
+   "parent_id": "44970",
+   "title": "酶的本质",
+   "level": 5,
+   "href": "/gzsw/zsd44974",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44975",
+   "parent_id": "44970",
+   "title": "酶的特性",
+   "level": 5,
+   "href": "/gzsw/zsd44975",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44971",
+   "parent_id": "44970",
+   "title": "酶促反应的因素及实验",
+   "level": 5,
+   "href": "/gzsw/zsd44971",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153310",
+   "parent_id": "44970",
+   "title": "酶综合",
+   "level": 5,
+   "href": "/gzsw/zsd153310",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44972",
+   "parent_id": "44958",
+   "title": "ATP在能量代谢中的作用",
+   "level": 4,
+   "href": "/gzsw/zsd44972",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44976",
+   "parent_id": "44972",
+   "title": "细胞中的能源物质",
+   "level": 5,
+   "href": "/gzsw/zsd44976",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44979",
+   "parent_id": "44972",
+   "title": "ATP的结构",
+   "level": 5,
+   "href": "/gzsw/zsd44979",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44978",
+   "parent_id": "44972",
+   "title": "ATP与ADP的相互转化",
+   "level": 5,
+   "href": "/gzsw/zsd44978",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44977",
+   "parent_id": "44972",
+   "title": "ATP的功能及利用",
+   "level": 5,
+   "href": "/gzsw/zsd44977",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153311",
+   "parent_id": "44972",
+   "title": "ATP在能量代谢中的作用综合",
+   "level": 5,
+   "href": "/gzsw/zsd153311",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153312",
+   "parent_id": "44958",
+   "title": "吸能反应与放能反应",
+   "level": 4,
+   "href": "/gzsw/zsd153312",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44959",
+   "parent_id": "44902",
+   "title": "细胞呼吸",
+   "level": 3,
+   "href": "/gzsw/zsd44959",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44980",
+   "parent_id": "44959",
+   "title": "细胞呼吸的方式及过程",
+   "level": 4,
+   "href": "/gzsw/zsd44980",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44982",
+   "parent_id": "44980",
+   "title": "探究酵母菌细胞呼吸的方式",
+   "level": 5,
+   "href": "/gzsw/zsd44982",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44983",
+   "parent_id": "44980",
+   "title": "有氧呼吸过程",
+   "level": 5,
+   "href": "/gzsw/zsd44983",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44984",
+   "parent_id": "44980",
+   "title": "无氧呼吸过程",
+   "level": 5,
+   "href": "/gzsw/zsd44984",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153313",
+   "parent_id": "44980",
+   "title": "有氧呼吸和无氧呼吸的异同",
+   "level": 5,
+   "href": "/gzsw/zsd153313",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44985",
+   "parent_id": "44980",
+   "title": "细胞呼吸的实质及意义",
+   "level": 5,
+   "href": "/gzsw/zsd44985",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44986",
+   "parent_id": "44980",
+   "title": "细胞呼吸类型判断及相关实验",
+   "level": 5,
+   "href": "/gzsw/zsd44986",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44987",
+   "parent_id": "44980",
+   "title": "有氧呼吸与无氧呼吸的有关计算",
+   "level": 5,
+   "href": "/gzsw/zsd44987",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44981",
+   "parent_id": "44959",
+   "title": "细胞呼吸的影响因素及应用",
+   "level": 4,
+   "href": "/gzsw/zsd44981",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44988",
+   "parent_id": "44981",
+   "title": "影响细胞呼吸的因素",
+   "level": 5,
+   "href": "/gzsw/zsd44988",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44989",
+   "parent_id": "44981",
+   "title": "细胞呼吸原理在生产和生活中的应用",
+   "level": 5,
+   "href": "/gzsw/zsd44989",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153314",
+   "parent_id": "44959",
+   "title": "细胞呼吸综合",
+   "level": 4,
+   "href": "/gzsw/zsd153314",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44960",
+   "parent_id": "44902",
+   "title": "光合作用",
+   "level": 3,
+   "href": "/gzsw/zsd44960",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44990",
+   "parent_id": "44960",
+   "title": "捕获光能的色素与结构",
+   "level": 4,
+   "href": "/gzsw/zsd44990",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44993",
+   "parent_id": "44990",
+   "title": "光合色素的种类、含量及功能",
+   "level": 5,
+   "href": "/gzsw/zsd44993",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44994",
+   "parent_id": "44990",
+   "title": "绿叶中色素的提取和分离实验",
+   "level": 5,
+   "href": "/gzsw/zsd44994",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44995",
+   "parent_id": "44990",
+   "title": "叶绿体的结构与功能",
+   "level": 5,
+   "href": "/gzsw/zsd44995",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44991",
+   "parent_id": "44960",
+   "title": "光合作用的原理和应用",
+   "level": 4,
+   "href": "/gzsw/zsd44991",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "44996",
+   "parent_id": "44991",
+   "title": "光合作用原理实验",
+   "level": 5,
+   "href": "/gzsw/zsd44996",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44997",
+   "parent_id": "44991",
+   "title": "光反应、暗（碳）反应的物质变化和能量变化",
+   "level": 5,
+   "href": "/gzsw/zsd44997",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153315",
+   "parent_id": "44991",
+   "title": "光合作用的实质和意义",
+   "level": 5,
+   "href": "/gzsw/zsd153315",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44998",
+   "parent_id": "44991",
+   "title": "影响光合作用的因素",
+   "level": 5,
+   "href": "/gzsw/zsd44998",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44999",
+   "parent_id": "44991",
+   "title": "环境条件骤变时光合作用过程中各种物质含量变化规律",
+   "level": 5,
+   "href": "/gzsw/zsd44999",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45000",
+   "parent_id": "44991",
+   "title": "光合作用原理的应用",
+   "level": 5,
+   "href": "/gzsw/zsd45000",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153316",
+   "parent_id": "44991",
+   "title": "光合作用综合",
+   "level": 5,
+   "href": "/gzsw/zsd153316",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45001",
+   "parent_id": "44960",
+   "title": "化能合成作用",
+   "level": 4,
+   "href": "/gzsw/zsd45001",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44992",
+   "parent_id": "44960",
+   "title": "光合作用与呼吸作用",
+   "level": 4,
+   "href": "/gzsw/zsd44992",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45002",
+   "parent_id": "44992",
+   "title": "光合作用与细胞呼吸在物质和能量代谢上的区别与联系",
+   "level": 5,
+   "href": "/gzsw/zsd45002",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45003",
+   "parent_id": "44992",
+   "title": "总、净光合与呼吸",
+   "level": 5,
+   "href": "/gzsw/zsd45003",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45004",
+   "parent_id": "44992",
+   "title": "光合作用与呼吸作用的综合计算问题",
+   "level": 5,
+   "href": "/gzsw/zsd45004",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45005",
+   "parent_id": "44992",
+   "title": "光合作用与呼吸作用的综合实验分析与设计",
+   "level": 5,
+   "href": "/gzsw/zsd45005",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44961",
+   "parent_id": "44902",
+   "title": "糖类、脂质和蛋白质的代谢",
+   "level": 3,
+   "href": "/gzsw/zsd44961",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45006",
+   "parent_id": "44961",
+   "title": "糖类、脂质和蛋白质的代谢过程及与生活的关系",
+   "level": 4,
+   "href": "/gzsw/zsd45006",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45007",
+   "parent_id": "44961",
+   "title": "三大有机物质代谢的相互转化",
+   "level": 4,
+   "href": "/gzsw/zsd45007",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44903",
+   "parent_id": "44902",
+   "title": "细胞的代谢综合",
+   "level": 3,
+   "href": "/gzsw/zsd44903",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44904",
+   "parent_id": "44887",
+   "title": "细胞的生命历程",
+   "level": 2,
+   "href": "/gzsw/zsd44904",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45008",
+   "parent_id": "44904",
+   "title": "细胞的增殖",
+   "level": 3,
+   "href": "/gzsw/zsd45008",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45011",
+   "parent_id": "45008",
+   "title": "细胞不能无限长大",
+   "level": 4,
+   "href": "/gzsw/zsd45011",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45014",
+   "parent_id": "45011",
+   "title": "多细胞生物体生长及细胞不能无限长大的原因",
+   "level": 5,
+   "href": "/gzsw/zsd45014",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45015",
+   "parent_id": "45011",
+   "title": "探究细胞大小与物质运输的关系",
+   "level": 5,
+   "href": "/gzsw/zsd45015",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45012",
+   "parent_id": "45008",
+   "title": "细胞周期与有丝分裂",
+   "level": 4,
+   "href": "/gzsw/zsd45012",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45016",
+   "parent_id": "45012",
+   "title": "细胞增殖的方式及细胞周期",
+   "level": 5,
+   "href": "/gzsw/zsd45016",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45041",
+   "parent_id": "45012",
+   "title": "有丝分裂中染色体的形态结构",
+   "level": 5,
+   "href": "/gzsw/zsd45041",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45017",
+   "parent_id": "45012",
+   "title": "植物细胞的有丝分裂",
+   "level": 5,
+   "href": "/gzsw/zsd45017",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45018",
+   "parent_id": "45012",
+   "title": "动物细胞的有丝分裂",
+   "level": 5,
+   "href": "/gzsw/zsd45018",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45019",
+   "parent_id": "45012",
+   "title": "动、植物细胞有丝分裂异同",
+   "level": 5,
+   "href": "/gzsw/zsd45019",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45020",
+   "parent_id": "45012",
+   "title": "有丝分裂的物质的变化规律",
+   "level": 5,
+   "href": "/gzsw/zsd45020",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45021",
+   "parent_id": "45012",
+   "title": "有丝分裂的特征和意义",
+   "level": 5,
+   "href": "/gzsw/zsd45021",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45022",
+   "parent_id": "45012",
+   "title": "有丝分裂实验",
+   "level": 5,
+   "href": "/gzsw/zsd45022",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45013",
+   "parent_id": "45008",
+   "title": "无丝分裂",
+   "level": 4,
+   "href": "/gzsw/zsd45013",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "195831",
+   "parent_id": "45013",
+   "title": "有丝分裂与无丝分裂的异同",
+   "level": 5,
+   "href": "/gzsw/zsd195831",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154694",
+   "parent_id": "44904",
+   "title": "无性生殖和有性生殖",
+   "level": 3,
+   "href": "/gzsw/zsd154694",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45009",
+   "parent_id": "44904",
+   "title": "细胞的增殖综合",
+   "level": 3,
+   "href": "/gzsw/zsd45009",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45010",
+   "parent_id": "44904",
+   "title": "细胞的分化、衰老、死亡",
+   "level": 3,
+   "href": "/gzsw/zsd45010",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45023",
+   "parent_id": "45010",
+   "title": "细胞的分化",
+   "level": 4,
+   "href": "/gzsw/zsd45023",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45024",
+   "parent_id": "45010",
+   "title": "细胞的全能性",
+   "level": 4,
+   "href": "/gzsw/zsd45024",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45025",
+   "parent_id": "45010",
+   "title": "细胞的衰老",
+   "level": 4,
+   "href": "/gzsw/zsd45025",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45026",
+   "parent_id": "45010",
+   "title": "细胞的死亡",
+   "level": 4,
+   "href": "/gzsw/zsd45026",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188578",
+   "parent_id": "45026",
+   "title": "细胞凋亡",
+   "level": 5,
+   "href": "/gzsw/zsd188578",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188579",
+   "parent_id": "45026",
+   "title": "细胞坏死",
+   "level": 5,
+   "href": "/gzsw/zsd188579",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188580",
+   "parent_id": "45026",
+   "title": "细胞自噬",
+   "level": 5,
+   "href": "/gzsw/zsd188580",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44905",
+   "parent_id": "44904",
+   "title": "细胞的生命历程综合",
+   "level": 3,
+   "href": "/gzsw/zsd44905",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44888",
+   "parent_id": "44886",
+   "title": "遗传与进化",
+   "level": 1,
+   "href": "/gzsw/zsd44888",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45029",
+   "parent_id": "44888",
+   "title": "遗传的细胞基础",
+   "level": 2,
+   "href": "/gzsw/zsd45029",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45040",
+   "parent_id": "45029",
+   "title": "减数分裂和受精作用",
+   "level": 3,
+   "href": "/gzsw/zsd45040",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45042",
+   "parent_id": "45040",
+   "title": "减数分裂概念、四分体、同源染色体、非同源染色体",
+   "level": 4,
+   "href": "/gzsw/zsd45042",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45043",
+   "parent_id": "45040",
+   "title": "精子的形成过程",
+   "level": 4,
+   "href": "/gzsw/zsd45043",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45044",
+   "parent_id": "45040",
+   "title": "卵细胞的形成过程",
+   "level": 4,
+   "href": "/gzsw/zsd45044",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153317",
+   "parent_id": "45040",
+   "title": "精子和卵细胞的形成过程异同",
+   "level": 4,
+   "href": "/gzsw/zsd153317",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45045",
+   "parent_id": "45040",
+   "title": "减数分裂过程中的变化规律",
+   "level": 4,
+   "href": "/gzsw/zsd45045",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153447",
+   "parent_id": "45040",
+   "title": "减数分裂异常情况分析",
+   "level": 4,
+   "href": "/gzsw/zsd153447",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45046",
+   "parent_id": "45040",
+   "title": "观察细胞的减数分裂实验",
+   "level": 4,
+   "href": "/gzsw/zsd45046",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45047",
+   "parent_id": "45040",
+   "title": "受精作用",
+   "level": 4,
+   "href": "/gzsw/zsd45047",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45048",
+   "parent_id": "45040",
+   "title": "植物的个体发育",
+   "level": 4,
+   "href": "/gzsw/zsd45048",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45049",
+   "parent_id": "45040",
+   "title": "动物的个体发育",
+   "level": 4,
+   "href": "/gzsw/zsd45049",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153318",
+   "parent_id": "45040",
+   "title": "细胞的减数分裂综合",
+   "level": 4,
+   "href": "/gzsw/zsd153318",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45050",
+   "parent_id": "45040",
+   "title": "减数分裂和有丝分裂的综合",
+   "level": 4,
+   "href": "/gzsw/zsd45050",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45030",
+   "parent_id": "44888",
+   "title": "遗传的基本规律",
+   "level": 2,
+   "href": "/gzsw/zsd45030",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45051",
+   "parent_id": "45030",
+   "title": "基因的分离定律",
+   "level": 3,
+   "href": "/gzsw/zsd45051",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "153319",
+   "parent_id": "45051",
+   "title": "融合遗传",
+   "level": 4,
+   "href": "/gzsw/zsd153319",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153320",
+   "parent_id": "45051",
+   "title": "性状与相对性状",
+   "level": 4,
+   "href": "/gzsw/zsd153320",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154599",
+   "parent_id": "45051",
+   "title": "纯合子与杂合子",
+   "level": 4,
+   "href": "/gzsw/zsd154599",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154600",
+   "parent_id": "45051",
+   "title": "性状的显、隐性关系及基因型、表现型、等位基因",
+   "level": 4,
+   "href": "/gzsw/zsd154600",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45055",
+   "parent_id": "45051",
+   "title": "孟德尔一对相对性状的杂交实验",
+   "level": 4,
+   "href": "/gzsw/zsd45055",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45058",
+   "parent_id": "45051",
+   "title": "性状分离比的模拟实验",
+   "level": 4,
+   "href": "/gzsw/zsd45058",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45057",
+   "parent_id": "45051",
+   "title": "基因分离定律的实质和应用",
+   "level": 4,
+   "href": "/gzsw/zsd45057",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45059",
+   "parent_id": "45051",
+   "title": "分离定律综合问题分析（异常现象分析）",
+   "level": 4,
+   "href": "/gzsw/zsd45059",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153321",
+   "parent_id": "45051",
+   "title": "完全显性、不完全显性和共显性",
+   "level": 4,
+   "href": "/gzsw/zsd153321",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154601",
+   "parent_id": "45051",
+   "title": "用测交的方法检验F1的基因型",
+   "level": 4,
+   "href": "/gzsw/zsd154601",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45052",
+   "parent_id": "45030",
+   "title": "基因的自由组合定律",
+   "level": 3,
+   "href": "/gzsw/zsd45052",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45060",
+   "parent_id": "45052",
+   "title": "孟德尔两对相对性状的杂交实验",
+   "level": 4,
+   "href": "/gzsw/zsd45060",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45062",
+   "parent_id": "45052",
+   "title": "基因自由组合定律的实质和应用",
+   "level": 4,
+   "href": "/gzsw/zsd45062",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45063",
+   "parent_id": "45052",
+   "title": "孟德尔获得成功的原因",
+   "level": 4,
+   "href": "/gzsw/zsd45063",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45064",
+   "parent_id": "45052",
+   "title": "利用分离定律思维解决自由组合定律的问题",
+   "level": 4,
+   "href": "/gzsw/zsd45064",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45065",
+   "parent_id": "45052",
+   "title": "9:3:3:1和1:1:1:1的变式类型及应用",
+   "level": 4,
+   "href": "/gzsw/zsd45065",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45066",
+   "parent_id": "45052",
+   "title": "基因连锁与交换定律",
+   "level": 4,
+   "href": "/gzsw/zsd45066",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45053",
+   "parent_id": "45030",
+   "title": "基因位于染色体上",
+   "level": 3,
+   "href": "/gzsw/zsd45053",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45067",
+   "parent_id": "45053",
+   "title": "萨顿的假说",
+   "level": 4,
+   "href": "/gzsw/zsd45067",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45068",
+   "parent_id": "45053",
+   "title": "基因位于染色体上的实验证据",
+   "level": 4,
+   "href": "/gzsw/zsd45068",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45069",
+   "parent_id": "45053",
+   "title": "孟德尔遗传规律的细胞学解释",
+   "level": 4,
+   "href": "/gzsw/zsd45069",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45054",
+   "parent_id": "45030",
+   "title": "性别决定和伴性遗传",
+   "level": 3,
+   "href": "/gzsw/zsd45054",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45070",
+   "parent_id": "45054",
+   "title": "染色体组型和性别决定",
+   "level": 4,
+   "href": "/gzsw/zsd45070",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45071",
+   "parent_id": "45054",
+   "title": "伴性遗传的遗传规律及应用",
+   "level": 4,
+   "href": "/gzsw/zsd45071",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45072",
+   "parent_id": "45054",
+   "title": "遗传系谱图中遗传方式的判定及应用",
+   "level": 4,
+   "href": "/gzsw/zsd45072",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45073",
+   "parent_id": "45054",
+   "title": "基因在染色体上位置的判定方法问题",
+   "level": 4,
+   "href": "/gzsw/zsd45073",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45031",
+   "parent_id": "45030",
+   "title": "遗传的基本规律综合",
+   "level": 3,
+   "href": "/gzsw/zsd45031",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45032",
+   "parent_id": "44888",
+   "title": "遗传的分子基础",
+   "level": 2,
+   "href": "/gzsw/zsd45032",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45074",
+   "parent_id": "45032",
+   "title": "人类探索遗传物质的历程",
+   "level": 3,
+   "href": "/gzsw/zsd45074",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45081",
+   "parent_id": "45074",
+   "title": "DNA是遗传物质的间接证据",
+   "level": 4,
+   "href": "/gzsw/zsd45081",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45082",
+   "parent_id": "45074",
+   "title": "肺炎链球菌的转化实验",
+   "level": 4,
+   "href": "/gzsw/zsd45082",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45083",
+   "parent_id": "45074",
+   "title": "噬菌体侵染细菌的实验",
+   "level": 4,
+   "href": "/gzsw/zsd45083",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45084",
+   "parent_id": "45074",
+   "title": "RNA是遗传物质的实验证据",
+   "level": 4,
+   "href": "/gzsw/zsd45084",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45085",
+   "parent_id": "45074",
+   "title": "DNA是主要的遗传物质",
+   "level": 4,
+   "href": "/gzsw/zsd45085",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196651",
+   "parent_id": "45074",
+   "title": "“加法原理”与“减法原理”",
+   "level": 4,
+   "href": "/gzsw/zsd196651",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45075",
+   "parent_id": "45032",
+   "title": "DNA分子的结构和复制",
+   "level": 3,
+   "href": "/gzsw/zsd45075",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45086",
+   "parent_id": "45075",
+   "title": "DNA分子的结构和特点",
+   "level": 4,
+   "href": "/gzsw/zsd45086",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45087",
+   "parent_id": "45075",
+   "title": "DNA分子中碱基的相关计算",
+   "level": 4,
+   "href": "/gzsw/zsd45087",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45088",
+   "parent_id": "45075",
+   "title": "制作DNA双螺旋结构模型",
+   "level": 4,
+   "href": "/gzsw/zsd45088",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45089",
+   "parent_id": "45075",
+   "title": "不同生物中核酸、核苷酸和碱基的比较",
+   "level": 4,
+   "href": "/gzsw/zsd45089",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45090",
+   "parent_id": "45075",
+   "title": "DNA分子的复制",
+   "level": 4,
+   "href": "/gzsw/zsd45090",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45091",
+   "parent_id": "45090",
+   "title": "探究DNA的复制过程",
+   "level": 5,
+   "href": "/gzsw/zsd45091",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45092",
+   "parent_id": "45090",
+   "title": "DNA分子的复制过程、特点及意义",
+   "level": 5,
+   "href": "/gzsw/zsd45092",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45093",
+   "parent_id": "45090",
+   "title": "DNA分子复制的相关计算",
+   "level": 5,
+   "href": "/gzsw/zsd45093",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45076",
+   "parent_id": "45032",
+   "title": "基因通常是有遗传效应的DNA片段",
+   "level": 3,
+   "href": "/gzsw/zsd45076",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45094",
+   "parent_id": "45076",
+   "title": "基因的结构及功能",
+   "level": 4,
+   "href": "/gzsw/zsd45094",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45095",
+   "parent_id": "45076",
+   "title": "染色体、DNA、基因和核苷酸之间的关系",
+   "level": 4,
+   "href": "/gzsw/zsd45095",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196652",
+   "parent_id": "45076",
+   "title": "DNA分子的多样性与特异性",
+   "level": 4,
+   "href": "/gzsw/zsd196652",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45077",
+   "parent_id": "45032",
+   "title": "基因指导蛋白质的合成",
+   "level": 3,
+   "href": "/gzsw/zsd45077",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45096",
+   "parent_id": "45077",
+   "title": "遗传信息的转录",
+   "level": 4,
+   "href": "/gzsw/zsd45096",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45097",
+   "parent_id": "45077",
+   "title": "遗传信息的翻译",
+   "level": 4,
+   "href": "/gzsw/zsd45097",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45098",
+   "parent_id": "45077",
+   "title": "基因表达过程中的相关计算",
+   "level": 4,
+   "href": "/gzsw/zsd45098",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153322",
+   "parent_id": "45077",
+   "title": "基因的表达综合",
+   "level": 4,
+   "href": "/gzsw/zsd153322",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45078",
+   "parent_id": "45032",
+   "title": "基因表达与性状的关系",
+   "level": 3,
+   "href": "/gzsw/zsd45078",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45099",
+   "parent_id": "45078",
+   "title": "中心法则及其发展",
+   "level": 4,
+   "href": "/gzsw/zsd45099",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45100",
+   "parent_id": "45078",
+   "title": "基因、蛋白质与性状的关系",
+   "level": 4,
+   "href": "/gzsw/zsd45100",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154695",
+   "parent_id": "45078",
+   "title": "表观遗传",
+   "level": 4,
+   "href": "/gzsw/zsd154695",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45079",
+   "parent_id": "45032",
+   "title": "遗传密码的破译",
+   "level": 3,
+   "href": "/gzsw/zsd45079",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45101",
+   "parent_id": "45079",
+   "title": "遗传密码的阅读方式",
+   "level": 4,
+   "href": "/gzsw/zsd45101",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45102",
+   "parent_id": "45079",
+   "title": "克里克的实验证据",
+   "level": 4,
+   "href": "/gzsw/zsd45102",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45103",
+   "parent_id": "45079",
+   "title": "遗传密码对应规则的发现",
+   "level": 4,
+   "href": "/gzsw/zsd45103",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45080",
+   "parent_id": "45032",
+   "title": "基因表达的调控过程",
+   "level": 3,
+   "href": "/gzsw/zsd45080",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45033",
+   "parent_id": "45032",
+   "title": "遗传的分子基础综合",
+   "level": 3,
+   "href": "/gzsw/zsd45033",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45034",
+   "parent_id": "44888",
+   "title": "生物的变异与育种",
+   "level": 2,
+   "href": "/gzsw/zsd45034",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45104",
+   "parent_id": "45034",
+   "title": "基因突变和基因重组",
+   "level": 3,
+   "href": "/gzsw/zsd45104",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45107",
+   "parent_id": "45104",
+   "title": "基因突变",
+   "level": 4,
+   "href": "/gzsw/zsd45107",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45108",
+   "parent_id": "45104",
+   "title": "DNA分子上碱基对的改变对后代性状的影响",
+   "level": 4,
+   "href": "/gzsw/zsd45108",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45027",
+   "parent_id": "45104",
+   "title": "癌细胞的概念及主要特征",
+   "level": 4,
+   "href": "/gzsw/zsd45027",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45028",
+   "parent_id": "45104",
+   "title": "细胞癌变的原因及防治",
+   "level": 4,
+   "href": "/gzsw/zsd45028",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45109",
+   "parent_id": "45104",
+   "title": "基因重组",
+   "level": 4,
+   "href": "/gzsw/zsd45109",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45105",
+   "parent_id": "45034",
+   "title": "染色体变异",
+   "level": 3,
+   "href": "/gzsw/zsd45105",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45110",
+   "parent_id": "45105",
+   "title": "染色体结构的变异",
+   "level": 4,
+   "href": "/gzsw/zsd45110",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45111",
+   "parent_id": "45105",
+   "title": "染色体数目的变异",
+   "level": 4,
+   "href": "/gzsw/zsd45111",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153323",
+   "parent_id": "45105",
+   "title": "染色体结构变异和数目变异综合",
+   "level": 4,
+   "href": "/gzsw/zsd153323",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45112",
+   "parent_id": "45105",
+   "title": "低温诱导植物染色体数目的变化实验",
+   "level": 4,
+   "href": "/gzsw/zsd45112",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45113",
+   "parent_id": "45105",
+   "title": "基因突变、基因重组和染色体变异综合",
+   "level": 4,
+   "href": "/gzsw/zsd45113",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153324",
+   "parent_id": "45105",
+   "title": "染色体组、单倍体、二倍体、多倍体概念",
+   "level": 4,
+   "href": "/gzsw/zsd153324",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45106",
+   "parent_id": "45034",
+   "title": "育种",
+   "level": 3,
+   "href": "/gzsw/zsd45106",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45114",
+   "parent_id": "45106",
+   "title": "杂交育种",
+   "level": 4,
+   "href": "/gzsw/zsd45114",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153325",
+   "parent_id": "45106",
+   "title": "诱变育种",
+   "level": 4,
+   "href": "/gzsw/zsd153325",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45115",
+   "parent_id": "45106",
+   "title": "单倍体育种",
+   "level": 4,
+   "href": "/gzsw/zsd45115",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "132840",
+   "parent_id": "45106",
+   "title": "多倍体育种",
+   "level": 4,
+   "href": "/gzsw/zsd132840",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45117",
+   "parent_id": "45106",
+   "title": "其他育种方式",
+   "level": 4,
+   "href": "/gzsw/zsd45117",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45035",
+   "parent_id": "45034",
+   "title": "生物的变异与育种综合",
+   "level": 3,
+   "href": "/gzsw/zsd45035",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45036",
+   "parent_id": "44888",
+   "title": "遗传与人类健康",
+   "level": 2,
+   "href": "/gzsw/zsd45036",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45118",
+   "parent_id": "45036",
+   "title": "人类遗传病",
+   "level": 3,
+   "href": "/gzsw/zsd45118",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45119",
+   "parent_id": "45118",
+   "title": "人类遗传病的类型及实例",
+   "level": 4,
+   "href": "/gzsw/zsd45119",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45120",
+   "parent_id": "45118",
+   "title": "遗传病的检测和预防",
+   "level": 4,
+   "href": "/gzsw/zsd45120",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45121",
+   "parent_id": "45118",
+   "title": "人类基因组计划",
+   "level": 4,
+   "href": "/gzsw/zsd45121",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45122",
+   "parent_id": "45118",
+   "title": "调查人群中的遗传病",
+   "level": 4,
+   "href": "/gzsw/zsd45122",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45123",
+   "parent_id": "45118",
+   "title": "遗传病与人类未来",
+   "level": 4,
+   "href": "/gzsw/zsd45123",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196653",
+   "parent_id": "45118",
+   "title": "基因治疗",
+   "level": 4,
+   "href": "/gzsw/zsd196653",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45037",
+   "parent_id": "45118",
+   "title": "遗传与人类健康综合",
+   "level": 4,
+   "href": "/gzsw/zsd45037",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45038",
+   "parent_id": "44888",
+   "title": "生物的进化",
+   "level": 2,
+   "href": "/gzsw/zsd45038",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "157965",
+   "parent_id": "45038",
+   "title": "生物有共同祖先的证据",
+   "level": 3,
+   "href": "/gzsw/zsd157965",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45124",
+   "parent_id": "45038",
+   "title": "自然选择与适应的形成",
+   "level": 3,
+   "href": "/gzsw/zsd45124",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196654",
+   "parent_id": "45038",
+   "title": "适应的普遍性与相对性",
+   "level": 3,
+   "href": "/gzsw/zsd196654",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196655",
+   "parent_id": "45038",
+   "title": "获得性遗传与自然选择学说",
+   "level": 3,
+   "href": "/gzsw/zsd196655",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45125",
+   "parent_id": "45038",
+   "title": "基因频率的改变与生物进化",
+   "level": 3,
+   "href": "/gzsw/zsd45125",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196656",
+   "parent_id": "45038",
+   "title": "探究抗生素对细菌的选择作用实验",
+   "level": 3,
+   "href": "/gzsw/zsd196656",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45126",
+   "parent_id": "45038",
+   "title": "隔离与物种的形成",
+   "level": 3,
+   "href": "/gzsw/zsd45126",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45127",
+   "parent_id": "45038",
+   "title": "协同进化与生物多样性",
+   "level": 3,
+   "href": "/gzsw/zsd45127",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45039",
+   "parent_id": "45038",
+   "title": "生物的进化综合",
+   "level": 3,
+   "href": "/gzsw/zsd45039",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44889",
+   "parent_id": "44886",
+   "title": "稳态与调节",
+   "level": 1,
+   "href": "/gzsw/zsd44889",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45128",
+   "parent_id": "44889",
+   "title": "生物界是一个相对稳定的生命系统",
+   "level": 2,
+   "href": "/gzsw/zsd45128",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45129",
+   "parent_id": "44889",
+   "title": "内环境与稳态",
+   "level": 2,
+   "href": "/gzsw/zsd45129",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "196657",
+   "parent_id": "45129",
+   "title": "细胞生活的环境",
+   "level": 3,
+   "href": "/gzsw/zsd196657",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45141",
+   "parent_id": "45129",
+   "title": "内环境的组成及成分",
+   "level": 3,
+   "href": "/gzsw/zsd45141",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45142",
+   "parent_id": "45129",
+   "title": "内环境的理化性质",
+   "level": 3,
+   "href": "/gzsw/zsd45142",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45143",
+   "parent_id": "45129",
+   "title": "内环境是外界与细胞进行物质交换的媒介",
+   "level": 3,
+   "href": "/gzsw/zsd45143",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196658",
+   "parent_id": "45129",
+   "title": "内环境的稳态",
+   "level": 3,
+   "href": "/gzsw/zsd196658",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "196659",
+   "parent_id": "196658",
+   "title": "稳态的概念及调节机制",
+   "level": 4,
+   "href": "/gzsw/zsd196659",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196660",
+   "parent_id": "196658",
+   "title": "模拟生物体维持pH的稳定",
+   "level": 4,
+   "href": "/gzsw/zsd196660",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45144",
+   "parent_id": "196658",
+   "title": "内环境的稳态及意义",
+   "level": 4,
+   "href": "/gzsw/zsd45144",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196661",
+   "parent_id": "196658",
+   "title": "稳态概念的发展",
+   "level": 4,
+   "href": "/gzsw/zsd196661",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45130",
+   "parent_id": "196658",
+   "title": "人体的内环境与稳态综合",
+   "level": 4,
+   "href": "/gzsw/zsd45130",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45145",
+   "parent_id": "44889",
+   "title": "动物体对外界信息的获取",
+   "level": 2,
+   "href": "/gzsw/zsd45145",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45149",
+   "parent_id": "45145",
+   "title": "动物体对物理信息的获取",
+   "level": 3,
+   "href": "/gzsw/zsd45149",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45150",
+   "parent_id": "45145",
+   "title": "动物体对化学信息的获取",
+   "level": 3,
+   "href": "/gzsw/zsd45150",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45146",
+   "parent_id": "44889",
+   "title": "神经调节",
+   "level": 2,
+   "href": "/gzsw/zsd45146",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45151",
+   "parent_id": "45146",
+   "title": "神经调节的结构基础",
+   "level": 3,
+   "href": "/gzsw/zsd45151",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "186889",
+   "parent_id": "45151",
+   "title": "神经系统的基本结构",
+   "level": 4,
+   "href": "/gzsw/zsd186889",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196662",
+   "parent_id": "45151",
+   "title": "交感神经与副交感神经",
+   "level": 4,
+   "href": "/gzsw/zsd196662",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188716",
+   "parent_id": "45151",
+   "title": "组成神经系统的细胞",
+   "level": 4,
+   "href": "/gzsw/zsd188716",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188717",
+   "parent_id": "45146",
+   "title": "神经调节的基本方式",
+   "level": 3,
+   "href": "/gzsw/zsd188717",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45152",
+   "parent_id": "188717",
+   "title": "反射与反射弧",
+   "level": 4,
+   "href": "/gzsw/zsd45152",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45153",
+   "parent_id": "188717",
+   "title": "非条件反射与条件反射",
+   "level": 4,
+   "href": "/gzsw/zsd45153",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188718",
+   "parent_id": "45146",
+   "title": "神经冲动的产生和传导",
+   "level": 3,
+   "href": "/gzsw/zsd188718",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45154",
+   "parent_id": "188718",
+   "title": "兴奋在神经纤维上的传导",
+   "level": 4,
+   "href": "/gzsw/zsd45154",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45155",
+   "parent_id": "188718",
+   "title": "兴奋在神经元之间的传递",
+   "level": 4,
+   "href": "/gzsw/zsd45155",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45156",
+   "parent_id": "188718",
+   "title": "膜电位的变化及相关曲线",
+   "level": 4,
+   "href": "/gzsw/zsd45156",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45157",
+   "parent_id": "188718",
+   "title": "兴奋传导和传递的相关实验",
+   "level": 4,
+   "href": "/gzsw/zsd45157",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196663",
+   "parent_id": "188718",
+   "title": "电表偏转问题分析",
+   "level": 4,
+   "href": "/gzsw/zsd196663",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "173703",
+   "parent_id": "188718",
+   "title": "药物对兴奋传导及传递的影响",
+   "level": 4,
+   "href": "/gzsw/zsd173703",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45158",
+   "parent_id": "45146",
+   "title": "神经系统的分级调节",
+   "level": 3,
+   "href": "/gzsw/zsd45158",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "186968",
+   "parent_id": "45158",
+   "title": "神经系统对内脏活动的分级调节",
+   "level": 4,
+   "href": "/gzsw/zsd186968",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188719",
+   "parent_id": "45158",
+   "title": "神经系统对躯体运动的分级调节",
+   "level": 4,
+   "href": "/gzsw/zsd188719",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45159",
+   "parent_id": "45146",
+   "title": "人脑的高级功能",
+   "level": 3,
+   "href": "/gzsw/zsd45159",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "186969",
+   "parent_id": "45159",
+   "title": "语言",
+   "level": 4,
+   "href": "/gzsw/zsd186969",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "186970",
+   "parent_id": "45159",
+   "title": "学习、记忆、情绪",
+   "level": 4,
+   "href": "/gzsw/zsd186970",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45147",
+   "parent_id": "44889",
+   "title": "体液调节",
+   "level": 2,
+   "href": "/gzsw/zsd45147",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188720",
+   "parent_id": "45147",
+   "title": "激素与内分泌系统",
+   "level": 3,
+   "href": "/gzsw/zsd188720",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45160",
+   "parent_id": "188720",
+   "title": "激素调节的发现历程及相关实验分析",
+   "level": 4,
+   "href": "/gzsw/zsd45160",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45161",
+   "parent_id": "188720",
+   "title": "内分泌系统的组成和功能",
+   "level": 4,
+   "href": "/gzsw/zsd45161",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188721",
+   "parent_id": "45147",
+   "title": "激素调节的过程",
+   "level": 3,
+   "href": "/gzsw/zsd188721",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45162",
+   "parent_id": "188721",
+   "title": "激素分泌的分级调节",
+   "level": 4,
+   "href": "/gzsw/zsd45162",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "187981",
+   "parent_id": "188721",
+   "title": "激素分泌的反馈调节",
+   "level": 4,
+   "href": "/gzsw/zsd187981",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45163",
+   "parent_id": "188721",
+   "title": "激素调节的特点",
+   "level": 4,
+   "href": "/gzsw/zsd45163",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45164",
+   "parent_id": "188721",
+   "title": "激素调节信号转导的分子机制",
+   "level": 4,
+   "href": "/gzsw/zsd45164",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188722",
+   "parent_id": "45147",
+   "title": "神经调节和体液调节的关系",
+   "level": 3,
+   "href": "/gzsw/zsd188722",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45165",
+   "parent_id": "188722",
+   "title": "神经调节与体液调节的比较",
+   "level": 4,
+   "href": "/gzsw/zsd45165",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45166",
+   "parent_id": "188722",
+   "title": "体温调节",
+   "level": 4,
+   "href": "/gzsw/zsd45166",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45167",
+   "parent_id": "188722",
+   "title": "水盐平衡调节",
+   "level": 4,
+   "href": "/gzsw/zsd45167",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45168",
+   "parent_id": "188722",
+   "title": "血糖调节",
+   "level": 4,
+   "href": "/gzsw/zsd45168",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45169",
+   "parent_id": "188722",
+   "title": "血脂代谢及其调节",
+   "level": 4,
+   "href": "/gzsw/zsd45169",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45170",
+   "parent_id": "188722",
+   "title": "血压及其调节",
+   "level": 4,
+   "href": "/gzsw/zsd45170",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45171",
+   "parent_id": "188722",
+   "title": "动物激素的调节和应用",
+   "level": 4,
+   "href": "/gzsw/zsd45171",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45172",
+   "parent_id": "188722",
+   "title": "验证（探究）人或动物某种激素的生理作用",
+   "level": 4,
+   "href": "/gzsw/zsd45172",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "186972",
+   "parent_id": "188722",
+   "title": "其他体液成分参与稳态的调节",
+   "level": 4,
+   "href": "/gzsw/zsd186972",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45148",
+   "parent_id": "44889",
+   "title": "免疫调节",
+   "level": 2,
+   "href": "/gzsw/zsd45148",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45173",
+   "parent_id": "45148",
+   "title": "免疫系统的组成和功能",
+   "level": 3,
+   "href": "/gzsw/zsd45173",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188723",
+   "parent_id": "45173",
+   "title": "免疫系统的组成",
+   "level": 4,
+   "href": "/gzsw/zsd188723",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188724",
+   "parent_id": "45173",
+   "title": "免疫系统的功能",
+   "level": 4,
+   "href": "/gzsw/zsd188724",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45174",
+   "parent_id": "45173",
+   "title": "非特异性免疫与特异性免疫",
+   "level": 4,
+   "href": "/gzsw/zsd45174",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188725",
+   "parent_id": "45148",
+   "title": "特异性免疫",
+   "level": 3,
+   "href": "/gzsw/zsd188725",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45175",
+   "parent_id": "188725",
+   "title": "体液免疫",
+   "level": 4,
+   "href": "/gzsw/zsd45175",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45176",
+   "parent_id": "188725",
+   "title": "细胞免疫",
+   "level": 4,
+   "href": "/gzsw/zsd45176",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188726",
+   "parent_id": "188725",
+   "title": "体液免疫和细胞免疫的协调配合",
+   "level": 4,
+   "href": "/gzsw/zsd188726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45177",
+   "parent_id": "45148",
+   "title": "免疫功能异常",
+   "level": 3,
+   "href": "/gzsw/zsd45177",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188727",
+   "parent_id": "45177",
+   "title": "过敏反应",
+   "level": 4,
+   "href": "/gzsw/zsd188727",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188728",
+   "parent_id": "45177",
+   "title": "自身免疫病",
+   "level": 4,
+   "href": "/gzsw/zsd188728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188729",
+   "parent_id": "45177",
+   "title": "免疫缺陷病",
+   "level": 4,
+   "href": "/gzsw/zsd188729",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45178",
+   "parent_id": "45148",
+   "title": "免疫学的应用",
+   "level": 3,
+   "href": "/gzsw/zsd45178",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188730",
+   "parent_id": "45178",
+   "title": "疫苗",
+   "level": 4,
+   "href": "/gzsw/zsd188730",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188731",
+   "parent_id": "45178",
+   "title": "器官移植",
+   "level": 4,
+   "href": "/gzsw/zsd188731",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45179",
+   "parent_id": "45148",
+   "title": "与免疫调节相关的实验",
+   "level": 3,
+   "href": "/gzsw/zsd45179",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45132",
+   "parent_id": "44889",
+   "title": "动物和人体生命活动的调节综合",
+   "level": 2,
+   "href": "/gzsw/zsd45132",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45133",
+   "parent_id": "44889",
+   "title": "植物生命活动的调节",
+   "level": 2,
+   "href": "/gzsw/zsd45133",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45181",
+   "parent_id": "45133",
+   "title": "植物生长素",
+   "level": 3,
+   "href": "/gzsw/zsd45181",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45187",
+   "parent_id": "45181",
+   "title": "生长素的发现过程",
+   "level": 4,
+   "href": "/gzsw/zsd45187",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45188",
+   "parent_id": "45181",
+   "title": "生长素的产生、分布及运输",
+   "level": 4,
+   "href": "/gzsw/zsd45188",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45189",
+   "parent_id": "45181",
+   "title": "不同处理方案下植物的向性运动",
+   "level": 4,
+   "href": "/gzsw/zsd45189",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45182",
+   "parent_id": "45181",
+   "title": "生长素的生理作用",
+   "level": 4,
+   "href": "/gzsw/zsd45182",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45190",
+   "parent_id": "45182",
+   "title": "生长素的生理作用以及实例分析",
+   "level": 5,
+   "href": "/gzsw/zsd45190",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45191",
+   "parent_id": "45182",
+   "title": "生长素类似物在农业生产中的应用",
+   "level": 5,
+   "href": "/gzsw/zsd45191",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45192",
+   "parent_id": "45182",
+   "title": "探索生长素类似物促进插条生根的最适浓度",
+   "level": 5,
+   "href": "/gzsw/zsd45192",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45183",
+   "parent_id": "45133",
+   "title": "其他植物激素",
+   "level": 3,
+   "href": "/gzsw/zsd45183",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45193",
+   "parent_id": "45183",
+   "title": "其他植物激素的产生、分布和功能",
+   "level": 4,
+   "href": "/gzsw/zsd45193",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45194",
+   "parent_id": "45183",
+   "title": "不同的植物激素对植物生命活动的调节",
+   "level": 4,
+   "href": "/gzsw/zsd45194",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45195",
+   "parent_id": "45133",
+   "title": "植物生长调节剂及应用",
+   "level": 3,
+   "href": "/gzsw/zsd45195",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45180",
+   "parent_id": "45133",
+   "title": "环境因素参与调节植物的生命活动",
+   "level": 3,
+   "href": "/gzsw/zsd45180",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45184",
+   "parent_id": "45180",
+   "title": "植物的向性运动",
+   "level": 4,
+   "href": "/gzsw/zsd45184",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45185",
+   "parent_id": "45180",
+   "title": "参与调节植物生命活动的其他环境因素",
+   "level": 4,
+   "href": "/gzsw/zsd45185",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45186",
+   "parent_id": "45180",
+   "title": "植物对不良环境的适应性反应",
+   "level": 4,
+   "href": "/gzsw/zsd45186",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45134",
+   "parent_id": "45133",
+   "title": "植物生命活动的调节综合",
+   "level": 3,
+   "href": "/gzsw/zsd45134",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188732",
+   "parent_id": "44886",
+   "title": "生物与环境",
+   "level": 1,
+   "href": "/gzsw/zsd188732",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45135",
+   "parent_id": "188732",
+   "title": "种群和群落",
+   "level": 2,
+   "href": "/gzsw/zsd45135",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45196",
+   "parent_id": "45135",
+   "title": "种群",
+   "level": 3,
+   "href": "/gzsw/zsd45196",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188733",
+   "parent_id": "45196",
+   "title": "种群的数量特征",
+   "level": 4,
+   "href": "/gzsw/zsd188733",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45198",
+   "parent_id": "188733",
+   "title": "种群的概念及特征",
+   "level": 5,
+   "href": "/gzsw/zsd45198",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45199",
+   "parent_id": "188733",
+   "title": "种群密度的调查方法及应用",
+   "level": 5,
+   "href": "/gzsw/zsd45199",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "188734",
+   "parent_id": "45196",
+   "title": "种群数量的变化",
+   "level": 4,
+   "href": "/gzsw/zsd188734",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45200",
+   "parent_id": "188734",
+   "title": "种群的存活曲线",
+   "level": 5,
+   "href": "/gzsw/zsd45200",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45201",
+   "parent_id": "188734",
+   "title": "种群数量增长曲线",
+   "level": 5,
+   "href": "/gzsw/zsd45201",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45203",
+   "parent_id": "188734",
+   "title": "探究培养液中酵母菌种群数量的变化",
+   "level": 5,
+   "href": "/gzsw/zsd45203",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45202",
+   "parent_id": "45196",
+   "title": "影响种群数量变化的因素",
+   "level": 4,
+   "href": "/gzsw/zsd45202",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "163094",
+   "parent_id": "45196",
+   "title": "种群综合",
+   "level": 4,
+   "href": "/gzsw/zsd163094",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45197",
+   "parent_id": "45135",
+   "title": "群落",
+   "level": 3,
+   "href": "/gzsw/zsd45197",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188735",
+   "parent_id": "45197",
+   "title": "群落的结构",
+   "level": 4,
+   "href": "/gzsw/zsd188735",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45208",
+   "parent_id": "188735",
+   "title": "群落的概念",
+   "level": 5,
+   "href": "/gzsw/zsd45208",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45204",
+   "parent_id": "188735",
+   "title": "群落的物种组成以及丰富度的相关探究实验",
+   "level": 5,
+   "href": "/gzsw/zsd45204",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196664",
+   "parent_id": "188735",
+   "title": "群落的季节性",
+   "level": 5,
+   "href": "/gzsw/zsd196664",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45205",
+   "parent_id": "188735",
+   "title": "群落中生物的种间关系",
+   "level": 5,
+   "href": "/gzsw/zsd45205",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45206",
+   "parent_id": "188735",
+   "title": "植物的生长型和群落结构",
+   "level": 5,
+   "href": "/gzsw/zsd45206",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45207",
+   "parent_id": "188735",
+   "title": "物种在群落中的生态位",
+   "level": 5,
+   "href": "/gzsw/zsd45207",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "173704",
+   "parent_id": "45197",
+   "title": "群落的主要类型",
+   "level": 4,
+   "href": "/gzsw/zsd173704",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45209",
+   "parent_id": "45197",
+   "title": "群落的演替及其影响因素",
+   "level": 4,
+   "href": "/gzsw/zsd45209",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "163095",
+   "parent_id": "45197",
+   "title": "群落综合",
+   "level": 4,
+   "href": "/gzsw/zsd163095",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45136",
+   "parent_id": "45135",
+   "title": "种群和群落综合",
+   "level": 3,
+   "href": "/gzsw/zsd45136",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45137",
+   "parent_id": "188732",
+   "title": "生态系统及其稳定性",
+   "level": 2,
+   "href": "/gzsw/zsd45137",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45210",
+   "parent_id": "45137",
+   "title": "生态系统的结构",
+   "level": 3,
+   "href": "/gzsw/zsd45210",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45214",
+   "parent_id": "45210",
+   "title": "环境对生物的重要性",
+   "level": 4,
+   "href": "/gzsw/zsd45214",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45215",
+   "parent_id": "45210",
+   "title": "生态系统的概念和类型",
+   "level": 4,
+   "href": "/gzsw/zsd45215",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45216",
+   "parent_id": "45210",
+   "title": "生态系统的组成成分",
+   "level": 4,
+   "href": "/gzsw/zsd45216",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45217",
+   "parent_id": "45210",
+   "title": "食物链和食物网",
+   "level": 4,
+   "href": "/gzsw/zsd45217",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45218",
+   "parent_id": "45210",
+   "title": "生物圈的概念、范围",
+   "level": 4,
+   "href": "/gzsw/zsd45218",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45211",
+   "parent_id": "45137",
+   "title": "生态系统的功能",
+   "level": 3,
+   "href": "/gzsw/zsd45211",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45219",
+   "parent_id": "45211",
+   "title": "生态系统的能量流动",
+   "level": 4,
+   "href": "/gzsw/zsd45219",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45222",
+   "parent_id": "45219",
+   "title": "能量流动的概念和过程",
+   "level": 5,
+   "href": "/gzsw/zsd45222",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45223",
+   "parent_id": "45219",
+   "title": "能量流动的特点以及研究能量流动的意义",
+   "level": 5,
+   "href": "/gzsw/zsd45223",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45224",
+   "parent_id": "45219",
+   "title": "能量流动的相关计算",
+   "level": 5,
+   "href": "/gzsw/zsd45224",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45225",
+   "parent_id": "45219",
+   "title": "生态金字塔的种类及特点",
+   "level": 5,
+   "href": "/gzsw/zsd45225",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45220",
+   "parent_id": "45211",
+   "title": "生态系统的物质循环",
+   "level": 4,
+   "href": "/gzsw/zsd45220",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45226",
+   "parent_id": "45220",
+   "title": "物质循环的概念和特点",
+   "level": 5,
+   "href": "/gzsw/zsd45226",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45227",
+   "parent_id": "45220",
+   "title": "碳循环",
+   "level": 5,
+   "href": "/gzsw/zsd45227",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45228",
+   "parent_id": "45220",
+   "title": "物质循环与能量流动的关系",
+   "level": 5,
+   "href": "/gzsw/zsd45228",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45229",
+   "parent_id": "45220",
+   "title": "探究土壤微生物的分解作用",
+   "level": 5,
+   "href": "/gzsw/zsd45229",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45230",
+   "parent_id": "45220",
+   "title": "水体富营养化",
+   "level": 5,
+   "href": "/gzsw/zsd45230",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "173705",
+   "parent_id": "45220",
+   "title": "生物富集",
+   "level": 5,
+   "href": "/gzsw/zsd173705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45221",
+   "parent_id": "45211",
+   "title": "生态系统的信息传递",
+   "level": 4,
+   "href": "/gzsw/zsd45221",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45231",
+   "parent_id": "45221",
+   "title": "生态系统中信息的种类、作用及传递过程",
+   "level": 5,
+   "href": "/gzsw/zsd45231",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45232",
+   "parent_id": "45221",
+   "title": "信息传递在农业生产中的应用",
+   "level": 5,
+   "href": "/gzsw/zsd45232",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "163096",
+   "parent_id": "45137",
+   "title": "生态系统的结构和功能综合",
+   "level": 3,
+   "href": "/gzsw/zsd163096",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45212",
+   "parent_id": "45137",
+   "title": "生态系统的生产量和生物量",
+   "level": 3,
+   "href": "/gzsw/zsd45212",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45213",
+   "parent_id": "45137",
+   "title": "生态系统的稳定性",
+   "level": 3,
+   "href": "/gzsw/zsd45213",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45233",
+   "parent_id": "45213",
+   "title": "生态平衡与生态系统的稳定性及自我调节能力",
+   "level": 4,
+   "href": "/gzsw/zsd45233",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45234",
+   "parent_id": "45213",
+   "title": "抵抗力稳定性和恢复力稳定性",
+   "level": 4,
+   "href": "/gzsw/zsd45234",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45235",
+   "parent_id": "45213",
+   "title": "提高生态系统稳定性的措施",
+   "level": 4,
+   "href": "/gzsw/zsd45235",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45236",
+   "parent_id": "45213",
+   "title": "设计并制作生态瓶，观察其稳定性",
+   "level": 4,
+   "href": "/gzsw/zsd45236",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45138",
+   "parent_id": "45137",
+   "title": "生态系统及其稳定性综合",
+   "level": 3,
+   "href": "/gzsw/zsd45138",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45139",
+   "parent_id": "188732",
+   "title": "人与环境",
+   "level": 2,
+   "href": "/gzsw/zsd45139",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45237",
+   "parent_id": "45139",
+   "title": "人类活动对生态环境的影响",
+   "level": 3,
+   "href": "/gzsw/zsd45237",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45239",
+   "parent_id": "45237",
+   "title": "人口增长与生态足迹",
+   "level": 4,
+   "href": "/gzsw/zsd45239",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45240",
+   "parent_id": "45237",
+   "title": "关注全球性生态环境问题",
+   "level": 4,
+   "href": "/gzsw/zsd45240",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45238",
+   "parent_id": "45139",
+   "title": "生物多样性及其保护",
+   "level": 3,
+   "href": "/gzsw/zsd45238",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45241",
+   "parent_id": "45238",
+   "title": "全球性的环境问题及环境污染的防治",
+   "level": 4,
+   "href": "/gzsw/zsd45241",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154697",
+   "parent_id": "45238",
+   "title": "生物多样性及其价值",
+   "level": 4,
+   "href": "/gzsw/zsd154697",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45242",
+   "parent_id": "45238",
+   "title": "生物多样性丧失原因及其保护措施",
+   "level": 4,
+   "href": "/gzsw/zsd45242",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45313",
+   "parent_id": "45139",
+   "title": "生态工程",
+   "level": 3,
+   "href": "/gzsw/zsd45313",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45356",
+   "parent_id": "45313",
+   "title": "生态工程的特点及基本原理",
+   "level": 4,
+   "href": "/gzsw/zsd45356",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45357",
+   "parent_id": "45313",
+   "title": "生态工程实例及发展前景",
+   "level": 4,
+   "href": "/gzsw/zsd45357",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45358",
+   "parent_id": "45357",
+   "title": "生态工程的实例分析",
+   "level": 5,
+   "href": "/gzsw/zsd45358",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45359",
+   "parent_id": "45357",
+   "title": "生态工程的意义和生态工程发展的前景",
+   "level": 5,
+   "href": "/gzsw/zsd45359",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45360",
+   "parent_id": "45357",
+   "title": "生态农业",
+   "level": 5,
+   "href": "/gzsw/zsd45360",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45314",
+   "parent_id": "45313",
+   "title": "生态工程综合",
+   "level": 4,
+   "href": "/gzsw/zsd45314",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45140",
+   "parent_id": "45139",
+   "title": "人与环境综合",
+   "level": 3,
+   "href": "/gzsw/zsd45140",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44890",
+   "parent_id": "44886",
+   "title": "生物技术与工程",
+   "level": 1,
+   "href": "/gzsw/zsd44890",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188928",
+   "parent_id": "44890",
+   "title": "发酵工程",
+   "level": 2,
+   "href": "/gzsw/zsd188928",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45249",
+   "parent_id": "188928",
+   "title": "传统发酵技术的应用",
+   "level": 3,
+   "href": "/gzsw/zsd45249",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45284",
+   "parent_id": "45249",
+   "title": "果酒和果醋的制作",
+   "level": 4,
+   "href": "/gzsw/zsd45284",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45288",
+   "parent_id": "45284",
+   "title": "果酒和果醋的制作原理",
+   "level": 5,
+   "href": "/gzsw/zsd45288",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45289",
+   "parent_id": "45284",
+   "title": "果酒和果醋的制作流程及实验分析",
+   "level": 5,
+   "href": "/gzsw/zsd45289",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45285",
+   "parent_id": "45249",
+   "title": "腐乳的制作",
+   "level": 4,
+   "href": "/gzsw/zsd45285",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45290",
+   "parent_id": "45285",
+   "title": "腐乳制作的原理",
+   "level": 5,
+   "href": "/gzsw/zsd45290",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45291",
+   "parent_id": "45285",
+   "title": "腐乳制作的步骤及注意事项",
+   "level": 5,
+   "href": "/gzsw/zsd45291",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45292",
+   "parent_id": "45285",
+   "title": "影响腐乳品质的因素",
+   "level": 5,
+   "href": "/gzsw/zsd45292",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45286",
+   "parent_id": "45249",
+   "title": "泡菜的制作",
+   "level": 4,
+   "href": "/gzsw/zsd45286",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45293",
+   "parent_id": "45286",
+   "title": "泡菜的腌制",
+   "level": 5,
+   "href": "/gzsw/zsd45293",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45294",
+   "parent_id": "45286",
+   "title": "亚硝酸盐含量的测定",
+   "level": 5,
+   "href": "/gzsw/zsd45294",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230048",
+   "parent_id": "45249",
+   "title": "酸奶的制作",
+   "level": 4,
+   "href": "/gzsw/zsd230048",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45287",
+   "parent_id": "45249",
+   "title": "植物有效成分的提取",
+   "level": 4,
+   "href": "/gzsw/zsd45287",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45295",
+   "parent_id": "45287",
+   "title": "植物芳香油的提取",
+   "level": 5,
+   "href": "/gzsw/zsd45295",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45296",
+   "parent_id": "45287",
+   "title": "植物色素的提取",
+   "level": 5,
+   "href": "/gzsw/zsd45296",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45250",
+   "parent_id": "45249",
+   "title": "传统发酵技术的应用综合",
+   "level": 4,
+   "href": "/gzsw/zsd45250",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45243",
+   "parent_id": "188928",
+   "title": "微生物的培养与应用",
+   "level": 3,
+   "href": "/gzsw/zsd45243",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45253",
+   "parent_id": "45243",
+   "title": "微生物的实验室培养",
+   "level": 4,
+   "href": "/gzsw/zsd45253",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45255",
+   "parent_id": "45253",
+   "title": "培养基的成分及其功能",
+   "level": 5,
+   "href": "/gzsw/zsd45255",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45256",
+   "parent_id": "45253",
+   "title": "培养基的类型及其应用",
+   "level": 5,
+   "href": "/gzsw/zsd45256",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45257",
+   "parent_id": "45253",
+   "title": "无菌技术",
+   "level": 5,
+   "href": "/gzsw/zsd45257",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45258",
+   "parent_id": "45253",
+   "title": "培养基的制备",
+   "level": 5,
+   "href": "/gzsw/zsd45258",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45259",
+   "parent_id": "45253",
+   "title": "微生物的接种方法",
+   "level": 5,
+   "href": "/gzsw/zsd45259",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45260",
+   "parent_id": "45253",
+   "title": "微生物的培养与菌种保藏",
+   "level": 5,
+   "href": "/gzsw/zsd45260",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154698",
+   "parent_id": "45253",
+   "title": "显微镜直接计数",
+   "level": 5,
+   "href": "/gzsw/zsd154698",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154699",
+   "parent_id": "45253",
+   "title": "微生物传染病的传播和预防",
+   "level": 5,
+   "href": "/gzsw/zsd154699",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45254",
+   "parent_id": "45243",
+   "title": "分离特定微生物并测定其数量",
+   "level": 4,
+   "href": "/gzsw/zsd45254",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45261",
+   "parent_id": "45254",
+   "title": "土壤中分解尿素的细菌的分离与计数",
+   "level": 5,
+   "href": "/gzsw/zsd45261",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45262",
+   "parent_id": "45254",
+   "title": "分解纤维素的微生物的分离",
+   "level": 5,
+   "href": "/gzsw/zsd45262",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45263",
+   "parent_id": "45254",
+   "title": "其他微生物的分离与计数",
+   "level": 5,
+   "href": "/gzsw/zsd45263",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45244",
+   "parent_id": "45243",
+   "title": "微生物的培养与应用综合",
+   "level": 4,
+   "href": "/gzsw/zsd45244",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45247",
+   "parent_id": "188928",
+   "title": "酶的研究与应用",
+   "level": 3,
+   "href": "/gzsw/zsd45247",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45272",
+   "parent_id": "45247",
+   "title": "酶的制备和应用",
+   "level": 4,
+   "href": "/gzsw/zsd45272",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45274",
+   "parent_id": "45272",
+   "title": "加酶洗衣粉",
+   "level": 5,
+   "href": "/gzsw/zsd45274",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45275",
+   "parent_id": "45272",
+   "title": "探究加酶洗衣粉洗涤效果的实验设计",
+   "level": 5,
+   "href": "/gzsw/zsd45275",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45276",
+   "parent_id": "45272",
+   "title": "α-淀粉酶的固定化及淀粉水解作用的检测",
+   "level": 5,
+   "href": "/gzsw/zsd45276",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45277",
+   "parent_id": "45272",
+   "title": "果胶酶在果汁生产中的作用",
+   "level": 5,
+   "href": "/gzsw/zsd45277",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45278",
+   "parent_id": "45277",
+   "title": "果胶酶的组成和作用",
+   "level": 6,
+   "href": "/gzsw/zsd45278",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45279",
+   "parent_id": "45277",
+   "title": "酶的活性与影响酶活性的因素",
+   "level": 6,
+   "href": "/gzsw/zsd45279",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45280",
+   "parent_id": "45277",
+   "title": "探究温度和pH对酶活性的影响",
+   "level": 6,
+   "href": "/gzsw/zsd45280",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45281",
+   "parent_id": "45277",
+   "title": "探究果胶酶用量的实验设计",
+   "level": 6,
+   "href": "/gzsw/zsd45281",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45273",
+   "parent_id": "45247",
+   "title": "固定化酶的制备及应用",
+   "level": 4,
+   "href": "/gzsw/zsd45273",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45282",
+   "parent_id": "45273",
+   "title": "固定化酶和固定化细胞及其应用",
+   "level": 5,
+   "href": "/gzsw/zsd45282",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45283",
+   "parent_id": "45273",
+   "title": "制备固定化酵母细胞",
+   "level": 5,
+   "href": "/gzsw/zsd45283",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45248",
+   "parent_id": "45247",
+   "title": "酶的研究与应用综合",
+   "level": 4,
+   "href": "/gzsw/zsd45248",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45251",
+   "parent_id": "188928",
+   "title": "DNA和蛋白质技术",
+   "level": 3,
+   "href": "/gzsw/zsd45251",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45297",
+   "parent_id": "45251",
+   "title": "蛋白质的提取和分离",
+   "level": 4,
+   "href": "/gzsw/zsd45297",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45300",
+   "parent_id": "45297",
+   "title": "蛋白质分离的原理及方法",
+   "level": 5,
+   "href": "/gzsw/zsd45300",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45301",
+   "parent_id": "45297",
+   "title": "蛋白质的提取和分离的实验操作",
+   "level": 5,
+   "href": "/gzsw/zsd45301",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45302",
+   "parent_id": "45297",
+   "title": "乳酸脱氢同工酶的分离",
+   "level": 5,
+   "href": "/gzsw/zsd45302",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45252",
+   "parent_id": "45251",
+   "title": "DNA和蛋白质技术综合",
+   "level": 4,
+   "href": "/gzsw/zsd45252",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181983",
+   "parent_id": "188928",
+   "title": "发酵工程及其应用",
+   "level": 3,
+   "href": "/gzsw/zsd181983",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181984",
+   "parent_id": "181983",
+   "title": "发酵工程的基本环节",
+   "level": 4,
+   "href": "/gzsw/zsd181984",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181985",
+   "parent_id": "181983",
+   "title": "发酵工程的应用",
+   "level": 4,
+   "href": "/gzsw/zsd181985",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44891",
+   "parent_id": "188928",
+   "title": "发酵技术综合",
+   "level": 3,
+   "href": "/gzsw/zsd44891",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45305",
+   "parent_id": "44890",
+   "title": "基因工程",
+   "level": 2,
+   "href": "/gzsw/zsd45305",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45315",
+   "parent_id": "45305",
+   "title": "基因工程的基本工具",
+   "level": 3,
+   "href": "/gzsw/zsd45315",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45319",
+   "parent_id": "45315",
+   "title": "基因工程的概念及原理",
+   "level": 4,
+   "href": "/gzsw/zsd45319",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45320",
+   "parent_id": "45315",
+   "title": "DNA重组技术的基本工具",
+   "level": 4,
+   "href": "/gzsw/zsd45320",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45298",
+   "parent_id": "45315",
+   "title": "DNA的粗提取及鉴定",
+   "level": 4,
+   "href": "/gzsw/zsd45298",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45316",
+   "parent_id": "45305",
+   "title": "基因工程的基本操作程序",
+   "level": 3,
+   "href": "/gzsw/zsd45316",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45321",
+   "parent_id": "45316",
+   "title": "目的基因的筛选、获取",
+   "level": 4,
+   "href": "/gzsw/zsd45321",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "188940",
+   "parent_id": "45321",
+   "title": "筛选、获取合适的目的基因",
+   "level": 5,
+   "href": "/gzsw/zsd188940",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45299",
+   "parent_id": "45321",
+   "title": "PCR扩增的原理与过程",
+   "level": 5,
+   "href": "/gzsw/zsd45299",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45322",
+   "parent_id": "45316",
+   "title": "基因表达载体的构建",
+   "level": 4,
+   "href": "/gzsw/zsd45322",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45323",
+   "parent_id": "45316",
+   "title": "将目的基因导入受体细胞",
+   "level": 4,
+   "href": "/gzsw/zsd45323",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45324",
+   "parent_id": "45316",
+   "title": "目的基因的检测与鉴定",
+   "level": 4,
+   "href": "/gzsw/zsd45324",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "196665",
+   "parent_id": "45316",
+   "title": "电泳鉴定",
+   "level": 4,
+   "href": "/gzsw/zsd196665",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "157370",
+   "parent_id": "45316",
+   "title": "基因工程的操作程序综合",
+   "level": 4,
+   "href": "/gzsw/zsd157370",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45317",
+   "parent_id": "45305",
+   "title": "基因工程的应用",
+   "level": 3,
+   "href": "/gzsw/zsd45317",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45325",
+   "parent_id": "45317",
+   "title": "基因工程在农牧业、制药及环境等方面的应用",
+   "level": 4,
+   "href": "/gzsw/zsd45325",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45326",
+   "parent_id": "45317",
+   "title": "基因诊断和基因治疗",
+   "level": 4,
+   "href": "/gzsw/zsd45326",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45327",
+   "parent_id": "45317",
+   "title": "基因芯片",
+   "level": 4,
+   "href": "/gzsw/zsd45327",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45318",
+   "parent_id": "45305",
+   "title": "蛋白质工程",
+   "level": 3,
+   "href": "/gzsw/zsd45318",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45328",
+   "parent_id": "45318",
+   "title": "蛋白质工程原理及操作流程",
+   "level": 4,
+   "href": "/gzsw/zsd45328",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45329",
+   "parent_id": "45318",
+   "title": "蛋白质工程的应用及实例分析",
+   "level": 4,
+   "href": "/gzsw/zsd45329",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45306",
+   "parent_id": "45305",
+   "title": "基因工程综合",
+   "level": 3,
+   "href": "/gzsw/zsd45306",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45307",
+   "parent_id": "44890",
+   "title": "细胞工程",
+   "level": 2,
+   "href": "/gzsw/zsd45307",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45331",
+   "parent_id": "45307",
+   "title": "植物细胞工程的基本技术及应用",
+   "level": 3,
+   "href": "/gzsw/zsd45331",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45245",
+   "parent_id": "45331",
+   "title": "植物的组织培养技术",
+   "level": 4,
+   "href": "/gzsw/zsd45245",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45264",
+   "parent_id": "45245",
+   "title": "菊花的组织培养",
+   "level": 5,
+   "href": "/gzsw/zsd45264",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45266",
+   "parent_id": "45264",
+   "title": "植物组织的培养及基本过程",
+   "level": 6,
+   "href": "/gzsw/zsd45266",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45267",
+   "parent_id": "45264",
+   "title": "影响植物组织培养的因素",
+   "level": 6,
+   "href": "/gzsw/zsd45267",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45268",
+   "parent_id": "45264",
+   "title": "实验操作",
+   "level": 6,
+   "href": "/gzsw/zsd45268",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45265",
+   "parent_id": "45245",
+   "title": "月季的花药培养",
+   "level": 5,
+   "href": "/gzsw/zsd45265",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45269",
+   "parent_id": "45265",
+   "title": "被子植物的花粉发育",
+   "level": 6,
+   "href": "/gzsw/zsd45269",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45270",
+   "parent_id": "45265",
+   "title": "产生花粉植株的两种途径",
+   "level": 6,
+   "href": "/gzsw/zsd45270",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45271",
+   "parent_id": "45265",
+   "title": "花药离体培养",
+   "level": 6,
+   "href": "/gzsw/zsd45271",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45336",
+   "parent_id": "45331",
+   "title": "植物组织培养技术综合",
+   "level": 4,
+   "href": "/gzsw/zsd45336",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45337",
+   "parent_id": "45331",
+   "title": "植物体细胞杂交技术",
+   "level": 4,
+   "href": "/gzsw/zsd45337",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45338",
+   "parent_id": "45331",
+   "title": "植物细胞工程的实际应用",
+   "level": 4,
+   "href": "/gzsw/zsd45338",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45332",
+   "parent_id": "45307",
+   "title": "动物细胞的培养和核移植技术",
+   "level": 3,
+   "href": "/gzsw/zsd45332",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45339",
+   "parent_id": "45332",
+   "title": "动物细胞培养技术",
+   "level": 4,
+   "href": "/gzsw/zsd45339",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45340",
+   "parent_id": "45332",
+   "title": "动物体细胞核移植技术和克隆",
+   "level": 4,
+   "href": "/gzsw/zsd45340",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45330",
+   "parent_id": "45340",
+   "title": "克隆",
+   "level": 5,
+   "href": "/gzsw/zsd45330",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45334",
+   "parent_id": "45332",
+   "title": "动物细胞工程的实际应用",
+   "level": 4,
+   "href": "/gzsw/zsd45334",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45333",
+   "parent_id": "45307",
+   "title": "动物细胞融合与单克隆抗体的制备",
+   "level": 3,
+   "href": "/gzsw/zsd45333",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45335",
+   "parent_id": "45307",
+   "title": "干细胞工程",
+   "level": 3,
+   "href": "/gzsw/zsd45335",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45308",
+   "parent_id": "45307",
+   "title": "细胞工程综合",
+   "level": 3,
+   "href": "/gzsw/zsd45308",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45309",
+   "parent_id": "44890",
+   "title": "胚胎工程",
+   "level": 2,
+   "href": "/gzsw/zsd45309",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45341",
+   "parent_id": "45309",
+   "title": "体内受精和胚胎发育",
+   "level": 3,
+   "href": "/gzsw/zsd45341",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45344",
+   "parent_id": "45341",
+   "title": "精子和卵子的发生",
+   "level": 4,
+   "href": "/gzsw/zsd45344",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45345",
+   "parent_id": "45341",
+   "title": "体内受精",
+   "level": 4,
+   "href": "/gzsw/zsd45345",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45346",
+   "parent_id": "45341",
+   "title": "胚胎发育",
+   "level": 4,
+   "href": "/gzsw/zsd45346",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45342",
+   "parent_id": "45309",
+   "title": "体外受精和早期胚胎的培养",
+   "level": 3,
+   "href": "/gzsw/zsd45342",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45347",
+   "parent_id": "45342",
+   "title": "动物的体外受精",
+   "level": 4,
+   "href": "/gzsw/zsd45347",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45348",
+   "parent_id": "45342",
+   "title": "胚胎的体外培养",
+   "level": 4,
+   "href": "/gzsw/zsd45348",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45343",
+   "parent_id": "45309",
+   "title": "胚胎工程的应用及前景",
+   "level": 3,
+   "href": "/gzsw/zsd45343",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45349",
+   "parent_id": "45343",
+   "title": "胚胎移植技术",
+   "level": 4,
+   "href": "/gzsw/zsd45349",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45350",
+   "parent_id": "45343",
+   "title": "胚胎分割技术",
+   "level": 4,
+   "href": "/gzsw/zsd45350",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45351",
+   "parent_id": "45343",
+   "title": "胚胎干细胞技术",
+   "level": 4,
+   "href": "/gzsw/zsd45351",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45352",
+   "parent_id": "45343",
+   "title": "胚胎工程的应用",
+   "level": 4,
+   "href": "/gzsw/zsd45352",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45310",
+   "parent_id": "45309",
+   "title": "胚胎工程综合",
+   "level": 3,
+   "href": "/gzsw/zsd45310",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45311",
+   "parent_id": "44890",
+   "title": "生物技术的安全性和伦理问题",
+   "level": 2,
+   "href": "/gzsw/zsd45311",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45353",
+   "parent_id": "45311",
+   "title": "转基因生物安全性",
+   "level": 3,
+   "href": "/gzsw/zsd45353",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45354",
+   "parent_id": "45311",
+   "title": "生物技术中的伦理问题",
+   "level": 3,
+   "href": "/gzsw/zsd45354",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45355",
+   "parent_id": "45311",
+   "title": "禁止生物武器",
+   "level": 3,
+   "href": "/gzsw/zsd45355",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45312",
+   "parent_id": "45311",
+   "title": "生物技术的安全性和伦理问题综合",
+   "level": 3,
+   "href": "/gzsw/zsd45312",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44893",
+   "parent_id": "44890",
+   "title": "生物技术与工程综合",
+   "level": 2,
+   "href": "/gzsw/zsd44893",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161101",
+   "parent_id": "44886",
+   "title": "生物学热点聚焦",
+   "level": 1,
+   "href": "/gzsw/zsd161101",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "182181",
+   "parent_id": "161101",
+   "title": "碳达峰和碳中和",
+   "level": 2,
+   "href": "/gzsw/zsd182181",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "179652",
+   "parent_id": "161101",
+   "title": "丙型肝炎病毒",
+   "level": 2,
+   "href": "/gzsw/zsd179652",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "179653",
+   "parent_id": "161101",
+   "title": "阿尔茨海默病",
+   "level": 2,
+   "href": "/gzsw/zsd179653",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161102",
+   "parent_id": "161101",
+   "title": "新型冠状病毒及相关",
+   "level": 2,
+   "href": "/gzsw/zsd161102",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164585",
+   "parent_id": "161101",
+   "title": "垃圾分类及处理",
+   "level": 2,
+   "href": "/gzsw/zsd164585",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161103",
+   "parent_id": "161101",
+   "title": "2020年沙漠蝗灾与生态",
+   "level": 2,
+   "href": "/gzsw/zsd161103",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161104",
+   "parent_id": "161101",
+   "title": "2019年澳洲大火与生态",
+   "level": 2,
+   "href": "/gzsw/zsd161104",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161105",
+   "parent_id": "161101",
+   "title": "基因编辑技术",
+   "level": 2,
+   "href": "/gzsw/zsd161105",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161106",
+   "parent_id": "161101",
+   "title": "细胞感知和适应氧气变化的机制",
+   "level": 2,
+   "href": "/gzsw/zsd161106",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161107",
+   "parent_id": "161101",
+   "title": "世界首例体细胞克隆猴“中中”和“华华”",
+   "level": 2,
+   "href": "/gzsw/zsd161107",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "161108",
+   "parent_id": "161101",
+   "title": "屠呦呦与青蒿素的发现",
+   "level": 2,
+   "href": "/gzsw/zsd161108",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "192088",
+   "parent_id": "161101",
+   "title": "控制昼夜节律的分子机制",
+   "level": 2,
+   "href": "/gzsw/zsd192088",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "192089",
+   "parent_id": "161101",
+   "title": "细胞自噬机制",
+   "level": 2,
+   "href": "/gzsw/zsd192089",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "192090",
+   "parent_id": "161101",
+   "title": "抑制负面免疫调节的癌症疗法",
+   "level": 2,
+   "href": "/gzsw/zsd192090",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44894",
+   "parent_id": "44886",
+   "title": "实验与探究",
+   "level": 1,
+   "href": "/gzsw/zsd44894",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "45361",
+   "parent_id": "44894",
+   "title": "实验基本理论",
+   "level": 2,
+   "href": "/gzsw/zsd45361",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45362",
+   "parent_id": "44894",
+   "title": "实验基本技术",
+   "level": 2,
+   "href": "/gzsw/zsd45362",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45363",
+   "parent_id": "44894",
+   "title": "验证性实验与探究性实验",
+   "level": 2,
+   "href": "/gzsw/zsd45363",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "45364",
+   "parent_id": "44894",
+   "title": "研究性学习",
+   "level": 2,
+   "href": "/gzsw/zsd45364",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "44895",
+   "parent_id": "44894",
+   "title": "实验与探究综合",
+   "level": 2,
+   "href": "/gzsw/zsd44895",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "112",
+   "parent_id": "-1",
+   "title": "实验",
+   "level": 1,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "624",
+   "parent_id": "0",
+   "title": "分子与细胞",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "625",
+   "parent_id": "624",
+   "title": "使用高倍显微镜观察几种细胞",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "626",
+   "parent_id": "624",
+   "title": "检测生物组织中的糖类、脂肪和蛋白质",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "627",
+   "parent_id": "624",
+   "title": "用高倍显微镜观察叶绿体和细胞质的流动",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "628",
+   "parent_id": "624",
+   "title": "真核细胞的三维结构模型",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "629",
+   "parent_id": "624",
+   "title": "通过模拟实验探究膜的透性",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "630",
+   "parent_id": "624",
+   "title": "细胞的吸水和失水",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "631",
+   "parent_id": "624",
+   "title": "酶的活性与影响酶活性的因素",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "632",
+   "parent_id": "624",
+   "title": "探究酵母菌细胞呼吸的方式",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "633",
+   "parent_id": "624",
+   "title": "绿叶中色素的提取和分离实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "634",
+   "parent_id": "624",
+   "title": "探究环境因素对光合作用强度的影响",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "635",
+   "parent_id": "624",
+   "title": "有丝分裂实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "636",
+   "parent_id": "0",
+   "title": "遗传与进化",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "637",
+   "parent_id": "636",
+   "title": "性状分离比的模拟实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "638",
+   "parent_id": "636",
+   "title": "观察细胞的减数分裂实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "639",
+   "parent_id": "636",
+   "title": "建立减数分裂中染色体变化的模型",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "640",
+   "parent_id": "636",
+   "title": "制作DNA双螺旋结构模型",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "641",
+   "parent_id": "636",
+   "title": "低温诱导植物染色体数目的变化实验",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "642",
+   "parent_id": "636",
+   "title": "调查人群中的遗传病",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "643",
+   "parent_id": "636",
+   "title": "探究自然选择对种群基因频率变化的影响",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "644",
+   "parent_id": "636",
+   "title": "探究抗生素对细菌的选择作用",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "645",
+   "parent_id": "0",
+   "title": "稳态与调节",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "646",
+   "parent_id": "645",
+   "title": "模拟生物体维持pH的稳定",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "647",
+   "parent_id": "645",
+   "title": "探索植物生长调节剂的应用",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "648",
+   "parent_id": "0",
+   "title": "生物与环境",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "649",
+   "parent_id": "648",
+   "title": "调查草地中某种双子叶植物的总群密度",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "650",
+   "parent_id": "648",
+   "title": "探究培养液中酵母菌种群数量的变化",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "651",
+   "parent_id": "648",
+   "title": "探究土壤小动物类群的丰富度",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "652",
+   "parent_id": "648",
+   "title": "调查当地某生态系统中能量流动情况",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "653",
+   "parent_id": "648",
+   "title": "探究土壤微生物的分解作用",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "654",
+   "parent_id": "648",
+   "title": "设计制作生态缸，观察其稳定性",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "655",
+   "parent_id": "648",
+   "title": "搜索保护生物多样性的实例",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "12789",
+   "parent_id": "648",
+   "title": "调查当地的环境情况，提出保护环境的建议或行动计划",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "656",
+   "parent_id": "0",
+   "title": "生物技术与工程",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "657",
+   "parent_id": "656",
+   "title": "制作传统发酵食品",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "658",
+   "parent_id": "656",
+   "title": "酵母菌的纯培养",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "659",
+   "parent_id": "656",
+   "title": "土壤中分解尿素的细菌的分离与计数",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "660",
+   "parent_id": "656",
+   "title": "利用植物组织培养技术培育植物幼苗",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "661",
+   "parent_id": "656",
+   "title": "交流讨论单克隆抗体在临床上的应用",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "662",
+   "parent_id": "656",
+   "title": "DNA的粗提取与鉴定的实验设计",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "663",
+   "parent_id": "656",
+   "title": "DNA片段的扩增及电泳鉴定",
+   "level": 3,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  }
+ ]
+}

@@ -1802,44 +1802,24 @@ def fill_blanks_from_tokens(question: dict) -> int:
     return len(blanks)
 
 
-QUESTION_TYPES_PATH = ROOT / 'apps' / 'ai' / 'question-types.md'
-
-TAXONOMY_PROMPT = """你是题型标注员。根据题目内容，从下面这份“本学段本学科题型清单”中选出唯一一个题型，必要时选择子形态。
-
-规则：
-1. 必须选一个，不允许留空；拿不准选最接近的，并给低置信度；
-2. 子形态可不选（填 null），选了子形态即代表选了该题型；
-3. 不要参考试卷原有的题型字段，独立判断；
-4. 图片只用于辅助判断题意。
-
-只输出 JSON：
-{"code":"qt104","type":"现代文阅读","subtype":null,"confidence":0.0,"reason":"不超过30字"}
-"""
+TAGGING_DIR = ROOT / 'apps' / 'ai' / 'tagging'
+STAGE_CODES = {'小学': 'primary', '初中': 'junior', '高中': 'senior'}
+SUBJECT_CODES = {'语文': 'chinese', '数学': 'math', '英语': 'english', '物理': 'physics',
+                 '化学': 'chemistry', '生物': 'biology', '政治': 'politics', '道法': 'politics',
+                 '历史': 'history', '地理': 'geography'}
 
 
-def question_type_table(stage: str, subject: str) -> str:
-    try:
-        lines = QUESTION_TYPES_PATH.read_text(encoding='utf-8').splitlines()
-    except OSError:
-        return ''
-    stage = (stage or '').strip()
-    subject = (subject or '').strip()
-    current_stage, capture, rows = '', False, []
-    for line in lines:
-        if line.startswith('## ') and not line.startswith('### '):
-            current_stage = line[3:].strip()
-            capture = False
-            continue
-        if line.startswith('### '):
-            title = line[4:].strip()
-            name = title.split('（')[0].split('(')[0].strip()
-            capture = current_stage == stage and subject and subject in name
-            if capture:
-                rows.append(line)
-            continue
-        if capture and line.strip().startswith('|'):
-            rows.append(line)
-    return '\n'.join(rows)
+def tagging_prefix(stage: str, subject: str):
+    stage_code = STAGE_CODES.get((stage or '').strip())
+    subject_code = SUBJECT_CODES.get((subject or '').strip())
+    if not stage_code or not subject_code:
+        return None, None, None
+    slug = f'{stage_code}-{subject_code}'
+    prefix = TAGGING_DIR / 'prompts' / f'prefix-{slug}.txt'
+    tree = TAGGING_DIR / 'knowledge' / f'{slug}-knowledge.json'
+    if not prefix.is_file() or not tree.is_file():
+        return None, None, None
+    return prefix.read_text(encoding='utf-8'), tree, f'{slug}@v1'
 
 
 def _question_images(question: dict, limit: int = 4) -> list[dict]:
@@ -1869,7 +1849,7 @@ def _question_images(question: dict, limit: int = 4) -> list[dict]:
                 image.close()
             except Exception:
                 continue
-            images.append({'name': f"题图-{len(images) + 1}.png",
+            images.append({'name': f'题图-{len(images) + 1}.png',
                            'data_url': 'data:image/jpeg;base64,' + _b64.b64encode(stream.getvalue()).decode()})
             if len(images) >= limit:
                 return images
@@ -1885,33 +1865,48 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
     done = 0
     for question in questions:
         stage, subject = stages.get(question.get('paper_id'), ('', ''))
-        table = question_type_table(stage, subject)
-        if not table:
+        prefix, tree_path, version = tagging_prefix(stage, subject)
+        if not prefix:
             continue
-        instruction = TAXONOMY_PROMPT + '\n\n题型清单（' + f'{stage}{subject}' + '）：\n' + table
         payload = {'number': question.get('number'), 'stage': stage, 'subject': subject,
                    'stem': question.get('stem'), 'options': question.get('options'),
                    'subquestions': [{'number': s.get('number'), 'stem': s.get('stem')} for s in question.get('subquestions') or []],
                    'answer': question.get('answer'), 'analysis': question.get('analysis')}
         try:
-            result = llm.json('question-type', instruction, payload, images=_question_images(question))
+            result = llm.json('tagging', prefix, payload, images=_question_images(question))
         except Exception:
-            continue
-        qtype = str(result.get('type') or '').strip()
-        if not qtype:
+            question.setdefault('issues', []).append('标签生成失败，请重试')
+            done += 1
             continue
         attributes = question.setdefault('attributes', {})
-        attributes['question_type'] = qtype
-        attributes['question_type_id'] = result.get('code')
-        attributes['question_type_sub'] = result.get('subtype')
+        qtype = (result.get('question_type') or {})
+        sub_type = (result.get('sub_type') or {})
+        attributes['question_type'] = qtype.get('name') or ''
+        attributes['question_type_id'] = qtype.get('code') or ''
+        attributes['question_type_sub'] = sub_type.get('name') or ''
+        attributes['tagging_version'] = version
+        points = []
+        nodes = {}
         try:
-            confidence = float(result.get('confidence') or 0)
+            nodes = {n['id']: n for n in read(tree_path).get('nodes', [])}
+        except Exception:
+            nodes = {}
+        for point in (result.get('knowledge_points') or [])[:5]:
+            pid = str(point.get('id') or '')
+            if pid and pid in nodes:
+                points.append({'id': pid, 'name': point.get('name') or nodes[pid].get('title'),
+                               'role': point.get('role') or 'secondary'})
+        attributes['knowledge_points'] = points
+        difficulty = result.get('difficulty') or {}
+        try:
+            attributes['difficulty'] = max(0.0, min(1.0, float(difficulty.get('score_rate') or 0)))
         except (TypeError, ValueError):
-            confidence = 0
-        attributes['question_type_confidence'] = confidence
-        attributes['question_type_source'] = 'ai_taxonomy'
-        if confidence < 0.6:
-            question.setdefault('issues', []).append('题型为 AI 推荐，置信度较低，请核对')
+            attributes['difficulty'] = None
+        attributes['difficulty_band'] = difficulty.get('band') or ''
+        attributes['difficulty_reason'] = difficulty.get('reason') or ''
+        attributes['tag_status'] = 'ok' if points else 'tag_failed'
+        if not points:
+            question.setdefault('issues', []).append('未匹配到知识点，请人工选择')
         done += 1
     return done
 

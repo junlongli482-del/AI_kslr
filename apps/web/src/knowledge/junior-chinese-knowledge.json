@@ -1,0 +1,7247 @@
+{
+ "stage": "junior",
+ "subject": "chinese",
+ "subject_cn": "初中语文",
+ "bank_id": 1,
+ "root_id": "1",
+ "root_title": "初中语文综合库",
+ "node_count": 804,
+ "nodes": [
+  {
+   "id": "2",
+   "parent_id": "1",
+   "title": "基础知识积累与运用",
+   "level": 1,
+   "href": "/czyw/zsd2",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "193059",
+   "parent_id": "2",
+   "title": "汉字",
+   "level": 2,
+   "href": "/czyw/zsd193059",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "10",
+   "parent_id": "193059",
+   "title": "字音",
+   "level": 3,
+   "href": "/czyw/zsd10",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "145192",
+   "parent_id": "10",
+   "title": "易误读常见字",
+   "level": 4,
+   "href": "/czyw/zsd145192",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145191",
+   "parent_id": "10",
+   "title": "多音字",
+   "level": 4,
+   "href": "/czyw/zsd145191",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145193",
+   "parent_id": "10",
+   "title": "注音",
+   "level": 4,
+   "href": "/czyw/zsd145193",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "11",
+   "parent_id": "193059",
+   "title": "字形",
+   "level": 3,
+   "href": "/czyw/zsd11",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "145198",
+   "parent_id": "11",
+   "title": "常见易错字",
+   "level": 4,
+   "href": "/czyw/zsd145198",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145197",
+   "parent_id": "11",
+   "title": "根据拼音写汉字",
+   "level": 4,
+   "href": "/czyw/zsd145197",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145194",
+   "parent_id": "11",
+   "title": "汉字临摹",
+   "level": 4,
+   "href": "/czyw/zsd145194",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145196",
+   "parent_id": "11",
+   "title": "笔画、笔顺",
+   "level": 4,
+   "href": "/czyw/zsd145196",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145195",
+   "parent_id": "11",
+   "title": "字典、词典的使用",
+   "level": 4,
+   "href": "/czyw/zsd145195",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "163304",
+   "parent_id": "11",
+   "title": "书法字体识别、鉴赏 ",
+   "level": 4,
+   "href": "/czyw/zsd163304",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "182017",
+   "parent_id": "11",
+   "title": "汉字的演变和造字法",
+   "level": 4,
+   "href": "/czyw/zsd182017",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "150110",
+   "parent_id": "193059",
+   "title": "字义",
+   "level": 3,
+   "href": "/czyw/zsd150110",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "12",
+   "parent_id": "2",
+   "title": "词语",
+   "level": 2,
+   "href": "/czyw/zsd12",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "14",
+   "parent_id": "12",
+   "title": "一般词语",
+   "level": 3,
+   "href": "/czyw/zsd14",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "1244",
+   "parent_id": "12",
+   "title": "成语和熟语",
+   "level": 3,
+   "href": "/czyw/zsd1244",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "16",
+   "parent_id": "12",
+   "title": "关联词语",
+   "level": 3,
+   "href": "/czyw/zsd16",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "2866",
+   "parent_id": "16",
+   "title": "并列关系",
+   "level": 4,
+   "href": "/czyw/zsd2866",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "2867",
+   "parent_id": "16",
+   "title": "选择关系",
+   "level": 4,
+   "href": "/czyw/zsd2867",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "2868",
+   "parent_id": "16",
+   "title": "转折关系",
+   "level": 4,
+   "href": "/czyw/zsd2868",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "2869",
+   "parent_id": "16",
+   "title": "因果关系",
+   "level": 4,
+   "href": "/czyw/zsd2869",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "2870",
+   "parent_id": "16",
+   "title": "条件关系",
+   "level": 4,
+   "href": "/czyw/zsd2870",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "2871",
+   "parent_id": "16",
+   "title": "递进关系",
+   "level": 4,
+   "href": "/czyw/zsd2871",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "2872",
+   "parent_id": "16",
+   "title": "假设关系",
+   "level": 4,
+   "href": "/czyw/zsd2872",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "19",
+   "parent_id": "12",
+   "title": "词义辨析",
+   "level": 3,
+   "href": "/czyw/zsd19",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "135602",
+   "parent_id": "12",
+   "title": "词类（词性）",
+   "level": 3,
+   "href": "/czyw/zsd135602",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "135603",
+   "parent_id": "135602",
+   "title": "现代汉语实词",
+   "level": 4,
+   "href": "/czyw/zsd135603",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "135604",
+   "parent_id": "135602",
+   "title": "现代汉语虚词",
+   "level": 4,
+   "href": "/czyw/zsd135604",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "13",
+   "parent_id": "12",
+   "title": "短语的结构",
+   "level": 3,
+   "href": "/czyw/zsd13",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3682",
+   "parent_id": "13",
+   "title": "并列短语",
+   "level": 4,
+   "href": "/czyw/zsd3682",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3683",
+   "parent_id": "13",
+   "title": "偏正短语",
+   "level": 4,
+   "href": "/czyw/zsd3683",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3684",
+   "parent_id": "13",
+   "title": "动宾短语",
+   "level": 4,
+   "href": "/czyw/zsd3684",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3685",
+   "parent_id": "13",
+   "title": "后补短语",
+   "level": 4,
+   "href": "/czyw/zsd3685",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3686",
+   "parent_id": "13",
+   "title": "主谓短语",
+   "level": 4,
+   "href": "/czyw/zsd3686",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3687",
+   "parent_id": "13",
+   "title": "介宾短语",
+   "level": 4,
+   "href": "/czyw/zsd3687",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3688",
+   "parent_id": "13",
+   "title": "其他短语",
+   "level": 4,
+   "href": "/czyw/zsd3688",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "6",
+   "parent_id": "2",
+   "title": "句子",
+   "level": 2,
+   "href": "/czyw/zsd6",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3694",
+   "parent_id": "6",
+   "title": "标点符号",
+   "level": 3,
+   "href": "/czyw/zsd3694",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3691",
+   "parent_id": "6",
+   "title": "修辞手法",
+   "level": 3,
+   "href": "/czyw/zsd3691",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3693",
+   "parent_id": "6",
+   "title": "病句辨析与修改",
+   "level": 3,
+   "href": "/czyw/zsd3693",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3725",
+   "parent_id": "3693",
+   "title": "语序不当",
+   "level": 4,
+   "href": "/czyw/zsd3725",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3726",
+   "parent_id": "3693",
+   "title": "搭配不当",
+   "level": 4,
+   "href": "/czyw/zsd3726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3727",
+   "parent_id": "3693",
+   "title": "成分残缺或赘余",
+   "level": 4,
+   "href": "/czyw/zsd3727",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3728",
+   "parent_id": "3693",
+   "title": "结构混乱",
+   "level": 4,
+   "href": "/czyw/zsd3728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3729",
+   "parent_id": "3693",
+   "title": "表意不明",
+   "level": 4,
+   "href": "/czyw/zsd3729",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3730",
+   "parent_id": "3693",
+   "title": "不合逻辑",
+   "level": 4,
+   "href": "/czyw/zsd3730",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "135861",
+   "parent_id": "6",
+   "title": "单句的类型",
+   "level": 3,
+   "href": "/czyw/zsd135861",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "135863",
+   "parent_id": "135861",
+   "title": "陈述句",
+   "level": 4,
+   "href": "/czyw/zsd135863",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "135864",
+   "parent_id": "135861",
+   "title": "疑问句",
+   "level": 4,
+   "href": "/czyw/zsd135864",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3707",
+   "parent_id": "135861",
+   "title": "祈使句",
+   "level": 4,
+   "href": "/czyw/zsd3707",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3708",
+   "parent_id": "135861",
+   "title": "感叹句",
+   "level": 4,
+   "href": "/czyw/zsd3708",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3689",
+   "parent_id": "6",
+   "title": "单句的成分",
+   "level": 3,
+   "href": "/czyw/zsd3689",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3695",
+   "parent_id": "3689",
+   "title": "主语",
+   "level": 4,
+   "href": "/czyw/zsd3695",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3696",
+   "parent_id": "3689",
+   "title": "谓语",
+   "level": 4,
+   "href": "/czyw/zsd3696",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3697",
+   "parent_id": "3689",
+   "title": "宾语",
+   "level": 4,
+   "href": "/czyw/zsd3697",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3698",
+   "parent_id": "3689",
+   "title": "定语",
+   "level": 4,
+   "href": "/czyw/zsd3698",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3699",
+   "parent_id": "3689",
+   "title": "状语",
+   "level": 4,
+   "href": "/czyw/zsd3699",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3700",
+   "parent_id": "3689",
+   "title": "补语",
+   "level": 4,
+   "href": "/czyw/zsd3700",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3690",
+   "parent_id": "6",
+   "title": "复句的类型",
+   "level": 3,
+   "href": "/czyw/zsd3690",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3701",
+   "parent_id": "3690",
+   "title": "并列",
+   "level": 4,
+   "href": "/czyw/zsd3701",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3702",
+   "parent_id": "3690",
+   "title": "递进",
+   "level": 4,
+   "href": "/czyw/zsd3702",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3703",
+   "parent_id": "3690",
+   "title": "选择",
+   "level": 4,
+   "href": "/czyw/zsd3703",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3704",
+   "parent_id": "3690",
+   "title": "转折",
+   "level": 4,
+   "href": "/czyw/zsd3704",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3705",
+   "parent_id": "3690",
+   "title": "假设",
+   "level": 4,
+   "href": "/czyw/zsd3705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3706",
+   "parent_id": "3690",
+   "title": "条件",
+   "level": 4,
+   "href": "/czyw/zsd3706",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177695",
+   "parent_id": "3690",
+   "title": "因果",
+   "level": 4,
+   "href": "/czyw/zsd177695",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177696",
+   "parent_id": "3690",
+   "title": "承接",
+   "level": 4,
+   "href": "/czyw/zsd177696",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "7",
+   "parent_id": "2",
+   "title": "语言表达与应用",
+   "level": 2,
+   "href": "/czyw/zsd7",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3743",
+   "parent_id": "7",
+   "title": "语言表达的要求",
+   "level": 3,
+   "href": "/czyw/zsd3743",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3751",
+   "parent_id": "7",
+   "title": "准确、鲜明、生动",
+   "level": 3,
+   "href": "/czyw/zsd3751",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3750",
+   "parent_id": "7",
+   "title": "简明、连贯、得体",
+   "level": 3,
+   "href": "/czyw/zsd3750",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3692",
+   "parent_id": "7",
+   "title": "选用、变换句式",
+   "level": 3,
+   "href": "/czyw/zsd3692",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3724",
+   "parent_id": "7",
+   "title": "仿写、续写、补写句子",
+   "level": 3,
+   "href": "/czyw/zsd3724",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148918",
+   "parent_id": "7",
+   "title": "衔接与排序",
+   "level": 3,
+   "href": "/czyw/zsd148918",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3744",
+   "parent_id": "7",
+   "title": "图文转换",
+   "level": 3,
+   "href": "/czyw/zsd3744",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3752",
+   "parent_id": "3744",
+   "title": "漫画类",
+   "level": 4,
+   "href": "/czyw/zsd3752",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3753",
+   "parent_id": "3744",
+   "title": "徽标类",
+   "level": 4,
+   "href": "/czyw/zsd3753",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3754",
+   "parent_id": "3744",
+   "title": "图表类",
+   "level": 4,
+   "href": "/czyw/zsd3754",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164698",
+   "parent_id": "3744",
+   "title": "路线示意图、方位图",
+   "level": 4,
+   "href": "/czyw/zsd164698",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164699",
+   "parent_id": "3744",
+   "title": "思维导图",
+   "level": 4,
+   "href": "/czyw/zsd164699",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164702",
+   "parent_id": "3744",
+   "title": "流程图",
+   "level": 4,
+   "href": "/czyw/zsd164702",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3745",
+   "parent_id": "7",
+   "title": "语言应用场景",
+   "level": 3,
+   "href": "/czyw/zsd3745",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3758",
+   "parent_id": "3745",
+   "title": "对联",
+   "level": 4,
+   "href": "/czyw/zsd3758",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3759",
+   "parent_id": "3745",
+   "title": "宣传标语",
+   "level": 4,
+   "href": "/czyw/zsd3759",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3760",
+   "parent_id": "3745",
+   "title": "广告语",
+   "level": 4,
+   "href": "/czyw/zsd3760",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3761",
+   "parent_id": "3745",
+   "title": "纪念日",
+   "level": 4,
+   "href": "/czyw/zsd3761",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164703",
+   "parent_id": "3745",
+   "title": "意见建议",
+   "level": 4,
+   "href": "/czyw/zsd164703",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164704",
+   "parent_id": "3745",
+   "title": "推荐语",
+   "level": 4,
+   "href": "/czyw/zsd164704",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177029",
+   "parent_id": "3745",
+   "title": "采访词",
+   "level": 4,
+   "href": "/czyw/zsd177029",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177030",
+   "parent_id": "3745",
+   "title": "情景对话",
+   "level": 4,
+   "href": "/czyw/zsd177030",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177031",
+   "parent_id": "3745",
+   "title": "朗读（节奏、停顿）",
+   "level": 4,
+   "href": "/czyw/zsd177031",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177129",
+   "parent_id": "3745",
+   "title": "活动设计",
+   "level": 4,
+   "href": "/czyw/zsd177129",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3763",
+   "parent_id": "3745",
+   "title": "串联词",
+   "level": 4,
+   "href": "/czyw/zsd3763",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3764",
+   "parent_id": "3745",
+   "title": "开场白/结束语",
+   "level": 4,
+   "href": "/czyw/zsd3764",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3765",
+   "parent_id": "3745",
+   "title": "颁奖词",
+   "level": 4,
+   "href": "/czyw/zsd3765",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3766",
+   "parent_id": "3745",
+   "title": "劝说词",
+   "level": 4,
+   "href": "/czyw/zsd3766",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3767",
+   "parent_id": "3745",
+   "title": "通知",
+   "level": 4,
+   "href": "/czyw/zsd3767",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3768",
+   "parent_id": "3745",
+   "title": "启事",
+   "level": 4,
+   "href": "/czyw/zsd3768",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148961",
+   "parent_id": "3745",
+   "title": "邀请函",
+   "level": 4,
+   "href": "/czyw/zsd148961",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3762",
+   "parent_id": "3745",
+   "title": "手机短信",
+   "level": 4,
+   "href": "/czyw/zsd3762",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164705",
+   "parent_id": "3745",
+   "title": "导游词",
+   "level": 4,
+   "href": "/czyw/zsd164705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164706",
+   "parent_id": "3745",
+   "title": "地方特色（特产、名胜古迹等）",
+   "level": 4,
+   "href": "/czyw/zsd164706",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164707",
+   "parent_id": "3745",
+   "title": "辩论词",
+   "level": 4,
+   "href": "/czyw/zsd164707",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3769",
+   "parent_id": "3745",
+   "title": "日记",
+   "level": 4,
+   "href": "/czyw/zsd3769",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3770",
+   "parent_id": "3745",
+   "title": "书信",
+   "level": 4,
+   "href": "/czyw/zsd3770",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3771",
+   "parent_id": "3745",
+   "title": "演讲稿",
+   "level": 4,
+   "href": "/czyw/zsd3771",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3772",
+   "parent_id": "3745",
+   "title": "申请书",
+   "level": 4,
+   "href": "/czyw/zsd3772",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164588",
+   "parent_id": "3745",
+   "title": "倡议书",
+   "level": 4,
+   "href": "/czyw/zsd164588",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3773",
+   "parent_id": "3745",
+   "title": "计划书",
+   "level": 4,
+   "href": "/czyw/zsd3773",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3774",
+   "parent_id": "3745",
+   "title": "活动总结",
+   "level": 4,
+   "href": "/czyw/zsd3774",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3775",
+   "parent_id": "3745",
+   "title": "新闻稿",
+   "level": 4,
+   "href": "/czyw/zsd3775",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3776",
+   "parent_id": "3745",
+   "title": "调查报告",
+   "level": 4,
+   "href": "/czyw/zsd3776",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3777",
+   "parent_id": "3745",
+   "title": "公约",
+   "level": 4,
+   "href": "/czyw/zsd3777",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "186571",
+   "parent_id": "3745",
+   "title": "通知/启事",
+   "level": 4,
+   "href": "/czyw/zsd186571",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3746",
+   "parent_id": "7",
+   "title": "压缩语段、扩展语句",
+   "level": 3,
+   "href": "/czyw/zsd3746",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3778",
+   "parent_id": "3746",
+   "title": "压缩语段",
+   "level": 4,
+   "href": "/czyw/zsd3778",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3779",
+   "parent_id": "3746",
+   "title": "扩展语句",
+   "level": 4,
+   "href": "/czyw/zsd3779",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3749",
+   "parent_id": "7",
+   "title": "文段综合",
+   "level": 3,
+   "href": "/czyw/zsd3749",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "164708",
+   "parent_id": "3749",
+   "title": "拟写新闻标题、导语",
+   "level": 4,
+   "href": "/czyw/zsd164708",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164709",
+   "parent_id": "3749",
+   "title": "提炼与概括",
+   "level": 4,
+   "href": "/czyw/zsd164709",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3747",
+   "parent_id": "7",
+   "title": "情境补写",
+   "level": 3,
+   "href": "/czyw/zsd3747",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3748",
+   "parent_id": "7",
+   "title": "文段修改",
+   "level": 3,
+   "href": "/czyw/zsd3748",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "9",
+   "parent_id": "2",
+   "title": "文学文化常识",
+   "level": 2,
+   "href": "/czyw/zsd9",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "3783",
+   "parent_id": "9",
+   "title": "文学常识综合",
+   "level": 3,
+   "href": "/czyw/zsd3783",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148059",
+   "parent_id": "3783",
+   "title": "史书体例",
+   "level": 4,
+   "href": "/czyw/zsd148059",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148060",
+   "parent_id": "3783",
+   "title": "作家作品",
+   "level": 4,
+   "href": "/czyw/zsd148060",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148061",
+   "parent_id": "3783",
+   "title": "文学风格与流派",
+   "level": 4,
+   "href": "/czyw/zsd148061",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4259",
+   "parent_id": "9",
+   "title": "文化常识综合",
+   "level": 3,
+   "href": "/czyw/zsd4259",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4261",
+   "parent_id": "4259",
+   "title": "姓名称谓",
+   "level": 4,
+   "href": "/czyw/zsd4261",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4262",
+   "parent_id": "4259",
+   "title": "古代官职",
+   "level": 4,
+   "href": "/czyw/zsd4262",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4263",
+   "parent_id": "4259",
+   "title": "天文历法",
+   "level": 4,
+   "href": "/czyw/zsd4263",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4264",
+   "parent_id": "4259",
+   "title": "古代地理",
+   "level": 4,
+   "href": "/czyw/zsd4264",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4265",
+   "parent_id": "4259",
+   "title": "科举制度",
+   "level": 4,
+   "href": "/czyw/zsd4265",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4266",
+   "parent_id": "4259",
+   "title": "风俗礼仪",
+   "level": 4,
+   "href": "/czyw/zsd4266",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4267",
+   "parent_id": "4259",
+   "title": "饮食器用",
+   "level": 4,
+   "href": "/czyw/zsd4267",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4268",
+   "parent_id": "4259",
+   "title": "音乐文娱",
+   "level": 4,
+   "href": "/czyw/zsd4268",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4269",
+   "parent_id": "4259",
+   "title": "文史典籍",
+   "level": 4,
+   "href": "/czyw/zsd4269",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4270",
+   "parent_id": "4259",
+   "title": "目录辞书",
+   "level": 4,
+   "href": "/czyw/zsd4270",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "186572",
+   "parent_id": "4259",
+   "title": "敬辞谦辞",
+   "level": 4,
+   "href": "/czyw/zsd186572",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4604",
+   "parent_id": "2",
+   "title": "名句名篇默写",
+   "level": 2,
+   "href": "/czyw/zsd4604",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "3",
+   "parent_id": "1",
+   "title": "阅读与鉴赏",
+   "level": 1,
+   "href": "/czyw/zsd3",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4600",
+   "parent_id": "3",
+   "title": "诗歌鉴赏",
+   "level": 2,
+   "href": "/czyw/zsd4600",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4615",
+   "parent_id": "4600",
+   "title": "诗",
+   "level": 3,
+   "href": "/czyw/zsd4615",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4616",
+   "parent_id": "4600",
+   "title": "词",
+   "level": 3,
+   "href": "/czyw/zsd4616",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4617",
+   "parent_id": "4600",
+   "title": "曲",
+   "level": 3,
+   "href": "/czyw/zsd4617",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181289",
+   "parent_id": "4600",
+   "title": "考点分类",
+   "level": 3,
+   "href": "/czyw/zsd181289",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181290",
+   "parent_id": "181289",
+   "title": "文学基本常识",
+   "level": 4,
+   "href": "/czyw/zsd181290",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181291",
+   "parent_id": "181289",
+   "title": "词语解释",
+   "level": 4,
+   "href": "/czyw/zsd181291",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181292",
+   "parent_id": "181289",
+   "title": "意象、画面与意境",
+   "level": 4,
+   "href": "/czyw/zsd181292",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181293",
+   "parent_id": "181289",
+   "title": "词句赏析",
+   "level": 4,
+   "href": "/czyw/zsd181293",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181294",
+   "parent_id": "181289",
+   "title": "内容理解",
+   "level": 4,
+   "href": "/czyw/zsd181294",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181295",
+   "parent_id": "181289",
+   "title": "表现（写作）手法",
+   "level": 4,
+   "href": "/czyw/zsd181295",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181296",
+   "parent_id": "181289",
+   "title": "情感主旨",
+   "level": 4,
+   "href": "/czyw/zsd181296",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181297",
+   "parent_id": "181289",
+   "title": "对比阅读",
+   "level": 4,
+   "href": "/czyw/zsd181297",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181298",
+   "parent_id": "181289",
+   "title": "开放式作答",
+   "level": 4,
+   "href": "/czyw/zsd181298",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4602",
+   "parent_id": "3",
+   "title": "现代诗歌",
+   "level": 2,
+   "href": "/czyw/zsd4602",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4640",
+   "parent_id": "4602",
+   "title": "中国诗歌",
+   "level": 3,
+   "href": "/czyw/zsd4640",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4641",
+   "parent_id": "4602",
+   "title": "外国诗歌",
+   "level": 3,
+   "href": "/czyw/zsd4641",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4601",
+   "parent_id": "3",
+   "title": "现代文阅读",
+   "level": 2,
+   "href": "/czyw/zsd4601",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4619",
+   "parent_id": "4601",
+   "title": "记叙文",
+   "level": 3,
+   "href": "/czyw/zsd4619",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4622",
+   "parent_id": "4619",
+   "title": "小说",
+   "level": 4,
+   "href": "/czyw/zsd4622",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4623",
+   "parent_id": "4619",
+   "title": "散文",
+   "level": 4,
+   "href": "/czyw/zsd4623",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4624",
+   "parent_id": "4619",
+   "title": "人物传记",
+   "level": 4,
+   "href": "/czyw/zsd4624",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4625",
+   "parent_id": "4619",
+   "title": "通讯",
+   "level": 4,
+   "href": "/czyw/zsd4625",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4626",
+   "parent_id": "4619",
+   "title": "回忆录",
+   "level": 4,
+   "href": "/czyw/zsd4626",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4627",
+   "parent_id": "4619",
+   "title": "游记",
+   "level": 4,
+   "href": "/czyw/zsd4627",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4628",
+   "parent_id": "4619",
+   "title": "新闻",
+   "level": 4,
+   "href": "/czyw/zsd4628",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4629",
+   "parent_id": "4619",
+   "title": "参观访问记",
+   "level": 4,
+   "href": "/czyw/zsd4629",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4630",
+   "parent_id": "4619",
+   "title": "民间故事",
+   "level": 4,
+   "href": "/czyw/zsd4630",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "135600",
+   "parent_id": "4619",
+   "title": "寓言",
+   "level": 4,
+   "href": "/czyw/zsd135600",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "135601",
+   "parent_id": "4619",
+   "title": "童话",
+   "level": 4,
+   "href": "/czyw/zsd135601",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4631",
+   "parent_id": "4619",
+   "title": "戏剧",
+   "level": 4,
+   "href": "/czyw/zsd4631",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4632",
+   "parent_id": "4619",
+   "title": "其他文体",
+   "level": 4,
+   "href": "/czyw/zsd4632",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177698",
+   "parent_id": "4619",
+   "title": "考点分类",
+   "level": 4,
+   "href": "/czyw/zsd177698",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "177699",
+   "parent_id": "177698",
+   "title": "内容概括，主旨把握",
+   "level": 5,
+   "href": "/czyw/zsd177699",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177700",
+   "parent_id": "177698",
+   "title": "人物形象概括分析",
+   "level": 5,
+   "href": "/czyw/zsd177700",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177701",
+   "parent_id": "177698",
+   "title": "词句理解与赏析",
+   "level": 5,
+   "href": "/czyw/zsd177701",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177702",
+   "parent_id": "177698",
+   "title": "描写方法",
+   "level": 5,
+   "href": "/czyw/zsd177702",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177703",
+   "parent_id": "177698",
+   "title": "表达方式",
+   "level": 5,
+   "href": "/czyw/zsd177703",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177704",
+   "parent_id": "177698",
+   "title": "环境描写",
+   "level": 5,
+   "href": "/czyw/zsd177704",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177705",
+   "parent_id": "177698",
+   "title": "句段作用",
+   "level": 5,
+   "href": "/czyw/zsd177705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177706",
+   "parent_id": "177698",
+   "title": "记叙顺序",
+   "level": 5,
+   "href": "/czyw/zsd177706",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177711",
+   "parent_id": "177698",
+   "title": "表现手法",
+   "level": 5,
+   "href": "/czyw/zsd177711",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177712",
+   "parent_id": "177698",
+   "title": "人称选用",
+   "level": 5,
+   "href": "/czyw/zsd177712",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177713",
+   "parent_id": "177698",
+   "title": "标题含义",
+   "level": 5,
+   "href": "/czyw/zsd177713",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177714",
+   "parent_id": "177698",
+   "title": "标题作用",
+   "level": 5,
+   "href": "/czyw/zsd177714",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177715",
+   "parent_id": "177698",
+   "title": "行文线索",
+   "level": 5,
+   "href": "/czyw/zsd177715",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177716",
+   "parent_id": "177698",
+   "title": "开放性作答",
+   "level": 5,
+   "href": "/czyw/zsd177716",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230905",
+   "parent_id": "177698",
+   "title": "阅读策略与方法",
+   "level": 5,
+   "href": "/czyw/zsd230905",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4620",
+   "parent_id": "4601",
+   "title": "说明文",
+   "level": 3,
+   "href": "/czyw/zsd4620",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4634",
+   "parent_id": "4620",
+   "title": "事物说明文",
+   "level": 4,
+   "href": "/czyw/zsd4634",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4633",
+   "parent_id": "4620",
+   "title": "事理说明文",
+   "level": 4,
+   "href": "/czyw/zsd4633",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177717",
+   "parent_id": "4620",
+   "title": "说明文类别",
+   "level": 4,
+   "href": "/czyw/zsd177717",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177718",
+   "parent_id": "4620",
+   "title": "考点分类",
+   "level": 4,
+   "href": "/czyw/zsd177718",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "177719",
+   "parent_id": "177718",
+   "title": "说明对象",
+   "level": 5,
+   "href": "/czyw/zsd177719",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177720",
+   "parent_id": "177718",
+   "title": "说明方法",
+   "level": 5,
+   "href": "/czyw/zsd177720",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177721",
+   "parent_id": "177718",
+   "title": "说明顺序",
+   "level": 5,
+   "href": "/czyw/zsd177721",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177722",
+   "parent_id": "177718",
+   "title": "说明文语言",
+   "level": 5,
+   "href": "/czyw/zsd177722",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177723",
+   "parent_id": "177718",
+   "title": "说明文语段作用",
+   "level": 5,
+   "href": "/czyw/zsd177723",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177724",
+   "parent_id": "177718",
+   "title": "说明文标题",
+   "level": 5,
+   "href": "/czyw/zsd177724",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177725",
+   "parent_id": "177718",
+   "title": "说明内容概括",
+   "level": 5,
+   "href": "/czyw/zsd177725",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177726",
+   "parent_id": "177718",
+   "title": "说明材料回归",
+   "level": 5,
+   "href": "/czyw/zsd177726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4621",
+   "parent_id": "4601",
+   "title": "议论文",
+   "level": 3,
+   "href": "/czyw/zsd4621",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "177727",
+   "parent_id": "4621",
+   "title": "文体分类",
+   "level": 4,
+   "href": "/czyw/zsd177727",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "177728",
+   "parent_id": "177727",
+   "title": "立论文",
+   "level": 5,
+   "href": "/czyw/zsd177728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177729",
+   "parent_id": "177727",
+   "title": "驳论文",
+   "level": 5,
+   "href": "/czyw/zsd177729",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177730",
+   "parent_id": "4621",
+   "title": "考点分类",
+   "level": 4,
+   "href": "/czyw/zsd177730",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "177731",
+   "parent_id": "177730",
+   "title": "论点提炼",
+   "level": 5,
+   "href": "/czyw/zsd177731",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177732",
+   "parent_id": "177730",
+   "title": "论据作用",
+   "level": 5,
+   "href": "/czyw/zsd177732",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177733",
+   "parent_id": "177730",
+   "title": "论据补充",
+   "level": 5,
+   "href": "/czyw/zsd177733",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177734",
+   "parent_id": "177730",
+   "title": "论据概括",
+   "level": 5,
+   "href": "/czyw/zsd177734",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177735",
+   "parent_id": "177730",
+   "title": "论证方法",
+   "level": 5,
+   "href": "/czyw/zsd177735",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177736",
+   "parent_id": "177730",
+   "title": "论证思路",
+   "level": 5,
+   "href": "/czyw/zsd177736",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177737",
+   "parent_id": "177730",
+   "title": "议论文开头",
+   "level": 5,
+   "href": "/czyw/zsd177737",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177738",
+   "parent_id": "177730",
+   "title": "议论文语言",
+   "level": 5,
+   "href": "/czyw/zsd177738",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230906",
+   "parent_id": "177730",
+   "title": "内容理解与辨析",
+   "level": 5,
+   "href": "/czyw/zsd230906",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "177739",
+   "parent_id": "177730",
+   "title": "谈认识、谈看法",
+   "level": 5,
+   "href": "/czyw/zsd177739",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164805",
+   "parent_id": "4601",
+   "title": "非连续性文本",
+   "level": 3,
+   "href": "/czyw/zsd164805",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181299",
+   "parent_id": "164805",
+   "title": "考点分类",
+   "level": 4,
+   "href": "/czyw/zsd181299",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "181300",
+   "parent_id": "181299",
+   "title": "信息的筛选与辨析",
+   "level": 5,
+   "href": "/czyw/zsd181300",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181301",
+   "parent_id": "181299",
+   "title": "材料的提炼与概括",
+   "level": 5,
+   "href": "/czyw/zsd181301",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181302",
+   "parent_id": "181299",
+   "title": "拟写标题",
+   "level": 5,
+   "href": "/czyw/zsd181302",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181303",
+   "parent_id": "181299",
+   "title": "图（表）文转换",
+   "level": 5,
+   "href": "/czyw/zsd181303",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181304",
+   "parent_id": "181299",
+   "title": "建议与启示",
+   "level": 5,
+   "href": "/czyw/zsd181304",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "181305",
+   "parent_id": "181299",
+   "title": "拓展与运用",
+   "level": 5,
+   "href": "/czyw/zsd181305",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4599",
+   "parent_id": "3",
+   "title": "文言文阅读",
+   "level": 2,
+   "href": "/czyw/zsd4599",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "148052",
+   "parent_id": "4599",
+   "title": "文言题材",
+   "level": 3,
+   "href": "/czyw/zsd148052",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4609",
+   "parent_id": "148052",
+   "title": "人物传记类",
+   "level": 4,
+   "href": "/czyw/zsd4609",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4610",
+   "parent_id": "148052",
+   "title": "历史事件类",
+   "level": 4,
+   "href": "/czyw/zsd4610",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4611",
+   "parent_id": "148052",
+   "title": "议论说理类",
+   "level": 4,
+   "href": "/czyw/zsd4611",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4612",
+   "parent_id": "148052",
+   "title": "山水游记类",
+   "level": 4,
+   "href": "/czyw/zsd4612",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4613",
+   "parent_id": "148052",
+   "title": "日常生活类",
+   "level": 4,
+   "href": "/czyw/zsd4613",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148062",
+   "parent_id": "148052",
+   "title": "寓言神话类",
+   "level": 4,
+   "href": "/czyw/zsd148062",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164710",
+   "parent_id": "148052",
+   "title": "读书学习类",
+   "level": 4,
+   "href": "/czyw/zsd164710",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164711",
+   "parent_id": "148052",
+   "title": "传统美德类",
+   "level": 4,
+   "href": "/czyw/zsd164711",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "168747",
+   "parent_id": "148052",
+   "title": "治国谋略类",
+   "level": 4,
+   "href": "/czyw/zsd168747",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4614",
+   "parent_id": "148052",
+   "title": "小说类",
+   "level": 4,
+   "href": "/czyw/zsd4614",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4260",
+   "parent_id": "4599",
+   "title": "文言考点",
+   "level": 3,
+   "href": "/czyw/zsd4260",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "193060",
+   "parent_id": "4260",
+   "title": "文学常识",
+   "level": 4,
+   "href": "/czyw/zsd193060",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4271",
+   "parent_id": "4260",
+   "title": "文言实词",
+   "level": 4,
+   "href": "/czyw/zsd4271",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4272",
+   "parent_id": "4260",
+   "title": "文言虚词",
+   "level": 4,
+   "href": "/czyw/zsd4272",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "212411",
+   "parent_id": "4260",
+   "title": "通假字",
+   "level": 4,
+   "href": "/czyw/zsd212411",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "212412",
+   "parent_id": "4260",
+   "title": "词类活用",
+   "level": 4,
+   "href": "/czyw/zsd212412",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "212413",
+   "parent_id": "4260",
+   "title": "一词多义",
+   "level": 4,
+   "href": "/czyw/zsd212413",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "212414",
+   "parent_id": "4260",
+   "title": "古今异义",
+   "level": 4,
+   "href": "/czyw/zsd212414",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4273",
+   "parent_id": "4260",
+   "title": "文言句式",
+   "level": 4,
+   "href": "/czyw/zsd4273",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4274",
+   "parent_id": "4260",
+   "title": "文言文断句",
+   "level": 4,
+   "href": "/czyw/zsd4274",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4275",
+   "parent_id": "4260",
+   "title": "文言文翻译",
+   "level": 4,
+   "href": "/czyw/zsd4275",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "179616",
+   "parent_id": "4260",
+   "title": "内容理解与概括",
+   "level": 4,
+   "href": "/czyw/zsd179616",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "179617",
+   "parent_id": "4260",
+   "title": "把握人物形象",
+   "level": 4,
+   "href": "/czyw/zsd179617",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "179618",
+   "parent_id": "4260",
+   "title": "分析写作手法",
+   "level": 4,
+   "href": "/czyw/zsd179618",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "212415",
+   "parent_id": "4260",
+   "title": "主题情感",
+   "level": 4,
+   "href": "/czyw/zsd212415",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "179619",
+   "parent_id": "4260",
+   "title": "开放式回答",
+   "level": 4,
+   "href": "/czyw/zsd179619",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4603",
+   "parent_id": "3",
+   "title": "整本书阅读",
+   "level": 2,
+   "href": "/czyw/zsd4603",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "153372",
+   "parent_id": "4603",
+   "title": "《朝花夕拾》",
+   "level": 3,
+   "href": "/czyw/zsd153372",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153373",
+   "parent_id": "4603",
+   "title": "《西游记》",
+   "level": 3,
+   "href": "/czyw/zsd153373",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153374",
+   "parent_id": "4603",
+   "title": "《骆驼祥子》",
+   "level": 3,
+   "href": "/czyw/zsd153374",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153375",
+   "parent_id": "4603",
+   "title": "《海底两万里》",
+   "level": 3,
+   "href": "/czyw/zsd153375",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153376",
+   "parent_id": "4603",
+   "title": "《红星照耀中国》",
+   "level": 3,
+   "href": "/czyw/zsd153376",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153377",
+   "parent_id": "4603",
+   "title": "《昆虫记》",
+   "level": 3,
+   "href": "/czyw/zsd153377",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153378",
+   "parent_id": "4603",
+   "title": "《傅雷家书》",
+   "level": 3,
+   "href": "/czyw/zsd153378",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153379",
+   "parent_id": "4603",
+   "title": "《钢铁是怎样炼成的》",
+   "level": 3,
+   "href": "/czyw/zsd153379",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153380",
+   "parent_id": "4603",
+   "title": "《水浒传》",
+   "level": 3,
+   "href": "/czyw/zsd153380",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153381",
+   "parent_id": "4603",
+   "title": "《三国演义》",
+   "level": 3,
+   "href": "/czyw/zsd153381",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153382",
+   "parent_id": "4603",
+   "title": "《红楼梦》",
+   "level": 3,
+   "href": "/czyw/zsd153382",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153383",
+   "parent_id": "4603",
+   "title": "《儒林外史》",
+   "level": 3,
+   "href": "/czyw/zsd153383",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153384",
+   "parent_id": "4603",
+   "title": "《简·爱》",
+   "level": 3,
+   "href": "/czyw/zsd153384",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153385",
+   "parent_id": "4603",
+   "title": "《艾青诗选》",
+   "level": 3,
+   "href": "/czyw/zsd153385",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "192686",
+   "parent_id": "4603",
+   "title": "《经典常谈》",
+   "level": 3,
+   "href": "/czyw/zsd192686",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153386",
+   "parent_id": "4603",
+   "title": "《猎人笔记》",
+   "level": 3,
+   "href": "/czyw/zsd153386",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153387",
+   "parent_id": "4603",
+   "title": "《红岩》",
+   "level": 3,
+   "href": "/czyw/zsd153387",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153388",
+   "parent_id": "4603",
+   "title": "《平凡的世界》",
+   "level": 3,
+   "href": "/czyw/zsd153388",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153389",
+   "parent_id": "4603",
+   "title": "《名人传》",
+   "level": 3,
+   "href": "/czyw/zsd153389",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153390",
+   "parent_id": "4603",
+   "title": "《聊斋志异》",
+   "level": 3,
+   "href": "/czyw/zsd153390",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153391",
+   "parent_id": "4603",
+   "title": "《格列佛游记》",
+   "level": 3,
+   "href": "/czyw/zsd153391",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153392",
+   "parent_id": "4603",
+   "title": "《围城》",
+   "level": 3,
+   "href": "/czyw/zsd153392",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164712",
+   "parent_id": "4603",
+   "title": "《鲁滨逊漂流记》",
+   "level": 3,
+   "href": "/czyw/zsd164712",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "164713",
+   "parent_id": "4603",
+   "title": "《伊索寓言》",
+   "level": 3,
+   "href": "/czyw/zsd164713",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "278913",
+   "parent_id": "4603",
+   "title": "《唐诗三百首》",
+   "level": 3,
+   "href": "/czyw/zsd278913",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "153393",
+   "parent_id": "4603",
+   "title": "其他名著",
+   "level": 3,
+   "href": "/czyw/zsd153393",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4",
+   "parent_id": "1",
+   "title": "写作",
+   "level": 1,
+   "href": "/czyw/zsd4",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "4642",
+   "parent_id": "4",
+   "title": "成长与人生",
+   "level": 2,
+   "href": "/czyw/zsd4642",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4643",
+   "parent_id": "4",
+   "title": "道德与社会",
+   "level": 2,
+   "href": "/czyw/zsd4643",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4644",
+   "parent_id": "4",
+   "title": "人与自然",
+   "level": 2,
+   "href": "/czyw/zsd4644",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4645",
+   "parent_id": "4",
+   "title": "科技与文教",
+   "level": 2,
+   "href": "/czyw/zsd4645",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4646",
+   "parent_id": "4",
+   "title": "传承与创新",
+   "level": 2,
+   "href": "/czyw/zsd4646",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "4647",
+   "parent_id": "4",
+   "title": "哲理与生活",
+   "level": 2,
+   "href": "/czyw/zsd4647",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148053",
+   "parent_id": "4",
+   "title": "全命题作文",
+   "level": 2,
+   "href": "/czyw/zsd148053",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148054",
+   "parent_id": "4",
+   "title": "半命题作文",
+   "level": 2,
+   "href": "/czyw/zsd148054",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148055",
+   "parent_id": "4",
+   "title": "话题作文",
+   "level": 2,
+   "href": "/czyw/zsd148055",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148056",
+   "parent_id": "4",
+   "title": "材料作文",
+   "level": 2,
+   "href": "/czyw/zsd148056",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148057",
+   "parent_id": "4",
+   "title": "情境作文（联想与想象）",
+   "level": 2,
+   "href": "/czyw/zsd148057",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "148058",
+   "parent_id": "4",
+   "title": "应用文",
+   "level": 2,
+   "href": "/czyw/zsd148058",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "150116",
+   "parent_id": "4",
+   "title": "小作文",
+   "level": 2,
+   "href": "/czyw/zsd150116",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "211",
+   "parent_id": "-1",
+   "title": "作家作品",
+   "level": 1,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8723",
+   "parent_id": "0",
+   "title": "文章作者",
+   "level": 2,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8724",
+   "parent_id": "8723",
+   "title": "中国古代文学",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8725",
+   "parent_id": "8724",
+   "title": "春秋",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8726",
+   "parent_id": "8725",
+   "title": "孔子(前551-前479)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8727",
+   "parent_id": "8725",
+   "title": "左丘明(前556-前451)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8728",
+   "parent_id": "8725",
+   "title": "墨子(约前468-前376)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8729",
+   "parent_id": "8725",
+   "title": "老子(约前570-500)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8730",
+   "parent_id": "8725",
+   "title": "孙子(约前551-前479)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8731",
+   "parent_id": "8725",
+   "title": "其他春秋作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8732",
+   "parent_id": "8724",
+   "title": "战国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8733",
+   "parent_id": "8732",
+   "title": "孟子(前372-前289)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8734",
+   "parent_id": "8732",
+   "title": "庄子(约前369-前286)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8735",
+   "parent_id": "8732",
+   "title": "荀子(前313-前238)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8736",
+   "parent_id": "8732",
+   "title": "韩非子(前280-前233)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8737",
+   "parent_id": "8732",
+   "title": "吕不韦(前292-前235)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8738",
+   "parent_id": "8732",
+   "title": "列子(约前649-前606)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8739",
+   "parent_id": "8732",
+   "title": "屈原(约前340-约前278)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8740",
+   "parent_id": "8732",
+   "title": "宋玉(约前298-222)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8741",
+   "parent_id": "8732",
+   "title": "其他战国作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8742",
+   "parent_id": "8724",
+   "title": "西汉",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8743",
+   "parent_id": "8742",
+   "title": "贾谊(前200-前168)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8744",
+   "parent_id": "8742",
+   "title": "司马迁(前145-前90)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8745",
+   "parent_id": "8742",
+   "title": "刘向(约前77-前6)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8746",
+   "parent_id": "8742",
+   "title": "其他西汉作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8747",
+   "parent_id": "8724",
+   "title": "东汉",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8748",
+   "parent_id": "8747",
+   "title": "班固(32-92)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8749",
+   "parent_id": "8747",
+   "title": "其他东汉作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8750",
+   "parent_id": "8724",
+   "title": "三国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8751",
+   "parent_id": "8750",
+   "title": "曹操(155-220)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8752",
+   "parent_id": "8750",
+   "title": "诸葛亮(181-234)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8753",
+   "parent_id": "8750",
+   "title": "曹丕(187-226)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8754",
+   "parent_id": "8750",
+   "title": "曹植(192-232)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8755",
+   "parent_id": "8750",
+   "title": "阮籍(210-263)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8756",
+   "parent_id": "8750",
+   "title": "其他三国作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8757",
+   "parent_id": "8724",
+   "title": "西晋",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8758",
+   "parent_id": "8757",
+   "title": "李密(233-297)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8759",
+   "parent_id": "8757",
+   "title": "陈寿(233-297)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8760",
+   "parent_id": "8757",
+   "title": "陆机(261-303)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8761",
+   "parent_id": "8757",
+   "title": "王羲之(303-361)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8762",
+   "parent_id": "8757",
+   "title": "西晋其他作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8763",
+   "parent_id": "8724",
+   "title": "东晋",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8764",
+   "parent_id": "8763",
+   "title": "陶渊明(365-427)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8765",
+   "parent_id": "8763",
+   "title": "干宝(283-351)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8766",
+   "parent_id": "8763",
+   "title": "谢灵运(385-433)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8767",
+   "parent_id": "8763",
+   "title": "东晋其他作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8768",
+   "parent_id": "8724",
+   "title": "南北朝",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8769",
+   "parent_id": "8768",
+   "title": "范晔(398-445)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8770",
+   "parent_id": "8768",
+   "title": "刘义庆(403-444)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8771",
+   "parent_id": "8768",
+   "title": "鲍照(约414-466)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8772",
+   "parent_id": "8768",
+   "title": "陶弘景（456—536年）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8773",
+   "parent_id": "8768",
+   "title": "谢朓(464-499)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8774",
+   "parent_id": "8768",
+   "title": "丘迟(464-508)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8775",
+   "parent_id": "8768",
+   "title": "刘勰(465-520)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8776",
+   "parent_id": "8768",
+   "title": "钟嵘(约468-518)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8777",
+   "parent_id": "8768",
+   "title": "吴均（469～520）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8778",
+   "parent_id": "8768",
+   "title": "郦道元(470-527)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8779",
+   "parent_id": "8768",
+   "title": "陈叔宝(553年—604)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8780",
+   "parent_id": "8768",
+   "title": "其他南北朝作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8781",
+   "parent_id": "8724",
+   "title": "隋唐",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8782",
+   "parent_id": "8781",
+   "title": "王勃(650-675)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8783",
+   "parent_id": "8781",
+   "title": "张若虚(约660-约720)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8784",
+   "parent_id": "8781",
+   "title": "张九龄(678-740)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8785",
+   "parent_id": "8781",
+   "title": "杨炯(650-692)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8786",
+   "parent_id": "8781",
+   "title": "卢照邻(约635-约689)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8787",
+   "parent_id": "8781",
+   "title": "骆宾王(约640-687)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8788",
+   "parent_id": "8781",
+   "title": "贺知章(659-744)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8789",
+   "parent_id": "8781",
+   "title": "王之涣(688-742)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8790",
+   "parent_id": "8781",
+   "title": "孟浩然(689-740)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8791",
+   "parent_id": "8781",
+   "title": "王昌龄(690-756)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8792",
+   "parent_id": "8781",
+   "title": "王湾（693－751）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8793",
+   "parent_id": "8781",
+   "title": "王维(701-761)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8794",
+   "parent_id": "8781",
+   "title": "李白(701-762)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8795",
+   "parent_id": "8781",
+   "title": "高适(700-765)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8796",
+   "parent_id": "8781",
+   "title": "崔颢(704-754)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8797",
+   "parent_id": "8781",
+   "title": "常建（708－？）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8798",
+   "parent_id": "8781",
+   "title": "杜甫(712-770)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8799",
+   "parent_id": "8781",
+   "title": "岑参(715-770)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8800",
+   "parent_id": "8781",
+   "title": "张志和(730-810)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8801",
+   "parent_id": "8781",
+   "title": "韦应物(约737-791)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8802",
+   "parent_id": "8781",
+   "title": "卢纶（739-799年）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8803",
+   "parent_id": "8781",
+   "title": "李益(750－830)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8804",
+   "parent_id": "8781",
+   "title": "孟郊(751-814)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8805",
+   "parent_id": "8781",
+   "title": "韩愈(768-824)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8806",
+   "parent_id": "8781",
+   "title": "刘禹锡(772-842)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8807",
+   "parent_id": "8781",
+   "title": "白居易(772-846)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8808",
+   "parent_id": "8781",
+   "title": "柳宗元(773-819)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8809",
+   "parent_id": "8781",
+   "title": "白行简(776-826)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8810",
+   "parent_id": "8781",
+   "title": "元稹(779-831)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8811",
+   "parent_id": "8781",
+   "title": "贾岛(779-843)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8812",
+   "parent_id": "8781",
+   "title": "李贺(790-816)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8813",
+   "parent_id": "8781",
+   "title": "杜牧(803-853)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8814",
+   "parent_id": "8781",
+   "title": "温庭筠(约812-866)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8815",
+   "parent_id": "8781",
+   "title": "李商隐(813-858)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8816",
+   "parent_id": "8781",
+   "title": "罗隐(833-909)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8817",
+   "parent_id": "8781",
+   "title": "其他隋唐作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8818",
+   "parent_id": "8724",
+   "title": "五代十国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8819",
+   "parent_id": "8818",
+   "title": "韦庄(约836-910)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8820",
+   "parent_id": "8818",
+   "title": "冯延巳(903-960)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8821",
+   "parent_id": "8818",
+   "title": "李煜(937-978)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8822",
+   "parent_id": "8818",
+   "title": "其他五代十国作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8823",
+   "parent_id": "8724",
+   "title": "北宋",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8824",
+   "parent_id": "8823",
+   "title": "柳永(约971-1053)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8825",
+   "parent_id": "8823",
+   "title": "范仲淹(989-1052)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8826",
+   "parent_id": "8823",
+   "title": "张先(990-1078)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8827",
+   "parent_id": "8823",
+   "title": "晏殊(991-1055)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8828",
+   "parent_id": "8823",
+   "title": "宋祁(998-1061)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8829",
+   "parent_id": "8823",
+   "title": "欧阳修(1007-1072)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8830",
+   "parent_id": "8823",
+   "title": "苏洵(1009-1066)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8831",
+   "parent_id": "8823",
+   "title": "周敦颐(1017-1073)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8832",
+   "parent_id": "8823",
+   "title": "司马光(1019-1086)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8833",
+   "parent_id": "8823",
+   "title": "王安石(1021-1086)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8834",
+   "parent_id": "8823",
+   "title": "沈括(1031-1095)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8835",
+   "parent_id": "8823",
+   "title": "苏轼(1037-1101)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8836",
+   "parent_id": "8823",
+   "title": "苏辙(1039-1112)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8837",
+   "parent_id": "8823",
+   "title": "晏几道(约1040-约1112)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8838",
+   "parent_id": "8823",
+   "title": "黄庭坚(1045-1105)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8839",
+   "parent_id": "8823",
+   "title": "秦观(1049-1100)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8840",
+   "parent_id": "8823",
+   "title": "贺铸(1052-1125)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8841",
+   "parent_id": "8823",
+   "title": "周邦彦(1056-1121)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8842",
+   "parent_id": "8823",
+   "title": "其他北宋作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8843",
+   "parent_id": "8724",
+   "title": "南宋",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8844",
+   "parent_id": "8843",
+   "title": "李清照(1084-1155)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8845",
+   "parent_id": "8843",
+   "title": "岳飞(1103-1142)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8846",
+   "parent_id": "8843",
+   "title": "陆游(1125-1207)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8847",
+   "parent_id": "8843",
+   "title": "杨万里(1127-1206)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8848",
+   "parent_id": "8843",
+   "title": "朱熹(1130-1200)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8849",
+   "parent_id": "8843",
+   "title": "张孝祥(1132-1169)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8850",
+   "parent_id": "8843",
+   "title": "辛弃疾(1140-1207)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8851",
+   "parent_id": "8843",
+   "title": "姜夔(1155-1221)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8852",
+   "parent_id": "8843",
+   "title": "翁卷（生卒年不详）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8853",
+   "parent_id": "8843",
+   "title": "文天祥(1236-1283)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8854",
+   "parent_id": "8843",
+   "title": "其他南宋作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8855",
+   "parent_id": "8724",
+   "title": "元",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8856",
+   "parent_id": "8855",
+   "title": "关汉卿(1220-1300)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8857",
+   "parent_id": "8855",
+   "title": "王实甫(不详)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8858",
+   "parent_id": "8855",
+   "title": "马致远(约1251-1321)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8859",
+   "parent_id": "8855",
+   "title": "雎景臣(不详)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8860",
+   "parent_id": "8855",
+   "title": "张养浩(1270-1329)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8861",
+   "parent_id": "8855",
+   "title": "郑光祖(不详)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8862",
+   "parent_id": "8855",
+   "title": "张可久(约1270-1348)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8863",
+   "parent_id": "8855",
+   "title": "乔吉(不详)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8864",
+   "parent_id": "8855",
+   "title": "施耐庵(不详)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8865",
+   "parent_id": "8855",
+   "title": "其他元代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8866",
+   "parent_id": "8724",
+   "title": "明",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8867",
+   "parent_id": "8866",
+   "title": "宋濂(1310-1381)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8868",
+   "parent_id": "8866",
+   "title": "刘基(1311-1375)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8869",
+   "parent_id": "8866",
+   "title": "罗贯中(不详)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8870",
+   "parent_id": "8866",
+   "title": "于谦(1398-1457)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8871",
+   "parent_id": "8866",
+   "title": "吴承恩(1507-1582)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8872",
+   "parent_id": "8866",
+   "title": "归有光(1506-1571)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8873",
+   "parent_id": "8866",
+   "title": "汤显祖(1550-1616)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8874",
+   "parent_id": "8866",
+   "title": "袁宏道(1568-1610)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8875",
+   "parent_id": "8866",
+   "title": "冯梦龙(1574-1646)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8876",
+   "parent_id": "8866",
+   "title": "凌濛初(1580-1644)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8877",
+   "parent_id": "8866",
+   "title": "徐弘祖(1586-1641)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8878",
+   "parent_id": "8866",
+   "title": "魏学洢(约1596-约1625)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8879",
+   "parent_id": "8866",
+   "title": "张溥(1602-1641)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8880",
+   "parent_id": "8866",
+   "title": "其他明代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8881",
+   "parent_id": "8724",
+   "title": "清",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8882",
+   "parent_id": "8881",
+   "title": "张岱(1597-1679)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8883",
+   "parent_id": "8881",
+   "title": "林嗣环（1607－约1662）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8884",
+   "parent_id": "8881",
+   "title": "李渔(1610-1680)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8885",
+   "parent_id": "8881",
+   "title": "顾炎武(1613-1682)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8886",
+   "parent_id": "8881",
+   "title": "魏禧(1624-1681)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8887",
+   "parent_id": "8881",
+   "title": "蒲松龄(1640-1715)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8888",
+   "parent_id": "8881",
+   "title": "洪昇(1645-1704)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8889",
+   "parent_id": "8881",
+   "title": "孔尚任(1648-1718)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8890",
+   "parent_id": "8881",
+   "title": "查慎行(1650-1727)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8891",
+   "parent_id": "8881",
+   "title": "纳兰性德(1655-1685)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8892",
+   "parent_id": "8881",
+   "title": "方苞(1668-1749)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8893",
+   "parent_id": "8881",
+   "title": "吴敬梓(1701-1754)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8894",
+   "parent_id": "8881",
+   "title": "全祖望(1705-1755)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8895",
+   "parent_id": "8881",
+   "title": "曹雪芹(1715-1764)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8896",
+   "parent_id": "8881",
+   "title": "袁枚(1716-1798)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8897",
+   "parent_id": "8881",
+   "title": "纪昀（1724－1805）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8898",
+   "parent_id": "8881",
+   "title": "姚鼐(1732-1815)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8899",
+   "parent_id": "8881",
+   "title": "李汝珍（1763-约1830）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8900",
+   "parent_id": "8881",
+   "title": "龚自珍(1792-1841)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8901",
+   "parent_id": "8881",
+   "title": "其他清代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8902",
+   "parent_id": "8724",
+   "title": "近代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8903",
+   "parent_id": "8902",
+   "title": "刘鹗(1857-1909)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8904",
+   "parent_id": "8902",
+   "title": "康有为(1858-1927)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8905",
+   "parent_id": "8902",
+   "title": "吴趼人(1866-1910)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8906",
+   "parent_id": "8902",
+   "title": "孙文(1866-1925)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8907",
+   "parent_id": "8902",
+   "title": "李宝嘉(1867-1906)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8908",
+   "parent_id": "8902",
+   "title": "章太炎(1869-1936)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8909",
+   "parent_id": "8902",
+   "title": "曾朴(1872-1935)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8910",
+   "parent_id": "8902",
+   "title": "梁启超(1873-1929)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8911",
+   "parent_id": "8902",
+   "title": "王国维(1877-1927)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8912",
+   "parent_id": "8902",
+   "title": "其他近代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8913",
+   "parent_id": "8724",
+   "title": "其他古代作家",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8914",
+   "parent_id": "8723",
+   "title": "中国现当代文学",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8915",
+   "parent_id": "8914",
+   "title": "现代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "8916",
+   "parent_id": "8915",
+   "title": "鲁迅(1881-1936)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8917",
+   "parent_id": "8915",
+   "title": "周作人(1884-1967)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8918",
+   "parent_id": "8915",
+   "title": "柳亚子(1887-1958)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8919",
+   "parent_id": "8915",
+   "title": "胡适(1887-1962)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8920",
+   "parent_id": "8915",
+   "title": "刘半农(1891-1934)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8921",
+   "parent_id": "8915",
+   "title": "郭沫若(1892-1978)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8922",
+   "parent_id": "8915",
+   "title": "毛泽东(1893-1976)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8923",
+   "parent_id": "8915",
+   "title": "顾颉刚(1893-1980)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8924",
+   "parent_id": "8915",
+   "title": "许地山(1893-1941)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8925",
+   "parent_id": "8915",
+   "title": "丁西林(1893-1974)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8926",
+   "parent_id": "8915",
+   "title": "叶圣陶(1894-1988)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8927",
+   "parent_id": "8915",
+   "title": "邹韬奋(1895-1944)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8928",
+   "parent_id": "8915",
+   "title": "冯友兰(1895-1990)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8929",
+   "parent_id": "8915",
+   "title": "林语堂(1895-1976)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8930",
+   "parent_id": "8915",
+   "title": "茅盾(1896-1981)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8931",
+   "parent_id": "8915",
+   "title": "郁达夫(1896-1945)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8932",
+   "parent_id": "8915",
+   "title": "徐志摩(1896-1945)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8933",
+   "parent_id": "8915",
+   "title": "朱光潜(1897-1986)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8934",
+   "parent_id": "8915",
+   "title": "田汉(1898-1968)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8935",
+   "parent_id": "8915",
+   "title": "朱自清(1898-1948)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8936",
+   "parent_id": "8915",
+   "title": "郑振铎(1898-1948)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8937",
+   "parent_id": "8915",
+   "title": "翦伯赞(1898-1968)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8938",
+   "parent_id": "8915",
+   "title": "瞿秋白(1899-1935)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8939",
+   "parent_id": "8915",
+   "title": "闻一多(1899-1946)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8940",
+   "parent_id": "8915",
+   "title": "老舍(1899-1966)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8941",
+   "parent_id": "8915",
+   "title": "冰心(1900-1999)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8942",
+   "parent_id": "8915",
+   "title": "夏衍(1900-1995)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8943",
+   "parent_id": "8915",
+   "title": "王力(1900-1986)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8944",
+   "parent_id": "8915",
+   "title": "鲁彦(1901-1944)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8945",
+   "parent_id": "8915",
+   "title": "陈毅(1901-1972)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8946",
+   "parent_id": "8915",
+   "title": "梁思成(1901-1972)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8947",
+   "parent_id": "8915",
+   "title": "柔石(1902-1931)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8948",
+   "parent_id": "8915",
+   "title": "沈从文(1902-1988)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8949",
+   "parent_id": "8915",
+   "title": "李伟森(1903-1931)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8950",
+   "parent_id": "8915",
+   "title": "冯雪峰(1903-1976)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8951",
+   "parent_id": "8915",
+   "title": "胡也频(1903-1931)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8952",
+   "parent_id": "8915",
+   "title": "梁实秋（1903-1987）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8953",
+   "parent_id": "8915",
+   "title": "巴金(1904-2005)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8954",
+   "parent_id": "8915",
+   "title": "艾芜(1904-1992)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8955",
+   "parent_id": "8915",
+   "title": "沙汀(1904-1992)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8956",
+   "parent_id": "8915",
+   "title": "丁玲(1904-1986)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8957",
+   "parent_id": "8915",
+   "title": "吕叔湘(1904-1998)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8958",
+   "parent_id": "8915",
+   "title": "臧克家(1905-2004)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8959",
+   "parent_id": "8915",
+   "title": "李广田(1906-1968)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8960",
+   "parent_id": "8915",
+   "title": "吴伯箫(1906-1982)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8961",
+   "parent_id": "8915",
+   "title": "赵树理(1906-1970)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8962",
+   "parent_id": "8915",
+   "title": "张天翼(1906-1985)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8963",
+   "parent_id": "8915",
+   "title": "李健吾(1906-1982)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8964",
+   "parent_id": "8915",
+   "title": "冯铿(1907-1931)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8965",
+   "parent_id": "8915",
+   "title": "萧军(1907-1988)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8966",
+   "parent_id": "8915",
+   "title": "傅雷（1908－1966）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8967",
+   "parent_id": "8915",
+   "title": "周立波(1908-1979)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8968",
+   "parent_id": "8915",
+   "title": "吴组缃(1908-1994)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8969",
+   "parent_id": "8915",
+   "title": "殷夫(1909-1931)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8970",
+   "parent_id": "8915",
+   "title": "吴晗(1909-1969)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8971",
+   "parent_id": "8915",
+   "title": "姚雪垠(1910-1999)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8972",
+   "parent_id": "8915",
+   "title": "曹禺(1910-1996)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8973",
+   "parent_id": "8915",
+   "title": "艾青(1910-1996)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8974",
+   "parent_id": "8915",
+   "title": "钱钟书(1910-1998)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8975",
+   "parent_id": "8915",
+   "title": "萧乾(1910-1999)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8976",
+   "parent_id": "8915",
+   "title": "吴强(1910-1990)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8977",
+   "parent_id": "8915",
+   "title": "萧红(1911-1942)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8978",
+   "parent_id": "8915",
+   "title": "季羡林（1911－2009）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8979",
+   "parent_id": "8915",
+   "title": "马南邨(1912-1966)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8980",
+   "parent_id": "8915",
+   "title": "孙犁(1913-2002)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8981",
+   "parent_id": "8915",
+   "title": "杨朔(1913-1968)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8982",
+   "parent_id": "8915",
+   "title": "唐弢(1913-1992)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8983",
+   "parent_id": "8915",
+   "title": "杨沫(1914-1995)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8984",
+   "parent_id": "8915",
+   "title": "周而复(1914-2004)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8985",
+   "parent_id": "8915",
+   "title": "徐迟(1914-1996)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8986",
+   "parent_id": "8915",
+   "title": "叶君健(1914-1999)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8987",
+   "parent_id": "8915",
+   "title": "严文井(1915-2005)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8988",
+   "parent_id": "8915",
+   "title": "柳青(1916-1978)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8989",
+   "parent_id": "8915",
+   "title": "刘白羽(1916-2005)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8990",
+   "parent_id": "8915",
+   "title": "袁珂(1916-2001)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8991",
+   "parent_id": "8915",
+   "title": "田间(1916-1985)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8992",
+   "parent_id": "8915",
+   "title": "碧野(1916-2005)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8993",
+   "parent_id": "8915",
+   "title": "查良铮(1918-1977)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8994",
+   "parent_id": "8915",
+   "title": "秦牧(1919-1992)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8995",
+   "parent_id": "8915",
+   "title": "黄仁宇(1918-2000)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8996",
+   "parent_id": "8915",
+   "title": "林海音（1918-2001）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8997",
+   "parent_id": "8915",
+   "title": "郭小川(1919-1976)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8998",
+   "parent_id": "8915",
+   "title": "魏巍(1920-2008)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "8999",
+   "parent_id": "8915",
+   "title": "汪曾祺(1920-1997)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9000",
+   "parent_id": "8915",
+   "title": "张爱玲(1920-1995)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9001",
+   "parent_id": "8915",
+   "title": "杜鹏程(1921-1991)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9002",
+   "parent_id": "8915",
+   "title": "何为(1922-2011)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9003",
+   "parent_id": "8915",
+   "title": "峻青(1922-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9004",
+   "parent_id": "8915",
+   "title": "李季(1922-1980)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9005",
+   "parent_id": "8915",
+   "title": "马峰(1922-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9006",
+   "parent_id": "8915",
+   "title": "曲波(1923-2002)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9007",
+   "parent_id": "8915",
+   "title": "贺敬之(1924-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9008",
+   "parent_id": "8915",
+   "title": "其他现代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9009",
+   "parent_id": "8914",
+   "title": "当代",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9010",
+   "parent_id": "9009",
+   "title": "金庸(1924-2018)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9011",
+   "parent_id": "9009",
+   "title": "王鼎钧（1925－）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9012",
+   "parent_id": "9009",
+   "title": "茹志鹃(1925-1998)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9013",
+   "parent_id": "9009",
+   "title": "陆文夫(1928-2005)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9014",
+   "parent_id": "9009",
+   "title": "高晓声(1928-1999)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9015",
+   "parent_id": "9009",
+   "title": "宗璞(1928-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9016",
+   "parent_id": "9009",
+   "title": "李淮(1928-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9017",
+   "parent_id": "9009",
+   "title": "余光中（1928-2017）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9018",
+   "parent_id": "9009",
+   "title": "王愿坚(1929-1991)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9019",
+   "parent_id": "9009",
+   "title": "李国文（1930－）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9020",
+   "parent_id": "9009",
+   "title": "邓友梅(1931-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9021",
+   "parent_id": "9009",
+   "title": "邵燕祥(1933-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9022",
+   "parent_id": "9009",
+   "title": "王蒙(1934-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9023",
+   "parent_id": "9009",
+   "title": "刘绍棠(1936-1997)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9024",
+   "parent_id": "9009",
+   "title": "张贤亮(1936-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9025",
+   "parent_id": "9009",
+   "title": "张洁(1937-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9026",
+   "parent_id": "9009",
+   "title": "琼瑶(1938-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9027",
+   "parent_id": "9009",
+   "title": "蒋子龙(1941-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9028",
+   "parent_id": "9009",
+   "title": "张晓风（1941-）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9029",
+   "parent_id": "9009",
+   "title": "刘心武(1942-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9030",
+   "parent_id": "9009",
+   "title": "冯骥才(1942-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9031",
+   "parent_id": "9009",
+   "title": "陈忠实(1942-2012)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9032",
+   "parent_id": "9009",
+   "title": "席慕蓉(1943-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9033",
+   "parent_id": "9009",
+   "title": "三毛(1943—1991)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9034",
+   "parent_id": "9009",
+   "title": "周国平（1945-）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9035",
+   "parent_id": "9009",
+   "title": "肖复兴（1947-）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9036",
+   "parent_id": "9009",
+   "title": "路遥(1949-1992)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9037",
+   "parent_id": "9009",
+   "title": "梁晓声(1949-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9038",
+   "parent_id": "9009",
+   "title": "史铁生(1951-2010)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9039",
+   "parent_id": "9009",
+   "title": "莫怀戚（1951－2014）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9040",
+   "parent_id": "9009",
+   "title": "贾平凹(1952-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9041",
+   "parent_id": "9009",
+   "title": "毕淑敏（1952-）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9042",
+   "parent_id": "9009",
+   "title": "赵丽宏（1952－）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9043",
+   "parent_id": "9009",
+   "title": "林清玄（1953－）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9044",
+   "parent_id": "9009",
+   "title": "曹文轩（1954－）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9045",
+   "parent_id": "9009",
+   "title": "莫言(1955-)",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9046",
+   "parent_id": "9009",
+   "title": "余华(1960-）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9047",
+   "parent_id": "9009",
+   "title": "周海亮（1972－）",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9048",
+   "parent_id": "9009",
+   "title": "丁立梅",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9049",
+   "parent_id": "9009",
+   "title": "包利民",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9050",
+   "parent_id": "9009",
+   "title": "其他当代作家",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9051",
+   "parent_id": "8914",
+   "title": "其他中国现当代作家",
+   "level": 4,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9052",
+   "parent_id": "8723",
+   "title": "外国文学",
+   "level": 3,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9053",
+   "parent_id": "9052",
+   "title": "爱尔兰",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9054",
+   "parent_id": "9053",
+   "title": "乔伊斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9055",
+   "parent_id": "9052",
+   "title": "奥地利",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9056",
+   "parent_id": "9055",
+   "title": "卡夫卡",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9057",
+   "parent_id": "9055",
+   "title": "斯蒂芬·茨威格",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9058",
+   "parent_id": "9052",
+   "title": "澳大利亚",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9059",
+   "parent_id": "9058",
+   "title": "考琳·麦卡洛",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9060",
+   "parent_id": "9052",
+   "title": "波兰",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9061",
+   "parent_id": "9060",
+   "title": "密茨凯维奇",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9062",
+   "parent_id": "9060",
+   "title": "显克微支",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9063",
+   "parent_id": "9060",
+   "title": "约瑟夫·康拉德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9064",
+   "parent_id": "9052",
+   "title": "丹麦",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9065",
+   "parent_id": "9064",
+   "title": "安徒生",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9066",
+   "parent_id": "9052",
+   "title": "德国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9067",
+   "parent_id": "9066",
+   "title": "歌德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9068",
+   "parent_id": "9066",
+   "title": "席勒",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9069",
+   "parent_id": "9066",
+   "title": "格林兄弟",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9070",
+   "parent_id": "9066",
+   "title": "莱辛",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9071",
+   "parent_id": "9066",
+   "title": "海涅",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9072",
+   "parent_id": "9066",
+   "title": "赫尔曼·黑塞",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9073",
+   "parent_id": "9066",
+   "title": "亨利希·海涅",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9074",
+   "parent_id": "9066",
+   "title": "托马斯·曼",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9075",
+   "parent_id": "9052",
+   "title": "俄国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9076",
+   "parent_id": "9075",
+   "title": "普希金",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9077",
+   "parent_id": "9075",
+   "title": "果戈理",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9078",
+   "parent_id": "9075",
+   "title": "屠格涅夫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9079",
+   "parent_id": "9075",
+   "title": "陀思妥耶夫斯基",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9080",
+   "parent_id": "9075",
+   "title": "别林斯基",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9081",
+   "parent_id": "9075",
+   "title": "车尔尼雪夫斯基",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9082",
+   "parent_id": "9075",
+   "title": "莱蒙托夫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9083",
+   "parent_id": "9075",
+   "title": "列夫·托尔斯泰",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9084",
+   "parent_id": "9075",
+   "title": "契诃夫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9085",
+   "parent_id": "9052",
+   "title": "法国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9086",
+   "parent_id": "9085",
+   "title": "拉伯雷",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9087",
+   "parent_id": "9085",
+   "title": "拉辛",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9088",
+   "parent_id": "9085",
+   "title": "莫里哀",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9089",
+   "parent_id": "9085",
+   "title": "伏尔泰",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9090",
+   "parent_id": "9085",
+   "title": "卢梭",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9091",
+   "parent_id": "9085",
+   "title": "雨果",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9092",
+   "parent_id": "9085",
+   "title": "大仲马",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9093",
+   "parent_id": "9085",
+   "title": "乔治·桑",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9094",
+   "parent_id": "9085",
+   "title": "司汤达",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9095",
+   "parent_id": "9085",
+   "title": "波德莱尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9096",
+   "parent_id": "9085",
+   "title": "巴尔扎克",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9097",
+   "parent_id": "9085",
+   "title": "福楼拜",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9098",
+   "parent_id": "9085",
+   "title": "梅里美",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9099",
+   "parent_id": "9085",
+   "title": "西蒙·波娃",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9100",
+   "parent_id": "9085",
+   "title": "鲍狄埃",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9101",
+   "parent_id": "9085",
+   "title": "左拉",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9102",
+   "parent_id": "9085",
+   "title": "莫泊桑",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9103",
+   "parent_id": "9085",
+   "title": "都德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9104",
+   "parent_id": "9085",
+   "title": "罗曼·罗兰",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9105",
+   "parent_id": "9085",
+   "title": "普罗斯特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9106",
+   "parent_id": "9085",
+   "title": "萨德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9107",
+   "parent_id": "9085",
+   "title": "埃克多·马洛",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9108",
+   "parent_id": "9085",
+   "title": "夏多布里昂",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9109",
+   "parent_id": "9085",
+   "title": "杜拉斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9110",
+   "parent_id": "9085",
+   "title": "普鲁斯特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9111",
+   "parent_id": "9085",
+   "title": "弗朗索瓦兹·萨冈",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9112",
+   "parent_id": "9085",
+   "title": "圣·埃克苏佩里",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9113",
+   "parent_id": "9085",
+   "title": "法布尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9114",
+   "parent_id": "9085",
+   "title": "让·乔诺",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9115",
+   "parent_id": "9085",
+   "title": "儒勒·凡尔纳",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9116",
+   "parent_id": "9052",
+   "title": "哥伦比亚",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9117",
+   "parent_id": "9116",
+   "title": "马尔克斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9118",
+   "parent_id": "9052",
+   "title": "古罗马",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9119",
+   "parent_id": "9118",
+   "title": "贺拉斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9120",
+   "parent_id": "9118",
+   "title": "维吉尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9121",
+   "parent_id": "9052",
+   "title": "古希腊",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9122",
+   "parent_id": "9121",
+   "title": "柏拉图",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9123",
+   "parent_id": "9121",
+   "title": "亚里士多德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9124",
+   "parent_id": "9121",
+   "title": "荷马",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9125",
+   "parent_id": "9121",
+   "title": "埃斯库罗斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9126",
+   "parent_id": "9121",
+   "title": "索福克勒斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9127",
+   "parent_id": "9121",
+   "title": "欧里庇得斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9128",
+   "parent_id": "9052",
+   "title": "加拿大",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9129",
+   "parent_id": "9128",
+   "title": "露西·蒙格玛丽",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9130",
+   "parent_id": "9052",
+   "title": "捷克",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9131",
+   "parent_id": "9130",
+   "title": "米兰·昆德拉",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9132",
+   "parent_id": "9052",
+   "title": "美国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9133",
+   "parent_id": "9132",
+   "title": "华盛顿·欧文",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9134",
+   "parent_id": "9132",
+   "title": "斯托夫人",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9135",
+   "parent_id": "9132",
+   "title": "玛格丽特·米切尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9136",
+   "parent_id": "9132",
+   "title": "奥尔科特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9137",
+   "parent_id": "9132",
+   "title": "惠特曼",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9138",
+   "parent_id": "9132",
+   "title": "马克·吐温",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9139",
+   "parent_id": "9132",
+   "title": "欧·亨利",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9140",
+   "parent_id": "9132",
+   "title": "杰克·伦敦",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9141",
+   "parent_id": "9132",
+   "title": "霍桑",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9142",
+   "parent_id": "9132",
+   "title": "福克纳",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9143",
+   "parent_id": "9132",
+   "title": "德莱赛",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9144",
+   "parent_id": "9132",
+   "title": "约瑟夫·海勒",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9145",
+   "parent_id": "9132",
+   "title": "海明威",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9146",
+   "parent_id": "9132",
+   "title": "詹姆斯·凯恩",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9147",
+   "parent_id": "9132",
+   "title": "丹·布朗",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9148",
+   "parent_id": "9132",
+   "title": "杜鲁门·卡波特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9149",
+   "parent_id": "9132",
+   "title": "雷蒙德卡佛",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9150",
+   "parent_id": "9132",
+   "title": "亨利·大卫·梭罗",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9151",
+   "parent_id": "9132",
+   "title": "玛·金·罗琳斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9152",
+   "parent_id": "9132",
+   "title": "菲茨杰拉德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9153",
+   "parent_id": "9132",
+   "title": "温斯顿·格卢姆",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9154",
+   "parent_id": "9132",
+   "title": "卡森·麦卡勒斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9155",
+   "parent_id": "9132",
+   "title": "赫尔曼·梅尔维尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9156",
+   "parent_id": "9132",
+   "title": "亨利·米勒",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9157",
+   "parent_id": "9132",
+   "title": "安妮·普鲁克斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9158",
+   "parent_id": "9132",
+   "title": "安妮·赖斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9159",
+   "parent_id": "9132",
+   "title": "杰罗姆·大卫·塞林格",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9160",
+   "parent_id": "9132",
+   "title": "艾西莫夫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9161",
+   "parent_id": "9132",
+   "title": "海伦凯勒",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9162",
+   "parent_id": "9132",
+   "title": "埃德加·斯诺",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9163",
+   "parent_id": "9052",
+   "title": "挪威",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9164",
+   "parent_id": "9163",
+   "title": "易卜生",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9165",
+   "parent_id": "9052",
+   "title": "日本",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9166",
+   "parent_id": "9165",
+   "title": "川端康成",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9167",
+   "parent_id": "9165",
+   "title": "村上春树",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9168",
+   "parent_id": "9165",
+   "title": "大江健三郎",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9169",
+   "parent_id": "9165",
+   "title": "三岛由纪夫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9170",
+   "parent_id": "9165",
+   "title": "夏目漱石",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9171",
+   "parent_id": "9165",
+   "title": "渡边淳一",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9172",
+   "parent_id": "9165",
+   "title": "青山七惠",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9173",
+   "parent_id": "9052",
+   "title": "苏格兰",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9174",
+   "parent_id": "9173",
+   "title": "伏尼契",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9175",
+   "parent_id": "9052",
+   "title": "苏联",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9176",
+   "parent_id": "9175",
+   "title": "高尔基",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9177",
+   "parent_id": "9175",
+   "title": "奥斯特洛夫斯基",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9178",
+   "parent_id": "9175",
+   "title": "肖洛霍夫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9179",
+   "parent_id": "9175",
+   "title": "帕斯捷尔纳克",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9180",
+   "parent_id": "9052",
+   "title": "西班牙",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9181",
+   "parent_id": "9180",
+   "title": "塞万提斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9182",
+   "parent_id": "9052",
+   "title": "匈牙利",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9183",
+   "parent_id": "9182",
+   "title": "裴多菲",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9184",
+   "parent_id": "9052",
+   "title": "意大利",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9185",
+   "parent_id": "9184",
+   "title": "但丁",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9186",
+   "parent_id": "9184",
+   "title": "彼特拉克",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9187",
+   "parent_id": "9184",
+   "title": "薄伽丘",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9188",
+   "parent_id": "9184",
+   "title": "亚米契斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9189",
+   "parent_id": "9184",
+   "title": "拉法埃洛·乔万尼奥里",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9190",
+   "parent_id": "9184",
+   "title": "卡尔维诺",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9191",
+   "parent_id": "9052",
+   "title": "印度",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9192",
+   "parent_id": "9191",
+   "title": "泰戈尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9193",
+   "parent_id": "9052",
+   "title": "英国",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9194",
+   "parent_id": "9193",
+   "title": "弗朗西斯·培根",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9195",
+   "parent_id": "9193",
+   "title": "莎士比亚",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9196",
+   "parent_id": "9193",
+   "title": "弥尔顿",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9197",
+   "parent_id": "9193",
+   "title": "亨利·菲尔丁",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9198",
+   "parent_id": "9193",
+   "title": "丹尼尔·笛福",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9199",
+   "parent_id": "9193",
+   "title": "乔纳森·斯威夫特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9200",
+   "parent_id": "9193",
+   "title": "菲尔丁",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9201",
+   "parent_id": "9193",
+   "title": "奥斯汀",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9202",
+   "parent_id": "9193",
+   "title": "瓦特斯各特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9203",
+   "parent_id": "9193",
+   "title": "拜伦",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9204",
+   "parent_id": "9193",
+   "title": "雪莱",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9205",
+   "parent_id": "9193",
+   "title": "狄更斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9206",
+   "parent_id": "9193",
+   "title": "夏洛蒂·勃朗特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9207",
+   "parent_id": "9193",
+   "title": "艾米丽·勃朗特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9208",
+   "parent_id": "9193",
+   "title": "乔治·艾略特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9209",
+   "parent_id": "9193",
+   "title": "哈代",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9210",
+   "parent_id": "9193",
+   "title": "萨克雷",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9211",
+   "parent_id": "9193",
+   "title": "萧伯纳",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9212",
+   "parent_id": "9193",
+   "title": "劳伦斯",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9213",
+   "parent_id": "9193",
+   "title": "艾略特",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9214",
+   "parent_id": "9193",
+   "title": "济慈",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9215",
+   "parent_id": "9193",
+   "title": "卡罗尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9216",
+   "parent_id": "9193",
+   "title": "阿加莎·克里斯蒂",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9217",
+   "parent_id": "9193",
+   "title": "柯南道尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9218",
+   "parent_id": "9193",
+   "title": "毛姆",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9219",
+   "parent_id": "9193",
+   "title": "奥斯卡·王尔德",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9220",
+   "parent_id": "9193",
+   "title": "彼得·梅尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9221",
+   "parent_id": "9193",
+   "title": "J·K·罗琳",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9222",
+   "parent_id": "9193",
+   "title": "弗吉尼亚·伍尔夫",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9223",
+   "parent_id": "9193",
+   "title": "托尔金",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9224",
+   "parent_id": "9193",
+   "title": "丘吉尔",
+   "level": 5,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9225",
+   "parent_id": "9052",
+   "title": "其他外国作家",
+   "level": 4,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9226",
+   "parent_id": "9225",
+   "title": "纪伯伦（1883-1931）",
+   "level": 5,
+   "href": "",
+   "is_leaf": false,
+   "is_knowledge": false
+  },
+  {
+   "id": "9227",
+   "parent_id": "9226",
+   "title": "《组歌》",
+   "level": 6,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9228",
+   "parent_id": "9226",
+   "title": "《先知》",
+   "level": 6,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  },
+  {
+   "id": "9229",
+   "parent_id": "9226",
+   "title": "《微言》",
+   "level": 6,
+   "href": "",
+   "is_leaf": true,
+   "is_knowledge": false
+  }
+ ]
+}

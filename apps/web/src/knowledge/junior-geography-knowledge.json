@@ -1,0 +1,8993 @@
+{
+ "stage": "junior",
+ "subject": "geography",
+ "subject_cn": "初中地理",
+ "bank_id": 9,
+ "root_id": "22298",
+ "root_title": "初中地理综合库",
+ "node_count": 998,
+ "nodes": [
+  {
+   "id": "22299",
+   "parent_id": "22298",
+   "title": "地球和地图",
+   "level": 1,
+   "href": "/czdl/zsd22299",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208508",
+   "parent_id": "22299",
+   "title": "地球的宇宙环境",
+   "level": 2,
+   "href": "/czdl/zsd208508",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208509",
+   "parent_id": "208508",
+   "title": "地球在宇宙中",
+   "level": 3,
+   "href": "/czdl/zsd208509",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208510",
+   "parent_id": "208509",
+   "title": "天体和天体系统",
+   "level": 4,
+   "href": "/czdl/zsd208510",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208511",
+   "parent_id": "208509",
+   "title": "地球在太阳系中的位置",
+   "level": 4,
+   "href": "/czdl/zsd208511",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208512",
+   "parent_id": "208509",
+   "title": "地球是人类唯一的家园",
+   "level": 4,
+   "href": "/czdl/zsd208512",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208513",
+   "parent_id": "208508",
+   "title": "太空探索",
+   "level": 3,
+   "href": "/czdl/zsd208513",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208514",
+   "parent_id": "208513",
+   "title": "人类太空探索的进展",
+   "level": 4,
+   "href": "/czdl/zsd208514",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208515",
+   "parent_id": "208513",
+   "title": "人类太空探索的意义",
+   "level": 4,
+   "href": "/czdl/zsd208515",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208516",
+   "parent_id": "208513",
+   "title": "中国太空探索的成就",
+   "level": 4,
+   "href": "/czdl/zsd208516",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22302",
+   "parent_id": "22299",
+   "title": "地球和地球仪",
+   "level": 2,
+   "href": "/czdl/zsd22302",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22305",
+   "parent_id": "22302",
+   "title": "地球的形状和大小",
+   "level": 3,
+   "href": "/czdl/zsd22305",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22310",
+   "parent_id": "22305",
+   "title": "地球的形状",
+   "level": 4,
+   "href": "/czdl/zsd22310",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22311",
+   "parent_id": "22305",
+   "title": "地球的大小",
+   "level": 4,
+   "href": "/czdl/zsd22311",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "211387",
+   "parent_id": "22302",
+   "title": "地球表层概述",
+   "level": 3,
+   "href": "/czdl/zsd211387",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22306",
+   "parent_id": "22302",
+   "title": "地球的模型——地球仪",
+   "level": 3,
+   "href": "/czdl/zsd22306",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208517",
+   "parent_id": "22306",
+   "title": "制作地球仪模型",
+   "level": 4,
+   "href": "/czdl/zsd208517",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208518",
+   "parent_id": "22306",
+   "title": "认识地球仪上的点和线",
+   "level": 4,
+   "href": "/czdl/zsd208518",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22307",
+   "parent_id": "22302",
+   "title": "纬线和纬度",
+   "level": 3,
+   "href": "/czdl/zsd22307",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22312",
+   "parent_id": "22307",
+   "title": "纬线、纬度及其特点",
+   "level": 4,
+   "href": "/czdl/zsd22312",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208519",
+   "parent_id": "22312",
+   "title": "纬线的形状",
+   "level": 5,
+   "href": "/czdl/zsd208519",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208520",
+   "parent_id": "22312",
+   "title": "纬线的长度",
+   "level": 5,
+   "href": "/czdl/zsd208520",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208521",
+   "parent_id": "22312",
+   "title": "纬线指示东西",
+   "level": 5,
+   "href": "/czdl/zsd208521",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208522",
+   "parent_id": "22312",
+   "title": "纬度及其变化",
+   "level": 5,
+   "href": "/czdl/zsd208522",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22313",
+   "parent_id": "22307",
+   "title": "划分南北半球",
+   "level": 4,
+   "href": "/czdl/zsd22313",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22314",
+   "parent_id": "22307",
+   "title": "划分高中低纬",
+   "level": 4,
+   "href": "/czdl/zsd22314",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208523",
+   "parent_id": "22307",
+   "title": "划分热温寒带",
+   "level": 4,
+   "href": "/czdl/zsd208523",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22308",
+   "parent_id": "22302",
+   "title": "经线和经度",
+   "level": 3,
+   "href": "/czdl/zsd22308",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22315",
+   "parent_id": "22308",
+   "title": "经线、经度及其特点",
+   "level": 4,
+   "href": "/czdl/zsd22315",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208524",
+   "parent_id": "22315",
+   "title": "经线的形状",
+   "level": 5,
+   "href": "/czdl/zsd208524",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208525",
+   "parent_id": "22315",
+   "title": "经线的长度",
+   "level": 5,
+   "href": "/czdl/zsd208525",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208526",
+   "parent_id": "22315",
+   "title": "经线指示南北",
+   "level": 5,
+   "href": "/czdl/zsd208526",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208527",
+   "parent_id": "22315",
+   "title": "经度的特点",
+   "level": 5,
+   "href": "/czdl/zsd208527",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22316",
+   "parent_id": "22308",
+   "title": "划分东西半球",
+   "level": 4,
+   "href": "/czdl/zsd22316",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22309",
+   "parent_id": "22302",
+   "title": "利用经纬网定位",
+   "level": 3,
+   "href": "/czdl/zsd22309",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22317",
+   "parent_id": "22309",
+   "title": "经纬网定位",
+   "level": 4,
+   "href": "/czdl/zsd22317",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22318",
+   "parent_id": "22309",
+   "title": "经纬网定向",
+   "level": 4,
+   "href": "/czdl/zsd22318",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22304",
+   "parent_id": "22299",
+   "title": "地球的运动",
+   "level": 2,
+   "href": "/czdl/zsd22304",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22335",
+   "parent_id": "22304",
+   "title": "地球自转的特征",
+   "level": 3,
+   "href": "/czdl/zsd22335",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22339",
+   "parent_id": "22335",
+   "title": "地球自转的定义和特征",
+   "level": 4,
+   "href": "/czdl/zsd22339",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22340",
+   "parent_id": "22335",
+   "title": "在两极俯视图上判断地球自转的方向",
+   "level": 4,
+   "href": "/czdl/zsd22340",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22336",
+   "parent_id": "22304",
+   "title": "地球自转产生的现象",
+   "level": 3,
+   "href": "/czdl/zsd22336",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22345",
+   "parent_id": "22336",
+   "title": "日月星辰的东升西落",
+   "level": 4,
+   "href": "/czdl/zsd22345",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208543",
+   "parent_id": "22336",
+   "title": "昼夜现象的成因",
+   "level": 4,
+   "href": "/czdl/zsd208543",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22341",
+   "parent_id": "22336",
+   "title": "昼夜更替的成因及意义",
+   "level": 4,
+   "href": "/czdl/zsd22341",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22342",
+   "parent_id": "22336",
+   "title": "晨昏线（圈）和昼夜半球",
+   "level": 4,
+   "href": "/czdl/zsd22342",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22343",
+   "parent_id": "22336",
+   "title": "时差及影响",
+   "level": 4,
+   "href": "/czdl/zsd22343",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22344",
+   "parent_id": "22336",
+   "title": "区时和地方时的计算",
+   "level": 4,
+   "href": "/czdl/zsd22344",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22337",
+   "parent_id": "22304",
+   "title": "地球公转的特征",
+   "level": 3,
+   "href": "/czdl/zsd22337",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22346",
+   "parent_id": "22337",
+   "title": "地球公转的定义和特征",
+   "level": 4,
+   "href": "/czdl/zsd22346",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22347",
+   "parent_id": "22337",
+   "title": "判断地球公转的方向",
+   "level": 4,
+   "href": "/czdl/zsd22347",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22338",
+   "parent_id": "22304",
+   "title": "地球公转产生的现象",
+   "level": 3,
+   "href": "/czdl/zsd22338",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22348",
+   "parent_id": "22338",
+   "title": "太阳直射点的移动规律",
+   "level": 4,
+   "href": "/czdl/zsd22348",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22352",
+   "parent_id": "22338",
+   "title": "地球公转图判读",
+   "level": 4,
+   "href": "/czdl/zsd22352",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22350",
+   "parent_id": "22338",
+   "title": "昼夜长短的变化规律",
+   "level": 4,
+   "href": "/czdl/zsd22350",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "133388",
+   "parent_id": "22338",
+   "title": "正午太阳高度的变化",
+   "level": 4,
+   "href": "/czdl/zsd133388",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22349",
+   "parent_id": "22338",
+   "title": "四季的成因和划分",
+   "level": 4,
+   "href": "/czdl/zsd22349",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "211388",
+   "parent_id": "22338",
+   "title": "二十四节气",
+   "level": 4,
+   "href": "/czdl/zsd211388",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22351",
+   "parent_id": "22338",
+   "title": "五带的划分",
+   "level": 4,
+   "href": "/czdl/zsd22351",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22303",
+   "parent_id": "22299",
+   "title": "地图",
+   "level": 2,
+   "href": "/czdl/zsd22303",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22319",
+   "parent_id": "22303",
+   "title": "学会阅读地图",
+   "level": 3,
+   "href": "/czdl/zsd22319",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22325",
+   "parent_id": "22319",
+   "title": "比例尺",
+   "level": 4,
+   "href": "/czdl/zsd22325",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208528",
+   "parent_id": "22325",
+   "title": "比例尺的计算",
+   "level": 5,
+   "href": "/czdl/zsd208528",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208529",
+   "parent_id": "22325",
+   "title": "图幅",
+   "level": 5,
+   "href": "/czdl/zsd208529",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208530",
+   "parent_id": "22325",
+   "title": "实际范围",
+   "level": 5,
+   "href": "/czdl/zsd208530",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208531",
+   "parent_id": "22325",
+   "title": "内容的详略",
+   "level": 5,
+   "href": "/czdl/zsd208531",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22326",
+   "parent_id": "22319",
+   "title": "方向",
+   "level": 4,
+   "href": "/czdl/zsd22326",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208532",
+   "parent_id": "22326",
+   "title": "一般定向法",
+   "level": 5,
+   "href": "/czdl/zsd208532",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208533",
+   "parent_id": "22326",
+   "title": "指向标定向法",
+   "level": 5,
+   "href": "/czdl/zsd208533",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208534",
+   "parent_id": "22326",
+   "title": "经纬网定向法",
+   "level": 5,
+   "href": "/czdl/zsd208534",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22327",
+   "parent_id": "22319",
+   "title": "图例",
+   "level": 4,
+   "href": "/czdl/zsd22327",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22320",
+   "parent_id": "22303",
+   "title": "选择适用的地图",
+   "level": 3,
+   "href": "/czdl/zsd22320",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22321",
+   "parent_id": "22303",
+   "title": "现代高科技地图及其应用",
+   "level": 3,
+   "href": "/czdl/zsd22321",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208535",
+   "parent_id": "22321",
+   "title": "数字地图",
+   "level": 4,
+   "href": "/czdl/zsd208535",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208536",
+   "parent_id": "208535",
+   "title": "数字地图和日常生活",
+   "level": 5,
+   "href": "/czdl/zsd208536",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208537",
+   "parent_id": "208535",
+   "title": "数字地图和社会生产",
+   "level": 5,
+   "href": "/czdl/zsd208537",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208538",
+   "parent_id": "22321",
+   "title": "卫星导航系统",
+   "level": 4,
+   "href": "/czdl/zsd208538",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208539",
+   "parent_id": "208538",
+   "title": "卫星导航和生产生活",
+   "level": 5,
+   "href": "/czdl/zsd208539",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22322",
+   "parent_id": "22303",
+   "title": "等高线地形图",
+   "level": 3,
+   "href": "/czdl/zsd22322",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22328",
+   "parent_id": "22322",
+   "title": "海拔和相对高度",
+   "level": 4,
+   "href": "/czdl/zsd22328",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22329",
+   "parent_id": "22322",
+   "title": "等高线及其特点",
+   "level": 4,
+   "href": "/czdl/zsd22329",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22330",
+   "parent_id": "22322",
+   "title": "等高线地形图及其判读",
+   "level": 4,
+   "href": "/czdl/zsd22330",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208540",
+   "parent_id": "22330",
+   "title": "坡度陡缓的判读",
+   "level": 5,
+   "href": "/czdl/zsd208540",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208541",
+   "parent_id": "22330",
+   "title": "地形部位的判读",
+   "level": 5,
+   "href": "/czdl/zsd208541",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208542",
+   "parent_id": "22330",
+   "title": "地形和生产生活",
+   "level": 5,
+   "href": "/czdl/zsd208542",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22331",
+   "parent_id": "22322",
+   "title": "等深线及其判读",
+   "level": 4,
+   "href": "/czdl/zsd22331",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22323",
+   "parent_id": "22303",
+   "title": "分层设色地形图",
+   "level": 3,
+   "href": "/czdl/zsd22323",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22332",
+   "parent_id": "22323",
+   "title": "分层设色地形图的定义和设色原则",
+   "level": 4,
+   "href": "/czdl/zsd22332",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22333",
+   "parent_id": "22323",
+   "title": "陆地表面五种基本地形",
+   "level": 4,
+   "href": "/czdl/zsd22333",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22334",
+   "parent_id": "22323",
+   "title": "在分层设色地形图上判读地形、地势",
+   "level": 4,
+   "href": "/czdl/zsd22334",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22324",
+   "parent_id": "22303",
+   "title": "地形剖面图",
+   "level": 3,
+   "href": "/czdl/zsd22324",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22300",
+   "parent_id": "22298",
+   "title": "世界地理",
+   "level": 1,
+   "href": "/czdl/zsd22300",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22353",
+   "parent_id": "22300",
+   "title": "陆地和海洋",
+   "level": 2,
+   "href": "/czdl/zsd22353",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22361",
+   "parent_id": "22353",
+   "title": "大洲和大洋",
+   "level": 3,
+   "href": "/czdl/zsd22361",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22364",
+   "parent_id": "22361",
+   "title": "世界海陆分布",
+   "level": 4,
+   "href": "/czdl/zsd22364",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22366",
+   "parent_id": "22364",
+   "title": "全球海陆面积比例",
+   "level": 5,
+   "href": "/czdl/zsd22366",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22367",
+   "parent_id": "22364",
+   "title": "世界海陆分布状况",
+   "level": 5,
+   "href": "/czdl/zsd22367",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22365",
+   "parent_id": "22361",
+   "title": "七大洲和四大洋",
+   "level": 4,
+   "href": "/czdl/zsd22365",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22368",
+   "parent_id": "22365",
+   "title": "海、陆的相关概念",
+   "level": 5,
+   "href": "/czdl/zsd22368",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22369",
+   "parent_id": "22365",
+   "title": "七大洲的面积、形状、分布",
+   "level": 5,
+   "href": "/czdl/zsd22369",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22370",
+   "parent_id": "22365",
+   "title": "大洲的分界线",
+   "level": 5,
+   "href": "/czdl/zsd22370",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22371",
+   "parent_id": "22365",
+   "title": "四大洋的面积、特征、分布",
+   "level": 5,
+   "href": "/czdl/zsd22371",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208544",
+   "parent_id": "22361",
+   "title": "海洋与人类",
+   "level": 4,
+   "href": "/czdl/zsd208544",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208545",
+   "parent_id": "208544",
+   "title": "海洋与交通运输",
+   "level": 5,
+   "href": "/czdl/zsd208545",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154742",
+   "parent_id": "208544",
+   "title": "海洋资源与海洋开发",
+   "level": 5,
+   "href": "/czdl/zsd154742",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154743",
+   "parent_id": "208544",
+   "title": "海洋污染与保护",
+   "level": 5,
+   "href": "/czdl/zsd154743",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22363",
+   "parent_id": "22353",
+   "title": "世界的河流和湖泊",
+   "level": 3,
+   "href": "/czdl/zsd22363",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154726",
+   "parent_id": "22363",
+   "title": "河流及分类",
+   "level": 4,
+   "href": "/czdl/zsd154726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154727",
+   "parent_id": "22363",
+   "title": "湖泊及分类",
+   "level": 4,
+   "href": "/czdl/zsd154727",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154728",
+   "parent_id": "22363",
+   "title": "河流和湖泊的保护",
+   "level": 4,
+   "href": "/czdl/zsd154728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154729",
+   "parent_id": "22353",
+   "title": "世界的地形",
+   "level": 3,
+   "href": "/czdl/zsd154729",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208548",
+   "parent_id": "154729",
+   "title": "世界主要的陆地地形区",
+   "level": 4,
+   "href": "/czdl/zsd208548",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208549",
+   "parent_id": "208548",
+   "title": "世界主要的高原",
+   "level": 5,
+   "href": "/czdl/zsd208549",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208550",
+   "parent_id": "208548",
+   "title": "世界主要的山地",
+   "level": 5,
+   "href": "/czdl/zsd208550",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208551",
+   "parent_id": "208548",
+   "title": "世界主要的盆地",
+   "level": 5,
+   "href": "/czdl/zsd208551",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208552",
+   "parent_id": "208548",
+   "title": "世界主要的平原",
+   "level": 5,
+   "href": "/czdl/zsd208552",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208553",
+   "parent_id": "154729",
+   "title": "世界陆地的两大山脉带",
+   "level": 4,
+   "href": "/czdl/zsd208553",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208554",
+   "parent_id": "208553",
+   "title": "环太平洋沿岸山脉带",
+   "level": 5,
+   "href": "/czdl/zsd208554",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208555",
+   "parent_id": "208553",
+   "title": "阿尔卑斯-喜马拉雅山脉带",
+   "level": 5,
+   "href": "/czdl/zsd208555",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208556",
+   "parent_id": "154729",
+   "title": "世界陆地的地形分布大势",
+   "level": 4,
+   "href": "/czdl/zsd208556",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154730",
+   "parent_id": "154729",
+   "title": "边缘海和内陆海",
+   "level": 4,
+   "href": "/czdl/zsd154730",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154731",
+   "parent_id": "154730",
+   "title": "海与洋的关系",
+   "level": 5,
+   "href": "/czdl/zsd154731",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154732",
+   "parent_id": "154730",
+   "title": "边缘海和内陆海的特点",
+   "level": 5,
+   "href": "/czdl/zsd154732",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154733",
+   "parent_id": "154729",
+   "title": "海峡和海湾",
+   "level": 4,
+   "href": "/czdl/zsd154733",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154734",
+   "parent_id": "154733",
+   "title": "海峡和海湾的概念",
+   "level": 5,
+   "href": "/czdl/zsd154734",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154735",
+   "parent_id": "154733",
+   "title": "世界主要的海峡和海湾",
+   "level": 5,
+   "href": "/czdl/zsd154735",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154736",
+   "parent_id": "154729",
+   "title": "海底地形",
+   "level": 4,
+   "href": "/czdl/zsd154736",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154737",
+   "parent_id": "154736",
+   "title": "大陆架",
+   "level": 5,
+   "href": "/czdl/zsd154737",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154738",
+   "parent_id": "154736",
+   "title": "大陆坡",
+   "level": 5,
+   "href": "/czdl/zsd154738",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154739",
+   "parent_id": "154736",
+   "title": "海沟",
+   "level": 5,
+   "href": "/czdl/zsd154739",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154740",
+   "parent_id": "154736",
+   "title": "洋盆",
+   "level": 5,
+   "href": "/czdl/zsd154740",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154741",
+   "parent_id": "154736",
+   "title": "洋中脊（海岭）",
+   "level": 5,
+   "href": "/czdl/zsd154741",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22362",
+   "parent_id": "22353",
+   "title": "海陆的变迁",
+   "level": 3,
+   "href": "/czdl/zsd22362",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22372",
+   "parent_id": "22362",
+   "title": "沧海桑田",
+   "level": 4,
+   "href": "/czdl/zsd22372",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22375",
+   "parent_id": "22372",
+   "title": "海陆变迁的例证及原因",
+   "level": 5,
+   "href": "/czdl/zsd22375",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22373",
+   "parent_id": "22362",
+   "title": "大陆漂移说",
+   "level": 4,
+   "href": "/czdl/zsd22373",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208546",
+   "parent_id": "22373",
+   "title": "大陆漂移说的内容",
+   "level": 5,
+   "href": "/czdl/zsd208546",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208547",
+   "parent_id": "22373",
+   "title": "运用大陆漂移说解释地理现象",
+   "level": 5,
+   "href": "/czdl/zsd208547",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22374",
+   "parent_id": "22362",
+   "title": "板块构造学说",
+   "level": 4,
+   "href": "/czdl/zsd22374",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22376",
+   "parent_id": "22374",
+   "title": "板块构造学说的内容",
+   "level": 5,
+   "href": "/czdl/zsd22376",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22377",
+   "parent_id": "22374",
+   "title": "六大板块及其分布",
+   "level": 5,
+   "href": "/czdl/zsd22377",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22378",
+   "parent_id": "22374",
+   "title": "板块运动的影响",
+   "level": 5,
+   "href": "/czdl/zsd22378",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22354",
+   "parent_id": "22300",
+   "title": "天气与气候",
+   "level": 2,
+   "href": "/czdl/zsd22354",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22379",
+   "parent_id": "22354",
+   "title": "多变的天气",
+   "level": 3,
+   "href": "/czdl/zsd22379",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22383",
+   "parent_id": "22379",
+   "title": "天气及其影响",
+   "level": 4,
+   "href": "/czdl/zsd22383",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22386",
+   "parent_id": "22383",
+   "title": "天气与气候的区别联系",
+   "level": 5,
+   "href": "/czdl/zsd22386",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22387",
+   "parent_id": "22383",
+   "title": "天气与人类活动的相互影响",
+   "level": 5,
+   "href": "/czdl/zsd22387",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22384",
+   "parent_id": "22379",
+   "title": "天气预报",
+   "level": 4,
+   "href": "/czdl/zsd22384",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22388",
+   "parent_id": "22384",
+   "title": "风向与风级的判断",
+   "level": 5,
+   "href": "/czdl/zsd22388",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22389",
+   "parent_id": "22384",
+   "title": "常用天气符号的识记",
+   "level": 5,
+   "href": "/czdl/zsd22389",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208557",
+   "parent_id": "22384",
+   "title": "天气预报与生活",
+   "level": 5,
+   "href": "/czdl/zsd208557",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22385",
+   "parent_id": "22379",
+   "title": "空气质量",
+   "level": 4,
+   "href": "/czdl/zsd22385",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22380",
+   "parent_id": "22354",
+   "title": "气温的变化与分布",
+   "level": 3,
+   "href": "/czdl/zsd22380",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22390",
+   "parent_id": "22380",
+   "title": "气温的变化",
+   "level": 4,
+   "href": "/czdl/zsd22390",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22392",
+   "parent_id": "22390",
+   "title": "气温及其测定方法",
+   "level": 5,
+   "href": "/czdl/zsd22392",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22393",
+   "parent_id": "22390",
+   "title": " 气温计算、气温曲线图的绘制与判读",
+   "level": 5,
+   "href": "/czdl/zsd22393",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22394",
+   "parent_id": "22390",
+   "title": "气温的日变化和年变化",
+   "level": 5,
+   "href": "/czdl/zsd22394",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22391",
+   "parent_id": "22380",
+   "title": "气温的分布",
+   "level": 4,
+   "href": "/czdl/zsd22391",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22395",
+   "parent_id": "22391",
+   "title": "等温线与等温线图的判读",
+   "level": 5,
+   "href": "/czdl/zsd22395",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22396",
+   "parent_id": "22391",
+   "title": "世界气温的分布规律",
+   "level": 5,
+   "href": "/czdl/zsd22396",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272855",
+   "parent_id": "22391",
+   "title": "影响气温分布的因素",
+   "level": 5,
+   "href": "/czdl/zsd272855",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22381",
+   "parent_id": "22354",
+   "title": "降水的变化与分布",
+   "level": 3,
+   "href": "/czdl/zsd22381",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22397",
+   "parent_id": "22381",
+   "title": "降水的变化",
+   "level": 4,
+   "href": "/czdl/zsd22397",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22399",
+   "parent_id": "22397",
+   "title": "降水及其形式、等级划分",
+   "level": 5,
+   "href": "/czdl/zsd22399",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22400",
+   "parent_id": "22397",
+   "title": "降水量及其柱状图的判读、绘制",
+   "level": 5,
+   "href": "/czdl/zsd22400",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22401",
+   "parent_id": "22397",
+   "title": "降水量的季节变化和年际变化",
+   "level": 5,
+   "href": "/czdl/zsd22401",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22398",
+   "parent_id": "22381",
+   "title": "降水的分布",
+   "level": 4,
+   "href": "/czdl/zsd22398",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22402",
+   "parent_id": "22398",
+   "title": "等降水量线图及其判读",
+   "level": 5,
+   "href": "/czdl/zsd22402",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22403",
+   "parent_id": "22398",
+   "title": "世界降水的分布规律",
+   "level": 5,
+   "href": "/czdl/zsd22403",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22404",
+   "parent_id": "22398",
+   "title": "影响降水分布的因素",
+   "level": 5,
+   "href": "/czdl/zsd22404",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22382",
+   "parent_id": "22354",
+   "title": "世界的气候",
+   "level": 3,
+   "href": "/czdl/zsd22382",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22405",
+   "parent_id": "22382",
+   "title": "气候的地区差异与气候类型的划分",
+   "level": 4,
+   "href": "/czdl/zsd22405",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22406",
+   "parent_id": "22382",
+   "title": "世界气候类型的分布与特征",
+   "level": 4,
+   "href": "/czdl/zsd22406",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22409",
+   "parent_id": "22406",
+   "title": "热带气候类型的分布与特征",
+   "level": 5,
+   "href": "/czdl/zsd22409",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22410",
+   "parent_id": "22406",
+   "title": "亚热带气候类型的分布与特征",
+   "level": 5,
+   "href": "/czdl/zsd22410",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22411",
+   "parent_id": "22406",
+   "title": "温带气候类型的分布与特征",
+   "level": 5,
+   "href": "/czdl/zsd22411",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22412",
+   "parent_id": "22406",
+   "title": "寒带气候类型的分布与特征",
+   "level": 5,
+   "href": "/czdl/zsd22412",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22413",
+   "parent_id": "22406",
+   "title": "高原山地气候类型的分布与特征",
+   "level": 5,
+   "href": "/czdl/zsd22413",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22414",
+   "parent_id": "22406",
+   "title": "气候类型的判读",
+   "level": 5,
+   "href": "/czdl/zsd22414",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22407",
+   "parent_id": "22382",
+   "title": "影响气候的主要因素",
+   "level": 4,
+   "href": "/czdl/zsd22407",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22415",
+   "parent_id": "22407",
+   "title": "纬度位置对气候的影响",
+   "level": 5,
+   "href": "/czdl/zsd22415",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22416",
+   "parent_id": "22407",
+   "title": "海陆位置对气候的影响",
+   "level": 5,
+   "href": "/czdl/zsd22416",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22417",
+   "parent_id": "22407",
+   "title": "地形因素对气候的影响",
+   "level": 5,
+   "href": "/czdl/zsd22417",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22408",
+   "parent_id": "22382",
+   "title": "气候与人类活动",
+   "level": 4,
+   "href": "/czdl/zsd22408",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22418",
+   "parent_id": "22408",
+   "title": "气候对人类的影响",
+   "level": 5,
+   "href": "/czdl/zsd22418",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22419",
+   "parent_id": "22408",
+   "title": "人类活动影响气候",
+   "level": 5,
+   "href": "/czdl/zsd22419",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22355",
+   "parent_id": "22300",
+   "title": "居民与文化",
+   "level": 2,
+   "href": "/czdl/zsd22355",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22420",
+   "parent_id": "22355",
+   "title": "人口与人种",
+   "level": 3,
+   "href": "/czdl/zsd22420",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22423",
+   "parent_id": "22420",
+   "title": "世界人口的增长",
+   "level": 4,
+   "href": "/czdl/zsd22423",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22427",
+   "parent_id": "22423",
+   "title": "世界人口增长特点",
+   "level": 5,
+   "href": "/czdl/zsd22427",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22428",
+   "parent_id": "22423",
+   "title": "人口自然增长率及其含义",
+   "level": 5,
+   "href": "/czdl/zsd22428",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22429",
+   "parent_id": "22423",
+   "title": "人口增长的地区差异",
+   "level": 5,
+   "href": "/czdl/zsd22429",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22430",
+   "parent_id": "22423",
+   "title": "影响地区人口变化的因素",
+   "level": 5,
+   "href": "/czdl/zsd22430",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22424",
+   "parent_id": "22420",
+   "title": "世界人口的分布",
+   "level": 4,
+   "href": "/czdl/zsd22424",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22431",
+   "parent_id": "22424",
+   "title": "人口密度",
+   "level": 5,
+   "href": "/czdl/zsd22431",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22432",
+   "parent_id": "22424",
+   "title": "世界人口的分布及其原因",
+   "level": 5,
+   "href": "/czdl/zsd22432",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22425",
+   "parent_id": "22420",
+   "title": "人口问题",
+   "level": 4,
+   "href": "/czdl/zsd22425",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208558",
+   "parent_id": "22425",
+   "title": "人口增长过快的原因及其对策",
+   "level": 5,
+   "href": "/czdl/zsd208558",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208559",
+   "parent_id": "22425",
+   "title": "人口增长过慢的原因及其对策",
+   "level": 5,
+   "href": "/czdl/zsd208559",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22426",
+   "parent_id": "22420",
+   "title": "人种及其分布",
+   "level": 4,
+   "href": "/czdl/zsd22426",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22433",
+   "parent_id": "22426",
+   "title": "三大人种的划分及其分布",
+   "level": 5,
+   "href": "/czdl/zsd22433",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22434",
+   "parent_id": "22426",
+   "title": "种族平等",
+   "level": 5,
+   "href": "/czdl/zsd22434",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22435",
+   "parent_id": "22426",
+   "title": "环境对人种差异的影响",
+   "level": 5,
+   "href": "/czdl/zsd22435",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22422",
+   "parent_id": "22355",
+   "title": "城镇与乡村",
+   "level": 3,
+   "href": "/czdl/zsd22422",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22438",
+   "parent_id": "22422",
+   "title": "聚落与环境",
+   "level": 4,
+   "href": "/czdl/zsd22438",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22440",
+   "parent_id": "22438",
+   "title": "城镇、乡村的景观特征",
+   "level": 5,
+   "href": "/czdl/zsd22440",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22441",
+   "parent_id": "22438",
+   "title": "聚落形成、发展的有利条件",
+   "level": 5,
+   "href": "/czdl/zsd22441",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22442",
+   "parent_id": "22438",
+   "title": "聚落的建筑风格与自然环境的关系",
+   "level": 5,
+   "href": "/czdl/zsd22442",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208561",
+   "parent_id": "22438",
+   "title": "保护特色城乡景观",
+   "level": 5,
+   "href": "/czdl/zsd208561",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22439",
+   "parent_id": "22422",
+   "title": "聚落与世界文化遗产",
+   "level": 4,
+   "href": "/czdl/zsd22439",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "208562",
+   "parent_id": "22439",
+   "title": "世界文化遗产的分布",
+   "level": 5,
+   "href": "/czdl/zsd208562",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208563",
+   "parent_id": "22439",
+   "title": "保护世界文化遗产",
+   "level": 5,
+   "href": "/czdl/zsd208563",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22421",
+   "parent_id": "22355",
+   "title": "多样的文化",
+   "level": 3,
+   "href": "/czdl/zsd22421",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22436",
+   "parent_id": "22421",
+   "title": "世界主要语言及其分布",
+   "level": 4,
+   "href": "/czdl/zsd22436",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22437",
+   "parent_id": "22421",
+   "title": "世界三大宗教",
+   "level": 4,
+   "href": "/czdl/zsd22437",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208560",
+   "parent_id": "22421",
+   "title": "文化习俗",
+   "level": 4,
+   "href": "/czdl/zsd208560",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22356",
+   "parent_id": "22300",
+   "title": "发展与合作",
+   "level": 2,
+   "href": "/czdl/zsd22356",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154744",
+   "parent_id": "22356",
+   "title": "国家概述",
+   "level": 3,
+   "href": "/czdl/zsd154744",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154745",
+   "parent_id": "154744",
+   "title": "国家四要素",
+   "level": 4,
+   "href": "/czdl/zsd154745",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154746",
+   "parent_id": "154744",
+   "title": "国家和地区的区别",
+   "level": 4,
+   "href": "/czdl/zsd154746",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154747",
+   "parent_id": "154744",
+   "title": "多样的国家",
+   "level": 4,
+   "href": "/czdl/zsd154747",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154748",
+   "parent_id": "154744",
+   "title": "国旗-国家的象征",
+   "level": 4,
+   "href": "/czdl/zsd154748",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154749",
+   "parent_id": "154744",
+   "title": "领土的构成",
+   "level": 4,
+   "href": "/czdl/zsd154749",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154750",
+   "parent_id": "154744",
+   "title": "形式多样的国界",
+   "level": 4,
+   "href": "/czdl/zsd154750",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154751",
+   "parent_id": "154744",
+   "title": "国际组织",
+   "level": 4,
+   "href": "/czdl/zsd154751",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22443",
+   "parent_id": "22356",
+   "title": "地域发展差异",
+   "level": 3,
+   "href": "/czdl/zsd22443",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22446",
+   "parent_id": "22443",
+   "title": "地区发展差异",
+   "level": 4,
+   "href": "/czdl/zsd22446",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22447",
+   "parent_id": "22443",
+   "title": "发达国家和发展中国家的差异",
+   "level": 4,
+   "href": "/czdl/zsd22447",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22444",
+   "parent_id": "22356",
+   "title": "发达国家和发展中国家",
+   "level": 3,
+   "href": "/czdl/zsd22444",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22448",
+   "parent_id": "22444",
+   "title": "发达国家和发展中国家的分布",
+   "level": 4,
+   "href": "/czdl/zsd22448",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22449",
+   "parent_id": "22444",
+   "title": "南北关系",
+   "level": 4,
+   "href": "/czdl/zsd22449",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22450",
+   "parent_id": "22444",
+   "title": "发展中国家的崛起",
+   "level": 4,
+   "href": "/czdl/zsd22450",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22445",
+   "parent_id": "22356",
+   "title": "国际经济合作",
+   "level": 3,
+   "href": "/czdl/zsd22445",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22451",
+   "parent_id": "22445",
+   "title": "国际经济合作的概况",
+   "level": 4,
+   "href": "/czdl/zsd22451",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22452",
+   "parent_id": "22445",
+   "title": "发达国家与发展中国家贸易的不平等",
+   "level": 4,
+   "href": "/czdl/zsd22452",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208564",
+   "parent_id": "22445",
+   "title": "交通运输在国际合作中的重要性",
+   "level": 4,
+   "href": "/czdl/zsd208564",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208565",
+   "parent_id": "22445",
+   "title": "“一带一路”对我国和沿线国家的影响",
+   "level": 4,
+   "href": "/czdl/zsd208565",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "208566",
+   "parent_id": "22445",
+   "title": "加强国际合作的意义",
+   "level": 4,
+   "href": "/czdl/zsd208566",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22357",
+   "parent_id": "22300",
+   "title": "资源与环境问题",
+   "level": 2,
+   "href": "/czdl/zsd22357",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22453",
+   "parent_id": "22357",
+   "title": "自然资源",
+   "level": 3,
+   "href": "/czdl/zsd22453",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22457",
+   "parent_id": "22453",
+   "title": "自然资源及其辨别",
+   "level": 4,
+   "href": "/czdl/zsd22457",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22458",
+   "parent_id": "22453",
+   "title": "世界主要自然资源的分布",
+   "level": 4,
+   "href": "/czdl/zsd22458",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22456",
+   "parent_id": "22453",
+   "title": "自然资源的利用和保护",
+   "level": 4,
+   "href": "/czdl/zsd22456",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22454",
+   "parent_id": "22357",
+   "title": "环境污染及其防治",
+   "level": 3,
+   "href": "/czdl/zsd22454",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22358",
+   "parent_id": "22300",
+   "title": "东半球的地区和国家",
+   "level": 2,
+   "href": "/czdl/zsd22358",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22459",
+   "parent_id": "22358",
+   "title": "亚洲",
+   "level": 3,
+   "href": "/czdl/zsd22459",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22473",
+   "parent_id": "22459",
+   "title": "亚洲的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22473",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22474",
+   "parent_id": "22459",
+   "title": "世界第一大洲",
+   "level": 4,
+   "href": "/czdl/zsd22474",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22478",
+   "parent_id": "22474",
+   "title": "亚洲的地位",
+   "level": 5,
+   "href": "/czdl/zsd22478",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22479",
+   "parent_id": "22474",
+   "title": "亚洲的分区及其特色",
+   "level": 5,
+   "href": "/czdl/zsd22479",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22475",
+   "parent_id": "22459",
+   "title": "亚洲的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22475",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22480",
+   "parent_id": "22475",
+   "title": "亚洲的地形地势",
+   "level": 5,
+   "href": "/czdl/zsd22480",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22481",
+   "parent_id": "22475",
+   "title": "亚洲的河流",
+   "level": 5,
+   "href": "/czdl/zsd22481",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22482",
+   "parent_id": "22475",
+   "title": "亚洲的世界之最",
+   "level": 5,
+   "href": "/czdl/zsd22482",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22483",
+   "parent_id": "22475",
+   "title": "亚洲气候的特点、分布及其影响因素",
+   "level": 5,
+   "href": "/czdl/zsd22483",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22484",
+   "parent_id": "22475",
+   "title": "季风对亚洲东部和南部的影响",
+   "level": 5,
+   "href": "/czdl/zsd22484",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22485",
+   "parent_id": "22475",
+   "title": "气候对亚洲农业的影响",
+   "level": 5,
+   "href": "/czdl/zsd22485",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22477",
+   "parent_id": "22459",
+   "title": "亚洲的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22477",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22486",
+   "parent_id": "22477",
+   "title": "亚洲的人口",
+   "level": 5,
+   "href": "/czdl/zsd22486",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22487",
+   "parent_id": "22477",
+   "title": "亚洲的经济",
+   "level": 5,
+   "href": "/czdl/zsd22487",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154752",
+   "parent_id": "22358",
+   "title": "欧洲",
+   "level": 3,
+   "href": "/czdl/zsd154752",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154753",
+   "parent_id": "154752",
+   "title": "欧洲的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd154753",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154754",
+   "parent_id": "154753",
+   "title": "欧洲的位置和范围",
+   "level": 5,
+   "href": "/czdl/zsd154754",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154755",
+   "parent_id": "154753",
+   "title": "欧洲主要的国家",
+   "level": 5,
+   "href": "/czdl/zsd154755",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154756",
+   "parent_id": "154752",
+   "title": "欧洲的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd154756",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154757",
+   "parent_id": "154756",
+   "title": "欧洲的地形",
+   "level": 5,
+   "href": "/czdl/zsd154757",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154758",
+   "parent_id": "154756",
+   "title": "欧洲的河流",
+   "level": 5,
+   "href": "/czdl/zsd154758",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154759",
+   "parent_id": "154756",
+   "title": "欧洲的气候",
+   "level": 5,
+   "href": "/czdl/zsd154759",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154760",
+   "parent_id": "154752",
+   "title": "欧洲的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd154760",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154761",
+   "parent_id": "154760",
+   "title": "欧洲的人口和人种",
+   "level": 5,
+   "href": "/czdl/zsd154761",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154762",
+   "parent_id": "154760",
+   "title": "欧洲的经济发展状况",
+   "level": 5,
+   "href": "/czdl/zsd154762",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154763",
+   "parent_id": "22358",
+   "title": "非洲",
+   "level": 3,
+   "href": "/czdl/zsd154763",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154764",
+   "parent_id": "154763",
+   "title": "非洲的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd154764",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154765",
+   "parent_id": "154764",
+   "title": "非洲的位置和范围",
+   "level": 5,
+   "href": "/czdl/zsd154765",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154766",
+   "parent_id": "154764",
+   "title": "非洲主要的国家",
+   "level": 5,
+   "href": "/czdl/zsd154766",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154767",
+   "parent_id": "154763",
+   "title": "非洲的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd154767",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154768",
+   "parent_id": "154767",
+   "title": "非洲的地形",
+   "level": 5,
+   "href": "/czdl/zsd154768",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154769",
+   "parent_id": "154767",
+   "title": "非洲的河湖",
+   "level": 5,
+   "href": "/czdl/zsd154769",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154770",
+   "parent_id": "154767",
+   "title": "非洲的气候",
+   "level": 5,
+   "href": "/czdl/zsd154770",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154771",
+   "parent_id": "154763",
+   "title": "非洲的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd154771",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154772",
+   "parent_id": "154771",
+   "title": "非洲的人口和人种",
+   "level": 5,
+   "href": "/czdl/zsd154772",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154773",
+   "parent_id": "154771",
+   "title": "非洲的资源",
+   "level": 5,
+   "href": "/czdl/zsd154773",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154774",
+   "parent_id": "154771",
+   "title": "非洲的农业",
+   "level": 5,
+   "href": "/czdl/zsd154774",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22460",
+   "parent_id": "22358",
+   "title": "东南亚",
+   "level": 3,
+   "href": "/czdl/zsd22460",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22488",
+   "parent_id": "22460",
+   "title": "东南亚的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22488",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22492",
+   "parent_id": "22488",
+   "title": "东南亚的位置和范围",
+   "level": 5,
+   "href": "/czdl/zsd22492",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22493",
+   "parent_id": "22488",
+   "title": "东南亚的主要国家和首都",
+   "level": 5,
+   "href": "/czdl/zsd22493",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22494",
+   "parent_id": "22488",
+   "title": "东南亚“十字路口”位置的重要性",
+   "level": 5,
+   "href": "/czdl/zsd22494",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22489",
+   "parent_id": "22460",
+   "title": "东南亚的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22489",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22495",
+   "parent_id": "22489",
+   "title": "中南半岛的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd22495",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22496",
+   "parent_id": "22489",
+   "title": "东南亚的气候类型",
+   "level": 5,
+   "href": "/czdl/zsd22496",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22490",
+   "parent_id": "22460",
+   "title": "东南亚的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22490",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22497",
+   "parent_id": "22490",
+   "title": "东南亚的农业",
+   "level": 5,
+   "href": "/czdl/zsd22497",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22498",
+   "parent_id": "22490",
+   "title": "中南半岛的城市分布特点",
+   "level": 5,
+   "href": "/czdl/zsd22498",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22499",
+   "parent_id": "22490",
+   "title": "东南亚的旅游业",
+   "level": 5,
+   "href": "/czdl/zsd22499",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22500",
+   "parent_id": "22490",
+   "title": "东南亚的人口",
+   "level": 5,
+   "href": "/czdl/zsd22500",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22501",
+   "parent_id": "22490",
+   "title": "华人、华侨集中地地区",
+   "level": 5,
+   "href": "/czdl/zsd22501",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22461",
+   "parent_id": "22358",
+   "title": "南亚",
+   "level": 3,
+   "href": "/czdl/zsd22461",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22502",
+   "parent_id": "22461",
+   "title": "南亚的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22502",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22506",
+   "parent_id": "22502",
+   "title": "南亚的位置和范围",
+   "level": 5,
+   "href": "/czdl/zsd22506",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22507",
+   "parent_id": "22502",
+   "title": "南亚的主要国家",
+   "level": 5,
+   "href": "/czdl/zsd22507",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22508",
+   "parent_id": "22502",
+   "title": "南亚主要的海、海湾",
+   "level": 5,
+   "href": "/czdl/zsd22508",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22503",
+   "parent_id": "22461",
+   "title": "南亚的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22503",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22509",
+   "parent_id": "22503",
+   "title": "南亚的地形",
+   "level": 5,
+   "href": "/czdl/zsd22509",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22510",
+   "parent_id": "22503",
+   "title": "南亚的河流",
+   "level": 5,
+   "href": "/czdl/zsd22510",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22511",
+   "parent_id": "22503",
+   "title": "南亚的气候",
+   "level": 5,
+   "href": "/czdl/zsd22511",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22504",
+   "parent_id": "22461",
+   "title": "南亚的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22504",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22512",
+   "parent_id": "22504",
+   "title": "南亚的农业",
+   "level": 5,
+   "href": "/czdl/zsd22512",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22513",
+   "parent_id": "22504",
+   "title": "南亚的工业",
+   "level": 5,
+   "href": "/czdl/zsd22513",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22514",
+   "parent_id": "22504",
+   "title": "南亚的民族与宗教",
+   "level": 5,
+   "href": "/czdl/zsd22514",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22462",
+   "parent_id": "22358",
+   "title": "日本",
+   "level": 3,
+   "href": "/czdl/zsd22462",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22515",
+   "parent_id": "22462",
+   "title": "日本的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22515",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22520",
+   "parent_id": "22515",
+   "title": "日本的地理位置",
+   "level": 5,
+   "href": "/czdl/zsd22520",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22521",
+   "parent_id": "22515",
+   "title": "日本的领土构成",
+   "level": 5,
+   "href": "/czdl/zsd22521",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22516",
+   "parent_id": "22462",
+   "title": "日本的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22516",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22522",
+   "parent_id": "22516",
+   "title": "日本的地形与河流",
+   "level": 5,
+   "href": "/czdl/zsd22522",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22523",
+   "parent_id": "22516",
+   "title": "日本的气候",
+   "level": 5,
+   "href": "/czdl/zsd22523",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22524",
+   "parent_id": "22516",
+   "title": "日本多火山、地震",
+   "level": 5,
+   "href": "/czdl/zsd22524",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22517",
+   "parent_id": "22462",
+   "title": "日本的经济",
+   "level": 4,
+   "href": "/czdl/zsd22517",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22525",
+   "parent_id": "22517",
+   "title": "日本的农业",
+   "level": 5,
+   "href": "/czdl/zsd22525",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22526",
+   "parent_id": "22517",
+   "title": "日本的工业发展",
+   "level": 5,
+   "href": "/czdl/zsd22526",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22527",
+   "parent_id": "22517",
+   "title": "日本工业地带的分布及成因",
+   "level": 5,
+   "href": "/czdl/zsd22527",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22518",
+   "parent_id": "22462",
+   "title": "日本的文化",
+   "level": 4,
+   "href": "/czdl/zsd22518",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22528",
+   "parent_id": "22518",
+   "title": "日本的民族构成",
+   "level": 5,
+   "href": "/czdl/zsd22528",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22529",
+   "parent_id": "22518",
+   "title": "日本文化东西兼容的表现",
+   "level": 5,
+   "href": "/czdl/zsd22529",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22530",
+   "parent_id": "22518",
+   "title": "中日文化交流",
+   "level": 5,
+   "href": "/czdl/zsd22530",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "216732",
+   "parent_id": "22462",
+   "title": "日本人口老龄化",
+   "level": 4,
+   "href": "/czdl/zsd216732",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "216733",
+   "parent_id": "216732",
+   "title": "日本人口老龄化现象",
+   "level": 5,
+   "href": "/czdl/zsd216733",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "216734",
+   "parent_id": "216732",
+   "title": "日本人口老龄化的原因",
+   "level": 5,
+   "href": "/czdl/zsd216734",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "216735",
+   "parent_id": "216732",
+   "title": "日本人口老龄化的影响",
+   "level": 5,
+   "href": "/czdl/zsd216735",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "216736",
+   "parent_id": "216732",
+   "title": "日本应对人口老龄化的措施",
+   "level": 5,
+   "href": "/czdl/zsd216736",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22463",
+   "parent_id": "22358",
+   "title": "印度",
+   "level": 3,
+   "href": "/czdl/zsd22463",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22531",
+   "parent_id": "22463",
+   "title": "印度的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22531",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22532",
+   "parent_id": "22463",
+   "title": "印度的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22532",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22535",
+   "parent_id": "22532",
+   "title": "印度的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd22535",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22536",
+   "parent_id": "22532",
+   "title": "印度的气候",
+   "level": 5,
+   "href": "/czdl/zsd22536",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22533",
+   "parent_id": "22463",
+   "title": "印度的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22533",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22537",
+   "parent_id": "22533",
+   "title": "印度的人口",
+   "level": 5,
+   "href": "/czdl/zsd22537",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22538",
+   "parent_id": "22533",
+   "title": "印度的农业",
+   "level": 5,
+   "href": "/czdl/zsd22538",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22539",
+   "parent_id": "22533",
+   "title": "印度的服务外包产业及软件产业",
+   "level": 5,
+   "href": "/czdl/zsd22539",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22540",
+   "parent_id": "22533",
+   "title": "印度的其他工业及工业城市",
+   "level": 5,
+   "href": "/czdl/zsd22540",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22541",
+   "parent_id": "22533",
+   "title": "印度的文化",
+   "level": 5,
+   "href": "/czdl/zsd22541",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22464",
+   "parent_id": "22358",
+   "title": "俄罗斯",
+   "level": 3,
+   "href": "/czdl/zsd22464",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22542",
+   "parent_id": "22464",
+   "title": "俄罗斯的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22542",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22543",
+   "parent_id": "22464",
+   "title": "俄罗斯的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22543",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22546",
+   "parent_id": "22543",
+   "title": "俄罗斯的地形、主要河流",
+   "level": 5,
+   "href": "/czdl/zsd22546",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22547",
+   "parent_id": "22543",
+   "title": "俄罗斯的气候",
+   "level": 5,
+   "href": "/czdl/zsd22547",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22544",
+   "parent_id": "22464",
+   "title": "俄罗斯的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22544",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22548",
+   "parent_id": "22544",
+   "title": "俄罗斯的自然资源",
+   "level": 5,
+   "href": "/czdl/zsd22548",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22549",
+   "parent_id": "22544",
+   "title": "俄罗斯的工业及其分布",
+   "level": 5,
+   "href": "/czdl/zsd22549",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22550",
+   "parent_id": "22544",
+   "title": "俄罗斯的交通",
+   "level": 5,
+   "href": "/czdl/zsd22550",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22551",
+   "parent_id": "22544",
+   "title": "俄罗斯的农业",
+   "level": 5,
+   "href": "/czdl/zsd22551",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22552",
+   "parent_id": "22544",
+   "title": "俄罗斯的主要城市",
+   "level": 5,
+   "href": "/czdl/zsd22552",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22553",
+   "parent_id": "22544",
+   "title": "俄罗斯的人口",
+   "level": 5,
+   "href": "/czdl/zsd22553",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22465",
+   "parent_id": "22358",
+   "title": "西亚（中东）",
+   "level": 3,
+   "href": "/czdl/zsd22465",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22554",
+   "parent_id": "22465",
+   "title": "西亚（中东）的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22554",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22559",
+   "parent_id": "22554",
+   "title": "西亚（中东）的位置、范围",
+   "level": 5,
+   "href": "/czdl/zsd22559",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22560",
+   "parent_id": "22554",
+   "title": "西亚（中东）地理位置的重要性",
+   "level": 5,
+   "href": "/czdl/zsd22560",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22561",
+   "parent_id": "22554",
+   "title": "西亚（中东）的主要国家",
+   "level": 5,
+   "href": "/czdl/zsd22561",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22555",
+   "parent_id": "22465",
+   "title": "西亚（中东）的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22555",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22562",
+   "parent_id": "22555",
+   "title": "西亚（中东）的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd22562",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22563",
+   "parent_id": "22555",
+   "title": "西亚（中东）的气候",
+   "level": 5,
+   "href": "/czdl/zsd22563",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22564",
+   "parent_id": "22555",
+   "title": "西亚（中东）的海、海湾、海峡、运河",
+   "level": 5,
+   "href": "/czdl/zsd22564",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22556",
+   "parent_id": "22465",
+   "title": "西亚（中东）的石油资源",
+   "level": 4,
+   "href": "/czdl/zsd22556",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22565",
+   "parent_id": "22556",
+   "title": "西亚（中东）石油的地位",
+   "level": 5,
+   "href": "/czdl/zsd22565",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22566",
+   "parent_id": "22556",
+   "title": "西亚（中东）的石油产区",
+   "level": 5,
+   "href": "/czdl/zsd22566",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22567",
+   "parent_id": "22556",
+   "title": "西亚（中东）的石油外运航线",
+   "level": 5,
+   "href": "/czdl/zsd22567",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22557",
+   "parent_id": "22465",
+   "title": "地区冲突的背景",
+   "level": 4,
+   "href": "/czdl/zsd22557",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22568",
+   "parent_id": "22557",
+   "title": "西亚（中东）的水资源匮乏",
+   "level": 5,
+   "href": "/czdl/zsd22568",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22569",
+   "parent_id": "22557",
+   "title": "西亚（中东）的人种和民族和宗教",
+   "level": 5,
+   "href": "/czdl/zsd22569",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22570",
+   "parent_id": "22557",
+   "title": "西亚（中东）的风俗及其原因",
+   "level": 5,
+   "href": "/czdl/zsd22570",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22466",
+   "parent_id": "22358",
+   "title": "欧洲西部",
+   "level": 3,
+   "href": "/czdl/zsd22466",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22571",
+   "parent_id": "22466",
+   "title": "欧洲西部的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22571",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22575",
+   "parent_id": "22571",
+   "title": "欧洲西部的位置、范围",
+   "level": 5,
+   "href": "/czdl/zsd22575",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22576",
+   "parent_id": "22571",
+   "title": "欧洲西部的主要国家",
+   "level": 5,
+   "href": "/czdl/zsd22576",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22572",
+   "parent_id": "22466",
+   "title": "欧洲西部的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22572",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22577",
+   "parent_id": "22572",
+   "title": "欧洲西部的主要半岛、岛屿、海、海峡",
+   "level": 5,
+   "href": "/czdl/zsd22577",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22578",
+   "parent_id": "22572",
+   "title": "欧洲西部的地形",
+   "level": 5,
+   "href": "/czdl/zsd22578",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22579",
+   "parent_id": "22572",
+   "title": "欧洲西部的河流",
+   "level": 5,
+   "href": "/czdl/zsd22579",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22580",
+   "parent_id": "22572",
+   "title": "欧洲西部的气候",
+   "level": 5,
+   "href": "/czdl/zsd22580",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22573",
+   "parent_id": "22466",
+   "title": "欧洲西部的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22573",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22581",
+   "parent_id": "22573",
+   "title": "欧洲西部的水陆运输",
+   "level": 5,
+   "href": "/czdl/zsd22581",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22582",
+   "parent_id": "22573",
+   "title": "欧洲西部的工业",
+   "level": 5,
+   "href": "/czdl/zsd22582",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22583",
+   "parent_id": "22573",
+   "title": "欧洲西部的现代化畜牧业",
+   "level": 5,
+   "href": "/czdl/zsd22583",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22584",
+   "parent_id": "22573",
+   "title": "欧洲西部的旅游业",
+   "level": 5,
+   "href": "/czdl/zsd22584",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22467",
+   "parent_id": "22358",
+   "title": "撒哈拉以南的非洲",
+   "level": 3,
+   "href": "/czdl/zsd22467",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22585",
+   "parent_id": "22467",
+   "title": "撒哈拉以南非洲的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22585",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22589",
+   "parent_id": "22585",
+   "title": "撒哈拉以南非洲的位置、范围",
+   "level": 5,
+   "href": "/czdl/zsd22589",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22590",
+   "parent_id": "22585",
+   "title": "撒哈拉以南非洲的主要国家",
+   "level": 5,
+   "href": "/czdl/zsd22590",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22586",
+   "parent_id": "22467",
+   "title": "撒哈拉以南非洲的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22586",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22591",
+   "parent_id": "22586",
+   "title": "撒哈拉以南非洲的地形",
+   "level": 5,
+   "href": "/czdl/zsd22591",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22592",
+   "parent_id": "22586",
+   "title": "撒哈拉以南非洲的河流",
+   "level": 5,
+   "href": "/czdl/zsd22592",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22593",
+   "parent_id": "22586",
+   "title": "撒哈拉以南非洲的气候",
+   "level": 5,
+   "href": "/czdl/zsd22593",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22587",
+   "parent_id": "22467",
+   "title": "撒哈拉以南非洲的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22587",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22594",
+   "parent_id": "22587",
+   "title": "撒哈拉以南非洲的人口与文化",
+   "level": 5,
+   "href": "/czdl/zsd22594",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22595",
+   "parent_id": "22587",
+   "title": "撒哈拉以南非洲的自然资源",
+   "level": 5,
+   "href": "/czdl/zsd22595",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22596",
+   "parent_id": "22587",
+   "title": "撒哈拉以南非洲的经济",
+   "level": 5,
+   "href": "/czdl/zsd22596",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22597",
+   "parent_id": "22587",
+   "title": "非洲的人口问题",
+   "level": 5,
+   "href": "/czdl/zsd22597",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22598",
+   "parent_id": "22587",
+   "title": "撒哈拉以南非洲的粮食问题",
+   "level": 5,
+   "href": "/czdl/zsd22598",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22599",
+   "parent_id": "22587",
+   "title": "撒哈拉以南非洲的环境问题",
+   "level": 5,
+   "href": "/czdl/zsd22599",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22468",
+   "parent_id": "22358",
+   "title": "大洋洲与澳大利亚",
+   "level": 3,
+   "href": "/czdl/zsd22468",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22600",
+   "parent_id": "22468",
+   "title": "大洋洲概况",
+   "level": 4,
+   "href": "/czdl/zsd22600",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22605",
+   "parent_id": "22600",
+   "title": "大洋洲的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd22605",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22606",
+   "parent_id": "22600",
+   "title": "大洋洲的主要国家",
+   "level": 5,
+   "href": "/czdl/zsd22606",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22601",
+   "parent_id": "22468",
+   "title": "澳大利亚的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22601",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22602",
+   "parent_id": "22468",
+   "title": "澳大利亚的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22602",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22607",
+   "parent_id": "22602",
+   "title": "澳大利亚的特有生物",
+   "level": 5,
+   "href": "/czdl/zsd22607",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22608",
+   "parent_id": "22602",
+   "title": "澳大利亚的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd22608",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22609",
+   "parent_id": "22602",
+   "title": "澳大利亚的气候",
+   "level": 5,
+   "href": "/czdl/zsd22609",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272856",
+   "parent_id": "22602",
+   "title": "澳大利亚大堡礁生态保护",
+   "level": 5,
+   "href": "/czdl/zsd272856",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22603",
+   "parent_id": "22468",
+   "title": "澳大利亚的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22603",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22610",
+   "parent_id": "22603",
+   "title": "澳大利亚的农牧业",
+   "level": 5,
+   "href": "/czdl/zsd22610",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22611",
+   "parent_id": "22603",
+   "title": "澳大利亚的工业",
+   "level": 5,
+   "href": "/czdl/zsd22611",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22612",
+   "parent_id": "22603",
+   "title": "澳大利亚的服务业",
+   "level": 5,
+   "href": "/czdl/zsd22612",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22613",
+   "parent_id": "22603",
+   "title": "澳大利亚的城市",
+   "level": 5,
+   "href": "/czdl/zsd22613",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22469",
+   "parent_id": "22358",
+   "title": "法国",
+   "level": 3,
+   "href": "/czdl/zsd22469",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22614",
+   "parent_id": "22469",
+   "title": "法国的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22614",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22615",
+   "parent_id": "22469",
+   "title": "法国的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22615",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22617",
+   "parent_id": "22615",
+   "title": "法国的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd22617",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22618",
+   "parent_id": "22615",
+   "title": "法国的气候",
+   "level": 5,
+   "href": "/czdl/zsd22618",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22616",
+   "parent_id": "22469",
+   "title": "法国的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22616",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22619",
+   "parent_id": "22616",
+   "title": "法国的农业",
+   "level": 5,
+   "href": "/czdl/zsd22619",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22620",
+   "parent_id": "22616",
+   "title": "法国的工业",
+   "level": 5,
+   "href": "/czdl/zsd22620",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22621",
+   "parent_id": "22616",
+   "title": "法国的交通",
+   "level": 5,
+   "href": "/czdl/zsd22621",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22622",
+   "parent_id": "22616",
+   "title": "法国的文化与旅游",
+   "level": 5,
+   "href": "/czdl/zsd22622",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22470",
+   "parent_id": "22358",
+   "title": "德国",
+   "level": 3,
+   "href": "/czdl/zsd22470",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22623",
+   "parent_id": "22470",
+   "title": "德国的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22623",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22624",
+   "parent_id": "22470",
+   "title": "德国的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22624",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22626",
+   "parent_id": "22624",
+   "title": "德国的地形",
+   "level": 5,
+   "href": "/czdl/zsd22626",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22627",
+   "parent_id": "22624",
+   "title": "德国的河流",
+   "level": 5,
+   "href": "/czdl/zsd22627",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22628",
+   "parent_id": "22624",
+   "title": "德国的气候",
+   "level": 5,
+   "href": "/czdl/zsd22628",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22625",
+   "parent_id": "22470",
+   "title": "德国的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22625",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22629",
+   "parent_id": "22625",
+   "title": "德国的交通",
+   "level": 5,
+   "href": "/czdl/zsd22629",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22630",
+   "parent_id": "22625",
+   "title": "德国的工业",
+   "level": 5,
+   "href": "/czdl/zsd22630",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22631",
+   "parent_id": "22625",
+   "title": "德国的主要城市",
+   "level": 5,
+   "href": "/czdl/zsd22631",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22632",
+   "parent_id": "22625",
+   "title": "德国的文化",
+   "level": 5,
+   "href": "/czdl/zsd22632",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22472",
+   "parent_id": "22358",
+   "title": "埃及",
+   "level": 3,
+   "href": "/czdl/zsd22472",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22640",
+   "parent_id": "22472",
+   "title": "埃及的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22640",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22643",
+   "parent_id": "22640",
+   "title": "埃及的位置及其重要性",
+   "level": 5,
+   "href": "/czdl/zsd22643",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22644",
+   "parent_id": "22640",
+   "title": "埃及的范围",
+   "level": 5,
+   "href": "/czdl/zsd22644",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22641",
+   "parent_id": "22472",
+   "title": "埃及的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22641",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22645",
+   "parent_id": "22641",
+   "title": "埃及的气候",
+   "level": 5,
+   "href": "/czdl/zsd22645",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22646",
+   "parent_id": "22641",
+   "title": "埃及的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd22646",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22642",
+   "parent_id": "22472",
+   "title": "埃及的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22642",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22647",
+   "parent_id": "22642",
+   "title": "埃及的农业",
+   "level": 5,
+   "href": "/czdl/zsd22647",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22648",
+   "parent_id": "22642",
+   "title": "埃及的工业",
+   "level": 5,
+   "href": "/czdl/zsd22648",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22649",
+   "parent_id": "22642",
+   "title": "埃及的人口与宗教",
+   "level": 5,
+   "href": "/czdl/zsd22649",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22650",
+   "parent_id": "22642",
+   "title": "埃及的文化与旅游",
+   "level": 5,
+   "href": "/czdl/zsd22650",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22359",
+   "parent_id": "22300",
+   "title": "西半球的地区和国家",
+   "level": 2,
+   "href": "/czdl/zsd22359",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22651",
+   "parent_id": "22359",
+   "title": "美洲",
+   "level": 3,
+   "href": "/czdl/zsd22651",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22654",
+   "parent_id": "22651",
+   "title": "美洲的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22654",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22657",
+   "parent_id": "22654",
+   "title": "美洲的位置和范围",
+   "level": 5,
+   "href": "/czdl/zsd22657",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22658",
+   "parent_id": "22654",
+   "title": "美洲的主要国家",
+   "level": 5,
+   "href": "/czdl/zsd22658",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22659",
+   "parent_id": "22654",
+   "title": "巴拿马运河",
+   "level": 5,
+   "href": "/czdl/zsd22659",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22655",
+   "parent_id": "22651",
+   "title": "美洲的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22655",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22660",
+   "parent_id": "22655",
+   "title": "美洲的地形",
+   "level": 5,
+   "href": "/czdl/zsd22660",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22661",
+   "parent_id": "22655",
+   "title": "美洲的河湖",
+   "level": 5,
+   "href": "/czdl/zsd22661",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22662",
+   "parent_id": "22655",
+   "title": "美洲的气候",
+   "level": 5,
+   "href": "/czdl/zsd22662",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22656",
+   "parent_id": "22651",
+   "title": "美洲的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22656",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22663",
+   "parent_id": "22656",
+   "title": "美洲的人口、人种",
+   "level": 5,
+   "href": "/czdl/zsd22663",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22664",
+   "parent_id": "22656",
+   "title": "美洲的资源",
+   "level": 5,
+   "href": "/czdl/zsd22664",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22665",
+   "parent_id": "22656",
+   "title": "美洲的经济发展状况",
+   "level": 5,
+   "href": "/czdl/zsd22665",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22652",
+   "parent_id": "22359",
+   "title": "美国",
+   "level": 3,
+   "href": "/czdl/zsd22652",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22666",
+   "parent_id": "22652",
+   "title": "美国的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22666",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22667",
+   "parent_id": "22652",
+   "title": "美国的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22667",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22672",
+   "parent_id": "22667",
+   "title": "美国的地形",
+   "level": 5,
+   "href": "/czdl/zsd22672",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22673",
+   "parent_id": "22667",
+   "title": "美国的河湖",
+   "level": 5,
+   "href": "/czdl/zsd22673",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22674",
+   "parent_id": "22667",
+   "title": "美国的气候",
+   "level": 5,
+   "href": "/czdl/zsd22674",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22668",
+   "parent_id": "22652",
+   "title": "美国的人口",
+   "level": 4,
+   "href": "/czdl/zsd22668",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22675",
+   "parent_id": "22668",
+   "title": "美国的人口数量及其增长",
+   "level": 5,
+   "href": "/czdl/zsd22675",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22676",
+   "parent_id": "22668",
+   "title": "美国多元的文化特色",
+   "level": 5,
+   "href": "/czdl/zsd22676",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22677",
+   "parent_id": "22668",
+   "title": "美国的人种构成与种族歧视问题",
+   "level": 5,
+   "href": "/czdl/zsd22677",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22669",
+   "parent_id": "22652",
+   "title": "美国的农业",
+   "level": 4,
+   "href": "/czdl/zsd22669",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22678",
+   "parent_id": "22669",
+   "title": "美国农业发展的有利自然条件",
+   "level": 5,
+   "href": "/czdl/zsd22678",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22679",
+   "parent_id": "22669",
+   "title": "美国农业的特点",
+   "level": 5,
+   "href": "/czdl/zsd22679",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22680",
+   "parent_id": "22669",
+   "title": "美国本土农业带的分布",
+   "level": 5,
+   "href": "/czdl/zsd22680",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22670",
+   "parent_id": "22652",
+   "title": "美国的工业",
+   "level": 4,
+   "href": "/czdl/zsd22670",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22681",
+   "parent_id": "22670",
+   "title": "美国工业的特点",
+   "level": 5,
+   "href": "/czdl/zsd22681",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22682",
+   "parent_id": "22670",
+   "title": "美国主要的工业区和工业城市",
+   "level": 5,
+   "href": "/czdl/zsd22682",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22683",
+   "parent_id": "22670",
+   "title": "美国的高新技术产业",
+   "level": 5,
+   "href": "/czdl/zsd22683",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "234822",
+   "parent_id": "22670",
+   "title": "资源消耗大国",
+   "level": 5,
+   "href": "/czdl/zsd234822",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22653",
+   "parent_id": "22359",
+   "title": "巴西",
+   "level": 3,
+   "href": "/czdl/zsd22653",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22684",
+   "parent_id": "22653",
+   "title": "巴西的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22684",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22685",
+   "parent_id": "22653",
+   "title": "巴西的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22685",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22689",
+   "parent_id": "22685",
+   "title": "巴西的地形",
+   "level": 5,
+   "href": "/czdl/zsd22689",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22690",
+   "parent_id": "22685",
+   "title": "巴西的河流",
+   "level": 5,
+   "href": "/czdl/zsd22690",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22691",
+   "parent_id": "22685",
+   "title": "巴西的气候",
+   "level": 5,
+   "href": "/czdl/zsd22691",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22686",
+   "parent_id": "22653",
+   "title": "巴西的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22686",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22692",
+   "parent_id": "22686",
+   "title": "巴西的人口与人种构成",
+   "level": 5,
+   "href": "/czdl/zsd22692",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22693",
+   "parent_id": "22686",
+   "title": "巴西文化的多元性及其影响",
+   "level": 5,
+   "href": "/czdl/zsd22693",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22694",
+   "parent_id": "22686",
+   "title": "巴西的城市",
+   "level": 5,
+   "href": "/czdl/zsd22694",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22695",
+   "parent_id": "22686",
+   "title": "巴西的农业",
+   "level": 5,
+   "href": "/czdl/zsd22695",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22696",
+   "parent_id": "22686",
+   "title": "巴西的工业",
+   "level": 5,
+   "href": "/czdl/zsd22696",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22687",
+   "parent_id": "22653",
+   "title": "巴西热带雨林的开发与保护",
+   "level": 4,
+   "href": "/czdl/zsd22687",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22360",
+   "parent_id": "22300",
+   "title": "极地地区",
+   "level": 2,
+   "href": "/czdl/zsd22360",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22697",
+   "parent_id": "22360",
+   "title": "极地地区的位置范围",
+   "level": 3,
+   "href": "/czdl/zsd22697",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22701",
+   "parent_id": "22697",
+   "title": "南极地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22701",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22702",
+   "parent_id": "22697",
+   "title": "北极地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22702",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22698",
+   "parent_id": "22360",
+   "title": "极地地区的自然环境",
+   "level": 3,
+   "href": "/czdl/zsd22698",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22703",
+   "parent_id": "22698",
+   "title": "北极地区的气候特点",
+   "level": 4,
+   "href": "/czdl/zsd22703",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22704",
+   "parent_id": "22698",
+   "title": "南极地区的气候特点与南极比北极冷的原因",
+   "level": 4,
+   "href": "/czdl/zsd22704",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22705",
+   "parent_id": "22698",
+   "title": "南、北极地区的地形特点",
+   "level": 4,
+   "href": "/czdl/zsd22705",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22706",
+   "parent_id": "22698",
+   "title": "南北极的代表动物",
+   "level": 4,
+   "href": "/czdl/zsd22706",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22699",
+   "parent_id": "22360",
+   "title": "极地地区的科学考察",
+   "level": 3,
+   "href": "/czdl/zsd22699",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22707",
+   "parent_id": "22699",
+   "title": "南极地区的自然资源",
+   "level": 4,
+   "href": "/czdl/zsd22707",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22708",
+   "parent_id": "22699",
+   "title": "北极地区的自然资源",
+   "level": 4,
+   "href": "/czdl/zsd22708",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22709",
+   "parent_id": "22699",
+   "title": "极地科考",
+   "level": 4,
+   "href": "/czdl/zsd22709",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22700",
+   "parent_id": "22360",
+   "title": "极地地区的环境保护",
+   "level": 3,
+   "href": "/czdl/zsd22700",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22301",
+   "parent_id": "22298",
+   "title": "中国地理",
+   "level": 1,
+   "href": "/czdl/zsd22301",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22710",
+   "parent_id": "22301",
+   "title": "从世界看中国",
+   "level": 2,
+   "href": "/czdl/zsd22710",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22719",
+   "parent_id": "22710",
+   "title": "疆域",
+   "level": 3,
+   "href": "/czdl/zsd22719",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22722",
+   "parent_id": "22719",
+   "title": "我国优越的地理位置",
+   "level": 4,
+   "href": "/czdl/zsd22722",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22723",
+   "parent_id": "22719",
+   "title": "我国的领土和邻国",
+   "level": 4,
+   "href": "/czdl/zsd22723",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22725",
+   "parent_id": "22723",
+   "title": "中国的领土四端",
+   "level": 5,
+   "href": "/czdl/zsd22725",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22726",
+   "parent_id": "22723",
+   "title": "中国的陆地领土面积",
+   "level": 5,
+   "href": "/czdl/zsd22726",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22727",
+   "parent_id": "22723",
+   "title": "中国的陆上国界线及邻国",
+   "level": 5,
+   "href": "/czdl/zsd22727",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22728",
+   "parent_id": "22723",
+   "title": "中国的海洋国土",
+   "level": 5,
+   "href": "/czdl/zsd22728",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22729",
+   "parent_id": "22723",
+   "title": "中国的海岸线及海上邻国",
+   "level": 5,
+   "href": "/czdl/zsd22729",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22730",
+   "parent_id": "22723",
+   "title": "中国疆域辽阔的优势",
+   "level": 5,
+   "href": "/czdl/zsd22730",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22724",
+   "parent_id": "22719",
+   "title": "我国的行政区划",
+   "level": 4,
+   "href": "/czdl/zsd22724",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22731",
+   "parent_id": "22724",
+   "title": "中国现行的行政区划及其作用",
+   "level": 5,
+   "href": "/czdl/zsd22731",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22732",
+   "parent_id": "22724",
+   "title": "中国34个省级行政区域名称、行政中心、简称",
+   "level": 5,
+   "href": "/czdl/zsd22732",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22733",
+   "parent_id": "22724",
+   "title": "中国34个省级行政区域的轮廓、位置",
+   "level": 5,
+   "href": "/czdl/zsd22733",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22720",
+   "parent_id": "22710",
+   "title": "人口",
+   "level": 3,
+   "href": "/czdl/zsd22720",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22734",
+   "parent_id": "22720",
+   "title": "我国是世界人口大国",
+   "level": 4,
+   "href": "/czdl/zsd22734",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22736",
+   "parent_id": "22734",
+   "title": "我国的人口数量",
+   "level": 5,
+   "href": "/czdl/zsd22736",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22737",
+   "parent_id": "22734",
+   "title": "我国人口的基本国情",
+   "level": 5,
+   "href": "/czdl/zsd22737",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22738",
+   "parent_id": "22734",
+   "title": "我国的人口问题",
+   "level": 5,
+   "href": "/czdl/zsd22738",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22739",
+   "parent_id": "22734",
+   "title": "我国的人口国策",
+   "level": 5,
+   "href": "/czdl/zsd22739",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22735",
+   "parent_id": "22720",
+   "title": "我国的人口分布",
+   "level": 4,
+   "href": "/czdl/zsd22735",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22740",
+   "parent_id": "22735",
+   "title": "我国的人口分布特点",
+   "level": 5,
+   "href": "/czdl/zsd22740",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22741",
+   "parent_id": "22735",
+   "title": "我国的人口地理界线",
+   "level": 5,
+   "href": "/czdl/zsd22741",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22721",
+   "parent_id": "22710",
+   "title": "民族",
+   "level": 3,
+   "href": "/czdl/zsd22721",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22742",
+   "parent_id": "22721",
+   "title": "中华民族大家庭",
+   "level": 4,
+   "href": "/czdl/zsd22742",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22744",
+   "parent_id": "22742",
+   "title": "我国的民族构成",
+   "level": 5,
+   "href": "/czdl/zsd22744",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22745",
+   "parent_id": "22742",
+   "title": "我国少数民族的人口状况",
+   "level": 5,
+   "href": "/czdl/zsd22745",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22746",
+   "parent_id": "22742",
+   "title": "我国少数民族的文化",
+   "level": 5,
+   "href": "/czdl/zsd22746",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22743",
+   "parent_id": "22721",
+   "title": "我国民族分布特点",
+   "level": 4,
+   "href": "/czdl/zsd22743",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22747",
+   "parent_id": "22743",
+   "title": "我国民族分布及其特点",
+   "level": 5,
+   "href": "/czdl/zsd22747",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22748",
+   "parent_id": "22743",
+   "title": "我国的民族区域自治制度和民族政策",
+   "level": 5,
+   "href": "/czdl/zsd22748",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22711",
+   "parent_id": "22301",
+   "title": "中国的自然环境",
+   "level": 2,
+   "href": "/czdl/zsd22711",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22749",
+   "parent_id": "22711",
+   "title": "地势和地形",
+   "level": 3,
+   "href": "/czdl/zsd22749",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22753",
+   "parent_id": "22749",
+   "title": "我国的地形特征",
+   "level": 4,
+   "href": "/czdl/zsd22753",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22755",
+   "parent_id": "22753",
+   "title": "我国地形的种类及其面积比例",
+   "level": 5,
+   "href": "/czdl/zsd22755",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22756",
+   "parent_id": "22753",
+   "title": "我国的主要山脉",
+   "level": 5,
+   "href": "/czdl/zsd22756",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22757",
+   "parent_id": "22753",
+   "title": "我国的四大高原",
+   "level": 5,
+   "href": "/czdl/zsd22757",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22758",
+   "parent_id": "22753",
+   "title": "我国的三大平原",
+   "level": 5,
+   "href": "/czdl/zsd22758",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22759",
+   "parent_id": "22753",
+   "title": "我国的四大盆地",
+   "level": 5,
+   "href": "/czdl/zsd22759",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22760",
+   "parent_id": "22753",
+   "title": "我国的三大丘陵",
+   "level": 5,
+   "href": "/czdl/zsd22760",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22761",
+   "parent_id": "22753",
+   "title": "我国山区面积广大及其利弊",
+   "level": 5,
+   "href": "/czdl/zsd22761",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22754",
+   "parent_id": "22749",
+   "title": "我国的地势特征",
+   "level": 4,
+   "href": "/czdl/zsd22754",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22762",
+   "parent_id": "22754",
+   "title": "我国地势三级阶梯的界线",
+   "level": 5,
+   "href": "/czdl/zsd22762",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22763",
+   "parent_id": "22754",
+   "title": "我国地势三级阶梯的地形、海拔",
+   "level": 5,
+   "href": "/czdl/zsd22763",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22764",
+   "parent_id": "22754",
+   "title": "我国地势的影响",
+   "level": 5,
+   "href": "/czdl/zsd22764",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22750",
+   "parent_id": "22711",
+   "title": "气候",
+   "level": 3,
+   "href": "/czdl/zsd22750",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22765",
+   "parent_id": "22750",
+   "title": "我国的气温分布",
+   "level": 4,
+   "href": "/czdl/zsd22765",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22769",
+   "parent_id": "22765",
+   "title": "我国冬季气温的分布",
+   "level": 5,
+   "href": "/czdl/zsd22769",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22770",
+   "parent_id": "22765",
+   "title": "我国1月0℃等温线",
+   "level": 5,
+   "href": "/czdl/zsd22770",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22771",
+   "parent_id": "22765",
+   "title": "我国夏季气温的分布",
+   "level": 5,
+   "href": "/czdl/zsd22771",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22772",
+   "parent_id": "22765",
+   "title": "我国的温度带",
+   "level": 5,
+   "href": "/czdl/zsd22772",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22766",
+   "parent_id": "22750",
+   "title": "我国的干湿状况",
+   "level": 4,
+   "href": "/czdl/zsd22766",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22773",
+   "parent_id": "22766",
+   "title": "我国降水的空间分布",
+   "level": 5,
+   "href": "/czdl/zsd22773",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22774",
+   "parent_id": "22766",
+   "title": "我国的800毫米等降水量线和400毫米等降水量线",
+   "level": 5,
+   "href": "/czdl/zsd22774",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22775",
+   "parent_id": "22766",
+   "title": "我国降水的时间分配",
+   "level": 5,
+   "href": "/czdl/zsd22775",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22776",
+   "parent_id": "22766",
+   "title": "我国的干湿地区",
+   "level": 5,
+   "href": "/czdl/zsd22776",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22767",
+   "parent_id": "22750",
+   "title": "我国气候的主要特征及分布",
+   "level": 4,
+   "href": "/czdl/zsd22767",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22777",
+   "parent_id": "22767",
+   "title": "我国气候复杂多样及其成因",
+   "level": 5,
+   "href": "/czdl/zsd22777",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22778",
+   "parent_id": "22767",
+   "title": "我国季风气候显著",
+   "level": 5,
+   "href": "/czdl/zsd22778",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22779",
+   "parent_id": "22767",
+   "title": "我国的5种气候类型及其分布",
+   "level": 5,
+   "href": "/czdl/zsd22779",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22768",
+   "parent_id": "22750",
+   "title": "影响我国气候的主要因素",
+   "level": 4,
+   "href": "/czdl/zsd22768",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22780",
+   "parent_id": "22768",
+   "title": "我国纬度位置对气候的影响",
+   "level": 5,
+   "href": "/czdl/zsd22780",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22781",
+   "parent_id": "22768",
+   "title": "我国海陆位置对气候的影响",
+   "level": 5,
+   "href": "/czdl/zsd22781",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22782",
+   "parent_id": "22768",
+   "title": "我国地形对气候的影响",
+   "level": 5,
+   "href": "/czdl/zsd22782",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22751",
+   "parent_id": "22711",
+   "title": "河流和湖泊",
+   "level": 3,
+   "href": "/czdl/zsd22751",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22783",
+   "parent_id": "22751",
+   "title": "我国以外流河为主",
+   "level": 4,
+   "href": "/czdl/zsd22783",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22787",
+   "parent_id": "22783",
+   "title": "外流河、内流河、外流湖、内流湖",
+   "level": 5,
+   "href": "/czdl/zsd22787",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22788",
+   "parent_id": "22783",
+   "title": "我国的外流区、内流区",
+   "level": 5,
+   "href": "/czdl/zsd22788",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22789",
+   "parent_id": "22783",
+   "title": "我国河流的水文特征",
+   "level": 5,
+   "href": "/czdl/zsd22789",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22784",
+   "parent_id": "22751",
+   "title": "长江的开发与治理",
+   "level": 4,
+   "href": "/czdl/zsd22784",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22790",
+   "parent_id": "22784",
+   "title": "长江的概况",
+   "level": 5,
+   "href": "/czdl/zsd22790",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22791",
+   "parent_id": "22784",
+   "title": "长江水能资源的开发利用",
+   "level": 5,
+   "href": "/czdl/zsd22791",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22792",
+   "parent_id": "22784",
+   "title": "长江的航运",
+   "level": 5,
+   "href": "/czdl/zsd22792",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22793",
+   "parent_id": "22784",
+   "title": "长江的治理",
+   "level": 5,
+   "href": "/czdl/zsd22793",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22785",
+   "parent_id": "22751",
+   "title": "黄河的治理与开发",
+   "level": 4,
+   "href": "/czdl/zsd22785",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22794",
+   "parent_id": "22785",
+   "title": "黄河的概况",
+   "level": 5,
+   "href": "/czdl/zsd22794",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22795",
+   "parent_id": "22785",
+   "title": "黄河水能资源的开发利用",
+   "level": 5,
+   "href": "/czdl/zsd22795",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22796",
+   "parent_id": "22785",
+   "title": "黄河的贡献——塑造平原、灌溉、水能",
+   "level": 5,
+   "href": "/czdl/zsd22796",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22797",
+   "parent_id": "22785",
+   "title": "黄河下游“地上河”的成因、危害",
+   "level": 5,
+   "href": "/czdl/zsd22797",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "184064",
+   "parent_id": "22785",
+   "title": "黄河的治理",
+   "level": 5,
+   "href": "/czdl/zsd184064",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22752",
+   "parent_id": "22711",
+   "title": "自然灾害与环境保护",
+   "level": 3,
+   "href": "/czdl/zsd22752",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22798",
+   "parent_id": "22752",
+   "title": "常见的自然灾害",
+   "level": 4,
+   "href": "/czdl/zsd22798",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22801",
+   "parent_id": "22798",
+   "title": "自然灾害的概念",
+   "level": 5,
+   "href": "/czdl/zsd22801",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22802",
+   "parent_id": "22798",
+   "title": "常见的气象灾害",
+   "level": 5,
+   "href": "/czdl/zsd22802",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22803",
+   "parent_id": "22798",
+   "title": "常见的地质灾害",
+   "level": 5,
+   "href": "/czdl/zsd22803",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22799",
+   "parent_id": "22752",
+   "title": "我国自然灾害频发",
+   "level": 4,
+   "href": "/czdl/zsd22799",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22804",
+   "parent_id": "22799",
+   "title": "我国主要气象灾害的分布及成因",
+   "level": 5,
+   "href": "/czdl/zsd22804",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22805",
+   "parent_id": "22799",
+   "title": "我国主要地质灾害的分布及成因",
+   "level": 5,
+   "href": "/czdl/zsd22805",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22806",
+   "parent_id": "22799",
+   "title": "我国的海洋灾害",
+   "level": 5,
+   "href": "/czdl/zsd22806",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22807",
+   "parent_id": "22799",
+   "title": "我国自然灾害发生频繁",
+   "level": 5,
+   "href": "/czdl/zsd22807",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22808",
+   "parent_id": "22799",
+   "title": "我国自然灾害影响严重",
+   "level": 5,
+   "href": "/czdl/zsd22808",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22800",
+   "parent_id": "22752",
+   "title": "防灾减灾措施",
+   "level": 4,
+   "href": "/czdl/zsd22800",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223710",
+   "parent_id": "22752",
+   "title": "个体防护自然灾害的技能",
+   "level": 4,
+   "href": "/czdl/zsd223710",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "223711",
+   "parent_id": "223710",
+   "title": "地震与地质灾害的避防",
+   "level": 5,
+   "href": "/czdl/zsd223711",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223712",
+   "parent_id": "223710",
+   "title": "气象与洪涝灾害的避防",
+   "level": 5,
+   "href": "/czdl/zsd223712",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272857",
+   "parent_id": "22752",
+   "title": "环境问题与生态保护",
+   "level": 4,
+   "href": "/czdl/zsd272857",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272858",
+   "parent_id": "272857",
+   "title": "我国的环境问题",
+   "level": 5,
+   "href": "/czdl/zsd272858",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272859",
+   "parent_id": "272857",
+   "title": "我国的生态保护",
+   "level": 5,
+   "href": "/czdl/zsd272859",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22712",
+   "parent_id": "22301",
+   "title": "中国的自然资源",
+   "level": 2,
+   "href": "/czdl/zsd22712",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22809",
+   "parent_id": "22712",
+   "title": "自然资源概况",
+   "level": 3,
+   "href": "/czdl/zsd22809",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22813",
+   "parent_id": "22809",
+   "title": "可再生资源与非可再生资源",
+   "level": 4,
+   "href": "/czdl/zsd22813",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22814",
+   "parent_id": "22809",
+   "title": "我国的自然资源",
+   "level": 4,
+   "href": "/czdl/zsd22814",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22815",
+   "parent_id": "22814",
+   "title": "我国的资源特点",
+   "level": 5,
+   "href": "/czdl/zsd22815",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22816",
+   "parent_id": "22814",
+   "title": "我国自然资源问题的严峻性",
+   "level": 5,
+   "href": "/czdl/zsd22816",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22817",
+   "parent_id": "22814",
+   "title": "保障自然资源供给的措施",
+   "level": 5,
+   "href": "/czdl/zsd22817",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22810",
+   "parent_id": "22712",
+   "title": "土地资源",
+   "level": 3,
+   "href": "/czdl/zsd22810",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22818",
+   "parent_id": "22810",
+   "title": "我国土地资源及现状",
+   "level": 4,
+   "href": "/czdl/zsd22818",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22821",
+   "parent_id": "22818",
+   "title": "土地资源的地位与利用类型",
+   "level": 5,
+   "href": "/czdl/zsd22821",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22822",
+   "parent_id": "22818",
+   "title": "我国土地资源现状",
+   "level": 5,
+   "href": "/czdl/zsd22822",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22819",
+   "parent_id": "22810",
+   "title": "我国土地资源地区分布不均",
+   "level": 4,
+   "href": "/czdl/zsd22819",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22823",
+   "parent_id": "22819",
+   "title": "我国耕地的分布",
+   "level": 5,
+   "href": "/czdl/zsd22823",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22824",
+   "parent_id": "22819",
+   "title": "我国林地的分布",
+   "level": 5,
+   "href": "/czdl/zsd22824",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22825",
+   "parent_id": "22819",
+   "title": "我国草地的分布",
+   "level": 5,
+   "href": "/czdl/zsd22825",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22826",
+   "parent_id": "22819",
+   "title": "我国通常难以利用的土地分布",
+   "level": 5,
+   "href": "/czdl/zsd22826",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22820",
+   "parent_id": "22810",
+   "title": "我国土地资源的利用保护",
+   "level": 4,
+   "href": "/czdl/zsd22820",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22827",
+   "parent_id": "22820",
+   "title": "我国土地资源利用中存在的问题",
+   "level": 5,
+   "href": "/czdl/zsd22827",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22828",
+   "parent_id": "22820",
+   "title": "我国的土地基本国策",
+   "level": 5,
+   "href": "/czdl/zsd22828",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22829",
+   "parent_id": "22820",
+   "title": "我国土地资源的保护措施",
+   "level": 5,
+   "href": "/czdl/zsd22829",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22811",
+   "parent_id": "22712",
+   "title": "水资源",
+   "level": 3,
+   "href": "/czdl/zsd22811",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22830",
+   "parent_id": "22811",
+   "title": "我国水资源时空分布不均",
+   "level": 4,
+   "href": "/czdl/zsd22830",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22832",
+   "parent_id": "22830",
+   "title": "水资源的概念",
+   "level": 5,
+   "href": "/czdl/zsd22832",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22833",
+   "parent_id": "22830",
+   "title": "我国主要的淡水资源",
+   "level": 5,
+   "href": "/czdl/zsd22833",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22834",
+   "parent_id": "22830",
+   "title": "水资源丰欠的表现",
+   "level": 5,
+   "href": "/czdl/zsd22834",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22835",
+   "parent_id": "22830",
+   "title": "我国水资源的空间分布特点",
+   "level": 5,
+   "href": "/czdl/zsd22835",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22836",
+   "parent_id": "22830",
+   "title": "我国水资源的时间分布特点",
+   "level": 5,
+   "href": "/czdl/zsd22836",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22837",
+   "parent_id": "22830",
+   "title": "我国水资源时空分布不均的影响",
+   "level": 5,
+   "href": "/czdl/zsd22837",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22831",
+   "parent_id": "22811",
+   "title": "我国水资源的利用保护",
+   "level": 4,
+   "href": "/czdl/zsd22831",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22838",
+   "parent_id": "22831",
+   "title": "我国水资源短缺的原因",
+   "level": 5,
+   "href": "/czdl/zsd22838",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22839",
+   "parent_id": "22831",
+   "title": "解决水资源时空分布不均的措施",
+   "level": 5,
+   "href": "/czdl/zsd22839",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22840",
+   "parent_id": "22831",
+   "title": "节约用水、保护水资源的措施",
+   "level": 5,
+   "href": "/czdl/zsd22840",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230221",
+   "parent_id": "22712",
+   "title": "矿产资源",
+   "level": 3,
+   "href": "/czdl/zsd230221",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "230222",
+   "parent_id": "230221",
+   "title": "矿产和矿产资源的定义",
+   "level": 4,
+   "href": "/czdl/zsd230222",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230223",
+   "parent_id": "230221",
+   "title": "我国矿产资源及现状",
+   "level": 4,
+   "href": "/czdl/zsd230223",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "230224",
+   "parent_id": "230223",
+   "title": "我国矿产资源地区分布不均",
+   "level": 5,
+   "href": "/czdl/zsd230224",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230225",
+   "parent_id": "230223",
+   "title": "我国能源矿产的分布",
+   "level": 5,
+   "href": "/czdl/zsd230225",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230226",
+   "parent_id": "230223",
+   "title": "我国金属矿产的分布",
+   "level": 5,
+   "href": "/czdl/zsd230226",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230227",
+   "parent_id": "230223",
+   "title": "我国非金属矿产的分布",
+   "level": 5,
+   "href": "/czdl/zsd230227",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230228",
+   "parent_id": "230221",
+   "title": "我国矿产资源的开发及保护",
+   "level": 4,
+   "href": "/czdl/zsd230228",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "230229",
+   "parent_id": "230228",
+   "title": "我国矿产资源的开发",
+   "level": 5,
+   "href": "/czdl/zsd230229",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "230230",
+   "parent_id": "230228",
+   "title": "我国矿产资源的保护",
+   "level": 5,
+   "href": "/czdl/zsd230230",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22812",
+   "parent_id": "22712",
+   "title": "海洋资源",
+   "level": 3,
+   "href": "/czdl/zsd22812",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22841",
+   "parent_id": "22812",
+   "title": "我国的海洋资源",
+   "level": 4,
+   "href": "/czdl/zsd22841",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22842",
+   "parent_id": "22812",
+   "title": "我国海洋资源的利用保护",
+   "level": 4,
+   "href": "/czdl/zsd22842",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22843",
+   "parent_id": "22842",
+   "title": "我国海洋资源利用中的问题",
+   "level": 5,
+   "href": "/czdl/zsd22843",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22844",
+   "parent_id": "22842",
+   "title": "我国海洋资源的开发保护",
+   "level": 5,
+   "href": "/czdl/zsd22844",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22713",
+   "parent_id": "22301",
+   "title": "中国的经济发展",
+   "level": 2,
+   "href": "/czdl/zsd22713",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22845",
+   "parent_id": "22713",
+   "title": "交通运输业",
+   "level": 3,
+   "href": "/czdl/zsd22845",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154775",
+   "parent_id": "22845",
+   "title": "交通运输与通信的重要性",
+   "level": 4,
+   "href": "/czdl/zsd154775",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154776",
+   "parent_id": "154775",
+   "title": "交通、通信与生产",
+   "level": 5,
+   "href": "/czdl/zsd154776",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154777",
+   "parent_id": "154775",
+   "title": "交通、通信与生活",
+   "level": 5,
+   "href": "/czdl/zsd154777",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22851",
+   "parent_id": "22845",
+   "title": "交通运输方式的选择",
+   "level": 4,
+   "href": "/czdl/zsd22851",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22852",
+   "parent_id": "22845",
+   "title": "我国铁路干线的分布",
+   "level": 4,
+   "href": "/czdl/zsd22852",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22854",
+   "parent_id": "22852",
+   "title": "我国铁路运输的地位与发展",
+   "level": 5,
+   "href": "/czdl/zsd22854",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22855",
+   "parent_id": "22852",
+   "title": "我国的重要铁路干线",
+   "level": 5,
+   "href": "/czdl/zsd22855",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22856",
+   "parent_id": "22852",
+   "title": "我国的重要铁路枢纽",
+   "level": 5,
+   "href": "/czdl/zsd22856",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22857",
+   "parent_id": "22852",
+   "title": "我国铁路网的地域发展差异",
+   "level": 5,
+   "href": "/czdl/zsd22857",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22853",
+   "parent_id": "22845",
+   "title": "我国的公路、水路和航空运输",
+   "level": 4,
+   "href": "/czdl/zsd22853",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22858",
+   "parent_id": "22853",
+   "title": "我国的主要公路运输及其干线",
+   "level": 5,
+   "href": "/czdl/zsd22858",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22859",
+   "parent_id": "22853",
+   "title": "我国的水路运输及重要航道",
+   "level": 5,
+   "href": "/czdl/zsd22859",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22860",
+   "parent_id": "22853",
+   "title": "我国的航空运输",
+   "level": 5,
+   "href": "/czdl/zsd22860",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22846",
+   "parent_id": "22713",
+   "title": "农业",
+   "level": 3,
+   "href": "/czdl/zsd22846",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22861",
+   "parent_id": "22846",
+   "title": "农业及其重要性",
+   "level": 4,
+   "href": "/czdl/zsd22861",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22865",
+   "parent_id": "22861",
+   "title": "主要农业部门",
+   "level": 5,
+   "href": "/czdl/zsd22865",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22866",
+   "parent_id": "22861",
+   "title": "我国农业的重要性与现状",
+   "level": 5,
+   "href": "/czdl/zsd22866",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22862",
+   "parent_id": "22846",
+   "title": "我国农业的地区分布",
+   "level": 4,
+   "href": "/czdl/zsd22862",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22867",
+   "parent_id": "22862",
+   "title": "我国农业地区分布的东西差异",
+   "level": 5,
+   "href": "/czdl/zsd22867",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22868",
+   "parent_id": "22862",
+   "title": "我国农业地区分布的南北差异",
+   "level": 5,
+   "href": "/czdl/zsd22868",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22869",
+   "parent_id": "22862",
+   "title": "我国农作物的分布",
+   "level": 5,
+   "href": "/czdl/zsd22869",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22863",
+   "parent_id": "22846",
+   "title": "因地制宜发展农业",
+   "level": 4,
+   "href": "/czdl/zsd22863",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22870",
+   "parent_id": "22863",
+   "title": "农业发展的原则因地制宜",
+   "level": 5,
+   "href": "/czdl/zsd22870",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22871",
+   "parent_id": "22863",
+   "title": "影响农业生产的自然与社会经济因素",
+   "level": 5,
+   "href": "/czdl/zsd22871",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22864",
+   "parent_id": "22846",
+   "title": "走科技强农之路",
+   "level": 4,
+   "href": "/czdl/zsd22864",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22872",
+   "parent_id": "22864",
+   "title": "我国农业发展的成就",
+   "level": 5,
+   "href": "/czdl/zsd22872",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22873",
+   "parent_id": "22864",
+   "title": "科技对农业发展的影响",
+   "level": 5,
+   "href": "/czdl/zsd22873",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22874",
+   "parent_id": "22864",
+   "title": "我国农业的发展方向",
+   "level": 5,
+   "href": "/czdl/zsd22874",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22847",
+   "parent_id": "22713",
+   "title": "工业",
+   "level": 3,
+   "href": "/czdl/zsd22847",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22875",
+   "parent_id": "22847",
+   "title": "工业的重要性及其分类、地位",
+   "level": 4,
+   "href": "/czdl/zsd22875",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22876",
+   "parent_id": "22847",
+   "title": "我国工业的分布",
+   "level": 4,
+   "href": "/czdl/zsd22876",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22878",
+   "parent_id": "22876",
+   "title": "我国工业的发展状况",
+   "level": 5,
+   "href": "/czdl/zsd22878",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22879",
+   "parent_id": "22876",
+   "title": "我国工业中心的发展变化",
+   "level": 5,
+   "href": "/czdl/zsd22879",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22880",
+   "parent_id": "22876",
+   "title": "我国工业分布的基本格局",
+   "level": 5,
+   "href": "/czdl/zsd22880",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22881",
+   "parent_id": "22876",
+   "title": "我国四大工业基地",
+   "level": 5,
+   "href": "/czdl/zsd22881",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22882",
+   "parent_id": "22876",
+   "title": "我国传统工业部门的分布",
+   "level": 5,
+   "href": "/czdl/zsd22882",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22877",
+   "parent_id": "22847",
+   "title": "我国的高新技术产业",
+   "level": 4,
+   "href": "/czdl/zsd22877",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22883",
+   "parent_id": "22877",
+   "title": "我国高新技术产业的发展",
+   "level": 5,
+   "href": "/czdl/zsd22883",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22884",
+   "parent_id": "22877",
+   "title": "我国高新技术产业开发区的分布",
+   "level": 5,
+   "href": "/czdl/zsd22884",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22848",
+   "parent_id": "22713",
+   "title": "地方文化特色与旅游",
+   "level": 3,
+   "href": "/czdl/zsd22848",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22885",
+   "parent_id": "22848",
+   "title": "自然地理环境对文化的影响",
+   "level": 4,
+   "href": "/czdl/zsd22885",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22888",
+   "parent_id": "22885",
+   "title": "自然地理环境对建筑的影响",
+   "level": 5,
+   "href": "/czdl/zsd22888",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22889",
+   "parent_id": "22885",
+   "title": "自然地理环境对饮食的影响",
+   "level": 5,
+   "href": "/czdl/zsd22889",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22890",
+   "parent_id": "22885",
+   "title": "自然地理环境对服饰的影响",
+   "level": 5,
+   "href": "/czdl/zsd22890",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22886",
+   "parent_id": "22848",
+   "title": "地方文化特色对旅游业的影响",
+   "level": 4,
+   "href": "/czdl/zsd22886",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22887",
+   "parent_id": "22848",
+   "title": "设计旅游方案",
+   "level": 4,
+   "href": "/czdl/zsd22887",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22850",
+   "parent_id": "22713",
+   "title": "环境问题与环境保护",
+   "level": 3,
+   "href": "/czdl/zsd22850",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22893",
+   "parent_id": "22850",
+   "title": "我国城市的环境问题及其优化",
+   "level": 4,
+   "href": "/czdl/zsd22893",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22894",
+   "parent_id": "22850",
+   "title": "我国农牧区的环境问题及其治理",
+   "level": 4,
+   "href": "/czdl/zsd22894",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22714",
+   "parent_id": "22301",
+   "title": "中国的地理差异",
+   "level": 2,
+   "href": "/czdl/zsd22714",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "184881",
+   "parent_id": "22714",
+   "title": "我国地理差异显著",
+   "level": 3,
+   "href": "/czdl/zsd184881",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "184882",
+   "parent_id": "184881",
+   "title": "自然环境差异显著",
+   "level": 4,
+   "href": "/czdl/zsd184882",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "184883",
+   "parent_id": "184881",
+   "title": "人类活动差异显著",
+   "level": 4,
+   "href": "/czdl/zsd184883",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "184884",
+   "parent_id": "184881",
+   "title": "我国重要的地理分界线——秦岭-淮河一线",
+   "level": 4,
+   "href": "/czdl/zsd184884",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22895",
+   "parent_id": "22714",
+   "title": "四大地理区域及其划分",
+   "level": 3,
+   "href": "/czdl/zsd22895",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22900",
+   "parent_id": "22895",
+   "title": "四大地理区域的分界线",
+   "level": 4,
+   "href": "/czdl/zsd22900",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22901",
+   "parent_id": "22895",
+   "title": "四大地理区域",
+   "level": 4,
+   "href": "/czdl/zsd22901",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22896",
+   "parent_id": "22714",
+   "title": "北方地区",
+   "level": 3,
+   "href": "/czdl/zsd22896",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22902",
+   "parent_id": "22896",
+   "title": "我国北方地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22902",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22903",
+   "parent_id": "22896",
+   "title": "我国北方地区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22903",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22907",
+   "parent_id": "22903",
+   "title": "我国北方地区的地形",
+   "level": 5,
+   "href": "/czdl/zsd22907",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22908",
+   "parent_id": "22903",
+   "title": "我国北方地区的河流",
+   "level": 5,
+   "href": "/czdl/zsd22908",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22909",
+   "parent_id": "22903",
+   "title": "我国北方地区的气候",
+   "level": 5,
+   "href": "/czdl/zsd22909",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22910",
+   "parent_id": "22903",
+   "title": "我国北方地区的土壤",
+   "level": 5,
+   "href": "/czdl/zsd22910",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22904",
+   "parent_id": "22896",
+   "title": "我国北方地区的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22904",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22911",
+   "parent_id": "22904",
+   "title": "我国北方地区的旱作农业",
+   "level": 5,
+   "href": "/czdl/zsd22911",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22912",
+   "parent_id": "22904",
+   "title": "我国北方地区的能源矿产与工业",
+   "level": 5,
+   "href": "/czdl/zsd22912",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22905",
+   "parent_id": "22896",
+   "title": "华北地区的缺水问题",
+   "level": 4,
+   "href": "/czdl/zsd22905",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22913",
+   "parent_id": "22905",
+   "title": "华北地区春旱的成因",
+   "level": 5,
+   "href": "/czdl/zsd22913",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22914",
+   "parent_id": "22905",
+   "title": "华北地区春旱的影响",
+   "level": 5,
+   "href": "/czdl/zsd22914",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22915",
+   "parent_id": "22905",
+   "title": "华北地区缺水的解决措施",
+   "level": 5,
+   "href": "/czdl/zsd22915",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22897",
+   "parent_id": "22714",
+   "title": "南方地区",
+   "level": 3,
+   "href": "/czdl/zsd22897",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22916",
+   "parent_id": "22897",
+   "title": "我国南方地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22916",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22917",
+   "parent_id": "22897",
+   "title": "我国南方地区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22917",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22920",
+   "parent_id": "22917",
+   "title": "我国南方地区的地形",
+   "level": 5,
+   "href": "/czdl/zsd22920",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22921",
+   "parent_id": "22917",
+   "title": "我国南方地区的河流",
+   "level": 5,
+   "href": "/czdl/zsd22921",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22922",
+   "parent_id": "22917",
+   "title": "我国南方地区的气候",
+   "level": 5,
+   "href": "/czdl/zsd22922",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22923",
+   "parent_id": "22917",
+   "title": "我国南方地区的土壤",
+   "level": 5,
+   "href": "/czdl/zsd22923",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22918",
+   "parent_id": "22897",
+   "title": "我国南方地区的水田农业区",
+   "level": 4,
+   "href": "/czdl/zsd22918",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22924",
+   "parent_id": "22918",
+   "title": "我国南方地区的耕地类型",
+   "level": 5,
+   "href": "/czdl/zsd22924",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22925",
+   "parent_id": "22918",
+   "title": "我国南方地区发展农业的自然条件",
+   "level": 5,
+   "href": "/czdl/zsd22925",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22926",
+   "parent_id": "22918",
+   "title": "我国南方地区的农业",
+   "level": 5,
+   "href": "/czdl/zsd22926",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22898",
+   "parent_id": "22714",
+   "title": "西北地区",
+   "level": 3,
+   "href": "/czdl/zsd22898",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22927",
+   "parent_id": "22898",
+   "title": "我国西北地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22927",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22928",
+   "parent_id": "22898",
+   "title": "我国西北地区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22928",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22931",
+   "parent_id": "22928",
+   "title": "我国西北地区的地形",
+   "level": 5,
+   "href": "/czdl/zsd22931",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22932",
+   "parent_id": "22928",
+   "title": "我国西北地区的河流",
+   "level": 5,
+   "href": "/czdl/zsd22932",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22933",
+   "parent_id": "22928",
+   "title": "我国西北地区的气候",
+   "level": 5,
+   "href": "/czdl/zsd22933",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22929",
+   "parent_id": "22898",
+   "title": "我国西北地区的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22929",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22934",
+   "parent_id": "22929",
+   "title": "我国西北地区的牧业",
+   "level": 5,
+   "href": "/czdl/zsd22934",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22935",
+   "parent_id": "22929",
+   "title": "我国西北地区的灌溉农业",
+   "level": 5,
+   "href": "/czdl/zsd22935",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22936",
+   "parent_id": "22929",
+   "title": "我国西北地区的能源基地",
+   "level": 5,
+   "href": "/czdl/zsd22936",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22899",
+   "parent_id": "22714",
+   "title": "青藏地区",
+   "level": 3,
+   "href": "/czdl/zsd22899",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22937",
+   "parent_id": "22899",
+   "title": "青藏地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22937",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22938",
+   "parent_id": "22899",
+   "title": "青藏地区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22938",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22941",
+   "parent_id": "22938",
+   "title": "青藏地区的地形",
+   "level": 5,
+   "href": "/czdl/zsd22941",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22942",
+   "parent_id": "22938",
+   "title": "青藏地区的河流",
+   "level": 5,
+   "href": "/czdl/zsd22942",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22943",
+   "parent_id": "22938",
+   "title": "青藏地区的气候",
+   "level": 5,
+   "href": "/czdl/zsd22943",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22944",
+   "parent_id": "22938",
+   "title": "青藏地区的资源",
+   "level": 5,
+   "href": "/czdl/zsd22944",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22945",
+   "parent_id": "22938",
+   "title": "青藏铁路",
+   "level": 5,
+   "href": "/czdl/zsd22945",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22939",
+   "parent_id": "22899",
+   "title": "青藏地区的高寒牧区和河谷农业区",
+   "level": 4,
+   "href": "/czdl/zsd22939",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22946",
+   "parent_id": "22939",
+   "title": "青藏地区高寒牧区",
+   "level": 5,
+   "href": "/czdl/zsd22946",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22947",
+   "parent_id": "22939",
+   "title": "青藏地区河谷农业",
+   "level": 5,
+   "href": "/czdl/zsd22947",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22948",
+   "parent_id": "22939",
+   "title": "青藏地区的民俗",
+   "level": 5,
+   "href": "/czdl/zsd22948",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22715",
+   "parent_id": "22301",
+   "title": "认识省际区域",
+   "level": 2,
+   "href": "/czdl/zsd22715",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22949",
+   "parent_id": "22715",
+   "title": "东北三省",
+   "level": 3,
+   "href": "/czdl/zsd22949",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22954",
+   "parent_id": "22949",
+   "title": "东北三省的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22954",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22955",
+   "parent_id": "22949",
+   "title": "东北三省的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22955",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22959",
+   "parent_id": "22955",
+   "title": "东北三省的地形",
+   "level": 5,
+   "href": "/czdl/zsd22959",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22960",
+   "parent_id": "22955",
+   "title": "东北三省的河流",
+   "level": 5,
+   "href": "/czdl/zsd22960",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22961",
+   "parent_id": "22955",
+   "title": "东北三省的气候",
+   "level": 5,
+   "href": "/czdl/zsd22961",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22956",
+   "parent_id": "22949",
+   "title": "东北三省的农业",
+   "level": 4,
+   "href": "/czdl/zsd22956",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22962",
+   "parent_id": "22956",
+   "title": "东北三省气候条件对农业的影响",
+   "level": 5,
+   "href": "/czdl/zsd22962",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22963",
+   "parent_id": "22956",
+   "title": "东北三省商品粮基地的地位与条件",
+   "level": 5,
+   "href": "/czdl/zsd22963",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22964",
+   "parent_id": "22956",
+   "title": "东北三省的生态环境问题及解决措施",
+   "level": 5,
+   "href": "/czdl/zsd22964",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22957",
+   "parent_id": "22949",
+   "title": "东北三省的工业",
+   "level": 4,
+   "href": "/czdl/zsd22957",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22965",
+   "parent_id": "22957",
+   "title": "东北三省矿产资源的特点与分布",
+   "level": 5,
+   "href": "/czdl/zsd22965",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22966",
+   "parent_id": "22957",
+   "title": "东北三省的工业分布与重要工业城市",
+   "level": 5,
+   "href": "/czdl/zsd22966",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22967",
+   "parent_id": "22957",
+   "title": "东北三省的工业发展特点",
+   "level": 5,
+   "href": "/czdl/zsd22967",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22968",
+   "parent_id": "22957",
+   "title": "东北重工业基地的衰落原因及应对措施",
+   "level": 5,
+   "href": "/czdl/zsd22968",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154778",
+   "parent_id": "22949",
+   "title": "东北地区的人口与城市",
+   "level": 4,
+   "href": "/czdl/zsd154778",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22950",
+   "parent_id": "22715",
+   "title": "黄土高原",
+   "level": 3,
+   "href": "/czdl/zsd22950",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22969",
+   "parent_id": "22950",
+   "title": "黄土高原的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22969",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22970",
+   "parent_id": "22950",
+   "title": "黄土高原的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22970",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "213447",
+   "parent_id": "22970",
+   "title": "黄土高原的地形",
+   "level": 5,
+   "href": "/czdl/zsd213447",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22976",
+   "parent_id": "22970",
+   "title": "黄土高原的河流",
+   "level": 5,
+   "href": "/czdl/zsd22976",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22971",
+   "parent_id": "22950",
+   "title": "黄土高原的文化",
+   "level": 4,
+   "href": "/czdl/zsd22971",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22977",
+   "parent_id": "22971",
+   "title": "黄土高原是文明的摇篮",
+   "level": 5,
+   "href": "/czdl/zsd22977",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22978",
+   "parent_id": "22971",
+   "title": "黄土风情与自然环境的关系",
+   "level": 5,
+   "href": "/czdl/zsd22978",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22972",
+   "parent_id": "22950",
+   "title": "黄土高原的成因",
+   "level": 4,
+   "href": "/czdl/zsd22972",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22979",
+   "parent_id": "22972",
+   "title": "黄土高原“风成说”",
+   "level": 5,
+   "href": "/czdl/zsd22979",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22980",
+   "parent_id": "22972",
+   "title": "黄土地貌景观的形成",
+   "level": 5,
+   "href": "/czdl/zsd22980",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22973",
+   "parent_id": "22950",
+   "title": "黄土高原水土流失",
+   "level": 4,
+   "href": "/czdl/zsd22973",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22981",
+   "parent_id": "22973",
+   "title": "黄土高原水土流失的原因",
+   "level": 5,
+   "href": "/czdl/zsd22981",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22982",
+   "parent_id": "22973",
+   "title": "黄土高原水土流失的危害",
+   "level": 5,
+   "href": "/czdl/zsd22982",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22983",
+   "parent_id": "22973",
+   "title": "黄土高原水土流失的治理",
+   "level": 5,
+   "href": "/czdl/zsd22983",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22974",
+   "parent_id": "22950",
+   "title": "黄土高原能源资源的开发利用",
+   "level": 4,
+   "href": "/czdl/zsd22974",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22984",
+   "parent_id": "22974",
+   "title": "黄土高原能源资源的开发",
+   "level": 5,
+   "href": "/czdl/zsd22984",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22985",
+   "parent_id": "22974",
+   "title": "黄土高原能源资源开发中的环境保护",
+   "level": 5,
+   "href": "/czdl/zsd22985",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22951",
+   "parent_id": "22715",
+   "title": "长江沿江地带",
+   "level": 3,
+   "href": "/czdl/zsd22951",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22986",
+   "parent_id": "22951",
+   "title": "长江沿江地带及相关地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22986",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22990",
+   "parent_id": "22986",
+   "title": "长江沿江地带的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd22990",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22991",
+   "parent_id": "22986",
+   "title": "长江中下游平原的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd22991",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22993",
+   "parent_id": "22986",
+   "title": "沪宁杭地区的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd22993",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22994",
+   "parent_id": "22986",
+   "title": "长江中下游地区地理位置的重要性",
+   "level": 5,
+   "href": "/czdl/zsd22994",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22987",
+   "parent_id": "22951",
+   "title": "长江沿江地带的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd22987",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22995",
+   "parent_id": "22987",
+   "title": "长江沿江地带的地形",
+   "level": 5,
+   "href": "/czdl/zsd22995",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22996",
+   "parent_id": "22987",
+   "title": "长江沿江地带的河湖",
+   "level": 5,
+   "href": "/czdl/zsd22996",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22997",
+   "parent_id": "22987",
+   "title": "长江沿江地带的气候",
+   "level": 5,
+   "href": "/czdl/zsd22997",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22988",
+   "parent_id": "22951",
+   "title": "长江沿江地带的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd22988",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22998",
+   "parent_id": "22988",
+   "title": "长江沿江地带的农业",
+   "level": 5,
+   "href": "/czdl/zsd22998",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22999",
+   "parent_id": "22988",
+   "title": "长江沿江地带的工业",
+   "level": 5,
+   "href": "/czdl/zsd22999",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23000",
+   "parent_id": "22988",
+   "title": "长江沿江地带的城市与人口",
+   "level": 5,
+   "href": "/czdl/zsd23000",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23001",
+   "parent_id": "22988",
+   "title": "长江沿江地带的旅游业",
+   "level": 5,
+   "href": "/czdl/zsd23001",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154779",
+   "parent_id": "22715",
+   "title": "长江三角洲地区",
+   "level": 3,
+   "href": "/czdl/zsd154779",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "22992",
+   "parent_id": "154779",
+   "title": "长江三角洲地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd22992",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154780",
+   "parent_id": "154779",
+   "title": "长江三角洲地区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd154780",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154781",
+   "parent_id": "154780",
+   "title": "长江三角洲的地形",
+   "level": 5,
+   "href": "/czdl/zsd154781",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154782",
+   "parent_id": "154780",
+   "title": "长江三角洲的河湖",
+   "level": 5,
+   "href": "/czdl/zsd154782",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154783",
+   "parent_id": "154780",
+   "title": "长江三角洲的气候",
+   "level": 5,
+   "href": "/czdl/zsd154783",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154784",
+   "parent_id": "154779",
+   "title": "长江三角洲地区的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd154784",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "154785",
+   "parent_id": "154784",
+   "title": "长江三角洲地区的农业",
+   "level": 5,
+   "href": "/czdl/zsd154785",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23002",
+   "parent_id": "154784",
+   "title": "长江三角洲地区交通发展及其影响",
+   "level": 5,
+   "href": "/czdl/zsd23002",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154786",
+   "parent_id": "154784",
+   "title": "长江三角洲地区的城市及城市群",
+   "level": 5,
+   "href": "/czdl/zsd154786",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "154787",
+   "parent_id": "154784",
+   "title": "长江三角洲地区的水乡文化特色及旅游",
+   "level": 5,
+   "href": "/czdl/zsd154787",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22952",
+   "parent_id": "22715",
+   "title": "珠江三角洲地区",
+   "level": 3,
+   "href": "/czdl/zsd22952",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23003",
+   "parent_id": "22952",
+   "title": "珠江三角洲地区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd23003",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23004",
+   "parent_id": "22952",
+   "title": "珠江三角洲地区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23004",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23006",
+   "parent_id": "23004",
+   "title": "珠江三角洲地区的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd23006",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23007",
+   "parent_id": "23004",
+   "title": "珠江三角洲地区的气候",
+   "level": 5,
+   "href": "/czdl/zsd23007",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23005",
+   "parent_id": "22952",
+   "title": "珠江三角洲地区的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd23005",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23008",
+   "parent_id": "23005",
+   "title": "珠江三角洲地区的农业",
+   "level": 5,
+   "href": "/czdl/zsd23008",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23009",
+   "parent_id": "23005",
+   "title": "珠江三角洲地区的对外开放",
+   "level": 5,
+   "href": "/czdl/zsd23009",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23010",
+   "parent_id": "23005",
+   "title": "珠江三角洲地区的外向型经济",
+   "level": 5,
+   "href": "/czdl/zsd23010",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23011",
+   "parent_id": "23005",
+   "title": "珠江三角洲地区的主要城市",
+   "level": 5,
+   "href": "/czdl/zsd23011",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223713",
+   "parent_id": "22952",
+   "title": "粤港澳大湾区",
+   "level": 4,
+   "href": "/czdl/zsd223713",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "223714",
+   "parent_id": "223713",
+   "title": "粤港澳大湾区的位置和范围",
+   "level": 5,
+   "href": "/czdl/zsd223714",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223715",
+   "parent_id": "223713",
+   "title": "粤港澳大湾区的经济和产业",
+   "level": 5,
+   "href": "/czdl/zsd223715",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223716",
+   "parent_id": "223713",
+   "title": "粤港澳大湾区的城市联系",
+   "level": 5,
+   "href": "/czdl/zsd223716",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "223717",
+   "parent_id": "223713",
+   "title": "粤港澳大湾区的交通发展",
+   "level": 5,
+   "href": "/czdl/zsd223717",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22953",
+   "parent_id": "22715",
+   "title": "四川盆地和川西高原山地",
+   "level": 3,
+   "href": "/czdl/zsd22953",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23012",
+   "parent_id": "22953",
+   "title": "四川盆地和川西高原山地的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd23012",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23015",
+   "parent_id": "23012",
+   "title": "四川盆地的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd23015",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23016",
+   "parent_id": "23012",
+   "title": "四川省的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd23016",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23017",
+   "parent_id": "23012",
+   "title": "成渝地区的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd23017",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23013",
+   "parent_id": "22953",
+   "title": "四川盆地和川西高原山地的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23013",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23018",
+   "parent_id": "23013",
+   "title": "川西高原山地的地形",
+   "level": 5,
+   "href": "/czdl/zsd23018",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23019",
+   "parent_id": "23013",
+   "title": "川西高原山地的河流",
+   "level": 5,
+   "href": "/czdl/zsd23019",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23020",
+   "parent_id": "23013",
+   "title": "川西高原山地的气候",
+   "level": 5,
+   "href": "/czdl/zsd23020",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23021",
+   "parent_id": "23013",
+   "title": "川西高原山地的自然灾害",
+   "level": 5,
+   "href": "/czdl/zsd23021",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23022",
+   "parent_id": "23013",
+   "title": "四川盆地的地形",
+   "level": 5,
+   "href": "/czdl/zsd23022",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23023",
+   "parent_id": "23013",
+   "title": "四川盆地的河流",
+   "level": 5,
+   "href": "/czdl/zsd23023",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23024",
+   "parent_id": "23013",
+   "title": "四川盆地的气候",
+   "level": 5,
+   "href": "/czdl/zsd23024",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23025",
+   "parent_id": "23013",
+   "title": "四川盆地的自然灾害",
+   "level": 5,
+   "href": "/czdl/zsd23025",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23014",
+   "parent_id": "22953",
+   "title": "四川盆地和川西高原山地的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd23014",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23026",
+   "parent_id": "23014",
+   "title": "四川盆地和川西高原山地的资源",
+   "level": 5,
+   "href": "/czdl/zsd23026",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23027",
+   "parent_id": "23014",
+   "title": "四川盆地和川西高原山地的交通",
+   "level": 5,
+   "href": "/czdl/zsd23027",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23028",
+   "parent_id": "23014",
+   "title": "成渝地区的地方文化与旅游",
+   "level": 5,
+   "href": "/czdl/zsd23028",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23029",
+   "parent_id": "23014",
+   "title": "成渝经济区的工农业",
+   "level": 5,
+   "href": "/czdl/zsd23029",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23030",
+   "parent_id": "23014",
+   "title": "成渝地区的主要城市",
+   "level": 5,
+   "href": "/czdl/zsd23030",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23031",
+   "parent_id": "23014",
+   "title": "四川盆地和川西高原山地的生态问题与生态建设",
+   "level": 5,
+   "href": "/czdl/zsd23031",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22716",
+   "parent_id": "22301",
+   "title": "认识省级行政区域",
+   "level": 2,
+   "href": "/czdl/zsd22716",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23032",
+   "parent_id": "22716",
+   "title": "北京",
+   "level": 3,
+   "href": "/czdl/zsd23032",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23039",
+   "parent_id": "23032",
+   "title": "北京的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd23039",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23040",
+   "parent_id": "23032",
+   "title": "北京的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23040",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23042",
+   "parent_id": "23040",
+   "title": "北京的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd23042",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23043",
+   "parent_id": "23040",
+   "title": "北京的气候",
+   "level": 5,
+   "href": "/czdl/zsd23043",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23041",
+   "parent_id": "23032",
+   "title": "北京的发展",
+   "level": 4,
+   "href": "/czdl/zsd23041",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23044",
+   "parent_id": "23041",
+   "title": "北京的城市职能",
+   "level": 5,
+   "href": "/czdl/zsd23044",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23045",
+   "parent_id": "23041",
+   "title": "古都北京及其保护",
+   "level": 5,
+   "href": "/czdl/zsd23045",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23046",
+   "parent_id": "23041",
+   "title": "现代北京的建设与发展",
+   "level": 5,
+   "href": "/czdl/zsd23046",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23033",
+   "parent_id": "22716",
+   "title": "香港和澳门",
+   "level": 3,
+   "href": "/czdl/zsd23033",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23047",
+   "parent_id": "23033",
+   "title": "特别行政区",
+   "level": 4,
+   "href": "/czdl/zsd23047",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23048",
+   "parent_id": "23033",
+   "title": "香港",
+   "level": 4,
+   "href": "/czdl/zsd23048",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23051",
+   "parent_id": "23048",
+   "title": "香港的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd23051",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23052",
+   "parent_id": "23048",
+   "title": "香港的地形",
+   "level": 5,
+   "href": "/czdl/zsd23052",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23053",
+   "parent_id": "23048",
+   "title": "香港城市用地开发与生态环境保护",
+   "level": 5,
+   "href": "/czdl/zsd23053",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23054",
+   "parent_id": "23048",
+   "title": "香港的交通运输",
+   "level": 5,
+   "href": "/czdl/zsd23054",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23055",
+   "parent_id": "23048",
+   "title": "香港的经济",
+   "level": 5,
+   "href": "/czdl/zsd23055",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23049",
+   "parent_id": "23033",
+   "title": "澳门",
+   "level": 4,
+   "href": "/czdl/zsd23049",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23056",
+   "parent_id": "23049",
+   "title": "澳门的位置范围",
+   "level": 5,
+   "href": "/czdl/zsd23056",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23057",
+   "parent_id": "23049",
+   "title": "澳门填海造陆",
+   "level": 5,
+   "href": "/czdl/zsd23057",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23058",
+   "parent_id": "23049",
+   "title": "澳门的经济",
+   "level": 5,
+   "href": "/czdl/zsd23058",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23050",
+   "parent_id": "23033",
+   "title": "港澳与祖国内地的密切联系",
+   "level": 4,
+   "href": "/czdl/zsd23050",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23034",
+   "parent_id": "22716",
+   "title": "台湾省",
+   "level": 3,
+   "href": "/czdl/zsd23034",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23059",
+   "parent_id": "23034",
+   "title": "台湾省的位置、范围",
+   "level": 4,
+   "href": "/czdl/zsd23059",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23064",
+   "parent_id": "23059",
+   "title": "台湾省的位置",
+   "level": 5,
+   "href": "/czdl/zsd23064",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23065",
+   "parent_id": "23059",
+   "title": "台湾省的范围、面积",
+   "level": 5,
+   "href": "/czdl/zsd23065",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23060",
+   "parent_id": "23034",
+   "title": "台湾省的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23060",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23066",
+   "parent_id": "23060",
+   "title": "台湾省的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd23066",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23067",
+   "parent_id": "23060",
+   "title": "台湾省的气候",
+   "level": 5,
+   "href": "/czdl/zsd23067",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23068",
+   "parent_id": "23060",
+   "title": "台湾省的自然资源",
+   "level": 5,
+   "href": "/czdl/zsd23068",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "211692",
+   "parent_id": "23060",
+   "title": "台湾的自然地理环境与农业",
+   "level": 5,
+   "href": "/czdl/zsd211692",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23061",
+   "parent_id": "23034",
+   "title": "台湾省的人口",
+   "level": 4,
+   "href": "/czdl/zsd23061",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23069",
+   "parent_id": "23061",
+   "title": "台湾省的人口分布特征",
+   "level": 5,
+   "href": "/czdl/zsd23069",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23070",
+   "parent_id": "23061",
+   "title": "台湾省的人口构成",
+   "level": 5,
+   "href": "/czdl/zsd23070",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23062",
+   "parent_id": "23034",
+   "title": "台湾省的外向型经济",
+   "level": 4,
+   "href": "/czdl/zsd23062",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23071",
+   "parent_id": "23062",
+   "title": "台湾省经济发展历程和特点",
+   "level": 5,
+   "href": "/czdl/zsd23071",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23072",
+   "parent_id": "23062",
+   "title": "台湾外向型经济发展的有利因素",
+   "level": 5,
+   "href": "/czdl/zsd23072",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23035",
+   "parent_id": "22716",
+   "title": "新疆维吾尔自治区",
+   "level": 3,
+   "href": "/czdl/zsd23035",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23073",
+   "parent_id": "23035",
+   "title": "新疆维吾尔自治区的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd23073",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23074",
+   "parent_id": "23035",
+   "title": "新疆维吾尔自治区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23074",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23077",
+   "parent_id": "23074",
+   "title": "新疆维吾尔自治区的地形、河流",
+   "level": 5,
+   "href": "/czdl/zsd23077",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23078",
+   "parent_id": "23074",
+   "title": "新疆维吾尔自治区的气候",
+   "level": 5,
+   "href": "/czdl/zsd23078",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23075",
+   "parent_id": "23035",
+   "title": "新疆维吾尔自治区的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd23075",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23079",
+   "parent_id": "23075",
+   "title": "新疆维吾尔自治区的绿洲农业",
+   "level": 5,
+   "href": "/czdl/zsd23079",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23080",
+   "parent_id": "23075",
+   "title": "新疆维吾尔自治区的能源开发",
+   "level": 5,
+   "href": "/czdl/zsd23080",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23081",
+   "parent_id": "23075",
+   "title": "新疆维吾尔自治区的边境贸易和旅游业",
+   "level": 5,
+   "href": "/czdl/zsd23081",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23082",
+   "parent_id": "23075",
+   "title": "新疆维吾尔自治区的民族",
+   "level": 5,
+   "href": "/czdl/zsd23082",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23076",
+   "parent_id": "23035",
+   "title": "新疆维吾尔自治区的生态保护",
+   "level": 4,
+   "href": "/czdl/zsd23076",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23036",
+   "parent_id": "22716",
+   "title": "陕西省",
+   "level": 3,
+   "href": "/czdl/zsd23036",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23083",
+   "parent_id": "23036",
+   "title": "陕西省的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd23083",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23084",
+   "parent_id": "23036",
+   "title": "陕西省的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23084",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23086",
+   "parent_id": "23084",
+   "title": "陕西省的地形",
+   "level": 5,
+   "href": "/czdl/zsd23086",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23087",
+   "parent_id": "23084",
+   "title": "陕西省的河流",
+   "level": 5,
+   "href": "/czdl/zsd23087",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23088",
+   "parent_id": "23084",
+   "title": "陕西省的气候",
+   "level": 5,
+   "href": "/czdl/zsd23088",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23085",
+   "parent_id": "23036",
+   "title": "陕西省的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd23085",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23089",
+   "parent_id": "23085",
+   "title": "陕西省的交通",
+   "level": 5,
+   "href": "/czdl/zsd23089",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23090",
+   "parent_id": "23085",
+   "title": "陕西省的农业",
+   "level": 5,
+   "href": "/czdl/zsd23090",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23091",
+   "parent_id": "23085",
+   "title": "陕西省的工业",
+   "level": 5,
+   "href": "/czdl/zsd23091",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23092",
+   "parent_id": "23085",
+   "title": "陕西省的旅游业",
+   "level": 5,
+   "href": "/czdl/zsd23092",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23037",
+   "parent_id": "22716",
+   "title": "贵州省",
+   "level": 3,
+   "href": "/czdl/zsd23037",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23093",
+   "parent_id": "23037",
+   "title": "贵州省的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd23093",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23094",
+   "parent_id": "23037",
+   "title": "贵州省的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23094",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23097",
+   "parent_id": "23094",
+   "title": "贵州省的地形地貌",
+   "level": 5,
+   "href": "/czdl/zsd23097",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23098",
+   "parent_id": "23094",
+   "title": "贵州省的河流",
+   "level": 5,
+   "href": "/czdl/zsd23098",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23099",
+   "parent_id": "23094",
+   "title": "贵州省的气候",
+   "level": 5,
+   "href": "/czdl/zsd23099",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23095",
+   "parent_id": "23037",
+   "title": "贵州省的自然灾害和环境问题",
+   "level": 4,
+   "href": "/czdl/zsd23095",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23100",
+   "parent_id": "23095",
+   "title": "贵州省的自然灾害",
+   "level": 5,
+   "href": "/czdl/zsd23100",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23101",
+   "parent_id": "23095",
+   "title": "贵州省的环境问题和环境保护",
+   "level": 5,
+   "href": "/czdl/zsd23101",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23096",
+   "parent_id": "23037",
+   "title": "贵州省的资源开发",
+   "level": 4,
+   "href": "/czdl/zsd23096",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23102",
+   "parent_id": "23096",
+   "title": "贵州省的水资源开发",
+   "level": 5,
+   "href": "/czdl/zsd23102",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23103",
+   "parent_id": "23096",
+   "title": "贵州省的煤炭资源开发",
+   "level": 5,
+   "href": "/czdl/zsd23103",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23104",
+   "parent_id": "23096",
+   "title": "贵州省的旅游资源开发",
+   "level": 5,
+   "href": "/czdl/zsd23104",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272860",
+   "parent_id": "22716",
+   "title": "山西省",
+   "level": 3,
+   "href": "/czdl/zsd272860",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272861",
+   "parent_id": "272860",
+   "title": "山西省的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd272861",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272862",
+   "parent_id": "272860",
+   "title": "山西省的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd272862",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272863",
+   "parent_id": "272862",
+   "title": "山西省的地形",
+   "level": 5,
+   "href": "/czdl/zsd272863",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272864",
+   "parent_id": "272862",
+   "title": "山西省的气候",
+   "level": 5,
+   "href": "/czdl/zsd272864",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272865",
+   "parent_id": "272862",
+   "title": "山西省的河流",
+   "level": 5,
+   "href": "/czdl/zsd272865",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272866",
+   "parent_id": "272860",
+   "title": "山西省的自然资源与生产",
+   "level": 4,
+   "href": "/czdl/zsd272866",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272867",
+   "parent_id": "272866",
+   "title": "山西省的农业",
+   "level": 5,
+   "href": "/czdl/zsd272867",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272868",
+   "parent_id": "272866",
+   "title": "山西省的工业",
+   "level": 5,
+   "href": "/czdl/zsd272868",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272869",
+   "parent_id": "272860",
+   "title": "山西省的历史文化",
+   "level": 4,
+   "href": "/czdl/zsd272869",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272870",
+   "parent_id": "272869",
+   "title": "山西省的著名景点与发展方向",
+   "level": 5,
+   "href": "/czdl/zsd272870",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272871",
+   "parent_id": "22716",
+   "title": "云南省",
+   "level": 3,
+   "href": "/czdl/zsd272871",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272872",
+   "parent_id": "272871",
+   "title": "云南省的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd272872",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272873",
+   "parent_id": "272871",
+   "title": "云南省的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd272873",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272874",
+   "parent_id": "272873",
+   "title": "云南省的地形",
+   "level": 5,
+   "href": "/czdl/zsd272874",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272875",
+   "parent_id": "272873",
+   "title": "云南省的气候",
+   "level": 5,
+   "href": "/czdl/zsd272875",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272876",
+   "parent_id": "272873",
+   "title": "云南省的河流",
+   "level": 5,
+   "href": "/czdl/zsd272876",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272877",
+   "parent_id": "272871",
+   "title": "云南省的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd272877",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272878",
+   "parent_id": "272877",
+   "title": "云南省的民族",
+   "level": 5,
+   "href": "/czdl/zsd272878",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272879",
+   "parent_id": "272877",
+   "title": "云南省的旅游业",
+   "level": 5,
+   "href": "/czdl/zsd272879",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272880",
+   "parent_id": "272877",
+   "title": "紧邻东南亚的大通道",
+   "level": 5,
+   "href": "/czdl/zsd272880",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22717",
+   "parent_id": "22301",
+   "title": "认识省内区域",
+   "level": 2,
+   "href": "/czdl/zsd22717",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23119",
+   "parent_id": "22717",
+   "title": "塔里木盆地",
+   "level": 3,
+   "href": "/czdl/zsd23119",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23125",
+   "parent_id": "23119",
+   "title": "塔里木盆地的位置、范围",
+   "level": 4,
+   "href": "/czdl/zsd23125",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23126",
+   "parent_id": "23119",
+   "title": "塔里木盆地的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23126",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "145104",
+   "parent_id": "23126",
+   "title": "塔里木盆地的地形",
+   "level": 5,
+   "href": "/czdl/zsd145104",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145105",
+   "parent_id": "23126",
+   "title": "塔里木盆地的气候",
+   "level": 5,
+   "href": "/czdl/zsd145105",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "145106",
+   "parent_id": "23126",
+   "title": "塔里木盆地的河流",
+   "level": 5,
+   "href": "/czdl/zsd145106",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23127",
+   "parent_id": "23119",
+   "title": "塔里木盆地的社会经济状况",
+   "level": 4,
+   "href": "/czdl/zsd23127",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23129",
+   "parent_id": "23127",
+   "title": "塔里木盆地城镇、交通线的分布",
+   "level": 5,
+   "href": "/czdl/zsd23129",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23130",
+   "parent_id": "23127",
+   "title": "塔里木盆地油气资源的分布与开发",
+   "level": 5,
+   "href": "/czdl/zsd23130",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23131",
+   "parent_id": "23127",
+   "title": "塔里木盆地的环境保护",
+   "level": 5,
+   "href": "/czdl/zsd23131",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23120",
+   "parent_id": "22717",
+   "title": "三江源地区",
+   "level": 3,
+   "href": "/czdl/zsd23120",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23132",
+   "parent_id": "23120",
+   "title": "三江源地区的位置、范围",
+   "level": 4,
+   "href": "/czdl/zsd23132",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23133",
+   "parent_id": "23120",
+   "title": "三江源地区的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23133",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23136",
+   "parent_id": "23133",
+   "title": "三江源地区的地形",
+   "level": 5,
+   "href": "/czdl/zsd23136",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23137",
+   "parent_id": "23133",
+   "title": "三江源地区的水系",
+   "level": 5,
+   "href": "/czdl/zsd23137",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23138",
+   "parent_id": "23133",
+   "title": "三江源地区的气候",
+   "level": 5,
+   "href": "/czdl/zsd23138",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23134",
+   "parent_id": "23120",
+   "title": "三江源地区的保护",
+   "level": 4,
+   "href": "/czdl/zsd23134",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23139",
+   "parent_id": "23134",
+   "title": "三江源地区高原湿地的重要性",
+   "level": 5,
+   "href": "/czdl/zsd23139",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23140",
+   "parent_id": "23134",
+   "title": "三江源地区生态环境恶化的原因",
+   "level": 5,
+   "href": "/czdl/zsd23140",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23141",
+   "parent_id": "23134",
+   "title": "三江源地区的生态环境保护",
+   "level": 5,
+   "href": "/czdl/zsd23141",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23124",
+   "parent_id": "22717",
+   "title": "福建省泰宁县",
+   "level": 3,
+   "href": "/czdl/zsd23124",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23160",
+   "parent_id": "23124",
+   "title": "福建省泰宁县的位置范围",
+   "level": 4,
+   "href": "/czdl/zsd23160",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23161",
+   "parent_id": "23124",
+   "title": "福建省泰宁县的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd23161",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23163",
+   "parent_id": "23161",
+   "title": "福建省泰宁县的地形",
+   "level": 5,
+   "href": "/czdl/zsd23163",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23164",
+   "parent_id": "23161",
+   "title": "福建省泰宁县的气候",
+   "level": 5,
+   "href": "/czdl/zsd23164",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23162",
+   "parent_id": "23124",
+   "title": "福建省泰宁县的旅游业",
+   "level": 4,
+   "href": "/czdl/zsd23162",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23165",
+   "parent_id": "23162",
+   "title": "福建省泰宁县的旅游资源",
+   "level": 5,
+   "href": "/czdl/zsd23165",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23166",
+   "parent_id": "23162",
+   "title": "福建省泰宁县旅游资源的开发与保护",
+   "level": 5,
+   "href": "/czdl/zsd23166",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272881",
+   "parent_id": "22717",
+   "title": "闽宁镇",
+   "level": 3,
+   "href": "/czdl/zsd272881",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272882",
+   "parent_id": "272881",
+   "title": "闽宁镇的位置",
+   "level": 4,
+   "href": "/czdl/zsd272882",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272883",
+   "parent_id": "272881",
+   "title": "闽宁镇的自然地理环境",
+   "level": 4,
+   "href": "/czdl/zsd272883",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272884",
+   "parent_id": "272883",
+   "title": "闽宁镇的地形",
+   "level": 5,
+   "href": "/czdl/zsd272884",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272885",
+   "parent_id": "272883",
+   "title": "闽宁镇的气候",
+   "level": 5,
+   "href": "/czdl/zsd272885",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "272886",
+   "parent_id": "272881",
+   "title": "闽宁镇的历史变迁",
+   "level": 4,
+   "href": "/czdl/zsd272886",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "272887",
+   "parent_id": "272886",
+   "title": "闽宁镇的发展之路",
+   "level": 5,
+   "href": "/czdl/zsd272887",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "22718",
+   "parent_id": "22301",
+   "title": "中国的地位与责任",
+   "level": 2,
+   "href": "/czdl/zsd22718",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23167",
+   "parent_id": "22718",
+   "title": "我国的基本国情",
+   "level": 3,
+   "href": "/czdl/zsd23167",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23168",
+   "parent_id": "22718",
+   "title": "我国发展的成就",
+   "level": 3,
+   "href": "/czdl/zsd23168",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23169",
+   "parent_id": "22718",
+   "title": "我国发展中面临的问题",
+   "level": 3,
+   "href": "/czdl/zsd23169",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23171",
+   "parent_id": "23169",
+   "title": "我国人地关系不够和谐",
+   "level": 4,
+   "href": "/czdl/zsd23171",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23172",
+   "parent_id": "23169",
+   "title": "我国区域发展不平衡",
+   "level": 4,
+   "href": "/czdl/zsd23172",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23173",
+   "parent_id": "23169",
+   "title": "我国海洋权益面临严峻挑战",
+   "level": 4,
+   "href": "/czdl/zsd23173",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23170",
+   "parent_id": "22718",
+   "title": "做负责任的大国",
+   "level": 3,
+   "href": "/czdl/zsd23170",
+   "is_leaf": false,
+   "is_knowledge": true
+  },
+  {
+   "id": "23174",
+   "parent_id": "23170",
+   "title": "我国对世界的贡献",
+   "level": 4,
+   "href": "/czdl/zsd23174",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23175",
+   "parent_id": "23170",
+   "title": "我国积极参与国际事务",
+   "level": 4,
+   "href": "/czdl/zsd23175",
+   "is_leaf": true,
+   "is_knowledge": true
+  },
+  {
+   "id": "23176",
+   "parent_id": "23170",
+   "title": "我国政府的“和谐世界”理念",
+   "level": 4,
+   "href": "/czdl/zsd23176",
+   "is_leaf": true,
+   "is_knowledge": true
+  }
+ ]
+}
