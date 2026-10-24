@@ -33,6 +33,31 @@ const templateStats=computed(()=>{
   const brackets=(props.template?.annotations?.brackets||[])
   return {total:brackets.length,low:brackets.filter((b:any)=>(b.score||0)<.6).length,unbound:brackets.filter((b:any)=>!b.bound).length}
 })
+const selectedSubs=computed(()=>{
+  const q=(props.questions||[]).find((x:any)=>x.id===selectedTemplate.value?.question_id)
+  return q?.subquestions||[]
+})
+function bracketText(a:any){
+  const item=a.item||a
+  const q=(props.questions||[]).find((x:any)=>x.id===item.question_id)
+  if(!q)return '未绑定'
+  if(item.sub_node_id){
+    const sub=(q.subquestions||[]).find((s:any)=>s.subquestion_id===item.sub_node_id)
+    if(sub)return String(sub.number||'')
+  }
+  const same=(props.template?.annotations?.brackets||[]).filter((b:any)=>b.question_id===q.id)
+  if(same.length>1&&item.index_in_question)return `${q.number}-${item.index_in_question}`
+  return String(q.number||'')
+}
+function reassignSub(event:Event){
+  const target=selectedTemplate.value
+  if(!target||!props.template)return
+  const value=(event.target as HTMLSelectElement).value||null
+  target.sub_node_id=value
+  const blank=(props.template.blanks||[]).find((b:any)=>b.blank_id===target.id)
+  if(blank)blank.sub_node_id=value
+  emit('template-change')
+}
 function annotationLabel(kind:string){return ({brackets:'括号',question_numbers:'题号',qr:'二维码',drop:'定位点',score_box:'得分框'}[kind]||kind)}
 function switchLayer(next:'frames'|'blocks'|'template'){
   if(next===layer.value)return
@@ -113,6 +138,7 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
       <svg v-else ref="svg" viewBox="0 0 1000 1000" preserveAspectRatio="none" class="template-layer" @pointermove="zoneMove" @pointerup="zoneUp" @pointercancel="zoneUp">
         <g v-for="a in displayAnnotations" :key="a.item.id" :class="['annotation',a.kind,{low:(a.item.score||0)<.6,unbound:a.item.bound===false,selected:selectedTemplate===a.item}]">
           <rect :x="a.item.bbox[0]*1000" :y="a.item.bbox[1]*1000" :width="(a.item.bbox[2]-a.item.bbox[0])*1000" :height="(a.item.bbox[3]-a.item.bbox[1])*1000" @pointerdown.stop="zoneDown($event,a.item)"><title>括号 · 置信度 {{Math.round((a.item.score||0)*100)}}%{{a.item.bound===false?' · 未绑定':''}}</title></rect>
+          <text :x="a.item.bbox[0]*1000+3" :y="a.item.bbox[1]*1000+12" class="bracket-label">{{bracketText(a)}}</text>
         </g>
         <g v-for="zone in displayZones" :key="zone.id" :class="{selected:selectedTemplate===zone}">
           <rect :x="zone.bbox[0]*1000" :y="zone.bbox[1]*1000" :width="(zone.bbox[2]-zone.bbox[0])*1000" :height="(zone.bbox[3]-zone.bbox[1])*1000" @pointerdown.stop="zoneDown($event,zone)"><title>{{zone.role==='backup'?'学生信息区（备用）':'学生信息区'}} · {{zone.source}}</title></rect>
@@ -121,7 +147,7 @@ async function focusQuestion(){const r=props.selected?.regions[0];if(!r)return;d
         </g>
       </svg>
     </div><div v-else class="empty-inline">暂无原卷页面</div></div>
-    <div class="source-footer"><div class="region-tools" v-if="layer==='frames'"><button :class="{active:adding}" @click="adding=!adding" title="拖动新增题框"><Plus :size="15"/>补框</button><button @click="remove" :disabled="selectedRegion<0"><Trash2 :size="15"/>删框</button></div><div class="region-tools" v-else-if="layer==='template'"><button @click="addZone"><Plus :size="15"/>学生信息区</button><button @click="deleteTemplateSelection" :disabled="!selectedTemplate"><Trash2 :size="15"/>删除选中</button><span class="muted">拖动移动，右下角缩放</span></div><div class="region-tools" v-else><span class="muted">识别块只读，点击定位引用题目</span></div><div class="page-controls"><button aria-label="上一页" :disabled="pageIndex===0" @click="pageIndex--"><ChevronLeft :size="16"/></button><span>{{pageIndex+1}} / {{doc?.pages.length||0}} 页</span><button aria-label="下一页" :disabled="pageIndex+1>=(doc?.pages.length||0)" @click="pageIndex++"><ChevronRight :size="16"/></button></div></div>
+    <div class="source-footer"><div class="region-tools" v-if="layer==='frames'"><button :class="{active:adding}" @click="adding=!adding" title="拖动新增题框"><Plus :size="15"/>补框</button><button @click="remove" :disabled="selectedRegion<0"><Trash2 :size="15"/>删框</button></div><div class="region-tools" v-else-if="layer==='template'"><button @click="addZone"><Plus :size="15"/>学生信息区</button><button @click="deleteTemplateSelection" :disabled="!selectedTemplate"><Trash2 :size="15"/>删除选中</button><span class="muted">拖动移动，右下角缩放</span><select v-if="selectedTemplate && selectedTemplate.question_id && selectedSubs.length" :value="selectedTemplate.sub_node_id||''" @change="reassignSub" aria-label="归属小题"><option value="">归属小题：未指定</option><option v-for="sub in selectedSubs" :key="sub.subquestion_id" :value="sub.subquestion_id">小题 {{sub.number}}</option></select></div><div class="region-tools" v-else><span class="muted">识别块只读，点击定位引用题目</span></div><div class="page-controls"><button aria-label="上一页" :disabled="pageIndex===0" @click="pageIndex--"><ChevronLeft :size="16"/></button><span>{{pageIndex+1}} / {{doc?.pages.length||0}} 页</span><button aria-label="下一页" :disabled="pageIndex+1>=(doc?.pages.length||0)" @click="pageIndex++"><ChevronRight :size="16"/></button></div></div>
     <p class="source-hint">{{layer==='frames'?'框选按 PDF 物理页定位；跨栏、跨页题可保留多个区域。':layer==='blocks'?'MinerU 段落块只读；未引用块高亮，点击定位题目。':'学生信息区按页保存，人工调整后不会被默认值覆盖。'}}</p>
   </section>
 </template>

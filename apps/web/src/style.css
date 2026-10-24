@@ -41,3 +41,5 @@
 .blank-answer-row{display:grid;grid-template-columns:32px minmax(120px,1fr) minmax(180px,2fr) 70px;align-items:center;gap:8px;font-size:13px}
 .blank-index{width:24px;height:24px;border-radius:50%;background:#eef4f0;color:#2f6b4f;display:flex;align-items:center;justify-content:center;font-size:12px}
 .blank-anchor{color:#526b5f;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.template-layer .bracket-label{font-size:11px;fill:#fff;paint-order:stroke;stroke:#2f6b4f;stroke-width:3px;stroke-linejoin:round;pointer-events:none}
