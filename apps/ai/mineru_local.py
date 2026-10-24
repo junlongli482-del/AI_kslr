@@ -26,7 +26,9 @@ def available(timeout: float = 3.0) -> bool:
     if not enabled():
         return False
     try:
-        response = httpx.get(base_url() + '/v1/health', timeout=timeout)
+        # 本机回环地址必须直连：系统级代理（如 127.0.0.1:7897）会把 8020 的请求
+        # 转给代理，代理再回 502，表现为 local_available 永远是 false。
+        response = httpx.get(base_url() + '/v1/health', timeout=timeout, trust_env=False)
         return response.status_code == 200 and response.json().get('status') == 'ok'
     except Exception:
         return False
@@ -35,7 +37,7 @@ def available(timeout: float = 3.0) -> bool:
 def fetch_zip(source: Path, timeout: float | None = None) -> bytes:
     """Ask the resident local server for a parse bundle (zip bytes)."""
     limit = timeout or float(os.getenv('MINERU_LOCAL_TIMEOUT', '600'))
-    with httpx.Client(timeout=limit) as client:
+    with httpx.Client(timeout=limit, trust_env=False) as client:
         with source.open('rb') as stream:
             response = client.post(
                 base_url() + '/v1/file_parse',

@@ -170,3 +170,28 @@ def test_paper_attribute_failure_does_not_break_pipeline():
         pass  # 由 compile_result 的 try/except 兜住
     assert paper['attributes'] == {}
 
+
+def test_local_mineru_bypasses_system_proxy(monkeypatch):
+    """本机回环请求必须 trust_env=False，否则系统代理会把它转成 502。"""
+    import httpx
+    import mineru_local
+
+    seen = {}
+
+    class Response:
+        status_code = 200
+
+        def json(self):
+            return {'status': 'ok'}
+
+    def fake_get(url, **kwargs):
+        seen.update(kwargs, url=url)
+        return Response()
+
+    monkeypatch.setenv('MINERU_PROVIDER', 'auto')
+    monkeypatch.setattr(httpx, 'get', fake_get)
+    assert mineru_local.available(3.0) is True
+    assert seen.get('trust_env') is False
+    assert seen['url'].endswith('/v1/health')
+
+
