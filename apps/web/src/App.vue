@@ -82,7 +82,7 @@ const scoreSourceName=(source:string)=>({paper_declared:'卷面',ai_assigned:'AI
 const formatDate=(s:string)=>s?.slice(5,16).replace('T',' ')
 const pretty=(value:any)=>value==null?'':typeof value==='string'?value:JSON.stringify(value,null,2)
 const paperTypes=['同步练','单元测','月考','期中','期末','一模二模','真题','模拟','课时作业','竞赛','其他']
-const paperInheritFields:[string,string][]=[['year','年份'],['semester','学期'],['region','地区'],['paper_type','试卷类型'],['textbook_version','教材版本'],['stage','学段'],['subject','学科'],['grade','年级']]
+const paperInheritFields:[string,string][]=[['year','年份'],['semester','学期'],['region','地区'],['paper_type','试卷类型'],['stage','学段'],['subject','学科'],['grade','年级']]
 function ensurePaper(paper:any){
   paper.attributes??={};paper.exam??={};paper.source??={};paper.manual??={}
   paper.attributes.school_publisher??=''
@@ -282,6 +282,27 @@ function addFiles(files:File[],role:string){
 }
 function chooseFiles(event:Event,role:string){addFiles(Array.from((event.target as HTMLInputElement).files||[]),role);(event.target as HTMLInputElement).value=''}
 function dropFiles(event:DragEvent,role='question'){event.preventDefault();addFiles(Array.from(event.dataTransfer?.files||[]),role)}
+const folders=ref<any[]>([]),folderFilter=ref(''),folderBusy=ref(false)
+const folderFlat=computed(()=>{
+  const out:any[]=[];const walk=(pid:any,depth:number)=>{for(const f of folders.value.filter((x:any)=>(x.parent_id||null)===pid)){out.push({...f,depth});walk(f.id,depth+1)}}
+  walk(null,0);return out
+})
+const folderIds=computed(()=>{
+  if(!folderFilter.value)return null
+  const ids=new Set<string>([folderFilter.value])
+  let changed=true
+  while(changed){changed=false;for(const f of folders.value){if(f.parent_id&&ids.has(f.parent_id)&&!ids.has(f.id)){ids.add(f.id);changed=true}}}
+  return ids
+})
+const visibleTasks=computed(()=>{
+  const ids=folderIds.value
+  return ids?tasks.value.filter((x:any)=>ids.has(x.folder_id)):tasks.value
+})
+const folderName=computed(()=>{const f=folders.value.find((x:any)=>x.id===folderFilter.value);return f?f.name:''})
+async function loadFolders(){try{folders.value=await (await fetch('/api/folders')).json()}catch{}}
+async function createFolder(){try{const {value}=await ElMessageBox.prompt('分组名称','新建分组',{confirmButtonText:'新建',cancelButtonText:'取消'});const name=(value||'').trim();if(!name)return;await fetch('/api/folders',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,parent_id:folderFilter.value||null})});await loadFolders();ElMessage.success('已新建分组')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
+async function renameFolder(){if(!folderFilter.value)return;try{const {value}=await ElMessageBox.prompt('新名称','重命名分组',{inputValue:folderName.value,confirmButtonText:'保存',cancelButtonText:'取消'});const name=(value||'').trim();if(!name)return;await fetch('/api/folders/'+folderFilter.value,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})});await loadFolders();ElMessage.success('已重命名')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
+async function deleteFolder(){if(!folderFilter.value)return;try{await ElMessageBox.confirm('仅空分组可删除，确定删除「'+folderName.value+'」？','删除分组',{confirmButtonText:'删除',cancelButtonText:'取消'});const r=await fetch('/api/folders/'+folderFilter.value,{method:'DELETE'});if(!r.ok)throw new Error((await r.json()).message||'删除失败');folderFilter.value='';await loadFolders();ElMessage.success('已删除')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
 async function createTask(){
   if(!questionFiles.value.length){ElMessage.warning('请先添加题目文件');return}
   busy.value=true
@@ -291,6 +312,7 @@ async function createTask(){
     for(const [files,role] of [[questionFiles.value,'question'],[answerFiles.value,'answer']] as const){
       if(files.length){const form=new FormData();files.forEach(f=>form.append('files',f));form.append('role',role);await api.post(`/quick-entry/tasks/${id}/files`,form)}
     }
+    if(folderFilter.value)await api.put(`/quick-entry/tasks/${id}/folder`,{folder_id:folderFilter.value})
     await api.post(`/quick-entry/tasks/${id}/start`);createDialog.value=false;questionFiles.value=[];answerFiles.value=[];newTitle.value='';await loadTasks();await openTask(tasks.value.find(t=>t.id===id)!);ElMessage.success('任务已开始，可以离开页面，结果会自动保留')
   }catch(e){error(e)}finally{busy.value=false}
 }
@@ -487,7 +509,7 @@ async function rebuildAllRegions(){
   }catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}finally{busy.value=false}
 }
 async function poll(){clockNow.value=Date.now();if(view.value==='tasks'){await loadTasks();if(!concurrencyEdited.value)await loadConcurrency()}if(view.value==='progress'&&task.value){try{task.value=(await api.get(`/quick-entry/tasks/${task.value.id}`)).data;comparison.value=(await api.get(`/quick-entry/tasks/${task.value!.id}/comparison`).catch(()=>({data:null}))).data;if(task.value?.status==='ready')await openTask(task.value)}catch{}}}
-onMounted(()=>{loadTasks();loadConcurrency();timer=setInterval(poll,4000)})
+onMounted(()=>{loadTasks();loadFolders();loadConcurrency();timer=setInterval(poll,4000)})
 onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(saveTimer)})
 </script>
 
@@ -505,6 +527,13 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
       <template v-if="view==='tasks'">
         <div class="page-content">
           <div class="page-title-row"><div><h1>快速录入</h1><p class="page-description">把手里的资料，变成可以复用的好题。</p></div><el-button size="large" @click="openPrompts">提示词</el-button><el-button type="primary" size="large" @click="createDialog=true"><Plus :size="17"/>新建录入</el-button></div>
+          <div class="folder-bar">
+            <button :class="{active:!folderFilter}" @click="folderFilter=''">全部分组</button>
+            <button v-for="f in folderFlat" :key="f.id" :class="{active:folderFilter===f.id}" @click="folderFilter=f.id">{{'　'.repeat(f.depth)}}{{f.name}}</button>
+            <button class="text-button" @click="createFolder">+ 新建分组</button>
+            <button v-if="folderFilter" class="text-button" @click="renameFolder">重命名</button>
+            <button v-if="folderFilter" class="text-button" @click="deleteFolder">删除</button>
+          </div>
           <section class="upload-entry" @dragover.prevent @drop="dropFiles($event);createDialog=true"><div class="upload-illustration"><FileText :size="35" :stroke-width="1.3"/><span class="illustration-check"><Check :size="15"/></span></div><div><h2>从一份资料开始</h2><p>上传试卷或教辅，自动整理题目、匹配答案。最后一步，由你把关。</p><div class="format-list"><span>PDF</span><span>图片</span><span>Word</span><i/>支持多页、多文件及独立答案</div></div><button class="entry-action" @click="createDialog=true">选择文件<ArrowUpRight :size="19"/></button></section>
           <div class="concurrency-controls">
             <div class="concurrency-current"><strong>并行处理</strong><span v-if="concurrency">当前设置：{{concurrency.max_concurrency===0?'无本地上限':concurrency.max_concurrency+' 个'}} · 运行 {{concurrency.running}} 个 · 等待 {{concurrency.queued}} 个</span><span v-else>正在读取设置</span></div>
@@ -513,7 +542,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
             <p v-if="concurrencyError" role="alert">{{concurrencyError}} <button class="text-button" @click="loadConcurrency">重新加载</button></p>
           </div>
           <div class="section-title-row"><h2>录入任务 <span class="muted">{{tasks.length}}</span></h2><div class="task-summary"><span v-if="running"><span class="status-dot working"/>{{running}} 个处理中</span><span v-if="ready"><span class="status-dot pending"/>{{ready}} 个待审核</span><button class="icon-button" title="刷新任务" aria-label="刷新任务" @click="loadTasks"><RefreshCw :size="16"/></button></div></div>
-          <div class="task-table-wrap"><table class="task-table"><thead><tr><th>资料名称</th><th>录入方式</th><th>状态</th><th>处理成本</th><th>创建时间</th><th class="align-right">操作</th></tr></thead><tbody><tr v-for="t in tasks" :key="t.id"><td><div class="document-name"><span class="file-icon"><FileText :size="20"/></span><div><strong>{{t.title}}</strong><small>{{t.stage}}{{['running','queued','failed','interrupted'].includes(t.status)?' · '+t.message:''}}</small></div></div></td><td>{{modeName(t.mode)}}</td><td><span :class="['status-pill',t.status]"><span class="status-dot"/>{{statusName(t.status)}}</span></td><td class="muted"><button v-if="t.cost" class="cost-link" @click.stop="openCost(t)">¥{{Number(t.cost.total||0).toFixed(6)}}<ChevronRight :size="12"/></button><span v-else>待计算</span><small v-if="t.cost?.mineru_status==='free_service'"> · MinerU免费</small></td><td class="muted">{{formatDate(t.created_at)}}</td><td class="align-right"><button class="icon-button row-delete" :disabled="!canDelete(t)" :title="canDelete(t)?'删除任务':'审核通过的任务不能删除'" :aria-label="canDelete(t)?'删除任务':'审核通过的任务不能删除'" @click.stop="canDelete(t)&&deleteTask(t)"><Trash2 :size="15"/></button><button class="text-button" @click="openTask(t)">{{['ready','committed'].includes(t.status)?'对照审核':'查看进度'}}<ArrowRight :size="15"/></button></td></tr><tr v-if="!tasks.length"><td colspan="6"><div class="empty-state"><Files :size="34"/><h3>还没有录入任务</h3><p>上传第一份资料，识别结果会保存在这里。</p><el-button @click="createDialog=true">新建录入</el-button></div></td></tr></tbody></table></div>
+          <div class="task-table-wrap"><table class="task-table"><thead><tr><th>资料名称</th><th>录入方式</th><th>状态</th><th>处理成本</th><th>创建时间</th><th class="align-right">操作</th></tr></thead><tbody><tr v-for="t in visibleTasks" :key="t.id"><td><div class="document-name"><span class="file-icon"><FileText :size="20"/></span><div><strong>{{t.title}}</strong><small>{{t.stage}}{{['running','queued','failed','interrupted'].includes(t.status)?' · '+t.message:''}}</small></div></div></td><td>{{modeName(t.mode)}}</td><td><span :class="['status-pill',t.status]"><span class="status-dot"/>{{statusName(t.status)}}</span></td><td class="muted"><button v-if="t.cost" class="cost-link" @click.stop="openCost(t)">¥{{Number(t.cost.total||0).toFixed(6)}}<ChevronRight :size="12"/></button><span v-else>待计算</span><small v-if="t.cost?.mineru_status==='free_service'"> · MinerU免费</small></td><td class="muted">{{formatDate(t.created_at)}}</td><td class="align-right"><button class="icon-button row-delete" :disabled="!canDelete(t)" :title="canDelete(t)?'删除任务':'审核通过的任务不能删除'" :aria-label="canDelete(t)?'删除任务':'审核通过的任务不能删除'" @click.stop="canDelete(t)&&deleteTask(t)"><Trash2 :size="15"/></button><button class="text-button" @click="openTask(t)">{{['ready','committed'].includes(t.status)?'对照审核':'查看进度'}}<ArrowRight :size="15"/></button></td></tr><tr v-if="!tasks.length"><td colspan="6"><div class="empty-state"><Files :size="34"/><h3>还没有录入任务</h3><p>上传第一份资料，识别结果会保存在这里。</p><el-button @click="createDialog=true">新建录入</el-button></div></td></tr></tbody></table></div>
           <div class="quiet-note"><ClipboardCheck :size="17"/><span>机器先整理，人工再确认。缺失或不确定的内容会在审核时提示。</span></div>
         </div>
       </template>
@@ -698,7 +727,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
           <label>学科<el-input v-model="paperForm.attributes.subject" @change="paperChanged"/></label>
           <label>年级<el-input v-model="paperForm.attributes.grade" @change="paperChanged"/></label>
           <label>教材册次<el-input v-model="paperForm.attributes.textbook_volume" @change="paperChanged"/></label>
-          <label>教材版本<el-input v-model="paperForm.attributes.textbook_version" @change="paperChanged"/></label>
+          
           <label>年份<el-input v-model="paperForm.attributes.year" @change="paperChanged"/></label>
           <label>学期<el-input v-model="paperForm.attributes.semester" @change="paperChanged"/></label>
           <label>地区<el-input v-model="paperForm.attributes.region" @change="paperChanged"/></label>
@@ -823,5 +852,6 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 .cloze-index{font-size:0.92em;color:#4a5d4b}
 .cloze-line{display:inline-block;min-width:4.2em;border-bottom:1px solid #4a5d4b;margin-left:2px;vertical-align:-2px}
 .column-conflict{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 12px;margin:8px 12px;border:1px solid #e6a23c;background:#fdf6ec;border-radius:6px;font-size:13px;color:#8a5a00}
+.folder-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 12px}.folder-bar>button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:3px 10px;font-size:12px;cursor:pointer;color:var(--ink)}.folder-bar>button.active{background:#eef4f0;border-color:#2f6b4f;color:#2f6b4f}
 </style>
 
