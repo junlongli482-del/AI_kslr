@@ -19,6 +19,8 @@ public interface StoreMapper {
     void state(@Param("id")String id,@Param("status")String status,@Param("stage")String stage,@Param("message")String message);
     @Update("UPDATE jinban.qe_task SET review=CAST(#{json} AS jsonb),revision=revision+1,updated_at=now() WHERE id=#{id} AND revision=#{revision}")
     int saveReview(@Param("id")String id,@Param("json")String json,@Param("revision")int revision);
+    @Update("UPDATE jinban.qe_task SET review=NULL,updated_at=now() WHERE id=#{id}")
+    int clearReview(@Param("id")String id);
     @Select("SELECT id,title,mode,revision,review::text FROM jinban.qe_task WHERE id=#{id} FOR UPDATE")
     Map<String,Object> lock(String id);
     @Update("UPDATE jinban.qe_task SET committed_revision=#{revision},status='committed',stage='已入库',message='审核结果已保存至资源库',updated_at=now() WHERE id=#{id}")

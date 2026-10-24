@@ -90,7 +90,7 @@ public class QuickEntryController {
     @GetMapping("/quick-entry/settings/student-zones") public Object studentZoneSettings(){return service.studentZoneSettings();}
     @PutMapping("/quick-entry/settings/student-zones") public Object saveStudentZoneSettings(@RequestBody JsonNode body){return service.saveStudentZoneSettings(body);}
     @PostMapping("/quick-entry/tasks/{id}/start") public Object start(@PathVariable String id){service.start(id);return service.task(id);}
-    @PostMapping("/quick-entry/tasks/{id}/retry") public Object retry(@PathVariable String id){service.start(id);return service.task(id);}
+    @PostMapping("/quick-entry/tasks/{id}/retry") public Object retry(@PathVariable String id){service.restart(id);return service.task(id);}
     @GetMapping("/quick-entry/tasks/{id}/review") public Object review(@PathVariable String id){return Map.of("result",service.review(id),"revision",service.require(id).get("revision"));}
     @PutMapping("/quick-entry/tasks/{id}/review") public Object save(@PathVariable String id,@RequestBody JsonNode body){return service.saveReview(id,body.path("expected_revision").asInt(-1),body.path("result"));}
     @PostMapping("/quick-entry/tasks/{id}/validate") public Object validate(@PathVariable String id,@RequestBody(required=false)JsonNode body){return service.validate(id,body==null?service.review(id):body);}

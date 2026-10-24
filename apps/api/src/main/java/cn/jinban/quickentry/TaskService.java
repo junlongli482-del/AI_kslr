@@ -96,6 +96,13 @@ public class TaskService {
         }}catch(Exception ignored){}
         return t;}
     public JsonNode review(String id){var t=require(id);if(t.get("review")==null)throw new ResponseStatusException(CONFLICT,"结果尚未准备好");return parse(t.get("review"));}
+    public void restart(String id){
+        var t=require(id);
+        if("committed".equals(String.valueOf(t.get("status"))))throw new ResponseStatusException(BAD_REQUEST,"已入库的任务不能重跑");
+        // 重跑就是重新来过：清掉旧草稿，让新结果成为审核稿，否则界面看到的还是旧内容。
+        store.clearReview(id);
+        start(id);
+    }
     public void start(String id){
         var t=require(id);var files=store.files(id);
         if(files.stream().noneMatch(f->!"answer".equals(f.get("role"))))throw new ResponseStatusException(BAD_REQUEST,"请至少上传一个题目文件");
