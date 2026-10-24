@@ -20,6 +20,7 @@ import httpx
 import pypdfium2 as pdfium
 from PIL import Image
 from pydantic import BaseModel, Field, field_validator
+import prompts as prompt_store
 from diagnostics import PipelineError, describe_error, redact
 from media import repair_assets, apply_layout, column_bounds, column_index, page_cells, detected_columns
 from channels import channels as configured_channels, timeout as model_timeout, cost as model_cost
@@ -143,13 +144,13 @@ def detect_document_columns(llm, doc: dict, folder: Path) -> dict:
     geometric = max(set(votes), key=votes.count) if votes else 0
     if not images:
         return {'columns': geometric or 1, 'geometry': geometric, 'conflict': None}
-    columns, confidence = _column_answer(llm.json(f'columns-{doc["id"]}', COLUMNS_PROMPT,
+    columns, confidence = _column_answer(llm.json(f'columns-{doc["id"]}', prompt_store.get_prompt('columns', COLUMNS_PROMPT),
                                                  _column_payload(doc, images), images=images))
     if columns is None or confidence < 0.6:
         return {'columns': geometric or columns or 1, 'geometry': geometric, 'conflict': None}
     if geometric and columns != geometric:
         recheck, recheck_confidence = _column_answer(
-            llm.json(f'columns-recheck-{doc["id"]}', COLUMNS_PROMPT,
+            llm.json(f'columns-recheck-{doc["id"]}', prompt_store.get_prompt('columns', COLUMNS_PROMPT),
                      _column_payload(doc, images, geometry), images=images))
         if recheck is not None and recheck_confidence >= 0.6:
             columns = recheck
@@ -1267,7 +1268,7 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
     if progress:
         progress('评分标准', f'正在为 {len(payload)} 道题生成评分标准与难度')
     for offset in range(0, len(payload), 40):
-        response = llm.json(f'rubrics-{offset}', RUBRIC_PROMPT, {'questions': payload[offset:offset + 40]})
+        response = llm.json(f'rubrics-{offset}', prompt_store.get_prompt('rubrics', RUBRIC_PROMPT), {'questions': payload[offset:offset + 40]})
         by_id = {q['id']: q for q in questions}
         for item in response.get('items') or []:
             q = by_id.get(item.get('question_id'))
@@ -1342,7 +1343,7 @@ def fill_question_rubric(question: dict, llm: LLM, subquestion_id: str | None = 
                'analysis': (question.get('analysis') or '') if not is_sub else '',
                'score': question.get('attributes', {}).get('score'),
                'subquestions': sub_payload}
-    response = llm.json(f'rubric-single-{question.get("id")}-{subquestion_id or "question"}', RUBRIC_PROMPT, {'questions': [payload]})
+    response = llm.json(f'rubric-single-{question.get("id")}-{subquestion_id or "question"}', prompt_store.get_prompt('rubrics', RUBRIC_PROMPT), {'questions': [payload]})
     item = next((entry for entry in response.get('items') or [] if entry.get('question_id') == question.get('id')), None)
     if item is None:
         item = (response.get('items') or [None])[0]
@@ -1756,7 +1757,7 @@ def assign_blank_answers(questions: list[dict], documents: list[dict], lessons: 
     if not answers.strip():
         answers = '\n\n'.join(doc.get('markdown') or '' for doc in documents)
     payload = {'lesson': lessons[0] if lessons else '', 'blanks': blanks, 'answers': answers[:200000]}
-    result = llm.json('blank-match', BLANK_MATCH_PROMPT, payload)
+    result = llm.json('blank-match', prompt_store.get_prompt('blank-match', BLANK_MATCH_PROMPT), payload)
     by_question = {q['id']: q for q in questions}
     filled = 0
     for match in result.get('matches') or []:
@@ -1819,7 +1820,8 @@ def tagging_prefix(stage: str, subject: str):
     tree = TAGGING_DIR / 'knowledge' / f'{slug}-knowledge.json'
     if not prefix.is_file() or not tree.is_file():
         return None, None, None
-    return prefix.read_text(encoding='utf-8'), tree, f'{slug}@v1'
+    content = prompt_store.get_prompt(f'tagging:{slug}', prefix.read_text(encoding='utf-8'))
+    return content, tree, f'{slug}@v1'
 
 
 def _question_images(question: dict, limit: int = 4) -> list[dict]:
@@ -1924,7 +1926,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             progress('AI编排', f'正在结构化：{doc["name"]}')
         payload = compact_document(doc)
         payload['columns'] = column['columns']
-        data = llm.json(f'structure-{doc["id"]}', STRUCTURE_PROMPT, payload,
+        data = llm.json(f'structure-{doc["id"]}', prompt_store.get_prompt('structure', STRUCTURE_PROMPT), payload,
                         images=document_vision_images(doc, folder))
         for block_id in data.get('excluded_block_ids') or []:
             if isinstance(block_id, str) and block_id not in excluded_block_ids:
@@ -1986,7 +1988,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         # Mixed and question files may themselves include answers.
         if doc['role'] != 'answer' and not re.search(r'参考答案|答案[与及]?解析|参考解答|(?:^|\n)\s*#{0,6}\s*(?:答案|解析)(?:\s|[:：])|[【\[]答案[】\]]', doc['markdown']):
             continue
-        result = llm.json(f'answers-{doc["id"]}', ANSWER_PROMPT, compact_document(doc),
+        result = llm.json(f'answers-{doc["id"]}', prompt_store.get_prompt('answers', ANSWER_PROMPT), compact_document(doc),
                           images=document_vision_images(doc, folder))
         for i, entry in enumerate(result.get('entries', [])):
             entry['id'] = f'{doc["id"]}-a{i+1}'
@@ -1997,7 +1999,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
         if progress:
             progress('答案匹配', '正在按试卷与题号关联答案，排除无关条目')
         answer_images = [image for doc in documents if doc['role'] == 'answer' for image in document_vision_images(doc, folder)]
-        match = llm.json('match', MATCH_PROMPT,
+        match = llm.json('match', prompt_store.get_prompt('match', MATCH_PROMPT),
                          {'papers': papers, 'questions': [{k: q.get(k) for k in ('id', 'paper_id', 'number', 'stem', 'options', 'subquestions')} for q in questions],
                           'entries': entries}, images=answer_images)
         byq, bye = {q['id']: q for q in questions}, {e['id']: e for e in entries}

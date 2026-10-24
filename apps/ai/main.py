@@ -23,7 +23,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+import prompts as prompt_store
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
 from media import repair_result, key_of
@@ -501,6 +502,57 @@ def recover_pending_tasks():
 
 class ConcurrencySettings(BaseModel):
     max_concurrency: int = Field(ge=0, strict=True)
+
+
+PROMPT_DEFAULTS = {
+    'structure': STRUCTURE_PROMPT,
+    'columns': COLUMNS_PROMPT,
+    'answers': ANSWER_PROMPT,
+    'match': MATCH_PROMPT,
+    'blank-match': BLANK_MATCH_PROMPT,
+    'rubrics': RUBRIC_PROMPT,
+}
+for _prefix in sorted((TAGGING_DIR / 'prompts').glob('prefix-*.txt')):
+    PROMPT_DEFAULTS[f'tagging:{_prefix.stem[len("prefix-"):]}'] = _prefix.read_text(encoding='utf-8')
+
+
+@app.get('/prompts')
+def list_prompts():
+    return prompt_store.list_prompts(PROMPT_DEFAULTS)
+
+
+@app.get('/prompts/{key:path}')
+def get_prompt(key: str):
+    if key not in PROMPT_DEFAULTS:
+        raise HTTPException(404, '提示词不存在')
+    return prompt_store.describe(key, PROMPT_DEFAULTS[key])
+
+
+@app.put('/prompts/{key:path}')
+def save_prompt(key: str, body: dict):
+    if key not in PROMPT_DEFAULTS:
+        raise HTTPException(404, '提示词不存在')
+    try:
+        return prompt_store.save(key, str(body.get('content') or ''), PROMPT_DEFAULTS)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.post('/prompts/{key:path}/rollback')
+def rollback_prompt(key: str, body: dict):
+    if key not in PROMPT_DEFAULTS:
+        raise HTTPException(404, '提示词不存在')
+    try:
+        return prompt_store.rollback(key, int(body.get('revision') or 0), PROMPT_DEFAULTS)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+
+
+@app.delete('/prompts/{key:path}')
+def reset_prompt(key: str):
+    if key not in PROMPT_DEFAULTS:
+        raise HTTPException(404, '提示词不存在')
+    return prompt_store.reset(key, PROMPT_DEFAULTS)
 
 
 @app.get('/settings/concurrency')

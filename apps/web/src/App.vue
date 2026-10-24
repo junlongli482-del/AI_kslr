@@ -61,6 +61,12 @@ const typeSubs=computed(()=>typeOptions.value.find((o:any)=>o.type===selected.va
 function onTypeChange(value:string){const q:any=selected.value;if(!q)return;const option=typeOptions.value.find((o:any)=>o.type===value);q.attributes.question_type_id=option?.code||'';q.attributes.question_type_sub='';q.attributes.question_type_source='manual';q.attributes.question_type_confidence=1;markDirty()}
 function onSubChange(){const q:any=selected.value;if(!q)return;q.attributes.question_type_source='manual';markDirty()}
 const currentLesson=computed(()=>{const p=result.value?.papers.find((x:any)=>x.id===selected.value?.paper_id);const l=p?.lesson;return l&&l.title?`本节：${l.title}（第${(l.start_page||0)+1}页起）`:''})
+const promptDialog=ref(false),promptRows=ref<any[]>([]),promptKey=ref(''),promptContent=ref(''),promptInfo=ref<any>(null),promptBusy=ref(false)
+async function openPrompts(){promptDialog.value=true;promptBusy.value=true;try{promptRows.value=await (await fetch('/prompt-api/prompts')).json();if(!promptKey.value&&promptRows.value.length)await loadPrompt(promptRows.value[0].key)}catch(e){error(e)}finally{promptBusy.value=false}}
+async function loadPrompt(key:string){promptKey.value=key;promptBusy.value=true;try{promptInfo.value=await (await fetch('/prompt-api/prompts/'+encodeURIComponent(key))).json();promptContent.value=promptInfo.value.content}catch(e){error(e)}finally{promptBusy.value=false}}
+async function savePrompt(){if(!promptKey.value)return;promptBusy.value=true;try{const r=await fetch('/prompt-api/prompts/'+encodeURIComponent(promptKey.value),{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({content:promptContent.value})});if(!r.ok)throw new Error(await r.text());promptInfo.value=await r.json();ElMessage.success('已保存，之后的新任务生效')}catch(e){error(e)}finally{promptBusy.value=false}}
+async function resetPrompt(){if(!promptKey.value)return;promptBusy.value=true;try{const r=await fetch('/prompt-api/prompts/'+encodeURIComponent(promptKey.value),{method:'DELETE'});promptInfo.value=await r.json();promptContent.value=promptInfo.value.content;ElMessage.success('已恢复默认')}catch(e){error(e)}finally{promptBusy.value=false}}
+async function rollbackPrompt(revision:number){if(!promptKey.value)return;promptBusy.value=true;try{const r=await fetch('/prompt-api/prompts/'+encodeURIComponent(promptKey.value)+'/rollback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision})});promptInfo.value=await r.json();promptContent.value=promptInfo.value.content;ElMessage.success('已回滚')}catch(e){error(e)}finally{promptBusy.value=false}}
 const columnConflicts=computed(()=>(result.value?.papers||[]).filter((p:any)=>p.column_conflict?.geometry).map((p:any)=>({id:p.id,title:p.title,ai:p.column_conflict.ai,geometry:p.column_conflict.geometry})))
 const activePaper=computed(()=>result.value?.papers.find(p=>p.id===paperFilter.value)||result.value?.papers.find(p=>p.id===selected.value?.paper_id)||result.value?.papers[0]||null)
 const paperForm=computed(()=>activePaper.value?ensurePaper(activePaper.value):null)
@@ -498,7 +504,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 
       <template v-if="view==='tasks'">
         <div class="page-content">
-          <div class="page-title-row"><div><h1>快速录入</h1><p class="page-description">把手里的资料，变成可以复用的好题。</p></div><el-button type="primary" size="large" @click="createDialog=true"><Plus :size="17"/>新建录入</el-button></div>
+          <div class="page-title-row"><div><h1>快速录入</h1><p class="page-description">把手里的资料，变成可以复用的好题。</p></div><el-button size="large" @click="openPrompts">提示词</el-button><el-button type="primary" size="large" @click="createDialog=true"><Plus :size="17"/>新建录入</el-button></div>
           <section class="upload-entry" @dragover.prevent @drop="dropFiles($event);createDialog=true"><div class="upload-illustration"><FileText :size="35" :stroke-width="1.3"/><span class="illustration-check"><Check :size="15"/></span></div><div><h2>从一份资料开始</h2><p>上传试卷或教辅，自动整理题目、匹配答案。最后一步，由你把关。</p><div class="format-list"><span>PDF</span><span>图片</span><span>Word</span><i/>支持多页、多文件及独立答案</div></div><button class="entry-action" @click="createDialog=true">选择文件<ArrowUpRight :size="19"/></button></section>
           <div class="concurrency-controls">
             <div class="concurrency-current"><strong>并行处理</strong><span v-if="concurrency">当前设置：{{concurrency.max_concurrency===0?'无本地上限':concurrency.max_concurrency+' 个'}} · 运行 {{concurrency.running}} 个 · 等待 {{concurrency.queued}} 个</span><span v-else>正在读取设置</span></div>
@@ -725,6 +731,27 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
     </el-drawer>
     <el-dialog v-model="detailDialog" :title="detail?.title||('题目 '+(detail?.number||''))" width="min(900px, 94vw)"><template v-if="detail"><div v-if="detail.questions" class="paper-detail-list"><div class="template-notice" v-if="detail.templates?.length"><ScanLine :size="17"/>原卷区域模板已保存 · 实际扫描配准尚未接入</div><article v-for="row in detail.questions"><h3>第 {{row.content.number}} 题</h3><QuestionPreview :question="row.content"/></article></div><article v-else><QuestionPreview :question="detail.content"/><div class="region-preview-list"><img v-for="r in detail.content.regions" :src="r.crop_url" alt="来源区域"/></div></article></template><template #footer><el-button @click="detailDialog=false">关闭</el-button><el-button type="primary" @click="detailDialog=false;openTask(tasks.find(t=>t.id===detail.task_id)||{id:detail.task_id,status:'committed'} as Task)">返回来源审核</el-button></template></el-dialog>
   </div>
+<el-dialog v-model="promptDialog" title="提示词设置" width="960px" top="4vh">
+      <div style="display:flex;gap:12px;height:60vh">
+        <div style="width:260px;overflow:auto;border-right:1px solid #e6e6e6">
+          <div v-for="row in promptRows" :key="row.key" @click="loadPrompt(row.key)" style="padding:6px 8px;cursor:pointer;font-size:13px" :style="{background:row.key===promptKey?'#eef4f0':'transparent'}">
+            <div>{{row.key}}</div>
+            <small class="muted">{{row.is_default?'默认':('rev '+row.revision)}} · {{row.chars}} 字</small>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+          <div class="muted">{{promptKey}} · {{promptInfo?.is_default?'使用默认':'已覆盖'}} · rev {{promptInfo?.revision||0}} · {{promptContent.length}} 字</div>
+          <el-input v-model="promptContent" type="textarea" :rows="18" resize="none" />
+          <div style="display:flex;gap:8px;align-items:center">
+            <el-button type="primary" :loading="promptBusy" @click="savePrompt">保存</el-button>
+            <el-button :loading="promptBusy" @click="resetPrompt">恢复默认</el-button>
+            <el-select v-if="promptInfo?.history?.length" placeholder="历史版本回滚" style="width:200px" @change="rollbackPrompt">
+              <el-option v-for="h in promptInfo.history" :key="h.revision" :value="h.revision" :label="'rev '+h.revision+' · '+h.chars+' 字'" />
+            </el-select>
+          </div>
+        </div>
+      </div>
+    </el-dialog>
 </template>
 
 <style>
