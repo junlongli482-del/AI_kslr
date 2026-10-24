@@ -1384,6 +1384,30 @@ PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'year', 'semester', 'region',
                     'publisher_name', 'publisher_series', 'source_name', 'source_nature')
 
 
+SOURCE_SETTINGS = DATA / 'settings' / 'sources.json'
+_SOURCE_CACHE = {'mtime': None, 'items': []}
+
+
+def default_source() -> dict:
+    """来源字典里标记为默认的那条；没有默认就取第一条。读盘结果按 mtime 缓存。"""
+    try:
+        mtime = SOURCE_SETTINGS.stat().st_mtime
+    except OSError:
+        return {}
+    if _SOURCE_CACHE['mtime'] != mtime:
+        try:
+            data = json.loads(SOURCE_SETTINGS.read_text(encoding='utf-8'))
+        except (OSError, ValueError):
+            data = {}
+        _SOURCE_CACHE['items'] = [item for item in (data.get('items') or [])
+                                  if isinstance(item, dict) and item.get('name')]
+        _SOURCE_CACHE['mtime'] = mtime
+    items = _SOURCE_CACHE['items']
+    if not items:
+        return {}
+    return next((item for item in items if item.get('default')), items[0])
+
+
 def normalize_paper(paper: dict):
     attrs = paper.get('attributes')
     if not isinstance(attrs, dict):
@@ -1407,6 +1431,13 @@ def normalize_paper(paper: dict):
             paper.setdefault('issues', []).append(f'{label}「{raw_value}」已归一为「{value}」')
     if attrs.get('source_nature') and attrs['source_nature'] not in SOURCE_NATURES:
         attrs['source_nature'] = ''
+    if not str(attrs.get('source_name') or '').strip():
+        fallback = default_source()
+        if fallback:
+            attrs['source_name'] = fallback['name']
+            attrs['source_nature'] = fallback.get('nature') or '其他'
+            paper.setdefault('issues', []).append(
+                f'未选来源，已按默认来源「{fallback["name"]}」填入，可修改')
     raw_type = paper.get('paper_type') or ''
     value, changed = normalize_paper_type(raw_type)
     if (raw_type or '').strip() and changed:

@@ -236,6 +236,36 @@ def test_paper_accepts_source_snapshot_keys():
     assert 'textbook_version' not in core.PAPER_ATTRIBUTES
 
 
+def test_default_source_fills_empty_paper(monkeypatch):
+    monkeypatch.setattr(core, 'default_source',
+                        lambda: {'name': '金榜学案', 'nature': '教辅'})
+    paper = {'id': 'p1', 'paper_type': '课后作业', 'attributes': {}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['source_name'] == '金榜学案'
+    assert paper['attributes']['source_nature'] == '教辅'
+    assert any('默认来源' in message for message in paper['issues'])
+
+
+def test_default_source_does_not_override_existing(monkeypatch):
+    monkeypatch.setattr(core, 'default_source',
+                        lambda: {'name': '金榜学案', 'nature': '教辅'})
+    paper = {'id': 'p1', 'paper_type': '课后作业',
+             'attributes': {'source_name': '金学典', 'source_nature': '教辅'}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['source_name'] == '金学典'
+
+
+def test_source_nature_is_inherited_to_questions():
+    paper = {'id': 'p1', 'paper_type': '课后作业',
+             'attributes': {'source_name': '金榜学案', 'source_nature': '教辅'}}
+    core.normalize_paper(paper)
+    questions = [{'id': 'q1', 'paper_id': 'p1', 'attributes': {}, 'attribute_sources': {}}]
+    core.apply_paper_inheritance(paper, questions)
+    assert questions[0]['attributes']['source_name'] == '金榜学案'
+    assert questions[0]['attributes']['source_nature'] == '教辅'
+    assert questions[0]['attribute_sources']['source_nature'] == 'paper'
+
+
 def test_grade_semester_year_are_normalized():
     assert enums.normalize_grade('高一') == ('g10', True)
     assert enums.normalize_grade('七年级') == ('g7', True)
