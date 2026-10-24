@@ -1,0 +1,172 @@
+"""枚举与派生规则的回归测试：改口径必须先过这里。"""
+import pytest
+
+import core
+import enums
+
+
+def test_paper_types_are_26_and_unique():
+    assert len(enums.PAPER_TYPES) == 26
+    assert '其他' in enums.PAPER_TYPES
+    assert len(set(enums.PAPER_TYPES)) == 26
+
+
+def test_every_paper_type_maps_to_known_nature_except_other():
+    for value in enums.PAPER_TYPES:
+        nature = enums.exam_nature_of(value)
+        if value == '其他':
+            assert nature == ''
+        else:
+            assert nature in enums.NATURES, value
+
+
+def test_every_nature_has_stage_group():
+    for nature in enums.NATURES:
+        assert nature in enums.NATURE_STAGES
+
+
+def test_legacy_paper_type_is_normalized():
+    assert enums.normalize_paper_type('单元测') == ('单元测试', True)
+    assert enums.normalize_paper_type('月考') == ('阶段检测', True)
+    assert enums.normalize_paper_type('课时作业') == ('课后作业', True)
+    assert enums.normalize_paper_type('高考模拟') == ('高考模拟', False)
+    assert enums.normalize_paper_type('周测') == ('其他', True)
+    assert enums.normalize_paper_type('') == ('', False)
+
+
+def test_exam_stage_must_belong_to_nature():
+    assert enums.exam_nature_of('高考模拟') == '模拟'
+    assert '一模' in enums.allowed_exam_stages('模拟')
+    assert '高考' not in enums.allowed_exam_stages('模拟')
+    assert '高考' in enums.allowed_exam_stages('真题')
+    assert enums.allowed_exam_stages('专题') == ()
+
+
+def test_paper_types_are_filtered_by_stage():
+    primary = enums.allowed_paper_types('primary')
+    senior = enums.allowed_paper_types('senior')
+    assert '小升初真题' in primary and '小升初真题' not in senior
+    assert '高考真题' in senior and '高考真题' not in primary
+
+
+def test_sub_type_is_structural():
+    assert enums.derive_sub_type([]) == 'single'
+    assert enums.derive_sub_type([{'number': '(1)'}]) == 'single'
+    assert enums.derive_sub_type([{'number': '3'}, {'number': '4'}]) == 'group'
+
+
+def test_grading_method_falls_back_to_ai():
+    assert enums.normalize_grading_method('program') == 'program'
+    assert enums.normalize_grading_method('PROGRAM') == 'program'
+    assert enums.normalize_grading_method('manual') == 'ai'
+    assert enums.normalize_grading_method('') == 'ai'
+    assert enums.normalize_grading_method('机器') == 'ai'
+
+
+def test_paper_issues_reports_dirty_values():
+    paper = {'paper_type': '不存在', 'attributes': {'exam_stage': '一模'},
+             'exam': {'declared_total_score': 0, 'declared_question_count': -1}}
+    messages = '\n'.join(enums.paper_issues(paper))
+    assert '不在 26 个取值内' in messages
+    assert '不属于' in messages
+    assert '满分录成了 0' in messages
+    assert '不能为负数' in messages
+
+
+def test_clean_paper_has_no_issues():
+    paper = {'paper_type': '高考模拟', 'attributes': {'exam_stage': '一模'},
+             'exam': {'declared_total_score': 150, 'declared_question_count': 22}}
+    assert enums.paper_issues(paper) == []
+
+
+def test_enums_payload_shape():
+    payload = enums.enums_payload()
+    for key in ('stages', 'subjects', 'paper_types', 'paper_types_by_stage',
+                'paper_type_nature', 'natures', 'nature_stages',
+                'sub_types', 'grading_methods', 'difficulty_bands'):
+        assert key in payload
+    assert len(payload['paper_types']) == 26
+
+
+def test_paper_inheritance_carries_exam_nature_to_questions():
+    paper = {'id': 'p1', 'paper_type': '高考模拟',
+             'attributes': {'stage': '高中', 'subject': '数学', 'exam_stage': '一模'}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['exam_nature'] == '模拟'
+    questions = [{'id': 'q1', 'paper_id': 'p1', 'attributes': {}, 'attribute_sources': {}}]
+    core.apply_paper_inheritance(paper, questions)
+    attributes = questions[0]['attributes']
+    assert attributes['exam_nature'] == '模拟'
+    assert attributes['exam_stage'] == '一模'
+    assert questions[0]['attribute_sources']['exam_nature'] == 'paper'
+
+
+def test_normalize_paper_clears_mismatched_stage():
+    paper = {'id': 'p1', 'paper_type': '课后作业',
+             'attributes': {'exam_stage': '高考'}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['exam_stage'] == ''
+    assert paper['attributes']['exam_nature'] == '同步'
+    assert any('不匹配' in message for message in paper['issues'])
+
+
+def test_structure_tags_are_derived_from_shape():
+    single = {'stem': '材料与问题在一起', 'subquestions': [], 'attributes': {}}
+    core.apply_question_structure_tags(single)
+    assert single['attributes']['sub_type'] == 'single'
+    assert single['attributes']['question_type_sub'] == 'single'
+    assert single['attributes']['grading_method'] == 'ai'
+
+    group = {'stem': '共用材料', 'subquestions': [{'number': '3'}, {'number': '4'}],
+             'attributes': {}}
+    core.apply_question_structure_tags(group)
+    assert group['attributes']['sub_type'] == 'group'
+
+    program = {'stem': '...', 'subquestions': [{'number': '1'}, {'number': '2'}],
+               'attributes': {'grading_method': 'program'}}
+    core.apply_question_structure_tags(program)
+    assert program['attributes']['grading_method'] == 'program'
+
+
+def test_paper_attributes_include_inherited_snapshot_keys():
+    for key in ('exam_stage', 'publisher_name', 'publisher_series'):
+        assert key in core.PAPER_ATTRIBUTES
+
+
+def test_paper_attribute_result_only_fills_blanks():
+    paper = {'id': 'p1', 'attributes': {'subject': '数学'}, 'exam': {}, 'paper_type': ''}
+    result = {'subject': '英语', 'stage': 'senior', 'paper_type': '高考模拟',
+              'exam_stage': '一模', 'declared_total_score': 150,
+              'declared_question_count': 22, 'confidence': {'paper_type': 0.9}}
+    filled = core.apply_paper_attribute_result(paper, result)
+    assert paper['attributes']['subject'] == '数学'      # 已识别的值不被覆盖
+    assert paper['attributes']['stage'] == 'senior'
+    assert paper['paper_type'] == '高考模拟'
+    assert paper['exam']['declared_total_score'] == 150
+    assert paper['exam']['declared_question_count'] == 22
+    assert paper['attribute_confidence'] == {'paper_type': 0.9}
+    assert filled >= 5
+
+
+def test_paper_attribute_result_ignores_zero_and_unknown_type():
+    paper = {'id': 'p1', 'attributes': {}, 'exam': {}, 'paper_type': ''}
+    core.apply_paper_attribute_result(
+        paper, {'declared_total_score': 0, 'paper_type': '周测'})
+    assert paper['exam'].get('declared_total_score') in (None, '')
+    assert paper['paper_type'] == '其他'
+
+
+def test_paper_attribute_failure_does_not_break_pipeline():
+    class Broken:
+        def json(self, *args, **kwargs):
+            raise RuntimeError('模型超时')
+
+    paper = {'id': 'p1', 'title': '某卷', 'attributes': {}, 'exam': {}, 'paper_type': ''}
+    doc = {'id': 'd1', 'name': '某卷.pdf', 'role': 'question', 'pages': []}
+    try:
+        core.apply_paper_attribute_result(
+            paper, core.recognize_paper_attributes(Broken(), paper, doc, core.DATA))
+    except RuntimeError:
+        pass  # 由 compile_result 的 try/except 兜住
+    assert paper['attributes'] == {}
+

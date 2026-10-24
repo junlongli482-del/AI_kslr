@@ -24,6 +24,8 @@ import prompts as prompt_store
 from diagnostics import PipelineError, describe_error, redact
 from media import repair_assets, apply_layout, column_bounds, column_index, page_cells, detected_columns
 from channels import channels as configured_channels, timeout as model_timeout, cost as model_cost
+from enums import (PAPER_TYPES, allowed_exam_stages, derive_sub_type,
+                   exam_nature_of, normalize_grading_method, normalize_paper_type)
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'data'
@@ -1020,7 +1022,7 @@ class LLM:
 STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整文档的markdown及带原页坐标和ID的内容块。
 必须读取全部页面，把试卷完整转成题目。跨栏跨页的同题合并，保留block_ids顺序。不能漏题或将一整页当题。
 输出 {"papers":[{"id":"p1","title":"...","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"sections":[{"title":"第一节 地球的宇宙环境","banner_block_id":"d4a7b2c1-b12","page_index":0}],"bands":[{"title":"自主学习 基础达标","banner_block_id":"d4a7b2c1-b20","page_index":0}],"questions":[{"id":"q1","paper_id":"p1","number":"1","stem":"...{{blank:1}}...","blanks":[{"index":1,"anchor":"天体：宇宙中"}],"options":[],"subquestions":[],"block_ids":["d4a7b2c1-b30"],"attributes":{}}],"excluded_block_ids":["d4a7b2c1-b12"]}
-试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher；paper_type为同步练/单元测/月考/期中/期末/一模二模/真题/模拟/课时作业/竞赛/其他；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
+试卷层字段：attributes含stage,subject,grade,textbook_volume,textbook_version,year,semester,region,school_publisher,exam_stage,publisher_name,publisher_series；paper_type只能取以下26个之一：课前预习/课堂例题/随堂练习/课后作业/单元复习/单元测试/阶段检测/期中/期末/开学考试/专题练习/竞赛/学业考试/中考真题/高考真题/小升初真题/强基计划/中考模拟/高考模拟/小升初模拟/中考复习/高考复习/小升初复习/小升初衔接/初升高衔接/其他，选不出就填“其他”，不得另造；exam_stage只能取：真题类(高考/中考/学业水平/小升初/强基计划)、模拟类(一模/二模/三模/联考/摸底)、同步类(单元测试/阶段检测/期中/期末/开学考)，与卷型性质不符就留空；exam含duration_min,declared_total_score,declared_question_count,candidate_notes,has_elective,has_listening,answers_at_end；source含page_count,printed_page_numbers,columns；manual含quality_level,tags。没有依据就空字符串/null，不许编造。卷名title从卷面读，不要用任务名。不输出大题分节。
 【原页图片】本次附带每一页的原图，命名形如“文档名-第01页.png”，并在消息里标注对应页码；图片仅用于版面与图文判断。
 - columns：已由系统在入参 columns 字段给出，直接沿用，不要自行推断或改写。
 - 题干必须原样保留填空：原文的 `\\_42\\_`、`42. ____`、`____` 统一写成 `{{blank:42}}` 或 `{{blank}}`，不得删除、合并或改写；严禁改动图片链接、URL、公式与代码段；选择题的 `（ ）` 保持原样。\n- 若这是学生用书/教材页面：
@@ -1036,7 +1038,7 @@ STRUCTURE_PROMPT = r'''你是教辅试卷结构化专家。输入是一份完整
 questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑Markdown，数学用$...$或$$...$$)，options[{label,content}]，subquestions[{subquestion_id,number,stem,options,answer:{value,analysis,scoring_criteria,source},score,block_ids}]，block_ids，attributes，image_layout，tables。
 分值：卷面印了分就填attributes.score并给score_source="paper_declared"；卷面没有分值就score=null并给attributes.score_weight（正数，按题型、题量、小问数判断），不要猜具体分值，程序会按卷面总分或100归一化。
 
-题组规则（尤其适用于地理材料选择题）：一则材料、图表或区域背景后连续出现多个编号小题时，必须输出为一个顶层复合题，不得把材料和每个选择小题拆成多个顶层question。父题的stem保留完整材料和图表，subquestions逐项保留每个小题的题干、选项、答案、解析和分值；attributes.question_type使用“题组”或“复合题”。父题block_ids必须覆盖材料、图表和全部小题；跨栏跨页时保留所有块及顺序。
+题组规则（尤其适用于地理材料选择题）：一则材料、图表或区域背景后连续出现多个编号小题时，必须输出为一个顶层复合题，不得把材料和每个选择小题拆成多个顶层question。父题的stem保留完整材料和图表，subquestions逐项保留每个小题的题干、选项、答案、解析和分值。题型必须填该题的真实题型（如“单选题”“多选题”“填空题”），不得写成“题组”“复合题”或任何自造分类——题组由 subquestions 结构体现，不是题型。材料归并规则：没有小题的题必须把材料与问题一起写入 stem，作为单题；有小题的题组，stem 只放被全部小题共用的材料，各小题不得重复抄材料；小题少于两个的不算题组，按单题处理并把材料并入 stem。父题block_ids必须覆盖材料、图表和全部小题；跨栏跨页时保留所有块及顺序。
 题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时，该小问answer为null并在issues标记subquestion_unmatched，整段无法拆分时保留原文到父题issues，禁止猜分配。有多个小问时父题answer必须为null；答案挂到最末级小问，一个小问的answer只能是该小问自己的内容，禁止合并或按题号推测分配。
 输出示例：{"papers":[{"id":"p1","title":"示例卷","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
 image_layout按输入完整图片URL索引，每项必须包含caption（图下注文本）、group_id（同排图片组）、row、column，不得省略；同排图片使用相同group_id并按column从左到右编号，不同排图片必须使用不同group_id/row。尺寸和bbox引用输入来源，不得编造。甲乙丙/图1图2属于图注，绑定对应图片，不散落成独立正文。保留输入原有行列和小间距；物理坐标由系统校验换算，题框不是显示尺寸容器。
@@ -1371,11 +1373,13 @@ def fill_question_rubric(question: dict, llm: LLM, subquestion_id: str | None = 
     if not scoring.get('points'):
         return 0
     question['scoring'] = scoring
-    question['grading_method'] = 'manual'
+    question['grading_method'] = 'ai'
     return 1
 
 
-PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'textbook_volume', 'textbook_version', 'year', 'semester', 'region')
+PAPER_ATTRIBUTES = ('stage', 'subject', 'grade', 'textbook_volume', 'textbook_version', 'year',
+                    'semester', 'region', 'exam_stage', 'exam_nature',
+                    'publisher_name', 'publisher_series')
 
 
 def normalize_paper(paper: dict):
@@ -1385,7 +1389,18 @@ def normalize_paper(paper: dict):
     for key in (*PAPER_ATTRIBUTES, 'school_publisher'):
         attrs.setdefault(key, '')
     paper['attributes'] = attrs
-    paper.setdefault('paper_type', '')
+    raw_type = paper.get('paper_type') or ''
+    value, changed = normalize_paper_type(raw_type)
+    if (raw_type or '').strip() and changed:
+        paper.setdefault('issues', []).append(f'卷型「{raw_type}」不在枚举内，已归入「{value}」')
+    paper['paper_type'] = value
+    nature = exam_nature_of(value)
+    attrs['exam_nature'] = nature
+    stage_value = (attrs.get('exam_stage') or '').strip()
+    if stage_value and stage_value not in allowed_exam_stages(nature):
+        paper.setdefault('issues', []).append(
+            f'考试阶段「{stage_value}」与卷型「{value}」不匹配，已清空')
+        attrs['exam_stage'] = ''
     exam = paper.get('exam')
     if not isinstance(exam, dict):
         exam = {}
@@ -1803,6 +1818,86 @@ def fill_blanks_from_tokens(question: dict) -> int:
     return len(blanks)
 
 
+PAPER_ATTRIBUTES_PROMPT = r'''你是试卷信息核对员。输入是一份试卷的卷名、文件名、已识别到的部分属性，以及内容首页图。
+只判断试卷层属性，不要判断题目。能被卷名或卷面确认的才填，确认不了就留空字符串，禁止猜测。
+paper_type 只能原样输出以下之一，不得自造：课前预习/课堂例题/随堂练习/课后作业/单元复习/单元测试/阶段检测/期中/期末/开学考试/专题练习/竞赛/学业考试/中考真题/高考真题/小升初真题/强基计划/中考模拟/高考模拟/小升初模拟/中考复习/高考复习/小升初复习/小升初衔接/初升高衔接/其他；选不出就输出“其他”。
+exam_stage 只能取当前性质下的值：真题(高考/中考/学业水平/小升初/强基计划)、模拟(一模/二模/三模/联考/摸底)、同步(单元测试/阶段检测/期中/期末/开学考)、专题(空)、竞赛(空)；与卷型性质不符就留空。
+stage 取 primary/junior/senior；subject 取 语文/数学/英语/物理/化学/生物/政治/历史/地理。
+year 是考试举行年份，不是“届”；region 是地区名；school 是命题学校；publisher_name 是教辅品牌；publisher_series 是系列名(如2024秋)。
+declared_question_count、declared_total_score、duration_min 只读卷面印的数字，没印就是 null，不要填 0。
+输出：{"stage":"","subject":"","grade":"","semester":"","paper_type":"","exam_stage":"","year":null,"region":"","school":"","publisher_name":"","publisher_series":"","declared_question_count":null,"declared_total_score":null,"duration_min":null,"confidence":{"paper_type":0,"stage":0,"subject":0,"exam_stage":0},"reason":""}
+confidence 为 0~1 的把握度，没有把握就给低值。只返回 JSON。'''
+
+PAPER_ATTRIBUTE_KEYS = ('stage', 'subject', 'grade', 'semester', 'exam_stage', 'year',
+                        'region', 'school', 'publisher_name', 'publisher_series')
+
+
+def paper_attributes_enabled() -> bool:
+    return os.getenv('PAPER_ATTRIBUTES_ENABLED', '1') != '0'
+
+
+def recognize_paper_attributes(llm, paper: dict, doc: dict, folder: Path) -> dict:
+    """单独一次调用判断试卷属性：输入只要卷名+首页图，输出很短，不与结构化抢注意力。"""
+    known = {key: (paper.get('attributes') or {}).get(key, '') for key in PAPER_ATTRIBUTE_KEYS}
+    payload = {'title': paper.get('title') or '', 'file_name': doc.get('name') or '',
+               'paper_types': list(PAPER_TYPES), 'known': known}
+    images = document_vision_images(doc, folder)[:1]
+    return llm.json(f'paper-attributes-{paper["id"]}',
+                    prompt_store.get_prompt('paper-attributes', PAPER_ATTRIBUTES_PROMPT),
+                    payload, images=images) or {}
+
+
+def apply_paper_attribute_result(paper: dict, result: dict) -> int:
+    """合并试卷属性：只补空值，不覆盖已识别的结果；非法值丢弃。"""
+    if not isinstance(result, dict):
+        return 0
+    attrs = paper.setdefault('attributes', {})
+    confidence = result.get('confidence')
+    if isinstance(confidence, dict):
+        paper['attribute_confidence'] = {key: value for key, value in confidence.items()
+                                         if isinstance(value, (int, float))}
+    filled = 0
+    for key in PAPER_ATTRIBUTE_KEYS:
+        value = result.get(key)
+        if value in (None, '', []):
+            continue
+        if str(attrs.get(key) or '').strip():
+            continue
+        attrs[key] = value
+        filled += 1
+    if not (paper.get('paper_type') or '').strip():
+        value, _ = normalize_paper_type(result.get('paper_type') or '')
+        if value:
+            paper['paper_type'] = value
+            filled += 1
+    exam = paper.setdefault('exam', {})
+    for key in ('declared_question_count', 'declared_total_score', 'duration_min'):
+        raw = result.get(key)
+        if raw in (None, '', 0):
+            continue
+        if exam.get(key) in (None, ''):
+            try:
+                exam[key] = int(round(float(raw)))
+            except (TypeError, ValueError):
+                continue
+            filled += 1
+    return filled
+
+
+def apply_question_structure_tags(question: dict) -> dict:
+    """结构派生字段的确定性收口。
+
+    子形态只由小题数量决定（材料被两道及以上小题共用才是题组），
+    不接受模型自造；批阅方式缺失或非法一律归 ai，避免批阅侧拿到空值。
+    """
+    attributes = question.setdefault('attributes', {})
+    derived = derive_sub_type(question.get('subquestions'))
+    attributes['sub_type'] = derived
+    attributes['question_type_sub'] = derived
+    attributes['grading_method'] = normalize_grading_method(attributes.get('grading_method'))
+    return attributes
+
+
 TAGGING_DIR = ROOT / 'apps' / 'ai' / 'tagging'
 STAGE_CODES = {'小学': 'primary', '初中': 'junior', '高中': 'senior'}
 SUBJECT_CODES = {'语文': 'chinese', '数学': 'math', '英语': 'english', '物理': 'physics',
@@ -1885,7 +1980,13 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
         sub_type = (result.get('sub_type') or {})
         attributes['question_type'] = qtype.get('name') or ''
         attributes['question_type_id'] = qtype.get('code') or ''
-        attributes['question_type_sub'] = sub_type.get('name') or ''
+        derived = derive_sub_type(question.get('subquestions'))
+        attributes['question_type_sub_raw'] = sub_type.get('name') or ''
+        attributes['question_type_sub'] = derived
+        attributes['sub_type'] = derived
+        attributes['grading_method'] = normalize_grading_method(result.get('grading_method'))
+        if not str(result.get('grading_method') or '').strip():
+            question.setdefault('issues', []).append('批阅方式未判定，默认按 AI 批阅')
         attributes['tagging_version'] = version
         points = []
         nodes = {}
@@ -1938,6 +2039,14 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             p['sections'] = data.get('sections') or []
             p['bands'] = data.get('bands') or []
             p.setdefault('source', {})['columns'] = column['columns']
+            if paper_attributes_enabled():
+                try:
+                    if progress:
+                        progress('AI编排', f'正在核对试卷属性：{p.get("title") or doc["name"]}')
+                    apply_paper_attribute_result(p, recognize_paper_attributes(llm, p, doc, folder))
+                except Exception as exc:
+                    p.setdefault('issues', []).append(
+                        f'试卷属性识别失败，已沿用结构化结果：{describe_error(exc)}')
             if column.get('conflict'):
                 p['column_conflict'] = dict(column['conflict'])
             if not p.get('sections'):
@@ -1963,6 +2072,7 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             q['review_status'] = 'pending'
             q['issues'] = q.get('issues', [])
             fill_blanks_from_tokens(q)
+            apply_question_structure_tags(q)
             correction_count=len(q.get('corrections') or [])+sum(len(s.get('corrections') or []) for s in q.get('subquestions',[]))
             if correction_count:q['issues'].append(f'AI修正{correction_count}处内容，请核对')
             if not q['regions']:

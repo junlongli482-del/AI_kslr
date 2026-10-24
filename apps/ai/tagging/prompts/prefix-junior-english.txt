@@ -877,5 +877,13 @@ score = 0.95 - 0.80×(raw/3) + 题型修正 + 0.05×跨章 + 0.05×认知跳跃
 认知跳跃：解析中「易得/显然/注意到/不妨设」每处+0.05。
 题型修正：判断+0.06 单项选择+0.05 连线+0.04 填空+0.03 单选题/简答+0.01 作图0 实验/多选/计算/阅读-0.01 解答-0.03 综合/材料-0.04 文言文-0.06 现代文/书面表达-0.07
 
+
+【批阅方式】grading_method 只能取 program 或 ai。
+程序只能精确比对两类作答：① 字母答案（A、B、C、D、E、F、G，可为单个或组合）；② 判断题的对勾/叉号。
+判断标准：这道题（题组则含全部小题）的每一处作答，学生的答案是否必定只落在上述范围内。
+全部落在 → program；只要有一处不是（填空、书写、作图、解答步骤、作文、需要看解题过程才知对错、多空混合等）→ ai。
+按学生答出来的形态判断，不按题型名称判断；题型名带“选择”不等于答案一定是字母。
+不确定时一律给 ai：判成 program 会产出错误成绩，判成 ai 只是多花一次调用。
+
 【输出格式】
-{"question_type":{"code":"","name":"","confidence":0},"sub_type":{"name":"","confidence":0},"knowledge_points":[{"id":"","name":"","role":"primary","confidence":0}],"kp_note":"","difficulty":{"score_rate":0,"band":"","factors":{"B":0,"C":0,"D":0},"evidence":{"steps":0,"cognitive_leaps":0,"cross_chapter":false},"reason":""},"flags":[]}
+{"question_type":{"code":"","name":"","confidence":0},"sub_type":{"name":"","confidence":0},"knowledge_points":[{"id":"","name":"","role":"primary","confidence":0}],"kp_note":"","difficulty":{"score_rate":0,"band":"","factors":{"B":0,"C":0,"D":0},"evidence":{"steps":0,"cognitive_leaps":0,"cross_chapter":false},"reason":""},"flags":[],"grading_method":"ai"}

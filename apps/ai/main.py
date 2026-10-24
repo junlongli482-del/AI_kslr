@@ -23,7 +23,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+import enums as enum_table
 import prompts as prompt_store
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
@@ -640,6 +641,9 @@ def validate(task_id: str, payload: dict):
     answer_uses = set()
     seen_subquestion_ids = set()
     seen_numbers = set()
+    for paper in result['papers']:
+        for message in enum_table.paper_issues(paper):
+            issues.append({'paper_id': paper['id'], 'severity': 'warning', 'message': message})
     for q in result['questions']:
         def issue(message,severity='error'):
             issues.append({'question_id':q['id'],'severity':severity,'message':message})
@@ -651,6 +655,10 @@ def validate(task_id: str, payload: dict):
         seen_numbers.add(number)
         if q['paper_id'] not in papers:
             issues.append({'question_id': q['id'], 'severity': 'error', 'message': '题目所属试卷不存在'})
+        previous_method = (q.get('attributes') or {}).get('grading_method')
+        apply_question_structure_tags(q)
+        if previous_method not in enum_table.GRADING_METHODS:
+            issue('批阅方式无效或缺失，已默认 AI 批阅', 'warning')
         if not q['stem'].strip() and not q['editor_documents'].get('stem'):
             issues.append({'question_id': q['id'], 'severity': 'error', 'message': '题干为空'})
         if any(b not in blocks for b in q['block_ids']): issue('引用的原文内容块不存在')
@@ -740,6 +748,12 @@ def validate(task_id: str, payload: dict):
         if declared_count is not None and declared_count!=len(qs):
             issues.append({'paper_id':paper['id'],'severity':'warning','message':f"卷面题数 {declared_count}，实际 {len(qs)} 题，差 {len(qs)-declared_count:+d}"})
     return {'issues': issues, 'valid': not any(x['severity'] == 'error' for x in issues), 'result': result}
+
+
+@app.get('/enums')
+def enum_definitions():
+    """枚举快照：前端下拉与外部对接共用，避免各处手抄一份。"""
+    return enum_table.enums_payload()
 
 
 @app.get('/schema')

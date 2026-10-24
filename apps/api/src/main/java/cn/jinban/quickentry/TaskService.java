@@ -245,9 +245,15 @@ public class TaskService {
                         }
                     }
                     int index=blank.path("index_in_question").asInt(0);
-                    node.put("question_number",questionNumber);
+                    // 题组的父题号是区间（如 3-4），括号归属必须落到具体小题的题号；
+                    // 解答题的小问号形如 (1)，此时题号仍用父题号。
+                    var effectiveNumber=questionNumber;
+                    if(!subNumber.isEmpty()&&subNumber.matches("\\d+"))effectiveNumber=subNumber;
+                    node.put("question_number",effectiveNumber);
+                    node.put("paper_question_number",questionNumber);
                     node.put("subquestion_number",subNumber);
-                    node.put("blank_label",questionNumber.isEmpty()?(""):(index>0?questionNumber+"-"+index:questionNumber));
+                    node.put("blank_index",index);
+                    node.put("blank_label",effectiveNumber.isEmpty()?(""):(index>0?effectiveNumber+"-"+index:effectiveNumber));
                 }
             }
             out.set("question_regions",templateContent.path("question_regions"));
