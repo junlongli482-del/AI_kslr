@@ -10,6 +10,26 @@ STAGE_NAMES = {'primary': '小学', 'junior': '初中', 'senior': '高中'}
 
 SUBJECTS = ('语文', '数学', '英语', '物理', '化学', '生物', '政治', '历史', '地理')
 
+# 学科必须收敛成上面九个值。AI 会自行产出“生物学”“道法”这类变体，
+# 变体不归位就会导致知识点目录、题型字典、指纹全部对不上。
+SUBJECT_ALIASES = {
+    '生物学': '生物', '生物': '生物',
+    '道法': '政治', '道德与法治': '政治', '思想政治': '政治', '政治与法治': '政治',
+    '思想品德': '政治', '品德与社会': '政治',
+    '历史与社会': '历史',
+    'chinese': '语文', 'math': '数学', 'english': '英语', 'physics': '物理',
+    'chemistry': '化学', 'biology': '生物', 'politics': '政治', 'history': '历史',
+    'geography': '地理',
+}
+
+STAGE_ALIASES = {
+    '小学': 'primary', '初中': 'junior', '高中': 'senior',
+    'primary': 'primary', 'junior': 'junior', 'senior': 'senior',
+}
+
+# 来源字典的性质：题库按它区分教辅与公开卷
+SOURCE_NATURES = ('教辅', '校本', '公开', '其他')
+
 # 26 个卷型：25 个组卷网原值 + 其他（AI 无法归类时的兜底，占比用于发现枚举缺口）
 PAPER_TYPES = (
     '课前预习', '课堂例题', '随堂练习', '课后作业', '单元复习',
@@ -109,6 +129,37 @@ def normalize_paper_type(value: str):
     return '其他', True
 
 
+def normalize_subject(value: str):
+    """返回 (规范化学科, 是否被改动)。认不出的保留原值，不硬塞。"""
+    text = (value or '').strip()
+    if not text:
+        return '', False
+    if text in SUBJECTS:
+        return text, False
+    alias = SUBJECT_ALIASES.get(text) or SUBJECT_ALIASES.get(text.lower())
+    if alias:
+        return alias, True
+    return text, False
+
+
+def stage_code(value: str) -> str:
+    """中文或代码的学段统一成 primary/junior/senior。"""
+    text = (value or '').strip()
+    return STAGE_ALIASES.get(text) or STAGE_ALIASES.get(text.lower()) or ''
+
+
+def normalize_source(item: dict) -> dict:
+    """来源条目规范化：名称去空白、性质必须落枚举、id 缺失时按名称生成。"""
+    name = str((item or {}).get('name') or '').strip()
+    nature = str((item or {}).get('nature') or '').strip()
+    source_id = str((item or {}).get('id') or '').strip()
+    if not source_id and name:
+        source_id = 'src-' + str(abs(hash(name)) % 10 ** 8)
+    return {'id': source_id, 'name': name,
+            'nature': nature if nature in SOURCE_NATURES else '其他',
+            'default': bool((item or {}).get('default'))}
+
+
 def exam_nature_of(paper_type: str) -> str:
     return PAPER_TYPE_NATURE.get((paper_type or '').strip(), '')
 
@@ -169,4 +220,6 @@ def enums_payload() -> dict:
         'sub_types': list(SUB_TYPES),
         'grading_methods': list(GRADING_METHODS),
         'difficulty_bands': list(DIFFICULTY_BANDS),
+        'source_natures': list(SOURCE_NATURES),
+        'subjects_aliases': dict(SUBJECT_ALIASES),
     }

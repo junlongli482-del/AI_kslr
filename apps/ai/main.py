@@ -751,6 +751,77 @@ def validate(task_id: str, payload: dict):
     return {'issues': issues, 'valid': not any(x['severity'] == 'error' for x in issues), 'result': result}
 
 
+def _read_sources() -> dict:
+    path = DATA / 'settings' / 'sources.json'
+    try:
+        data = json.loads(path.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        data = {'items': []}
+    items = [enum_table.normalize_source(item) for item in (data.get('items') or []) if isinstance(item, dict)]
+    return {'items': [item for item in items if item['name']]}
+
+
+@app.get('/settings/sources')
+def get_sources():
+    return _read_sources()
+
+
+@app.put('/settings/sources')
+def save_sources(body: dict):
+    items = [enum_table.normalize_source(item) for item in (body.get('items') or []) if isinstance(item, dict)]
+    items = [item for item in items if item['name']]
+    names = [item['name'] for item in items]
+    if len(set(names)) != len(names):
+        raise HTTPException(400, '来源名称不能重复')
+    if items and not any(item['default'] for item in items):
+        items[0]['default'] = True
+    path = DATA / 'settings' / 'sources.json'
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({'items': items}, ensure_ascii=False, indent=2), encoding='utf-8')
+    return {'items': items}
+
+
+@app.post('/tasks/{task_id}/debug-call')
+def debug_call(task_id: str, body: dict):
+    """按一次历史调用重发：只替换系统指令，用户的原始输入保持不动。
+
+    结果不写回任务、不影响全局提示词，仅用于对比调试。
+    """
+    folder = task_folder(task_id)
+    call_id = str(body.get('call_id') or '')
+    instruction = str(body.get('instruction') or '')
+    if not call_id or not instruction.strip():
+        raise HTTPException(400, '需要 call_id 与 instruction')
+    trace_path = folder / 'llm' / 'calls' / f'{call_id}.json'
+    trace = read(trace_path) if trace_path.is_file() else {}
+    if not trace:
+        raise HTTPException(404, '调用记录不存在')
+    request = trace.get('request') or {}
+    # 正常调用把 system/user 放在顶层，缓存命中写的是 request 子对象，两种都要认。
+    user = str(request.get('user') or trace.get('user') or '')
+    if not user:
+        raise HTTPException(400, '该调用没有保存原始输入')
+    try:
+        payload = json.loads(user)
+    except ValueError:
+        payload = user
+    policy = str(trace.get('channel') or '').lower() or 'deepseek'
+    known = [item['id'].lower() for item in configured_channels()]
+    if policy not in known:
+        policy = 'deepseek'
+    llm = LLM(folder, policy)
+    try:
+        candidate = llm.json(f'debug-{call_id}', instruction, payload)
+    except Exception as exc:
+        return {'ok': False, 'error': describe_error(exc, service='llm', operation='debug')}
+    last = llm.calls[-1] if llm.calls else {}
+    return {'ok': True, 'call_id': call_id, 'instruction': instruction,
+            'original_instruction': str(request.get('system') or trace.get('system') or ''),
+            'original': trace.get('response'), 'candidate': candidate,
+            'original_usage': trace.get('usage') or {}, 'usage': last.get('usage') or {},
+            'cost': last.get('cost') or {}, 'images_replayed': False}
+
+
 @app.get('/enums')
 def enum_definitions():
     """枚举快照：前端下拉与外部对接共用，避免各处手抄一份。"""

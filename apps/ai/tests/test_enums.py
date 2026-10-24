@@ -195,3 +195,61 @@ def test_local_mineru_bypasses_system_proxy(monkeypatch):
     assert seen['url'].endswith('/v1/health')
 
 
+def test_subject_aliases_collapse_to_nine_values():
+    assert enums.normalize_subject('生物学') == ('生物', True)
+    assert enums.normalize_subject('道法') == ('政治', True)
+    assert enums.normalize_subject('思想政治') == ('政治', True)
+    assert enums.normalize_subject('数学') == ('数学', False)
+    assert enums.normalize_subject('') == ('', False)
+    for value in enums.SUBJECT_ALIASES.values():
+        assert value in enums.SUBJECTS
+
+
+def test_stage_code_accepts_chinese_and_codes():
+    assert enums.stage_code('高中') == 'senior'
+    assert enums.stage_code('初中') == 'junior'
+    assert enums.stage_code('primary') == 'primary'
+    assert enums.stage_code('大学') == ''
+
+
+def test_paper_subject_is_normalized_with_issue():
+    paper = {'id': 'p1', 'paper_type': '课后作业', 'attributes': {'subject': '生物学'}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['subject'] == '生物'
+    assert any('九个学科' in message for message in paper['issues'])
+
+
+def test_source_items_are_normalized():
+    item = enums.normalize_source({'name': ' 金榜学案 ', 'nature': '教辅'})
+    assert item['name'] == '金榜学案'
+    assert item['nature'] == '教辅'
+    assert item['id'].startswith('src-')
+    assert enums.normalize_source({'name': 'x', 'nature': '乱写'})['nature'] == '其他'
+    assert 'source_natures' in enums.enums_payload()
+
+
+def test_paper_accepts_source_snapshot_keys():
+    assert 'source_name' in core.PAPER_ATTRIBUTES
+    assert 'source_nature' in core.PAPER_ATTRIBUTES
+
+
+def test_provider_errors_are_classified():
+    import httpx
+    from diagnostics import describe_error
+
+    def make(status):
+        request = httpx.Request('POST', 'https://api.deepseek.com/chat/completions')
+        response = httpx.Response(status, request=request, json={'error': {'message': 'x'}})
+        return httpx.HTTPStatusError('boom', request=request, response=response)
+
+    balance = describe_error(make(402), service='llm')
+    assert balance['retryable'] is False
+    assert '余额不足' in balance['hint']
+
+    early = describe_error(make(425), service='llm')
+    assert early['retryable'] is True
+
+    assert describe_error(make(429), service='llm')['retryable'] is True
+
+
+

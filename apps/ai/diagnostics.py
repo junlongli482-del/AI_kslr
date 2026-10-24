@@ -33,9 +33,11 @@ def describe_error(exc, stage='', service='', operation=''):
             detail = re.sub(r'<[^>]+>', ' ', exc.response.text)
             detail = re.sub(r'\s+', ' ', detail).strip() or str(exc)
         detail = f'HTTP {status}：{detail}'
-        retryable = status in (408, 429) or status >= 500
+        retryable = status in (408, 425, 429) or status >= 500
         hint = {401: '供应商拒绝认证，请检查该渠道密钥。',
+                402: '供应商账户余额不足，请充值后再试（该错误重试无效）。',
                 403: '供应商拒绝访问，请检查账户权限或模型权限。',
+                425: '供应商认为请求过早，可降低并发或稍后重试。',
                 429: '供应商限制了请求速率或并发，请降低并发数或稍后重试。',
                 524: '供应商网关等待上游响应超时，可切换渠道或稍后重试。'}.get(status, hint)
     elif isinstance(exc, httpx.TimeoutException):
