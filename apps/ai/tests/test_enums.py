@@ -271,6 +271,8 @@ def test_grade_semester_year_are_normalized():
     assert enums.normalize_grade('七年级') == ('g7', True)
     assert enums.normalize_grade('g12') == ('g12', False)
     assert enums.normalize_semester('上学期') == ('1', True)
+    assert enums.normalize_semester('秋季') == ('1', True)
+    assert enums.normalize_semester('春季') == ('2', True)
     assert enums.normalize_semester('2') == ('2', False)
     assert enums.normalize_year('2024年') == ('2024', True)
     assert enums.normalize_year('2024') == ('2024', False)

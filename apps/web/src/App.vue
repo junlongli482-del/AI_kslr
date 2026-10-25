@@ -88,7 +88,7 @@ import regionTree from './regions.json'
 // 年级/学期/年份一律下拉；地区用国标六位码，省→市两级级联，可输入搜索
 const GRADE_OPTIONS=[{code:'g1',name:'一年级'},{code:'g2',name:'二年级'},{code:'g3',name:'三年级'},{code:'g4',name:'四年级'},{code:'g5',name:'五年级'},{code:'g6',name:'六年级'},{code:'g7',name:'初一'},{code:'g8',name:'初二'},{code:'g9',name:'初三'},{code:'g10',name:'高一'},{code:'g11',name:'高二'},{code:'g12',name:'高三'}]
 const GRADE_LABELS:Record<string,string>=Object.fromEntries(GRADE_OPTIONS.map(g=>[g.code,g.name]))
-const SEMESTER_OPTIONS=[{code:'1',name:'上学期'},{code:'2',name:'下学期'}]
+const SEMESTER_OPTIONS=[{code:'1',name:'秋季'},{code:'2',name:'春季'}]
 const YEAR_OPTIONS=Array.from({length:28},(_,i)=>String(2000+i))
 const REGION_OPTIONS:any[]=regionTree as any[]
 const PAPER_TYPES_COMMON=['课前预习','课堂例题','随堂练习','课后作业','单元复习','单元测试','阶段检测','期中','期末','开学考试','专题练习','竞赛']
