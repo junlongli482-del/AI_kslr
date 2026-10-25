@@ -253,9 +253,9 @@ def normalize_grading_method(value: str) -> str:
     method = (value or '').strip().lower()
     if method in GRADING_METHODS:
         return method
-    if method in ('manual', '人工', 'machine', 'auto'):
-        # 旧值 manual 属于「需要模型/人工」，归入 ai
-        return 'ai'
+    # 旧口径：auto 是“自动批 = 程序批”，manual 是“人工/模型批”
+    if method == 'auto':
+        return 'program'
     return 'ai'
 
 

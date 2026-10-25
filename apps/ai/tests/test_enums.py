@@ -347,6 +347,32 @@ def test_unknown_source_is_cleared(monkeypatch):
     assert any('不在来源字典内' in item for item in paper['issues'])
 
 
+def test_grading_method_legacy_auto_maps_to_program():
+    assert enums.normalize_grading_method('auto') == 'program'
+    assert enums.normalize_grading_method('manual') == 'ai'
+    assert enums.normalize_grading_method('program') == 'program'
+
+
+def test_rubrics_skip_program_questions(monkeypatch):
+    class NoCall:
+        calls = []
+
+        def json(self, *args, **kwargs):
+            raise AssertionError('程序可批的题不应该调用评分标准')
+
+    program = {'id': 'q1', 'paper_id': 'p1', 'number': '1', 'stem': 'x',
+               'attributes': {'grading_method': 'program'}}
+    core.apply_rubrics([program], [{'id': 'p1', 'title': '卷'}], NoCall())
+    assert program.get('scoring') in (None, {})
+
+
+def test_issue_append_is_deduplicated():
+    question = {'issues': ['难度值超过 1，已按旧档位清空，请重新评估']}
+    core.add_issue(question, '难度值超过 1，已按旧档位清空，请重新评估')
+    core.add_issue(question, '别的提示')
+    assert question['issues'] == ['难度值超过 1，已按旧档位清空，请重新评估', '别的提示']
+
+
 def test_provider_errors_are_classified():
     import httpx
     from diagnostics import describe_error

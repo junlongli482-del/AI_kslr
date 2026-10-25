@@ -656,6 +656,7 @@ def validate(task_id: str, payload: dict):
     for q in result['questions']:
         def issue(message,severity='error'):
             issues.append({'question_id':q['id'],'severity':severity,'message':message})
+        q['issues'] = list(dict.fromkeys(q.get('issues') or []))
         if q['id'] in ids:
             issues.append({'question_id': q['id'], 'severity': 'error', 'message': '题目ID重复'})
         ids.add(q['id'])

@@ -1150,14 +1150,8 @@ def expand_answer_ranges(entries: list[dict], llm: LLM):
 
 
 RUBRIC_PROMPT = r'''你是高考阅卷评分细则编写专家。输入是一份卷的题目、选项、答案、解析、总分和小问分。
-为每道题判断 grading_method：
-- 选择题、判断题、只需填最终答案的客观题：auto，不写评分标准。
-- 解答、计算、证明、综合、材料分析、论述、作图等需要看过程的题：manual，写分步得分点。
-难度规则：
-- 每题都必须给 difficulty（整数 1–5），不得为 null 或省略。
-- 1=直接识记或一步计算；2=单一知识点、1–2 步；3=多步常规、2–3 个知识点；4=综合性强、多步推理或易错；5=复杂建模/多知识点/高计算量/压轴。
-- 按题目本身难度判断，不按学生水平；整卷要有区分度，不得全部给 3。
-- difficulty_reason 用一句话说明主要依据，不超过 20 字。
+批阅方式与难度已在打标阶段确定，本步不要输出 grading_method、difficulty、difficulty_band、difficulty_reason。
+你只负责为需要分步给分的题目生成评分标准。
 manual 规则：
 1. 每个小问（没有小问则是整题）的得分点数量按实际评分需要决定，不设固定上下限：通常 3–6 个，步骤少的题可以只有 1–2 个，复杂题可以 7–10 个甚至更多。只按可判定的步骤/结果拆分，不要为凑数硬拆，也不要把多个独立步骤合并成一个无法判定的点；所有 points 的 pct 合计必须为 100。
 2. 得分点必须是可判定的动作或结果，例如“正确设出 b_n=a_n/n”“正确变形得到 b_{n+1}-b_n=1”；禁止写“过程完整”“思路清晰”这类空泛评价。得分点中的数学公式必须用 $...$ 包裹（如 $a_{n+1}=a_n+n$、$\\frac{1}{2}$），不得裸写 LaTeX 命令或纯文本公式。
@@ -1166,7 +1160,7 @@ manual 规则：
 5. 作文、论述、开放性试题用 type=band：按内容/表达/结构等维度，每个维度 pct 合计 100，bands 给四档描述；其他题用 type=step。
 6. 如果只有整题总分、没有小问分数，为每个小问给 weight_pct，合计 100；已有小问分数时也给出与之一致的 weight_pct。
 7. 文字精炼，每点不超过 30 字；不重复题干和答案，不编造。
-返回 {"items":[{"question_id":"...","grading_method":"auto|manual","difficulty":3,"difficulty_reason":"...","subquestions":[{"subquestion_id":"...","weight_pct":40,"scoring":{"type":"step","points":[{"pct":40,"criterion":"..."}],"deductions":[],"notes":""}}],"scoring":{"type":"step","points":[...],"deductions":[],"notes":""}}]}
+返回 {"items":[{"question_id":"...","subquestions":[{"subquestion_id":"...","weight_pct":40,"scoring":{"type":"step","points":[{"pct":40,"criterion":"..."}],"deductions":[],"notes":""}}],"scoring":{"type":"step","points":[...],"deductions":[],"notes":""}}]}
 没有小问的题用 scoring；有小问的题只用 subquestions。'''
 
 
@@ -1257,6 +1251,9 @@ def sync_sub_scores(questions: list[dict]):
 def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=None, preserve=False):
     payload = []
     for q in questions:
+        # 程序可批的题不需要采分点，直接跳过：既省调用，也避免覆盖打标给出的批阅方式。
+        if normalize_grading_method((q.get('attributes') or {}).get('grading_method')) != 'ai':
+            continue
         paper = next((p for p in papers if p['id'] == q['paper_id']), {})
         payload.append({'question_id': q['id'], 'paper': paper.get('title', ''), 'number': q['number'],
                         'stem': q['stem'], 'options': q.get('options') or [],
@@ -1279,16 +1276,7 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
             q = by_id.get(item.get('question_id'))
             if not q:
                 continue
-            try:
-                difficulty = int(item.get('difficulty'))
-            except (TypeError, ValueError):
-                difficulty = None
-            if difficulty in (1, 2, 3, 4, 5):
-                q.setdefault('attributes', {})['difficulty'] = difficulty
-                reason = str(item.get('difficulty_reason') or '').strip()
-                if reason:
-                    q['attributes']['difficulty_reason'] = reason[:40]
-            q['grading_method'] = 'auto' if item.get('grading_method') == 'auto' else 'manual'
+            # 批阅方式与难度已在打标阶段确定，这里不再覆盖。
             if q['grading_method'] == 'auto':
                 q['scoring'] = {'method': 'auto'}
                 for sub in q.get('subquestions') or []:
@@ -1309,9 +1297,7 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
                 if not (preserve and (q.get('scoring') or {}).get('points')):
                     q['scoring'] = normalize_scoring(item.get('scoring') or {})
                     q['scoring']['method'] = 'manual'
-    for q in questions:
-        if q.get('grading_method') is None:
-            q['grading_method'] = 'manual'
+    # 批阅方式由打标阶段决定，这里不再兜底写入。
 
 
 def missing_rubric_targets(question: dict, subquestion_id: str | None = None) -> list[dict]:
@@ -1357,8 +1343,6 @@ def fill_question_rubric(question: dict, llm: LLM, subquestion_id: str | None = 
     if item.get('grading_method') == 'auto':
         # 客观题不需要得分点，但要把“客观题”这个结论写回，避免用户点完没有任何反馈。
         target['scoring'] = {'method': 'auto'}
-        if not is_sub:
-            question['grading_method'] = 'auto'
         return 1
     if is_sub:
         sub_item = next((entry for entry in item.get('subquestions') or [] if entry.get('subquestion_id') == subquestion_id), None)
@@ -1376,7 +1360,6 @@ def fill_question_rubric(question: dict, llm: LLM, subquestion_id: str | None = 
     if not scoring.get('points'):
         return 0
     question['scoring'] = scoring
-    question['grading_method'] = 'ai'
     return 1
 
 
@@ -1971,6 +1954,14 @@ def apply_paper_attribute_result(paper: dict, result: dict) -> int:
     return filled
 
 
+def add_issue(question: dict, message: str):
+    """追加提示时去重：同一句只留一条，避免编译和校验各追加一次出现两遍。"""
+    issues = question.setdefault('issues', [])
+    if message not in issues:
+        issues.append(message)
+    return issues
+
+
 def apply_question_structure_tags(question: dict) -> dict:
     """结构派生字段的确定性收口。
 
@@ -1993,7 +1984,7 @@ def apply_question_structure_tags(question: dict) -> dict:
         if legacy and not attributes.get('difficulty_band'):
             attributes['difficulty_band'] = legacy
         attributes['difficulty'] = None
-        question.setdefault('issues', []).append('难度值超过 1，已按旧档位清空，请重新评估')
+        add_issue(question, '难度值超过 1，已按旧档位清空，请重新评估')
     elif difficulty is None:
         attributes['difficulty'] = None
     else:
@@ -2101,7 +2092,7 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
         attributes['cognitive_level'] = ability['cognitive_level'] or ''
         attributes['ability_dimensions'] = [code for code in (ability['primary'], ability['secondary']) if code]
         if not ability['primary']:
-            question.setdefault('issues', []).append('未判定学科能力，请人工选择')
+            add_issue(question, '未判定学科能力，请人工选择')
         points = []
         nodes = {}
         try:
