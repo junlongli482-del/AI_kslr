@@ -140,6 +140,28 @@ GRADING_METHODS = ('program', 'ai')
 # program=程序批阅（只需比对字母或判断勾叉）；ai=需模型批阅
 DIFFICULTY_BANDS = ('容易', '适中', '困难')
 
+# 模型常按 5 档说难度，统一折成 3 档；档位最终由数值派生，这里只做兜底归一。
+BAND_ALIASES = {'简单': '容易', '较易': '容易', '容易': '容易',
+                '中等': '适中', '适中': '适中',
+                '较难': '困难', '困难': '困难'}
+
+
+def derive_band(value) -> str:
+    """得分率 → 三档：≥0.80 容易，0.50~0.80 适中，<0.50 困难。"""
+    try:
+        score = float(value)
+    except (TypeError, ValueError):
+        return ''
+    if score >= 0.8:
+        return '容易'
+    if score >= 0.5:
+        return '适中'
+    return '困难'
+
+
+def normalize_band(value: str) -> str:
+    return BAND_ALIASES.get(str(value or '').strip(), '')
+
 
 def normalize_paper_type(value: str):
     """返回 (规范化卷型, 是否被改动)。认不出的值归入「其他」。"""

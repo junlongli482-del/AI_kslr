@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, finalize_difficulty, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
 import enums as enum_table
 import abilities as ability_table
 import prompts as prompt_store
@@ -670,6 +670,7 @@ def validate(task_id: str, payload: dict):
             issues.append({'question_id': q['id'], 'severity': 'error', 'message': '题目所属试卷不存在'})
         previous_method = (q.get('attributes') or {}).get('grading_method')
         apply_question_structure_tags(q)
+        finalize_difficulty(q)
         if previous_method not in enum_table.GRADING_METHODS:
             issue('批阅方式无效或缺失，已默认 AI 批阅', 'warning')
         slug = slugs.get(q.get('paper_id'))

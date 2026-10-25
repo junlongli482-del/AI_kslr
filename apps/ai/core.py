@@ -25,8 +25,9 @@ from diagnostics import PipelineError, describe_error, redact
 from media import repair_assets, apply_layout, column_bounds, column_index, page_cells, detected_columns
 from channels import channels as configured_channels, timeout as model_timeout, cost as model_cost
 import abilities as ability_table
-from enums import (PAPER_TYPES, SOURCE_NATURES, allowed_exam_stages, derive_sub_type,
-                   exam_nature_of, normalize_grading_method, normalize_grade,
+from enums import (PAPER_TYPES, SOURCE_NATURES, allowed_exam_stages, derive_band,
+                   derive_sub_type, exam_nature_of, normalize_band,
+                   normalize_grading_method, normalize_grade,
                    normalize_paper_type, normalize_quality, normalize_semester,
                    normalize_subject, normalize_year)
 
@@ -1047,7 +1048,7 @@ questions每项：id(用q1等稳定ID),paper_id,number(字符串),stem(可编辑
 题组答案规则：答案文件中出现“17.(1)...(2)...(3)...”时，必须按小问编号拆成三个可独立匹配目标；不得把整段答案、解析全部写入第一个小问；无法确定对应小问时，该小问answer为null并在issues标记subquestion_unmatched，整段无法拆分时保留原文到父题issues，禁止猜分配。有多个小问时父题answer必须为null；答案挂到最末级小问，一个小问的answer只能是该小问自己的内容，禁止合并或按题号推测分配。
 输出示例：{"papers":[{"id":"p1","title":"示例卷","attributes":{},"paper_type":"","exam":{},"source":{},"manual":{}}],"questions":[{"id":"q15","paper_id":"p1","number":"15","stem":"已知数列……","options":[],"answer":null,"subquestions":[{"subquestion_id":"q15-sub-1","number":"(1)","stem":"求通项公式","options":[],"answer":{"value":"$a_n=2^{n-1}$","analysis":"由条件联立得……","scoring_criteria":null,"source":"answer_file"},"score":6,"block_ids":[]},{"subquestion_id":"q15-sub-2","number":"(2)","stem":"求前n项和","options":[],"answer":{"value":"$S_n=2^n-1$","analysis":"……","scoring_criteria":null,"source":"answer_file"},"score":8,"block_ids":[]}],"block_ids":[],"attributes":{"subject":"数学","question_type":"解答题"}}]}
 image_layout按输入完整图片URL索引，每项必须包含caption（图下注文本）、group_id（同排图片组）、row、column，不得省略；同排图片使用相同group_id并按column从左到右编号，不同排图片必须使用不同group_id/row。尺寸和bbox引用输入来源，不得编造。甲乙丙/图1图2属于图注，绑定对应图片，不散落成独立正文。保留输入原有行列和小间距；物理坐标由系统校验换算，题框不是显示尺寸容器。
-attributes包含subject,stage,grade,textbook,question_type,difficulty(1到5必填：1识记或一步，2单一知识点，3多步常规，4综合易错，5复杂压轴；不得null),ability_dimensions[],response_form[],score(数值或null),score_source(paper_declared|ai_assigned|null),score_weight(正数或null),year,region,source_type,background；无依据为null。
+attributes包含subject,stage,grade,textbook,question_type,response_form[],score(数值或null),score_source(paper_declared|ai_assigned|null),score_weight(正数或null),year,region,source_type,background；无依据为null。
 原图引用必须使用资料里给出的完整 /api/assets?key=... URL，不得猜图片名。所有图片必须以标准Markdown图片输出，禁止把图片URL作为普通文本输出。图片必须单独成段，不要与题干文字、公式、表格或选项文字写在同一行；只有同排多张图片之间可以放在同一行，图形选项正确关联A/B/C/D。表格使用Markdown或安全HTML表格，并输出tables结构（每项含structure_status=structured|partial|image_only、asset_key或来源图片URL）。同一表格若structure_status=structured，题干/选项中不要重复引用对应原始表格图片；partial可同时保留，image_only必须保留原图。
 题干和选项不要重复，小问保留原编号与层级。题库内容不包括页眉页脚密封线。block_ids必须来自输入，同一道题的跨页和跨栏内容全选；跨题共享块允许引用并在issues说明。
 内容修正规则（只修明显错误，不重写）：
@@ -1975,25 +1976,31 @@ def apply_question_structure_tags(question: dict) -> dict:
     attributes['sub_type'] = derived
     attributes['question_type_sub'] = derived
     attributes['grading_method'] = normalize_grading_method(attributes.get('grading_method'))
-    # 难度只认 0~1 的得分率。旧数据里被写成 1~5 档位的，清空数值、保留档位提示。
-    raw_difficulty = attributes.get('difficulty')
+    return attributes
+
+
+def finalize_difficulty(question: dict) -> dict:
+    """难度统一收口：只认 0~1 得分率，档位永远由数值派生。
+
+    必须在打标之后调用——结构阶段产出的 1~5 只是中间值，不打它。
+    """
+    attributes = question.setdefault('attributes', {})
+    sources = question.setdefault('attribute_sources', {})
+    raw = attributes.get('difficulty')
     try:
-        difficulty = float(raw_difficulty) if raw_difficulty not in (None, '') else None
+        value = float(raw) if raw not in (None, '') else None
     except (TypeError, ValueError):
-        difficulty = None
-    if difficulty is not None and difficulty > 1:
-        legacy = {1: '容易', 2: '容易', 3: '适中', 4: '困难', 5: '困难'}.get(int(round(difficulty)), '')
-        if legacy and not attributes.get('difficulty_band'):
-            attributes['difficulty_band'] = legacy
-        attributes['difficulty'] = None
+        value = None
+    if value is not None and value > 1:
         add_issue(question, '难度值超过 1，已按旧档位清空，请重新评估')
-    elif difficulty is None:
-        attributes['difficulty'] = None
-    else:
-        attributes['difficulty'] = round(max(0.0, min(1.0, difficulty)), 2)
-        if not attributes.get('difficulty_band'):
-            value = attributes['difficulty']
-            attributes['difficulty_band'] = '容易' if value >= 0.8 else ('适中' if value >= 0.5 else '困难')
+        value = None
+    attributes['difficulty'] = None if value is None else round(max(0.0, min(1.0, value)), 2)
+    if sources.get('difficulty_band') != 'manual':
+        derived = derive_band(attributes['difficulty'])
+        attributes['difficulty_band'] = derived or normalize_band(attributes.get('difficulty_band'))
+    if attributes.get('difficulty') is not None:
+        question['issues'] = [item for item in (question.get('issues') or [])
+                              if '难度值超过 1' not in item]
     return attributes
 
 
@@ -2269,6 +2276,8 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
                     q['issues'].append('含AI生成内容，待人工审核')
     apply_question_types = assign_question_types(questions, papers, llm)
     apply_rubrics(questions, papers, llm, progress)
+    for question in questions:
+        finalize_difficulty(question)
     for q in questions:
         restore_source_images(q, documents)
         normalize_question_content(q, documents)

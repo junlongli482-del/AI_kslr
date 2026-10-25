@@ -323,17 +323,33 @@ def test_quality_level_is_normalized():
 
 
 def test_legacy_difficulty_band_is_cleared():
-    question = {'stem': 'x', 'subquestions': [],
-                'attributes': {'difficulty': 5}}
-    core.apply_question_structure_tags(question)
+    question = {'stem': 'x', 'subquestions': [], 'attributes': {'difficulty': 5}}
+    core.finalize_difficulty(question)
     assert question['attributes']['difficulty'] is None
-    assert question['attributes']['difficulty_band'] == '困难'
     assert any('难度值超过 1' in item for item in question['issues'])
 
     normal = {'stem': 'x', 'subquestions': [], 'attributes': {'difficulty': 0.32}}
-    core.apply_question_structure_tags(normal)
+    core.finalize_difficulty(normal)
     assert normal['attributes']['difficulty'] == 0.32
     assert normal['attributes']['difficulty_band'] == '困难'
+    assert not any('难度值超过 1' in item for item in normal['issues'])
+
+
+def test_band_is_derived_not_taken_from_model():
+    question = {'attributes': {'difficulty': 0.43, 'difficulty_band': '中等'}}
+    core.finalize_difficulty(question)
+    assert question['attributes']['difficulty_band'] == '困难'
+    assert enums.normalize_band('中等') == '适中'
+    assert enums.normalize_band('较易') == '容易'
+    assert enums.derive_band(0.9) == '容易'
+    assert enums.derive_band(0.65) == '适中'
+
+
+def test_manual_band_override_survives():
+    question = {'attributes': {'difficulty': 0.32, 'difficulty_band': '容易'},
+                'attribute_sources': {'difficulty_band': 'manual'}}
+    core.finalize_difficulty(question)
+    assert question['attributes']['difficulty_band'] == '容易'
 
 
 def test_unknown_source_is_cleared(monkeypatch):
