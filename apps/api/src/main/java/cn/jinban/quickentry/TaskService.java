@@ -57,8 +57,25 @@ public class TaskService {
         var out=new HashMap<String,Object>(); out.put("currency","CNY"); out.put("mineru_amount",0.0); out.put("mineru_status","free_service");
         double total=0; int calls=0, cacheHits=0, unknown=0, estimated=0; var items=new ArrayList<Object>();
         var p=data.resolve("tasks").resolve(id).resolve("llm").resolve("calls.json");
+        String runId="";
         try{
-            if(Files.isRegularFile(p)) for(JsonNode c:json.readTree(Files.readString(p))){
+            var runPath=data.resolve("tasks").resolve(id).resolve("run.json");
+            if(Files.isRegularFile(runPath))runId=json.readTree(Files.readString(runPath)).path("run_id").asText("");
+        }catch(Exception ignored){}
+        out.put("run_id",runId);
+        var allCalls=new ArrayList<JsonNode>();
+        try{
+            if(Files.isRegularFile(p)) for(JsonNode c:json.readTree(Files.readString(p))) allCalls.add(c);
+        }catch(Exception ignored){}
+        boolean scoped=runId!=null&&!runId.isEmpty();
+        if(scoped){
+            var latest=new ArrayList<JsonNode>();
+            for(JsonNode c:allCalls) if(runId.equals(c.path("run").asText(""))) latest.add(c);
+            if(!latest.isEmpty()) allCalls=latest;
+        }
+        out.put("previous_calls",Math.max(0,allCalls.size()));
+        try{
+            for(JsonNode c:allCalls){
                 calls++; if("cache_hit".equals(c.path("status").asText())) cacheHits++;
                 var n=c.path("cost");
                 String status=n.path("amount_status").asText("unknown");

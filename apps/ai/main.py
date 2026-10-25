@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, compute_quality, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, finalize_difficulty, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, compute_quality, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, finalize_difficulty, tagging_request, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
 import enums as enum_table
 import abilities as ability_table
 import prompts as prompt_store
@@ -858,6 +858,58 @@ def debug_call(task_id: str, body: dict):
             'original': trace.get('response'), 'candidate': candidate,
             'original_usage': trace.get('usage') or {}, 'usage': last.get('usage') or {},
             'cost': last.get('cost') or {}, 'images_replayed': False}
+
+
+@app.get('/tasks/{task_id}/questions/{question_id}/tagging-prompt')
+def question_tagging_prompt(task_id: str, question_id: str):
+    """给单题调试弹窗预填提示词，不产生任何模型调用。"""
+    folder = task_folder(task_id)
+    result_path = folder / 'result.json'
+    if not result_path.is_file():
+        raise HTTPException(404, '这个任务还没有处理结果')
+    result = read(result_path)
+    question = next((q for q in result.get('questions') or [] if q.get('id') == question_id), None)
+    if not question:
+        raise HTTPException(404, '题目不存在')
+    paper = next((p for p in result.get('papers') or [] if p.get('id') == question.get('paper_id')), {})
+    built = tagging_request(paper, question)
+    if not built:
+        raise HTTPException(400, '该学科没有可用的打标前缀')
+    return {'prompt': built['prompt'], 'slug': built['slug'],
+            'images': len(built['images']), 'payload_preview': built['payload']}
+
+
+@app.post('/tasks/{task_id}/questions/{question_id}/debug-tagging')
+def debug_tagging(task_id: str, question_id: str, body: dict):
+    """单题调试打标：用这一题的输入重发，结果不写回任务。"""
+    folder = task_folder(task_id)
+    result_path = folder / 'result.json'
+    if not result_path.is_file():
+        raise HTTPException(404, '这个任务还没有处理结果')
+    result = read(result_path)
+    question = next((q for q in result.get('questions') or [] if q.get('id') == question_id), None)
+    if not question:
+        raise HTTPException(404, '题目不存在')
+    paper = next((p for p in result.get('papers') or [] if p.get('id') == question.get('paper_id')), {})
+    built = tagging_request(paper, question)
+    if not built:
+        raise HTTPException(400, '该学科没有可用的打标前缀')
+    instruction = str(body.get('instruction') or '').strip() or built['prompt']
+    try:
+        llm = LLM(folder, 'deepseek', refresh=True, run='debug')
+        candidate = llm.json(f'debug-tagging-{question_id}', instruction, built['payload'],
+                             images=built['images'])
+    except Exception as exc:
+        return {'ok': False, 'error': describe_error(exc, service='llm', operation='debug-tagging')}
+    last = llm.calls[-1] if llm.calls else {}
+    attributes = question.get('attributes') or {}
+    original = {key: attributes.get(key) for key in
+                ('question_type', 'question_type_sub', 'difficulty', 'difficulty_band',
+                 'knowledge_points', 'ability_primary', 'ability_secondary',
+                 'cognitive_level', 'grading_method')}
+    return {'ok': True, 'prompt': instruction, 'original': original, 'candidate': candidate,
+            'usage': last.get('usage') or {}, 'cost': last.get('cost') or {},
+            'images_replayed': len(built['images'])}
 
 
 @app.get('/enums')

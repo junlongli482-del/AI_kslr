@@ -266,7 +266,11 @@ def test_source_nature_is_inherited_to_questions():
     assert questions[0]['attribute_sources']['source_nature'] == 'paper'
 
 
-def test_grade_semester_year_are_normalized():
+def test_grade_semester_year_are_normalized(monkeypatch):
+    # 隔离真实 sources.json：来源默认值会覆盖年份/学期，属于另一条测试的范围
+    monkeypatch.setattr(core, 'source_names', lambda: {})
+    monkeypatch.setattr(core, 'default_source', lambda: {})
+    monkeypatch.setattr(core, 'source_defaults', lambda name: {})
     assert enums.normalize_grade('高一') == ('g10', True)
     assert enums.normalize_grade('七年级') == ('g7', True)
     assert enums.normalize_grade('g12') == ('g12', False)

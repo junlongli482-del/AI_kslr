@@ -841,11 +841,13 @@ def decode_json_content(content: str):
 
 
 class LLM:
-    def __init__(self, folder: Path, policy='low_first', refresh: bool = False):
+    def __init__(self, folder: Path, policy='low_first', refresh: bool = False, run: str = ''):
         self.folder = folder
         self.policy = policy
         # refresh=True 时跳过读缓存，重新调用模型；写回缓存不受影响。
         self.refresh = refresh
+        # run 标识「这一批」调用，成本页按它只显示最近一次重跑。
+        self.run = run
         self.calls = read(folder / 'llm/calls.json') if (folder / 'llm/calls.json').exists() else []
 
     def _detail(self, call_id: str, detail: dict):
@@ -876,7 +878,7 @@ class LLM:
         if cache.exists() and not self.refresh:
             call_id = f'{int(time.time() * 1000)}-{uuid.uuid4().hex[:8]}'
             cached_result = read(cache)
-            self.calls.append({'call_id': call_id, 'at': datetime.now(timezone(timedelta(hours=8))).isoformat(),
+            self.calls.append({'run': self.run, 'call_id': call_id, 'at': datetime.now(timezone(timedelta(hours=8))).isoformat(),
                                'name': name, 'channel': 'cache', 'model': '', 'status': 'cache_hit', 'cached': True,
                                'seconds': 0, 'usage': {}, 'cache_key': cache.name,
                                'cost': {'provider': 'llm', 'amount': 0, 'amount_status': 'actual', 'reason': 'cache_hit'}})
@@ -986,7 +988,7 @@ class LLM:
                     raise ValueError('模型返回空试卷或空题目，尝试下一渠道')
                 usage = response.get('usage') or {}
                 cost = model_cost(channel,usage)
-                self.calls.append({'call_id': call_id, 'at': started_at, 'name': name, 'channel': channel.lower(), 'model': provider['model'],
+                self.calls.append({'run': self.run, 'call_id': call_id, 'at': started_at, 'name': name, 'channel': channel.lower(), 'model': provider['model'],
                                    'seconds': round(time.monotonic() - started, 2), 'usage': usage, 'status': 'success',
                                    'finish_reason': stop_reason, 'cached': False, 'cost': cost,
                                    'input_chars': len(request_detail.get('system',''))+len(request_detail.get('user','')),
@@ -1006,7 +1008,7 @@ class LLM:
                 if isinstance(exc, httpx.TimeoutException):
                     diagnostic['detail'] += f'（读取等待上限{model_timeout().read:g}秒，连接上限{model_timeout().connect:g}秒）'
                 errors.append(diagnostic)
-                self.calls.append({'call_id': call_id, 'at': started_at, 'name': name, 'channel': channel.lower(),
+                self.calls.append({'run': self.run, 'call_id': call_id, 'at': started_at, 'name': name, 'channel': channel.lower(),
                                    'model':provider['model'], 'seconds':round(time.monotonic()-started,2),
                                    'usage':usage, 'finish_reason':stop_reason, 'status': 'failed', 'error': diagnostic,
                                    'input_chars':len(request_detail.get('system',''))+len(request_detail.get('user','')),
@@ -2041,6 +2043,24 @@ def add_issue(question: dict, message: str):
     return issues
 
 
+def tagging_request(paper: dict, question: dict):
+    """为单题调试重建打标请求：前缀 + 本科能力段 + 该题输入。"""
+    attrs = paper.get('attributes') or {}
+    stage = attrs.get('stage') or (paper.get('source') or {}).get('stage') or ''
+    subject = attrs.get('subject') or (paper.get('source') or {}).get('subject') or ''
+    prefix, _tree, version = tagging_prefix(stage, subject)
+    if not prefix:
+        return None
+    slug = str(version or '').split('@')[0]
+    payload = {'number': question.get('number'), 'stage': stage, 'subject': subject,
+               'stem': question.get('stem'), 'options': question.get('options'),
+               'subquestions': [{'number': sub.get('number'), 'stem': sub.get('stem')}
+                                for sub in question.get('subquestions') or []],
+               'answer': question.get('answer'), 'analysis': question.get('analysis')}
+    return {'prompt': prefix + ability_table.prompt_block(slug), 'payload': payload,
+            'images': _question_images(question), 'slug': slug}
+
+
 def apply_question_structure_tags(question: dict) -> dict:
     """结构派生字段的确定性收口。
 
@@ -2205,7 +2225,11 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
 
 
 def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None, refresh=False):
-    llm = LLM(folder, policy, refresh=refresh)
+    # 每次处理（含重跑）一个批次号：成本页只显示最近这一批，历史调用仍留在盘上。
+    run_id = datetime.now(timezone(timedelta(hours=8))).strftime('%Y%m%d%H%M%S')
+    save(folder / 'run.json', {'run_id': run_id, 'refresh': refresh,
+                               'started_at': datetime.now(timezone(timedelta(hours=8))).isoformat()})
+    llm = LLM(folder, policy, refresh=refresh, run=run_id)
     papers, questions = [], []
     excluded_block_ids = []
     for di, doc in enumerate(d for d in documents if d['role'] != 'answer'):

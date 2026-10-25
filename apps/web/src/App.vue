@@ -354,6 +354,31 @@ async function createFolder(){try{const {value}=await ElMessageBox.prompt('分�
 async function renameFolder(){if(!folderFilter.value)return;try{const {value}=await ElMessageBox.prompt('新名称','重命名分组',{inputValue:folderName.value,confirmButtonText:'保存',cancelButtonText:'取消'});const name=(value||'').trim();if(!name)return;await fetch('/api/folders/'+folderFilter.value,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})});await loadFolders();ElMessage.success('已重命名')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
 async function deleteFolder(){if(!folderFilter.value)return;try{await ElMessageBox.confirm('仅空分组可删除，确定删除「'+folderName.value+'」？','删除分组',{confirmButtonText:'删除',cancelButtonText:'取消'});const r=await fetch('/api/folders/'+folderFilter.value,{method:'DELETE'});if(!r.ok)throw new Error((await r.json()).message||'删除失败');folderFilter.value='';await loadFolders();ElMessage.success('已删除')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
 const sources=ref<any[]>([]),sourcesDialog=ref(false),sourceBusy=ref(false),sourceForm=ref<{name:string;nature:string}>({name:'',nature:'教辅'})
+const debugQ=ref<any>(null),debugDialog=ref(false),debugPrompt=ref(''),qDebugBusy=ref(false),qDebugResult=ref<any>(null),debugSlug=ref('')
+async function openQuestionDebug(){
+  const t:any=task.value,q:any=selected.value
+  if(!t||!q){ElMessage.warning('先选中一道题');return}
+  debugQ.value=q;qDebugResult.value=null;debugPrompt.value='';debugSlug.value='';debugDialog.value=true;qDebugBusy.value=true
+  try{
+    const response=await fetch(`/prompt-api/tasks/${t.id}/questions/${q.id}/tagging-prompt`)
+    if(!response.ok)throw new Error(await response.text())
+    const data=await response.json()
+    debugPrompt.value=data.prompt||'';debugSlug.value=data.slug||''
+  }catch(error:any){ElMessage.error('取不到该题的提示词：'+(error?.message||''))}
+  finally{qDebugBusy.value=false}
+}
+async function runQuestionDebug(){
+  const t:any=task.value,q:any=debugQ.value
+  if(!t||!q)return
+  qDebugBusy.value=true;qDebugResult.value=null
+  try{
+    const response=await fetch(`/prompt-api/tasks/${t.id}/questions/${q.id}/debug-tagging`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({instruction:debugPrompt.value})})
+    const data=await response.json()
+    qDebugResult.value=data
+    if(data.ok===false)ElMessage.error(data?.error?.detail||'调试失败')
+  }catch(error:any){ElMessage.error('调试失败：'+(error?.message||''))}
+  finally{qDebugBusy.value=false}
+}
 async function loadSources(){try{const response=await fetch('/prompt-api/settings/sources');if(!response.ok)throw new Error(await response.text());const data=await response.json();sources.value=(Array.isArray(data?.items)?data.items:[]).map((s:any)=>({...s,defaults:s.defaults||{}}))}catch{sources.value=[]}}
 function onSourceChange(name:string){const form:any=paperForm.value;if(!form)return;const item=sources.value.find((s:any)=>s.name===name);form.attributes.source_name=name||'';form.attributes.source_nature=item?.nature||'';const defaults:any=item?.defaults||{};if(defaults.year)form.attributes.year=defaults.year;if(defaults.semester)form.attributes.semester=defaults.semester;if(defaults.region)form.attributes.region=defaults.region;paperChanged()}
 function addSource(){const name=(sourceForm.value.name||'').trim();if(!name){ElMessage.warning('请填写来源名称');return}if(sources.value.some((s:any)=>s.name===name)){ElMessage.warning('来源名称不能重复');return}sources.value.push({name,nature:sourceForm.value.nature,default:sources.value.length===0});sourceForm.value.name=''}
@@ -699,7 +724,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 <el-select v-model="selected.attributes.ability_secondary" filterable clearable placeholder="次能力（可空）" style="width:100%" @change="markAttributeManual('ability_secondary')"><el-option v-for="item in abilities" :key="item.code" :value="item.code" :label="item.name + ' · ' + item.hint" :disabled="item.code===selected.attributes.ability_primary"/></el-select>
 <el-select v-model="selected.attributes.cognitive_level" clearable placeholder="认知层级" style="width:100%" @change="markAttributeManual('cognitive_level')"><el-option v-for="item in abilityLevels" :key="item.code" :value="item.code" :label="item.code + ' ' + item.name + ' · ' + item.definition"/></el-select><div class="field-heading"><label>作答形式</label></div><el-select v-model="selected.attributes.response_form" multiple filterable allow-create><el-option v-for="label in ['客观','主观','作图','填空','计算','证明']" :value="label" :label="label"/></el-select><div class="field-heading"><label>情景与背景</label></div><el-input v-model="selected.attributes.background" type="textarea" :rows="2"/><div class="field-heading"><label>扩展标签</label><button class="text-button" @click="(selected.attributes.extension_attributes ||= []).push({name:'',value:''})"><Plus :size="13"/>新增</button></div><div class="extension-row" v-for="(tag,index) in selected.attributes.extension_attributes"><el-input v-model="tag.name" placeholder="标签名称"/><el-input v-model="tag.value" placeholder="标签值"/><button class="icon-button" aria-label="删除标签" @click="selected.attributes.extension_attributes.splice(index,1)"><X :size="14"/></button></div><div class="field-heading"><label>授权与排序</label></div><p class="muted">授权尚未确认。重要程度算法未启用，不生成无依据的推荐分。</p></template>
             </div>
-            <div class="detail-footer"><button class="text-button" @click="nextQuestion(-1)"><ArrowLeft :size="15"/>上一题</button><el-button type="primary" @click="confirmQuestion"><Check :size="15"/>确认并继续</el-button><button class="text-button" @click="nextQuestion(1)">下一题<ArrowRight :size="15"/></button></div>
+            <div class="detail-footer"><button class="text-button" @click="openQuestionDebug">调试本题</button><button class="text-button" @click="nextQuestion(-1)"><ArrowLeft :size="15"/>上一题</button><el-button type="primary" @click="confirmQuestion"><Check :size="15"/>确认并继续</el-button><button class="text-button" @click="nextQuestion(1)">下一题<ArrowRight :size="15"/></button></div>
           </section><div v-else class="empty-state"><h3>没有题目</h3><el-button @click="newQuestion">添加漏题</el-button></div>
         </div>
       </template>
@@ -822,6 +847,14 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
     </el-drawer>
     <el-dialog v-model="detailDialog" :title="detail?.title||('题目 '+(detail?.number||''))" width="min(900px, 94vw)"><template v-if="detail"><div v-if="detail.questions" class="paper-detail-list"><div class="template-notice" v-if="detail.templates?.length"><ScanLine :size="17"/>原卷区域模板已保存 · 实际扫描配准尚未接入</div><article v-for="row in detail.questions"><h3>第 {{row.content.number}} 题</h3><QuestionPreview :question="row.content"/></article></div><article v-else><QuestionPreview :question="detail.content"/><div class="region-preview-list"><img v-for="r in detail.content.regions" :src="r.crop_url" alt="来源区域"/></div></article></template><template #footer><el-button @click="detailDialog=false">关闭</el-button><el-button type="primary" @click="detailDialog=false;openTask(tasks.find(t=>t.id===detail.task_id)||{id:detail.task_id,status:'committed'} as Task)">返回来源审核</el-button></template></el-dialog>
   </div>
+<el-dialog v-model="debugDialog" title="单题调试 · 打标" width="min(1100px,96vw)" top="4vh">
+<div class="muted">第 {{debugQ?.number}} 题{{debugSlug?' · '+debugSlug:''}}。改下方提示词后重新发送，只影响这一次调试：不写回任务、不改全局提示词。</div>
+<el-input v-model="debugPrompt" type="textarea" :rows="10" placeholder="提示词"/>
+<div class="detail-footer"><el-button type="primary" :loading="qDebugBusy" @click="runQuestionDebug">发送并对比</el-button><span v-if="qDebugResult?.cost?.amount" class="muted">本次 ¥{{Number(qDebugResult.cost.amount).toFixed(6)}}</span><span v-if="qDebugResult?.images_replayed" class="muted">含 {{qDebugResult.images_replayed}} 张题图</span></div>
+<div v-if="qDebugResult&&qDebugResult.ok!==false" style="display:flex;gap:12px"><div style="flex:1;min-width:0"><h4>原始标签</h4><pre style="max-height:40vh;overflow:auto">{{pretty(qDebugResult.original)}}</pre></div><div style="flex:1;min-width:0"><h4>新输出</h4><pre style="max-height:40vh;overflow:auto">{{pretty(qDebugResult.candidate)}}</pre></div></div>
+<p v-else-if="qDebugResult&&qDebugResult.ok===false" class="muted">{{qDebugResult?.error?.detail}}</p>
+<template #footer><el-button @click="debugDialog=false">关闭</el-button></template>
+</el-dialog>
 <el-dialog v-model="sourcesDialog" title="来源管理" width="min(540px, 94vw)">
       <div class="source-form"><el-input v-model="sourceForm.name" placeholder="来源名称" clearable/><el-select v-model="sourceForm.nature" style="width:110px"><el-option v-for="n in ['教辅','校本','公开','其他']" :key="n" :value="n" :label="n"/></el-select><el-button @click="addSource">新增</el-button></div>
       <div class="source-list"><div v-for="(s,index) in sources" :key="s.id||s.name" class="source-row"><span class="source-name">{{s.name}}</span><span class="muted">{{s.nature}}</span><span v-if="s.default" class="inherit-badge">默认</span><div class="source-row-actions"><button class="text-button" @click="setDefaultSource(index)">设为默认</button><button class="text-button" @click="removeSource(index)"><Trash2 :size="13"/>删除</button></div><div class="source-defaults"><el-input v-model="s.defaults.year" placeholder="默认年份" size="small" style="width:100px"/><el-select v-model="s.defaults.semester" placeholder="学期" clearable size="small" style="width:90px"><el-option value="1" label="秋季"/><el-option value="2" label="春季"/></el-select><el-input v-model="s.defaults.region" placeholder="地区码 440000" size="small" style="width:140px"/></div></div><p v-if="!sources.length" class="muted">还没有来源，先新增一条。</p></div>
