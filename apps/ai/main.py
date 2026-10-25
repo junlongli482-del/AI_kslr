@@ -79,6 +79,8 @@ class ProcessRequest(BaseModel):
     files: list[dict]
     generate: bool = False
     channel_policy: str = 'deepseek'
+    # 重跑：跳过模型缓存重新计算，但 MinerU 识别结果照常复用
+    refresh: bool = False
 
 
 def task_folder(task_id):
@@ -156,7 +158,8 @@ def process(request: ProcessRequest):
             progress('模型对比','各渠道同时处理同一份资料，结果与成本分别保存')
             result=compare(request.task_id,documents,folder,request.generate,progress)
         else:
-            result = compile_result(request.task_id, documents, folder, request.generate, request.channel_policy, progress)
+            result = compile_result(request.task_id, documents, folder, request.generate,
+                                request.channel_policy, progress, refresh=request.refresh)
         save(state_path, {'status': 'ready', 'stage': '待审核', 'message': f'识别完成，共 {len(result["questions"])} 道题', 'updated_at': time.time()})
     except Exception as exc:
         error = describe_error(exc, current_stage,

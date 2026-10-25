@@ -840,9 +840,11 @@ def decode_json_content(content: str):
 
 
 class LLM:
-    def __init__(self, folder: Path, policy='low_first'):
+    def __init__(self, folder: Path, policy='low_first', refresh: bool = False):
         self.folder = folder
         self.policy = policy
+        # refresh=True 时跳过读缓存，重新调用模型；写回缓存不受影响。
+        self.refresh = refresh
         self.calls = read(folder / 'llm/calls.json') if (folder / 'llm/calls.json').exists() else []
 
     def _detail(self, call_id: str, detail: dict):
@@ -870,7 +872,7 @@ class LLM:
             legacy_cache = self.folder / 'llm' / f'{name}-{legacy_digest}.json'
             if legacy_cache.exists():
                 cache = legacy_cache
-        if cache.exists():
+        if cache.exists() and not self.refresh:
             call_id = f'{int(time.time() * 1000)}-{uuid.uuid4().hex[:8]}'
             cached_result = read(cache)
             self.calls.append({'call_id': call_id, 'at': datetime.now(timezone(timedelta(hours=8))).isoformat(),
@@ -2119,8 +2121,8 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
     return done
 
 
-def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None):
-    llm = LLM(folder, policy)
+def compile_result(task_id: str, documents: list[dict], folder: Path, generate=False, policy='low_first', progress=None, refresh=False):
+    llm = LLM(folder, policy, refresh=refresh)
     papers, questions = [], []
     excluded_block_ids = []
     for di, doc in enumerate(d for d in documents if d['role'] != 'answer'):

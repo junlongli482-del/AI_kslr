@@ -101,12 +101,13 @@ public class TaskService {
         if("committed".equals(String.valueOf(t.get("status"))))throw new ResponseStatusException(BAD_REQUEST,"已入库的任务不能重跑");
         // 重跑就是重新来过：清掉旧草稿，让新结果成为审核稿，否则界面看到的还是旧内容。
         store.clearReview(id);
-        start(id);
+        start(id, true);
     }
-    public void start(String id){
+    public void start(String id){ start(id,false); }
+    public void start(String id, boolean refresh){
         var t=require(id);var files=store.files(id);
         if(files.stream().noneMatch(f->!"answer".equals(f.get("role"))))throw new ResponseStatusException(BAD_REQUEST,"请至少上传一个题目文件");
-        var payload=new HashMap<String,Object>();payload.put("task_id",id);payload.put("files",files);payload.put("generate",t.get("generate_answers"));payload.put("channel_policy",t.get("channel_policy"));
+        var payload=new HashMap<String,Object>();payload.put("task_id",id);payload.put("files",files);payload.put("generate",t.get("generate_answers"));payload.put("channel_policy",t.get("channel_policy"));payload.put("refresh",refresh);
         ai.post().uri("/process").body(payload).retrieve().toBodilessEntity();
         store.state(id,"running","等待识别","正在准备文件");
         store.event(id,"等待识别","running","任务已提交");
