@@ -397,7 +397,41 @@ def test_rubrics_tolerate_missing_grading_method():
     assert question.get('scoring') is not None or question.get('scoring') is None
 
 
-def test_issue_append_is_deduplicated():
+def test_quality_is_computed_from_final_products():
+    paper = {'id': 'p1', 'paper_type': '期末',
+             'attributes': {'year': '2024', 'region': '330300', 'source_name': '金榜学案',
+                            'grade': 'g10'}}
+    complete = {'id': 'q1', 'paper_id': 'p1',
+                'answer': 'A', 'analysis': '解析',
+                'attributes': {'knowledge_points': [{'id': '1'}],
+                               'grading_method': 'program'}}
+    result = core.compute_quality(paper, [complete])
+    assert result['score'] == 100
+    assert result['level'] == '精品'
+    assert result['missing'] == []
+
+    empty = {'id': 'q2', 'paper_id': 'p1', 'attributes': {'grading_method': 'ai'}}
+    poor = core.compute_quality(paper, [empty])
+    assert poor['level'] == '待修'
+    assert '答案' in poor['missing'] and '解析' in poor['missing']
+    assert '知识点标注' in poor['missing']
+
+
+def test_quality_reports_missing_source_fields():
+    paper = {'id': 'p1', 'paper_type': '', 'attributes': {}}
+    question = {'id': 'q1', 'paper_id': 'p1', 'answer': 'A', 'analysis': 'x',
+                'attributes': {'knowledge_points': [{'id': '1'}], 'grading_method': 'program'}}
+    result = core.compute_quality(paper, [question])
+    assert any('出处信息' in item for item in result['missing'])
+
+
+def test_quality_does_not_call_model():
+    """质量等级必须是纯计算，不产生任何 LLM 调用。"""
+    paper = {'id': 'p1', 'paper_type': '期末', 'attributes': {}}
+    assert core.compute_quality(paper, [])['missing'] == ['题目']
+
+
+
     question = {'issues': ['难度值超过 1，已按旧档位清空，请重新评估']}
     core.add_issue(question, '难度值超过 1，已按旧档位清空，请重新评估')
     core.add_issue(question, '别的提示')

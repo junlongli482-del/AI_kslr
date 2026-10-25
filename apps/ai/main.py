@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, finalize_difficulty, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, compute_quality, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, finalize_difficulty, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
 import enums as enum_table
 import abilities as ability_table
 import prompts as prompt_store
@@ -633,6 +633,12 @@ def validate(task_id: str, payload: dict):
         if rebuild:
             question_span_regions(result['questions'],result['documents'],question_ids=rebuild,
                                   excluded=result.get('excluded_block_ids') or [])
+    for paper in result['papers']:
+        quality = compute_quality(paper, result['questions'])
+        manual = paper.setdefault('manual', {})
+        manual['quality_level'] = quality['level']
+        manual['quality_score'] = quality['score']
+        manual['quality_missing'] = quality['missing']
     issues = []
     if result['task_id'] != task_id:
         issues.append({'severity':'error','message':'结果不属于当前任务'})

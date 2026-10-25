@@ -1405,6 +1405,71 @@ def source_names() -> dict:
             for item in (data.get('items') or []) if isinstance(item, dict) and item.get('name')}
 
 
+def compute_quality(paper: dict, questions: list[dict]) -> dict:
+    """按最终产物算试卷质量，不调用模型。
+
+    评的是资料完善度：答案、解析、知识点、评分标准、出处信息。
+    放在流水线最后，看到的是最终结果，同一份卷永远同一个分。
+    """
+    items = [q for q in questions if q.get('paper_id') == paper.get('id')]
+    total = len(items)
+    if not total:
+        return {'level': '', 'score': 0, 'missing': ['题目']}
+
+    def ratio(predicate) -> float:
+        return sum(1 for q in items if predicate(q)) / total
+
+    def has_answer(q: dict) -> bool:
+        if str(q.get('answer') or '').strip():
+            return True
+        return any(str((sub.get('answer') or {}).get('value') or '').strip()
+                   for sub in q.get('subquestions') or [])
+
+    def has_analysis(q: dict) -> bool:
+        if str(q.get('analysis') or '').strip():
+            return True
+        return any(str((sub.get('answer') or {}).get('analysis') or '').strip()
+                   for sub in q.get('subquestions') or [])
+
+    def has_knowledge(q: dict) -> bool:
+        return bool((q.get('attributes') or {}).get('knowledge_points'))
+
+    def rubric_ok(q: dict) -> bool:
+        # 程序可批的题不需要评分标准，视为满足
+        if (q.get('attributes') or {}).get('grading_method') == 'program':
+            return True
+        if (q.get('scoring') or {}).get('points'):
+            return True
+        return any((sub.get('scoring') or {}).get('points') for sub in q.get('subquestions') or [])
+
+    parts = [
+        ('答案', 30, ratio(has_answer), 0.95),
+        ('解析', 25, ratio(has_analysis), 0.95),
+        ('知识点标注', 20, ratio(has_knowledge), 0.95),
+        ('主观题评分标准', 15, ratio(rubric_ok), 0.95),
+    ]
+    attributes = paper.get('attributes') or {}
+    source_fields = {
+        '年份': attributes.get('year'),
+        '地区': attributes.get('region'),
+        '卷型': paper.get('paper_type'),
+        '来源': attributes.get('source_name'),
+        '年级': attributes.get('grade'),
+    }
+    missing_fields = [label for label, value in source_fields.items() if not str(value or '').strip()]
+    source_ratio = (len(source_fields) - len(missing_fields)) / len(source_fields)
+    parts.append(('出处信息', 10, source_ratio, 1.0))
+
+    score = round(sum(weight * value for _, weight, value, _ in parts))
+    missing = [label for label, _, value, threshold in parts if value < threshold]
+    if missing_fields:
+        missing.append('出处信息（缺' + '、'.join(missing_fields) + '）')
+    else:
+        missing = [item for item in missing if item != '出处信息']
+    level = '精品' if score >= 85 else ('普通' if score >= 60 else '待修')
+    return {'level': level, 'score': score, 'missing': missing}
+
+
 def normalize_paper(paper: dict):
     attrs = paper.get('attributes')
     if not isinstance(attrs, dict):
@@ -1884,11 +1949,7 @@ stage 取 primary/junior/senior；subject 取 语文/数学/英语/物理/化学
 year 是考试举行年份，不是“届”；region 是地区名；school 是命题学校；publisher_name 是教辅品牌；publisher_series 是系列名(如2024秋)。
 declared_question_count、declared_total_score、duration_min 只读卷面印的数字，没印就是 null，不要填 0。
 输出：{"stage":"","subject":"","grade":"","semester":"","paper_type":"","exam_stage":"","year":null,"region":"","school":"","publisher_name":"","publisher_series":"","declared_question_count":null,"declared_total_score":null,"duration_min":null,"confidence":{"paper_type":0,"stage":0,"subject":0,"exam_stage":0},"reason":""}
-confidence 为 0~1 的把握度，没有把握就给低值。
-同时评估这份卷的整体质量：quality_level 只能取 精品/普通/待修，quality_score 为 0~100，quality_missing 为缺失项数组。
-评判依据是资料完善度，不是题目难度：答案齐全、解析齐全、知识点可标、主观题有评分标准、年份/地区/卷型/来源等出处信息齐全、题目结构完整。
-精品 ≥85；普通 60~84；待修 <60（大面积缺答案或解析、结构错乱）。
-输出再补三个键：quality_level、quality_score、quality_missing。只返回 JSON。'''
+confidence 为 0~1 的把握度，没有把握就给低值。只返回 JSON。'''
 
 PAPER_ATTRIBUTE_KEYS = ('stage', 'subject', 'grade', 'semester', 'exam_stage', 'year',
                         'region', 'school', 'publisher_name', 'publisher_series')
@@ -1932,17 +1993,6 @@ def apply_paper_attribute_result(paper: dict, result: dict) -> int:
         if value:
             paper['paper_type'] = value
             filled += 1
-    manual = paper.setdefault('manual', {})
-    quality, quality_changed = normalize_quality(result.get('quality_level') or '')
-    if quality and not str(manual.get('quality_level') or '').strip():
-        manual['quality_level'] = quality
-        filled += 1
-    score = result.get('quality_score')
-    if isinstance(score, (int, float)) and not manual.get('quality_score'):
-        manual['quality_score'] = int(round(score))
-    missing = result.get('quality_missing')
-    if isinstance(missing, list) and missing and not manual.get('quality_missing'):
-        manual['quality_missing'] = [str(item) for item in missing if str(item).strip()]
     exam = paper.setdefault('exam', {})
     for key in ('declared_question_count', 'declared_total_score', 'duration_min'):
         raw = result.get(key)
@@ -2278,6 +2328,11 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
     apply_rubrics(questions, papers, llm, progress)
     for question in questions:
         finalize_difficulty(question)
+    for paper in papers:
+        quality = compute_quality(paper, questions)
+        paper.setdefault('manual', {})['quality_level'] = quality['level']
+        paper['manual']['quality_score'] = quality['score']
+        paper['manual']['quality_missing'] = quality['missing']
     for q in questions:
         restore_source_images(q, documents)
         normalize_question_content(q, documents)
