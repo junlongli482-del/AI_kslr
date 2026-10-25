@@ -860,6 +860,73 @@ def debug_call(task_id: str, body: dict):
             'cost': last.get('cost') or {}, 'images_replayed': False}
 
 
+def _ability_label(slug: str, code: str) -> str:
+    if not code:
+        return ''
+    for item in ability_table.abilities(slug):
+        if item['code'] == code:
+            return f"{item['name']} · {code}"
+    return code
+
+
+def _level_label(code: str) -> str:
+    if not code:
+        return ''
+    for item in ability_table.levels():
+        if item['code'] == code:
+            return f"{code} {item['name']}"
+    return code
+
+
+def _kp_names(points) -> str:
+    names = []
+    for point in points or []:
+        if isinstance(point, dict):
+            names.append(str(point.get('name') or point.get('id') or ''))
+        else:
+            names.append(str(point))
+    return '、'.join(name for name in names if name)
+
+
+def _grading_label(value: str) -> str:
+    return {'program': '程序批阅', 'ai': '智能批阅'}.get(str(value or ''), str(value or ''))
+
+
+def build_comparison(original: dict, candidate: dict, slug: str) -> list[dict]:
+    """把原始属性与模型新输出转成同构的行，前端按行对比。"""
+    cand_type = candidate.get('question_type') or {}
+    cand_sub = candidate.get('sub_type') or {}
+    cand_diff = candidate.get('difficulty') or {}
+    cand_ability = candidate.get('ability') or {}
+    cand_kps = candidate.get('knowledge_points') or []
+    pairs = [
+        ('题型', original.get('question_type') or '', cand_type.get('name') or ''),
+        ('学科子形态', original.get('question_type_sub_raw') or '', cand_sub.get('name') or ''),
+        ('知识点', _kp_names(original.get('knowledge_points')), _kp_names(cand_kps)),
+        ('难度值', str(original.get('difficulty') if original.get('difficulty') is not None else ''),
+         str(cand_diff.get('score_rate') if cand_diff.get('score_rate') is not None else '')),
+        ('难度档', enum_table.derive_band(original.get('difficulty')),
+         enum_table.derive_band(cand_diff.get('score_rate'))),
+        ('主能力', _ability_label(slug, original.get('ability_primary') or ''),
+         _ability_label(slug, cand_ability.get('primary') or '')),
+        ('次能力', _ability_label(slug, original.get('ability_secondary') or ''),
+         _ability_label(slug, cand_ability.get('secondary') or '')),
+        ('认知层级', _level_label(original.get('cognitive_level') or ''),
+         _level_label(cand_ability.get('cognitive_level') or '')),
+        ('批阅方式', _grading_label(original.get('grading_method') or ''),
+         _grading_label(candidate.get('grading_method') or '')),
+        ('难度理由', original.get('difficulty_reason') or '', cand_diff.get('reason') or ''),
+    ]
+    rows = [{'label': label, 'original': left.strip(), 'candidate': right.strip(),
+             'same': left.strip() == right.strip()} for label, left, right in pairs]
+    # 知识点只比较集合，避免顺序不同被当成变化
+    for row in rows:
+        if row['label'] == '知识点':
+            split = lambda text: sorted(part for part in text.split('、') if part.strip())
+            row['same'] = split(row['original']) == split(row['candidate'])
+    return rows
+
+
 @app.get('/tasks/{task_id}/questions/{question_id}/tagging-prompt')
 def question_tagging_prompt(task_id: str, question_id: str):
     """给单题调试弹窗预填提示词，不产生任何模型调用。"""
@@ -908,6 +975,7 @@ def debug_tagging(task_id: str, question_id: str, body: dict):
                  'knowledge_points', 'ability_primary', 'ability_secondary',
                  'cognitive_level', 'grading_method')}
     return {'ok': True, 'prompt': instruction, 'original': original, 'candidate': candidate,
+            'comparison': build_comparison(original, candidate, built['slug']),
             'usage': last.get('usage') or {}, 'cost': last.get('cost') or {},
             'images_replayed': len(built['images'])}
 

@@ -588,4 +588,4 @@ score = 0.95 - 0.80×(raw/3) + 题型修正 + 0.05×跨章 + 0.05×认知跳跃
 不确定时一律给 ai：判成 program 会产出错误成绩，判成 ai 只是多花一次调用。
 
 【输出格式】
-{"question_type":{"code":"","name":"","confidence":0},"sub_type":{"name":"","confidence":0},"knowledge_points":[{"id":"","name":"","role":"primary","confidence":0}],"kp_note":"","difficulty":{"score_rate":0,"band":"","factors":{"B":0,"C":0,"D":0},"evidence":{"steps":0,"cognitive_leaps":0,"cross_chapter":false},"reason":""},"flags":[],"grading_method":"ai"}
+{"question_type":{"code":"","name":"","confidence":0},"sub_type":{"name":"","confidence":0},"knowledge_points":[{"id":"","name":"","role":"primary","confidence":0}],"kp_note":"","difficulty":{"score_rate":0,"factors":{"B":0,"C":0,"D":0},"evidence":{"steps":0,"cognitive_leaps":0,"cross_chapter":false},"reason":""},"flags":[],"grading_method":"ai"}

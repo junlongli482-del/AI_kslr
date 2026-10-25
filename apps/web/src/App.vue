@@ -851,7 +851,15 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
 <div class="muted">第 {{debugQ?.number}} 题{{debugSlug?' · '+debugSlug:''}}。改下方提示词后重新发送，只影响这一次调试：不写回任务、不改全局提示词。</div>
 <el-input v-model="debugPrompt" type="textarea" :rows="10" placeholder="提示词"/>
 <div class="detail-footer"><el-button type="primary" :loading="qDebugBusy" @click="runQuestionDebug">发送并对比</el-button><span v-if="qDebugResult?.cost?.amount" class="muted">本次 ¥{{Number(qDebugResult.cost.amount).toFixed(6)}}</span><span v-if="qDebugResult?.images_replayed" class="muted">含 {{qDebugResult.images_replayed}} 张题图</span></div>
-<div v-if="qDebugResult&&qDebugResult.ok!==false" style="display:flex;gap:12px"><div style="flex:1;min-width:0"><h4>原始标签</h4><pre style="max-height:40vh;overflow:auto">{{pretty(qDebugResult.original)}}</pre></div><div style="flex:1;min-width:0"><h4>新输出</h4><pre style="max-height:40vh;overflow:auto">{{pretty(qDebugResult.candidate)}}</pre></div></div>
+<div v-if="qDebugResult&&qDebugResult.ok!==false">
+<el-table :data="qDebugResult.comparison||[]" size="small" border style="width:100%" :row-class-name="({row}:any)=>row.same?'debug-same':'debug-diff'">
+<el-table-column prop="label" label="项" width="110"/>
+<el-table-column prop="original" label="原始标签" show-overflow-tooltip/>
+<el-table-column prop="candidate" label="新输出" show-overflow-tooltip/>
+<el-table-column label="" width="70"><template #default="{row}"><span v-if="!row.same" class="inherit-badge">变化</span></template></el-table-column>
+</el-table>
+<el-collapse><el-collapse-item title="原始 JSON" name="1"><pre style="max-height:32vh;overflow:auto">{{pretty(qDebugResult.candidate)}}</pre></el-collapse-item></el-collapse>
+</div>
 <p v-else-if="qDebugResult&&qDebugResult.ok===false" class="muted">{{qDebugResult?.error?.detail}}</p>
 <template #footer><el-button @click="debugDialog=false">关闭</el-button></template>
 </el-dialog>
