@@ -8,12 +8,12 @@
       "subject": "chinese",
       "subject_cn": "小学语文",
       "file": "prompts/prefix-primary-chinese.txt",
-      "chars": 6833,
-      "est_tokens": 4271,
+      "chars": 6517,
+      "est_tokens": 4073,
       "kp_nodes": 367,
       "kp_mode": "all_levels_ge2",
       "types": 8,
-      "sha1_12": "8997df0f9560"
+      "sha1_12": "831a84903bc3"
     },
     {
       "id": "primary-math",
@@ -21,12 +21,12 @@
       "subject": "math",
       "subject_cn": "小学数学",
       "file": "prompts/prefix-primary-math.txt",
-      "chars": 18215,
-      "est_tokens": 11384,
+      "chars": 17899,
+      "est_tokens": 11187,
       "kp_nodes": 896,
       "kp_mode": "leaves_only",
       "types": 9,
-      "sha1_12": "3351b9c404aa"
+      "sha1_12": "4a6e99884c4b"
     },
     {
       "id": "primary-english",
@@ -34,12 +34,12 @@
       "subject": "english",
       "subject_cn": "小学英语",
       "file": "prompts/prefix-primary-english.txt",
-      "chars": 7217,
-      "est_tokens": 4511,
+      "chars": 6901,
+      "est_tokens": 4313,
       "kp_nodes": 319,
       "kp_mode": "leaves_only",
       "types": 18,
-      "sha1_12": "45724980af4c"
+      "sha1_12": "f10097c6cafb"
     },
     {
       "id": "junior-chinese",
@@ -47,12 +47,12 @@
       "subject": "chinese",
       "subject_cn": "初中语文",
       "file": "prompts/prefix-junior-chinese.txt",
-      "chars": 5479,
-      "est_tokens": 3424,
+      "chars": 5163,
+      "est_tokens": 3227,
       "kp_nodes": 293,
       "kp_mode": "all_levels_ge2",
       "types": 8,
-      "sha1_12": "5e8e59984043"
+      "sha1_12": "de6dbda3c969"
     },
     {
       "id": "junior-math",
@@ -60,12 +60,12 @@
       "subject": "math",
       "subject_cn": "初中数学",
       "file": "prompts/prefix-junior-math.txt",
-      "chars": 24158,
-      "est_tokens": 15099,
+      "chars": 23842,
+      "est_tokens": 14901,
       "kp_nodes": 1270,
       "kp_mode": "leaves_only",
       "types": 5,
-      "sha1_12": "df3a03b4e236"
+      "sha1_12": "9d1691cd1ac1"
     },
     {
       "id": "junior-english",
@@ -73,12 +73,12 @@
       "subject": "english",
       "subject_cn": "初中英语",
       "file": "prompts/prefix-junior-english.txt",
-      "chars": 16291,
-      "est_tokens": 10182,
+      "chars": 15975,
+      "est_tokens": 9984,
       "kp_nodes": 806,
       "kp_mode": "leaves_only",
       "types": 23,
-      "sha1_12": "8a783ab8a934"
+      "sha1_12": "343d18b53e34"
     },
     {
       "id": "junior-physics",
@@ -86,12 +86,12 @@
       "subject": "physics",
       "subject_cn": "初中物理",
       "file": "prompts/prefix-junior-physics.txt",
-      "chars": 17831,
-      "est_tokens": 11144,
+      "chars": 17515,
+      "est_tokens": 10947,
       "kp_nodes": 882,
       "kp_mode": "leaves_only",
       "types": 11,
-      "sha1_12": "0b6566b90e69"
+      "sha1_12": "3e7e6e9558a9"
     },
     {
       "id": "junior-chemistry",
@@ -99,12 +99,12 @@
       "subject": "chemistry",
       "subject_cn": "初中化学",
       "file": "prompts/prefix-junior-chemistry.txt",
-      "chars": 9183,
-      "est_tokens": 5739,
+      "chars": 8867,
+      "est_tokens": 5542,
       "kp_nodes": 431,
       "kp_mode": "leaves_only",
       "types": 9,
-      "sha1_12": "aac7148dd2db"
+      "sha1_12": "3b6307ece1a2"
     },
     {
       "id": "junior-biology",
@@ -112,12 +112,12 @@
       "subject": "biology",
       "subject_cn": "初中生物",
       "file": "prompts/prefix-junior-biology.txt",
-      "chars": 6988,
-      "est_tokens": 4368,
+      "chars": 6672,
+      "est_tokens": 4170,
       "kp_nodes": 309,
       "kp_mode": "leaves_only",
       "types": 8,
-      "sha1_12": "71da2ec5788e"
+      "sha1_12": "8e3152d0d3ff"
     },
     {
       "id": "junior-politics",
@@ -125,12 +125,12 @@
       "subject": "politics",
       "subject_cn": "初中道德与法治",
       "file": "prompts/prefix-junior-politics.txt",
-      "chars": 24075,
-      "est_tokens": 15047,
+      "chars": 23759,
+      "est_tokens": 14849,
       "kp_nodes": 1154,
       "kp_mode": "leaves_only",
       "types": 7,
-      "sha1_12": "8bd7ff93cbc0"
+      "sha1_12": "7888955f2d6c"
     },
     {
       "id": "junior-history",
@@ -138,12 +138,12 @@
       "subject": "history",
       "subject_cn": "初中历史",
       "file": "prompts/prefix-junior-history.txt",
-      "chars": 19504,
-      "est_tokens": 12190,
+      "chars": 19188,
+      "est_tokens": 11992,
       "kp_nodes": 1088,
       "kp_mode": "leaves_only",
       "types": 10,
-      "sha1_12": "ba8ee6edd16b"
+      "sha1_12": "6a00ead49f1f"
     },
     {
       "id": "junior-geography",
@@ -151,12 +151,12 @@
       "subject": "geography",
       "subject_cn": "初中地理",
       "file": "prompts/prefix-junior-geography.txt",
-      "chars": 13676,
-      "est_tokens": 8548,
+      "chars": 13360,
+      "est_tokens": 8350,
       "kp_nodes": 699,
       "kp_mode": "leaves_only",
       "types": 6,
-      "sha1_12": "67ce2cde1761"
+      "sha1_12": "96da95c41ee2"
     },
     {
       "id": "senior-chinese",
@@ -164,12 +164,12 @@
       "subject": "chinese",
       "subject_cn": "高中语文",
       "file": "prompts/prefix-senior-chinese.txt",
-      "chars": 9612,
-      "est_tokens": 6008,
+      "chars": 9296,
+      "est_tokens": 5810,
       "kp_nodes": 538,
       "kp_mode": "all_levels_ge2",
       "types": 8,
-      "sha1_12": "620a10aa5969"
+      "sha1_12": "9c0624150074"
     },
     {
       "id": "senior-math",
@@ -177,12 +177,12 @@
       "subject": "math",
       "subject_cn": "高中数学",
       "file": "prompts/prefix-senior-math.txt",
-      "chars": 28016,
-      "est_tokens": 17510,
+      "chars": 27700,
+      "est_tokens": 17312,
       "kp_nodes": 1408,
       "kp_mode": "leaves_only",
       "types": 6,
-      "sha1_12": "4fd2e70a6f2f"
+      "sha1_12": "75dacc228017"
     },
     {
       "id": "senior-english",
@@ -190,12 +190,12 @@
       "subject": "english",
       "subject_cn": "高中英语",
       "file": "prompts/prefix-senior-english.txt",
-      "chars": 12494,
-      "est_tokens": 7809,
+      "chars": 12178,
+      "est_tokens": 7611,
       "kp_nodes": 647,
       "kp_mode": "leaves_only",
       "types": 14,
-      "sha1_12": "20e41ee5f17f"
+      "sha1_12": "d2d4d7df2af4"
     },
     {
       "id": "senior-physics",
@@ -203,12 +203,12 @@
       "subject": "physics",
       "subject_cn": "高中物理",
       "file": "prompts/prefix-senior-physics.txt",
-      "chars": 18305,
-      "est_tokens": 11441,
+      "chars": 17989,
+      "est_tokens": 11243,
       "kp_nodes": 909,
       "kp_mode": "leaves_only",
       "types": 9,
-      "sha1_12": "2b637d292e27"
+      "sha1_12": "616fbc1b7a72"
     },
     {
       "id": "senior-chemistry",
@@ -216,12 +216,12 @@
       "subject": "chemistry",
       "subject_cn": "高中化学",
       "file": "prompts/prefix-senior-chemistry.txt",
-      "chars": 22185,
-      "est_tokens": 13866,
+      "chars": 21869,
+      "est_tokens": 13668,
       "kp_nodes": 1177,
       "kp_mode": "leaves_only",
       "types": 7,
-      "sha1_12": "0a3445d0b335"
+      "sha1_12": "07aa2ef79eee"
     },
     {
       "id": "senior-biology",
@@ -229,12 +229,12 @@
       "subject": "biology",
       "subject_cn": "高中生物",
       "file": "prompts/prefix-senior-biology.txt",
-      "chars": 9757,
-      "est_tokens": 6098,
+      "chars": 9441,
+      "est_tokens": 5901,
       "kp_nodes": 450,
       "kp_mode": "leaves_only",
       "types": 6,
-      "sha1_12": "cff6f6e6f95e"
+      "sha1_12": "ac683318abf7"
     },
     {
       "id": "senior-politics",
@@ -242,12 +242,12 @@
       "subject": "politics",
       "subject_cn": "高中政治",
       "file": "prompts/prefix-senior-politics.txt",
-      "chars": 22222,
-      "est_tokens": 13889,
+      "chars": 21906,
+      "est_tokens": 13691,
       "kp_nodes": 1108,
       "kp_mode": "leaves_only",
       "types": 8,
-      "sha1_12": "630feed905ce"
+      "sha1_12": "57ad1335cfe4"
     },
     {
       "id": "senior-history",
@@ -255,12 +255,12 @@
       "subject": "history",
       "subject_cn": "高中历史",
       "file": "prompts/prefix-senior-history.txt",
-      "chars": 17283,
-      "est_tokens": 10802,
+      "chars": 16967,
+      "est_tokens": 10604,
       "kp_nodes": 899,
       "kp_mode": "leaves_only",
       "types": 8,
-      "sha1_12": "001dd797941d"
+      "sha1_12": "5d75c4d581ba"
     },
     {
       "id": "senior-geography",
@@ -268,12 +268,12 @@
       "subject": "geography",
       "subject_cn": "高中地理",
       "file": "prompts/prefix-senior-geography.txt",
-      "chars": 12969,
-      "est_tokens": 8106,
+      "chars": 12653,
+      "est_tokens": 7908,
       "kp_nodes": 662,
       "kp_mode": "leaves_only",
       "types": 5,
-      "sha1_12": "9681e18fd20b"
+      "sha1_12": "95190c68197b"
     }
   ]
 }

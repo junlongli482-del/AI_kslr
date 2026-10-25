@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, compute_quality, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, finalize_difficulty, tagging_request, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, compute_quality, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, finalize_difficulty, tagging_request, tagging2_request, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, TAGGING2_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
 import enums as enum_table
 import abilities as ability_table
 import prompts as prompt_store
@@ -512,6 +512,7 @@ class ConcurrencySettings(BaseModel):
 PROMPT_DEFAULTS = {
     'structure': STRUCTURE_PROMPT,
     'paper-attributes': PAPER_ATTRIBUTES_PROMPT,
+    'tagging2': TAGGING2_PROMPT,
     'columns': COLUMNS_PROMPT,
     'answers': ANSWER_PROMPT,
     'match': MATCH_PROMPT,
@@ -892,7 +893,7 @@ def _grading_label(value: str) -> str:
     return {'program': '程序批阅', 'ai': '智能批阅'}.get(str(value or ''), str(value or ''))
 
 
-def build_comparison(original: dict, candidate: dict, slug: str) -> list[dict]:
+def build_comparison(original: dict, candidate: dict, slug: str, mode: str = 'tagging') -> list[dict]:
     """把原始属性与模型新输出转成同构的行，前端按行对比。"""
     cand_type = candidate.get('question_type') or {}
     cand_sub = candidate.get('sub_type') or {}
@@ -919,6 +920,9 @@ def build_comparison(original: dict, candidate: dict, slug: str) -> list[dict]:
     ]
     rows = [{'label': label, 'original': left.strip(), 'candidate': right.strip(),
              'same': left.strip() == right.strip()} for label, left, right in pairs]
+    if mode == 'tagging2':
+        keep = {'主能力', '次能力', '认知层级', '批阅方式'}
+        rows = [row for row in rows if row['label'] in keep]
     # 知识点只比较集合，避免顺序不同被当成变化
     for row in rows:
         if row['label'] == '知识点':
@@ -928,8 +932,8 @@ def build_comparison(original: dict, candidate: dict, slug: str) -> list[dict]:
 
 
 @app.get('/tasks/{task_id}/questions/{question_id}/tagging-prompt')
-def question_tagging_prompt(task_id: str, question_id: str):
-    """给单题调试弹窗预填提示词，不产生任何模型调用。"""
+def question_tagging_prompt(task_id: str, question_id: str, mode: str = 'tagging'):
+    """给单题调试弹窗预填提示词，不产生任何模型调用。mode=tagging|tagging2。"""
     folder = task_folder(task_id)
     result_path = folder / 'result.json'
     if not result_path.is_file():
@@ -939,10 +943,10 @@ def question_tagging_prompt(task_id: str, question_id: str):
     if not question:
         raise HTTPException(404, '题目不存在')
     paper = next((p for p in result.get('papers') or [] if p.get('id') == question.get('paper_id')), {})
-    built = tagging_request(paper, question)
+    built = tagging2_request(paper, question) if mode == 'tagging2' else tagging_request(paper, question)
     if not built:
         raise HTTPException(400, '该学科没有可用的打标前缀')
-    return {'prompt': built['prompt'], 'slug': built['slug'],
+    return {'prompt': built['prompt'], 'slug': built['slug'], 'mode': mode,
             'images': len(built['images']), 'payload_preview': built['payload']}
 
 
@@ -958,13 +962,14 @@ def debug_tagging(task_id: str, question_id: str, body: dict):
     if not question:
         raise HTTPException(404, '题目不存在')
     paper = next((p for p in result.get('papers') or [] if p.get('id') == question.get('paper_id')), {})
-    built = tagging_request(paper, question)
+    mode = str(body.get('mode') or 'tagging')
+    built = tagging2_request(paper, question) if mode == 'tagging2' else tagging_request(paper, question)
     if not built:
         raise HTTPException(400, '该学科没有可用的打标前缀')
     instruction = str(body.get('instruction') or '').strip() or built['prompt']
     try:
         llm = LLM(folder, 'deepseek', refresh=True, run='debug')
-        candidate = llm.json(f'debug-tagging-{question_id}', instruction, built['payload'],
+        candidate = llm.json(f'debug-{mode}-{question_id}', instruction, built['payload'],
                              images=built['images'])
     except Exception as exc:
         return {'ok': False, 'error': describe_error(exc, service='llm', operation='debug-tagging')}
@@ -975,7 +980,7 @@ def debug_tagging(task_id: str, question_id: str, body: dict):
                  'knowledge_points', 'ability_primary', 'ability_secondary',
                  'cognitive_level', 'grading_method')}
     return {'ok': True, 'prompt': instruction, 'original': original, 'candidate': candidate,
-            'comparison': build_comparison(original, candidate, built['slug']),
+            'comparison': build_comparison(original, candidate, built['slug'], mode),
             'usage': last.get('usage') or {}, 'cost': last.get('cost') or {},
             'images_replayed': len(built['images'])}
 

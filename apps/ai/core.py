@@ -2061,6 +2061,38 @@ def tagging_request(paper: dict, question: dict):
             'images': _question_images(question), 'slug': slug}
 
 
+def tagging2_request(paper: dict, question: dict):
+    """为「打标2」重建请求：内容 + 打标1 的结论，判批阅方式/能力/认知层级。"""
+    attrs = paper.get('attributes') or {}
+    stage = attrs.get('stage') or (paper.get('source') or {}).get('stage') or ''
+    subject = attrs.get('subject') or (paper.get('source') or {}).get('subject') or ''
+    _prefix, _tree, version = tagging_prefix(stage, subject)
+    slug = str(version or '').split('@')[0]
+    if not slug:
+        return None
+    attributes = question.get('attributes') or {}
+    points = [str(item.get('name') or '') for item in attributes.get('knowledge_points') or []
+              if isinstance(item, dict)]
+    payload = {
+        'stem': question.get('stem'),
+        'options': question.get('options') or [],
+        'subquestions': [{'number': sub.get('number'), 'stem': sub.get('stem'),
+                          'options': sub.get('options') or [],
+                          'answer': (sub.get('answer') or {}).get('value') if isinstance(sub.get('answer'), dict) else sub.get('answer'),
+                          'analysis': (sub.get('answer') or {}).get('analysis') if isinstance(sub.get('answer'), dict) else ''}
+                         for sub in question.get('subquestions') or []],
+        'answer': question.get('answer'),
+        'analysis': question.get('analysis'),
+        'knowledge_points': [name for name in points if name],
+        'question_type': attributes.get('question_type') or '',
+        'sub_type': attributes.get('question_type_sub_raw') or '',
+        'difficulty': attributes.get('difficulty'),
+    }
+    return {'prompt': prompt_store.get_prompt('tagging2', TAGGING2_PROMPT)
+                      + ability_table.prompt_block(slug),
+            'payload': payload, 'images': [], 'slug': slug}
+
+
 def apply_question_structure_tags(question: dict) -> dict:
     """结构派生字段的确定性收口。
 
@@ -2155,6 +2187,25 @@ def _question_images(question: dict, limit: int = 4) -> list[dict]:
     return images
 
 
+TAGGING2_PROMPT = r'''你是试卷批阅与能力判定助手。输入是一道题的完整信息：题干、选项、小问、答案、解析、已判定的知识点、题型、难度。
+只做三件事，不要重新判断题型，也不要重新挑知识点。
+
+1) 批阅方式 grading_method，只能取 program 或 ai。
+程序只能精确比对两类作答：字母答案（A–G，单个或组合）与判断题的勾/叉。
+判断标准：这道题（题组含全部小题）的每一处作答，学生的答案是否必定只落在上述范围内。
+全部落在 → program；只要有一处不是（填空、书写、作图、解答步骤、作文、需看过程才知对错、多空混合）→ ai。
+按学生答出来的形态判断，不按题型名称判断；不确定时给 ai。
+
+2) 能力维度 ability：primary 必填 1 个，secondary 可空且最多 1 个，只能从给定的本科能力清单里选。
+判断依据是“这题要求学生做什么动作”，不是“这题涉及什么内容”。
+同一知识点可以对应不同能力；只有确实任何一项都不贴切时才用“其他”。
+
+3) 认知层级 cognitive_level：C1 识记 / C2 理解 / C3 应用 / C4 分析，描述这道题要求的思维深度，与难度不是一回事。
+
+输出：{"grading_method":"program|ai","ability":{"primary":"","secondary":null,"cognitive_level":"C1"}}
+只返回 JSON，不要复述输入。'''
+
+
 def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int:
     stages = {}
     for paper in papers:
@@ -2167,13 +2218,13 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
         prefix, tree_path, version = tagging_prefix(stage, subject)
         if not prefix:
             continue
+        slug = str(version or '').split('@')[0]
         payload = {'number': question.get('number'), 'stage': stage, 'subject': subject,
                    'stem': question.get('stem'), 'options': question.get('options'),
                    'subquestions': [{'number': s.get('number'), 'stem': s.get('stem')} for s in question.get('subquestions') or []],
                    'answer': question.get('answer'), 'analysis': question.get('analysis')}
         try:
-            result = llm.json('tagging', prefix + ability_table.prompt_block(version.split('@')[0]),
-                              payload, images=_question_images(question))
+            result = llm.json('tagging', prefix, payload, images=_question_images(question))
         except Exception:
             question.setdefault('issues', []).append('标签生成失败，请重试')
             done += 1
@@ -2187,17 +2238,7 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
         attributes['question_type_sub_raw'] = sub_type.get('name') or ''
         attributes['question_type_sub'] = derived
         attributes['sub_type'] = derived
-        attributes['grading_method'] = normalize_grading_method(result.get('grading_method'))
-        if not str(result.get('grading_method') or '').strip():
-            question.setdefault('issues', []).append('批阅方式未判定，默认按 AI 批阅')
         attributes['tagging_version'] = version
-        ability = ability_table.normalize_result(result, version.split('@')[0])
-        attributes['ability_primary'] = ability['primary'] or ''
-        attributes['ability_secondary'] = ability['secondary'] or ''
-        attributes['cognitive_level'] = ability['cognitive_level'] or ''
-        attributes['ability_dimensions'] = [code for code in (ability['primary'], ability['secondary']) if code]
-        if not ability['primary']:
-            add_issue(question, '未判定学科能力，请人工选择')
         points = []
         nodes = {}
         try:
@@ -2215,11 +2256,42 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
             attributes['difficulty'] = max(0.0, min(1.0, float(difficulty.get('score_rate') or 0)))
         except (TypeError, ValueError):
             attributes['difficulty'] = None
-        attributes['difficulty_band'] = difficulty.get('band') or ''
         attributes['difficulty_reason'] = difficulty.get('reason') or ''
         attributes['tag_status'] = 'ok' if points else 'tag_failed'
         if not points:
             question.setdefault('issues', []).append('未匹配到知识点，请人工选择')
+
+        # 打标 2：只看内容和打标 1 的结论，判批阅方式、能力维度、认知层级。
+        payload2 = {
+            'stem': question.get('stem'),
+            'options': question.get('options') or [],
+            'subquestions': [{'number': sub.get('number'), 'stem': sub.get('stem'),
+                              'options': sub.get('options') or [],
+                              'answer': (sub.get('answer') or {}).get('value') if isinstance(sub.get('answer'), dict) else sub.get('answer'),
+                              'analysis': (sub.get('answer') or {}).get('analysis') if isinstance(sub.get('answer'), dict) else ''}
+                             for sub in question.get('subquestions') or []],
+            'answer': question.get('answer'),
+            'analysis': question.get('analysis'),
+            'knowledge_points': [item['name'] for item in points],
+            'question_type': attributes['question_type'],
+            'sub_type': attributes['question_type_sub_raw'],
+            'difficulty': attributes['difficulty'],
+        }
+        try:
+            second = llm.json('tagging2',
+                              prompt_store.get_prompt('tagging2', TAGGING2_PROMPT)
+                              + ability_table.prompt_block(slug), payload2)
+        except Exception as exc:
+            second = {}
+            add_issue(question, f'批阅方式与能力判定失败，请重试：{describe_error(exc, service="llm").get("detail", "")[:80]}')
+        attributes['grading_method'] = normalize_grading_method(second.get('grading_method'))
+        ability = ability_table.normalize_result(second, slug)
+        attributes['ability_primary'] = ability['primary'] or ''
+        attributes['ability_secondary'] = ability['secondary'] or ''
+        attributes['cognitive_level'] = ability['cognitive_level'] or ''
+        attributes['ability_dimensions'] = [code for code in (ability['primary'], ability['secondary']) if code]
+        if not ability['primary']:
+            add_issue(question, '未判定学科能力，请人工选择')
         done += 1
     return done
 

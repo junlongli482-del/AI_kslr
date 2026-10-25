@@ -354,13 +354,14 @@ async function createFolder(){try{const {value}=await ElMessageBox.prompt('分�
 async function renameFolder(){if(!folderFilter.value)return;try{const {value}=await ElMessageBox.prompt('新名称','重命名分组',{inputValue:folderName.value,confirmButtonText:'保存',cancelButtonText:'取消'});const name=(value||'').trim();if(!name)return;await fetch('/api/folders/'+folderFilter.value,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({name})});await loadFolders();ElMessage.success('已重命名')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
 async function deleteFolder(){if(!folderFilter.value)return;try{await ElMessageBox.confirm('仅空分组可删除，确定删除「'+folderName.value+'」？','删除分组',{confirmButtonText:'删除',cancelButtonText:'取消'});const r=await fetch('/api/folders/'+folderFilter.value,{method:'DELETE'});if(!r.ok)throw new Error((await r.json()).message||'删除失败');folderFilter.value='';await loadFolders();ElMessage.success('已删除')}catch(e:any){if(e!=='cancel'&&e!=='close')error(e)}}
 const sources=ref<any[]>([]),sourcesDialog=ref(false),sourceBusy=ref(false),sourceForm=ref<{name:string;nature:string}>({name:'',nature:'教辅'})
-const debugQ=ref<any>(null),debugDialog=ref(false),debugPrompt=ref(''),qDebugBusy=ref(false),qDebugResult=ref<any>(null),debugSlug=ref('')
-async function openQuestionDebug(){
+const debugQ=ref<any>(null),debugDialog=ref(false),debugPrompt=ref(''),qDebugBusy=ref(false),qDebugResult=ref<any>(null),debugSlug=ref(''),debugMode=ref('tagging')
+async function openQuestionDebug(mode='tagging'){
   const t:any=task.value,q:any=selected.value
   if(!t||!q){ElMessage.warning('先选中一道题');return}
+  debugMode.value=mode
   debugQ.value=q;qDebugResult.value=null;debugPrompt.value='';debugSlug.value='';debugDialog.value=true;qDebugBusy.value=true
   try{
-    const response=await fetch(`/prompt-api/tasks/${t.id}/questions/${q.id}/tagging-prompt`)
+    const response=await fetch(`/prompt-api/tasks/${t.id}/questions/${q.id}/tagging-prompt?mode=${mode}`)
     if(!response.ok)throw new Error(await response.text())
     const data=await response.json()
     debugPrompt.value=data.prompt||'';debugSlug.value=data.slug||''
@@ -372,7 +373,7 @@ async function runQuestionDebug(){
   if(!t||!q)return
   qDebugBusy.value=true;qDebugResult.value=null
   try{
-    const response=await fetch(`/prompt-api/tasks/${t.id}/questions/${q.id}/debug-tagging`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({instruction:debugPrompt.value})})
+    const response=await fetch(`/prompt-api/tasks/${t.id}/questions/${q.id}/debug-tagging`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({instruction:debugPrompt.value,mode:debugMode.value})})
     const data=await response.json()
     qDebugResult.value=data
     if(data.ok===false)ElMessage.error(data?.error?.detail||'调试失败')
@@ -654,7 +655,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
           <SourceViewer :documents="result.documents" :questions="result.questions" :selected="selected" :answer-document-id="answerDoc" :template="result.template" @select="select" @change="refreshRegions" @template-change="markDirty"/>
           <aside class="question-navigator"><div class="pane-heading"><span>题目</span><button class="icon-button" aria-label="新增漏题" title="新增漏题" @click="newQuestion"><Plus :size="16"/></button></div><div class="navigator-filters"><select v-model="paperFilter" aria-label="试卷筛选"><option value="">全部试卷</option><option v-for="p in result.papers" :value="p.id">{{p.title}}</option></select><div class="navigator-tabs"><button :class="{active:filter==='all'}" @click="filter='all'">全部</button><button :class="{active:filter==='pending'}" @click="filter='pending'">待核对</button></div></div><div class="question-nav-list"><button v-for="q in shownQuestions" :key="q.id" :class="{active:q.id===selectedId,reviewed:q.review_status==='reviewed'}" @click="select(q.id)"><span class="q-number">{{q.number}}</span><span class="q-nav-copy"><strong>{{q.attributes.question_type||'题目'}}</strong><small>{{q.attributes.score!=null?q.attributes.score+' 分':'分值未定'}} <span v-if="q.attributes.score_source" :class="['score-source',q.attributes.score_source]">{{scoreSourceName(q.attributes.score_source)}}</span> · {{q.regions.length}} 区域</small></span><Check v-if="q.review_status==='reviewed'" :size="14"/><span v-else-if="q.issues.length" class="issue-indicator"/></button></div><div class="navigator-bottom"><span class="legend-dot"/>待核对 <Check :size="12"/>已确认</div></aside>
           <section class="question-detail" v-if="selected" :key="selected.id"><div class="pane-heading"><span>第 {{selected.number}} 题 <span class="muted">{{result.papers.find(p=>p.id===selected!.paper_id)?.title}}</span></span><div class="question-actions"><button class="icon-button" title="上移题目" aria-label="上移题目" @click="reorder(-1)"><ArrowLeft class="rotate90" :size="15"/></button><button class="icon-button" title="下移题目" aria-label="下移题目" @click="reorder(1)"><ArrowRight class="rotate90" :size="15"/></button><el-dropdown trigger="click"><button class="icon-button" title="题目操作" aria-label="题目操作"><Settings2 :size="17"/></button><template #dropdown><el-dropdown-menu><el-dropdown-item @click="mergeNext">合并下一题</el-dropdown-item><el-dropdown-item @click="splitQuestion">拆出最后区域</el-dropdown-item><el-dropdown-item @click="removeQuestion" divided>删除误识别题目</el-dropdown-item></el-dropdown-menu></template></el-dropdown></div></div>
-            <div class="detail-tabs"><button :class="{active:tab==='content'}" @click="tab='content'">题目内容</button><button :class="{active:tab==='attributes'}" @click="tab='attributes'">属性标签</button><button class="text-button debug-entry" @click="openQuestionDebug">调试本题</button></div>
+            <div class="detail-tabs"><button :class="{active:tab==='content'}" @click="tab='content'">题目内容</button><button :class="{active:tab==='attributes'}" @click="tab='attributes'">属性标签</button><button class="text-button debug-entry" @click="openQuestionDebug('tagging')">调试本题</button></div>
             <div class="detail-scroll"><div v-if="noticeIssues.length" class="review-notice"><CircleAlert :size="15"/><span>{{noticeIssues.join('；')}}</span></div>
               <div v-if="selected.corrections?.length" class="correction-panel">
                 <details open>
@@ -848,9 +849,9 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
     <el-dialog v-model="detailDialog" :title="detail?.title||('题目 '+(detail?.number||''))" width="min(900px, 94vw)"><template v-if="detail"><div v-if="detail.questions" class="paper-detail-list"><div class="template-notice" v-if="detail.templates?.length"><ScanLine :size="17"/>原卷区域模板已保存 · 实际扫描配准尚未接入</div><article v-for="row in detail.questions"><h3>第 {{row.content.number}} 题</h3><QuestionPreview :question="row.content"/></article></div><article v-else><QuestionPreview :question="detail.content"/><div class="region-preview-list"><img v-for="r in detail.content.regions" :src="r.crop_url" alt="来源区域"/></div></article></template><template #footer><el-button @click="detailDialog=false">关闭</el-button><el-button type="primary" @click="detailDialog=false;openTask(tasks.find(t=>t.id===detail.task_id)||{id:detail.task_id,status:'committed'} as Task)">返回来源审核</el-button></template></el-dialog>
   </div>
 <el-dialog v-model="debugDialog" title="单题调试 · 打标" width="min(1100px,96vw)" top="4vh">
-<div class="muted">第 {{debugQ?.number}} 题{{debugSlug?' · '+debugSlug:''}}。改下方提示词后重新发送，只影响这一次调试：不写回任务、不改全局提示词。</div>
+<div class="muted">第 {{debugQ?.number}} 题{{debugSlug?' · '+debugSlug:''}} · {{debugMode==='tagging2'?'打标2（批阅方式/能力/认知层级）':'打标1（题型/知识点/难度）'}}。改下方提示词后重新发送，只影响这一次调试：不写回任务、不改全局提示词。</div>
 <el-input v-model="debugPrompt" type="textarea" :rows="10" placeholder="提示词"/>
-<div class="detail-footer"><el-button type="primary" :loading="qDebugBusy" @click="runQuestionDebug">发送并对比</el-button><span v-if="qDebugResult?.cost?.amount" class="muted">本次 ¥{{Number(qDebugResult.cost.amount).toFixed(6)}}</span><span v-if="qDebugResult?.images_replayed" class="muted">含 {{qDebugResult.images_replayed}} 张题图</span></div>
+<div class="detail-footer"><el-button-group><el-button :type="debugMode==='tagging'?'primary':'default'" @click="openQuestionDebug('tagging')">调试打标1</el-button><el-button :type="debugMode==='tagging2'?'primary':'default'" @click="openQuestionDebug('tagging2')">调试打标2</el-button></el-button-group><el-button type="primary" :loading="qDebugBusy" @click="runQuestionDebug">发送并对比</el-button><span v-if="qDebugResult?.cost?.amount" class="muted">本次 ¥{{Number(qDebugResult.cost.amount).toFixed(6)}}</span><span v-if="qDebugResult?.images_replayed" class="muted">含 {{qDebugResult.images_replayed}} 张题图</span></div>
 <div v-if="qDebugResult&&qDebugResult.ok!==false">
 <el-table :data="qDebugResult.comparison||[]" size="small" border style="width:100%" :row-class-name="({row}:any)=>row.same?'debug-same':'debug-diff'">
 <el-table-column prop="label" label="项" width="110"/>
