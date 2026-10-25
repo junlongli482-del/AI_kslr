@@ -285,6 +285,68 @@ def test_grade_semester_year_are_normalized():
 
 
 
+def test_ability_values_are_per_subject():
+    import abilities
+
+    math = abilities.abilities('senior-math')
+    chinese = abilities.abilities('senior-chinese')
+    assert any(item['code'] == 'MA-SEN-LOG' for item in math)
+    assert not any(item['code'] == 'MA-SEN-LOG' for item in chinese)
+    assert len(abilities.levels()) == 4
+    block = abilities.prompt_block('senior-math')
+    assert 'MA-SEN-LOG' in block and 'C4' in block
+
+
+def test_ability_result_rejects_cross_subject_code():
+    import abilities
+
+    result = abilities.normalize_result(
+        {'ability': {'primary': 'CN-SEN-THINK', 'cognitive_level': 'C9'}}, 'senior-math')
+    assert result == {'primary': None, 'secondary': None, 'cognitive_level': None}
+
+    ok = abilities.normalize_result(
+        {'ability': {'primary': 'MA-SEN-LOG', 'secondary': 'MA-SEN-ABS',
+                     'cognitive_level': 'c4'}}, 'senior-math')
+    assert ok == {'primary': 'MA-SEN-LOG', 'secondary': 'MA-SEN-ABS',
+                  'cognitive_level': 'C4'}
+
+
+def test_quality_level_is_normalized():
+    paper = {'id': 'p1', 'paper_type': '期末',
+             'attributes': {}, 'manual': {'quality_level': 'normal'}}
+    core.normalize_paper(paper)
+    assert paper['manual']['quality_level'] == '普通'
+    bad = {'id': 'p2', 'paper_type': '期末', 'attributes': {},
+           'manual': {'quality_level': 'excellent'}}
+    core.normalize_paper(bad)
+    assert bad['manual']['quality_level'] == ''
+
+
+def test_legacy_difficulty_band_is_cleared():
+    question = {'stem': 'x', 'subquestions': [],
+                'attributes': {'difficulty': 5}}
+    core.apply_question_structure_tags(question)
+    assert question['attributes']['difficulty'] is None
+    assert question['attributes']['difficulty_band'] == '困难'
+    assert any('难度值超过 1' in item for item in question['issues'])
+
+    normal = {'stem': 'x', 'subquestions': [], 'attributes': {'difficulty': 0.32}}
+    core.apply_question_structure_tags(normal)
+    assert normal['attributes']['difficulty'] == 0.32
+    assert normal['attributes']['difficulty_band'] == '困难'
+
+
+def test_unknown_source_is_cleared(monkeypatch):
+    monkeypatch.setattr(core, 'source_names', lambda: {'金榜学案': '教辅'})
+    monkeypatch.setattr(core, 'default_source',
+                        lambda: {'name': '金榜学案', 'nature': '教辅'})
+    paper = {'id': 'p1', 'paper_type': '期末',
+             'attributes': {'source_name': '高中同步辅导与检测·数学'}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['source_name'] == '金榜学案'
+    assert any('不在来源字典内' in item for item in paper['issues'])
+
+
 def test_provider_errors_are_classified():
     import httpx
     from diagnostics import describe_error

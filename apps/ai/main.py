@@ -23,8 +23,9 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, ValidationError
 
-from core import DATA, ROOT, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
+from core import DATA, ROOT, STAGE_CODES, SUBJECT_CODES, Result, compile_result, crop_regions, normalize, read, safe_extract, save, question_span_regions, attach_page_columns, normalize_paper, allocate_paper_scores, apply_paper_inheritance, apply_question_structure_tags, sync_sub_scores, LLM, fill_question_rubric, build_template, asset_url, PDFIUM_LOCK, group_question_images, STRUCTURE_PROMPT, PAPER_ATTRIBUTES_PROMPT, ANSWER_PROMPT, MATCH_PROMPT, RUBRIC_PROMPT, BLANK_MATCH_PROMPT, COLUMNS_PROMPT, TAGGING_DIR
 import enums as enum_table
+import abilities as ability_table
 import prompts as prompt_store
 from diagnostics import describe_error, redact
 from scheduler import TaskScheduler
@@ -645,6 +646,13 @@ def validate(task_id: str, payload: dict):
     for paper in result['papers']:
         for message in enum_table.paper_issues(paper):
             issues.append({'paper_id': paper['id'], 'severity': 'warning', 'message': message})
+    slugs = {}
+    for paper in result['papers']:
+        attrs = paper.get('attributes') or {}
+        stage_code = STAGE_CODES.get((attrs.get('stage') or '').strip())
+        subject_code = SUBJECT_CODES.get((attrs.get('subject') or '').strip())
+        if stage_code and subject_code:
+            slugs[paper['id']] = f'{stage_code}-{subject_code}'
     for q in result['questions']:
         def issue(message,severity='error'):
             issues.append({'question_id':q['id'],'severity':severity,'message':message})
@@ -660,6 +668,19 @@ def validate(task_id: str, payload: dict):
         apply_question_structure_tags(q)
         if previous_method not in enum_table.GRADING_METHODS:
             issue('批阅方式无效或缺失，已默认 AI 批阅', 'warning')
+        slug = slugs.get(q.get('paper_id'))
+        if slug:
+            valid_abilities = ability_table.codes(slug)
+            attributes = q.get('attributes') or {}
+            for key in ('ability_primary', 'ability_secondary'):
+                value = attributes.get(key)
+                if value and valid_abilities and value not in valid_abilities:
+                    issue(f'能力维度「{value}」不在本学科取值内，已清空', 'warning')
+                    attributes[key] = ''
+            level = attributes.get('cognitive_level')
+            if level and level not in ability_table.level_codes():
+                issue(f'认知层级「{level}」不在 C1–C4 内，已清空', 'warning')
+                attributes['cognitive_level'] = ''
         if not q['stem'].strip() and not q['editor_documents'].get('stem'):
             issues.append({'question_id': q['id'], 'severity': 'error', 'message': '题干为空'})
         if any(b not in blocks for b in q['block_ids']): issue('引用的原文内容块不存在')
@@ -759,6 +780,12 @@ def _read_sources() -> dict:
         data = {'items': []}
     items = [enum_table.normalize_source(item) for item in (data.get('items') or []) if isinstance(item, dict)]
     return {'items': [item for item in items if item['name']]}
+
+
+@app.get('/abilities/{slug}')
+def ability_definitions(slug: str):
+    """某个 (学段, 学科) 的能力取值与认知层级，slug 形如 senior-math。"""
+    return ability_table.payload(slug)
 
 
 @app.get('/settings/sources')

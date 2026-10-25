@@ -24,10 +24,11 @@ import prompts as prompt_store
 from diagnostics import PipelineError, describe_error, redact
 from media import repair_assets, apply_layout, column_bounds, column_index, page_cells, detected_columns
 from channels import channels as configured_channels, timeout as model_timeout, cost as model_cost
+import abilities as ability_table
 from enums import (PAPER_TYPES, SOURCE_NATURES, allowed_exam_stages, derive_sub_type,
                    exam_nature_of, normalize_grading_method, normalize_grade,
-                   normalize_paper_type, normalize_semester, normalize_subject,
-                   normalize_year)
+                   normalize_paper_type, normalize_quality, normalize_semester,
+                   normalize_subject, normalize_year)
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'data'
@@ -1408,6 +1409,16 @@ def default_source() -> dict:
     return next((item for item in items if item.get('default')), items[0])
 
 
+def source_names() -> dict:
+    """来源字典里的合法名称 → 性质。用于挡住模型自造的来源。"""
+    try:
+        data = json.loads(SOURCE_SETTINGS.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return {}
+    return {item['name']: item.get('nature') or '其他'
+            for item in (data.get('items') or []) if isinstance(item, dict) and item.get('name')}
+
+
 def normalize_paper(paper: dict):
     attrs = paper.get('attributes')
     if not isinstance(attrs, dict):
@@ -1430,6 +1441,13 @@ def normalize_paper(paper: dict):
             attrs[key] = value
             paper.setdefault('issues', []).append(f'{label}「{raw_value}」已归一为「{value}」')
     if attrs.get('source_nature') and attrs['source_nature'] not in SOURCE_NATURES:
+        attrs['source_nature'] = ''
+    known_sources = source_names()
+    if known_sources and str(attrs.get('source_name') or '').strip() \
+            and attrs['source_name'] not in known_sources:
+        paper.setdefault('issues', []).append(
+            f'来源「{attrs["source_name"]}」不在来源字典内，已清空')
+        attrs['source_name'] = ''
         attrs['source_nature'] = ''
     if not str(attrs.get('source_name') or '').strip():
         fallback = default_source()
@@ -1485,6 +1503,11 @@ def normalize_paper(paper: dict):
     if not isinstance(manual, dict):
         manual = {}
     manual.setdefault('quality_level', '')
+    quality, quality_changed = normalize_quality(manual.get('quality_level'))
+    if quality_changed:
+        paper.setdefault('issues', []).append(
+            f'质量等级「{manual.get("quality_level")}」已归一为「{quality or "空"}」')
+        manual['quality_level'] = quality
     manual.setdefault('tags', [])
     paper['manual'] = manual
     paper.setdefault('issues', [])
@@ -1875,7 +1898,11 @@ stage 取 primary/junior/senior；subject 取 语文/数学/英语/物理/化学
 year 是考试举行年份，不是“届”；region 是地区名；school 是命题学校；publisher_name 是教辅品牌；publisher_series 是系列名(如2024秋)。
 declared_question_count、declared_total_score、duration_min 只读卷面印的数字，没印就是 null，不要填 0。
 输出：{"stage":"","subject":"","grade":"","semester":"","paper_type":"","exam_stage":"","year":null,"region":"","school":"","publisher_name":"","publisher_series":"","declared_question_count":null,"declared_total_score":null,"duration_min":null,"confidence":{"paper_type":0,"stage":0,"subject":0,"exam_stage":0},"reason":""}
-confidence 为 0~1 的把握度，没有把握就给低值。只返回 JSON。'''
+confidence 为 0~1 的把握度，没有把握就给低值。
+同时评估这份卷的整体质量：quality_level 只能取 精品/普通/待修，quality_score 为 0~100，quality_missing 为缺失项数组。
+评判依据是资料完善度，不是题目难度：答案齐全、解析齐全、知识点可标、主观题有评分标准、年份/地区/卷型/来源等出处信息齐全、题目结构完整。
+精品 ≥85；普通 60~84；待修 <60（大面积缺答案或解析、结构错乱）。
+输出再补三个键：quality_level、quality_score、quality_missing。只返回 JSON。'''
 
 PAPER_ATTRIBUTE_KEYS = ('stage', 'subject', 'grade', 'semester', 'exam_stage', 'year',
                         'region', 'school', 'publisher_name', 'publisher_series')
@@ -1919,6 +1946,17 @@ def apply_paper_attribute_result(paper: dict, result: dict) -> int:
         if value:
             paper['paper_type'] = value
             filled += 1
+    manual = paper.setdefault('manual', {})
+    quality, quality_changed = normalize_quality(result.get('quality_level') or '')
+    if quality and not str(manual.get('quality_level') or '').strip():
+        manual['quality_level'] = quality
+        filled += 1
+    score = result.get('quality_score')
+    if isinstance(score, (int, float)) and not manual.get('quality_score'):
+        manual['quality_score'] = int(round(score))
+    missing = result.get('quality_missing')
+    if isinstance(missing, list) and missing and not manual.get('quality_missing'):
+        manual['quality_missing'] = [str(item) for item in missing if str(item).strip()]
     exam = paper.setdefault('exam', {})
     for key in ('declared_question_count', 'declared_total_score', 'duration_min'):
         raw = result.get(key)
@@ -1944,6 +1982,25 @@ def apply_question_structure_tags(question: dict) -> dict:
     attributes['sub_type'] = derived
     attributes['question_type_sub'] = derived
     attributes['grading_method'] = normalize_grading_method(attributes.get('grading_method'))
+    # 难度只认 0~1 的得分率。旧数据里被写成 1~5 档位的，清空数值、保留档位提示。
+    raw_difficulty = attributes.get('difficulty')
+    try:
+        difficulty = float(raw_difficulty) if raw_difficulty not in (None, '') else None
+    except (TypeError, ValueError):
+        difficulty = None
+    if difficulty is not None and difficulty > 1:
+        legacy = {1: '容易', 2: '容易', 3: '适中', 4: '困难', 5: '困难'}.get(int(round(difficulty)), '')
+        if legacy and not attributes.get('difficulty_band'):
+            attributes['difficulty_band'] = legacy
+        attributes['difficulty'] = None
+        question.setdefault('issues', []).append('难度值超过 1，已按旧档位清空，请重新评估')
+    elif difficulty is None:
+        attributes['difficulty'] = None
+    else:
+        attributes['difficulty'] = round(max(0.0, min(1.0, difficulty)), 2)
+        if not attributes.get('difficulty_band'):
+            value = attributes['difficulty']
+            attributes['difficulty_band'] = '容易' if value >= 0.8 else ('适中' if value >= 0.5 else '困难')
     return attributes
 
 
@@ -2019,7 +2076,8 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
                    'subquestions': [{'number': s.get('number'), 'stem': s.get('stem')} for s in question.get('subquestions') or []],
                    'answer': question.get('answer'), 'analysis': question.get('analysis')}
         try:
-            result = llm.json('tagging', prefix, payload, images=_question_images(question))
+            result = llm.json('tagging', prefix + ability_table.prompt_block(version.split('@')[0]),
+                              payload, images=_question_images(question))
         except Exception:
             question.setdefault('issues', []).append('标签生成失败，请重试')
             done += 1
@@ -2037,6 +2095,13 @@ def assign_question_types(questions: list[dict], papers: list[dict], llm) -> int
         if not str(result.get('grading_method') or '').strip():
             question.setdefault('issues', []).append('批阅方式未判定，默认按 AI 批阅')
         attributes['tagging_version'] = version
+        ability = ability_table.normalize_result(result, version.split('@')[0])
+        attributes['ability_primary'] = ability['primary'] or ''
+        attributes['ability_secondary'] = ability['secondary'] or ''
+        attributes['cognitive_level'] = ability['cognitive_level'] or ''
+        attributes['ability_dimensions'] = [code for code in (ability['primary'], ability['secondary']) if code]
+        if not ability['primary']:
+            question.setdefault('issues', []).append('未判定学科能力，请人工选择')
         points = []
         nodes = {}
         try:

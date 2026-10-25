@@ -45,6 +45,11 @@ GRADE_ALIASES = {
 
 SEMESTERS = (('1', '上学期'), ('2', '下学期'))
 
+# 试卷质量等级：AI 综合评估后给出，人工可改
+QUALITY_LEVELS = ('精品', '普通', '待修')
+
+QUALITY_ALIASES = {'high': '精品', 'normal': '普通', 'low': '待修', 'good': '精品', 'bad': '待修'}
+
 SEMESTER_ALIASES = {'1': '1', '上': '1', '上学期': '1', '第一学期': '1', '秋': '1',
                     '2': '2', '下': '2', '下学期': '2', '第二学期': '2', '春': '2'}
 
@@ -171,6 +176,18 @@ def normalize_semester(value):
     if alias:
         return alias, True
     return text, False
+
+
+def normalize_quality(value: str):
+    text = str(value or '').strip()
+    if not text:
+        return '', False
+    if text in QUALITY_LEVELS:
+        return text, False
+    alias = QUALITY_ALIASES.get(text.lower())
+    if alias:
+        return alias, True
+    return '', True
 
 
 def normalize_year(value):
