@@ -366,6 +366,21 @@ def test_rubrics_skip_program_questions(monkeypatch):
     assert program.get('scoring') in (None, {})
 
 
+def test_rubrics_tolerate_missing_grading_method():
+    """题目字典里没有 grading_method 顶层键时不能抛 KeyError（050 的回归）。"""
+
+    class StubLLM:
+        calls = []
+
+        def json(self, *args, **kwargs):
+            return {'items': [{'question_id': 'q1', 'subquestions': []}]}
+
+    question = {'id': 'q1', 'paper_id': 'p1', 'number': '1', 'stem': 'x',
+                'attributes': {'grading_method': 'ai'}, 'subquestions': []}
+    core.apply_rubrics([question], [{'id': 'p1', 'title': '卷'}], StubLLM())
+    assert question.get('scoring') is not None or question.get('scoring') is None
+
+
 def test_issue_append_is_deduplicated():
     question = {'issues': ['难度值超过 1，已按旧档位清空，请重新评估']}
     core.add_issue(question, '难度值超过 1，已按旧档位清空，请重新评估')

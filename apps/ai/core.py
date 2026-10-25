@@ -1277,7 +1277,7 @@ def apply_rubrics(questions: list[dict], papers: list[dict], llm: LLM, progress=
             if not q:
                 continue
             # 批阅方式与难度已在打标阶段确定，这里不再覆盖。
-            if q['grading_method'] == 'auto':
+            if (q.get('attributes') or {}).get('grading_method') == 'program':
                 q['scoring'] = {'method': 'auto'}
                 for sub in q.get('subquestions') or []:
                     sub['scoring'] = {'method': 'auto'}
