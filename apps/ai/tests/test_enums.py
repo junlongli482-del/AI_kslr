@@ -399,6 +399,32 @@ def test_rubrics_tolerate_missing_grading_method():
     assert question.get('scoring') is not None or question.get('scoring') is None
 
 
+def test_source_defaults_override_ai_values(monkeypatch):
+    monkeypatch.setattr(core, 'source_names', lambda: {'金榜学案': '教辅'})
+    monkeypatch.setattr(core, 'default_source', lambda: {})
+    monkeypatch.setattr(core, 'source_defaults',
+                        lambda name: {'year': '2024', 'semester': '1', 'region': '440000'}
+                        if name == '金榜学案' else {})
+    paper = {'id': 'p1', 'paper_type': '课后作业',
+             'attributes': {'source_name': '金榜学案', 'year': '2021',
+                            'semester': '2', 'region': '330300'}}
+    core.normalize_paper(paper)
+    assert paper['attributes']['year'] == '2024'
+    assert paper['attributes']['semester'] == '1'
+    assert paper['attributes']['region'] == '440000'
+    assert any('按来源' in message for message in paper['issues'])
+
+
+def test_source_item_keeps_defaults():
+    item = enums.normalize_source({'name': '金学典', 'nature': '教辅',
+                                   'defaults': {'year': '2025年', 'semester': '2',
+                                                'region': '520000'}})
+    assert item['defaults'] == {'year': '2025', 'semester': '2', 'region': '520000'}
+    blank = enums.normalize_source({'name': '公开卷', 'nature': '公开',
+                                    'defaults': {'semester': 'x'}})
+    assert blank['defaults'] == {}
+
+
 def test_quality_is_computed_from_final_products():
     paper = {'id': 'p1', 'paper_type': '期末',
              'attributes': {'year': '2024', 'region': '330300', 'source_name': '金榜学案',

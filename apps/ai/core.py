@@ -1470,6 +1470,25 @@ def compute_quality(paper: dict, questions: list[dict]) -> dict:
     return {'level': level, 'score': score, 'missing': missing}
 
 
+def source_defaults(name: str) -> dict:
+    """来源自带固定年份/学期/地区（教辅按地区版发行），优先级高于 AI 判断。"""
+    if not name:
+        return {}
+    try:
+        data = json.loads(SOURCE_SETTINGS.read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return {}
+    for item in (data.get('items') or []):
+        if not isinstance(item, dict) or item.get('name') != name:
+            continue
+        defaults = item.get('defaults')
+        if not isinstance(defaults, dict):
+            return {}
+        return {key: str(defaults.get(key) or '').strip()
+                for key in ('year', 'semester', 'region') if str(defaults.get(key) or '').strip()}
+    return {}
+
+
 def normalize_paper(paper: dict):
     attrs = paper.get('attributes')
     if not isinstance(attrs, dict):
@@ -1507,6 +1526,13 @@ def normalize_paper(paper: dict):
             attrs['source_nature'] = fallback.get('nature') or '其他'
             paper.setdefault('issues', []).append(
                 f'未选来源，已按默认来源「{fallback["name"]}」填入，可修改')
+    fixed = source_defaults(str(attrs.get('source_name') or ''))
+    for key, label in (('year', '年份'), ('semester', '学期'), ('region', '地区')):
+        value = fixed.get(key)
+        if value and str(attrs.get(key) or '') != value:
+            attrs[key] = value
+            paper.setdefault('issues', []).append(
+                f'{label}已按来源「{attrs["source_name"]}」的默认值设为「{value}」')
     raw_type = paper.get('paper_type') or ''
     value, changed = normalize_paper_type(raw_type)
     if (raw_type or '').strip() and changed:

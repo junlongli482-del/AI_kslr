@@ -243,15 +243,30 @@ def stage_code(value: str) -> str:
 
 
 def normalize_source(item: dict) -> dict:
-    """来源条目规范化：名称去空白、性质必须落枚举、id 缺失时按名称生成。"""
+    """来源条目规范化：名称去空白、性质必须落枚举、id 缺失时按名称生成。
+
+    defaults 是这家来源固定的年份/学期/地区（教辅按地区版发行），
+    命中的时候优先级高于 AI 判断。
+    """
     name = str((item or {}).get('name') or '').strip()
     nature = str((item or {}).get('nature') or '').strip()
     source_id = str((item or {}).get('id') or '').strip()
     if not source_id and name:
         source_id = 'src-' + str(abs(hash(name)) % 10 ** 8)
+    raw_defaults = (item or {}).get('defaults')
+    if not isinstance(raw_defaults, dict):
+        raw_defaults = {}
+    year = str(raw_defaults.get('year') or '').strip()
+    year = year[:4] if year[:4].isdigit() else ''
+    semester = str(raw_defaults.get('semester') or '').strip()
+    semester = semester if semester in ('1', '2') else ''
+    region = str(raw_defaults.get('region') or '').strip()
+    defaults = {key: value for key, value in
+                (('year', year), ('semester', semester), ('region', region)) if value}
     return {'id': source_id, 'name': name,
             'nature': nature if nature in SOURCE_NATURES else '其他',
-            'default': bool((item or {}).get('default'))}
+            'default': bool((item or {}).get('default')),
+            'defaults': defaults}
 
 
 def exam_nature_of(paper_type: str) -> str:
