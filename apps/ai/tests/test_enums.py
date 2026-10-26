@@ -470,6 +470,37 @@ def test_quality_does_not_call_model():
     assert question['issues'] == ['难度值超过 1，已按旧档位清空，请重新评估', '别的提示']
 
 
+def test_unmatched_answers_are_kept_and_reported():
+    question = {'id': 'q1', 'number': '16', 'issues': [],
+                'subquestions': [{'subquestion_id': 's1', 'number': '(1)',
+                                  'answer': {'value': 'B'}}]}
+    question['unmatched_answers'] = [
+        {'answer_entry_id': 'a1', 'number': '16(3)①', 'answer': 'Na2CO3', 'analysis': ''}]
+    core.report_answer_gaps([question], [])
+    text = '；'.join(question['issues'])
+    assert '未挂到小问' in text
+
+    question['subquestions'][0]['answer'] = {'value': ''}
+    core.report_answer_gaps([question], [])
+    assert any('缺少答案' in item for item in question['issues'])
+
+
+def test_missing_analysis_is_not_reported_as_missing_answer():
+    question = {'id': 'q1', 'number': '1', 'issues': [],
+                'subquestions': [{'subquestion_id': 's1', 'number': '(1)',
+                                  'answer': {'value': '答案', 'analysis': ''}}]}
+    core.report_answer_gaps([question], [])
+    assert question['issues'] == []
+
+
+def test_out_of_scope_entries_are_not_counted_as_gaps():
+    entries = [{'id': 'a1', 'matched_question_id': 'q1'},
+               {'id': 'a2', 'out_of_scope': True}]
+    assert core.report_answer_gaps([], entries) == 0
+    entries.append({'id': 'a3'})
+    assert core.report_answer_gaps([], entries) == 1
+
+
 def test_provider_errors_are_classified():
     import httpx
     from diagnostics import describe_error

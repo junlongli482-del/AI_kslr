@@ -107,6 +107,16 @@ export function renderMarkdown(source:string, imageLayout:Record<string,any>={})
   })
 }
 
+/** 粘贴进来的公式常被剥掉反斜杠（\mathrm → mathrm），只在 $...$ 内做保守修复。 */
+export function repairPastedLatex(text: string): string {
+  if (!text || !text.includes('$')) return text
+  return text.replace(/\$([^$]+)\$/g, (_match, body: string) => {
+    const fixed = body.replace(/(^|[^\\])\b(mathrm|mathbf|mathit|frac|dfrac|sqrt|times|cdot|leq|geq|neq|approx|left|right|text|sum|int|lim|log|ln|sin|cos|tan|Delta|alpha|beta|theta|pi|infty|rightarrow)\b/g,
+      (_m, prefix: string, command: string) => `${prefix}\\${command}`)
+    return `$${fixed}$`
+  })
+}
+
 export function markdownToEditable(source:string, imageLayout:Record<string,any>={}) {
   return DOMPurify.sanitize(applyImageLayout(renderWithMath(isolateImages(source),true),imageLayout),{
     ADD_ATTR:['data-type','data-latex','data-display','data-width-pct','data-caption','data-type']

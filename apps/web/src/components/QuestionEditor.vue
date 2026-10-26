@@ -10,7 +10,7 @@ import { Node, mergeAttributes } from '@tiptap/core'
 import { Bold, Italic, List, Sigma, ImagePlus, Table2, Code2, Undo2, Square, Superscript, Brackets, Grid2X2, Divide } from 'lucide-vue-next'
 import { MathfieldElement } from 'mathlive'
 import katex from 'katex'
-import { prepareEditorDocument } from '../render'
+import { prepareEditorDocument, markdownToEditable, repairPastedLatex } from '../render'
 
 const props=defineProps<{modelValue:string;document?:any;label?:string;taskId?:string;imageLayout?:Record<string,any>;readonly?:boolean}>()
 const emit=defineEmits(['update:modelValue','update:document','image-references','image-layout-change'])
@@ -106,8 +106,16 @@ const editor=useEditor({extensions:[StarterKit,LayoutImage.configure({inline:tru
         try{editor.value?.commands.insertContent(JSON.parse(custom));event.preventDefault();return true}catch{}
       }
       const files=Array.from(event.clipboardData?.files||[]).filter(f=>f.type.startsWith('image/'))
-      if(!files.length)return false
-      event.preventDefault();void uploadImages(files);return true
+      if(files.length){event.preventDefault();void uploadImages(files);return true}
+      // 纯文本里带公式：先转成公式节点再插入，否则会原样显示 $...$
+      const text=event.clipboardData?.getData('text/plain')||''
+      if(text&&/\$[^$\n]+\$|\\\(|\\\[/.test(text)){
+        event.preventDefault()
+        const html=markdownToEditable(repairPastedLatex(text),props.imageLayout||{})
+        editor.value?.commands.insertContent(html)
+        return true
+      }
+      return false
     },
     handleDrop:(view,event,moved)=>{
       if(moved)return false

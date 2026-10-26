@@ -439,26 +439,66 @@ function updateImageLayout(change:{src:string;widthPct:number;manual:boolean}){
   else delete layout[change.src].manual_width_pct
   markDirty()
 }
+const insertTargets=computed(()=>{
+  const q:any=selected.value
+  if(!q)return [] as {label:string;value:string}[]
+  const out:{label:string;value:string}[]=[{label:'题干',value:'stem'},{label:'答案',value:'answer'},{label:'解析',value:'analysis'}]
+  ;(q.options||[]).forEach((option:any)=>out.push({label:'选项 '+option.label,value:'option:'+option.label}))
+  ;(q.subquestions||[]).forEach((sub:any,index:number)=>{
+    const name=sub.number||String(index+1)
+    out.push({label:`小问 ${name} 题干`,value:'sub:'+sub.subquestion_id})
+    ;(sub.options||[]).forEach((option:any)=>out.push({label:`小问 ${name} 选项 ${option.label}`,value:'subopt:'+sub.subquestion_id+':'+option.label}))
+    out.push({label:`小问 ${name} 答案`,value:'subans:'+sub.subquestion_id})
+    out.push({label:`小问 ${name} 解析`,value:'subana:'+sub.subquestion_id})
+  })
+  ;((q.scoring&&q.scoring.points)||[]).forEach((_point:any,index:number)=>out.push({label:`采分点 ${index+1}`,value:'rubric:'+index}))
+  return out
+})
 function insertRegionImage(url?:string,target='stem'){
   if(!url||!selected.value)return
   const q:any=selected.value, mark=`\n\n![](${url})`
-  const field=target==='answer'?'answer':target==='analysis'?'analysis':'stem'
-  if(target.startsWith('sub:')){
-    const sub=q.subquestions?.find((s:any)=>s.subquestion_id===target.slice(4))
-    if(!sub)return
-    if((sub.stem||'').includes(url)){ElMessage.info('\u8be5\u56fe\u7247\u5df2\u5728\u5c0f\u95ee\u4e2d');return}
-    sub.stem=(sub.stem||'')+mark
-  }else if(target.startsWith('subans:')){
-    const sub=q.subquestions?.find((s:any)=>s.subquestion_id===target.slice(7))
-    if(!sub)return
+  const appendOption=(options:any[],label:string)=>{
+  const option=(options||[]).find((item:any)=>String(item.label)===label)
+  if(!option)return false
+  if(String(option.content||'').includes(url)){ElMessage.info('该图片已在选项中');return false}
+  option.content=(option.content||'')+mark
+  return true
+}
+let ok=false
+if(target.startsWith('subopt:')){
+  const [,subId,label]=target.split(':')
+  const sub=q.subquestions?.find((s:any)=>s.subquestion_id===subId)
+  ok=!!sub&&appendOption(sub.options||[],label)
+}else if(target.startsWith('subana:')){
+  const sub=q.subquestions?.find((s:any)=>s.subquestion_id===target.slice(7))
+  if(sub){
     sub.answer=sub.answer||{value:'',analysis:'',scoring_criteria:null,source:'missing'}
-    sub.answer.value=(sub.answer.value||'')+mark
-  }else{
-    if((q[field]||'').includes(url)){ElMessage.info('\u8be5\u56fe\u7247\u5df2\u5728\u76ee\u6807\u4f4d\u7f6e');return}
-    q[field]=(q[field]||'')+mark
+    if(!String(sub.answer.analysis||'').includes(url)){sub.answer.analysis=(sub.answer.analysis||'')+mark;ok=true}
   }
+}else if(target.startsWith('subans:')){
+  const sub=q.subquestions?.find((s:any)=>s.subquestion_id===target.slice(7))
+  if(sub){
+    sub.answer=sub.answer||{value:'',analysis:'',scoring_criteria:null,source:'missing'}
+    if(!String(sub.answer.value||'').includes(url)){sub.answer.value=(sub.answer.value||'')+mark;ok=true}
+  }
+}else if(target.startsWith('sub:')){
+  const sub=q.subquestions?.find((s:any)=>s.subquestion_id===target.slice(4))
+  if(sub&&!String(sub.stem||'').includes(url)){sub.stem=(sub.stem||'')+mark;ok=true}
+}else if(target.startsWith('option:')){
+  ok=appendOption(q.options||[],target.slice(7))
+}else if(target.startsWith('rubric:')){
+  const index=Number(target.slice(7))
+  const point=((q.scoring&&q.scoring.points)||[])[index]
+  if(point){point.criterion=(point.criterion||'')+mark;ok=true}
+}else{
+  const field=target==='answer'?'answer':target==='analysis'?'analysis':'stem'
+  if(String(q[field]||'').includes(url)){ElMessage.info('该图片已在目标位置');return}
+  q[field]=(q[field]||'')+mark
+  ok=true
   if(field==='stem'&&q.editor_documents?.stem)q.editor_documents.stem=prepareEditorDocument(q.editor_documents.stem,q.stem,q.image_layout)
-  q.review_status='pending';markDirty();ElMessage.success('\u5df2\u63d2\u5165\u56fe\u7247')
+}
+if(!ok)return
+q.review_status='pending';markDirty();ElMessage.success('\u5df2\u63d2\u5165\u56fe\u7247')
 }
 async function copyRegionImage(url?:string){
   if(!url)return
@@ -718,7 +758,7 @@ onBeforeUnmount(()=>{if(timer)clearInterval(timer);if(saveTimer)clearTimeout(sav
                   </template>
                 </template>
                 <div class="field-heading"><label>原卷区域</label><button class="text-button" @click="rebuildRegions">重建本题题框与作答区</button><span>{{selected.regions.length}} 个区域，可在左侧拖动调整</span></div>
-                <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview" :key="index"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(r,index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="copyRegionImage(r.crop_url)">复制图片</button><el-dropdown v-if="r.crop_url" trigger="click"><button class="text-button"><Plus :size="13"/>插入到</button><template #dropdown><el-dropdown-menu><el-dropdown-item @click="insertRegionImage(r.crop_url,'stem')">题干</el-dropdown-item><el-dropdown-item @click="insertRegionImage(r.crop_url,'answer')">答案</el-dropdown-item><el-dropdown-item @click="insertRegionImage(r.crop_url,'analysis')">解析</el-dropdown-item><el-dropdown-item v-for="(sub,si) in selected.subquestions" :key="sub.subquestion_id" @click="insertRegionImage(r.crop_url,'sub:'+sub.subquestion_id)">小问 {{sub.number||si+1}}</el-dropdown-item><el-dropdown-item v-for="(sub,si) in selected.subquestions" :key="'a'+sub.subquestion_id" @click="insertRegionImage(r.crop_url,'subans:'+sub.subquestion_id)">小问 {{sub.number||si+1}} 答案</el-dropdown-item></el-dropdown-menu></template></el-dropdown><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="">通用</option><option value="content">题目内容</option><option value="both">内容与作答</option><option value="reference_answer">参考答案</option><option value="recovered_visual">原卷补图</option></select></div><div v-if="r.recognition" class="recognition-panel"><div class="recognition-meta"><span>{{categoryName(r.recognition.category)}}</span><span v-if="r.recognition.created_at">{{recognitionTime(r.recognition.created_at)}}</span><span v-if="r.recognition.model">{{r.recognition.model}}</span></div><p v-if="r.recognition.error" class="recognition-error">{{r.recognition.error}}</p><template v-else-if="r.recognition.image_only"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题原卷补图'"/><p class="muted">原卷补图，不调用模型</p></template><QuestionEditor v-else :ref="el=>setRegionEditor(regionKey(selected?.id||'',index),el)" :readonly="true" :task-id="task.id" :image-layout="selected.image_layout" :model-value="r.recognition.markdown||''" v-model:document="r.recognition.editor_document" label="区域识别结果"/><div class="recognition-actions"><button class="text-button" @click="copyRecognition(r,index)">复制</button><button class="text-button" @click="recognizeRegion(r,index)">重新识别</button><button class="text-button" @click="clearRecognition(r)">清空</button></div></div></div></div>
+                <div class="region-preview-list"><div v-for="(r,index) in selected.regions" class="region-preview" :key="index"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题区域'+(index+1)"/><div class="region-caption"><span>区域 {{index+1}} · PDF第 {{r.page_index+1}} 页</span><button class="text-button" @click="recognizeRegion(r,index)">区域识别</button><button v-if="r.crop_url" class="text-button" @click="copyRegionImage(r.crop_url)">复制图片</button><el-dropdown v-if="r.crop_url" trigger="click"><button class="text-button"><Plus :size="13"/>插入到</button><template #dropdown><el-dropdown-menu><el-dropdown-item v-for="target in insertTargets" :key="target.value" @click="insertRegionImage(r.crop_url,target.value)">{{target.label}}</el-dropdown-item></el-dropdown-menu></template></el-dropdown><select v-model="r.purpose" @change="markDirty" aria-label="区域用途"><option value="">通用</option><option value="content">题目内容</option><option value="both">内容与作答</option><option value="reference_answer">参考答案</option><option value="recovered_visual">原卷补图</option></select></div><div v-if="r.recognition" class="recognition-panel"><div class="recognition-meta"><span>{{categoryName(r.recognition.category)}}</span><span v-if="r.recognition.created_at">{{recognitionTime(r.recognition.created_at)}}</span><span v-if="r.recognition.model">{{r.recognition.model}}</span></div><p v-if="r.recognition.error" class="recognition-error">{{r.recognition.error}}</p><template v-else-if="r.recognition.image_only"><img v-if="r.crop_url" :src="r.crop_url" :alt="'第'+selected.number+'题原卷补图'"/><p class="muted">原卷补图，不调用模型</p></template><QuestionEditor v-else :ref="el=>setRegionEditor(regionKey(selected?.id||'',index),el)" :readonly="true" :task-id="task.id" :image-layout="selected.image_layout" :model-value="r.recognition.markdown||''" v-model:document="r.recognition.editor_document" label="区域识别结果"/><div class="recognition-actions"><button class="text-button" @click="copyRecognition(r,index)">复制</button><button class="text-button" @click="recognizeRegion(r,index)">重新识别</button><button class="text-button" @click="clearRecognition(r)">清空</button></div></div></div></div>
               </template>
               <template v-else><div class="attribute-grid"><label v-if="typeOptions.length">题型<el-select v-model="selected.attributes.question_type" filterable @change="onTypeChange"><el-option v-for="option in typeOptions" :key="option.code" :value="option.type" :label="option.type"/></el-select><span v-if="selected.attributes.question_type_id" class="muted">{{selected.attributes.question_type_id}}<template v-if="selected.attributes.question_type_confidence"> · {{Math.round(selected.attributes.question_type_confidence*100)}}%</template></span></label><label>子形态<el-select v-model="selected.attributes.sub_type" clearable @change="onSubTypeChange"><el-option value="single" label="单题"/><el-option value="group" label="题组"/></el-select></label><label v-if="typeOptions.length&&typeSubs.length&&selected.attributes.question_type_sub_raw">子形态（字典）<el-select v-model="selected.attributes.question_type_sub_raw" clearable @change="onSubChange"><el-option v-for="sub in typeSubs" :key="sub" :value="sub" :label="sub"/></el-select></label><label v-else-if="!typeOptions.length">题型<el-input v-model="selected.attributes.question_type" @change="markAttributeManual('question_type')"/></label><label>题号<el-input v-model="selected.number"/></label><label>批阅方式<el-select v-model="selected.attributes.grading_method" @change="markAttributeManual('grading_method')"><el-option value="program" label="程序批阅"/><el-option value="ai" label="智能批阅"/></el-select><span v-if="selected.attribute_sources?.grading_method==='paper'" class="inherit-badge">继承</span></label><label>分值<template v-if="selected.subquestions?.length"><span>{{selected.attributes.score ?? '—'}} 分</span><span class="muted">（小问分值合计）</span><span v-if="subScoresPartial(selected)" class="muted">，还有小问未填分值</span></template><el-input-number v-else v-model="selected.attributes.score" :min="0" :max="1000" @change="markScoreManual"/><span v-if="selected.attributes.score_source" class="score-source">{{scoreSourceName(selected.attributes.score_source)}}</span></label><label v-for="[key,label] in [['subject','学科'],['stage','学段'],['grade','年级'],['paper_type','试卷类型'],['year','年份'],['semester','学期'],['region','地区'],['source_name','来源']]" :key="key">{{label}}<span v-if="selected.attribute_sources?.[key]==='paper'" class="inherit-badge">继承</span><span :class="{muted:!attrDisplay(key)}">{{attrDisplay(key)||'未识别'}}</span><span v-if="key==='question_type'&&selected.attributes.question_type_sub" class="muted">（{{selected.attributes.question_type_sub}}）</span><span v-if="key==='question_type'&&selected.attributes.question_type_id" class="muted">{{selected.attributes.question_type_id}}<template v-if="selected.attributes.question_type_confidence"> · {{Math.round(selected.attributes.question_type_confidence*100)}}%</template></span></label><label>难度<el-select v-model="selected.attributes.difficulty_band" clearable @change="markAttributeManual('difficulty_band')"><el-option v-for="band in ['容易','适中','困难']" :key="band" :value="band" :label="band"/></el-select><span class="muted">{{difficultyText(selected)}}</span><span v-if="selected.attributes.difficulty_reason" class="muted">{{selected.attributes.difficulty_reason}}</span></label><label>审核状态<el-select v-model="selected.review_status"><el-option value="pending" label="待核对"/><el-option value="reviewed" label="已确认"/></el-select></label></div><div class="inherit-actions"><button v-for="[field,label] in paperInheritFields" :key="field" @click="restoreInherited(field)">跟随{{label}}</button></div><div class="field-heading"><label>知识点与教材章节</label><span v-if="!knowledgeTree.length" class="neutral-badge">目录未配置</span></div><div v-if="knowledgeTree.length"><el-tree-select v-model="selectedKps" :data="knowledgeTree" multiple filterable clearable :max-collapse-tags="99" placeholder="搜索或展开选择知识点" style="width:100%"/></div><div v-else class="catalog-empty">当前学段学科暂无知识点目录</div><div class="field-heading"><label>能力维度</label></div>
 <el-select v-model="selected.attributes.ability_primary" filterable clearable placeholder="主能力（必选）" style="width:100%" @change="markAttributeManual('ability_primary')"><el-option v-for="item in abilities" :key="item.code" :value="item.code" :label="item.name + ' · ' + item.hint"/></el-select>

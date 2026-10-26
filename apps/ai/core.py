@@ -1073,9 +1073,29 @@ ANSWER_PROMPT = r'''你是试卷答案整理专家。输入为完整资料（可
 答案中的明显LaTeX转义错误（如cases/matrix行分隔、双重转义）可直接修正；不得改动答案内容、数字、选项和结论。答案、解析、选项、小问中的每一个数学公式都必须用 $...$ 或 $$...$$ 包裹，禁止裸写 LaTeX 命令或把公式写成纯文本（例如 na_{n+1}、\frac{1}{2} 必须写成 $na_{n+1}$、$\frac{1}{2}$）。'''
 
 MATCH_PROMPT = r'''将答案条目匹配到题目。输入包括多张试卷及全部候选答案（可能含不相关资料）。
-结合卷标题、题号、小问、题意、答案类型判断，同号不代表同题。无法确定就不匹配。
-返回 {"matches":[{"question_id":"...","subquestion_id":"...或null","answer_entry_id":"...","reason":"..."}],"unmatched_entry_ids":[]}。
-有小问的题组/大题必须优先按小问编号匹配到独立答案；没有小问目标时才匹配父题。答案条目带subquestion_number时按它匹配；条目内容明显含多个小问（如(1)(2)）却只有一个subquestion_number或没有，不得强行塞给某一小问，放入unmatched。不要生成答案，不修改原资料。每个题目或小问最多采用一个完整条目，条目不跨不同题目重复采用。'''
+结合卷标题、题号、小问、题意、答案类型判断，同号不代表同题。
+
+【核心原则】答案里有的，必须落到某个地方，不许当没有。
+每一条答案条目都必须三选一，不能留空：
+1. matched：落到某题的某个小问（或没有小问时落到父题）；
+2. merged：答案的层级比题目深（题目只有 (2)，答案写成 (2)① (2)②；或题目是 (2)，答案是 (2)i (2)ii），
+   合并到最近的上层小问；答案文本原样保留 ① ② / i ii 标记，不要删。
+3. out_of_scope：确实不属于本卷（答案册覆盖多套卷、跨册、无关章节），必须在 reason 里写清理由。
+
+【判断规则】
+- 层级不同不是留空的理由。题目怎么分层是题目的事，答案要迁就题目。
+- 禁止因为“编号对不上”就判未匹配，先看内容能不能对上。
+- 题目只有 (1)(2)(3)、答案册拆成 (3)① (3)② (3)③ 时，合并成 (3) 的一条，不要把深层条目丢进未匹配。
+- 题目本身已经是 (2)(i)、(2)(ii) 的，按原编号对应，不要合并。
+- 条目内容明显含多个小问（如 (1)(2) 写在一起）且题目有小问时，拆不开就合并给父题，并在 reason 说明。
+- 每个题目或小问最多采用一个完整条目，同一条目不重复采用到不同题目。
+- 不生成答案，不修改原资料。
+
+返回：
+{"matches":[{"question_id":"...","subquestion_id":"...或null","answer_entry_id":"...","mode":"matched|merged","reason":"..."}],
+ "out_of_scope":[{"answer_entry_id":"...","reason":"为什么不属于本卷"}]}
+
+matches 与 out_of_scope 合起来必须覆盖全部输入条目，不允许有第三条路（比如留空不写）。'''
 
 
 def compact_document(doc: dict):
@@ -2098,6 +2118,31 @@ def tagging2_request(paper: dict, question: dict):
             'payload': payload, 'images': [], 'slug': slug}
 
 
+def report_answer_gaps(questions: list[dict], entries: list[dict] | None = None) -> int:
+    """答案/解析缺失必须让人看见：题级写 issue，不再静默。
+
+    返回仍未落位的答案条目数（这些条目已保留在 result 里，没有被删除）。
+    """
+    entries = entries or []
+    unanswered = [e for e in entries
+                  if not e.get('matched_question_id') and not e.get('out_of_scope')]
+    for q in questions:
+        subs = q.get('subquestions') or []
+        if subs:
+            missing = []
+            for index, sub in enumerate(subs, 1):
+                payload = sub.get('answer') or {}
+                if not str(payload.get('value') or '').strip():
+                    missing.append(str(sub.get('number') or f'第{index}小问'))
+            if missing:
+                add_issue(q, f'小问 {"、".join(missing)} 缺少答案，请核对或手工补充')
+        elif not str(q.get('answer') or '').strip():
+            add_issue(q, '本题缺少答案，请核对或手工补充')
+        if q.get('unmatched_answers'):
+            add_issue(q, f'有 {len(q["unmatched_answers"])} 条答案未挂到小问，已保留在题目下，请核对')
+    return len(unanswered)
+
+
 def apply_question_structure_tags(question: dict) -> dict:
     """结构派生字段的确定性收口。
 
@@ -2414,6 +2459,15 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
             sub_id=m.get('subquestion_id')
             sub=next((s for s in q.get('subquestions', []) if s.get('subquestion_id')==sub_id or (not s.get('subquestion_id') and s.get('number')==sub_id)),None) if sub_id else None
             if sub is None and q.get('subquestions'):
+                # 小问对不上时不再丢弃：保留在父题下，并计入未落位统计
+                q.setdefault('unmatched_answers', []).append({
+                    'answer_entry_id': e['id'], 'number': e.get('number') or '',
+                    'answer': e.get('answer') or '', 'analysis': e.get('analysis') or '',
+                    'reason': m.get('reason') or '', 'source': source})
+                e['matched_question_id'] = q['id']
+                e['matched_subquestion_id'] = None
+                e['match_reason'] = m.get('reason', '')
+                used.add(e['id'])
                 continue
             target=sub if sub is not None else q
             if target.get('answer_entry_id'):
@@ -2432,9 +2486,17 @@ def compile_result(task_id: str, documents: list[dict], folder: Path, generate=F
                 q['issues'].append('原答案含略／图略，详细内容待完善')
             used.add(e['id'])
             matched.add(q['id'])
+        for item in match.get('out_of_scope') or []:
+            entry = bye.get(item.get('answer_entry_id'))
+            if entry is None:
+                continue
+            entry['out_of_scope'] = True
+            entry['out_of_scope_reason'] = str(item.get('reason') or '')
+            used.add(entry['id'])
     lessons = [p.get('lesson', {}).get('title', '') or p.get('title', '') for p in papers]
     if any(q.get('blanks') for q in questions):
         assign_blank_answers(questions, documents, lessons, llm)
+    report_answer_gaps(questions, entries)
     if generate:
         missing = [q for q in questions if not q.get('answer') or not q.get('analysis')]
         for offset in range(0, len(missing), 8):
