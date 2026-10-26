@@ -245,6 +245,24 @@ public class TaskService {
             questions.add(q);
         }
         out.set("questions",questions);
+        // 汇总信息：下游不必自己算总分、题量和题型分节
+        double computedTotal=0; var groups=new java.util.LinkedHashMap<String,com.fasterxml.jackson.databind.node.ObjectNode>();
+        for(JsonNode item:questions){
+            computedTotal+=item.path("score").asDouble(0);
+            JsonNode content=item.path("content");
+            String typeName=content.path("attributes").path("question_type").asText("");
+            if(typeName.isEmpty())typeName="未分类";
+            var group=groups.get(typeName);
+            if(group==null){group=json.createObjectNode();group.put("name",typeName);group.put("count",0);group.put("score",0.0);group.set("question_ids",json.createArrayNode());groups.put(typeName,group);}
+            group.put("count",group.path("count").asInt()+1);
+            group.put("score",group.path("score").asDouble(0)+item.path("score").asDouble(0));
+            ((com.fasterxml.jackson.databind.node.ArrayNode)group.path("question_ids")).add(item.path("id").asText());
+        }
+        out.put("question_count",questions.size());
+        out.put("computed_total_score",computedTotal);
+        var groupArray=json.createArrayNode();
+        for(var group:groups.values())groupArray.add(group);
+        out.set("question_groups",groupArray);
         var templates=store.templates(id);
         if(!templates.isEmpty()){
             var trow=templates.get(0);
