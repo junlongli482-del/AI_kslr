@@ -279,11 +279,13 @@ public class TaskService {
                 for(JsonNode blank:template.path("blanks")){
                     var node=(com.fasterxml.jackson.databind.node.ObjectNode)blank;
                     var question=qIndex.get(blank.path("question_id").asText());
-                    var questionNumber=question==null?"":question.path("number").asText();
+                    // 题目行只有 id/sort_order/score，题号和小问在 content 里
+                    var questionContent=question==null?json.createObjectNode():question.path("content");
+                    var questionNumber=question==null?"":questionContent.path("number").asText();
                     var subId=blank.path("sub_node_id").asText("");
                     var subNumber="";
                     if(question!=null&&!subId.isEmpty()){
-                        for(JsonNode sub:question.path("subquestions")){
+                        for(JsonNode sub:questionContent.path("subquestions")){
                             if(subId.equals(sub.path("subquestion_id").asText()))subNumber=sub.path("number").asText();
                         }
                     }
