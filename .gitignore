@@ -32,3 +32,6 @@ pip-*/
 tmpm_*/
 .mineru-service.lock
 .mineru-models/
+
+.tmp/
+apps/ai/.tmp/
