@@ -1,0 +1,5223 @@
+{
+  "folder_id": "",
+  "folder_path": [],
+  "schema_version": "p1-export-v1",
+  "exported_at": "2026-10-26T01:37:53.753092500Z",
+  "paper": {
+    "id": "d3cf4d290fe154ea7-p1",
+    "exam": {
+      "duration_min": null,
+      "has_elective": false,
+      "has_listening": false,
+      "answers_at_end": false,
+      "candidate_notes": "",
+      "declared_total_score": 100,
+      "declared_question_count": 21
+    },
+    "bands": [],
+    "title": "章末过关检测(一) 走近细胞 组成细胞的分子",
+    "issues": [
+      "未识别到「第X节」标题，暂未按课时裁剪",
+      "年级「高一」已归一为「g10」",
+      "学期「秋季」已归一为「1」",
+      "来源「26秋 同步解析与测评 生物学 必修1 分子与细胞 试卷_1-4.pdf」不在来源字典内，已清空",
+      "未选来源，已按默认来源「金榜学案」填入，可修改",
+      "年份已按来源「金榜学案」的默认值设为「2026」",
+      "地区已按来源「金榜学案」的默认值设为「440000」",
+      "考试阶段「同步类」与卷型「单元测试」不匹配，已清空"
+    ],
+    "manual": {
+      "tags": [],
+      "quality_level": "精品",
+      "quality_score": 99,
+      "quality_missing": []
+    },
+    "source": {
+      "columns": 2,
+      "page_count": 4,
+      "printed_page_numbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    "sections": [],
+    "documents": [
+      {
+        "id": "d3cf4d290fe154ea7",
+        "name": "26秋 同步解析与测评 生物学 必修1 分子与细胞 试卷_1-4.pdf",
+        "role": "question",
+        "pages": [
+          {
+            "width_pt": 1122.4300537109375,
+            "width_px": 4677,
+            "height_pt": 824.8300170898438,
+            "height_px": 3437,
+            "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-0.png",
+            "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-0.png&v=1792861719",
+            "page_index": 0
+          },
+          {
+            "width_pt": 1122.4300537109375,
+            "width_px": 4677,
+            "height_pt": 824.8300170898438,
+            "height_px": 3437,
+            "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-1.png",
+            "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-1.png&v=1792861719",
+            "page_index": 1
+          },
+          {
+            "width_pt": 1122.4300537109375,
+            "width_px": 4677,
+            "height_pt": 824.8300170898438,
+            "height_px": 3437,
+            "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-2.png",
+            "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-2.png&v=1792861720",
+            "page_index": 2
+          },
+          {
+            "width_pt": 1122.4300537109375,
+            "width_px": 4677,
+            "height_pt": 824.8300170898438,
+            "height_px": 3437,
+            "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-3.png",
+            "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-3.png&v=1792861721",
+            "page_index": 3
+          }
+        ],
+        "assets": {
+          "page_1_image_2.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg",
+          "page_1_image_6.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg",
+          "page_1_image_8.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg",
+          "page_2_table_1.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_1.jpg",
+          "page_2_table_9.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_9.jpg",
+          "page_3_image_0.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg",
+          "page_3_image_9.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg",
+          "page_3_table_7.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_7.jpg",
+          "page_0_image_16.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg",
+          "page_0_table_13.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_table_13.jpg",
+          "page_1_chart_16.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg",
+          "page_1_image_13.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg",
+          "page_1_image_19.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg",
+          "page_2_image_15.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg",
+          "page_2_image_17.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg",
+          "page_2_image_29.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg",
+          "page_2_table_12.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_12.jpg",
+          "page_3_image_11.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg",
+          "page_3_image_13.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg",
+          "page_3_image_21.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg",
+          "page_3_table_20.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_20.jpg"
+        },
+        "blocks": [
+          {
+            "id": "d3cf4d290fe154ea7-b0",
+            "bbox": [
+              0.026,
+              0.04,
+              0.048,
+              0.181
+            ],
+            "kind": "aside_text",
+            "text": "同步解析与测评 生物学\n必修1 分子与细胞 配人教版",
+            "order": 0,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b1",
+            "bbox": [
+              0.285,
+              0.043,
+              0.4,
+              0.06
+            ],
+            "kind": "text",
+            "text": "班级:\\_\\_\\_\\_ 姓名:\\_\\_\\_\\_",
+            "order": 1,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b2",
+            "bbox": [
+              0.123,
+              0.073,
+              0.424,
+              0.096
+            ],
+            "kind": "doc_title",
+            "text": "章末过关检测(一) 走近细胞 组成细胞的分子",
+            "order": 2,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b3",
+            "bbox": [
+              0.237,
+              0.114,
+              0.31,
+              0.131
+            ],
+            "kind": "text",
+            "text": "(满分:100 分)",
+            "order": 3,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b4",
+            "bbox": [
+              0.062,
+              0.154,
+              0.468,
+              0.171
+            ],
+            "kind": "paragraph_title",
+            "text": "一、选择题:本题共16小题,每小题3分,共48分。每小题只有一个选项符合题目要求。",
+            "order": 4,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b5",
+            "bbox": [
+              0.062,
+              0.18,
+              0.485,
+              0.304
+            ],
+            "kind": "text",
+            "text": "1. 下列关于细胞学说及归纳法的叙述, 正确的是 ( )\nA. 细胞学说论证了“生物都由细胞发育而来”\nB. 细胞学说的建立与科学实验有关, 与理性思维无关\nC. 不完全归纳法得出的结论可能是可信的, 可以用来预测和判断, 但可能存在例外\nD. 由于完全归纳法的可信度更高, 所以在科学研究中经常被采用",
+            "order": 5,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b6",
+            "bbox": [
+              0.062,
+              0.312,
+              0.485,
+              0.489
+            ],
+            "kind": "text",
+            "text": "2. 某湖泊水体富营养化, 蓝细菌和绿藻大量繁殖形成水华。噬藻体是一种能特异性侵染蓝细菌的 DNA 病毒, 可使蓝细菌发生裂解, 被认为是一种潜在的能有效干预蓝细菌引起的水华的生物。下列叙述正确的是 ( )\nA. 噬藻体与蓝细菌结构的主要区别是前者无细胞结构\nB. 噬藻体结构简单, 属于生命系统最基本的层次\nC. 蓝细菌和绿藻细胞内均有叶绿体, 可进行光合作用\nD. 可利用富含营养物质的培养基培养噬藻体",
+            "order": 6,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b7",
+            "bbox": [
+              0.062,
+              0.497,
+              0.485,
+              0.674
+            ],
+            "kind": "text",
+            "text": "3. 很多青少年爱喝高糖饮料, 爱吃高热量高脂肪的食物, 并且不爱运动, 而这些都是导致脂肪肝低龄化的主要原因, 下列对某脂肪肝患者的肝脏细胞中元素和化合物的描述, 正确的是\nA. 细胞中含量最多的有机化合物是脂质, 其次为蛋白质, 糖类和核酸的含量较少\nB. 细胞中 C、H、O、N 这四种元素的含量很高, 由此可知其作用比微量元素更为重要\nC. 该患者肝脏细胞和心肌细胞中各种化合物的种类基本相同, 但含量存在一定差异\nD. 组成该患者肝脏细胞的某几种化学元素在无机自然界中无法找到",
+            "order": 7,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b8",
+            "bbox": [
+              0.063,
+              0.681,
+              0.486,
+              0.805
+            ],
+            "kind": "text",
+            "text": "4. 在生物组织中的还原糖、脂肪、蛋白质的检测实验中, 下列叙述错误的是 ( )\nA. 可用斐林试剂甲液和乙液、蒸馏水来检测葡萄糖和尿液中的蛋白质\nB. 花生种子含脂肪多且子叶肥厚, 是用于脂肪检测的理想材料\nC. 当用斐林试剂检测非还原糖时, 溶液为无色\nD. 甘蔗茎的薄壁组织、甜菜的块根、西瓜的汁液均不能用于还原糖的检测",
+            "order": 8,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b9",
+            "bbox": [
+              0.063,
+              0.813,
+              0.485,
+              0.937
+            ],
+            "kind": "text",
+            "text": "5. 组成细胞的各种元素大多以化合物的形式存在。下列叙述错误的是（）\nA. 细胞内的结合水是细胞结构的重要组成成分\nB. 组成脂质的元素主要是 C、H、O，有些脂质还含有 P 和 N\nC. 脂肪和糖类之间的转化程度是有明显差异的\nD. 生物大分子以单体为骨架，单体以碳链为基本骨架",
+            "order": 9,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b10",
+            "bbox": [
+              0.515,
+              0.073,
+              0.936,
+              0.171
+            ],
+            "kind": "text",
+            "text": "6.苹果含有微量元素锌,锌是与记忆力相关的蛋白质不可缺少的元素,儿童缺锌就会导致大脑发育不良,因此苹果又称为“记忆之果”。这说明无机盐\n（）\nA.对维持酸碱平衡有重要作用\nB.对维持细胞形态有重要作用\nC.对调节细胞内的渗透压有重要作用\nD.对维持生物体的生命活动有重要作用",
+            "order": 10,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b11",
+            "bbox": [
+              0.515,
+              0.179,
+              0.937,
+              0.356
+            ],
+            "kind": "text",
+            "text": "7. 纱布是一种常用的伤口敷料, 其主要成分是纤维素。普通纱布只能吸收已经流出的血液, 但阻止血液继续流出的效果有限。现在市场上有一种由几丁质加工而成的新型伤口敷料, 它可有效阻止血液继续流出并启动凝血。下列说法错误的是 ( )\nA. 纤维素、几丁质都属于多糖, 基本组成单位都是葡萄糖\nB. 与纤维素不同, 几丁质由 C、H、O、N 四种元素构成\nC. 几丁质和纤维素不是细胞的主要储能物质\nD. 几丁质可以用于制作人造皮肤等",
+            "order": 11,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b12",
+            "bbox": [
+              0.515,
+              0.363,
+              0.937,
+              0.461
+            ],
+            "kind": "text",
+            "text": "8. 血浆中胆固醇含量过高, 易引发高胆固醇血症。某科研小组研制了一种治疗该症的药物 A, 为评估其药效, 选取该病患者 50 人, 随机均分为 5 组, 分别注射不同剂量的药物 A, 一段时间后, 检测每组患者体内的相关指标并进行数据处理, 结果见下表。下列说法错误的是 ( )",
+            "order": 12,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b13",
+            "bbox": [
+              0.528,
+              0.47,
+              0.933,
+              0.621
+            ],
+            "kind": "table",
+            "text": "| 注射药物 A(mg/周) | 胆固醇含量相对值(注射后/注射前) | 转氨酶活性 |\n| --- | --- | --- |\n| 0 | 100% | + |\n| 30 | 94.50% | + |\n| 100 | 91.20% | + |\n| 200 | 76.80% | + |\n| 300 | 50.60% | ++++ |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_table_13.jpg)",
+            "order": 13,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b14",
+            "bbox": [
+              0.524,
+              0.633,
+              0.915,
+              0.757
+            ],
+            "kind": "text",
+            "text": "注:一定程度上,转氨酶活性与肝细胞受损程度呈正相关。\nA. 胆固醇是构成动物细胞膜的重要成分,在人体内还参与血液中脂质的运输\nB. 血浆中胆固醇含量过多时,胆固醇可大量转化为葡萄糖\nC. 注射药物 A 前后每组患者体内的胆固醇含量可形成自身前后对照\nD. 药物 A 剂量是 200 mg/周时降低胆固醇含量效果较明显,同时肝脏基本不受损伤",
+            "order": 14,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b15",
+            "bbox": [
+              0.515,
+              0.765,
+              0.831,
+              0.937
+            ],
+            "kind": "text",
+            "text": "9.运动和营养日益成为人们关注的热点。某人运动过程中,随着运动强度的变化,脂肪与糖类的供能比例如右图所示。下列叙述错误的是\n() A.所有糖类和脂肪都可以为人体供能且组成元素相同\nB.低强度的运动适合减肥\nC.高强度运动前,适当摄入糖类,有助于保障运动供能\nD.中等运动强度a点时,脂肪和糖类的供能比例相同",
+            "order": 15,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b16",
+            "bbox": [
+              0.833,
+              0.764,
+              0.932,
+              0.845
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg)",
+            "order": 16,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b17",
+            "bbox": [
+              0.116,
+              0.951,
+              0.202,
+              0.967
+            ],
+            "kind": "footer",
+            "text": "(横线下方不可作答)",
+            "order": 17,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b18",
+            "bbox": [
+              0.871,
+              0.843,
+              0.908,
+              0.855
+            ],
+            "kind": "text",
+            "text": "运动强度",
+            "order": 18,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b19",
+            "bbox": [
+              0.719,
+              0.952,
+              0.733,
+              0.967
+            ],
+            "kind": "page_number",
+            "text": "2",
+            "order": 19,
+            "page_index": 0
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b20",
+            "bbox": [
+              0.063,
+              0.073,
+              0.485,
+              0.243
+            ],
+            "kind": "text",
+            "text": "10. ApoE 蛋白是人体载脂蛋白之一,主要参与人体脂蛋白的转化和代谢。ApoE 蛋白中共含有 299 个氨基酸,在人群中有 ApoE2、ApoE3 和 ApoE4 等亚型。下列相关叙述正确的是\n（）\nA. ApoE2、ApoE3 和 ApoE4 在人体中行使完全相同的功能\nB. ApoE 蛋白存在不同亚型可能与蛋白质的空间结构有关\nC. 加热、加酸、加酒精等不会引起 ApoE 蛋白功能的改变\nD. 变性后的 ApoE 蛋白无法与双缩脲试剂发生颜色反应",
+            "order": 20,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b21",
+            "bbox": [
+              0.063,
+              0.249,
+              0.484,
+              0.318
+            ],
+            "kind": "text",
+            "text": "11. 胶原三肽是利用生物工程技术以猪皮、鱼皮为原料制备的胶原蛋白的最小结构单位, 其形成过程如下图所示。胶原三肽的相对分子质量很小, 能够极有效地渗入角质层、真皮层和头发根部细胞内。下列叙述错误的是 ( )",
+            "order": 21,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b22",
+            "bbox": [
+              0.182,
+              0.324,
+              0.379,
+              0.473
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg)",
+            "order": 22,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b23",
+            "bbox": [
+              0.078,
+              0.483,
+              0.322,
+              0.576
+            ],
+            "kind": "text",
+            "text": "A. 胶原三肽中有 2 个游离的氨基和 1 个游离的羧基\nB. a 和 b 为肽键, 形成胶原三肽要产生 2 个水分子\nC. 胶原三肽中含有 4 个 O、12 个 C\nD. 皮肤表面涂抹的胶原三肽能被直接吸收",
+            "order": 23,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b24",
+            "bbox": [
+              0.063,
+              0.583,
+              0.484,
+              0.777
+            ],
+            "kind": "text",
+            "text": "12. 帕蒂西兰是用于治疗家族性淀粉样多发性神经病变(FAP)的小干扰 RNA 类药物, 它由两条链构成, 核苷酸链含有游离的磷酸基团端为 5' 端, 另一端为 3' 端。两条链各含 21 个核苷酸, 形成 19 个碱基对; 每条链的 3' 端含有两个悬空的未配对核苷酸。下列有关叙述正确的是\nA. 帕蒂西兰 3' 端共含 2 个未配对碱基\nB. 帕蒂西兰彻底水解得到的碱基最多有 5 种\nC. 人体细胞中的 RNA 一般为单链结构\nD. 帕蒂西兰既可用于治疗 FAP, 又是遗传信息的载体",
+            "order": 24,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b25",
+            "bbox": [
+              0.064,
+              0.784,
+              0.483,
+              0.801
+            ],
+            "kind": "text",
+            "text": "13. 图甲为某种核苷酸示意图, 图乙为某段核苷酸链示意图, 下列有关说法正确的是 ( )",
+            "order": 25,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b26",
+            "bbox": [
+              0.175,
+              0.818,
+              0.284,
+              0.918
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg)\n{'bbox': [0.219, 0.922, 0.237, 0.936], 'content': '图甲'}",
+            "order": 26,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b27",
+            "bbox": [
+              0.306,
+              0.808,
+              0.386,
+              0.919
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg)\n{'bbox': [0.34, 0.922, 0.358, 0.936], 'content': '图乙'}",
+            "order": 27,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b28",
+            "bbox": [
+              0.267,
+              0.952,
+              0.281,
+              0.966
+            ],
+            "kind": "page_number",
+            "text": "3",
+            "order": 28,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b29",
+            "bbox": [
+              0.529,
+              0.073,
+              0.85,
+              0.174
+            ],
+            "kind": "text",
+            "text": "A. 图甲中所示物质是脱氧核苷酸,人体内有 4 种\nB. 由 1 条图乙所示核苷酸链构成的 RNA 分子,主要分布在细胞质中\nC. 图乙化合物基本组成单位可用 b 表示,A、C 间通过磷酸连接\nD. 图乙所示的核苷酸链以碳链作为基本骨架",
+            "order": 29,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b30",
+            "bbox": [
+              0.515,
+              0.182,
+              0.936,
+              0.2
+            ],
+            "kind": "text",
+            "text": "14. 下图是人体细胞中由单体形成多聚体的模式图, 下列有关叙述正确的是 ( )",
+            "order": 30,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b31",
+            "bbox": [
+              0.668,
+              0.207,
+              0.798,
+              0.274
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg)",
+            "order": 31,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b32",
+            "bbox": [
+              0.53,
+              0.283,
+              0.776,
+              0.384
+            ],
+            "kind": "text",
+            "text": "A. 抗体、RNA 和肝糖原的合成都符合这个模式\nB. 若单体为葡萄糖, 则形成的多聚体可为淀粉\nC. 若单体为氨基酸, 则生成的  $H_{2}O$  中的 H 来自羧基\nD. 多聚体彻底水解的产物一定是它的单体",
+            "order": 32,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b33",
+            "bbox": [
+              0.516,
+              0.392,
+              0.936,
+              0.465
+            ],
+            "kind": "text",
+            "text": "15.酸奶的口感独特、营养丰富，越来越受到人们的欢迎。为检测市场上销售的不同酸奶的营养价值，某兴趣小组对甲～戊5种品牌原味酸奶进行还原糖、脂肪和蛋白质含量的测定，结果如下图所示。下列叙述错误的是 （）",
+            "order": 33,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b34",
+            "bbox": [
+              0.648,
+              0.474,
+              0.819,
+              0.586
+            ],
+            "kind": "chart",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg)",
+            "order": 34,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b35",
+            "bbox": [
+              0.53,
+              0.594,
+              0.831,
+              0.694
+            ],
+            "kind": "text",
+            "text": "A. 不同品牌原味酸奶的还原糖、脂肪和蛋白质含量不完全相同\nB. 可利用双缩脲试剂来检测不同品牌原味酸奶中的蛋白质\nC. 加入斐林试剂并水浴加热后, 可发现乙品牌酸奶的砖红色最浅\nD. 高温加热后, 酸奶中加入双缩脲试剂, 将不再出现紫色",
+            "order": 35,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b36",
+            "bbox": [
+              0.515,
+              0.703,
+              0.936,
+              0.748
+            ],
+            "kind": "text",
+            "text": "16. 如下图所示, 甲中①②表示化合物, 乙表示由四个单体构成的化合物, 丙为一种多肽分子。下列叙述错误的是 ( )",
+            "order": 36,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b37",
+            "bbox": [
+              0.583,
+              0.756,
+              0.883,
+              0.828
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg)",
+            "order": 37,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b38",
+            "bbox": [
+              0.53,
+              0.836,
+              0.863,
+              0.936
+            ],
+            "kind": "text",
+            "text": "A. 若①为某种多聚体, 则①可能具有催化作用\nB. 若②为生物大分子, 则其可能是 HIV 的遗传物质\nC. 若构成乙的单体是葡萄糖, 则在动物细胞中乙可能是糖原的部分结构\nD. 构成丙的氨基酸种类和肽键数分别为 3 种、3 个",
+            "order": 38,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b39",
+            "bbox": [
+              0.719,
+              0.952,
+              0.733,
+              0.967
+            ],
+            "kind": "page_number",
+            "text": "4",
+            "order": 39,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b40",
+            "bbox": [
+              0.794,
+              0.951,
+              0.878,
+              0.967
+            ],
+            "kind": "footer",
+            "text": "(横线下方不可作答)",
+            "order": 40,
+            "page_index": 1
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b41",
+            "bbox": [
+              0.026,
+              0.04,
+              0.048,
+              0.181
+            ],
+            "kind": "aside_text",
+            "text": "同步解析与测评 生物学\n必修1 分子与细胞 配人教版",
+            "order": 41,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b42",
+            "bbox": [
+              0.08,
+              0.031,
+              0.261,
+              0.059
+            ],
+            "kind": "table",
+            "text": "|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_1.jpg)",
+            "order": 42,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b43",
+            "bbox": [
+              0.375,
+              0.044,
+              0.399,
+              0.059
+            ],
+            "kind": "header",
+            "text": "姓名:",
+            "order": 43,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b44",
+            "bbox": [
+              0.063,
+              0.073,
+              0.245,
+              0.091
+            ],
+            "kind": "paragraph_title",
+            "text": "二、非选择题:本题共5小题,共52分。",
+            "order": 44,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b45",
+            "bbox": [
+              0.063,
+              0.1,
+              0.485,
+              0.2
+            ],
+            "kind": "text",
+            "text": "17.(11分)秋冬季节是支原体肺炎高发期。支原体肺炎是一种由肺炎支原体引起的呼吸道感染病,多发于儿童和青少年。该病的病原体肺炎支原体是一类没有细胞壁的原核生物,支原体肺炎的临床表现与细菌性肺炎相似,但用药不相同。根据所学知识回答下列问题:",
+            "order": 45,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b46",
+            "bbox": [
+              0.077,
+              0.208,
+              0.484,
+              0.335
+            ],
+            "kind": "text",
+            "text": "(1)为确诊幼儿患者所患肺炎种类,医护人员可取患儿痰液进行处理,并在\\_\\_\\_\\_显微镜下观察致病性微生物的细胞结构。观察到支原体后,为进一步了解支原体,医护人员用培养基培养分离得到的支原体,一段时间后培养基上可出现由一个支原体繁殖形成的“荷包蛋”状的菌落(大量同种支原体),该菌落属于生命系统结构层次中的\\_\\_\\_\\_。(2分)",
+            "order": 46,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b47",
+            "bbox": [
+              0.079,
+              0.342,
+              0.485,
+              0.388
+            ],
+            "kind": "text",
+            "text": "(2)支原体的遗传物质是\\_\\_\\_\\_，该遗传物质位于细胞特定的区域，此区域称为\\_\\_\\_\\_。(2分)",
+            "order": 47,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b48",
+            "bbox": [
+              0.078,
+              0.395,
+              0.485,
+              0.469
+            ],
+            "kind": "text",
+            "text": "(3)支原体肺炎较重时,可能会因黏液栓堵住支气管,造成影像学上的“白肺”,这与新冠病毒导致的双肺弥散性病变产生的“白肺”有所不同。导致这两种“白肺”的病原微生物的主要区别在于\\_\\_\\_\\_。(2分)",
+            "order": 48,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b49",
+            "bbox": [
+              0.079,
+              0.476,
+              0.485,
+              0.55
+            ],
+            "kind": "text",
+            "text": "(4)经化验,患儿确诊患支原体肺炎,若你是医护工作者,根据下表提供的抗菌药物及其抗菌机制,判断治疗支原体肺炎最不宜选择的药物是\\_\\_\\_\\_,原因是\\_\\_\\_\\_。(3分)",
+            "order": 49,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b50",
+            "bbox": [
+              0.094,
+              0.558,
+              0.47,
+              0.685
+            ],
+            "kind": "table",
+            "text": "| 抗菌药物 | 抗菌机制 |\n| --- | --- |\n| 阿奇霉素 | 能与核糖体结合,抑制蛋白质的合成 |\n| 环丙沙星 | 抑制病原体 DNA 的复制 |\n| 青霉素 | 抑制病原体细胞壁形成 |\n| 利福平 | 抑制病原体 RNA 的合成,从而抑制蛋白质的合成 |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_9.jpg)",
+            "order": 50,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b51",
+            "bbox": [
+              0.079,
+              0.697,
+              0.484,
+              0.771
+            ],
+            "kind": "text",
+            "text": "(5)虽然原核细胞与真核细胞在形态上多种多样,但是它们的基本结构具有高度的统一性,这种统一性主要表现在\\_\\_\\_\\_\\_\\_\\_\\_。(2分)",
+            "order": 51,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b52",
+            "bbox": [
+              0.063,
+              0.777,
+              0.484,
+              0.821
+            ],
+            "kind": "text",
+            "text": "18.(13 分)种子在黑暗中萌发成幼苗,下表是种子经过处理后测得的数据,下图是相关实验,请回答下列问题:",
+            "order": 52,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b53",
+            "bbox": [
+              0.132,
+              0.831,
+              0.404,
+              0.933
+            ],
+            "kind": "table",
+            "text": "<table><tr><td rowspan=\"2\">项目</td><td rowspan=\"2\">处理方法</td><td colspan=\"2\">质量/g</td></tr><tr><td>种子</td><td>幼苗</td></tr><tr><td>鲜重</td><td>直接称重</td><td>160</td><td>750</td></tr><tr><td>灰烬</td><td>550°C,16h</td><td>2</td><td>2</td></tr></table>\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_12.jpg)",
+            "order": 53,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b54",
+            "bbox": [
+              0.116,
+              0.951,
+              0.202,
+              0.967
+            ],
+            "kind": "footer",
+            "text": "(横线下方不可作答)",
+            "order": 54,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b55",
+            "bbox": [
+              0.268,
+              0.951,
+              0.281,
+              0.966
+            ],
+            "kind": "page_number",
+            "text": "5",
+            "order": 55,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b56",
+            "bbox": [
+              0.579,
+              0.092,
+              0.664,
+              0.176
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg)\n{'bbox': [0.616, 0.178, 0.632, 0.191], 'content': '图1'}",
+            "order": 56,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b57",
+            "bbox": [
+              0.692,
+              0.073,
+              0.889,
+              0.174
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg)\n{'bbox': [0.785, 0.178, 0.802, 0.192], 'content': '图2'}",
+            "order": 57,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b58",
+            "bbox": [
+              0.53,
+              0.204,
+              0.934,
+              0.253
+            ],
+            "kind": "text",
+            "text": "(1)从表中可以看出,与种子相比,幼苗的质量有所增加,增加的物质主要是\\_\\_\\_\\_,种子燃烧后留下灰烬,这些灰烬代表的物质是\\_\\_\\_\\_。(2分)",
+            "order": 58,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b59",
+            "bbox": [
+              0.53,
+              0.263,
+              0.936,
+              0.402
+            ],
+            "kind": "text",
+            "text": "(2)若该种子为玉米种子,某兴趣小组的同学取大小均匀的同种玉米干种子(含淀粉丰富)40粒,平均分成甲、乙两组,给予甲组种子适宜的条件浸种,乙组仍保持干燥。待甲组种子发芽后,将试管编号为A\\~F,分别向A、B、C三支试管中加入2 mL甲组提取液,向D、E、F三支试管中加入2 mL乙组提取液,如图1所示,然后进行实验(干种子中的还原性物质忽略不计):",
+            "order": 59,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b60",
+            "bbox": [
+              0.531,
+              0.412,
+              0.935,
+              0.462
+            ],
+            "kind": "text",
+            "text": "I. 若检测 A、D 两支试管中是否含有还原糖, 实验部分步骤如图 2, 请把横线上的部分补充完整: ①\\_\\_\\_\\_, ②\\_\\_\\_\\_。(2 分)",
+            "order": 60,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b61",
+            "bbox": [
+              0.531,
+              0.472,
+              0.936,
+              0.523
+            ],
+            "kind": "text",
+            "text": "水浴加热后观察这两支试管,其中试管 A 中出现砖红色沉淀,据此可得出的结论是\\_\\_\\_\\_。(2 分)",
+            "order": 61,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b62",
+            "bbox": [
+              0.53,
+              0.531,
+              0.935,
+              0.58
+            ],
+            "kind": "text",
+            "text": "据此结果推断,若向 B、E 两支试管中分别加入等量的碘液,观察两支试管,发现液体的颜色均是蓝色,则\\_\\_\\_\\_试管液体的蓝色更深。(1 分)",
+            "order": 62,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b63",
+            "bbox": [
+              0.531,
+              0.591,
+              0.935,
+              0.64
+            ],
+            "kind": "text",
+            "text": "Ⅱ.为了验证干种子和发芽的种子均含有蛋白质,某同学利用余下的C、F两支试管提取液设计了以下实验,请补充完整他的实验方案:",
+            "order": 63,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b64",
+            "bbox": [
+              0.53,
+              0.65,
+              0.935,
+              0.671
+            ],
+            "kind": "text",
+            "text": "①实验原理:\\_\\_\\_\\_。（2分）",
+            "order": 64,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b65",
+            "bbox": [
+              0.531,
+              0.68,
+              0.904,
+              0.729
+            ],
+            "kind": "text",
+            "text": "②实验步骤:向(C、F)两支试管中先加入\\_\\_\\_\\_1 mL并摇匀,再加入\\_\\_\\_\\_4滴并摇匀,观察试管中溶液颜色的变化。(2分)",
+            "order": 65,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b66",
+            "bbox": [
+              0.531,
+              0.74,
+              0.784,
+              0.759
+            ],
+            "kind": "text",
+            "text": "③预期结果:\\_\\_\\_\\_。（2分）",
+            "order": 66,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b67",
+            "bbox": [
+              0.515,
+              0.77,
+              0.936,
+              0.849
+            ],
+            "kind": "text",
+            "text": "19.(7分)我国是世界上第一个人工合成具有生物活性蛋白质的国家,为蛋白质结构的研究作出了重要贡献,彰显了中国科学家的“胰岛素精神”。图a是结晶牛胰岛素总合成路线图,图b表示结晶牛胰岛素的氨基酸序列及其他信息。回答下列问题:",
+            "order": 67,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b68",
+            "bbox": [
+              0.631,
+              0.86,
+              0.836,
+              0.916
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg)\n{'bbox': [0.725, 0.923, 0.741, 0.936], 'content': '图a'}",
+            "order": 68,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b69",
+            "bbox": [
+              0.72,
+              0.953,
+              0.733,
+              0.967
+            ],
+            "kind": "page_number",
+            "text": "6",
+            "order": 69,
+            "page_index": 2
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b70",
+            "bbox": [
+              0.194,
+              0.072,
+              0.369,
+              0.226
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg)\n{'bbox': [0.271, 0.228, 0.287, 0.242], 'content': '图b'}\n{'bbox': [0.079, 0.253, 0.346, 0.269], 'content': '注:A 和 B 链中“Gly”等表示氨基酸，对应的数字代表氨基酸位置。'}",
+            "order": 70,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b71",
+            "bbox": [
+              0.078,
+              0.277,
+              0.484,
+              0.347
+            ],
+            "kind": "text",
+            "text": "(1)分别合成 A 链和 B 链前,首先要明确两条链的氨基酸序列,科学家通过断裂肽链氨基端的\\_\\_\\_\\_将氨基酸一个一个依次脱落下来进行测定,确定了如图 b 中的肽链结构。(1 分)",
+            "order": 71,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b72",
+            "bbox": [
+              0.078,
+              0.354,
+              0.483,
+              0.425
+            ],
+            "kind": "text",
+            "text": "(2)在分步合成过程中,合成的A链或B链分别与天然的\\_\\_\\_\\_链进行组合实验,合成半合成胰岛素,最后再对合成的A链与合成的B链进行全合成实验,该过程中二硫键的形成很关键,含S的基团位于氨基酸结构通式的\\_\\_\\_\\_部位。(3分)",
+            "order": 72,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b73",
+            "bbox": [
+              0.079,
+              0.432,
+              0.483,
+              0.477
+            ],
+            "kind": "text",
+            "text": "(3)图 b 是胰岛素的氨基酸序列及其他信息,该结构还要经过盘曲折叠形成一定的空间结构。研究发现,在蛋白质折叠过程中,非极性部分倾向于分布在蛋白质分子的\\_\\_\\_\\_",
+            "order": 73,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b74",
+            "bbox": [
+              0.079,
+              0.484,
+              0.483,
+              0.529
+            ],
+            "kind": "text",
+            "text": "\\_\\_\\_\\_（填“内部”或“表面”）。有科学家进行下表实验，该实验现象说明蛋白质空间结构的多样性主要是由\\_\\_\\_\\_决定的。（3分）",
+            "order": 74,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b75",
+            "bbox": [
+              0.081,
+              0.537,
+              0.481,
+              0.666
+            ],
+            "kind": "table",
+            "text": "| 组别 | 实验操作 | 实验现象 |\n| --- | --- | --- |\n| A | 向蛋白质溶液中加入某种物质 M | 蛋白质不再折叠或错误折叠 |\n| B | 去除物质 M,分离获得 A 组不再折叠或错误折叠的蛋白质 | 能够自发地重新折叠为正确结构 |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_7.jpg)",
+            "order": 75,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b76",
+            "bbox": [
+              0.063,
+              0.675,
+              0.483,
+              0.719
+            ],
+            "kind": "text",
+            "text": "20.(10分)下图甲、乙、丙分别表示生物体内的生物大分子的部分结构模式图,请回答下列问题:",
+            "order": 76,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b77",
+            "bbox": [
+              0.154,
+              0.745,
+              0.231,
+              0.843
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg)\n{'bbox': [0.175, 0.846, 0.191, 0.859], 'content': '图甲'}",
+            "order": 77,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b78",
+            "bbox": [
+              0.253,
+              0.737,
+              0.311,
+              0.838
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg)\n{'bbox': [0.273, 0.845, 0.29, 0.858], 'content': '图乙'}",
+            "order": 78,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b79",
+            "bbox": [
+              0.337,
+              0.725,
+              0.409,
+              0.841
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg)\n{'bbox': [0.367, 0.846, 0.383, 0.859], 'content': '图丙'}",
+            "order": 79,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b80",
+            "bbox": [
+              0.078,
+              0.866,
+              0.484,
+              0.935
+            ],
+            "kind": "text",
+            "text": "(1)图甲中,三种物质基本单位均为\\_\\_\\_\\_,其中存在于动物细胞中并能调节血糖含量的是\\_\\_\\_\\_;这三种物质中,在功能上与另外两种截然不同的是\\_\\_\\_\\_。\n(3 分)",
+            "order": 80,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b81",
+            "bbox": [
+              0.266,
+              0.952,
+              0.281,
+              0.966
+            ],
+            "kind": "page_number",
+            "text": "7",
+            "order": 81,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b82",
+            "bbox": [
+              0.531,
+              0.073,
+              0.936,
+              0.151
+            ],
+            "kind": "text",
+            "text": "(2)图乙中,①所代表碱基的中文名称是\\_\\_\\_\\_,嘌呤与嘧啶的数量比为\\_\\_\\_\\_。某同学认定该模型表示的生物大分子是DNA,其判断依据是碱基中\\_\\_\\_\\_。(5分)",
+            "order": 82,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b83",
+            "bbox": [
+              0.53,
+              0.158,
+              0.935,
+              0.234
+            ],
+            "kind": "text",
+            "text": "(3)图丙中,①表示氨基酸经\\_\\_\\_\\_反应形成多肽链的过程。若氨基酸的平均分子量为r,通过化学反应形成m条肽链,再经盘曲折叠构成分子量为n的蛋白质,则该蛋白质中的肽键数目是\\_\\_\\_\\_(用代数式表示)。(2分)",
+            "order": 83,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b84",
+            "bbox": [
+              0.514,
+              0.243,
+              0.936,
+              0.318
+            ],
+            "kind": "text",
+            "text": "21.(11分)健康的身体离不开均衡的营养。某成年人身体不适,做相关检查后部分结果如下表所示,下图为人体细胞中部分重要的化合物及组成。请结合医生建议回答下列问题:",
+            "order": 84,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b85",
+            "bbox": [
+              0.546,
+              0.329,
+              0.921,
+              0.479
+            ],
+            "kind": "table",
+            "text": "| 项目 | 检查结果 | 单位 | 参考值 |\n| --- | --- | --- | --- |\n| 血红蛋白 | 100.78↓ | g/L | 131~172 |\n| 甘油三酯 | 4.2↑ | mmol/L | 0.48~1.88 |\n| 血清葡萄糖 | 8.48↑ | mmol/L | 3.9~6.1 |\n| 甲状腺激素 | 201.31↑ | mmol/L | 50~160 |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_20.jpg)",
+            "order": 85,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b86",
+            "bbox": [
+              0.646,
+              0.492,
+              0.822,
+              0.556
+            ],
+            "kind": "image",
+            "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg)",
+            "order": 86,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b87",
+            "bbox": [
+              0.531,
+              0.567,
+              0.936,
+              0.644
+            ],
+            "kind": "text",
+            "text": "(1)表中血红蛋白检查结果明显低于标准,医生建议该患者除进行药物治疗外,还应多摄取含\\_\\_\\_\\_(填微量元素)较多的食物,这体现无机盐的作用是\\_\\_\\_\\_。(3分)",
+            "order": 87,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b88",
+            "bbox": [
+              0.531,
+              0.652,
+              0.936,
+              0.73
+            ],
+            "kind": "text",
+            "text": "(2)该患者向医生描述常有小腿抽搐现象发生,故医生建议该患者在服用钙片的同时,还需补充适量的维生素D,请解释其中的科学道理:\\_\\_\\_\\_。",
+            "order": 88,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b89",
+            "bbox": [
+              0.53,
+              0.736,
+              0.936,
+              0.784
+            ],
+            "kind": "text",
+            "text": "若图中 f 表示维生素 D, 则 e 和 g 可表示为同属于固醇的 \\_\\_\\_\\_。图中 A 在彻底水解后形成的产物是 \\_\\_\\_\\_。(4 分)",
+            "order": 89,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b90",
+            "bbox": [
+              0.53,
+              0.793,
+              0.937,
+              0.926
+            ],
+            "kind": "text",
+            "text": "(3)经医生问诊,该患者有不吃早餐的不良习惯,健康合理的早餐搭配有助于保持身体的健康,每日补充适量蛋白质能让人精力充沛。评价蛋白质营养价值最主要的指标是食物蛋白中\\_\\_\\_\\_(填“必需氨基酸”或“非必需氨基酸”)的种类和含量,从蛋白质基本组成单位的层次分析蛋白质具有多样性的原因是\\_\\_\\_\\_。(4分)",
+            "order": 90,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b91",
+            "bbox": [
+              0.719,
+              0.952,
+              0.733,
+              0.967
+            ],
+            "kind": "page_number",
+            "text": "8",
+            "order": 91,
+            "page_index": 3
+          },
+          {
+            "id": "d3cf4d290fe154ea7-b92",
+            "bbox": [
+              0.787,
+              0.951,
+              0.871,
+              0.967
+            ],
+            "kind": "footer",
+            "text": "(横线下方不可作答)",
+            "order": 92,
+            "page_index": 3
+          }
+        ],
+        "columns": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "markdown": "班级:\\_\\_\\_\\_ 姓名:\\_\\_\\_\\_\n\n# 章末过关检测(一) 走近细胞 组成细胞的分子\n\n(满分:100 分)\n\n## 一、选择题:本题共16小题,每小题3分,共48分。每小题只有一个选项符合题目要求。\n\n1. 下列关于细胞学说及归纳法的叙述, 正确的是 ( )\nA. 细胞学说论证了“生物都由细胞发育而来”\nB. 细胞学说的建立与科学实验有关, 与理性思维无关\nC. 不完全归纳法得出的结论可能是可信的, 可以用来预测和判断, 但可能存在例外\nD. 由于完全归纳法的可信度更高, 所以在科学研究中经常被采用\n\n2. 某湖泊水体富营养化, 蓝细菌和绿藻大量繁殖形成水华。噬藻体是一种能特异性侵染蓝细菌的 DNA 病毒, 可使蓝细菌发生裂解, 被认为是一种潜在的能有效干预蓝细菌引起的水华的生物。下列叙述正确的是 ( )\nA. 噬藻体与蓝细菌结构的主要区别是前者无细胞结构\nB. 噬藻体结构简单, 属于生命系统最基本的层次\nC. 蓝细菌和绿藻细胞内均有叶绿体, 可进行光合作用\nD. 可利用富含营养物质的培养基培养噬藻体\n\n3. 很多青少年爱喝高糖饮料, 爱吃高热量高脂肪的食物, 并且不爱运动, 而这些都是导致脂肪肝低龄化的主要原因, 下列对某脂肪肝患者的肝脏细胞中元素和化合物的描述, 正确的是\nA. 细胞中含量最多的有机化合物是脂质, 其次为蛋白质, 糖类和核酸的含量较少\nB. 细胞中 C、H、O、N 这四种元素的含量很高, 由此可知其作用比微量元素更为重要\nC. 该患者肝脏细胞和心肌细胞中各种化合物的种类基本相同, 但含量存在一定差异\nD. 组成该患者肝脏细胞的某几种化学元素在无机自然界中无法找到\n\n4. 在生物组织中的还原糖、脂肪、蛋白质的检测实验中, 下列叙述错误的是 ( )\nA. 可用斐林试剂甲液和乙液、蒸馏水来检测葡萄糖和尿液中的蛋白质\nB. 花生种子含脂肪多且子叶肥厚, 是用于脂肪检测的理想材料\nC. 当用斐林试剂检测非还原糖时, 溶液为无色\nD. 甘蔗茎的薄壁组织、甜菜的块根、西瓜的汁液均不能用于还原糖的检测\n\n5. 组成细胞的各种元素大多以化合物的形式存在。下列叙述错误的是（）\nA. 细胞内的结合水是细胞结构的重要组成成分\nB. 组成脂质的元素主要是 C、H、O，有些脂质还含有 P 和 N\nC. 脂肪和糖类之间的转化程度是有明显差异的\nD. 生物大分子以单体为骨架，单体以碳链为基本骨架\n\n6.苹果含有微量元素锌,锌是与记忆力相关的蛋白质不可缺少的元素,儿童缺锌就会导致大脑发育不良,因此苹果又称为“记忆之果”。这说明无机盐\n（）\nA.对维持酸碱平衡有重要作用\nB.对维持细胞形态有重要作用\nC.对调节细胞内的渗透压有重要作用\nD.对维持生物体的生命活动有重要作用\n\n7. 纱布是一种常用的伤口敷料, 其主要成分是纤维素。普通纱布只能吸收已经流出的血液, 但阻止血液继续流出的效果有限。现在市场上有一种由几丁质加工而成的新型伤口敷料, 它可有效阻止血液继续流出并启动凝血。下列说法错误的是 ( )\nA. 纤维素、几丁质都属于多糖, 基本组成单位都是葡萄糖\nB. 与纤维素不同, 几丁质由 C、H、O、N 四种元素构成\nC. 几丁质和纤维素不是细胞的主要储能物质\nD. 几丁质可以用于制作人造皮肤等\n\n8. 血浆中胆固醇含量过高, 易引发高胆固醇血症。某科研小组研制了一种治疗该症的药物 A, 为评估其药效, 选取该病患者 50 人, 随机均分为 5 组, 分别注射不同剂量的药物 A, 一段时间后, 检测每组患者体内的相关指标并进行数据处理, 结果见下表。下列说法错误的是 ( )\n\n| 注射药物 A(mg/周) | 胆固醇含量相对值(注射后/注射前) | 转氨酶活性 |\n| --- | --- | --- |\n| 0 | 100% | + |\n| 30 | 94.50% | + |\n| 100 | 91.20% | + |\n| 200 | 76.80% | + |\n| 300 | 50.60% | ++++ |\n\n注:一定程度上,转氨酶活性与肝细胞受损程度呈正相关。\nA. 胆固醇是构成动物细胞膜的重要成分,在人体内还参与血液中脂质的运输\nB. 血浆中胆固醇含量过多时,胆固醇可大量转化为葡萄糖\nC. 注射药物 A 前后每组患者体内的胆固醇含量可形成自身前后对照\nD. 药物 A 剂量是 200 mg/周时降低胆固醇含量效果较明显,同时肝脏基本不受损伤\n\n9.运动和营养日益成为人们关注的热点。某人运动过程中,随着运动强度的变化,脂肪与糖类的供能比例如右图所示。下列叙述错误的是\n() A.所有糖类和脂肪都可以为人体供能且组成元素相同\nB.低强度的运动适合减肥\nC.高强度运动前,适当摄入糖类,有助于保障运动供能\nD.中等运动强度a点时,脂肪和糖类的供能比例相同\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg)\n\n运动强度\n\n10. ApoE 蛋白是人体载脂蛋白之一,主要参与人体脂蛋白的转化和代谢。ApoE 蛋白中共含有 299 个氨基酸,在人群中有 ApoE2、ApoE3 和 ApoE4 等亚型。下列相关叙述正确的是\n（）\nA. ApoE2、ApoE3 和 ApoE4 在人体中行使完全相同的功能\nB. ApoE 蛋白存在不同亚型可能与蛋白质的空间结构有关\nC. 加热、加酸、加酒精等不会引起 ApoE 蛋白功能的改变\nD. 变性后的 ApoE 蛋白无法与双缩脲试剂发生颜色反应\n\n11. 胶原三肽是利用生物工程技术以猪皮、鱼皮为原料制备的胶原蛋白的最小结构单位, 其形成过程如下图所示。胶原三肽的相对分子质量很小, 能够极有效地渗入角质层、真皮层和头发根部细胞内。下列叙述错误的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg)\n\nA. 胶原三肽中有 2 个游离的氨基和 1 个游离的羧基\nB. a 和 b 为肽键, 形成胶原三肽要产生 2 个水分子\nC. 胶原三肽中含有 4 个 O、12 个 C\nD. 皮肤表面涂抹的胶原三肽能被直接吸收\n\n12. 帕蒂西兰是用于治疗家族性淀粉样多发性神经病变(FAP)的小干扰 RNA 类药物, 它由两条链构成, 核苷酸链含有游离的磷酸基团端为 5' 端, 另一端为 3' 端。两条链各含 21 个核苷酸, 形成 19 个碱基对; 每条链的 3' 端含有两个悬空的未配对核苷酸。下列有关叙述正确的是\nA. 帕蒂西兰 3' 端共含 2 个未配对碱基\nB. 帕蒂西兰彻底水解得到的碱基最多有 5 种\nC. 人体细胞中的 RNA 一般为单链结构\nD. 帕蒂西兰既可用于治疗 FAP, 又是遗传信息的载体\n\n13. 图甲为某种核苷酸示意图, 图乙为某段核苷酸链示意图, 下列有关说法正确的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg)\n\n图甲\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg)\n\n图乙\n\nA. 图甲中所示物质是脱氧核苷酸,人体内有 4 种\nB. 由 1 条图乙所示核苷酸链构成的 RNA 分子,主要分布在细胞质中\nC. 图乙化合物基本组成单位可用 b 表示,A、C 间通过磷酸连接\nD. 图乙所示的核苷酸链以碳链作为基本骨架\n\n14. 下图是人体细胞中由单体形成多聚体的模式图, 下列有关叙述正确的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg)\n\nA. 抗体、RNA 和肝糖原的合成都符合这个模式\nB. 若单体为葡萄糖, 则形成的多聚体可为淀粉\nC. 若单体为氨基酸, 则生成的  $H_{2}O$  中的 H 来自羧基\nD. 多聚体彻底水解的产物一定是它的单体\n\n15.酸奶的口感独特、营养丰富，越来越受到人们的欢迎。为检测市场上销售的不同酸奶的营养价值，某兴趣小组对甲～戊5种品牌原味酸奶进行还原糖、脂肪和蛋白质含量的测定，结果如下图所示。下列叙述错误的是 （）\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg)\n\nA. 不同品牌原味酸奶的还原糖、脂肪和蛋白质含量不完全相同\nB. 可利用双缩脲试剂来检测不同品牌原味酸奶中的蛋白质\nC. 加入斐林试剂并水浴加热后, 可发现乙品牌酸奶的砖红色最浅\nD. 高温加热后, 酸奶中加入双缩脲试剂, 将不再出现紫色\n\n16. 如下图所示, 甲中①②表示化合物, 乙表示由四个单体构成的化合物, 丙为一种多肽分子。下列叙述错误的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg)\n\nA. 若①为某种多聚体, 则①可能具有催化作用\nB. 若②为生物大分子, 则其可能是 HIV 的遗传物质\nC. 若构成乙的单体是葡萄糖, 则在动物细胞中乙可能是糖原的部分结构\nD. 构成丙的氨基酸种类和肽键数分别为 3 种、3 个\n\n|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\n## 二、非选择题:本题共5小题,共52分。\n\n17.(11分)秋冬季节是支原体肺炎高发期。支原体肺炎是一种由肺炎支原体引起的呼吸道感染病,多发于儿童和青少年。该病的病原体肺炎支原体是一类没有细胞壁的原核生物,支原体肺炎的临床表现与细菌性肺炎相似,但用药不相同。根据所学知识回答下列问题:\n\n(1)为确诊幼儿患者所患肺炎种类,医护人员可取患儿痰液进行处理,并在\\_\\_\\_\\_显微镜下观察致病性微生物的细胞结构。观察到支原体后,为进一步了解支原体,医护人员用培养基培养分离得到的支原体,一段时间后培养基上可出现由一个支原体繁殖形成的“荷包蛋”状的菌落(大量同种支原体),该菌落属于生命系统结构层次中的\\_\\_\\_\\_。(2分)\n\n(2)支原体的遗传物质是\\_\\_\\_\\_，该遗传物质位于细胞特定的区域，此区域称为\\_\\_\\_\\_。(2分)\n\n(3)支原体肺炎较重时,可能会因黏液栓堵住支气管,造成影像学上的“白肺”,这与新冠病毒导致的双肺弥散性病变产生的“白肺”有所不同。导致这两种“白肺”的病原微生物的主要区别在于\\_\\_\\_\\_。(2分)\n\n(4)经化验,患儿确诊患支原体肺炎,若你是医护工作者,根据下表提供的抗菌药物及其抗菌机制,判断治疗支原体肺炎最不宜选择的药物是\\_\\_\\_\\_,原因是\\_\\_\\_\\_。(3分)\n\n| 抗菌药物 | 抗菌机制 |\n| --- | --- |\n| 阿奇霉素 | 能与核糖体结合,抑制蛋白质的合成 |\n| 环丙沙星 | 抑制病原体 DNA 的复制 |\n| 青霉素 | 抑制病原体细胞壁形成 |\n| 利福平 | 抑制病原体 RNA 的合成,从而抑制蛋白质的合成 |\n\n(5)虽然原核细胞与真核细胞在形态上多种多样,但是它们的基本结构具有高度的统一性,这种统一性主要表现在\\_\\_\\_\\_\\_\\_\\_\\_。(2分)\n\n18.(13 分)种子在黑暗中萌发成幼苗,下表是种子经过处理后测得的数据,下图是相关实验,请回答下列问题:\n\n<table><tr><td rowspan=\"2\">项目</td><td rowspan=\"2\">处理方法</td><td colspan=\"2\">质量/g</td></tr><tr><td>种子</td><td>幼苗</td></tr><tr><td>鲜重</td><td>直接称重</td><td>160</td><td>750</td></tr><tr><td>灰烬</td><td>550°C,16h</td><td>2</td><td>2</td></tr></table>\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg)\n\n图1\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg)\n\n图2\n\n(1)从表中可以看出,与种子相比,幼苗的质量有所增加,增加的物质主要是\\_\\_\\_\\_,种子燃烧后留下灰烬,这些灰烬代表的物质是\\_\\_\\_\\_。(2分)\n\n(2)若该种子为玉米种子,某兴趣小组的同学取大小均匀的同种玉米干种子(含淀粉丰富)40粒,平均分成甲、乙两组,给予甲组种子适宜的条件浸种,乙组仍保持干燥。待甲组种子发芽后,将试管编号为A\\~F,分别向A、B、C三支试管中加入2 mL甲组提取液,向D、E、F三支试管中加入2 mL乙组提取液,如图1所示,然后进行实验(干种子中的还原性物质忽略不计):\n\nI. 若检测 A、D 两支试管中是否含有还原糖, 实验部分步骤如图 2, 请把横线上的部分补充完整: ①\\_\\_\\_\\_, ②\\_\\_\\_\\_。(2 分)\n\n水浴加热后观察这两支试管,其中试管 A 中出现砖红色沉淀,据此可得出的结论是\\_\\_\\_\\_。(2 分)\n\n据此结果推断,若向 B、E 两支试管中分别加入等量的碘液,观察两支试管,发现液体的颜色均是蓝色,则\\_\\_\\_\\_试管液体的蓝色更深。(1 分)\n\nⅡ.为了验证干种子和发芽的种子均含有蛋白质,某同学利用余下的C、F两支试管提取液设计了以下实验,请补充完整他的实验方案:\n\n①实验原理:\\_\\_\\_\\_。（2分）\n\n②实验步骤:向(C、F)两支试管中先加入\\_\\_\\_\\_1 mL并摇匀,再加入\\_\\_\\_\\_4滴并摇匀,观察试管中溶液颜色的变化。(2分)\n\n③预期结果:\\_\\_\\_\\_。（2分）\n\n19.(7分)我国是世界上第一个人工合成具有生物活性蛋白质的国家,为蛋白质结构的研究作出了重要贡献,彰显了中国科学家的“胰岛素精神”。图a是结晶牛胰岛素总合成路线图,图b表示结晶牛胰岛素的氨基酸序列及其他信息。回答下列问题:\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg)\n\n图a\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg)\n\n图b\n\n注:A 和 B 链中“Gly”等表示氨基酸，对应的数字代表氨基酸位置。\n\n(1)分别合成 A 链和 B 链前,首先要明确两条链的氨基酸序列,科学家通过断裂肽链氨基端的\\_\\_\\_\\_将氨基酸一个一个依次脱落下来进行测定,确定了如图 b 中的肽链结构。(1 分)\n\n(2)在分步合成过程中,合成的A链或B链分别与天然的\\_\\_\\_\\_链进行组合实验,合成半合成胰岛素,最后再对合成的A链与合成的B链进行全合成实验,该过程中二硫键的形成很关键,含S的基团位于氨基酸结构通式的\\_\\_\\_\\_部位。(3分)\n\n(3)图 b 是胰岛素的氨基酸序列及其他信息,该结构还要经过盘曲折叠形成一定的空间结构。研究发现,在蛋白质折叠过程中,非极性部分倾向于分布在蛋白质分子的\\_\\_\\_\\_\n\n\\_\\_\\_\\_（填“内部”或“表面”）。有科学家进行下表实验，该实验现象说明蛋白质空间结构的多样性主要是由\\_\\_\\_\\_决定的。（3分）\n\n| 组别 | 实验操作 | 实验现象 |\n| --- | --- | --- |\n| A | 向蛋白质溶液中加入某种物质 M | 蛋白质不再折叠或错误折叠 |\n| B | 去除物质 M,分离获得 A 组不再折叠或错误折叠的蛋白质 | 能够自发地重新折叠为正确结构 |\n\n20.(10分)下图甲、乙、丙分别表示生物体内的生物大分子的部分结构模式图,请回答下列问题:\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg)\n\n图甲\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg)\n\n图乙\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg)\n\n图丙\n\n(1)图甲中,三种物质基本单位均为\\_\\_\\_\\_,其中存在于动物细胞中并能调节血糖含量的是\\_\\_\\_\\_;这三种物质中,在功能上与另外两种截然不同的是\\_\\_\\_\\_。\n(3 分)\n\n(2)图乙中,①所代表碱基的中文名称是\\_\\_\\_\\_,嘌呤与嘧啶的数量比为\\_\\_\\_\\_。某同学认定该模型表示的生物大分子是DNA,其判断依据是碱基中\\_\\_\\_\\_。(5分)\n\n(3)图丙中,①表示氨基酸经\\_\\_\\_\\_反应形成多肽链的过程。若氨基酸的平均分子量为r,通过化学反应形成m条肽链,再经盘曲折叠构成分子量为n的蛋白质,则该蛋白质中的肽键数目是\\_\\_\\_\\_(用代数式表示)。(2分)\n\n21.(11分)健康的身体离不开均衡的营养。某成年人身体不适,做相关检查后部分结果如下表所示,下图为人体细胞中部分重要的化合物及组成。请结合医生建议回答下列问题:\n\n| 项目 | 检查结果 | 单位 | 参考值 |\n| --- | --- | --- | --- |\n| 血红蛋白 | 100.78↓ | g/L | 131~172 |\n| 甘油三酯 | 4.2↑ | mmol/L | 0.48~1.88 |\n| 血清葡萄糖 | 8.48↑ | mmol/L | 3.9~6.1 |\n| 甲状腺激素 | 201.31↑ | mmol/L | 50~160 |\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg)\n\n(1)表中血红蛋白检查结果明显低于标准,医生建议该患者除进行药物治疗外,还应多摄取含\\_\\_\\_\\_(填微量元素)较多的食物,这体现无机盐的作用是\\_\\_\\_\\_。(3分)\n\n(2)该患者向医生描述常有小腿抽搐现象发生,故医生建议该患者在服用钙片的同时,还需补充适量的维生素D,请解释其中的科学道理:\\_\\_\\_\\_。\n\n若图中 f 表示维生素 D, 则 e 和 g 可表示为同属于固醇的 \\_\\_\\_\\_。图中 A 在彻底水解后形成的产物是 \\_\\_\\_\\_。(4 分)\n\n(3)经医生问诊,该患者有不吃早餐的不良习惯,健康合理的早餐搭配有助于保持身体的健康,每日补充适量蛋白质能让人精力充沛。评价蛋白质营养价值最主要的指标是食物蛋白中\\_\\_\\_\\_(填“必需氨基酸”或“非必需氨基酸”)的种类和含量,从蛋白质基本组成单位的层次分析蛋白质具有多样性的原因是\\_\\_\\_\\_。(4分)",
+        "warnings": [],
+        "asset_metadata": {
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg": {
+            "bbox": [
+              0.182,
+              0.324,
+              0.379,
+              0.473
+            ],
+            "caption": [],
+            "width_px": 615,
+            "height_px": 343,
+            "page_index": 1,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg": {
+            "bbox": [
+              0.175,
+              0.818,
+              0.284,
+              0.918
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.219,
+                  0.922,
+                  0.237,
+                  0.936
+                ],
+                "content": "图甲"
+              }
+            ],
+            "width_px": 341,
+            "height_px": 231,
+            "page_index": 1,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg": {
+            "bbox": [
+              0.306,
+              0.808,
+              0.386,
+              0.919
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.34,
+                  0.922,
+                  0.358,
+                  0.936
+                ],
+                "content": "图乙"
+              }
+            ],
+            "width_px": 250,
+            "height_px": 256,
+            "page_index": 1,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_1.jpg": {
+            "bbox": [
+              0.08,
+              0.031,
+              0.261,
+              0.059
+            ],
+            "caption": [],
+            "width_px": 565,
+            "height_px": 65,
+            "page_index": 2,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_9.jpg": {
+            "bbox": [
+              0.094,
+              0.558,
+              0.47,
+              0.685
+            ],
+            "caption": [],
+            "width_px": 1173,
+            "height_px": 293,
+            "page_index": 2,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg": {
+            "bbox": [
+              0.194,
+              0.072,
+              0.369,
+              0.226
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.271,
+                  0.228,
+                  0.287,
+                  0.242
+                ],
+                "content": "图b"
+              },
+              {
+                "bbox": [
+                  0.079,
+                  0.253,
+                  0.346,
+                  0.269
+                ],
+                "content": "注:A 和 B 链中“Gly”等表示氨基酸，对应的数字代表氨基酸位置。"
+              }
+            ],
+            "width_px": 547,
+            "height_px": 353,
+            "page_index": 3,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg": {
+            "bbox": [
+              0.154,
+              0.745,
+              0.231,
+              0.843
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.175,
+                  0.846,
+                  0.191,
+                  0.859
+                ],
+                "content": "图甲"
+              }
+            ],
+            "width_px": 241,
+            "height_px": 226,
+            "page_index": 3,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_7.jpg": {
+            "bbox": [
+              0.081,
+              0.537,
+              0.481,
+              0.666
+            ],
+            "caption": [],
+            "width_px": 1248,
+            "height_px": 297,
+            "page_index": 3,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg": {
+            "bbox": [
+              0.833,
+              0.764,
+              0.932,
+              0.845
+            ],
+            "caption": [],
+            "width_px": 309,
+            "height_px": 186,
+            "page_index": 0,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_table_13.jpg": {
+            "bbox": [
+              0.528,
+              0.47,
+              0.933,
+              0.621
+            ],
+            "caption": [],
+            "width_px": 1264,
+            "height_px": 347,
+            "page_index": 0,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg": {
+            "bbox": [
+              0.648,
+              0.474,
+              0.819,
+              0.586
+            ],
+            "caption": [],
+            "width_px": 534,
+            "height_px": 258,
+            "page_index": 1,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg": {
+            "bbox": [
+              0.668,
+              0.207,
+              0.798,
+              0.274
+            ],
+            "caption": [],
+            "width_px": 407,
+            "height_px": 155,
+            "page_index": 1,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg": {
+            "bbox": [
+              0.583,
+              0.756,
+              0.883,
+              0.828
+            ],
+            "caption": [],
+            "width_px": 937,
+            "height_px": 166,
+            "page_index": 1,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg": {
+            "bbox": [
+              0.579,
+              0.092,
+              0.664,
+              0.176
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.616,
+                  0.178,
+                  0.632,
+                  0.191
+                ],
+                "content": "图1"
+              }
+            ],
+            "width_px": 266,
+            "height_px": 194,
+            "page_index": 2,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg": {
+            "bbox": [
+              0.692,
+              0.073,
+              0.889,
+              0.174
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.785,
+                  0.178,
+                  0.802,
+                  0.192
+                ],
+                "content": "图2"
+              }
+            ],
+            "width_px": 615,
+            "height_px": 232,
+            "page_index": 2,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg": {
+            "bbox": [
+              0.631,
+              0.86,
+              0.836,
+              0.916
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.725,
+                  0.923,
+                  0.741,
+                  0.936
+                ],
+                "content": "图a"
+              }
+            ],
+            "width_px": 640,
+            "height_px": 129,
+            "page_index": 2,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_12.jpg": {
+            "bbox": [
+              0.132,
+              0.831,
+              0.404,
+              0.933
+            ],
+            "caption": [],
+            "width_px": 849,
+            "height_px": 235,
+            "page_index": 2,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg": {
+            "bbox": [
+              0.253,
+              0.737,
+              0.311,
+              0.838
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.273,
+                  0.845,
+                  0.29,
+                  0.858
+                ],
+                "content": "图乙"
+              }
+            ],
+            "width_px": 182,
+            "height_px": 232,
+            "page_index": 3,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg": {
+            "bbox": [
+              0.337,
+              0.725,
+              0.409,
+              0.841
+            ],
+            "caption": [
+              {
+                "bbox": [
+                  0.367,
+                  0.846,
+                  0.383,
+                  0.859
+                ],
+                "content": "图丙"
+              }
+            ],
+            "width_px": 226,
+            "height_px": 267,
+            "page_index": 3,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg": {
+            "bbox": [
+              0.646,
+              0.492,
+              0.822,
+              0.556
+            ],
+            "caption": [],
+            "width_px": 549,
+            "height_px": 148,
+            "page_index": 3,
+            "document_id": "d3cf4d290fe154ea7"
+          },
+          "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_20.jpg": {
+            "bbox": [
+              0.546,
+              0.329,
+              0.921,
+              0.479
+            ],
+            "caption": [],
+            "width_px": 1170,
+            "height_px": 344,
+            "page_index": 3,
+            "document_id": "d3cf4d290fe154ea7"
+          }
+        },
+        "parser_version": "mineru-normalizer-v1"
+      },
+      {
+        "id": "d2b6584741d4144f1",
+        "name": "PDF合并_1-3.pdf",
+        "role": "answer",
+        "pages": [
+          {
+            "width_pt": 569.7300415039062,
+            "width_px": 2374,
+            "height_pt": 824.8300170898438,
+            "height_px": 3437,
+            "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d2b6584741d4144f1/pages/page-0.png",
+            "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd2b6584741d4144f1%2Fpages%2Fpage-0.png&v=1792861733",
+            "page_index": 0
+          },
+          {
+            "width_pt": 569.7300415039062,
+            "width_px": 2374,
+            "height_pt": 824.8300170898438,
+            "height_px": 3437,
+            "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d2b6584741d4144f1/pages/page-1.png",
+            "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd2b6584741d4144f1%2Fpages%2Fpage-1.png&v=1792861733",
+            "page_index": 1
+          },
+          {
+            "width_pt": 569.7300415039062,
+            "width_px": 2374,
+            "height_pt": 824.8300170898438,
+            "height_px": 3437,
+            "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d2b6584741d4144f1/pages/page-2.png",
+            "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd2b6584741d4144f1%2Fpages%2Fpage-2.png&v=1792861734",
+            "page_index": 2
+          }
+        ],
+        "assets": {},
+        "blocks": [
+          {
+            "id": "d2b6584741d4144f1-b0",
+            "bbox": [
+              0.675,
+              0.038,
+              0.924,
+              0.052
+            ],
+            "kind": "header",
+            "text": "参考答案与解析·章末过关检测",
+            "order": 0,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b1",
+            "bbox": [
+              0.42,
+              0.076,
+              0.579,
+              0.095
+            ],
+            "kind": "doc_title",
+            "text": "章末过关检测",
+            "order": 1,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b2",
+            "bbox": [
+              0.078,
+              0.114,
+              0.488,
+              0.13
+            ],
+            "kind": "paragraph_title",
+            "text": "章末过关检测(一) 走近细胞 组成细胞的分子",
+            "order": 2,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b3",
+            "bbox": [
+              0.073,
+              0.149,
+              0.493,
+              0.25
+            ],
+            "kind": "text",
+            "text": "1. C 解析: 细胞学说并未论证“生物都由细胞发育而来”, 如病毒无细胞结构, A 错误; 细胞学说的建立与科学实验和理性思维均有关, B 错误; 不完全归纳法得出的结论可能是可信的, 可以用来预测和判断, 但可能存在例外, C 正确; 在科学研究中经常被采用的是不完全归纳法, D 错误。",
+            "order": 3,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b4",
+            "bbox": [
+              0.071,
+              0.257,
+              0.493,
+              0.401
+            ],
+            "kind": "text",
+            "text": "2. A 解析: 噬藻体是一种 DNA 病毒, 没有细胞结构, 蓝细菌是原核生物, 病毒与原核生物结构的主要区别是前者无细胞结构, A 正确; 细胞是生命系统最基本的层次, 噬藻体是病毒, 没有细胞结构, B 错误; 蓝细菌中没有叶绿体, 但含有叶绿素和藻蓝素, 绿藻含有叶绿体, 因此二者均能进行光合作用, C 错误; 噬藻体是病毒, 必须寄生在活细胞中才能生存, 不能用富含营养物质的培养基培养, D 错误。",
+            "order": 4,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b5",
+            "bbox": [
+              0.071,
+              0.408,
+              0.494,
+              0.574
+            ],
+            "kind": "text",
+            "text": "3. C 解析: 在脂肪肝患者的肝脏细胞中, 含量最多的有机化合物仍然是蛋白质, A 错误; 细胞中 C、H、O、N 等大量元素含量较高, 但大量元素和微量元素的作用同样重要, B 错误; 在不同的细胞中, 各种化合物的种类基本相同, 都含有水、蛋白质、脂质、无机盐、糖类、核酸等, 但不同生物组织的细胞中各种化合物的含量是有差别的, C 正确; 组成细胞的化学元素, 在无机自然界中都能够找到, 没有一种化学元素为细胞所特有, D 错误。",
+            "order": 5,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b6",
+            "bbox": [
+              0.072,
+              0.58,
+              0.494,
+              0.747
+            ],
+            "kind": "text",
+            "text": "4. C 解析: 斐林试剂可用于检测葡萄糖(还原糖)的有无; 斐林试剂的甲液与双缩脲试剂的 A 液相同, 用蒸馏水将斐林试剂的乙液进行适当稀释, 可得到双缩脲试剂的 B 液, 双缩脲试剂可用于检测蛋白质的有无, A 正确。花生子叶适用于检测脂肪, B 正确。斐林试剂本身呈蓝色, C 错误。甘蔗茎的薄壁组织、甜菜的块根含有较多的蔗糖(非还原糖); 西瓜的汁液呈红色, 会影响实验的观察, 均不是进行可溶性还原糖检测的理想材料, D 正确。",
+            "order": 6,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b7",
+            "bbox": [
+              0.072,
+              0.753,
+              0.495,
+              0.876
+            ],
+            "kind": "text",
+            "text": "5.D 解析:细胞内的结合水是细胞结构的重要组成成分,A正确;组成脂质的元素主要是C、H、O,有些脂质还含有P和N,如磷脂,B正确;糖类和脂肪是可以相互转化的,糖类在供应充足的情况下,可以大量转化为脂肪,而脂肪一般只在糖类供能不足时,才会分解供能,而且不能大量转化为糖类,C正确;生物大分子以碳链为基本骨架,D错误。",
+            "order": 7,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b8",
+            "bbox": [
+              0.072,
+              0.882,
+              0.493,
+              0.94
+            ],
+            "kind": "text",
+            "text": "6. D 解析: 由题意可知, 锌是与记忆力相关的蛋白质不可缺少的元素, 儿童缺锌就会导致大脑发育不良, 说明无机盐对维持生物体的生命活动有重要作用, D 符合题意。",
+            "order": 8,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b9",
+            "bbox": [
+              0.504,
+              0.114,
+              0.927,
+              0.236
+            ],
+            "kind": "text",
+            "text": "7. A 解析: 几丁质是一种多糖, 由 C、H、O、N 四种元素构成, 其基本组成单位不是葡萄糖, A 错误, B 正确; 几丁质是广泛存在于甲壳类动物和昆虫外骨骼中的一种多糖, 可用于废水处理、制作食品的包装纸和食品添加剂、制作人造皮肤等, 纤维素是构成植物细胞壁的主要成分, 几丁质和纤维素不是细胞的主要储能物质, C、D 正确。",
+            "order": 9,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b10",
+            "bbox": [
+              0.504,
+              0.242,
+              0.927,
+              0.471
+            ],
+            "kind": "text",
+            "text": "8. B 解析: 胆固醇属于脂质, 胆固醇是构成动物细胞膜的重要成分, 在人体内还参与血液中脂质的运输, A 正确; 细胞中的糖类和脂质是可以相互转化的, 人体内多余的糖类可以大量转化为脂肪等物质, 但胆固醇不能大量转化为葡萄糖, B 错误; 本实验的自变量为注射药物 A 的剂量, 因变量是胆固醇含量相对值和转氨酶活性, 注射药物 A 前后每组患者体内的胆固醇含量可形成自身前后对照, C 正确; 药物 A 的用量在 200 mg/周时, 胆固醇含量降低效果较明显, 且转氨酶活性与对照组相同, 即肝脏几乎没有受到损害, 用量在 300 mg/周时, 虽然胆固醇含量降低效果更明显, 但转氨酶活性明显比对照组高, 说明肝脏受到较大损害, D 正确。",
+            "order": 10,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b11",
+            "bbox": [
+              0.504,
+              0.477,
+              0.927,
+              0.641
+            ],
+            "kind": "text",
+            "text": "9. A 解析: 不是所有的糖类都可以为人体供能, 如纤维素, 脂肪的组成元素是 C、H、O, 糖类中几丁质的组成元素是 C、H、O、N, 故糖类和脂肪的组成元素不一定相同, A 错误; 由题图可知, 进行低强度的运动时脂肪供能比例高于糖类, 所以进行低强度的运动更适合减肥, B 正确; 由题图可知, 高强度运动主要靠糖类供能, 故运动前应适当摄入糖类, 有助于保障运动供能, C 正确; 中等运动强度 a 点时, 脂肪和糖类的供能比例相等, D 正确。",
+            "order": 11,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b12",
+            "bbox": [
+              0.505,
+              0.647,
+              0.927,
+              0.812
+            ],
+            "kind": "text",
+            "text": "10. B 解析: 蛋白质分子的种类与组成它的氨基酸数目、排列顺序, 肽链的盘曲、折叠方式及其形成的空间结构有关, 结构决定功能, ApoE 蛋白存在不同亚型可能与蛋白质的空间结构有关, ApoE2、ApoE3 和 ApoE4 在人体中行使的功能不一定完全相同, A 错误, B 正确; 加热、加酸、加酒精会引起 ApoE 蛋白变性, 破坏其空间结构, 从而影响其特定功能, 变性后的 ApoE 蛋白仍具有肽键, 可与双缩脲试剂发生颜色反应, C、D 错误。",
+            "order": 12,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b13",
+            "bbox": [
+              0.505,
+              0.818,
+              0.927,
+              0.941
+            ],
+            "kind": "text",
+            "text": "11. C 解析: 题图所示 3 个氨基酸中, 赖氨酸的 R 基上有 1 个氨基, 则胶原三肽中有 2 个游离的氨基和 1 个游离的羧基, A 正确; 由题图可知, 3 个氨基酸脱 2 个水分子形成胶原三肽, 该过程中形成 2 个连接氨基酸的肽键 (a、b), 胶原三肽中含有 4 个 O、13 个 C, B 正确, C 错误; 根据题干信息可知, 胶原三肽的相对分子质量很小, 能够极有效地渗",
+            "order": 13,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b14",
+            "bbox": [
+              0.485,
+              0.955,
+              0.512,
+              0.969
+            ],
+            "kind": "page_number",
+            "text": "61",
+            "order": 14,
+            "page_index": 0
+          },
+          {
+            "id": "d2b6584741d4144f1-b15",
+            "bbox": [
+              0.074,
+              0.038,
+              0.498,
+              0.052
+            ],
+            "kind": "header",
+            "text": "同步解析与测评 生物学 必修 1 分子与细胞 配人教版",
+            "order": 15,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b16",
+            "bbox": [
+              0.094,
+              0.06,
+              0.494,
+              0.096
+            ],
+            "kind": "text",
+            "text": "入角质层、真皮层和头发根部细胞内，据此推测皮肤表面涂抹的胶原三肽能被直接吸收，D正确。",
+            "order": 16,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b17",
+            "bbox": [
+              0.073,
+              0.103,
+              0.494,
+              0.286
+            ],
+            "kind": "text",
+            "text": "12. C 解析: 帕蒂西兰是由两条链构成的小干扰 RNA, 两条链各含 21 个核苷酸, 形成 19 个碱基对, 其 3' 端有两个未配对的核苷酸, 故帕蒂西兰 3' 端共有 4 个未配对的核苷酸, A 错误; 帕蒂西兰是用于治疗家族性淀粉样多发性神经病变 (FAP) 的小干扰 RNA 类药物, RNA 彻底水解最多得到 A、U、G、C 共 4 种碱基, B 错误; 人体细胞中的 RNA 一般为单链结构, C 正确; 分析题干可知, 帕蒂西兰是用于治疗 FAP 的小干扰 RNA 类药物, 并未体现其作为遗传信息的载体的功能, D 错误。",
+            "order": 17,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b18",
+            "bbox": [
+              0.072,
+              0.293,
+              0.494,
+              0.434
+            ],
+            "kind": "text",
+            "text": "13. D 解析: 题图甲中的五碳糖为核糖, 因此该物质是核糖核苷酸, 人体内有 4 种: 腺嘌呤核糖核苷酸、鸟嘌呤核糖核苷酸、胞嘧啶核糖核苷酸、尿嘧啶核糖核苷酸, A 错误; 题图乙的核苷酸链中含有碱基 T, 不能构成 RNA 分子, B 错误; 题图乙化合物基本组成单位可用 b 表示, A、C 间通过五碳糖—磷酸—五碳糖连接, C 错误; 题图乙所示的核苷酸链为脱氧核苷酸链, 是以碳链作为基本骨架的, D 正确。",
+            "order": 18,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b19",
+            "bbox": [
+              0.073,
+              0.44,
+              0.495,
+              0.561
+            ],
+            "kind": "text",
+            "text": "14. A 解析: 抗体、RNA 和肝糖原都是由单体构成的多聚体, 它们的合成都符合题图所示模式, A 正确; 人体细胞中不含淀粉, 若单体为葡萄糖, 则形成的多聚体可为糖原, B 错误; 氨基酸脱水缩合过程中产生的  $H_{2}O$  中的 H 来自氨基和羧基, C 错误; 核酸的单体是核苷酸, 但是核酸彻底水解的产物是五碳糖、磷酸和含氮碱基, D 错误。",
+            "order": 19,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b20",
+            "bbox": [
+              0.073,
+              0.567,
+              0.494,
+              0.729
+            ],
+            "kind": "text",
+            "text": "15. D 解析:由题图可知,不同品牌原味酸奶的还原糖、脂肪和蛋白质含量不完全相同,A 正确;双缩脲试剂可与蛋白质发生反应,生成紫色络合物,故可利用双缩脲试剂检测不同品牌原味酸奶中的蛋白质,B 正确;5 个品牌原味酸奶中,乙品牌中的还原糖含量最少,故加入斐林试剂并水浴加热后,乙品牌酸奶的砖红色最浅,C 正确;高温会破坏蛋白质的空间结构,但肽键不会被破坏,仍可与双缩脲试剂反应产生紫色物质,D 错误。",
+            "order": 20,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b21",
+            "bbox": [
+              0.072,
+              0.736,
+              0.494,
+              0.856
+            ],
+            "kind": "text",
+            "text": "16. D 解析: ①由 C、H、O、N 组成, 具有催化作用的是酶, 大多是蛋白质(含 C、H、O、N), A 正确; ②由 C、H、O、N、P 组成, 若②为生物大分子, 则其可能是 HIV 的遗传物质 (RNA), B 正确; 若构成乙的单体是葡萄糖, 则在动物细胞中乙可能是糖原的部分结构, C 正确; 由题图可知, 构成丙的氨基酸种类和肽键数分别为 3 种、2 个, D 错误。",
+            "order": 21,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b22",
+            "bbox": [
+              0.073,
+              0.863,
+              0.493,
+              0.941
+            ],
+            "kind": "text",
+            "text": "17.(1)电子 种群 (2)DNA 拟核 (3)有无细胞结构(或支原体有细胞结构,新冠病毒无细胞结构) (4)青霉素支原体没有细胞壁,青霉素对其不起作用 (5)都有细胞膜、细胞质、核糖体,遗传物质都是DNA",
+            "order": 22,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b23",
+            "bbox": [
+              0.506,
+              0.061,
+              0.928,
+              0.413
+            ],
+            "kind": "text",
+            "text": "18. 解析: (1) 种子在黑暗中萌发成幼苗, 与种子相比, 幼苗的质量有所增加, 增加的物质主要是水。种子燃烧后留下灰烬, 这些灰烬代表的物质是无机盐。(2) I. 还原糖和斐林试剂在水浴加热的条件下反应呈砖红色沉淀。题图中①为斐林试剂, 提取液和斐林试剂的混合液在水浴加热前呈现的是新制的斐林试剂的颜色, 所以②为蓝色。水浴加热后观察 A、D 两支试管, 其中试管 A 中出现砖红色沉淀, 据此可得出的结论是种子萌发时, 储存的淀粉被水解, 产生了还原糖。淀粉遇碘液变蓝, 玉米干种子和萌发的种子都含有淀粉且玉米干种子中淀粉的含量高于萌发的种子。因此若向 B、E 两支试管中分别加入等量的碘液, 观察两支试管, 发现液体的颜色均是蓝色, 且 E 试管液体的蓝色更深。Ⅱ. ①实验原理: 蛋白质与双缩脲试剂发生化学反应呈现紫色。②实验步骤: 向 (C、F) 两支试管中分别加入等量双缩脲试剂 A 液 1 mL 并摇匀, 再加入双缩脲试剂 B 液 4 滴并摇匀。③预期结果: 两支试管中溶液的颜色均呈紫色。",
+            "order": 23,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b24",
+            "bbox": [
+              0.527,
+              0.418,
+              0.927,
+              0.518
+            ],
+            "kind": "text",
+            "text": "答案:(1)水 无机盐 (2)I.斐林试剂 蓝 种子萌发时,储存的淀粉被水解,产生了还原糖 E II.①蛋白质与双缩脲试剂发生作用,产生紫色反应 ②双缩脲试剂 A 液 双缩脲试剂 B 液 ③两支试管中溶液的颜色均呈紫色",
+            "order": 24,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b25",
+            "bbox": [
+              0.505,
+              0.525,
+              0.927,
+              0.794
+            ],
+            "kind": "text",
+            "text": "19. 解析: (1) 氨基酸之间通过肽键连成肽链, 氨基酸测序时会将氨基酸一个一个脱落下来进行测定, 所以断裂的是肽键。(2) 根据题图 a 中的总路线, 先分别合成 A 链和 B 链后, 分别将合成的 A 链和天然的 B 链进行连接实验, 合成的 B 链和天然的 A 链进行连接实验。氨基酸的中心碳原子上连接的分别是羧基、氨基、H 和 R 基, 所以含 S 的基团只能存在于 R 基。(3) 在蛋白质折叠过程中, 非极性部分应该在与水接触少的内部。题表中 A 组和 B 组的实验现象表明抑制蛋白质折叠后, 若把抑制的物质去除, 蛋白质会重新折叠, 这说明蛋白质的氨基酸排列顺序中已经蕴含着蛋白质折叠的信息。\n\n答案: (1) 肽键 (2) B 链或 A R 基 (3) 内部 氨基酸排列顺序",
+            "order": 25,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b26",
+            "bbox": [
+              0.505,
+              0.799,
+              0.927,
+              0.941
+            ],
+            "kind": "text",
+            "text": "20. 解析: (1) 题图甲表示的是多糖, 三种物质基本单位均为葡萄糖, 动物细胞中能调节血糖含量的多糖是糖原。在这三种物质中, 纤维素主要构成植物细胞壁, 在功能上与糖原和淀粉截然不同。(2) 题图乙中, ① 所代表碱基的中文名称是胞嘧啶。在 DNA 分子中, 嘌呤与嘧啶的数量比为 1:1。判断该模型表示 DNA 的依据是碱基中不含碱基 U 而含有碱基 T。(3) 题图丙中, ① 表示氨基酸经脱水缩合",
+            "order": 26,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b27",
+            "bbox": [
+              0.484,
+              0.955,
+              0.512,
+              0.968
+            ],
+            "kind": "page_number",
+            "text": "62",
+            "order": 27,
+            "page_index": 1
+          },
+          {
+            "id": "d2b6584741d4144f1-b28",
+            "bbox": [
+              0.675,
+              0.038,
+              0.925,
+              0.052
+            ],
+            "kind": "header",
+            "text": "参考答案与解析·章末过关检测",
+            "order": 28,
+            "page_index": 2
+          },
+          {
+            "id": "d2b6584741d4144f1-b29",
+            "bbox": [
+              0.095,
+              0.06,
+              0.495,
+              0.178
+            ],
+            "kind": "text",
+            "text": "反应形成多肽链的过程。设肽键数目为 x，则氨基酸的数目为  $x + m$ ，根据蛋白质分子量 = 氨基酸平均分子量 × 氨基酸数目 - 水分子量 × 肽键数目，可得  $n = r(x + m) - 18x$ ，化简可得  $x = (n - rm)/(r - 18)$ 。\n答案:(1)葡萄糖 糖原 纤维素 (2)胞嘧啶 1:1 不含碱基 U 而含有碱基 T (3)脱水缩合  $(n - rm)/(r - 18)$",
+            "order": 29,
+            "page_index": 2
+          },
+          {
+            "id": "d2b6584741d4144f1-b30",
+            "bbox": [
+              0.073,
+              0.184,
+              0.495,
+              0.549
+            ],
+            "kind": "text",
+            "text": "21. 解析: (1) 血红蛋白中含铁(Fe)元素, 缺铁会导致血红蛋白合成不足, 故应多摄取含铁较多的食物, 这体现无机盐的作用是构成细胞内某些复杂化合物。(2) 维生素 D 能有效促进人和动物肠道对钙和磷的吸收, 因此补钙时补充维生素 D 可提高补钙效果。维生素 D 属于固醇, 固醇包括胆固醇、性激素和维生素 D, 故 e 和 g 可表示胆固醇、性激素; 题图中 A 是染色体的主要组成成分之一(染色体主要由 DNA 和蛋白质组成), 结合元素组成可知 A 是 DNA, DNA 彻底水解后形成的产物是脱氧核糖、磷酸、4 种含氮碱基(A、T、C、G)。(3) 必需氨基酸是人体细胞不能合成的、需从食物中获取的氨基酸, 故评价蛋白质营养价值最主要的指标是食物蛋白中必需氨基酸的种类和含量。从蛋白质基本组成单位的层次分析, 蛋白质具有多样性的原因是氨基酸的种类、数目、排列顺序不同。\n答案: (1) Fe(或铁) 构成细胞内某些复杂化合物 (2) 维生素 D 能有效促进人体(和动物)肠道对钙(和磷)的吸收胆固醇和性激素 磷酸、脱氧核糖、含氮碱基 (3) 必需氨基酸 氨基酸的种类、数目、排列顺序不同",
+            "order": 30,
+            "page_index": 2
+          },
+          {
+            "id": "d2b6584741d4144f1-b31",
+            "bbox": [
+              0.484,
+              0.955,
+              0.514,
+              0.969
+            ],
+            "kind": "page_number",
+            "text": "63",
+            "order": 31,
+            "page_index": 2
+          }
+        ],
+        "markdown": "# 章末过关检测\n\n## 章末过关检测(一) 走近细胞 组成细胞的分子\n\n1. C 解析: 细胞学说并未论证“生物都由细胞发育而来”, 如病毒无细胞结构, A 错误; 细胞学说的建立与科学实验和理性思维均有关, B 错误; 不完全归纳法得出的结论可能是可信的, 可以用来预测和判断, 但可能存在例外, C 正确; 在科学研究中经常被采用的是不完全归纳法, D 错误。\n\n2. A 解析: 噬藻体是一种 DNA 病毒, 没有细胞结构, 蓝细菌是原核生物, 病毒与原核生物结构的主要区别是前者无细胞结构, A 正确; 细胞是生命系统最基本的层次, 噬藻体是病毒, 没有细胞结构, B 错误; 蓝细菌中没有叶绿体, 但含有叶绿素和藻蓝素, 绿藻含有叶绿体, 因此二者均能进行光合作用, C 错误; 噬藻体是病毒, 必须寄生在活细胞中才能生存, 不能用富含营养物质的培养基培养, D 错误。\n\n3. C 解析: 在脂肪肝患者的肝脏细胞中, 含量最多的有机化合物仍然是蛋白质, A 错误; 细胞中 C、H、O、N 等大量元素含量较高, 但大量元素和微量元素的作用同样重要, B 错误; 在不同的细胞中, 各种化合物的种类基本相同, 都含有水、蛋白质、脂质、无机盐、糖类、核酸等, 但不同生物组织的细胞中各种化合物的含量是有差别的, C 正确; 组成细胞的化学元素, 在无机自然界中都能够找到, 没有一种化学元素为细胞所特有, D 错误。\n\n4. C 解析: 斐林试剂可用于检测葡萄糖(还原糖)的有无; 斐林试剂的甲液与双缩脲试剂的 A 液相同, 用蒸馏水将斐林试剂的乙液进行适当稀释, 可得到双缩脲试剂的 B 液, 双缩脲试剂可用于检测蛋白质的有无, A 正确。花生子叶适用于检测脂肪, B 正确。斐林试剂本身呈蓝色, C 错误。甘蔗茎的薄壁组织、甜菜的块根含有较多的蔗糖(非还原糖); 西瓜的汁液呈红色, 会影响实验的观察, 均不是进行可溶性还原糖检测的理想材料, D 正确。\n\n5.D 解析:细胞内的结合水是细胞结构的重要组成成分,A正确;组成脂质的元素主要是C、H、O,有些脂质还含有P和N,如磷脂,B正确;糖类和脂肪是可以相互转化的,糖类在供应充足的情况下,可以大量转化为脂肪,而脂肪一般只在糖类供能不足时,才会分解供能,而且不能大量转化为糖类,C正确;生物大分子以碳链为基本骨架,D错误。\n\n6. D 解析: 由题意可知, 锌是与记忆力相关的蛋白质不可缺少的元素, 儿童缺锌就会导致大脑发育不良, 说明无机盐对维持生物体的生命活动有重要作用, D 符合题意。\n\n7. A 解析: 几丁质是一种多糖, 由 C、H、O、N 四种元素构成, 其基本组成单位不是葡萄糖, A 错误, B 正确; 几丁质是广泛存在于甲壳类动物和昆虫外骨骼中的一种多糖, 可用于废水处理、制作食品的包装纸和食品添加剂、制作人造皮肤等, 纤维素是构成植物细胞壁的主要成分, 几丁质和纤维素不是细胞的主要储能物质, C、D 正确。\n\n8. B 解析: 胆固醇属于脂质, 胆固醇是构成动物细胞膜的重要成分, 在人体内还参与血液中脂质的运输, A 正确; 细胞中的糖类和脂质是可以相互转化的, 人体内多余的糖类可以大量转化为脂肪等物质, 但胆固醇不能大量转化为葡萄糖, B 错误; 本实验的自变量为注射药物 A 的剂量, 因变量是胆固醇含量相对值和转氨酶活性, 注射药物 A 前后每组患者体内的胆固醇含量可形成自身前后对照, C 正确; 药物 A 的用量在 200 mg/周时, 胆固醇含量降低效果较明显, 且转氨酶活性与对照组相同, 即肝脏几乎没有受到损害, 用量在 300 mg/周时, 虽然胆固醇含量降低效果更明显, 但转氨酶活性明显比对照组高, 说明肝脏受到较大损害, D 正确。\n\n9. A 解析: 不是所有的糖类都可以为人体供能, 如纤维素, 脂肪的组成元素是 C、H、O, 糖类中几丁质的组成元素是 C、H、O、N, 故糖类和脂肪的组成元素不一定相同, A 错误; 由题图可知, 进行低强度的运动时脂肪供能比例高于糖类, 所以进行低强度的运动更适合减肥, B 正确; 由题图可知, 高强度运动主要靠糖类供能, 故运动前应适当摄入糖类, 有助于保障运动供能, C 正确; 中等运动强度 a 点时, 脂肪和糖类的供能比例相等, D 正确。\n\n10. B 解析: 蛋白质分子的种类与组成它的氨基酸数目、排列顺序, 肽链的盘曲、折叠方式及其形成的空间结构有关, 结构决定功能, ApoE 蛋白存在不同亚型可能与蛋白质的空间结构有关, ApoE2、ApoE3 和 ApoE4 在人体中行使的功能不一定完全相同, A 错误, B 正确; 加热、加酸、加酒精会引起 ApoE 蛋白变性, 破坏其空间结构, 从而影响其特定功能, 变性后的 ApoE 蛋白仍具有肽键, 可与双缩脲试剂发生颜色反应, C、D 错误。\n\n11. C 解析: 题图所示 3 个氨基酸中, 赖氨酸的 R 基上有 1 个氨基, 则胶原三肽中有 2 个游离的氨基和 1 个游离的羧基, A 正确; 由题图可知, 3 个氨基酸脱 2 个水分子形成胶原三肽, 该过程中形成 2 个连接氨基酸的肽键 (a、b), 胶原三肽中含有 4 个 O、13 个 C, B 正确, C 错误; 根据题干信息可知, 胶原三肽的相对分子质量很小, 能够极有效地渗入角质层、真皮层和头发根部细胞内，据此推测皮肤表面涂抹的胶原三肽能被直接吸收，D正确。\n\n12. C 解析: 帕蒂西兰是由两条链构成的小干扰 RNA, 两条链各含 21 个核苷酸, 形成 19 个碱基对, 其 3' 端有两个未配对的核苷酸, 故帕蒂西兰 3' 端共有 4 个未配对的核苷酸, A 错误; 帕蒂西兰是用于治疗家族性淀粉样多发性神经病变 (FAP) 的小干扰 RNA 类药物, RNA 彻底水解最多得到 A、U、G、C 共 4 种碱基, B 错误; 人体细胞中的 RNA 一般为单链结构, C 正确; 分析题干可知, 帕蒂西兰是用于治疗 FAP 的小干扰 RNA 类药物, 并未体现其作为遗传信息的载体的功能, D 错误。\n\n13. D 解析: 题图甲中的五碳糖为核糖, 因此该物质是核糖核苷酸, 人体内有 4 种: 腺嘌呤核糖核苷酸、鸟嘌呤核糖核苷酸、胞嘧啶核糖核苷酸、尿嘧啶核糖核苷酸, A 错误; 题图乙的核苷酸链中含有碱基 T, 不能构成 RNA 分子, B 错误; 题图乙化合物基本组成单位可用 b 表示, A、C 间通过五碳糖—磷酸—五碳糖连接, C 错误; 题图乙所示的核苷酸链为脱氧核苷酸链, 是以碳链作为基本骨架的, D 正确。\n\n14. A 解析: 抗体、RNA 和肝糖原都是由单体构成的多聚体, 它们的合成都符合题图所示模式, A 正确; 人体细胞中不含淀粉, 若单体为葡萄糖, 则形成的多聚体可为糖原, B 错误; 氨基酸脱水缩合过程中产生的  $H_{2}O$  中的 H 来自氨基和羧基, C 错误; 核酸的单体是核苷酸, 但是核酸彻底水解的产物是五碳糖、磷酸和含氮碱基, D 错误。\n\n15. D 解析:由题图可知,不同品牌原味酸奶的还原糖、脂肪和蛋白质含量不完全相同,A 正确;双缩脲试剂可与蛋白质发生反应,生成紫色络合物,故可利用双缩脲试剂检测不同品牌原味酸奶中的蛋白质,B 正确;5 个品牌原味酸奶中,乙品牌中的还原糖含量最少,故加入斐林试剂并水浴加热后,乙品牌酸奶的砖红色最浅,C 正确;高温会破坏蛋白质的空间结构,但肽键不会被破坏,仍可与双缩脲试剂反应产生紫色物质,D 错误。\n\n16. D 解析: ①由 C、H、O、N 组成, 具有催化作用的是酶, 大多是蛋白质(含 C、H、O、N), A 正确; ②由 C、H、O、N、P 组成, 若②为生物大分子, 则其可能是 HIV 的遗传物质 (RNA), B 正确; 若构成乙的单体是葡萄糖, 则在动物细胞中乙可能是糖原的部分结构, C 正确; 由题图可知, 构成丙的氨基酸种类和肽键数分别为 3 种、2 个, D 错误。\n\n17.(1)电子 种群 (2)DNA 拟核 (3)有无细胞结构(或支原体有细胞结构,新冠病毒无细胞结构) (4)青霉素支原体没有细胞壁,青霉素对其不起作用 (5)都有细胞膜、细胞质、核糖体,遗传物质都是DNA\n\n18. 解析: (1) 种子在黑暗中萌发成幼苗, 与种子相比, 幼苗的质量有所增加, 增加的物质主要是水。种子燃烧后留下灰烬, 这些灰烬代表的物质是无机盐。(2) I. 还原糖和斐林试剂在水浴加热的条件下反应呈砖红色沉淀。题图中①为斐林试剂, 提取液和斐林试剂的混合液在水浴加热前呈现的是新制的斐林试剂的颜色, 所以②为蓝色。水浴加热后观察 A、D 两支试管, 其中试管 A 中出现砖红色沉淀, 据此可得出的结论是种子萌发时, 储存的淀粉被水解, 产生了还原糖。淀粉遇碘液变蓝, 玉米干种子和萌发的种子都含有淀粉且玉米干种子中淀粉的含量高于萌发的种子。因此若向 B、E 两支试管中分别加入等量的碘液, 观察两支试管, 发现液体的颜色均是蓝色, 且 E 试管液体的蓝色更深。Ⅱ. ①实验原理: 蛋白质与双缩脲试剂发生化学反应呈现紫色。②实验步骤: 向 (C、F) 两支试管中分别加入等量双缩脲试剂 A 液 1 mL 并摇匀, 再加入双缩脲试剂 B 液 4 滴并摇匀。③预期结果: 两支试管中溶液的颜色均呈紫色。\n\n答案:(1)水 无机盐 (2)I.斐林试剂 蓝 种子萌发时,储存的淀粉被水解,产生了还原糖 E II.①蛋白质与双缩脲试剂发生作用,产生紫色反应 ②双缩脲试剂 A 液 双缩脲试剂 B 液 ③两支试管中溶液的颜色均呈紫色\n\n19. 解析: (1) 氨基酸之间通过肽键连成肽链, 氨基酸测序时会将氨基酸一个一个脱落下来进行测定, 所以断裂的是肽键。(2) 根据题图 a 中的总路线, 先分别合成 A 链和 B 链后, 分别将合成的 A 链和天然的 B 链进行连接实验, 合成的 B 链和天然的 A 链进行连接实验。氨基酸的中心碳原子上连接的分别是羧基、氨基、H 和 R 基, 所以含 S 的基团只能存在于 R 基。(3) 在蛋白质折叠过程中, 非极性部分应该在与水接触少的内部。题表中 A 组和 B 组的实验现象表明抑制蛋白质折叠后, 若把抑制的物质去除, 蛋白质会重新折叠, 这说明蛋白质的氨基酸排列顺序中已经蕴含着蛋白质折叠的信息。\n\n答案: (1) 肽键 (2) B 链或 A R 基 (3) 内部 氨基酸排列顺序\n\n20. 解析: (1) 题图甲表示的是多糖, 三种物质基本单位均为葡萄糖, 动物细胞中能调节血糖含量的多糖是糖原。在这三种物质中, 纤维素主要构成植物细胞壁, 在功能上与糖原和淀粉截然不同。(2) 题图乙中, ① 所代表碱基的中文名称是胞嘧啶。在 DNA 分子中, 嘌呤与嘧啶的数量比为 1:1。判断该模型表示 DNA 的依据是碱基中不含碱基 U 而含有碱基 T。(3) 题图丙中, ① 表示氨基酸经脱水缩合反应形成多肽链的过程。设肽键数目为 x，则氨基酸的数目为  $x + m$ ，根据蛋白质分子量 = 氨基酸平均分子量 × 氨基酸数目 - 水分子量 × 肽键数目，可得  $n = r(x + m) - 18x$ ，化简可得  $x = (n - rm)/(r - 18)$ 。\n答案:(1)葡萄糖 糖原 纤维素 (2)胞嘧啶 1:1 不含碱基 U 而含有碱基 T (3)脱水缩合  $(n - rm)/(r - 18)$\n\n21. 解析: (1) 血红蛋白中含铁(Fe)元素, 缺铁会导致血红蛋白合成不足, 故应多摄取含铁较多的食物, 这体现无机盐的作用是构成细胞内某些复杂化合物。(2) 维生素 D 能有效促进人和动物肠道对钙和磷的吸收, 因此补钙时补充维生素 D 可提高补钙效果。维生素 D 属于固醇, 固醇包括胆固醇、性激素和维生素 D, 故 e 和 g 可表示胆固醇、性激素; 题图中 A 是染色体的主要组成成分之一(染色体主要由 DNA 和蛋白质组成), 结合元素组成可知 A 是 DNA, DNA 彻底水解后形成的产物是脱氧核糖、磷酸、4 种含氮碱基(A、T、C、G)。(3) 必需氨基酸是人体细胞不能合成的、需从食物中获取的氨基酸, 故评价蛋白质营养价值最主要的指标是食物蛋白中必需氨基酸的种类和含量。从蛋白质基本组成单位的层次分析, 蛋白质具有多样性的原因是氨基酸的种类、数目、排列顺序不同。\n答案: (1) Fe(或铁) 构成细胞内某些复杂化合物 (2) 维生素 D 能有效促进人体(和动物)肠道对钙(和磷)的吸收胆固醇和性激素 磷酸、脱氧核糖、含氮碱基 (3) 必需氨基酸 氨基酸的种类、数目、排列顺序不同",
+        "warnings": [],
+        "asset_metadata": {},
+        "parser_version": "mineru-normalizer-v1"
+      }
+    ],
+    "attributes": {
+      "year": "2026",
+      "grade": "g10",
+      "stage": "高中",
+      "region": "440000",
+      "subject": "生物",
+      "semester": "1",
+      "exam_stage": "",
+      "exam_nature": "同步",
+      "source_name": "金榜学案",
+      "source_nature": "教辅",
+      "publisher_name": "同步解析与测评",
+      "publisher_series": "2026秋",
+      "school_publisher": ""
+    },
+    "paper_type": "单元测试",
+    "source_document_ids": [
+      "d3cf4d290fe154ea7"
+    ],
+    "attribute_confidence": {
+      "stage": 1,
+      "subject": 1,
+      "exam_stage": 0.9,
+      "paper_type": 0.9
+    },
+    "computed_total_score": 100.0,
+    "declared_total_score": 100
+  },
+  "questions": [
+    {
+      "id": "ec9d9d9e-48c9-4842-90d3-6991f3196707-r45-d3cf4d290fe154ea7-q1",
+      "sort_order": 0,
+      "score": 3.0,
+      "content": {
+        "id": "d3cf4d290fe154ea7-q1",
+        "stem": "下列关于细胞学说及归纳法的叙述, 正确的是 ( )",
+        "answer": "C",
+        "blanks": [],
+        "issues": [],
+        "number": "1",
+        "tables": [],
+        "options": [
+          {
+            "label": "A",
+            "content": "细胞学说论证了“生物都由细胞发育而来”"
+          },
+          {
+            "label": "B",
+            "content": "细胞学说的建立与科学实验有关, 与理性思维无关"
+          },
+          {
+            "label": "C",
+            "content": "不完全归纳法得出的结论可能是可信的, 可以用来预测和判断, 但可能存在例外"
+          },
+          {
+            "label": "D",
+            "content": "由于完全归纳法的可信度更高, 所以在科学研究中经常被采用"
+          }
+        ],
+        "regions": [
+          {
+            "bbox": [
+              0.04,
+              0.176,
+              0.50075,
+              0.316
+            ],
+            "order": 0,
+            "purpose": "content",
+            "crop_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fcrops%2Fd3cf4d290fe154ea7-q1-0-3d41008f66.png&v=3d41008f66",
+            "page_index": 0,
+            "document_id": "d3cf4d290fe154ea7",
+            "recognition": null
+          }
+        ],
+        "scoring": {},
+        "analysis": "细胞学说并未论证“生物都由细胞发育而来”，如病毒无细胞结构，A错误；细胞学说的建立与科学实验和理性思维均有关，B错误；不完全归纳法得出的结论可能是可信的，可以用来预测和判断，但可能存在例外，C正确；在科学研究中经常被采用的是不完全归纳法，D错误。",
+        "paper_id": "d3cf4d290fe154ea7-p1",
+        "block_ids": [
+          "d3cf4d290fe154ea7-b5"
+        ],
+        "attributes": {
+          "year": "2026",
+          "grade": "g10",
+          "score": 3.0,
+          "stage": "高中",
+          "region": "440000",
+          "subject": "生物",
+          "chapters": [],
+          "semester": "1",
+          "sub_type": "single",
+          "textbook": "",
+          "background": "",
+          "difficulty": 0.83,
+          "paper_type": "单元测试",
+          "tag_status": "ok",
+          "exam_nature": "同步",
+          "source_name": "金榜学案",
+          "source_type": "同步教辅",
+          "score_source": "paper_declared",
+          "score_weight": null,
+          "authorization": "unconfirmed",
+          "question_type": "单选题",
+          "response_form": [
+            "choice"
+          ],
+          "source_nature": "教辅",
+          "grading_method": "program",
+          "publisher_name": "同步解析与测评",
+          "ability_primary": "BI-SEN-CON",
+          "cognitive_level": "C2",
+          "difficulty_band": "容易",
+          "tagging_version": "senior-biology@v1",
+          "knowledge_points": [
+            {
+              "id": "44936",
+              "name": "细胞学说及其建立过程",
+              "role": "primary"
+            }
+          ],
+          "knowledge_status": "unconfigured",
+          "publisher_series": "2026秋",
+          "question_type_id": "qt3101",
+          "ability_secondary": "",
+          "difficulty_reason": "需要逐项判断细胞学说与归纳法的表述，涉及对不完全归纳法结论可信度和局限性的理解；条件明确，属常规概念辨析。",
+          "question_type_sub": "single",
+          "ability_dimensions": [
+            "BI-SEN-CON"
+          ],
+          "extension_attributes": [],
+          "question_type_sub_raw": "1个小题"
+        },
+        "corrections": [],
+        "image_layout": {},
+        "subquestions": [],
+        "answer_source": "answer_file",
+        "asset_repairs": [],
+        "review_status": "reviewed",
+        "grading_method": "",
+        "options_layout": {},
+        "analysis_source": "answer_file",
+        "answer_entry_id": "d2b6584741d4144f1-a1",
+        "editor_documents": {},
+        "attribute_sources": {
+          "year": "paper",
+          "grade": "paper",
+          "stage": "paper",
+          "region": "paper",
+          "subject": "paper",
+          "semester": "paper",
+          "paper_type": "paper",
+          "exam_nature": "paper",
+          "source_name": "paper",
+          "source_nature": "paper",
+          "publisher_name": "paper",
+          "publisher_series": "paper"
+        },
+        "excluded_image_urls": []
+      }
+    },
+    {
+      "id": "ec9d9d9e-48c9-4842-90d3-6991f3196707-r45-d3cf4d290fe154ea7-q2",
+      "sort_order": 1,
+      "score": 3.0,
+      "content": {
+        "id": "d3cf4d290fe154ea7-q2",
+        "stem": "某湖泊水体富营养化, 蓝细菌和绿藻大量繁殖形成水华。噬藻体是一种能特异性侵染蓝细菌的 DNA 病毒, 可使蓝细菌发生裂解, 被认为是一种潜在的能有效干预蓝细菌引起的水华的生物。下列叙述正确的是 ( )",
+        "answer": "A",
+        "blanks": [],
+        "issues": [],
+        "number": "2",
+        "tables": [],
+        "options": [
+          {
+            "label": "A",
+            "content": "噬藻体与蓝细菌结构的主要区别是前者无细胞结构"
+          },
+          {
+            "label": "B",
+            "content": "噬藻体结构简单, 属于生命系统最基本的层次"
+          },
+          {
+            "label": "C",
+            "content": "蓝细菌和绿藻细胞内均有叶绿体, 可进行光合作用"
+          },
+          {
+            "label": "D",
+            "content": "可利用富含营养物质的培养基培养噬藻体"
+          }
+        ],
+        "regions": [
+          {
+            "bbox": [
+              0.04,
+              0.308,
+              0.50075,
+              0.501
+            ],
+            "order": 0,
+            "purpose": "content",
+            "crop_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fcrops%2Fd3cf4d290fe154ea7-q2-0-84007b8075.png&v=84007b8075",
+            "page_index": 0,
+            "document_id": "d3cf4d290fe154ea7",
+            "recognition": null
+          }
+        ],
+        "scoring": {},
+        "analysis": "噬藻体是一种DNA病毒，没有细胞结构，蓝细菌是原核生物，病毒与原核生物结构的主要区别是前者无细胞结构，A正确；细胞是生命系统最基本的层次，噬藻体是病毒，没有细胞结构，B错误；蓝细菌中没有叶绿体，但含有叶绿素和藻蓝素，绿藻含有叶绿体，因此二者均能进行光合作用，C错误；噬藻体是病毒，必须寄生在活细胞中才能生存，不能用富含营养物质的培养基培养，D错误。",
+        "paper_id": "d3cf4d290fe154ea7-p1",
+        "block_ids": [
+          "d3cf4d290fe154ea7-b6"
+        ],
+        "attributes": {
+          "year": "2026",
+          "grade": "g10",
+          "score": 3.0,
+          "stage": "高中",
+          "region": "440000",
+          "subject": "生物",
+          "chapters": [],
+          "semester": "1",
+          "sub_type": "single",
+          "textbook": "",
+          "background": "",
+          "difficulty": 0.48,
+          "paper_type": "单元测试",
+          "tag_status": "ok",
+          "exam_nature": "同步",
+          "source_name": "金榜学案",
+          "source_type": "同步教辅",
+          "score_source": "paper_declared",
+          "score_weight": null,
+          "authorization": "unconfirmed",
+          "question_type": "单选题",
+          "response_form": [
+            "choice"
+          ],
+          "source_nature": "教辅",
+          "grading_method": "program",
+          "publisher_name": "同步解析与测评",
+          "ability_primary": "BI-SEN-CON",
+          "cognitive_level": "C2",
+          "difficulty_band": "困难",
+          "tagging_version": "senior-biology@v1",
+          "knowledge_points": [
+            {
+              "id": "44930",
+              "name": "病毒结构、分类和增殖",
+              "role": "primary"
+            },
+            {
+              "id": "44934",
+              "name": "真核细胞与原核细胞",
+              "role": "secondary"
+            },
+            {
+              "id": "44932",
+              "name": "细胞是基本的生命系统",
+              "role": "secondary"
+            }
+          ],
+          "knowledge_status": "unconfigured",
+          "publisher_series": "2026秋",
+          "question_type_id": "qt3101",
+          "ability_secondary": "",
+          "difficulty_reason": "需逐一分析四个选项，涉及病毒无细胞结构、生命系统最基本层次是细胞、蓝细菌无叶绿体、病毒需活细胞培养等知识，属于常规情境下的综合判断，难度中等偏易。",
+          "question_type_sub": "single",
+          "ability_dimensions": [
+            "BI-SEN-CON"
+          ],
+          "extension_attributes": [],
+          "question_type_sub_raw": "1个小题"
+        },
+        "corrections": [],
+        "image_layout": {},
+        "subquestions": [],
+        "answer_source": "answer_file",
+        "asset_repairs": [],
+        "review_status": "reviewed",
+        "grading_method": "",
+        "options_layout": {},
+        "analysis_source": "answer_file",
+        "answer_entry_id": "d2b6584741d4144f1-a2",
+        "editor_documents": {},
+        "attribute_sources": {
+          "year": "paper",
+          "grade": "paper",
+          "stage": "paper",
+          "region": "paper",
+          "subject": "paper",
+          "semester": "paper",
+          "paper_type": "paper",
+          "exam_nature": "paper",
+          "source_name": "paper",
+          "source_nature": "paper",
+          "publisher_name": "paper",
+          "publisher_series": "paper"
+        },
+        "excluded_image_urls": []
+      }
+    }
+  ],
+  "question_count": 21,
+  "computed_total_score": 100.0,
+  "question_groups": [
+    {
+      "name": "单选题",
+      "count": 16,
+      "score": 48.0,
+      "question_ids": [
+        "ec9d9d9e-48c9-4842-90d3-6991f3196707-r45-d3cf4d290fe154ea7-q1",
+        "ec9d9d9e-48c9-4842-90d3-6991f3196707-r45-d3cf4d290fe154ea7-q2",
+        "ec9d9d9e-48c9-4842-90d3-6991f3196707-r45-d3cf4d290fe154ea7-q3"
+      ]
+    }
+  ],
+  "template": {
+    "blanks": [
+      {
+        "bbox": [
+          0.450858,
+          0.552283,
+          0.481485,
+          0.564448
+        ],
+        "bound": true,
+        "score": 0.9341505765914917,
+        "blank_id": "br-d3cf4d290fe154ea7-0-1",
+        "page_index": 0,
+        "bind_reason": "question_region_contains",
+        "question_id": "d3cf4d290fe154ea7-q3",
+        "sub_node_id": null,
+        "index_in_node": null,
+        "index_in_question": 1,
+        "question_number": "3",
+        "paper_question_number": "3",
+        "subquestion_number": "",
+        "blank_index": 1,
+        "blank_label": "3-1"
+      },
+      {
+        "bbox": [
+          0.450821,
+          0.367774,
+          0.481402,
+          0.380287
+        ],
+        "bound": true,
+        "score": 0.9338438510894775,
+        "blank_id": "br-d3cf4d290fe154ea7-0-2",
+        "page_index": 0,
+        "bind_reason": "question_region_contains",
+        "question_id": "d3cf4d290fe154ea7-q2",
+        "sub_node_id": null,
+        "index_in_node": null,
+        "index_in_question": 1,
+        "question_number": "2",
+        "paper_question_number": "2",
+        "subquestion_number": "",
+        "blank_index": 1,
+        "blank_label": "2-1"
+      }
+    ],
+    "version": "template-v2",
+    "annotations": {
+      "qr": [],
+      "drop": [
+        {
+          "id": "br-d3cf4d290fe154ea7-0-1",
+          "bbox": [
+            0.062889,
+            0.954754,
+            0.078293,
+            0.965544
+          ],
+          "label": "drop",
+          "score": 0.9429854154586792,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-2",
+          "bbox": [
+            0.469741,
+            0.95477,
+            0.485064,
+            0.965592
+          ],
+          "label": "drop",
+          "score": 0.9406222701072693,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-3",
+          "bbox": [
+            0.062703,
+            0.034065,
+            0.078123,
+            0.044679
+          ],
+          "label": "drop",
+          "score": 0.9383733868598938,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-4",
+          "bbox": [
+            0.469587,
+            0.034143,
+            0.484803,
+            0.044651
+          ],
+          "label": "drop",
+          "score": 0.9358929991722107,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-5",
+          "bbox": [
+            0.514913,
+            0.954827,
+            0.530487,
+            0.965576
+          ],
+          "label": "drop",
+          "score": 0.9478641748428345,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-6",
+          "bbox": [
+            0.514646,
+            0.034143,
+            0.53042,
+            0.044691
+          ],
+          "label": "drop",
+          "score": 0.9453185200691223,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-7",
+          "bbox": [
+            0.921782,
+            0.954831,
+            0.936987,
+            0.965619
+          ],
+          "label": "drop",
+          "score": 0.9429782629013062,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-8",
+          "bbox": [
+            0.921572,
+            0.03412,
+            0.936901,
+            0.044701
+          ],
+          "label": "drop",
+          "score": 0.9353563785552979,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-9",
+          "bbox": [
+            0.062359,
+            0.034166,
+            0.078013,
+            0.044774
+          ],
+          "label": "drop",
+          "score": 0.9411754608154297,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-10",
+          "bbox": [
+            0.062391,
+            0.954785,
+            0.078141,
+            0.965561
+          ],
+          "label": "drop",
+          "score": 0.9410269260406494,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-11",
+          "bbox": [
+            0.46924,
+            0.954767,
+            0.484504,
+            0.965598
+          ],
+          "label": "drop",
+          "score": 0.93793123960495,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-12",
+          "bbox": [
+            0.469167,
+            0.034119,
+            0.484354,
+            0.044698
+          ],
+          "label": "drop",
+          "score": 0.9337137937545776,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-13",
+          "bbox": [
+            0.514491,
+            0.034104,
+            0.530056,
+            0.044697
+          ],
+          "label": "drop",
+          "score": 0.9453216195106506,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-14",
+          "bbox": [
+            0.514778,
+            0.954768,
+            0.530163,
+            0.96555
+          ],
+          "label": "drop",
+          "score": 0.9442107677459717,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-15",
+          "bbox": [
+            0.921235,
+            0.954884,
+            0.936791,
+            0.965651
+          ],
+          "label": "drop",
+          "score": 0.9420037865638733,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-16",
+          "bbox": [
+            0.921223,
+            0.034134,
+            0.936585,
+            0.044702
+          ],
+          "label": "drop",
+          "score": 0.9347473978996277,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-17",
+          "bbox": [
+            0.06286,
+            0.954768,
+            0.078288,
+            0.965547
+          ],
+          "label": "drop",
+          "score": 0.9424814581871033,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-18",
+          "bbox": [
+            0.469741,
+            0.95477,
+            0.485064,
+            0.965591
+          ],
+          "label": "drop",
+          "score": 0.9405891299247742,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-19",
+          "bbox": [
+            0.062708,
+            0.034068,
+            0.07812,
+            0.044679
+          ],
+          "label": "drop",
+          "score": 0.9379759430885315,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-20",
+          "bbox": [
+            0.469588,
+            0.034143,
+            0.484806,
+            0.044654
+          ],
+          "label": "drop",
+          "score": 0.935875415802002,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-21",
+          "bbox": [
+            0.514915,
+            0.954849,
+            0.530485,
+            0.965579
+          ],
+          "label": "drop",
+          "score": 0.9479687213897705,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-22",
+          "bbox": [
+            0.514649,
+            0.034145,
+            0.530427,
+            0.044689
+          ],
+          "label": "drop",
+          "score": 0.9451766610145569,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-23",
+          "bbox": [
+            0.921781,
+            0.954833,
+            0.936985,
+            0.965618
+          ],
+          "label": "drop",
+          "score": 0.9429745674133301,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-24",
+          "bbox": [
+            0.921572,
+            0.034111,
+            0.936899,
+            0.044689
+          ],
+          "label": "drop",
+          "score": 0.9356953501701355,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-25",
+          "bbox": [
+            0.062438,
+            0.95554,
+            0.078042,
+            0.966173
+          ],
+          "label": "drop",
+          "score": 0.943838894367218,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-26",
+          "bbox": [
+            0.469222,
+            0.955643,
+            0.484712,
+            0.966206
+          ],
+          "label": "drop",
+          "score": 0.9424628019332886,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-27",
+          "bbox": [
+            0.062369,
+            0.034164,
+            0.078062,
+            0.044784
+          ],
+          "label": "drop",
+          "score": 0.9414026737213135,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-28",
+          "bbox": [
+            0.469206,
+            0.034164,
+            0.484487,
+            0.044692
+          ],
+          "label": "drop",
+          "score": 0.9345586895942688,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-29",
+          "bbox": [
+            0.921738,
+            0.955713,
+            0.936706,
+            0.966313
+          ],
+          "label": "drop",
+          "score": 0.9529873728752136,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-30",
+          "bbox": [
+            0.514533,
+            0.034117,
+            0.530084,
+            0.044696
+          ],
+          "label": "drop",
+          "score": 0.9453178644180298,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-31",
+          "bbox": [
+            0.514882,
+            0.955555,
+            0.530043,
+            0.966121
+          ],
+          "label": "drop",
+          "score": 0.943838894367218,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-32",
+          "bbox": [
+            0.921412,
+            0.034142,
+            0.936795,
+            0.044685
+          ],
+          "label": "drop",
+          "score": 0.9359962940216064,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-33",
+          "bbox": [
+            0.912201,
+            0.955591,
+            0.918821,
+            0.965874
+          ],
+          "label": "drop",
+          "score": 0.8879501819610596,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        }
+      ],
+      "brackets": [
+        {
+          "id": "br-d3cf4d290fe154ea7-0-1",
+          "bbox": [
+            0.450858,
+            0.552283,
+            0.481485,
+            0.564448
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9341505765914917,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q3",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-2",
+          "bbox": [
+            0.450821,
+            0.367774,
+            0.481402,
+            0.380287
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9338438510894775,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q2",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-3",
+          "bbox": [
+            0.450894,
+            0.815848,
+            0.481567,
+            0.827993
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9258087873458862,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q5",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-4",
+          "bbox": [
+            0.450895,
+            0.683847,
+            0.481358,
+            0.6964
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9201024770736694,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q4",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-5",
+          "bbox": [
+            0.450923,
+            0.183174,
+            0.481386,
+            0.195732
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9124070405960083,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q1",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-6",
+          "bbox": [
+            0.902566,
+            0.234378,
+            0.933453,
+            0.246601
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9268803000450134,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q7",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-7",
+          "bbox": [
+            0.79768,
+            0.820219,
+            0.828093,
+            0.832655
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9264227151870728,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q9",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-8",
+          "bbox": [
+            0.902578,
+            0.44505,
+            0.933225,
+            0.457629
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9226245880126953,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q8",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-0-9",
+          "bbox": [
+            0.902612,
+            0.102492,
+            0.933261,
+            0.115061
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9186528921127319,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q6",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-10",
+          "bbox": [
+            0.450466,
+            0.786591,
+            0.48106,
+            0.798878
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9286840558052063,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q13",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-11",
+          "bbox": [
+            0.45045,
+            0.126378,
+            0.480875,
+            0.138923
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9274744987487793,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q10",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-12",
+          "bbox": [
+            0.450431,
+            0.30197,
+            0.480841,
+            0.3146
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9264364838600159,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q11",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-13",
+          "bbox": [
+            0.45037,
+            0.660625,
+            0.480912,
+            0.673307
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.924564778804779,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q12",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-14",
+          "bbox": [
+            0.902347,
+            0.733032,
+            0.933197,
+            0.745376
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9370094537734985,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q16",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-15",
+          "bbox": [
+            0.902405,
+            0.449384,
+            0.933128,
+            0.46201
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9340730905532837,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q15",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-1-16",
+          "bbox": [
+            0.902364,
+            0.184969,
+            0.933189,
+            0.19726
+          ],
+          "bound": true,
+          "label": "bracket",
+          "score": 0.9320002794265747,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7",
+          "question_id": "d3cf4d290fe154ea7-q14",
+          "sub_node_id": null,
+          "index_in_node": null,
+          "index_in_question": 1
+        }
+      ],
+      "score_box": [
+        {
+          "id": "br-d3cf4d290fe154ea7-0-1",
+          "bbox": [
+            0.790317,
+            0.471551,
+            0.835994,
+            0.497047
+          ],
+          "label": "score_box",
+          "score": 0.562711238861084,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-2",
+          "bbox": [
+            0.336215,
+            0.833566,
+            0.404428,
+            0.857194
+          ],
+          "label": "score_box",
+          "score": 0.786841094493866,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-2-3",
+          "bbox": [
+            0.29704,
+            0.834503,
+            0.396033,
+            0.855962
+          ],
+          "label": "score_box",
+          "score": 0.6189167499542236,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        }
+      ],
+      "question_numbers": [
+        {
+          "id": "br-d3cf4d290fe154ea7-1-1",
+          "bbox": [
+            0.20521,
+            0.388709,
+            0.212336,
+            0.398787
+          ],
+          "label": "question_number",
+          "score": 0.5371031761169434,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        {
+          "id": "br-d3cf4d290fe154ea7-3-2",
+          "bbox": [
+            0.159478,
+            0.795006,
+            0.184589,
+            0.807907
+          ],
+          "label": "question_number",
+          "score": 0.5638598203659058,
+          "source": "model",
+          "confirmed": false,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        }
+      ]
+    },
+    "student_zones": [
+      {
+        "id": "sz-d3cf4d290fe154ea7-p0",
+        "bbox": [
+          0.000504,
+          0.000929,
+          1,
+          0.062863
+        ],
+        "role": "primary",
+        "column": 0,
+        "fields": {
+          "name": "",
+          "class": "",
+          "student_id": ""
+        },
+        "source": "default_v2",
+        "page_index": 0,
+        "document_id": "d3cf4d290fe154ea7"
+      },
+      {
+        "id": "sz-d3cf4d290fe154ea7-p1",
+        "bbox": [
+          0.000504,
+          0.000929,
+          1,
+          0.062863
+        ],
+        "role": "primary",
+        "column": 0,
+        "fields": {
+          "name": "",
+          "class": "",
+          "student_id": ""
+        },
+        "source": "default_v2",
+        "page_index": 1,
+        "document_id": "d3cf4d290fe154ea7"
+      },
+      {
+        "id": "sz-d3cf4d290fe154ea7-p2",
+        "bbox": [
+          0.000504,
+          0.000929,
+          1,
+          0.062863
+        ],
+        "role": "primary",
+        "column": 0,
+        "fields": {
+          "name": "",
+          "class": "",
+          "student_id": ""
+        },
+        "source": "default_v2",
+        "page_index": 2,
+        "document_id": "d3cf4d290fe154ea7"
+      },
+      {
+        "id": "sz-d3cf4d290fe154ea7-p3",
+        "bbox": [
+          0.000504,
+          0.000929,
+          1,
+          0.062863
+        ],
+        "role": "primary",
+        "column": 0,
+        "fields": {
+          "name": "",
+          "class": "",
+          "student_id": ""
+        },
+        "source": "default_v2",
+        "page_index": 3,
+        "document_id": "d3cf4d290fe154ea7"
+      }
+    ],
+    "bracket_status": "done"
+  },
+  "question_regions": [
+    {
+      "regions": [
+        {
+          "bbox": [
+            0.04,
+            0.176,
+            0.50075,
+            0.316
+          ],
+          "order": 0,
+          "purpose": "content",
+          "crop_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fcrops%2Fd3cf4d290fe154ea7-q1-0-3d41008f66.png&v=3d41008f66",
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7",
+          "recognition": null
+        }
+      ],
+      "question_id": "ec9d9d9e-48c9-4842-90d3-6991f3196707-r45-d3cf4d290fe154ea7-q1"
+    }
+  ],
+  "template_documents": [
+    {
+      "id": "d3cf4d290fe154ea7",
+      "name": "26秋 同步解析与测评 生物学 必修1 分子与细胞 试卷_1-4.pdf",
+      "role": "question",
+      "pages": [
+        {
+          "width_pt": 1122.4300537109375,
+          "width_px": 4677,
+          "height_pt": 824.8300170898438,
+          "height_px": 3437,
+          "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-0.png",
+          "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-0.png&v=1792861719",
+          "page_index": 0
+        },
+        {
+          "width_pt": 1122.4300537109375,
+          "width_px": 4677,
+          "height_pt": 824.8300170898438,
+          "height_px": 3437,
+          "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-1.png",
+          "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-1.png&v=1792861719",
+          "page_index": 1
+        },
+        {
+          "width_pt": 1122.4300537109375,
+          "width_px": 4677,
+          "height_pt": 824.8300170898438,
+          "height_px": 3437,
+          "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-2.png",
+          "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-2.png&v=1792861720",
+          "page_index": 2
+        },
+        {
+          "width_pt": 1122.4300537109375,
+          "width_px": 4677,
+          "height_pt": 824.8300170898438,
+          "height_px": 3437,
+          "image_key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-3.png",
+          "image_url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-3.png&v=1792861721",
+          "page_index": 3
+        }
+      ],
+      "assets": {
+        "page_1_image_2.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg",
+        "page_1_image_6.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg",
+        "page_1_image_8.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg",
+        "page_2_table_1.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_1.jpg",
+        "page_2_table_9.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_9.jpg",
+        "page_3_image_0.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg",
+        "page_3_image_9.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg",
+        "page_3_table_7.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_7.jpg",
+        "page_0_image_16.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg",
+        "page_0_table_13.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_table_13.jpg",
+        "page_1_chart_16.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg",
+        "page_1_image_13.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg",
+        "page_1_image_19.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg",
+        "page_2_image_15.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg",
+        "page_2_image_17.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg",
+        "page_2_image_29.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg",
+        "page_2_table_12.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_12.jpg",
+        "page_3_image_11.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg",
+        "page_3_image_13.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg",
+        "page_3_image_21.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg",
+        "page_3_table_20.jpg": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_20.jpg"
+      },
+      "blocks": [
+        {
+          "id": "d3cf4d290fe154ea7-b0",
+          "bbox": [
+            0.026,
+            0.04,
+            0.048,
+            0.181
+          ],
+          "kind": "aside_text",
+          "text": "同步解析与测评 生物学\n必修1 分子与细胞 配人教版",
+          "order": 0,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b1",
+          "bbox": [
+            0.285,
+            0.043,
+            0.4,
+            0.06
+          ],
+          "kind": "text",
+          "text": "班级:\\_\\_\\_\\_ 姓名:\\_\\_\\_\\_",
+          "order": 1,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b2",
+          "bbox": [
+            0.123,
+            0.073,
+            0.424,
+            0.096
+          ],
+          "kind": "doc_title",
+          "text": "章末过关检测(一) 走近细胞 组成细胞的分子",
+          "order": 2,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b3",
+          "bbox": [
+            0.237,
+            0.114,
+            0.31,
+            0.131
+          ],
+          "kind": "text",
+          "text": "(满分:100 分)",
+          "order": 3,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b4",
+          "bbox": [
+            0.062,
+            0.154,
+            0.468,
+            0.171
+          ],
+          "kind": "paragraph_title",
+          "text": "一、选择题:本题共16小题,每小题3分,共48分。每小题只有一个选项符合题目要求。",
+          "order": 4,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b5",
+          "bbox": [
+            0.062,
+            0.18,
+            0.485,
+            0.304
+          ],
+          "kind": "text",
+          "text": "1. 下列关于细胞学说及归纳法的叙述, 正确的是 ( )\nA. 细胞学说论证了“生物都由细胞发育而来”\nB. 细胞学说的建立与科学实验有关, 与理性思维无关\nC. 不完全归纳法得出的结论可能是可信的, 可以用来预测和判断, 但可能存在例外\nD. 由于完全归纳法的可信度更高, 所以在科学研究中经常被采用",
+          "order": 5,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b6",
+          "bbox": [
+            0.062,
+            0.312,
+            0.485,
+            0.489
+          ],
+          "kind": "text",
+          "text": "2. 某湖泊水体富营养化, 蓝细菌和绿藻大量繁殖形成水华。噬藻体是一种能特异性侵染蓝细菌的 DNA 病毒, 可使蓝细菌发生裂解, 被认为是一种潜在的能有效干预蓝细菌引起的水华的生物。下列叙述正确的是 ( )\nA. 噬藻体与蓝细菌结构的主要区别是前者无细胞结构\nB. 噬藻体结构简单, 属于生命系统最基本的层次\nC. 蓝细菌和绿藻细胞内均有叶绿体, 可进行光合作用\nD. 可利用富含营养物质的培养基培养噬藻体",
+          "order": 6,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b7",
+          "bbox": [
+            0.062,
+            0.497,
+            0.485,
+            0.674
+          ],
+          "kind": "text",
+          "text": "3. 很多青少年爱喝高糖饮料, 爱吃高热量高脂肪的食物, 并且不爱运动, 而这些都是导致脂肪肝低龄化的主要原因, 下列对某脂肪肝患者的肝脏细胞中元素和化合物的描述, 正确的是\nA. 细胞中含量最多的有机化合物是脂质, 其次为蛋白质, 糖类和核酸的含量较少\nB. 细胞中 C、H、O、N 这四种元素的含量很高, 由此可知其作用比微量元素更为重要\nC. 该患者肝脏细胞和心肌细胞中各种化合物的种类基本相同, 但含量存在一定差异\nD. 组成该患者肝脏细胞的某几种化学元素在无机自然界中无法找到",
+          "order": 7,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b8",
+          "bbox": [
+            0.063,
+            0.681,
+            0.486,
+            0.805
+          ],
+          "kind": "text",
+          "text": "4. 在生物组织中的还原糖、脂肪、蛋白质的检测实验中, 下列叙述错误的是 ( )\nA. 可用斐林试剂甲液和乙液、蒸馏水来检测葡萄糖和尿液中的蛋白质\nB. 花生种子含脂肪多且子叶肥厚, 是用于脂肪检测的理想材料\nC. 当用斐林试剂检测非还原糖时, 溶液为无色\nD. 甘蔗茎的薄壁组织、甜菜的块根、西瓜的汁液均不能用于还原糖的检测",
+          "order": 8,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b9",
+          "bbox": [
+            0.063,
+            0.813,
+            0.485,
+            0.937
+          ],
+          "kind": "text",
+          "text": "5. 组成细胞的各种元素大多以化合物的形式存在。下列叙述错误的是（）\nA. 细胞内的结合水是细胞结构的重要组成成分\nB. 组成脂质的元素主要是 C、H、O，有些脂质还含有 P 和 N\nC. 脂肪和糖类之间的转化程度是有明显差异的\nD. 生物大分子以单体为骨架，单体以碳链为基本骨架",
+          "order": 9,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b10",
+          "bbox": [
+            0.515,
+            0.073,
+            0.936,
+            0.171
+          ],
+          "kind": "text",
+          "text": "6.苹果含有微量元素锌,锌是与记忆力相关的蛋白质不可缺少的元素,儿童缺锌就会导致大脑发育不良,因此苹果又称为“记忆之果”。这说明无机盐\n（）\nA.对维持酸碱平衡有重要作用\nB.对维持细胞形态有重要作用\nC.对调节细胞内的渗透压有重要作用\nD.对维持生物体的生命活动有重要作用",
+          "order": 10,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b11",
+          "bbox": [
+            0.515,
+            0.179,
+            0.937,
+            0.356
+          ],
+          "kind": "text",
+          "text": "7. 纱布是一种常用的伤口敷料, 其主要成分是纤维素。普通纱布只能吸收已经流出的血液, 但阻止血液继续流出的效果有限。现在市场上有一种由几丁质加工而成的新型伤口敷料, 它可有效阻止血液继续流出并启动凝血。下列说法错误的是 ( )\nA. 纤维素、几丁质都属于多糖, 基本组成单位都是葡萄糖\nB. 与纤维素不同, 几丁质由 C、H、O、N 四种元素构成\nC. 几丁质和纤维素不是细胞的主要储能物质\nD. 几丁质可以用于制作人造皮肤等",
+          "order": 11,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b12",
+          "bbox": [
+            0.515,
+            0.363,
+            0.937,
+            0.461
+          ],
+          "kind": "text",
+          "text": "8. 血浆中胆固醇含量过高, 易引发高胆固醇血症。某科研小组研制了一种治疗该症的药物 A, 为评估其药效, 选取该病患者 50 人, 随机均分为 5 组, 分别注射不同剂量的药物 A, 一段时间后, 检测每组患者体内的相关指标并进行数据处理, 结果见下表。下列说法错误的是 ( )",
+          "order": 12,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b13",
+          "bbox": [
+            0.528,
+            0.47,
+            0.933,
+            0.621
+          ],
+          "kind": "table",
+          "text": "| 注射药物 A(mg/周) | 胆固醇含量相对值(注射后/注射前) | 转氨酶活性 |\n| --- | --- | --- |\n| 0 | 100% | + |\n| 30 | 94.50% | + |\n| 100 | 91.20% | + |\n| 200 | 76.80% | + |\n| 300 | 50.60% | ++++ |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_table_13.jpg)",
+          "order": 13,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b14",
+          "bbox": [
+            0.524,
+            0.633,
+            0.915,
+            0.757
+          ],
+          "kind": "text",
+          "text": "注:一定程度上,转氨酶活性与肝细胞受损程度呈正相关。\nA. 胆固醇是构成动物细胞膜的重要成分,在人体内还参与血液中脂质的运输\nB. 血浆中胆固醇含量过多时,胆固醇可大量转化为葡萄糖\nC. 注射药物 A 前后每组患者体内的胆固醇含量可形成自身前后对照\nD. 药物 A 剂量是 200 mg/周时降低胆固醇含量效果较明显,同时肝脏基本不受损伤",
+          "order": 14,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b15",
+          "bbox": [
+            0.515,
+            0.765,
+            0.831,
+            0.937
+          ],
+          "kind": "text",
+          "text": "9.运动和营养日益成为人们关注的热点。某人运动过程中,随着运动强度的变化,脂肪与糖类的供能比例如右图所示。下列叙述错误的是\n() A.所有糖类和脂肪都可以为人体供能且组成元素相同\nB.低强度的运动适合减肥\nC.高强度运动前,适当摄入糖类,有助于保障运动供能\nD.中等运动强度a点时,脂肪和糖类的供能比例相同",
+          "order": 15,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b16",
+          "bbox": [
+            0.833,
+            0.764,
+            0.932,
+            0.845
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg)",
+          "order": 16,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b17",
+          "bbox": [
+            0.116,
+            0.951,
+            0.202,
+            0.967
+          ],
+          "kind": "footer",
+          "text": "(横线下方不可作答)",
+          "order": 17,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b18",
+          "bbox": [
+            0.871,
+            0.843,
+            0.908,
+            0.855
+          ],
+          "kind": "text",
+          "text": "运动强度",
+          "order": 18,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b19",
+          "bbox": [
+            0.719,
+            0.952,
+            0.733,
+            0.967
+          ],
+          "kind": "page_number",
+          "text": "2",
+          "order": 19,
+          "page_index": 0
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b20",
+          "bbox": [
+            0.063,
+            0.073,
+            0.485,
+            0.243
+          ],
+          "kind": "text",
+          "text": "10. ApoE 蛋白是人体载脂蛋白之一,主要参与人体脂蛋白的转化和代谢。ApoE 蛋白中共含有 299 个氨基酸,在人群中有 ApoE2、ApoE3 和 ApoE4 等亚型。下列相关叙述正确的是\n（）\nA. ApoE2、ApoE3 和 ApoE4 在人体中行使完全相同的功能\nB. ApoE 蛋白存在不同亚型可能与蛋白质的空间结构有关\nC. 加热、加酸、加酒精等不会引起 ApoE 蛋白功能的改变\nD. 变性后的 ApoE 蛋白无法与双缩脲试剂发生颜色反应",
+          "order": 20,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b21",
+          "bbox": [
+            0.063,
+            0.249,
+            0.484,
+            0.318
+          ],
+          "kind": "text",
+          "text": "11. 胶原三肽是利用生物工程技术以猪皮、鱼皮为原料制备的胶原蛋白的最小结构单位, 其形成过程如下图所示。胶原三肽的相对分子质量很小, 能够极有效地渗入角质层、真皮层和头发根部细胞内。下列叙述错误的是 ( )",
+          "order": 21,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b22",
+          "bbox": [
+            0.182,
+            0.324,
+            0.379,
+            0.473
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg)",
+          "order": 22,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b23",
+          "bbox": [
+            0.078,
+            0.483,
+            0.322,
+            0.576
+          ],
+          "kind": "text",
+          "text": "A. 胶原三肽中有 2 个游离的氨基和 1 个游离的羧基\nB. a 和 b 为肽键, 形成胶原三肽要产生 2 个水分子\nC. 胶原三肽中含有 4 个 O、12 个 C\nD. 皮肤表面涂抹的胶原三肽能被直接吸收",
+          "order": 23,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b24",
+          "bbox": [
+            0.063,
+            0.583,
+            0.484,
+            0.777
+          ],
+          "kind": "text",
+          "text": "12. 帕蒂西兰是用于治疗家族性淀粉样多发性神经病变(FAP)的小干扰 RNA 类药物, 它由两条链构成, 核苷酸链含有游离的磷酸基团端为 5' 端, 另一端为 3' 端。两条链各含 21 个核苷酸, 形成 19 个碱基对; 每条链的 3' 端含有两个悬空的未配对核苷酸。下列有关叙述正确的是\nA. 帕蒂西兰 3' 端共含 2 个未配对碱基\nB. 帕蒂西兰彻底水解得到的碱基最多有 5 种\nC. 人体细胞中的 RNA 一般为单链结构\nD. 帕蒂西兰既可用于治疗 FAP, 又是遗传信息的载体",
+          "order": 24,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b25",
+          "bbox": [
+            0.064,
+            0.784,
+            0.483,
+            0.801
+          ],
+          "kind": "text",
+          "text": "13. 图甲为某种核苷酸示意图, 图乙为某段核苷酸链示意图, 下列有关说法正确的是 ( )",
+          "order": 25,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b26",
+          "bbox": [
+            0.175,
+            0.818,
+            0.284,
+            0.918
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg)\n{'bbox': [0.219, 0.922, 0.237, 0.936], 'content': '图甲'}",
+          "order": 26,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b27",
+          "bbox": [
+            0.306,
+            0.808,
+            0.386,
+            0.919
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg)\n{'bbox': [0.34, 0.922, 0.358, 0.936], 'content': '图乙'}",
+          "order": 27,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b28",
+          "bbox": [
+            0.267,
+            0.952,
+            0.281,
+            0.966
+          ],
+          "kind": "page_number",
+          "text": "3",
+          "order": 28,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b29",
+          "bbox": [
+            0.529,
+            0.073,
+            0.85,
+            0.174
+          ],
+          "kind": "text",
+          "text": "A. 图甲中所示物质是脱氧核苷酸,人体内有 4 种\nB. 由 1 条图乙所示核苷酸链构成的 RNA 分子,主要分布在细胞质中\nC. 图乙化合物基本组成单位可用 b 表示,A、C 间通过磷酸连接\nD. 图乙所示的核苷酸链以碳链作为基本骨架",
+          "order": 29,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b30",
+          "bbox": [
+            0.515,
+            0.182,
+            0.936,
+            0.2
+          ],
+          "kind": "text",
+          "text": "14. 下图是人体细胞中由单体形成多聚体的模式图, 下列有关叙述正确的是 ( )",
+          "order": 30,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b31",
+          "bbox": [
+            0.668,
+            0.207,
+            0.798,
+            0.274
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg)",
+          "order": 31,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b32",
+          "bbox": [
+            0.53,
+            0.283,
+            0.776,
+            0.384
+          ],
+          "kind": "text",
+          "text": "A. 抗体、RNA 和肝糖原的合成都符合这个模式\nB. 若单体为葡萄糖, 则形成的多聚体可为淀粉\nC. 若单体为氨基酸, 则生成的  $H_{2}O$  中的 H 来自羧基\nD. 多聚体彻底水解的产物一定是它的单体",
+          "order": 32,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b33",
+          "bbox": [
+            0.516,
+            0.392,
+            0.936,
+            0.465
+          ],
+          "kind": "text",
+          "text": "15.酸奶的口感独特、营养丰富，越来越受到人们的欢迎。为检测市场上销售的不同酸奶的营养价值，某兴趣小组对甲～戊5种品牌原味酸奶进行还原糖、脂肪和蛋白质含量的测定，结果如下图所示。下列叙述错误的是 （）",
+          "order": 33,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b34",
+          "bbox": [
+            0.648,
+            0.474,
+            0.819,
+            0.586
+          ],
+          "kind": "chart",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg)",
+          "order": 34,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b35",
+          "bbox": [
+            0.53,
+            0.594,
+            0.831,
+            0.694
+          ],
+          "kind": "text",
+          "text": "A. 不同品牌原味酸奶的还原糖、脂肪和蛋白质含量不完全相同\nB. 可利用双缩脲试剂来检测不同品牌原味酸奶中的蛋白质\nC. 加入斐林试剂并水浴加热后, 可发现乙品牌酸奶的砖红色最浅\nD. 高温加热后, 酸奶中加入双缩脲试剂, 将不再出现紫色",
+          "order": 35,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b36",
+          "bbox": [
+            0.515,
+            0.703,
+            0.936,
+            0.748
+          ],
+          "kind": "text",
+          "text": "16. 如下图所示, 甲中①②表示化合物, 乙表示由四个单体构成的化合物, 丙为一种多肽分子。下列叙述错误的是 ( )",
+          "order": 36,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b37",
+          "bbox": [
+            0.583,
+            0.756,
+            0.883,
+            0.828
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg)",
+          "order": 37,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b38",
+          "bbox": [
+            0.53,
+            0.836,
+            0.863,
+            0.936
+          ],
+          "kind": "text",
+          "text": "A. 若①为某种多聚体, 则①可能具有催化作用\nB. 若②为生物大分子, 则其可能是 HIV 的遗传物质\nC. 若构成乙的单体是葡萄糖, 则在动物细胞中乙可能是糖原的部分结构\nD. 构成丙的氨基酸种类和肽键数分别为 3 种、3 个",
+          "order": 38,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b39",
+          "bbox": [
+            0.719,
+            0.952,
+            0.733,
+            0.967
+          ],
+          "kind": "page_number",
+          "text": "4",
+          "order": 39,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b40",
+          "bbox": [
+            0.794,
+            0.951,
+            0.878,
+            0.967
+          ],
+          "kind": "footer",
+          "text": "(横线下方不可作答)",
+          "order": 40,
+          "page_index": 1
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b41",
+          "bbox": [
+            0.026,
+            0.04,
+            0.048,
+            0.181
+          ],
+          "kind": "aside_text",
+          "text": "同步解析与测评 生物学\n必修1 分子与细胞 配人教版",
+          "order": 41,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b42",
+          "bbox": [
+            0.08,
+            0.031,
+            0.261,
+            0.059
+          ],
+          "kind": "table",
+          "text": "|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_1.jpg)",
+          "order": 42,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b43",
+          "bbox": [
+            0.375,
+            0.044,
+            0.399,
+            0.059
+          ],
+          "kind": "header",
+          "text": "姓名:",
+          "order": 43,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b44",
+          "bbox": [
+            0.063,
+            0.073,
+            0.245,
+            0.091
+          ],
+          "kind": "paragraph_title",
+          "text": "二、非选择题:本题共5小题,共52分。",
+          "order": 44,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b45",
+          "bbox": [
+            0.063,
+            0.1,
+            0.485,
+            0.2
+          ],
+          "kind": "text",
+          "text": "17.(11分)秋冬季节是支原体肺炎高发期。支原体肺炎是一种由肺炎支原体引起的呼吸道感染病,多发于儿童和青少年。该病的病原体肺炎支原体是一类没有细胞壁的原核生物,支原体肺炎的临床表现与细菌性肺炎相似,但用药不相同。根据所学知识回答下列问题:",
+          "order": 45,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b46",
+          "bbox": [
+            0.077,
+            0.208,
+            0.484,
+            0.335
+          ],
+          "kind": "text",
+          "text": "(1)为确诊幼儿患者所患肺炎种类,医护人员可取患儿痰液进行处理,并在\\_\\_\\_\\_显微镜下观察致病性微生物的细胞结构。观察到支原体后,为进一步了解支原体,医护人员用培养基培养分离得到的支原体,一段时间后培养基上可出现由一个支原体繁殖形成的“荷包蛋”状的菌落(大量同种支原体),该菌落属于生命系统结构层次中的\\_\\_\\_\\_。(2分)",
+          "order": 46,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b47",
+          "bbox": [
+            0.079,
+            0.342,
+            0.485,
+            0.388
+          ],
+          "kind": "text",
+          "text": "(2)支原体的遗传物质是\\_\\_\\_\\_，该遗传物质位于细胞特定的区域，此区域称为\\_\\_\\_\\_。(2分)",
+          "order": 47,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b48",
+          "bbox": [
+            0.078,
+            0.395,
+            0.485,
+            0.469
+          ],
+          "kind": "text",
+          "text": "(3)支原体肺炎较重时,可能会因黏液栓堵住支气管,造成影像学上的“白肺”,这与新冠病毒导致的双肺弥散性病变产生的“白肺”有所不同。导致这两种“白肺”的病原微生物的主要区别在于\\_\\_\\_\\_。(2分)",
+          "order": 48,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b49",
+          "bbox": [
+            0.079,
+            0.476,
+            0.485,
+            0.55
+          ],
+          "kind": "text",
+          "text": "(4)经化验,患儿确诊患支原体肺炎,若你是医护工作者,根据下表提供的抗菌药物及其抗菌机制,判断治疗支原体肺炎最不宜选择的药物是\\_\\_\\_\\_,原因是\\_\\_\\_\\_。(3分)",
+          "order": 49,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b50",
+          "bbox": [
+            0.094,
+            0.558,
+            0.47,
+            0.685
+          ],
+          "kind": "table",
+          "text": "| 抗菌药物 | 抗菌机制 |\n| --- | --- |\n| 阿奇霉素 | 能与核糖体结合,抑制蛋白质的合成 |\n| 环丙沙星 | 抑制病原体 DNA 的复制 |\n| 青霉素 | 抑制病原体细胞壁形成 |\n| 利福平 | 抑制病原体 RNA 的合成,从而抑制蛋白质的合成 |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_9.jpg)",
+          "order": 50,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b51",
+          "bbox": [
+            0.079,
+            0.697,
+            0.484,
+            0.771
+          ],
+          "kind": "text",
+          "text": "(5)虽然原核细胞与真核细胞在形态上多种多样,但是它们的基本结构具有高度的统一性,这种统一性主要表现在\\_\\_\\_\\_\\_\\_\\_\\_。(2分)",
+          "order": 51,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b52",
+          "bbox": [
+            0.063,
+            0.777,
+            0.484,
+            0.821
+          ],
+          "kind": "text",
+          "text": "18.(13 分)种子在黑暗中萌发成幼苗,下表是种子经过处理后测得的数据,下图是相关实验,请回答下列问题:",
+          "order": 52,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b53",
+          "bbox": [
+            0.132,
+            0.831,
+            0.404,
+            0.933
+          ],
+          "kind": "table",
+          "text": "<table><tr><td rowspan=\"2\">项目</td><td rowspan=\"2\">处理方法</td><td colspan=\"2\">质量/g</td></tr><tr><td>种子</td><td>幼苗</td></tr><tr><td>鲜重</td><td>直接称重</td><td>160</td><td>750</td></tr><tr><td>灰烬</td><td>550°C,16h</td><td>2</td><td>2</td></tr></table>\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_12.jpg)",
+          "order": 53,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b54",
+          "bbox": [
+            0.116,
+            0.951,
+            0.202,
+            0.967
+          ],
+          "kind": "footer",
+          "text": "(横线下方不可作答)",
+          "order": 54,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b55",
+          "bbox": [
+            0.268,
+            0.951,
+            0.281,
+            0.966
+          ],
+          "kind": "page_number",
+          "text": "5",
+          "order": 55,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b56",
+          "bbox": [
+            0.579,
+            0.092,
+            0.664,
+            0.176
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg)\n{'bbox': [0.616, 0.178, 0.632, 0.191], 'content': '图1'}",
+          "order": 56,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b57",
+          "bbox": [
+            0.692,
+            0.073,
+            0.889,
+            0.174
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg)\n{'bbox': [0.785, 0.178, 0.802, 0.192], 'content': '图2'}",
+          "order": 57,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b58",
+          "bbox": [
+            0.53,
+            0.204,
+            0.934,
+            0.253
+          ],
+          "kind": "text",
+          "text": "(1)从表中可以看出,与种子相比,幼苗的质量有所增加,增加的物质主要是\\_\\_\\_\\_,种子燃烧后留下灰烬,这些灰烬代表的物质是\\_\\_\\_\\_。(2分)",
+          "order": 58,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b59",
+          "bbox": [
+            0.53,
+            0.263,
+            0.936,
+            0.402
+          ],
+          "kind": "text",
+          "text": "(2)若该种子为玉米种子,某兴趣小组的同学取大小均匀的同种玉米干种子(含淀粉丰富)40粒,平均分成甲、乙两组,给予甲组种子适宜的条件浸种,乙组仍保持干燥。待甲组种子发芽后,将试管编号为A\\~F,分别向A、B、C三支试管中加入2 mL甲组提取液,向D、E、F三支试管中加入2 mL乙组提取液,如图1所示,然后进行实验(干种子中的还原性物质忽略不计):",
+          "order": 59,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b60",
+          "bbox": [
+            0.531,
+            0.412,
+            0.935,
+            0.462
+          ],
+          "kind": "text",
+          "text": "I. 若检测 A、D 两支试管中是否含有还原糖, 实验部分步骤如图 2, 请把横线上的部分补充完整: ①\\_\\_\\_\\_, ②\\_\\_\\_\\_。(2 分)",
+          "order": 60,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b61",
+          "bbox": [
+            0.531,
+            0.472,
+            0.936,
+            0.523
+          ],
+          "kind": "text",
+          "text": "水浴加热后观察这两支试管,其中试管 A 中出现砖红色沉淀,据此可得出的结论是\\_\\_\\_\\_。(2 分)",
+          "order": 61,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b62",
+          "bbox": [
+            0.53,
+            0.531,
+            0.935,
+            0.58
+          ],
+          "kind": "text",
+          "text": "据此结果推断,若向 B、E 两支试管中分别加入等量的碘液,观察两支试管,发现液体的颜色均是蓝色,则\\_\\_\\_\\_试管液体的蓝色更深。(1 分)",
+          "order": 62,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b63",
+          "bbox": [
+            0.531,
+            0.591,
+            0.935,
+            0.64
+          ],
+          "kind": "text",
+          "text": "Ⅱ.为了验证干种子和发芽的种子均含有蛋白质,某同学利用余下的C、F两支试管提取液设计了以下实验,请补充完整他的实验方案:",
+          "order": 63,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b64",
+          "bbox": [
+            0.53,
+            0.65,
+            0.935,
+            0.671
+          ],
+          "kind": "text",
+          "text": "①实验原理:\\_\\_\\_\\_。（2分）",
+          "order": 64,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b65",
+          "bbox": [
+            0.531,
+            0.68,
+            0.904,
+            0.729
+          ],
+          "kind": "text",
+          "text": "②实验步骤:向(C、F)两支试管中先加入\\_\\_\\_\\_1 mL并摇匀,再加入\\_\\_\\_\\_4滴并摇匀,观察试管中溶液颜色的变化。(2分)",
+          "order": 65,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b66",
+          "bbox": [
+            0.531,
+            0.74,
+            0.784,
+            0.759
+          ],
+          "kind": "text",
+          "text": "③预期结果:\\_\\_\\_\\_。（2分）",
+          "order": 66,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b67",
+          "bbox": [
+            0.515,
+            0.77,
+            0.936,
+            0.849
+          ],
+          "kind": "text",
+          "text": "19.(7分)我国是世界上第一个人工合成具有生物活性蛋白质的国家,为蛋白质结构的研究作出了重要贡献,彰显了中国科学家的“胰岛素精神”。图a是结晶牛胰岛素总合成路线图,图b表示结晶牛胰岛素的氨基酸序列及其他信息。回答下列问题:",
+          "order": 67,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b68",
+          "bbox": [
+            0.631,
+            0.86,
+            0.836,
+            0.916
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg)\n{'bbox': [0.725, 0.923, 0.741, 0.936], 'content': '图a'}",
+          "order": 68,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b69",
+          "bbox": [
+            0.72,
+            0.953,
+            0.733,
+            0.967
+          ],
+          "kind": "page_number",
+          "text": "6",
+          "order": 69,
+          "page_index": 2
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b70",
+          "bbox": [
+            0.194,
+            0.072,
+            0.369,
+            0.226
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg)\n{'bbox': [0.271, 0.228, 0.287, 0.242], 'content': '图b'}\n{'bbox': [0.079, 0.253, 0.346, 0.269], 'content': '注:A 和 B 链中“Gly”等表示氨基酸，对应的数字代表氨基酸位置。'}",
+          "order": 70,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b71",
+          "bbox": [
+            0.078,
+            0.277,
+            0.484,
+            0.347
+          ],
+          "kind": "text",
+          "text": "(1)分别合成 A 链和 B 链前,首先要明确两条链的氨基酸序列,科学家通过断裂肽链氨基端的\\_\\_\\_\\_将氨基酸一个一个依次脱落下来进行测定,确定了如图 b 中的肽链结构。(1 分)",
+          "order": 71,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b72",
+          "bbox": [
+            0.078,
+            0.354,
+            0.483,
+            0.425
+          ],
+          "kind": "text",
+          "text": "(2)在分步合成过程中,合成的A链或B链分别与天然的\\_\\_\\_\\_链进行组合实验,合成半合成胰岛素,最后再对合成的A链与合成的B链进行全合成实验,该过程中二硫键的形成很关键,含S的基团位于氨基酸结构通式的\\_\\_\\_\\_部位。(3分)",
+          "order": 72,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b73",
+          "bbox": [
+            0.079,
+            0.432,
+            0.483,
+            0.477
+          ],
+          "kind": "text",
+          "text": "(3)图 b 是胰岛素的氨基酸序列及其他信息,该结构还要经过盘曲折叠形成一定的空间结构。研究发现,在蛋白质折叠过程中,非极性部分倾向于分布在蛋白质分子的\\_\\_\\_\\_",
+          "order": 73,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b74",
+          "bbox": [
+            0.079,
+            0.484,
+            0.483,
+            0.529
+          ],
+          "kind": "text",
+          "text": "\\_\\_\\_\\_（填“内部”或“表面”）。有科学家进行下表实验，该实验现象说明蛋白质空间结构的多样性主要是由\\_\\_\\_\\_决定的。（3分）",
+          "order": 74,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b75",
+          "bbox": [
+            0.081,
+            0.537,
+            0.481,
+            0.666
+          ],
+          "kind": "table",
+          "text": "| 组别 | 实验操作 | 实验现象 |\n| --- | --- | --- |\n| A | 向蛋白质溶液中加入某种物质 M | 蛋白质不再折叠或错误折叠 |\n| B | 去除物质 M,分离获得 A 组不再折叠或错误折叠的蛋白质 | 能够自发地重新折叠为正确结构 |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_7.jpg)",
+          "order": 75,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b76",
+          "bbox": [
+            0.063,
+            0.675,
+            0.483,
+            0.719
+          ],
+          "kind": "text",
+          "text": "20.(10分)下图甲、乙、丙分别表示生物体内的生物大分子的部分结构模式图,请回答下列问题:",
+          "order": 76,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b77",
+          "bbox": [
+            0.154,
+            0.745,
+            0.231,
+            0.843
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg)\n{'bbox': [0.175, 0.846, 0.191, 0.859], 'content': '图甲'}",
+          "order": 77,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b78",
+          "bbox": [
+            0.253,
+            0.737,
+            0.311,
+            0.838
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg)\n{'bbox': [0.273, 0.845, 0.29, 0.858], 'content': '图乙'}",
+          "order": 78,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b79",
+          "bbox": [
+            0.337,
+            0.725,
+            0.409,
+            0.841
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg)\n{'bbox': [0.367, 0.846, 0.383, 0.859], 'content': '图丙'}",
+          "order": 79,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b80",
+          "bbox": [
+            0.078,
+            0.866,
+            0.484,
+            0.935
+          ],
+          "kind": "text",
+          "text": "(1)图甲中,三种物质基本单位均为\\_\\_\\_\\_,其中存在于动物细胞中并能调节血糖含量的是\\_\\_\\_\\_;这三种物质中,在功能上与另外两种截然不同的是\\_\\_\\_\\_。\n(3 分)",
+          "order": 80,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b81",
+          "bbox": [
+            0.266,
+            0.952,
+            0.281,
+            0.966
+          ],
+          "kind": "page_number",
+          "text": "7",
+          "order": 81,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b82",
+          "bbox": [
+            0.531,
+            0.073,
+            0.936,
+            0.151
+          ],
+          "kind": "text",
+          "text": "(2)图乙中,①所代表碱基的中文名称是\\_\\_\\_\\_,嘌呤与嘧啶的数量比为\\_\\_\\_\\_。某同学认定该模型表示的生物大分子是DNA,其判断依据是碱基中\\_\\_\\_\\_。(5分)",
+          "order": 82,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b83",
+          "bbox": [
+            0.53,
+            0.158,
+            0.935,
+            0.234
+          ],
+          "kind": "text",
+          "text": "(3)图丙中,①表示氨基酸经\\_\\_\\_\\_反应形成多肽链的过程。若氨基酸的平均分子量为r,通过化学反应形成m条肽链,再经盘曲折叠构成分子量为n的蛋白质,则该蛋白质中的肽键数目是\\_\\_\\_\\_(用代数式表示)。(2分)",
+          "order": 83,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b84",
+          "bbox": [
+            0.514,
+            0.243,
+            0.936,
+            0.318
+          ],
+          "kind": "text",
+          "text": "21.(11分)健康的身体离不开均衡的营养。某成年人身体不适,做相关检查后部分结果如下表所示,下图为人体细胞中部分重要的化合物及组成。请结合医生建议回答下列问题:",
+          "order": 84,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b85",
+          "bbox": [
+            0.546,
+            0.329,
+            0.921,
+            0.479
+          ],
+          "kind": "table",
+          "text": "| 项目 | 检查结果 | 单位 | 参考值 |\n| --- | --- | --- | --- |\n| 血红蛋白 | 100.78↓ | g/L | 131~172 |\n| 甘油三酯 | 4.2↑ | mmol/L | 0.48~1.88 |\n| 血清葡萄糖 | 8.48↑ | mmol/L | 3.9~6.1 |\n| 甲状腺激素 | 201.31↑ | mmol/L | 50~160 |\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_20.jpg)",
+          "order": 85,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b86",
+          "bbox": [
+            0.646,
+            0.492,
+            0.822,
+            0.556
+          ],
+          "kind": "image",
+          "text": "\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg)",
+          "order": 86,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b87",
+          "bbox": [
+            0.531,
+            0.567,
+            0.936,
+            0.644
+          ],
+          "kind": "text",
+          "text": "(1)表中血红蛋白检查结果明显低于标准,医生建议该患者除进行药物治疗外,还应多摄取含\\_\\_\\_\\_(填微量元素)较多的食物,这体现无机盐的作用是\\_\\_\\_\\_。(3分)",
+          "order": 87,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b88",
+          "bbox": [
+            0.531,
+            0.652,
+            0.936,
+            0.73
+          ],
+          "kind": "text",
+          "text": "(2)该患者向医生描述常有小腿抽搐现象发生,故医生建议该患者在服用钙片的同时,还需补充适量的维生素D,请解释其中的科学道理:\\_\\_\\_\\_。",
+          "order": 88,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b89",
+          "bbox": [
+            0.53,
+            0.736,
+            0.936,
+            0.784
+          ],
+          "kind": "text",
+          "text": "若图中 f 表示维生素 D, 则 e 和 g 可表示为同属于固醇的 \\_\\_\\_\\_。图中 A 在彻底水解后形成的产物是 \\_\\_\\_\\_。(4 分)",
+          "order": 89,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b90",
+          "bbox": [
+            0.53,
+            0.793,
+            0.937,
+            0.926
+          ],
+          "kind": "text",
+          "text": "(3)经医生问诊,该患者有不吃早餐的不良习惯,健康合理的早餐搭配有助于保持身体的健康,每日补充适量蛋白质能让人精力充沛。评价蛋白质营养价值最主要的指标是食物蛋白中\\_\\_\\_\\_(填“必需氨基酸”或“非必需氨基酸”)的种类和含量,从蛋白质基本组成单位的层次分析蛋白质具有多样性的原因是\\_\\_\\_\\_。(4分)",
+          "order": 90,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b91",
+          "bbox": [
+            0.719,
+            0.952,
+            0.733,
+            0.967
+          ],
+          "kind": "page_number",
+          "text": "8",
+          "order": 91,
+          "page_index": 3
+        },
+        {
+          "id": "d3cf4d290fe154ea7-b92",
+          "bbox": [
+            0.787,
+            0.951,
+            0.871,
+            0.967
+          ],
+          "kind": "footer",
+          "text": "(横线下方不可作答)",
+          "order": 92,
+          "page_index": 3
+        }
+      ],
+      "columns": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "markdown": "班级:\\_\\_\\_\\_ 姓名:\\_\\_\\_\\_\n\n# 章末过关检测(一) 走近细胞 组成细胞的分子\n\n(满分:100 分)\n\n## 一、选择题:本题共16小题,每小题3分,共48分。每小题只有一个选项符合题目要求。\n\n1. 下列关于细胞学说及归纳法的叙述, 正确的是 ( )\nA. 细胞学说论证了“生物都由细胞发育而来”\nB. 细胞学说的建立与科学实验有关, 与理性思维无关\nC. 不完全归纳法得出的结论可能是可信的, 可以用来预测和判断, 但可能存在例外\nD. 由于完全归纳法的可信度更高, 所以在科学研究中经常被采用\n\n2. 某湖泊水体富营养化, 蓝细菌和绿藻大量繁殖形成水华。噬藻体是一种能特异性侵染蓝细菌的 DNA 病毒, 可使蓝细菌发生裂解, 被认为是一种潜在的能有效干预蓝细菌引起的水华的生物。下列叙述正确的是 ( )\nA. 噬藻体与蓝细菌结构的主要区别是前者无细胞结构\nB. 噬藻体结构简单, 属于生命系统最基本的层次\nC. 蓝细菌和绿藻细胞内均有叶绿体, 可进行光合作用\nD. 可利用富含营养物质的培养基培养噬藻体\n\n3. 很多青少年爱喝高糖饮料, 爱吃高热量高脂肪的食物, 并且不爱运动, 而这些都是导致脂肪肝低龄化的主要原因, 下列对某脂肪肝患者的肝脏细胞中元素和化合物的描述, 正确的是\nA. 细胞中含量最多的有机化合物是脂质, 其次为蛋白质, 糖类和核酸的含量较少\nB. 细胞中 C、H、O、N 这四种元素的含量很高, 由此可知其作用比微量元素更为重要\nC. 该患者肝脏细胞和心肌细胞中各种化合物的种类基本相同, 但含量存在一定差异\nD. 组成该患者肝脏细胞的某几种化学元素在无机自然界中无法找到\n\n4. 在生物组织中的还原糖、脂肪、蛋白质的检测实验中, 下列叙述错误的是 ( )\nA. 可用斐林试剂甲液和乙液、蒸馏水来检测葡萄糖和尿液中的蛋白质\nB. 花生种子含脂肪多且子叶肥厚, 是用于脂肪检测的理想材料\nC. 当用斐林试剂检测非还原糖时, 溶液为无色\nD. 甘蔗茎的薄壁组织、甜菜的块根、西瓜的汁液均不能用于还原糖的检测\n\n5. 组成细胞的各种元素大多以化合物的形式存在。下列叙述错误的是（）\nA. 细胞内的结合水是细胞结构的重要组成成分\nB. 组成脂质的元素主要是 C、H、O，有些脂质还含有 P 和 N\nC. 脂肪和糖类之间的转化程度是有明显差异的\nD. 生物大分子以单体为骨架，单体以碳链为基本骨架\n\n6.苹果含有微量元素锌,锌是与记忆力相关的蛋白质不可缺少的元素,儿童缺锌就会导致大脑发育不良,因此苹果又称为“记忆之果”。这说明无机盐\n（）\nA.对维持酸碱平衡有重要作用\nB.对维持细胞形态有重要作用\nC.对调节细胞内的渗透压有重要作用\nD.对维持生物体的生命活动有重要作用\n\n7. 纱布是一种常用的伤口敷料, 其主要成分是纤维素。普通纱布只能吸收已经流出的血液, 但阻止血液继续流出的效果有限。现在市场上有一种由几丁质加工而成的新型伤口敷料, 它可有效阻止血液继续流出并启动凝血。下列说法错误的是 ( )\nA. 纤维素、几丁质都属于多糖, 基本组成单位都是葡萄糖\nB. 与纤维素不同, 几丁质由 C、H、O、N 四种元素构成\nC. 几丁质和纤维素不是细胞的主要储能物质\nD. 几丁质可以用于制作人造皮肤等\n\n8. 血浆中胆固醇含量过高, 易引发高胆固醇血症。某科研小组研制了一种治疗该症的药物 A, 为评估其药效, 选取该病患者 50 人, 随机均分为 5 组, 分别注射不同剂量的药物 A, 一段时间后, 检测每组患者体内的相关指标并进行数据处理, 结果见下表。下列说法错误的是 ( )\n\n| 注射药物 A(mg/周) | 胆固醇含量相对值(注射后/注射前) | 转氨酶活性 |\n| --- | --- | --- |\n| 0 | 100% | + |\n| 30 | 94.50% | + |\n| 100 | 91.20% | + |\n| 200 | 76.80% | + |\n| 300 | 50.60% | ++++ |\n\n注:一定程度上,转氨酶活性与肝细胞受损程度呈正相关。\nA. 胆固醇是构成动物细胞膜的重要成分,在人体内还参与血液中脂质的运输\nB. 血浆中胆固醇含量过多时,胆固醇可大量转化为葡萄糖\nC. 注射药物 A 前后每组患者体内的胆固醇含量可形成自身前后对照\nD. 药物 A 剂量是 200 mg/周时降低胆固醇含量效果较明显,同时肝脏基本不受损伤\n\n9.运动和营养日益成为人们关注的热点。某人运动过程中,随着运动强度的变化,脂肪与糖类的供能比例如右图所示。下列叙述错误的是\n() A.所有糖类和脂肪都可以为人体供能且组成元素相同\nB.低强度的运动适合减肥\nC.高强度运动前,适当摄入糖类,有助于保障运动供能\nD.中等运动强度a点时,脂肪和糖类的供能比例相同\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg)\n\n运动强度\n\n10. ApoE 蛋白是人体载脂蛋白之一,主要参与人体脂蛋白的转化和代谢。ApoE 蛋白中共含有 299 个氨基酸,在人群中有 ApoE2、ApoE3 和 ApoE4 等亚型。下列相关叙述正确的是\n（）\nA. ApoE2、ApoE3 和 ApoE4 在人体中行使完全相同的功能\nB. ApoE 蛋白存在不同亚型可能与蛋白质的空间结构有关\nC. 加热、加酸、加酒精等不会引起 ApoE 蛋白功能的改变\nD. 变性后的 ApoE 蛋白无法与双缩脲试剂发生颜色反应\n\n11. 胶原三肽是利用生物工程技术以猪皮、鱼皮为原料制备的胶原蛋白的最小结构单位, 其形成过程如下图所示。胶原三肽的相对分子质量很小, 能够极有效地渗入角质层、真皮层和头发根部细胞内。下列叙述错误的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg)\n\nA. 胶原三肽中有 2 个游离的氨基和 1 个游离的羧基\nB. a 和 b 为肽键, 形成胶原三肽要产生 2 个水分子\nC. 胶原三肽中含有 4 个 O、12 个 C\nD. 皮肤表面涂抹的胶原三肽能被直接吸收\n\n12. 帕蒂西兰是用于治疗家族性淀粉样多发性神经病变(FAP)的小干扰 RNA 类药物, 它由两条链构成, 核苷酸链含有游离的磷酸基团端为 5' 端, 另一端为 3' 端。两条链各含 21 个核苷酸, 形成 19 个碱基对; 每条链的 3' 端含有两个悬空的未配对核苷酸。下列有关叙述正确的是\nA. 帕蒂西兰 3' 端共含 2 个未配对碱基\nB. 帕蒂西兰彻底水解得到的碱基最多有 5 种\nC. 人体细胞中的 RNA 一般为单链结构\nD. 帕蒂西兰既可用于治疗 FAP, 又是遗传信息的载体\n\n13. 图甲为某种核苷酸示意图, 图乙为某段核苷酸链示意图, 下列有关说法正确的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg)\n\n图甲\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg)\n\n图乙\n\nA. 图甲中所示物质是脱氧核苷酸,人体内有 4 种\nB. 由 1 条图乙所示核苷酸链构成的 RNA 分子,主要分布在细胞质中\nC. 图乙化合物基本组成单位可用 b 表示,A、C 间通过磷酸连接\nD. 图乙所示的核苷酸链以碳链作为基本骨架\n\n14. 下图是人体细胞中由单体形成多聚体的模式图, 下列有关叙述正确的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg)\n\nA. 抗体、RNA 和肝糖原的合成都符合这个模式\nB. 若单体为葡萄糖, 则形成的多聚体可为淀粉\nC. 若单体为氨基酸, 则生成的  $H_{2}O$  中的 H 来自羧基\nD. 多聚体彻底水解的产物一定是它的单体\n\n15.酸奶的口感独特、营养丰富，越来越受到人们的欢迎。为检测市场上销售的不同酸奶的营养价值，某兴趣小组对甲～戊5种品牌原味酸奶进行还原糖、脂肪和蛋白质含量的测定，结果如下图所示。下列叙述错误的是 （）\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg)\n\nA. 不同品牌原味酸奶的还原糖、脂肪和蛋白质含量不完全相同\nB. 可利用双缩脲试剂来检测不同品牌原味酸奶中的蛋白质\nC. 加入斐林试剂并水浴加热后, 可发现乙品牌酸奶的砖红色最浅\nD. 高温加热后, 酸奶中加入双缩脲试剂, 将不再出现紫色\n\n16. 如下图所示, 甲中①②表示化合物, 乙表示由四个单体构成的化合物, 丙为一种多肽分子。下列叙述错误的是 ( )\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg)\n\nA. 若①为某种多聚体, 则①可能具有催化作用\nB. 若②为生物大分子, 则其可能是 HIV 的遗传物质\nC. 若构成乙的单体是葡萄糖, 则在动物细胞中乙可能是糖原的部分结构\nD. 构成丙的氨基酸种类和肽键数分别为 3 种、3 个\n\n|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\n## 二、非选择题:本题共5小题,共52分。\n\n17.(11分)秋冬季节是支原体肺炎高发期。支原体肺炎是一种由肺炎支原体引起的呼吸道感染病,多发于儿童和青少年。该病的病原体肺炎支原体是一类没有细胞壁的原核生物,支原体肺炎的临床表现与细菌性肺炎相似,但用药不相同。根据所学知识回答下列问题:\n\n(1)为确诊幼儿患者所患肺炎种类,医护人员可取患儿痰液进行处理,并在\\_\\_\\_\\_显微镜下观察致病性微生物的细胞结构。观察到支原体后,为进一步了解支原体,医护人员用培养基培养分离得到的支原体,一段时间后培养基上可出现由一个支原体繁殖形成的“荷包蛋”状的菌落(大量同种支原体),该菌落属于生命系统结构层次中的\\_\\_\\_\\_。(2分)\n\n(2)支原体的遗传物质是\\_\\_\\_\\_，该遗传物质位于细胞特定的区域，此区域称为\\_\\_\\_\\_。(2分)\n\n(3)支原体肺炎较重时,可能会因黏液栓堵住支气管,造成影像学上的“白肺”,这与新冠病毒导致的双肺弥散性病变产生的“白肺”有所不同。导致这两种“白肺”的病原微生物的主要区别在于\\_\\_\\_\\_。(2分)\n\n(4)经化验,患儿确诊患支原体肺炎,若你是医护工作者,根据下表提供的抗菌药物及其抗菌机制,判断治疗支原体肺炎最不宜选择的药物是\\_\\_\\_\\_,原因是\\_\\_\\_\\_。(3分)\n\n| 抗菌药物 | 抗菌机制 |\n| --- | --- |\n| 阿奇霉素 | 能与核糖体结合,抑制蛋白质的合成 |\n| 环丙沙星 | 抑制病原体 DNA 的复制 |\n| 青霉素 | 抑制病原体细胞壁形成 |\n| 利福平 | 抑制病原体 RNA 的合成,从而抑制蛋白质的合成 |\n\n(5)虽然原核细胞与真核细胞在形态上多种多样,但是它们的基本结构具有高度的统一性,这种统一性主要表现在\\_\\_\\_\\_\\_\\_\\_\\_。(2分)\n\n18.(13 分)种子在黑暗中萌发成幼苗,下表是种子经过处理后测得的数据,下图是相关实验,请回答下列问题:\n\n<table><tr><td rowspan=\"2\">项目</td><td rowspan=\"2\">处理方法</td><td colspan=\"2\">质量/g</td></tr><tr><td>种子</td><td>幼苗</td></tr><tr><td>鲜重</td><td>直接称重</td><td>160</td><td>750</td></tr><tr><td>灰烬</td><td>550°C,16h</td><td>2</td><td>2</td></tr></table>\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg)\n\n图1\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg)\n\n图2\n\n(1)从表中可以看出,与种子相比,幼苗的质量有所增加,增加的物质主要是\\_\\_\\_\\_,种子燃烧后留下灰烬,这些灰烬代表的物质是\\_\\_\\_\\_。(2分)\n\n(2)若该种子为玉米种子,某兴趣小组的同学取大小均匀的同种玉米干种子(含淀粉丰富)40粒,平均分成甲、乙两组,给予甲组种子适宜的条件浸种,乙组仍保持干燥。待甲组种子发芽后,将试管编号为A\\~F,分别向A、B、C三支试管中加入2 mL甲组提取液,向D、E、F三支试管中加入2 mL乙组提取液,如图1所示,然后进行实验(干种子中的还原性物质忽略不计):\n\nI. 若检测 A、D 两支试管中是否含有还原糖, 实验部分步骤如图 2, 请把横线上的部分补充完整: ①\\_\\_\\_\\_, ②\\_\\_\\_\\_。(2 分)\n\n水浴加热后观察这两支试管,其中试管 A 中出现砖红色沉淀,据此可得出的结论是\\_\\_\\_\\_。(2 分)\n\n据此结果推断,若向 B、E 两支试管中分别加入等量的碘液,观察两支试管,发现液体的颜色均是蓝色,则\\_\\_\\_\\_试管液体的蓝色更深。(1 分)\n\nⅡ.为了验证干种子和发芽的种子均含有蛋白质,某同学利用余下的C、F两支试管提取液设计了以下实验,请补充完整他的实验方案:\n\n①实验原理:\\_\\_\\_\\_。（2分）\n\n②实验步骤:向(C、F)两支试管中先加入\\_\\_\\_\\_1 mL并摇匀,再加入\\_\\_\\_\\_4滴并摇匀,观察试管中溶液颜色的变化。(2分)\n\n③预期结果:\\_\\_\\_\\_。（2分）\n\n19.(7分)我国是世界上第一个人工合成具有生物活性蛋白质的国家,为蛋白质结构的研究作出了重要贡献,彰显了中国科学家的“胰岛素精神”。图a是结晶牛胰岛素总合成路线图,图b表示结晶牛胰岛素的氨基酸序列及其他信息。回答下列问题:\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg)\n\n图a\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg)\n\n图b\n\n注:A 和 B 链中“Gly”等表示氨基酸，对应的数字代表氨基酸位置。\n\n(1)分别合成 A 链和 B 链前,首先要明确两条链的氨基酸序列,科学家通过断裂肽链氨基端的\\_\\_\\_\\_将氨基酸一个一个依次脱落下来进行测定,确定了如图 b 中的肽链结构。(1 分)\n\n(2)在分步合成过程中,合成的A链或B链分别与天然的\\_\\_\\_\\_链进行组合实验,合成半合成胰岛素,最后再对合成的A链与合成的B链进行全合成实验,该过程中二硫键的形成很关键,含S的基团位于氨基酸结构通式的\\_\\_\\_\\_部位。(3分)\n\n(3)图 b 是胰岛素的氨基酸序列及其他信息,该结构还要经过盘曲折叠形成一定的空间结构。研究发现,在蛋白质折叠过程中,非极性部分倾向于分布在蛋白质分子的\\_\\_\\_\\_\n\n\\_\\_\\_\\_（填“内部”或“表面”）。有科学家进行下表实验，该实验现象说明蛋白质空间结构的多样性主要是由\\_\\_\\_\\_决定的。（3分）\n\n| 组别 | 实验操作 | 实验现象 |\n| --- | --- | --- |\n| A | 向蛋白质溶液中加入某种物质 M | 蛋白质不再折叠或错误折叠 |\n| B | 去除物质 M,分离获得 A 组不再折叠或错误折叠的蛋白质 | 能够自发地重新折叠为正确结构 |\n\n20.(10分)下图甲、乙、丙分别表示生物体内的生物大分子的部分结构模式图,请回答下列问题:\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg)\n\n图甲\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg)\n\n图乙\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg)\n\n图丙\n\n(1)图甲中,三种物质基本单位均为\\_\\_\\_\\_,其中存在于动物细胞中并能调节血糖含量的是\\_\\_\\_\\_;这三种物质中,在功能上与另外两种截然不同的是\\_\\_\\_\\_。\n(3 分)\n\n(2)图乙中,①所代表碱基的中文名称是\\_\\_\\_\\_,嘌呤与嘧啶的数量比为\\_\\_\\_\\_。某同学认定该模型表示的生物大分子是DNA,其判断依据是碱基中\\_\\_\\_\\_。(5分)\n\n(3)图丙中,①表示氨基酸经\\_\\_\\_\\_反应形成多肽链的过程。若氨基酸的平均分子量为r,通过化学反应形成m条肽链,再经盘曲折叠构成分子量为n的蛋白质,则该蛋白质中的肽键数目是\\_\\_\\_\\_(用代数式表示)。(2分)\n\n21.(11分)健康的身体离不开均衡的营养。某成年人身体不适,做相关检查后部分结果如下表所示,下图为人体细胞中部分重要的化合物及组成。请结合医生建议回答下列问题:\n\n| 项目 | 检查结果 | 单位 | 参考值 |\n| --- | --- | --- | --- |\n| 血红蛋白 | 100.78↓ | g/L | 131~172 |\n| 甘油三酯 | 4.2↑ | mmol/L | 0.48~1.88 |\n| 血清葡萄糖 | 8.48↑ | mmol/L | 3.9~6.1 |\n| 甲状腺激素 | 201.31↑ | mmol/L | 50~160 |\n\n![](/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg)\n\n(1)表中血红蛋白检查结果明显低于标准,医生建议该患者除进行药物治疗外,还应多摄取含\\_\\_\\_\\_(填微量元素)较多的食物,这体现无机盐的作用是\\_\\_\\_\\_。(3分)\n\n(2)该患者向医生描述常有小腿抽搐现象发生,故医生建议该患者在服用钙片的同时,还需补充适量的维生素D,请解释其中的科学道理:\\_\\_\\_\\_。\n\n若图中 f 表示维生素 D, 则 e 和 g 可表示为同属于固醇的 \\_\\_\\_\\_。图中 A 在彻底水解后形成的产物是 \\_\\_\\_\\_。(4 分)\n\n(3)经医生问诊,该患者有不吃早餐的不良习惯,健康合理的早餐搭配有助于保持身体的健康,每日补充适量蛋白质能让人精力充沛。评价蛋白质营养价值最主要的指标是食物蛋白中\\_\\_\\_\\_(填“必需氨基酸”或“非必需氨基酸”)的种类和含量,从蛋白质基本组成单位的层次分析蛋白质具有多样性的原因是\\_\\_\\_\\_。(4分)",
+      "warnings": [],
+      "asset_metadata": {
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg": {
+          "bbox": [
+            0.182,
+            0.324,
+            0.379,
+            0.473
+          ],
+          "caption": [],
+          "width_px": 615,
+          "height_px": 343,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_6.jpg": {
+          "bbox": [
+            0.175,
+            0.818,
+            0.284,
+            0.918
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.219,
+                0.922,
+                0.237,
+                0.936
+              ],
+              "content": "图甲"
+            }
+          ],
+          "width_px": 341,
+          "height_px": 231,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_8.jpg": {
+          "bbox": [
+            0.306,
+            0.808,
+            0.386,
+            0.919
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.34,
+                0.922,
+                0.358,
+                0.936
+              ],
+              "content": "图乙"
+            }
+          ],
+          "width_px": 250,
+          "height_px": 256,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_1.jpg": {
+          "bbox": [
+            0.08,
+            0.031,
+            0.261,
+            0.059
+          ],
+          "caption": [],
+          "width_px": 565,
+          "height_px": 65,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_9.jpg": {
+          "bbox": [
+            0.094,
+            0.558,
+            0.47,
+            0.685
+          ],
+          "caption": [],
+          "width_px": 1173,
+          "height_px": 293,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_0.jpg": {
+          "bbox": [
+            0.194,
+            0.072,
+            0.369,
+            0.226
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.271,
+                0.228,
+                0.287,
+                0.242
+              ],
+              "content": "图b"
+            },
+            {
+              "bbox": [
+                0.079,
+                0.253,
+                0.346,
+                0.269
+              ],
+              "content": "注:A 和 B 链中“Gly”等表示氨基酸，对应的数字代表氨基酸位置。"
+            }
+          ],
+          "width_px": 547,
+          "height_px": 353,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_9.jpg": {
+          "bbox": [
+            0.154,
+            0.745,
+            0.231,
+            0.843
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.175,
+                0.846,
+                0.191,
+                0.859
+              ],
+              "content": "图甲"
+            }
+          ],
+          "width_px": 241,
+          "height_px": 226,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_7.jpg": {
+          "bbox": [
+            0.081,
+            0.537,
+            0.481,
+            0.666
+          ],
+          "caption": [],
+          "width_px": 1248,
+          "height_px": 297,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_image_16.jpg": {
+          "bbox": [
+            0.833,
+            0.764,
+            0.932,
+            0.845
+          ],
+          "caption": [],
+          "width_px": 309,
+          "height_px": 186,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_0_table_13.jpg": {
+          "bbox": [
+            0.528,
+            0.47,
+            0.933,
+            0.621
+          ],
+          "caption": [],
+          "width_px": 1264,
+          "height_px": 347,
+          "page_index": 0,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_chart_16.jpg": {
+          "bbox": [
+            0.648,
+            0.474,
+            0.819,
+            0.586
+          ],
+          "caption": [],
+          "width_px": 534,
+          "height_px": 258,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_13.jpg": {
+          "bbox": [
+            0.668,
+            0.207,
+            0.798,
+            0.274
+          ],
+          "caption": [],
+          "width_px": 407,
+          "height_px": 155,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_19.jpg": {
+          "bbox": [
+            0.583,
+            0.756,
+            0.883,
+            0.828
+          ],
+          "caption": [],
+          "width_px": 937,
+          "height_px": 166,
+          "page_index": 1,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_15.jpg": {
+          "bbox": [
+            0.579,
+            0.092,
+            0.664,
+            0.176
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.616,
+                0.178,
+                0.632,
+                0.191
+              ],
+              "content": "图1"
+            }
+          ],
+          "width_px": 266,
+          "height_px": 194,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_17.jpg": {
+          "bbox": [
+            0.692,
+            0.073,
+            0.889,
+            0.174
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.785,
+                0.178,
+                0.802,
+                0.192
+              ],
+              "content": "图2"
+            }
+          ],
+          "width_px": 615,
+          "height_px": 232,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_image_29.jpg": {
+          "bbox": [
+            0.631,
+            0.86,
+            0.836,
+            0.916
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.725,
+                0.923,
+                0.741,
+                0.936
+              ],
+              "content": "图a"
+            }
+          ],
+          "width_px": 640,
+          "height_px": 129,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_2_table_12.jpg": {
+          "bbox": [
+            0.132,
+            0.831,
+            0.404,
+            0.933
+          ],
+          "caption": [],
+          "width_px": 849,
+          "height_px": 235,
+          "page_index": 2,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_11.jpg": {
+          "bbox": [
+            0.253,
+            0.737,
+            0.311,
+            0.838
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.273,
+                0.845,
+                0.29,
+                0.858
+              ],
+              "content": "图乙"
+            }
+          ],
+          "width_px": 182,
+          "height_px": 232,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_13.jpg": {
+          "bbox": [
+            0.337,
+            0.725,
+            0.409,
+            0.841
+          ],
+          "caption": [
+            {
+              "bbox": [
+                0.367,
+                0.846,
+                0.383,
+                0.859
+              ],
+              "content": "图丙"
+            }
+          ],
+          "width_px": 226,
+          "height_px": 267,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_image_21.jpg": {
+          "bbox": [
+            0.646,
+            0.492,
+            0.822,
+            0.556
+          ],
+          "caption": [],
+          "width_px": 549,
+          "height_px": 148,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        },
+        "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_3_table_20.jpg": {
+          "bbox": [
+            0.546,
+            0.329,
+            0.921,
+            0.479
+          ],
+          "caption": [],
+          "width_px": 1170,
+          "height_px": 344,
+          "page_index": 3,
+          "document_id": "d3cf4d290fe154ea7"
+        }
+      },
+      "parser_version": "mineru-normalizer-v1"
+    }
+  ],
+  "template_review_status": "reviewed",
+  "scan_capability": "not_integrated",
+  "assets": [
+    {
+      "key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-0.png",
+      "url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-0.png"
+    },
+    {
+      "key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-1.png",
+      "url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-1.png"
+    },
+    {
+      "key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-2.png",
+      "url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-2.png"
+    },
+    {
+      "key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/pages/page-3.png",
+      "url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fpages%2Fpage-3.png"
+    },
+    {
+      "key": "tasks/ec9d9d9e-48c9-4842-90d3-6991f3196707/d3cf4d290fe154ea7/raw/images/page_1_image_2.jpg",
+      "url": "/api/assets?key=tasks%2Fec9d9d9e-48c9-4842-90d3-6991f3196707%2Fd3cf4d290fe154ea7%2Fraw%2Fimages%2Fpage_1_image_2.jpg"
+    }
+  ],
+  "task_id": "ec9d9d9e-48c9-4842-90d3-6991f3196707",
+  "task_status": "committed"
+}
